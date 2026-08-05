@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 24" role="img" aria-label="Leyenda de formas">
+  <circle cx="12" cy="12" r="7" fill="#3D7A4A"/>
+  <rect x="28" y="5" width="14" height="14" rx="2" fill="#2F6F8F"/>
+  <polygon points="60,4 70,20 50,20" fill="#C45C26"/>
+  <rect x="80" y="6" width="12" height="12" transform="rotate(45 86 12)" fill="#5C6B4A"/>
+  <path d="M104 4 L108 10 L116 10 L110 14 L112 22 L104 17 L96 22 L98 14 L92 10 L100 10 Z" fill="#1B5E3B"/>
+</svg>

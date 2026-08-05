@@ -1,0 +1,399 @@
+.mapa-explorer {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.mapa-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4) var(--space-2);
+  background: var(--color-bg-elevated);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 5;
+}
+
+.mapa-toolbar__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.mapa-toolbar__count {
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+  font-weight: 600;
+}
+
+.mapa-filters {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  padding-bottom: var(--space-2);
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mapa-filters::-webkit-scrollbar {
+  height: 6px;
+}
+
+.filtro-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--touch-min);
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.filtro-chip[aria-pressed='true'] {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.filtro-chip__shape {
+  width: 0.85rem;
+  height: 0.85rem;
+  flex-shrink: 0;
+  background: currentColor;
+}
+
+.filtro-chip__shape--circle {
+  border-radius: 50%;
+}
+
+.filtro-chip__shape--square {
+  border-radius: 2px;
+}
+
+.filtro-chip__shape--diamond {
+  transform: rotate(45deg);
+  border-radius: 2px;
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
+.filtro-chip__shape--triangle {
+  width: 0;
+  height: 0;
+  background: transparent;
+  border-left: 0.4rem solid transparent;
+  border-right: 0.4rem solid transparent;
+  border-bottom: 0.7rem solid currentColor;
+}
+
+.filtro-chip__shape--star {
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.filtro-chip__shape--hexagon {
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+}
+
+.filtro-chip__shape--pin {
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+}
+
+.filtro-chip__shape--arch {
+  border-radius: 0.5rem 0.5rem 0.15rem 0.15rem;
+}
+
+.mapa-canvas-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 360px;
+}
+
+.mapa-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mapa-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  gap: var(--space-3);
+  background:
+    linear-gradient(135deg, rgba(27, 94, 59, 0.08), rgba(47, 111, 143, 0.08)),
+    repeating-linear-gradient(
+      -12deg,
+      transparent,
+      transparent 12px,
+      rgba(27, 94, 59, 0.04) 12px,
+      rgba(27, 94, 59, 0.04) 24px
+    );
+  z-index: 2;
+  color: var(--color-ink-muted);
+  font-weight: 600;
+}
+
+.mapa-loading__pulse {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 3px solid var(--color-primary-soft);
+  border-top-color: var(--color-primary);
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mapa-loading__pulse {
+    animation: none;
+    border-top-color: var(--color-primary);
+  }
+}
+
+.mapa-controls {
+  position: absolute;
+  right: var(--space-3);
+  top: var(--space-3);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: var(--map-controls-gap);
+}
+
+.mapa-control-btn {
+  width: var(--touch-min);
+  height: var(--touch-min);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-sm);
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.mapa-control-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.place-marker {
+  width: 34px;
+  height: 34px;
+  border: 2px solid #fff;
+  box-shadow: var(--shadow-md);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.place-marker:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.place-marker--circle {
+  border-radius: 50%;
+}
+
+.place-marker--square {
+  border-radius: 6px;
+}
+
+.place-marker--diamond {
+  border-radius: 6px;
+  transform: translateY(-2px) rotate(45deg);
+}
+
+.place-marker--diamond .place-marker__glyph {
+  transform: rotate(-45deg);
+}
+
+.place-marker--triangle {
+  width: 0;
+  height: 0;
+  border: none;
+  background: transparent !important;
+  box-shadow: none;
+  border-left: 17px solid transparent;
+  border-right: 17px solid transparent;
+  border-bottom: 30px solid var(--marker-color, #c45c26);
+  position: relative;
+}
+
+.place-marker--triangle .place-marker__glyph {
+  position: absolute;
+  top: 10px;
+  left: -6px;
+  width: 12px;
+  text-align: center;
+  font-size: 0.65rem;
+}
+
+.place-marker--star {
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  border: none;
+}
+
+.place-marker--hexagon {
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  border: none;
+}
+
+.place-marker--pin {
+  border-radius: 50% 50% 50% 0;
+  transform: translateY(-2px) rotate(-45deg);
+}
+
+.place-marker--pin .place-marker__glyph {
+  transform: rotate(45deg);
+}
+
+.place-marker--arch {
+  border-radius: 14px 14px 6px 6px;
+}
+
+.place-marker__glyph {
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.place-marker.is-active {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 70%, white), var(--shadow-md);
+  z-index: 2;
+}
+
+.ficha {
+  position: absolute;
+  z-index: 4;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.ficha--mobile {
+  left: var(--space-3);
+  right: var(--space-3);
+  bottom: var(--space-3);
+  border-radius: var(--radius-lg) var(--radius-lg) var(--radius-md) var(--radius-md);
+  max-height: min(42vh, 320px);
+  overflow: auto;
+}
+
+.ficha--desktop {
+  top: var(--space-3);
+  left: var(--space-3);
+  width: min(360px, calc(100% - 5rem));
+  border-radius: var(--radius-lg);
+  max-height: calc(100% - 1.5rem);
+  overflow: auto;
+}
+
+.ficha__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.ficha__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.ficha__close {
+  width: var(--touch-min);
+  height: var(--touch-min);
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-size: 1.4rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.ficha__desc {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 0.95rem;
+}
+
+.ficha__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ficha__tags li {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-ink-muted);
+}
+
+.ficha__actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.5rem;
+  padding: 0 0.55rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+.status-pill--verified {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+  .mapa-toolbar {
+    padding-inline: var(--space-6);
+  }
+}

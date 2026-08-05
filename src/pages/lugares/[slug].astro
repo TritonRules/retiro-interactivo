@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PlaceMiniMap from '../../components/map/PlaceMiniMap';
+import { places, getPlaceBySlug } from '../../utils/places';
+import { getCategoryLabel } from '../../utils/categories';
+
+export function getStaticPaths() {
+  return places.map((place) => ({
+    params: { slug: place.slug },
+  }));
+}
+
+const slug = Astro.params.slug ?? '';
+const place = getPlaceBySlug(slug);
+
+if (!place) {
+  throw new Error(`Lugar no encontrado: ${slug}`);
+}
+
+const mapHref = `${import.meta.env.BASE_URL}?lugar=${place.slug}`;
+---
+
+<BaseLayout
+  title={place.name}
+  description={place.shortDescription}
+  canonicalPath={`/lugares/${place.slug}/`}
+>
+  <article class="page place-layout">
+    <div>
+      <div class="place-layout__meta">
+        <span class="badge">{getCategoryLabel(place.category)}</span>
+        {
+          place.status === 'needs-review' ? (
+            <span class="status-pill">Pendiente de revisión</span>
+          ) : (
+            <span class="status-pill status-pill--verified">Verificado</span>
+          )
+        }
+      </div>
+      <h1>{place.name}</h1>
+      <div class="prose">
+        <p>{place.description}</p>
+      </div>
+      <ul class="tag-list" aria-label="Etiquetas">
+        {place.tags.map((tag) => <li>{tag}</li>)}
+      </ul>
+
+      {
+        place.accessibility?.length ? (
+          <section class="place-layout__panel" aria-labelledby="accesibilidad-titulo">
+            <h2 id="accesibilidad-titulo" style="margin-top:0">Accesibilidad</h2>
+            <ul>
+              {place.accessibility.map((item) => <li>{item}</li>)}
+            </ul>
+          </section>
+        ) : null
+      }
+
+      {
+        place.openingHoursNote ? (
+          <section class="place-layout__panel" aria-labelledby="horarios-titulo">
+            <h2 id="horarios-titulo" style="margin-top:0">Horarios</h2>
+            <p>{place.openingHoursNote}</p>
+          </section>
+        ) : null
+      }
+
+      <div class="place-layout__source">
+        <p>
+          Fuente de verificación: <strong>{place.sourceName}</strong>
+          {' · '}
+          <a href={place.sourceUrl} target="_blank" rel="noopener noreferrer">
+            Abrir fuente
+          </a>
+        </p>
+        <p>Última verificación: {place.lastVerifiedAt}</p>
+        <p>
+          La información puede cambiar. Contrasta siempre con la fuente enlazada antes de
+          planificar tu visita.
+        </p>
+      </div>
+
+      <div class="place-layout__actions">
+        <a class="btn btn--primary" href={mapHref}>Ver en el mapa</a>
+        <a class="btn btn--secondary" href={import.meta.env.BASE_URL}>Volver al mapa</a>
+      </div>
+    </div>
+
+    <aside class="place-layout__panel" aria-label="Ubicación">
+      <h2 style="margin-top:0">Ubicación</h2>
+      <PlaceMiniMap client:only="react" place={place} />
+      <p style="margin-top:1rem;color:var(--color-ink-muted);font-size:0.9rem">
+        Coordenadas: {place.coordinates[1].toFixed(6)}, {place.coordinates[0].toFixed(6)}
+        (lat, lon)
+      </p>
+    </aside>
+  </article>
+</BaseLayout>

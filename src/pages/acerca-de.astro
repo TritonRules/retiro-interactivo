@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../config/site';
+---
+
+<BaseLayout
+  title="Acerca del proyecto"
+  description="Qué es Retiro Interactivo, fuentes cartográficas y estado de esta versión inicial."
+  canonicalPath="/acerca-de/"
+>
+  <article class="page prose">
+    <h1>Acerca del proyecto</h1>
+    <p>
+      <strong>{siteConfig.name}</strong> es una experiencia web mobile first para explorar el
+      Parque del Retiro de Madrid como si fuera el mapa digital de un parque temático: visual,
+      fácil de recorrer y preparada para crecer hacia rutas, agenda y recomendaciones.
+    </p>
+
+    <h2>Estado actual</h2>
+    <p>
+      Esta es la <strong>{siteConfig.phase}</strong>: un prototipo navegable con mapa, filtros y
+      fichas de veinte lugares iniciales. No es todavía el producto completo.
+    </p>
+
+    <h2>Fuentes cartográficas</h2>
+    <ul>
+      <li>
+        <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer"
+          >OpenStreetMap</a
+        > — datos geográficos.
+      </li>
+      <li>
+        <a href="https://openfreemap.org/" target="_blank" rel="noopener noreferrer">OpenFreeMap</a>
+        — teselas y estilo Liberty.
+      </li>
+      <li>
+        <a href="https://maplibre.org/" target="_blank" rel="noopener noreferrer">MapLibre GL JS</a>
+        — motor de mapa.
+      </li>
+    </ul>
+
+    <h2>Precisión de la información</h2>
+    <p>
+      Los nombres y coordenadas se contrastan con OpenStreetMap u otras fuentes enlazadas en cada
+      ficha. La información puede cambiar (accesos, usos, horarios de edificios). Antes de
+      desplazarte, revisa la fuente visible en la página del lugar.
+    </p>
+
+    <h2>Contacto</h2>
+    {
+      siteConfig.contactUrl ? (
+        <p>
+          Puedes escribir a través de{' '}
+          <a href={siteConfig.contactUrl}>{siteConfig.contactLabel}</a>.
+        </p>
+      ) : (
+        <p>
+          El canal de contacto aún no está configurado. Cuando exista, se publicará aquí mediante
+          la opción <code>contactUrl</code> de la configuración del sitio.
+        </p>
+      )
+    }
+
+    <p style="margin-top:2rem">
+      <a class="btn btn--primary" href={import.meta.env.BASE_URL}>Volver al mapa</a>
+    </p>
+  </article>
+</BaseLayout>

@@ -1,0 +1,345 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6839322,
+          40.4171511
+        ]
+      },
+      "properties": {
+        "id": "estanque-grande",
+        "slug": "estanque-grande",
+        "name": "Estanque Grande del Retiro",
+        "category": "iconico",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6830669,
+          40.4173142
+        ]
+      },
+      "properties": {
+        "id": "monumento-alfonso-xii",
+        "slug": "monumento-alfonso-xii",
+        "name": "Monumento a Alfonso XII",
+        "category": "monumento",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6820649,
+          40.4135979
+        ]
+      },
+      "properties": {
+        "id": "palacio-de-cristal",
+        "slug": "palacio-de-cristal",
+        "name": "Palacio de Cristal",
+        "category": "cultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6814084,
+          40.4137152
+        ]
+      },
+      "properties": {
+        "id": "estanque-palacio-cristal",
+        "slug": "estanque-palacio-cristal",
+        "name": "Estanque del Palacio de Cristal",
+        "category": "naturaleza",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6819843,
+          40.4151995
+        ]
+      },
+      "properties": {
+        "id": "palacio-de-velazquez",
+        "slug": "palacio-de-velazquez",
+        "name": "Palacio de Velázquez",
+        "category": "cultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6825391,
+          40.4110479
+        ]
+      },
+      "properties": {
+        "id": "fuente-angel-caido",
+        "slug": "fuente-angel-caido",
+        "name": "Fuente del Ángel Caído",
+        "category": "monumento",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6803184,
+          40.410788
+        ]
+      },
+      "properties": {
+        "id": "la-rosaleda",
+        "slug": "la-rosaleda",
+        "name": "La Rosaleda",
+        "category": "naturaleza",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6779263,
+          40.4134127
+        ]
+      },
+      "properties": {
+        "id": "jardines-cecilio-rodriguez",
+        "slug": "jardines-cecilio-rodriguez",
+        "name": "Jardines de Cecilio Rodríguez",
+        "category": "naturaleza",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6809791,
+          40.4205924
+        ]
+      },
+      "properties": {
+        "id": "casita-del-pescador",
+        "slug": "casita-del-pescador",
+        "name": "Casita del Pescador",
+        "category": "iconico",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6805487,
+          40.421101
+        ]
+      },
+      "properties": {
+        "id": "montana-artificial",
+        "slug": "montana-artificial",
+        "name": "Montaña Artificial",
+        "category": "naturaleza",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6866962,
+          40.4187197
+        ]
+      },
+      "properties": {
+        "id": "teatro-titeres",
+        "slug": "teatro-titeres",
+        "name": "Teatro de Títeres de El Retiro",
+        "category": "familias",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "biblioteca-eugenio-trias",
+        "slug": "biblioteca-eugenio-trias",
+        "name": "Biblioteca Pública Municipal Eugenio Trías — Casa de Fieras",
+        "category": "cultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6840988,
+          40.4192106
+        ]
+      },
+      "properties": {
+        "id": "casa-de-vacas",
+        "slug": "casa-de-vacas",
+        "name": "Centro Cultural Casa de Vacas",
+        "category": "cultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.687397,
+          40.4152998
+        ]
+      },
+      "properties": {
+        "id": "parterre-frances",
+        "slug": "parterre-frances",
+        "name": "Parterre Francés",
+        "category": "naturaleza",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6880288,
+          40.4156329
+        ]
+      },
+      "properties": {
+        "id": "ahuehuete-del-parterre",
+        "slug": "ahuehuete-del-parterre",
+        "name": "Ahuehuete del Parterre",
+        "category": "naturaleza",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6867373,
+          40.416884
+        ]
+      },
+      "properties": {
+        "id": "paseo-de-la-argentina",
+        "slug": "paseo-de-la-argentina",
+        "name": "Paseo de la Argentina — Paseo de las Estatuas",
+        "category": "paseo",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6871771,
+          40.4120915
+        ]
+      },
+      "properties": {
+        "id": "bosque-del-recuerdo",
+        "slug": "bosque-del-recuerdo",
+        "name": "Bosque del Recuerdo",
+        "category": "naturaleza",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6842224,
+          40.4154157
+        ]
+      },
+      "properties": {
+        "id": "fuente-de-la-alcachofa",
+        "slug": "fuente-de-la-alcachofa",
+        "name": "Fuente de la Alcachofa",
+        "category": "monumento",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6854771,
+          40.418621
+        ]
+      },
+      "properties": {
+        "id": "fuente-de-los-galapagos",
+        "slug": "fuente-de-los-galapagos",
+        "name": "Fuente de los Galápagos",
+        "category": "monumento",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6886925,
+          40.4152748
+        ]
+      },
+      "properties": {
+        "id": "puerta-de-felipe-iv",
+        "slug": "puerta-de-felipe-iv",
+        "name": "Puerta de Felipe IV",
+        "category": "acceso",
+        "status": "verified"
+      }
+    }
+  ]
+}

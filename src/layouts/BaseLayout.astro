@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+import { siteConfig } from '../config/site';
+
+const title = Astro.props.title ?? siteConfig.name;
+const description = Astro.props.description ?? siteConfig.description;
+const canonicalPath = Astro.props.canonicalPath ?? '/';
+const bodyClass = Astro.props.bodyClass ?? '';
+
+const pageTitle =
+  title === siteConfig.name ? title : `${title} · ${siteConfig.name}`;
+
+const canonicalURL = new URL(
+  `${import.meta.env.BASE_URL}${canonicalPath.replace(/^\//, '')}`.replace(
+    /\/{2,}/g,
+    '/',
+  ),
+  Astro.site,
+);
+---
+
+<!doctype html>
+<html lang="es-ES">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin />
+    <title>{pageTitle}</title>
+  </head>
+  <body class={bodyClass}>
+    <a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
+    <div class="app-shell">
+      <header class="site-header">
+        <a class="site-header__brand" href={import.meta.env.BASE_URL}>
+          <span class="site-header__name">{siteConfig.name}</span>
+          <span class="site-header__tagline">{siteConfig.tagline}</span>
+        </a>
+        <nav class="site-header__nav" aria-label="Principal">
+          <a
+            class="site-header__link"
+            href={`${import.meta.env.BASE_URL}acerca-de/`}
+            aria-current={canonicalPath.startsWith('/acerca-de') ? 'page' : undefined}
+          >
+            Acerca del proyecto
+          </a>
+        </nav>
+      </header>
+      <main id="contenido-principal" class="main-content">
+        <slot />
+      </main>
+      <footer class="site-footer">
+        <p>
+          {siteConfig.name} · {siteConfig.phase}. Cartografía:
+          OpenStreetMap · OpenFreeMap · MapLibre.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

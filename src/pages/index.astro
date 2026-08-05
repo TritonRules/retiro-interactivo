@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MapExplorer from '../components/map/MapExplorer';
+import { places } from '../utils/places';
+import { siteConfig } from '../config/site';
+
+const focusSlug = Astro.url.searchParams.get('lugar') ?? undefined;
+const initialCategory = Astro.url.searchParams.get('categoria') ?? undefined;
+---
+
+<BaseLayout
+  title={siteConfig.name}
+  description={siteConfig.description}
+  canonicalPath="/"
+>
+  <div class="map-page">
+    <h1 class="sr-only">{siteConfig.name}: mapa del Parque del Retiro</h1>
+    <MapExplorer
+      client:only="react"
+      places={places}
+      baseUrl={import.meta.env.BASE_URL}
+      initialCategory={initialCategory}
+      focusSlug={focusSlug}
+    />
+  </div>
+</BaseLayout>
