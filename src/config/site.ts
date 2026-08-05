@@ -11,5 +11,5 @@ export const siteConfig = {
   contactUrl: '' as string,
   /** Etiqueta del enlace de contacto cuando contactUrl está definido. */
   contactLabel: 'Contacto',
-  phase: 'Fase 1 — Prototipo',
+  phase: 'Fase 2A — Prototipo PWA',
 } as const;

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Retiro Interactivo">
+  <rect width="512" height="512" rx="96" fill="#F7F3EB"/>
+  <circle cx="256" cy="270" r="150" fill="#1B5E3B"/>
+  <circle cx="256" cy="270" r="64" fill="#2F6F8F"/>
+  <path d="M256 70 L290 170 H222 Z" fill="#C45C26"/>
+</svg>

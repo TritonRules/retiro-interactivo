@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Sin conexión"
+  description="Estás sin conexión. Algunas páginas visitadas pueden seguir disponibles."
+  canonicalPath="/offline/"
+>
+  <article class="page prose">
+    <h1>Sin conexión</h1>
+    <p>
+      No hay red en este momento. Las páginas que hayas visitado recientemente pueden seguir
+      disponibles desde la caché local.
+    </p>
+    <p>
+      El mapa en vivo necesita conexión para cargar las teselas cartográficas. Los datos de
+      lugares y servicios cacheados pueden abrirse si ya se descargaron.
+    </p>
+    <p>
+      <a class="btn btn--primary" href={import.meta.env.BASE_URL}>Volver al mapa</a>
+    </p>
+  </article>
+</BaseLayout>

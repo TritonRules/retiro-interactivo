@@ -26,6 +26,9 @@ const canonicalURL = new URL(
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#1B5E3B" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Retiro" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:title" content={pageTitle} />
@@ -36,6 +39,11 @@ const canonicalURL = new URL(
     <meta name="twitter:description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link
+      rel="apple-touch-icon"
+      href={`${import.meta.env.BASE_URL}icons/icon-192.png`}
+    />
+    <link rel="manifest" href={`${import.meta.env.BASE_URL}manifest.webmanifest`} />
     <link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin />
     <title>{pageTitle}</title>
   </head>
@@ -67,5 +75,31 @@ const canonicalURL = new URL(
         </p>
       </footer>
     </div>
+
+    <div id="pwa-update" class="pwa-update" hidden role="status" aria-live="polite">
+      <span>Hay una nueva versión disponible.</span>
+      <button type="button" id="pwa-update-btn">Actualizar</button>
+    </div>
+
+    <script>
+      import { registerSW } from 'virtual:pwa-register';
+
+      const banner = document.getElementById('pwa-update');
+      const button = document.getElementById('pwa-update-btn');
+
+      const updateSW = registerSW({
+        immediate: true,
+        onNeedRefresh() {
+          if (banner) banner.hidden = false;
+        },
+        onOfflineReady() {
+          // Silencioso: la shell ya está lista offline.
+        },
+      });
+
+      button?.addEventListener('click', () => {
+        updateSW(true);
+      });
+    </script>
   </body>
 </html>

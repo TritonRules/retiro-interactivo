@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# QA screenshots / local evidence
+docs/qa/screenshots/
+playwright-report/
+test-results/

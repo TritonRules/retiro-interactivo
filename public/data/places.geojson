@@ -15,7 +15,8 @@
         "slug": "estanque-grande",
         "name": "Estanque Grande del Retiro",
         "category": "iconico",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -32,7 +33,8 @@
         "slug": "monumento-alfonso-xii",
         "name": "Monumento a Alfonso XII",
         "category": "monumento",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -49,7 +51,8 @@
         "slug": "palacio-de-cristal",
         "name": "Palacio de Cristal",
         "category": "cultura",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -66,7 +69,8 @@
         "slug": "estanque-palacio-cristal",
         "name": "Estanque del Palacio de Cristal",
         "category": "naturaleza",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -83,7 +87,8 @@
         "slug": "palacio-de-velazquez",
         "name": "Palacio de Velázquez",
         "category": "cultura",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -100,7 +105,8 @@
         "slug": "fuente-angel-caido",
         "name": "Fuente del Ángel Caído",
         "category": "monumento",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -117,7 +123,8 @@
         "slug": "la-rosaleda",
         "name": "La Rosaleda",
         "category": "naturaleza",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -134,7 +141,8 @@
         "slug": "jardines-cecilio-rodriguez",
         "name": "Jardines de Cecilio Rodríguez",
         "category": "naturaleza",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -151,7 +159,8 @@
         "slug": "casita-del-pescador",
         "name": "Casita del Pescador",
         "category": "iconico",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -168,7 +177,8 @@
         "slug": "montana-artificial",
         "name": "Montaña Artificial",
         "category": "naturaleza",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -185,7 +195,8 @@
         "slug": "teatro-titeres",
         "name": "Teatro de Títeres de El Retiro",
         "category": "familias",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -202,7 +213,8 @@
         "slug": "biblioteca-eugenio-trias",
         "name": "Biblioteca Pública Municipal Eugenio Trías — Casa de Fieras",
         "category": "cultura",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -219,7 +231,8 @@
         "slug": "casa-de-vacas",
         "name": "Centro Cultural Casa de Vacas",
         "category": "cultura",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -236,7 +249,8 @@
         "slug": "parterre-frances",
         "name": "Parterre Francés",
         "category": "naturaleza",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -253,7 +267,8 @@
         "slug": "ahuehuete-del-parterre",
         "name": "Ahuehuete del Parterre",
         "category": "naturaleza",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -270,7 +285,8 @@
         "slug": "paseo-de-la-argentina",
         "name": "Paseo de la Argentina — Paseo de las Estatuas",
         "category": "paseo",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -287,7 +303,8 @@
         "slug": "bosque-del-recuerdo",
         "name": "Bosque del Recuerdo",
         "category": "naturaleza",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -304,7 +321,8 @@
         "slug": "fuente-de-la-alcachofa",
         "name": "Fuente de la Alcachofa",
         "category": "monumento",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -321,7 +339,8 @@
         "slug": "fuente-de-los-galapagos",
         "name": "Fuente de los Galápagos",
         "category": "monumento",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     },
     {
@@ -338,7 +357,8 @@
         "slug": "puerta-de-felipe-iv",
         "name": "Puerta de Felipe IV",
         "category": "acceso",
-        "status": "verified"
+        "status": "verified",
+        "kind": "place"
       }
     }
   ]

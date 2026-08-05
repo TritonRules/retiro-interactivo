@@ -2,10 +2,12 @@ import { describe, expect, it } from 'vitest';
 import {
   countByCategory,
   filterPlacesByCategory,
+  filterServicesByCategory,
   parseCategoryParam,
 } from './filterPlaces';
 import { validatePlaces } from './validatePlaces';
 import type { Place } from '../types/place';
+import type { ParkService } from '../types/service';
 
 const samplePlaces: Place[] = [
   {
@@ -52,6 +54,20 @@ const samplePlaces: Place[] = [
   },
 ];
 
+const sampleServices: ParkService[] = [
+  {
+    id: 's1',
+    name: 'Fuente test',
+    type: 'fuente',
+    coordinates: [-3.681, 40.416],
+    shortDescription: 'Fuente de agua potable de prueba.',
+    sourceName: 'Test',
+    sourceUrl: 'https://www.openstreetmap.org/',
+    lastVerifiedAt: '2026-08-05',
+    status: 'verified',
+  },
+];
+
 describe('filterPlacesByCategory', () => {
   it('devuelve todos con filtro todos', () => {
     expect(filterPlacesByCategory(samplePlaces, 'todos')).toHaveLength(3);
@@ -62,14 +78,28 @@ describe('filterPlacesByCategory', () => {
     expect(cultura).toHaveLength(2);
     expect(cultura.every((p) => p.category === 'cultura')).toBe(true);
   });
+
+  it('oculta lugares en filtro servicio', () => {
+    expect(filterPlacesByCategory(samplePlaces, 'servicio')).toHaveLength(0);
+  });
+});
+
+describe('filterServicesByCategory', () => {
+  it('muestra servicios solo con filtro servicio o toggle en todos', () => {
+    expect(filterServicesByCategory(sampleServices, 'servicio', false)).toHaveLength(1);
+    expect(filterServicesByCategory(sampleServices, 'todos', false)).toHaveLength(0);
+    expect(filterServicesByCategory(sampleServices, 'todos', true)).toHaveLength(1);
+    expect(filterServicesByCategory(sampleServices, 'cultura', true)).toHaveLength(0);
+  });
 });
 
 describe('countByCategory', () => {
-  it('cuenta totales y por categoría', () => {
-    const counts = countByCategory(samplePlaces);
-    expect(counts.todos).toBe(3);
+  it('cuenta totales y por categoría incluyendo servicios', () => {
+    const counts = countByCategory(samplePlaces, sampleServices);
+    expect(counts.todos).toBe(4);
     expect(counts.cultura).toBe(2);
     expect(counts.naturaleza).toBe(1);
+    expect(counts.servicio).toBe(1);
     expect(counts.monumento).toBe(0);
   });
 });

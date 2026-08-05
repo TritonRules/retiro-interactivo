@@ -1,0 +1,430 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6831826,
+          40.4107719
+        ]
+      },
+      "properties": {
+        "id": "aseo-rosaleda",
+        "name": "Aseo cerca de La Rosaleda",
+        "type": "aseo",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6839654,
+          40.4152309
+        ]
+      },
+      "properties": {
+        "id": "aseo-estanque",
+        "name": "Aseo cerca del Estanque Grande",
+        "type": "aseo",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6822539,
+          40.4135485
+        ]
+      },
+      "properties": {
+        "id": "aseo-palacio-cristal",
+        "name": "Aseo junto al Palacio de Cristal",
+        "type": "aseo",
+        "status": "needs-review",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6875372,
+          40.418936
+        ]
+      },
+      "properties": {
+        "id": "aseo-nordeste-estanque",
+        "name": "Aseo al norte del Estanque",
+        "type": "aseo",
+        "status": "needs-review",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.680829,
+          40.4172923
+        ]
+      },
+      "properties": {
+        "id": "fuente-potable-estanque-este",
+        "name": "Fuente de agua potable (este del Estanque)",
+        "type": "fuente",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6855094,
+          40.4183443
+        ]
+      },
+      "properties": {
+        "id": "fuente-potable-galapagos",
+        "name": "Fuente de agua potable (plaza de Nicaragua)",
+        "type": "fuente",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6814686,
+          40.4133699
+        ]
+      },
+      "properties": {
+        "id": "fuente-potable-palacio-cristal",
+        "name": "Fuente de agua potable (Palacio de Cristal)",
+        "type": "fuente",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6827361,
+          40.4141507
+        ]
+      },
+      "properties": {
+        "id": "fuente-potable-velazquez",
+        "name": "Fuente de agua potable (Palacio de Velázquez)",
+        "type": "fuente",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6765763,
+          40.4129711
+        ]
+      },
+      "properties": {
+        "id": "fuente-potable-cecilio",
+        "name": "Fuente de agua potable (Cecilio Rodríguez)",
+        "type": "fuente",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6763924,
+          40.4182602
+        ]
+      },
+      "properties": {
+        "id": "fuente-potable-este-parque",
+        "name": "Fuente de agua potable (flanco este)",
+        "type": "fuente",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6811704,
+          40.4190697
+        ]
+      },
+      "properties": {
+        "id": "fuente-potable-casita-pescador",
+        "name": "Fuente de agua potable (Casita del Pescador)",
+        "type": "fuente",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6809721,
+          40.4156411
+        ]
+      },
+      "properties": {
+        "id": "fuente-potable-centro",
+        "name": "Fuente de agua potable (paseo central)",
+        "type": "fuente",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789396,
+          40.4176511
+        ]
+      },
+      "properties": {
+        "id": "zona-infantil-casa-fieras",
+        "name": "Zona infantil (Casa de Fieras)",
+        "type": "zona-infantil",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6792057,
+          40.4181281
+        ]
+      },
+      "properties": {
+        "id": "zona-infantil-norte-fieras",
+        "name": "Zona infantil (norte Casa de Fieras)",
+        "type": "zona-infantil",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6862568,
+          40.4098091
+        ]
+      },
+      "properties": {
+        "id": "zona-infantil-chopera",
+        "name": "Zona infantil (La Chopera)",
+        "type": "zona-infantil",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6790212,
+          40.4144236
+        ]
+      },
+      "properties": {
+        "id": "zona-infantil-cecilio",
+        "name": "Zona infantil (Cecilio Rodríguez)",
+        "type": "zona-infantil",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6886371,
+          40.4166495
+        ]
+      },
+      "properties": {
+        "id": "acceso-puerta-independencia",
+        "name": "Puerta de la Independencia",
+        "type": "acceso",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6801434,
+          40.4214193
+        ]
+      },
+      "properties": {
+        "id": "acceso-puerta-odonnell",
+        "name": "Puerta de O'Donnell",
+        "type": "acceso",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.681824,
+          40.4211073
+        ]
+      },
+      "properties": {
+        "id": "acceso-puerta-madrid",
+        "name": "Puerta de Madrid",
+        "type": "acceso",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6886713,
+          40.412793
+        ]
+      },
+      "properties": {
+        "id": "acceso-puerta-murillo",
+        "name": "Puerta de Murillo",
+        "type": "acceso",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6767383,
+          40.4112335
+        ]
+      },
+      "properties": {
+        "id": "acceso-puerta-nino-jesus",
+        "name": "Puerta del Niño Jesús",
+        "type": "acceso",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6884066,
+          40.4097018
+        ]
+      },
+      "properties": {
+        "id": "acceso-puerta-angel-caido",
+        "name": "Puerta del Ángel Caído",
+        "type": "acceso",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6840015,
+          40.4155068
+        ]
+      },
+      "properties": {
+        "id": "info-estanque-alcachofa",
+        "name": "Panel informativo Estanque y Alcachofa",
+        "type": "informacion",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6805019,
+          40.4113376
+        ]
+      },
+      "properties": {
+        "id": "info-rosaleda",
+        "name": "Panel informativo La Rosaleda",
+        "type": "informacion",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6862187,
+          40.4123788
+        ]
+      },
+      "properties": {
+        "id": "deporte-la-chopera",
+        "name": "Centro Deportivo Municipal La Chopera",
+        "type": "deporte",
+        "status": "verified",
+        "kind": "service"
+      }
+    }
+  ]
+}

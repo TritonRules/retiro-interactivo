@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { AttributionControl, Map as MapLibreMap, Marker } from 'maplibre-gl';
-import 'maplibre-gl/dist/maplibre-gl.css';
 import '../../styles/map.css';
 import {
   MAP_ATTRIBUTION,
@@ -21,44 +19,62 @@ export default function PlaceMiniMap({ place }: Props) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    if (!ref.current) return;
+    let cancelled = false;
+    let map: import('maplibre-gl').Map | null = null;
+    let marker: import('maplibre-gl').Marker | null = null;
 
-    const map = new MapLibreMap({
-      container: ref.current,
-      style: OPENFREEMAP_STYLE_URL,
-      center: place.coordinates,
-      zoom: 16.2,
-      minZoom: MIN_ZOOM,
-      maxZoom: MAX_ZOOM,
-      maxBounds: MAP_MAX_BOUNDS,
-      interactive: false,
-      attributionControl: false,
-    });
+    async function init() {
+      if (!ref.current) return;
+      const maplibre = await import('maplibre-gl');
+      await import('maplibre-gl/dist/maplibre-gl.css');
+      if (cancelled || !ref.current) return;
 
-    map.addControl(
-      new AttributionControl({
-        compact: true,
-        customAttribution: MAP_ATTRIBUTION,
-      }),
-      'bottom-right',
-    );
+      map = new maplibre.Map({
+        container: ref.current,
+        style: OPENFREEMAP_STYLE_URL,
+        center: place.coordinates,
+        zoom: 16.2,
+        minZoom: MIN_ZOOM,
+        maxZoom: MAX_ZOOM,
+        maxBounds: MAP_MAX_BOUNDS,
+        interactive: false,
+        attributionControl: false,
+      });
 
-    const marker = new Marker({
-      element: createMarkerElement({
-        category: place.category,
-        label: place.name,
-        active: true,
-      }),
-      anchor: 'center',
-    })
-      .setLngLat(place.coordinates)
-      .addTo(map);
+      map.addControl(
+        new maplibre.AttributionControl({
+          compact: true,
+          customAttribution: MAP_ATTRIBUTION,
+        }),
+        'bottom-right',
+      );
 
-    map.on('load', () => setReady(true));
+      marker = new maplibre.Marker({
+        element: createMarkerElement({
+          category: place.category,
+          label: place.name,
+          active: true,
+        }),
+        anchor: 'center',
+      })
+        .setLngLat(place.coordinates)
+        .addTo(map);
+
+      map.on('load', () => {
+        if (!cancelled) setReady(true);
+      });
+      map.once('idle', () => {
+        if (!cancelled) setReady(true);
+      });
+      if (map.loaded() && !cancelled) setReady(true);
+    }
+
+    void init();
 
     return () => {
-      marker.remove();
-      map.remove();
+      cancelled = true;
+      marker?.remove();
+      map?.remove();
     };
   }, [place]);
 
