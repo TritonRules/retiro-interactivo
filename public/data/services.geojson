@@ -425,6 +425,329 @@
         "status": "verified",
         "kind": "service"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68934,
+          40.41118
+        ]
+      },
+      "properties": {
+        "id": "aseo-parterre",
+        "name": "Aseo cerca del Parterre",
+        "type": "aseo",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68557,
+          40.4181
+        ]
+      },
+      "properties": {
+        "id": "aseo-plaza-nicaragua",
+        "name": "Aseo en Plaza de Nicaragua",
+        "type": "aseo",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68496,
+          40.41668
+        ]
+      },
+      "properties": {
+        "id": "aseo-paseo-central",
+        "name": "Aseo en paseo central",
+        "type": "aseo",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68984,
+          40.41212
+        ]
+      },
+      "properties": {
+        "id": "aseo-suroeste",
+        "name": "Aseo flanco suroeste",
+        "type": "aseo",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68352,
+          40.41579
+        ]
+      },
+      "properties": {
+        "id": "fuente-potable-esfinges",
+        "name": "Fuente de las Esfinges (agua potable)",
+        "type": "fuente",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68214,
+          40.41701
+        ]
+      },
+      "properties": {
+        "id": "fuente-potable-sardana",
+        "name": "Fuente potable (Sardana)",
+        "type": "fuente",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6886,
+          40.4164
+        ]
+      },
+      "properties": {
+        "id": "fuente-potable-puerta-espana",
+        "name": "Fuente potable (Puerta de España)",
+        "type": "fuente",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68426,
+          40.42042
+        ]
+      },
+      "properties": {
+        "id": "fuente-potable-norte-odonnell",
+        "name": "Fuente potable (norte O'Donnell)",
+        "type": "fuente",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68678,
+          40.4117
+        ]
+      },
+      "properties": {
+        "id": "fuente-potable-chopera-sur",
+        "name": "Fuente potable (La Chopera)",
+        "type": "fuente",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68715,
+          40.41073
+        ]
+      },
+      "properties": {
+        "id": "fuente-potable-bosque-recuerdo",
+        "name": "Fuente potable (Bosque del Recuerdo)",
+        "type": "fuente",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68326,
+          40.41076
+        ]
+      },
+      "properties": {
+        "id": "fuente-potable-angel-caido",
+        "name": "Fuente potable (Ángel Caído)",
+        "type": "fuente",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.67857,
+          40.41591
+        ]
+      },
+      "properties": {
+        "id": "zona-infantil-este-fieras",
+        "name": "Zona infantil (este Casa de Fieras)",
+        "type": "zona-infantil",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.67805,
+          40.41518
+        ]
+      },
+      "properties": {
+        "id": "zona-infantil-sur-fieras",
+        "name": "Zona infantil (sur Casa de Fieras)",
+        "type": "zona-infantil",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68867,
+          40.41629
+        ]
+      },
+      "properties": {
+        "id": "zona-infantil-puerta-espana",
+        "name": "Zona infantil (cerca Puerta de España)",
+        "type": "zona-infantil",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.688628,
+          40.416676
+        ]
+      },
+      "properties": {
+        "id": "acceso-puerta-espana",
+        "name": "Puerta de España (acceso)",
+        "type": "acceso",
+        "status": "verified",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789,
+          40.4165
+        ]
+      },
+      "properties": {
+        "id": "info-centro-ambiental",
+        "name": "Centro de Información y Educación Ambiental",
+        "type": "informacion",
+        "status": "needs-review",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.67728,
+          40.41544
+        ]
+      },
+      "properties": {
+        "id": "restauracion-piloto-ii",
+        "name": "Piloto II (restauración)",
+        "type": "restauracion",
+        "status": "needs-review",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.67785,
+          40.41627
+        ]
+      },
+      "properties": {
+        "id": "restauracion-euronews-cafe",
+        "name": "Euronews Café",
+        "type": "restauracion",
+        "status": "needs-review",
+        "kind": "service"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6865,
+          40.4118
+        ]
+      },
+      "properties": {
+        "id": "deporte-pistas-chopera-ref",
+        "name": "Entorno deportivo La Chopera",
+        "type": "deporte",
+        "status": "verified",
+        "kind": "service"
+      }
     }
   ]
 }

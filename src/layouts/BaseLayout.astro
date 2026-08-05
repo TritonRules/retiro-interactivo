@@ -6,6 +6,7 @@ const title = Astro.props.title ?? siteConfig.name;
 const description = Astro.props.description ?? siteConfig.description;
 const canonicalPath = Astro.props.canonicalPath ?? '/';
 const bodyClass = Astro.props.bodyClass ?? '';
+const robots = Astro.props.robots;
 
 const pageTitle =
   title === siteConfig.name ? title : `${title} · ${siteConfig.name}`;
@@ -25,6 +26,7 @@ const canonicalURL = new URL(
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    {robots ? <meta name="robots" content={robots} /> : null}
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#1B5E3B" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -58,10 +60,31 @@ const canonicalURL = new URL(
         <nav class="site-header__nav" aria-label="Principal">
           <a
             class="site-header__link"
+            href={import.meta.env.BASE_URL}
+            aria-current={canonicalPath === '/' ? 'page' : undefined}
+          >
+            Mapa
+          </a>
+          <a
+            class="site-header__link"
+            href={`${import.meta.env.BASE_URL}rutas/`}
+            aria-current={canonicalPath.startsWith('/rutas') ? 'page' : undefined}
+          >
+            Rutas
+          </a>
+          <a
+            class="site-header__link"
+            href={`${import.meta.env.BASE_URL}agenda/`}
+            aria-current={canonicalPath.startsWith('/agenda') ? 'page' : undefined}
+          >
+            Agenda
+          </a>
+          <a
+            class="site-header__link"
             href={`${import.meta.env.BASE_URL}acerca-de/`}
             aria-current={canonicalPath.startsWith('/acerca-de') ? 'page' : undefined}
           >
-            Acerca del proyecto
+            Acerca
           </a>
         </nav>
       </header>

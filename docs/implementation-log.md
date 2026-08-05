@@ -13,3 +13,14 @@
 - PWA con `@vite-pwa/astro` + `vite-plugin-pwa` (`--legacy-peer-deps` por peer Astro ≤5 vs Astro 7 del proyecto).
 - MapLibre vía `import()` dinámico → chunk `maplibre-gl.*.js` (~947 KB) separado de `MapExplorer` (~15 KB).
 - Documentación: `poi-review.md`, `performance.md`, `qa-phase-2a.md`, `pwa-testing.md`.
+
+## 2026-08-05 — Inicio / avance Fase 2B
+
+- Rama `feature/fase-2b-content-routes-events` desde cierre 2A (`46eaadc`).
+- Contenido: 36 lugares + 44 servicios = **80 fichas** (rango 60–100).
+- Cinco rutas temáticas con GeoJSON LineString, páginas `/rutas/` y `?ruta=`.
+- Agenda `/agenda/` + pipeline Madrid Open Data (tier A), filtrado geográfico, dedupe, publicación atómica.
+- `source-registry.yml` con agendas municipales verificadas (CC BY 4.0).
+- Nav compacta: Mapa / Rutas / Agenda / Acerca.
+- Docs 2B: content-model, routes, event-pipeline, event-editorial-policy, qa-phase-2b, beta-readiness.
+- Precache PWA: se excluyen fichas individuales `/agenda/*/`.

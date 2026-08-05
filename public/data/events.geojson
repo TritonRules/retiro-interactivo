@@ -1,0 +1,1193 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-50346030",
+        "slug": "90-anos-de-la-declaracion-del-parque-del-retiro-como-bien-de-interes-cul",
+        "title": "90 años de la declaración del Parque del Retiro como Bien de Interés Cultural",
+        "startAt": "2026-07-01T10:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50104191",
+        "slug": "antonio-pedrero-50104191",
+        "title": "Antonio Pedrero",
+        "startAt": "2026-09-04T00:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-12048589",
+        "slug": "arboles-de-el-retiro-12048589",
+        "title": "Árboles de El Retiro",
+        "startAt": "2026-08-13T10:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-12803572",
+        "slug": "arboles-de-el-retiro-12803572",
+        "title": "Árboles de El Retiro",
+        "startAt": "2026-08-27T19:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-12802602",
+        "slug": "arboles-exoticos-de-el-retiro-12802602",
+        "title": "Árboles exóticos de El Retiro",
+        "startAt": "2026-09-03T10:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-12404595",
+        "slug": "artes-en-el-retiro-12404595",
+        "title": "Artes en el Retiro",
+        "startAt": "2026-09-26T11:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6866519471003647,
+          40.41878362561595
+        ]
+      },
+      "properties": {
+        "id": "evt-50334552",
+        "slug": "bambi-50334552",
+        "title": "Bambi",
+        "startAt": "2026-08-27T21:30:00+02:00",
+        "status": "published",
+        "venue": "Teatro de Títeres de El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50147340",
+        "slug": "casa-club-venezuela-50147340",
+        "title": "Casa Club Venezuela",
+        "startAt": "2026-09-28T17:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68793370943788,
+          40.41964087412762
+        ]
+      },
+      "properties": {
+        "id": "evt-50105660",
+        "slug": "conoce-una-estacion-de-vigilancia-de-la-calidad-del-aire-cabana-de-la-ro",
+        "title": "Conoce una Estación de Vigilancia de la Calidad del Aire (Cabaña de la Rosaleda. Parque de El Retiro)",
+        "startAt": "2026-09-17T10:30:00+02:00",
+        "status": "published",
+        "venue": "Jardines de El Buen Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50362790",
+        "slug": "corazon-de-agua-retiro-50362790",
+        "title": "Corazón de Agua - Retiro",
+        "startAt": "2026-10-24T19:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50289667",
+        "slug": "del-eden-al-tajo-50289667",
+        "title": "Del edén al tajo",
+        "startAt": "2026-09-03T18:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-11769477",
+        "slug": "descubre-el-vivero-de-estufas-del-retiro-11769477",
+        "title": "Descubre el Vivero de Estufas del Retiro",
+        "startAt": "2026-09-17T11:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-11769479",
+        "slug": "descubre-el-vivero-de-estufas-del-retiro-11769479",
+        "title": "Descubre el Vivero de Estufas del Retiro",
+        "startAt": "2026-09-19T11:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-11769616",
+        "slug": "el-agua-en-los-jardines-de-el-retiro-11769616",
+        "title": "El agua en los jardines de El Retiro",
+        "startAt": "2026-09-12T11:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50265824",
+        "slug": "el-circo-que-llevo-dentro-50265824",
+        "title": "El circo que llevo dentro",
+        "startAt": "2026-09-05T12:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50146307",
+        "slug": "el-mejor-show-50146307",
+        "title": "El mejor show",
+        "startAt": "2026-09-20T17:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-12803577",
+        "slug": "el-retiro-a-traves-de-la-musica-12803577",
+        "title": "El Retiro a través de la Música",
+        "startAt": "2026-08-06T20:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-11769587",
+        "slug": "el-retiro-a-traves-de-sus-fotografias-11769587",
+        "title": "El Retiro a través de sus fotografías",
+        "startAt": "2026-09-24T11:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-11769591",
+        "slug": "el-retiro-a-traves-de-sus-jardines-11769591",
+        "title": "El Retiro a través de sus jardines",
+        "startAt": "2026-09-05T10:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50266169",
+        "slug": "enlazadas-50266169",
+        "title": "Enlazadas",
+        "startAt": "2026-09-19T19:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-12803575",
+        "slug": "esculturas-desconocidas-del-retiro-i-12803575",
+        "title": "Esculturas desconocidas del Retiro I",
+        "startAt": "2026-08-20T19:30:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-11769588",
+        "slug": "esculturas-desconocidas-i-11769588",
+        "title": "Esculturas desconocidas I",
+        "startAt": "2026-08-27T10:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-50265354",
+        "slug": "esculturas-desconocidas-i-50265354",
+        "title": "Esculturas desconocidas I",
+        "startAt": "2026-08-08T10:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-50343435",
+        "slug": "esculturas-desconocidas-ii-50343435",
+        "title": "Esculturas desconocidas II",
+        "startAt": "2026-08-22T10:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50145563",
+        "slug": "homenaje-a-jose-ignacio-cabrujas-50145563",
+        "title": "Homenaje a José Ignacio Cabrujas",
+        "startAt": "2026-09-14T19:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50221891",
+        "slug": "ii-festival-internacional-de-piano-50221891",
+        "title": "II Festival Internacional de Piano",
+        "startAt": "2026-09-06T12:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50265531",
+        "slug": "iv-edicion-festival-alicia-de-larrocha-50265531",
+        "title": "IV Edición Festival Alicia de Larrocha",
+        "startAt": "2026-09-12T19:30:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50368535",
+        "slug": "la-charo-celebracion-ancestral-retiro-50368535",
+        "title": "La Charo, celebración ancestral - Retiro",
+        "startAt": "2026-11-28T19:00:00+01:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6866519471003647,
+          40.41878362561595
+        ]
+      },
+      "properties": {
+        "id": "evt-50334565",
+        "slug": "la-doncella-guerrera-50334565",
+        "title": "La doncella guerrera",
+        "startAt": "2026-08-22T19:00:00+02:00",
+        "status": "published",
+        "venue": "Teatro de Títeres de El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6795930368034804,
+          40.4166091081099
+        ]
+      },
+      "properties": {
+        "id": "evt-50361033",
+        "slug": "la-ruta-de-los-libros-vivos-50361033",
+        "title": "La ruta de los libros vivos",
+        "startAt": "2026-06-29T00:00:00+02:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-50343443",
+        "slug": "las-aves-estivales-en-el-retiro-50343443",
+        "title": "Las aves estivales en El Retiro",
+        "startAt": "2026-08-14T09:30:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-50343647",
+        "slug": "los-mas-pequenos-tambien-plantamos-50343647",
+        "title": "Los más pequeños también plantamos",
+        "startAt": "2026-09-06T10:30:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50147338",
+        "slug": "miguel-de-molina-el-rey-de-la-copla-50147338",
+        "title": "Miguel de Molina 'el rey de la copla'",
+        "startAt": "2026-09-27T18:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50174902",
+        "slug": "modelo-integrados-restaurativo-50174902",
+        "title": "Modelo integrados restaurativo",
+        "startAt": "2026-09-07T19:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50362839",
+        "slug": "musica-madre-retiro-50362839",
+        "title": "Música Madre - Retiro",
+        "startAt": "2026-10-02T19:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6866519471003647,
+          40.41878362561595
+        ]
+      },
+      "properties": {
+        "id": "evt-50334559",
+        "slug": "olvide-la-sombra-de-la-encina-50334559",
+        "title": "Olvidé la sombra de la encina",
+        "startAt": "2026-08-24T21:30:00+02:00",
+        "status": "published",
+        "venue": "Teatro de Títeres de El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50265834",
+        "slug": "paraguay-en-escena-50265834",
+        "title": "Paraguay en escena",
+        "startAt": "2026-09-18T19:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-12048875",
+        "slug": "paseo-historico-prado-recoletos-i-12048875",
+        "title": "Paseo histórico Prado Recoletos I",
+        "startAt": "2026-09-10T11:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50145704",
+        "slug": "pasion-flamenca-50145704",
+        "title": "Pasión flamenca",
+        "startAt": "2026-09-26T19:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6866519471003647,
+          40.41878362561595
+        ]
+      },
+      "properties": {
+        "id": "evt-50334544",
+        "slug": "pied-de-nez-50334544",
+        "title": "Pied de nez",
+        "startAt": "2026-08-30T19:00:00+02:00",
+        "status": "published",
+        "venue": "Teatro de Títeres de El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50140512",
+        "slug": "pinturas-desde-la-cripta-50140512",
+        "title": "Pinturas desde la cripta",
+        "startAt": "2026-07-30T00:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50235439",
+        "slug": "planeta-funerario-50235439",
+        "title": "Planeta funerario",
+        "startAt": "2026-09-08T19:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6866519471003647,
+          40.41878362561595
+        ]
+      },
+      "properties": {
+        "id": "evt-50334571",
+        "slug": "puppet-pro-50334571",
+        "title": "Puppet Pro",
+        "startAt": "2026-08-20T21:30:00+02:00",
+        "status": "published",
+        "venue": "Teatro de Títeres de El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50289806",
+        "slug": "recorriendo-el-mundo-a-traves-de-la-danza-50289806",
+        "title": "Recorriendo el mundo a través de la danza",
+        "startAt": "2026-09-13T19:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50147445",
+        "slug": "reencuentros-50147445",
+        "title": "Reencuentros",
+        "startAt": "2026-09-05T19:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6866519471003647,
+          40.41878362561595
+        ]
+      },
+      "properties": {
+        "id": "evt-50286078",
+        "slug": "riofaunado-50286078",
+        "title": "Riofaunado",
+        "startAt": "2026-08-15T20:00:00+02:00",
+        "status": "published",
+        "venue": "Teatro de Títeres de El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6866519471003647,
+          40.41878362561595
+        ]
+      },
+      "properties": {
+        "id": "evt-50334541",
+        "slug": "saeta-50334541",
+        "title": "Saeta",
+        "startAt": "2026-08-31T21:30:00+02:00",
+        "status": "published",
+        "venue": "Teatro de Títeres de El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6793179644920584,
+          40.40912277790706
+        ]
+      },
+      "properties": {
+        "id": "evt-50202480",
+        "slug": "senda-guiada-el-uso-de-las-plantas-50202480",
+        "title": "Senda guiada 'El uso de las plantas'",
+        "startAt": "2026-08-29T10:00:00+02:00",
+        "status": "published",
+        "venue": "Aula ambiental La Cabaña del Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6793179644920584,
+          40.40912277790706
+        ]
+      },
+      "properties": {
+        "id": "evt-50148218",
+        "slug": "senda-guiada-iniciacion-a-la-ornitologia-50148218",
+        "title": "Senda guiada 'Iniciación a la Ornitología'",
+        "startAt": "2026-08-08T10:00:00+02:00",
+        "status": "published",
+        "venue": "Aula ambiental La Cabaña del Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6793179644920584,
+          40.40912277790706
+        ]
+      },
+      "properties": {
+        "id": "evt-50286911",
+        "slug": "senda-arboles-autoctonos-50286911",
+        "title": "Senda 'Árboles Autóctonos'",
+        "startAt": "2026-08-22T10:00:00+02:00",
+        "status": "published",
+        "venue": "Aula ambiental La Cabaña del Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6866519471003647,
+          40.41878362561595
+        ]
+      },
+      "properties": {
+        "id": "evt-50334562",
+        "slug": "si-tuviera-un-huevo-50334562",
+        "title": "Si tuviera un huevo",
+        "startAt": "2026-08-23T19:00:00+02:00",
+        "status": "published",
+        "venue": "Teatro de Títeres de El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6866519471003647,
+          40.41878362561595
+        ]
+      },
+      "properties": {
+        "id": "evt-50336051",
+        "slug": "somion-50336051",
+        "title": "Sòmion",
+        "startAt": "2026-08-29T21:00:00+02:00",
+        "status": "published",
+        "venue": "Teatro de Títeres de El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6866519471003647,
+          40.41878362561595
+        ]
+      },
+      "properties": {
+        "id": "evt-50334555",
+        "slug": "somos-yo-50334555",
+        "title": "Somos Yo",
+        "startAt": "2026-08-25T21:30:00+02:00",
+        "status": "published",
+        "venue": "Teatro de Títeres de El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50147279",
+        "slug": "stage-on-the-road-50147279",
+        "title": "Stage-on the road",
+        "startAt": "2026-09-04T18:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-50343651",
+        "slug": "taller-de-compostaje-en-el-huerto-de-el-retiro-50343651",
+        "title": "Taller de compostaje en el Huerto de El Retiro",
+        "startAt": "2026-09-25T16:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-11771314",
+        "slug": "taller-de-huerto-familiar-11771314",
+        "title": "Taller de huerto familiar",
+        "startAt": "2026-09-27T10:30:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-11771304",
+        "slug": "taller-de-huerto-familiar-11771304",
+        "title": "Taller de huerto familiar",
+        "startAt": "2026-08-16T10:30:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-50346069",
+        "slug": "taller-extraccion-de-semillas-50346069",
+        "title": "Taller: Extracción de semillas",
+        "startAt": "2026-09-24T11:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-11771324",
+        "slug": "taller-fauna-del-huerto-11771324",
+        "title": "Taller: Fauna del huerto",
+        "startAt": "2026-08-09T10:30:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-11771315",
+        "slug": "taller-fauna-del-huerto-11771315",
+        "title": "Taller: Fauna del Huerto",
+        "startAt": "2026-09-13T10:30:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6866519471003647,
+          40.41878362561595
+        ]
+      },
+      "properties": {
+        "id": "evt-50316805",
+        "slug": "the-bell-50316805",
+        "title": "The Bell",
+        "startAt": "2026-08-08T20:00:00+02:00",
+        "status": "published",
+        "venue": "Teatro de Títeres de El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50103106",
+        "slug": "una-ducha-de-agua-fria-50103106",
+        "title": "Una ducha de agua fría",
+        "startAt": "2026-09-30T19:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684053112760816,
+          40.41906571939961
+        ]
+      },
+      "properties": {
+        "id": "evt-50235019",
+        "slug": "xx-encuentro-talent-universal-50235019",
+        "title": "XX Encuentro. Talent Universal",
+        "startAt": "2026-09-13T12:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6866519471003647,
+          40.41878362561595
+        ]
+      },
+      "properties": {
+        "id": "evt-50334568",
+        "slug": "ay-que-lio-50334568",
+        "title": "¡Ay qué lío!",
+        "startAt": "2026-08-21T21:30:00+02:00",
+        "status": "published",
+        "venue": "Teatro de Títeres de El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-50346118",
+        "slug": "una-manana-en-el-huerto-50346118",
+        "title": "¡Una mañana en el huerto!",
+        "startAt": "2026-08-23T10:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6861797800993257,
+          40.40943503279114
+        ]
+      },
+      "properties": {
+        "id": "evt-50346119",
+        "slug": "una-manana-en-el-huerto-50346119",
+        "title": "¡Una mañana en el huerto!",
+        "startAt": "2026-08-30T10:00:00+02:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    }
+  ]
+}

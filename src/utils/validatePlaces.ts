@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { RETIRO_PLACE_BOUNDS } from '../config/map';
+import { RETIRO_PLACE_BOUNDS, ENTORNO_PLACE_BOUNDS } from '../config/map';
 import type { Place } from '../types/place';
 
 export const placeCategorySchema = z.enum([
@@ -13,38 +13,60 @@ export const placeCategorySchema = z.enum([
   'acceso',
 ]);
 
-export const placeSchema = z.object({
-  id: z.string().min(1),
-  slug: z
-    .string()
-    .min(1)
-    .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'slug debe ser kebab-case'),
-  name: z.string().min(1),
-  category: placeCategorySchema,
-  coordinates: z
-    .tuple([z.number(), z.number()])
-    .refine(
-      ([lon, lat]) =>
-        lon >= RETIRO_PLACE_BOUNDS.minLon &&
-        lon <= RETIRO_PLACE_BOUNDS.maxLon &&
-        lat >= RETIRO_PLACE_BOUNDS.minLat &&
-        lat <= RETIRO_PLACE_BOUNDS.maxLat,
-      {
-        message: `coordenadas fuera de los límites del Retiro (${RETIRO_PLACE_BOUNDS.minLon}…${RETIRO_PLACE_BOUNDS.maxLon}, ${RETIRO_PLACE_BOUNDS.minLat}…${RETIRO_PLACE_BOUNDS.maxLat})`,
-      },
-    ),
-  shortDescription: z.string().min(10).max(220),
-  description: z.string().min(20).max(900),
-  tags: z.array(z.string().min(1)).min(1),
-  sourceName: z.string().min(1),
-  sourceUrl: z.url(),
-  lastVerifiedAt: z
-    .string()
-    .regex(/^\d{4}-\d{2}-\d{2}$/, 'lastVerifiedAt debe ser YYYY-MM-DD'),
-  status: z.enum(['verified', 'needs-review']),
-  accessibility: z.array(z.string()).optional(),
-  openingHoursNote: z.string().optional(),
-});
+const audienceSchema = z.enum(['familias', 'turistas', 'locales', 'deportistas']);
+
+function coordsInBounds(
+  lon: number,
+  lat: number,
+  bounds: { minLon: number; minLat: number; maxLon: number; maxLat: number },
+): boolean {
+  return (
+    lon >= bounds.minLon &&
+    lon <= bounds.maxLon &&
+    lat >= bounds.minLat &&
+    lat <= bounds.maxLat
+  );
+}
+
+export const placeSchema = z
+  .object({
+    id: z.string().min(1),
+    slug: z
+      .string()
+      .min(1)
+      .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'slug debe ser kebab-case'),
+    name: z.string().min(1),
+    alternativeNames: z.array(z.string().min(1)).optional(),
+    category: placeCategorySchema,
+    coordinates: z.tuple([z.number(), z.number()]),
+    shortDescription: z.string().min(10).max(220),
+    description: z.string().min(20).max(900),
+    tags: z.array(z.string().min(1)).min(1),
+    audience: z.array(audienceSchema).optional(),
+    recommendedDurationMinutes: z.number().int().positive().max(480).optional(),
+    bestFor: z.array(z.string().min(1)).optional(),
+    area: z.enum(['retiro', 'entorno']).optional(),
+    sourceName: z.string().min(1),
+    sourceUrl: z.url(),
+    sourceTier: z.enum(['A', 'B', 'C', 'D']).optional(),
+    lastVerifiedAt: z
+      .string()
+      .regex(/^\d{4}-\d{2}-\d{2}$/, 'lastVerifiedAt debe ser YYYY-MM-DD'),
+    status: z.enum(['verified', 'needs-review']),
+    accessibility: z.array(z.string()).optional(),
+    openingHoursNote: z.string().optional(),
+  })
+  .superRefine((place, ctx) => {
+    const [lon, lat] = place.coordinates;
+    const bounds = place.area === 'entorno' ? ENTORNO_PLACE_BOUNDS : RETIRO_PLACE_BOUNDS;
+    if (!coordsInBounds(lon, lat, bounds)) {
+      ctx.addIssue({
+        code: 'custom',
+        message: `coordenadas fuera de límites (${place.area ?? 'retiro'})`,
+        path: ['coordinates'],
+      });
+    }
+  });
 
 export const placesArraySchema = z.array(placeSchema).superRefine((places, ctx) => {
   const ids = new Set<string>();

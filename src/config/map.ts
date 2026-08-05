@@ -31,5 +31,15 @@ export const RETIRO_PLACE_BOUNDS = {
   maxLat: 40.424,
 } as const;
 
+/**
+ * Bounding box ampliado para lugares de entorno inmediato (no interior del parque).
+ */
+export const ENTORNO_PLACE_BOUNDS = {
+  minLon: -3.696,
+  minLat: 40.405,
+  maxLon: -3.672,
+  maxLat: 40.427,
+} as const;
+
 export const MAP_ATTRIBUTION =
   '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> · <a href="https://openfreemap.org/" target="_blank" rel="noopener noreferrer">OpenFreeMap</a> · <a href="https://maplibre.org/" target="_blank" rel="noopener noreferrer">MapLibre</a>';

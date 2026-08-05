@@ -65,6 +65,7 @@ export default defineConfig({
         navigateFallback: `${basePath}offline/`,
         navigateFallbackDenylist: [/^\/api/],
         globPatterns: ['**/*.{js,css,html,svg,png,ico,webp,woff2,json,geojson}'],
+        globIgnores: ['**/agenda/*/index.html'],
         runtimeCaching: [
           {
             urlPattern: ({ url }) =>

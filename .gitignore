@@ -27,3 +27,7 @@ pnpm-debug.log*
 docs/qa/screenshots/
 playwright-report/
 test-results/
+
+# Caché de recolectores (respuestas crudas de terceros)
+automation/cache/
+*.tmp

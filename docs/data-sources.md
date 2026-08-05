@@ -36,3 +36,19 @@ Método: Overpass en bbox del Retiro (2026-08-05). Descripciones propias. No se 
 - OSM puede contener errores o nombres locales distintos a la denominación turística.
 - Sin fotografías de terceros.
 - Sin horarios municipales verificados en esta fase.
+
+
+## Fase 2B — Agenda y registro
+
+Registro vivo: `automation/sources/source-registry.yml`.
+
+| id | Recurso | Tier | Licencia | auto_publish |
+| --- | --- | --- | --- | --- |
+| madrid-agenda-general | Agenda de actividades y eventos | A | CC BY 4.0 | sí |
+| madrid-agenda-cultural-100 | Actividades culturales 100 días | A | CC BY 4.0 | sí |
+| distrito-retiro-agenda | Distrito Retiro | B | por determinar | no (disabled) |
+| ciea-retiro | CIEA El Retiro | B | por determinar | no (disabled) |
+
+URLs de descarga verificadas 2026-08-05 (HTTP 200).
+Atribución: Ayuntamiento de Madrid — datos abiertos.
+Lugares/servicios adicionales: OpenStreetMap + Nominatim (UA identificable), verificados 2026-08-05.

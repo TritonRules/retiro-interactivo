@@ -1,0 +1,201 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getUpcomingEvents, eventsToday } from '../../utils/events';
+import { formatMadridDateTime } from '../../utils/datetime';
+import { siteConfig } from '../../config/site';
+
+const base = import.meta.env.BASE_URL;
+const upcoming = getUpcomingEvents();
+const today = eventsToday();
+const categoryFilter = Astro.url.searchParams.get('categoria') ?? '';
+const audienceFilter = Astro.url.searchParams.get('publico') ?? '';
+
+const categories = [...new Set(upcoming.map((e) => e.category))].sort();
+const filtered = upcoming.filter((event) => {
+  if (categoryFilter && event.category !== categoryFilter) return false;
+  if (
+    audienceFilter &&
+    !(event.audience || []).some((a) =>
+      a.toLowerCase().includes(audienceFilter.toLowerCase()),
+    )
+  ) {
+    return false;
+  }
+  return true;
+});
+---
+
+<BaseLayout
+  title="Agenda"
+  description="Agenda de actividades oficiales relacionadas con el Parque del Retiro."
+  canonicalPath="/agenda/"
+>
+  <div class="page">
+    <header class="page-hero">
+      <p class="eyebrow">Fuentes oficiales</p>
+      <h1>Agenda del Retiro</h1>
+      <p>
+        Eventos publicados desde datasets municipales abiertos, filtrados al ámbito del parque.
+        La agenda no es exhaustiva. Verifica siempre el enlace original.
+      </p>
+    </header>
+
+    <section aria-labelledby="hoy-title" class="block">
+      <h2 id="hoy-title">Hoy</h2>
+      {
+        today.length === 0 ? (
+          <p class="empty">No hay eventos publicados para hoy en el ámbito del parque.</p>
+        ) : (
+          <ul class="card-list">
+            {today.map((event) => (
+              <li class="content-card">
+                <h3>
+                  <a href={`${base}agenda/${event.slug}/`}>{event.title}</a>
+                </h3>
+                <p class="meta">
+                  {formatMadridDateTime(event.startAt)} · {event.venue}
+                </p>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </section>
+
+    <form class="filters" method="get">
+      <label>
+        Categoría
+        <select name="categoria">
+          <option value="">Todas</option>
+          {categories.map((c) => (
+            <option value={c} selected={c === categoryFilter}>
+              {c}
+            </option>
+          ))}
+        </select>
+      </label>
+      <label>
+        Público
+        <input
+          type="search"
+          name="publico"
+          value={audienceFilter}
+          placeholder="p. ej. Familias"
+        />
+      </label>
+      <button class="btn" type="submit">Filtrar</button>
+    </form>
+
+    <section aria-labelledby="prox-title" class="block">
+      <h2 id="prox-title">Próximamente</h2>
+      {
+        filtered.length === 0 ? (
+          <p class="empty">
+            No hay próximos eventos publicados con estos filtros. Prueba sin filtro o vuelve tras
+            actualizar el pipeline oficial.
+          </p>
+        ) : (
+          <ul class="card-list">
+            {filtered.map((event) => (
+              <li class="content-card">
+                <h3>
+                  <a href={`${base}agenda/${event.slug}/`}>{event.title}</a>
+                </h3>
+                <p>{event.shortDescription}</p>
+                <p class="meta">
+                  {formatMadridDateTime(event.startAt)} · {event.venue} · {event.category}
+                </p>
+                <p class="actions">
+                  <a class="btn btn--secondary" href={`${base}agenda/${event.slug}/`}>
+                    Ver ficha
+                  </a>
+                  {event.coordinates ? (
+                    <a
+                      class="btn btn--secondary"
+                      href={`${base}?evento=${event.slug}`}
+                    >
+                      Ver en el mapa
+                    </a>
+                  ) : null}
+                </p>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </section>
+
+    <p class="footnote">
+      Atribución: Ayuntamiento de Madrid (datos abiertos, CC BY 4.0). {siteConfig.name} no inventa
+      horarios ni precios.
+    </p>
+  </div>
+</BaseLayout>
+
+<style>
+  .eyebrow {
+    margin: 0 0 var(--space-2);
+    color: var(--color-ink-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .block {
+    margin-bottom: var(--space-8);
+  }
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+    align-items: end;
+  }
+  .filters label {
+    display: grid;
+    gap: var(--space-1);
+    font-size: 0.9rem;
+  }
+  .filters select,
+  .filters input {
+    min-height: var(--touch-min);
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+  }
+  .card-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .content-card {
+    padding: var(--space-4);
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+  .content-card h3 {
+    margin: 0 0 var(--space-2);
+    font-size: 1.1rem;
+  }
+  .meta {
+    color: var(--color-ink-muted);
+    font-size: 0.9rem;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  .empty {
+    padding: var(--space-4);
+    background: var(--color-primary-soft);
+    border-radius: var(--radius-md);
+  }
+  .footnote {
+    color: var(--color-ink-muted);
+    font-size: 0.9rem;
+  }
+</style>

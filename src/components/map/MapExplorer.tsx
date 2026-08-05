@@ -12,6 +12,7 @@ import {
 } from '../../config/map';
 import type { Place } from '../../types/place';
 import type { ParkService } from '../../types/service';
+import type { ParkRoute } from '../../types/route';
 import {
   countByCategory,
   filterPlacesByCategory,
@@ -31,6 +32,7 @@ import {
   type UserLocation,
 } from '../../utils/geolocation';
 import { nearestItems, type NearbyItem } from '../../utils/nearby';
+import { formatDistance, formatDuration } from '../../utils/routes';
 import { CategoryFilters } from './CategoryFilters';
 import { createMarkerElement } from './markerFactory';
 import {
@@ -41,18 +43,36 @@ import { NearbyList } from './NearbyList';
 import { PlaceSheet } from '../places/PlaceSheet';
 import { ServiceSheet } from '../places/ServiceSheet';
 
+interface MapEventPoint {
+  id: string;
+  slug: string;
+  title: string;
+  coordinates: [number, number];
+  startAt: string;
+  venue: string;
+}
+
 interface Props {
   places: Place[];
   services: ParkService[];
+  routes: ParkRoute[];
+  events?: MapEventPoint[];
   baseUrl: string;
   initialCategory?: string;
   focusSlug?: string;
+  initialRouteSlug?: string;
+  initialEventSlug?: string;
 }
 
 type Selection =
   | { kind: 'place'; id: string }
   | { kind: 'service'; id: string }
+  | { kind: 'event'; id: string }
   | null;
+
+const ROUTE_SOURCE = 'active-route';
+const ROUTE_LINE = 'active-route-line';
+const EVENT_SOURCE = 'map-events';
 
 function withBase(baseUrl: string, path: string): string {
   const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
@@ -62,13 +82,18 @@ function withBase(baseUrl: string, path: string): string {
 export default function MapExplorer({
   places,
   services,
+  routes,
+  events = [],
   baseUrl,
   initialCategory,
   focusSlug,
+  initialRouteSlug,
+  initialEventSlug,
 }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<Map | null>(null);
   const markersRef = useRef<Marker[]>([]);
+  const stopMarkersRef = useRef<Marker[]>([]);
   const userMarkerRef = useRef<Marker | null>(null);
   const accuracySourceId = 'user-accuracy';
   const [ready, setReady] = useState(false);
@@ -78,9 +103,18 @@ export default function MapExplorer({
     parseCategoryParam(initialCategory),
   );
   const [showServicesInTodos, setShowServicesInTodos] = useState(false);
+  const [showEvents, setShowEvents] = useState(false);
+  const [activeRouteSlug, setActiveRouteSlug] = useState<string | null>(
+    initialRouteSlug ?? null,
+  );
   const [selection, setSelection] = useState<Selection>(null);
   const [geoState, setGeoState] = useState<GeoPermissionState>('idle');
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
+
+  const activeRoute = useMemo(
+    () => routes.find((route) => route.slug === activeRouteSlug) ?? null,
+    [routes, activeRouteSlug],
+  );
 
   const filteredPlaces = useMemo(
     () => filterPlacesByCategory(places, category),
@@ -99,6 +133,10 @@ export default function MapExplorer({
   const selectedService =
     selection?.kind === 'service'
       ? (services.find((service) => service.id === selection.id) ?? null)
+      : null;
+  const selectedEvent =
+    selection?.kind === 'event'
+      ? (events.find((event) => event.id === selection.id) ?? null)
       : null;
 
   const nearby = useMemo(() => {
@@ -126,10 +164,12 @@ export default function MapExplorer({
     const params = new URLSearchParams(window.location.search);
     if (category === 'todos') params.delete('categoria');
     else params.set('categoria', category);
+    if (activeRouteSlug) params.set('ruta', activeRouteSlug);
+    else params.delete('ruta');
     const query = params.toString();
     const next = `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`;
     window.history.replaceState({}, '', next);
-  }, [category]);
+  }, [category, activeRouteSlug]);
 
   useEffect(() => {
     let cancelled = false;
@@ -161,7 +201,6 @@ export default function MapExplorer({
         );
 
         mapRef.current = map;
-        // Listo para UI en cuanto existe el mapa; los marcadores esperan style/idle.
         if (!cancelled) setReady(true);
       } catch {
         if (!cancelled) setMapError('No se pudo cargar el mapa. Reintenta más tarde.');
@@ -174,6 +213,8 @@ export default function MapExplorer({
       cancelled = true;
       markersRef.current.forEach((marker) => marker.remove());
       markersRef.current = [];
+      stopMarkersRef.current.forEach((marker) => marker.remove());
+      stopMarkersRef.current = [];
       userMarkerRef.current?.remove();
       userMarkerRef.current = null;
       mapRef.current?.remove();
@@ -194,6 +235,9 @@ export default function MapExplorer({
 
       markersRef.current.forEach((marker) => marker.remove());
       markersRef.current = [];
+
+      // Con ruta activa, priorizamos paradas; marcadores generales se ocultan para no saturar.
+      if (activeRoute) return;
 
       for (const place of filteredPlaces) {
         const el = createMarkerElement({
@@ -242,7 +286,127 @@ export default function MapExplorer({
     return () => {
       cancelled = true;
     };
-  }, [filteredPlaces, filteredServices, ready, selection]);
+  }, [filteredPlaces, filteredServices, ready, selection, activeRoute]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready) return;
+    let cancelled = false;
+
+    async function syncRoute() {
+      const maplibre = await import('maplibre-gl');
+      if (cancelled || !mapRef.current) return;
+      const currentMap = mapRef.current;
+
+      stopMarkersRef.current.forEach((marker) => marker.remove());
+      stopMarkersRef.current = [];
+
+      if (currentMap.getLayer(ROUTE_LINE)) currentMap.removeLayer(ROUTE_LINE);
+      if (currentMap.getSource(ROUTE_SOURCE)) currentMap.removeSource(ROUTE_SOURCE);
+
+      if (!activeRoute) return;
+
+      currentMap.addSource(ROUTE_SOURCE, {
+        type: 'geojson',
+        data: {
+          type: 'Feature',
+          properties: { id: activeRoute.id },
+          geometry: activeRoute.geometry,
+        },
+      });
+      currentMap.addLayer({
+        id: ROUTE_LINE,
+        type: 'line',
+        source: ROUTE_SOURCE,
+        paint: {
+          'line-color': '#c45c26',
+          'line-width': 4,
+          'line-opacity': 0.9,
+        },
+      });
+
+      activeRoute.stopIds.forEach((stopId, index) => {
+        const place = places.find((item) => item.id === stopId);
+        if (!place) return;
+        const el = document.createElement('button');
+        el.type = 'button';
+        el.className = 'route-stop-marker';
+        el.textContent = String(index + 1);
+        el.setAttribute('aria-label', `Parada ${index + 1}: ${place.name}`);
+        el.addEventListener('click', () => {
+          setSelection({ kind: 'place', id: place.id });
+          currentMap.easeTo({
+            center: place.coordinates,
+            zoom: Math.max(currentMap.getZoom(), 16),
+            duration: 400,
+            essential: true,
+          });
+        });
+        const marker = new maplibre.Marker({ element: el, anchor: 'center' })
+          .setLngLat(place.coordinates)
+          .addTo(currentMap);
+        stopMarkersRef.current.push(marker);
+      });
+
+      const bounds = activeRoute.geometry.coordinates.reduce(
+        (acc, coord) => {
+          acc[0][0] = Math.min(acc[0][0], coord[0]);
+          acc[0][1] = Math.min(acc[0][1], coord[1]);
+          acc[1][0] = Math.max(acc[1][0], coord[0]);
+          acc[1][1] = Math.max(acc[1][1], coord[1]);
+          return acc;
+        },
+        [
+          [Infinity, Infinity],
+          [-Infinity, -Infinity],
+        ] as [[number, number], [number, number]],
+      );
+      currentMap.fitBounds(bounds, { padding: 56, duration: 700, maxZoom: 16.5 });
+    }
+
+    void syncRoute();
+    return () => {
+      cancelled = true;
+    };
+  }, [activeRoute, places, ready]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready) return;
+
+    if (map.getLayer(`${EVENT_SOURCE}-circle`)) map.removeLayer(`${EVENT_SOURCE}-circle`);
+    if (map.getSource(EVENT_SOURCE)) map.removeSource(EVENT_SOURCE);
+
+    if (!showEvents || activeRoute || events.length === 0) return;
+
+    map.addSource(EVENT_SOURCE, {
+      type: 'geojson',
+      data: {
+        type: 'FeatureCollection',
+        features: events.map((event) => ({
+          type: 'Feature',
+          geometry: { type: 'Point', coordinates: event.coordinates },
+          properties: { id: event.id, title: event.title },
+        })),
+      },
+    });
+    map.addLayer({
+      id: `${EVENT_SOURCE}-circle`,
+      type: 'circle',
+      source: EVENT_SOURCE,
+      paint: {
+        'circle-radius': 7,
+        'circle-color': '#2f6f8f',
+        'circle-stroke-width': 2,
+        'circle-stroke-color': '#fffdf8',
+      },
+    });
+    map.on('click', `${EVENT_SOURCE}-circle`, (e) => {
+      const id = e.features?.[0]?.properties?.id;
+      if (!id) return;
+      setSelection({ kind: 'event', id: String(id) });
+    });
+  }, [showEvents, events, ready, activeRoute]);
 
   useEffect(() => {
     if (!ready || !focusSlug) return;
@@ -256,6 +420,20 @@ export default function MapExplorer({
       essential: true,
     });
   }, [ready, focusSlug, places]);
+
+  useEffect(() => {
+    if (!ready || !initialEventSlug) return;
+    const event = events.find((item) => item.slug === initialEventSlug);
+    if (!event) return;
+    setShowEvents(true);
+    setSelection({ kind: 'event', id: event.id });
+    mapRef.current?.easeTo({
+      center: event.coordinates,
+      zoom: 16.5,
+      duration: 600,
+      essential: true,
+    });
+  }, [ready, initialEventSlug, events]);
 
   const clearUserLocation = () => {
     setUserLocation(null);
@@ -386,6 +564,12 @@ export default function MapExplorer({
     });
   };
 
+  const clearRoute = () => {
+    setActiveRouteSlug(null);
+    setSelection(null);
+    resetView();
+  };
+
   const focusNearby = (item: NearbyItem) => {
     mapRef.current?.easeTo({
       center: item.coordinates,
@@ -397,7 +581,28 @@ export default function MapExplorer({
     else setSelection({ kind: 'service', id: item.id });
   };
 
-  const visibleCount = filteredPlaces.length + filteredServices.length;
+  const shareActiveRoute = async () => {
+    if (!activeRoute) return;
+    const url = new URL(window.location.href);
+    url.searchParams.set('ruta', activeRoute.slug);
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: activeRoute.name, url: url.toString() });
+        return;
+      }
+    } catch {
+      /* cancel */
+    }
+    try {
+      await navigator.clipboard.writeText(url.toString());
+    } catch {
+      /* ignore */
+    }
+  };
+
+  const visibleCount = activeRoute
+    ? activeRoute.stopIds.length
+    : filteredPlaces.length + filteredServices.length + (showEvents ? events.length : 0);
 
   return (
     <section className="mapa-explorer" aria-label="Mapa del Parque del Retiro">
@@ -405,9 +610,9 @@ export default function MapExplorer({
         <div className="mapa-toolbar__row">
           <p className="mapa-toolbar__count" aria-live="polite">
             {visibleCount} {visibleCount === 1 ? 'punto' : 'puntos'} visibles
-            {category !== 'todos' ? ' · filtro activo' : ''}
+            {activeRoute ? ' · ruta activa' : category !== 'todos' ? ' · filtro activo' : ''}
           </p>
-          {category === 'todos' ? (
+          {!activeRoute && category === 'todos' ? (
             <label className="mapa-toolbar__toggle">
               <input
                 type="checkbox"
@@ -417,16 +622,80 @@ export default function MapExplorer({
               Mostrar servicios
             </label>
           ) : null}
+          {!activeRoute ? (
+            <label className="mapa-toolbar__toggle">
+              <input
+                type="checkbox"
+                checked={showEvents}
+                onChange={(event) => setShowEvents(event.target.checked)}
+              />
+              Eventos
+            </label>
+          ) : null}
         </div>
-        <CategoryFilters
-          active={category}
-          counts={counts}
-          onChange={(next) => {
-            setCategory(next);
-            setSelection(null);
-          }}
-        />
+        {!activeRoute ? (
+          <CategoryFilters
+            active={category}
+            counts={counts}
+            onChange={(next) => {
+              setCategory(next);
+              setSelection(null);
+            }}
+          />
+        ) : null}
       </div>
+
+      {activeRoute ? (
+        <div className="route-active-card" role="region" aria-label="Ruta activa">
+          <div>
+            <strong>{activeRoute.name}</strong>
+            <p>
+              {formatDuration(activeRoute.estimatedDurationMinutes)} ·{' '}
+              {formatDistance(activeRoute.approximateDistanceMeters)} ·{' '}
+              {activeRoute.stopIds.length} paradas
+            </p>
+            <p className="route-active-card__note">
+              Recorrido orientativo. Sin navegación giro a giro. Condiciones del parque pueden
+              variar.
+            </p>
+          </div>
+          <div className="route-active-card__actions">
+            <button type="button" className="btn btn--secondary" onClick={() => void locateMe()}>
+              Usar mi ubicación
+            </button>
+            <button type="button" className="btn btn--secondary" onClick={() => void shareActiveRoute()}>
+              Compartir
+            </button>
+            <button type="button" className="btn" onClick={clearRoute}>
+              Cerrar ruta
+            </button>
+          </div>
+          <ol className="route-active-card__stops">
+            {activeRoute.stopIds.map((stopId, index) => {
+              const place = places.find((item) => item.id === stopId);
+              if (!place) return null;
+              return (
+                <li key={`${stopId}-${index}`}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSelection({ kind: 'place', id: place.id });
+                      mapRef.current?.easeTo({
+                        center: place.coordinates,
+                        zoom: 16.5,
+                        duration: 400,
+                        essential: true,
+                      });
+                    }}
+                  >
+                    {index + 1}. {place.name}
+                  </button>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+      ) : null}
 
       <div className="mapa-canvas-wrap">
         {!ready && !mapError ? (
@@ -508,7 +777,9 @@ export default function MapExplorer({
           ) : null}
         </p>
 
-        {nearby.length > 0 ? <NearbyList items={nearby} onSelect={focusNearby} /> : null}
+        {nearby.length > 0 && !activeRoute ? (
+          <NearbyList items={nearby} onSelect={focusNearby} />
+        ) : null}
 
         {selectedPlace ? (
           <PlaceSheet
@@ -524,6 +795,20 @@ export default function MapExplorer({
             onClose={() => setSelection(null)}
             variant={isDesktop ? 'desktop' : 'mobile'}
           />
+        ) : null}
+        {selectedEvent ? (
+          <aside className={`place-sheet place-sheet--${isDesktop ? 'desktop' : 'mobile'}`}>
+            <div className="place-sheet__header">
+              <h2>{selectedEvent.title}</h2>
+              <button type="button" className="place-sheet__close" onClick={() => setSelection(null)}>
+                Cerrar
+              </button>
+            </div>
+            <p>{selectedEvent.venue}</p>
+            <a className="btn" href={withBase(baseUrl, `agenda/${selectedEvent.slug}/`)}>
+              Ver ficha
+            </a>
+          </aside>
         ) : null}
       </div>
     </section>

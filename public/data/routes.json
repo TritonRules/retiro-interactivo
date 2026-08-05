@@ -1,0 +1,545 @@
+[
+  {
+    "id": "retiro-imprescindible",
+    "slug": "retiro-imprescindible",
+    "name": "El Retiro imprescindible",
+    "shortDescription": "Los hitos más reconocibles del parque en un paseo ordenado.",
+    "description": "Recorrido orientativo por los símbolos del Retiro: entrada por Felipe IV, Parterre, Estanque Grande, Alfonso XII, Palacio de Cristal y Ángel Caído. Las distancias y tiempos son aproximados; cierres u obras pueden alterar el camino.",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "estimatedDurationMinutes": 90,
+    "difficulty": "facil",
+    "circular": false,
+    "stopIds": [
+      "puerta-de-felipe-iv",
+      "parterre-frances",
+      "estanque-grande",
+      "monumento-alfonso-xii",
+      "palacio-de-cristal",
+      "fuente-angel-caido"
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -3.68985,
+          40.41495
+        ],
+        [
+          -3.6894,
+          40.41455
+        ],
+        [
+          -3.6889,
+          40.4139
+        ],
+        [
+          -3.6884,
+          40.4134
+        ],
+        [
+          -3.6878,
+          40.41355
+        ],
+        [
+          -3.6868,
+          40.4142
+        ],
+        [
+          -3.6858,
+          40.415
+        ],
+        [
+          -3.6852,
+          40.4157
+        ],
+        [
+          -3.6846,
+          40.4164
+        ],
+        [
+          -3.684,
+          40.4169
+        ],
+        [
+          -3.6835,
+          40.41715
+        ],
+        [
+          -3.6831,
+          40.4173
+        ],
+        [
+          -3.6824,
+          40.4168
+        ],
+        [
+          -3.6819,
+          40.4162
+        ],
+        [
+          -3.6817,
+          40.4155
+        ],
+        [
+          -3.6819,
+          40.4148
+        ],
+        [
+          -3.6821,
+          40.414
+        ],
+        [
+          -3.6822,
+          40.4136
+        ],
+        [
+          -3.6823,
+          40.4128
+        ],
+        [
+          -3.6825,
+          40.4118
+        ],
+        [
+          -3.68254,
+          40.41105
+        ]
+      ]
+    },
+    "startPlaceId": "puerta-de-felipe-iv",
+    "endPlaceId": "fuente-angel-caido",
+    "accessibilityNote": "Tramos peatonales amplios en orillas del estanque; no se afirma accesibilidad total sin verificación in situ.",
+    "sourceName": "Retiro Interactivo — trazado editorial sobre caminos OSM",
+    "sourceUrl": "https://www.openstreetmap.org/#map=16/40.4155/-3.6835",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified",
+    "approximateDistanceMeters": 1590
+  },
+  {
+    "id": "retiro-en-una-hora",
+    "slug": "retiro-en-una-hora",
+    "name": "El Retiro en una hora",
+    "shortDescription": "Visita compacta a los grandes hitos centrales en unos 60 minutos.",
+    "description": "Ruta corta centrada en el Estanque Grande, Alfonso XII y los palacios expositivos. Pensada para quien dispone de poco tiempo. Duración y distancia son aproximadas.",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "estimatedDurationMinutes": 60,
+    "difficulty": "facil",
+    "circular": false,
+    "stopIds": [
+      "puerta-de-espana",
+      "estanque-ochavado",
+      "estanque-grande",
+      "monumento-alfonso-xii",
+      "palacio-de-velazquez",
+      "palacio-de-cristal"
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -3.68863,
+          40.41668
+        ],
+        [
+          -3.6878,
+          40.4164
+        ],
+        [
+          -3.687,
+          40.416
+        ],
+        [
+          -3.6862,
+          40.4158
+        ],
+        [
+          -3.68582,
+          40.41591
+        ],
+        [
+          -3.6852,
+          40.4163
+        ],
+        [
+          -3.6845,
+          40.4168
+        ],
+        [
+          -3.6839,
+          40.4171
+        ],
+        [
+          -3.6835,
+          40.41715
+        ],
+        [
+          -3.6831,
+          40.4173
+        ],
+        [
+          -3.6825,
+          40.4167
+        ],
+        [
+          -3.6821,
+          40.416
+        ],
+        [
+          -3.68198,
+          40.4152
+        ],
+        [
+          -3.682,
+          40.4144
+        ],
+        [
+          -3.68206,
+          40.4136
+        ]
+      ]
+    },
+    "startPlaceId": "puerta-de-espana",
+    "endPlaceId": "palacio-de-cristal",
+    "accessibilityNote": "Superficie mayoritariamente peatonal; verificar bordillos y obras el día de la visita.",
+    "sourceName": "Retiro Interactivo — trazado editorial sobre caminos OSM",
+    "sourceUrl": "https://www.openstreetmap.org/#map=16/40.4155/-3.6835",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified",
+    "approximateDistanceMeters": 982
+  },
+  {
+    "id": "retiro-con-ninos",
+    "slug": "retiro-con-ninos",
+    "name": "El Retiro con niños",
+    "shortDescription": "Paradas familiares: títeres, Casa de Fieras, Casita del Pescador y estanque.",
+    "description": "Recorrido orientativo pensado para visitas con niños, combinando cultura familiar, zonas de juego próximas y el Estanque Grande. No garantiza apertura de espectáculos ni áreas infantiles concretas.",
+    "audience": [
+      "familias"
+    ],
+    "estimatedDurationMinutes": 75,
+    "difficulty": "facil",
+    "circular": false,
+    "stopIds": [
+      "teatro-titeres",
+      "biblioteca-eugenio-trias",
+      "antigua-casa-de-fieras-foso",
+      "casita-del-pescador",
+      "fuente-de-los-galapagos",
+      "estanque-grande"
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -3.6866962,
+          40.4187197
+        ],
+        [
+          -3.6798,
+          40.4178
+        ],
+        [
+          -3.6789381,
+          40.4167401
+        ],
+        [
+          -3.678996,
+          40.416424
+        ],
+        [
+          -3.6792,
+          40.417
+        ],
+        [
+          -3.68,
+          40.4178
+        ],
+        [
+          -3.681,
+          40.4186
+        ],
+        [
+          -3.6809791,
+          40.4205924
+        ],
+        [
+          -3.683,
+          40.419
+        ],
+        [
+          -3.6845,
+          40.4188
+        ],
+        [
+          -3.6854771,
+          40.418621
+        ],
+        [
+          -3.6848,
+          40.418
+        ],
+        [
+          -3.6842,
+          40.4175
+        ],
+        [
+          -3.6839322,
+          40.4171511
+        ]
+      ]
+    },
+    "startPlaceId": "teatro-titeres",
+    "endPlaceId": "estanque-grande",
+    "accessibilityNote": "Zonas infantiles y espectáculos dependen de horarios; no se afirma accesibilidad universal.",
+    "sourceName": "Retiro Interactivo — trazado editorial sobre caminos OSM",
+    "sourceUrl": "https://www.openstreetmap.org/#map=16/40.4155/-3.6835",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified",
+    "approximateDistanceMeters": 1959
+  },
+  {
+    "id": "ruta-fotografica",
+    "slug": "ruta-fotografica",
+    "name": "Ruta fotográfica",
+    "shortDescription": "Secuencia de vistas icónicas: Ángel Caído, Cristal, Velázquez, Alfonso XII y Rosaleda.",
+    "description": "Itinerario orientativo para fotografiar hitos y reflejos del Retiro. La luz y la floración cambian según la hora y la estación; no hay garantía de acceso interior a edificios.",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "estimatedDurationMinutes": 100,
+    "difficulty": "facil",
+    "circular": false,
+    "stopIds": [
+      "fuente-angel-caido",
+      "jardin-de-vivaces",
+      "palacio-de-cristal",
+      "estanque-palacio-cristal",
+      "palacio-de-velazquez",
+      "monumento-alfonso-xii",
+      "la-rosaleda"
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -3.68254,
+          40.41105
+        ],
+        [
+          -3.6822,
+          40.4112
+        ],
+        [
+          -3.68178,
+          40.4112
+        ],
+        [
+          -3.6819,
+          40.412
+        ],
+        [
+          -3.682,
+          40.4128
+        ],
+        [
+          -3.68206,
+          40.4136
+        ],
+        [
+          -3.68141,
+          40.41372
+        ],
+        [
+          -3.6817,
+          40.4144
+        ],
+        [
+          -3.68198,
+          40.4152
+        ],
+        [
+          -3.6824,
+          40.416
+        ],
+        [
+          -3.683,
+          40.4167
+        ],
+        [
+          -3.6831,
+          40.4173
+        ],
+        [
+          -3.6838,
+          40.4168
+        ],
+        [
+          -3.6845,
+          40.416
+        ],
+        [
+          -3.6852,
+          40.415
+        ],
+        [
+          -3.6858,
+          40.4142
+        ],
+        [
+          -3.6864,
+          40.4134
+        ],
+        [
+          -3.6868,
+          40.4128
+        ]
+      ]
+    },
+    "startPlaceId": "fuente-angel-caido",
+    "endPlaceId": "la-rosaleda",
+    "accessibilityNote": "Algunos encuadres requieren salirse del eje principal; verificar terreno.",
+    "sourceName": "Retiro Interactivo — trazado editorial sobre caminos OSM",
+    "sourceUrl": "https://www.openstreetmap.org/#map=16/40.4155/-3.6835",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified",
+    "approximateDistanceMeters": 1415
+  },
+  {
+    "id": "caminar-o-correr",
+    "slug": "caminar-o-correr",
+    "name": "Caminar o correr por El Retiro",
+    "shortDescription": "Circuito orientativo por paseos del parque. No es una instalación deportiva homologada.",
+    "description": "Recorrido circular orientativo por paseos peatonales del Retiro (España–Paraguay–Chile–Fernán Núñez–Chopera). Es una guía de ambiente, no un circuito homologado ni un plan de entrenamiento. Condiciones, cierres y obras pueden modificar el trazado.",
+    "audience": [
+      "deportistas",
+      "locales"
+    ],
+    "estimatedDurationMinutes": 50,
+    "difficulty": "moderada",
+    "circular": true,
+    "stopIds": [
+      "puerta-de-espana",
+      "paseo-de-paraguay",
+      "paseo-de-chile",
+      "paseo-fernan-nunez",
+      "la-chopera-entorno",
+      "fuente-angel-caido"
+    ],
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -3.68863,
+          40.41668
+        ],
+        [
+          -3.6878,
+          40.4158
+        ],
+        [
+          -3.68726,
+          40.41474
+        ],
+        [
+          -3.6865,
+          40.4154
+        ],
+        [
+          -3.6855,
+          40.4162
+        ],
+        [
+          -3.6845,
+          40.4169
+        ],
+        [
+          -3.6835,
+          40.4172
+        ],
+        [
+          -3.6825,
+          40.4174
+        ],
+        [
+          -3.68182,
+          40.4176
+        ],
+        [
+          -3.6808,
+          40.417
+        ],
+        [
+          -3.6798,
+          40.4162
+        ],
+        [
+          -3.67954,
+          40.41405
+        ],
+        [
+          -3.6805,
+          40.4132
+        ],
+        [
+          -3.682,
+          40.4124
+        ],
+        [
+          -3.684,
+          40.412
+        ],
+        [
+          -3.68622,
+          40.4122
+        ],
+        [
+          -3.6855,
+          40.4116
+        ],
+        [
+          -3.684,
+          40.4112
+        ],
+        [
+          -3.68254,
+          40.41105
+        ],
+        [
+          -3.684,
+          40.4118
+        ],
+        [
+          -3.686,
+          40.413
+        ],
+        [
+          -3.68726,
+          40.41474
+        ],
+        [
+          -3.688,
+          40.4158
+        ],
+        [
+          -3.68863,
+          40.41668
+        ]
+      ]
+    },
+    "startPlaceId": "puerta-de-espana",
+    "endPlaceId": "puerta-de-espana",
+    "accessibilityNote": "Recorrido orientativo para caminar o correr; no es pista homologada ni afirma accesibilidad total.",
+    "sourceName": "Retiro Interactivo — trazado editorial sobre caminos OSM",
+    "sourceUrl": "https://www.openstreetmap.org/#map=16/40.4155/-3.6835",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified",
+    "approximateDistanceMeters": 3119
+  }
+]

@@ -5,7 +5,7 @@ import { siteConfig } from '../config/site';
 
 <BaseLayout
   title="Acerca del proyecto"
-  description="Qué es Retiro Interactivo, fuentes cartográficas y estado de esta versión inicial."
+  description="Qué es Retiro Interactivo, fuentes, rutas, agenda y estado de la Fase 2B."
   canonicalPath="/acerca-de/"
 >
   <article class="page prose">
@@ -18,8 +18,16 @@ import { siteConfig } from '../config/site';
 
     <h2>Estado actual</h2>
     <p>
-      Esta es la <strong>{siteConfig.phase}</strong>: prototipo instalable con mapa, filtros,
-      servicios básicos, geolocalización voluntaria y PWA. No es todavía el producto completo.
+      Esta es la <strong>{siteConfig.phase}</strong>: mapa, servicios, geolocalización voluntaria,
+      PWA, cinco rutas temáticas y agenda generada desde datos abiertos municipales. Beta privada
+      técnica pendiente de revisión humana; no es el producto completo.
+    </p>
+
+    <h2>Agenda y atribución</h2>
+    <p>
+      Los eventos publicados proceden de datasets del Ayuntamiento de Madrid (CC BY 4.0) y se
+      filtran al ámbito del Parque del Retiro. La agenda no es exhaustiva: consulta siempre el
+      enlace oficial de cada ficha.
     </p>
 
     <h2>Privacidad de la ubicación</h2>

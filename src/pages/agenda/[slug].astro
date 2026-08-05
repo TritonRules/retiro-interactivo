@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { events, getEventBySlug } from '../../utils/events';
+import { formatMadridDateTime } from '../../utils/datetime';
+
+export function getStaticPaths() {
+  return events
+    .filter((event) => event.status === 'published' || event.status === 'expired')
+    .map((event) => ({ params: { slug: event.slug } }));
+}
+
+const slug = Astro.params.slug ?? '';
+const event = getEventBySlug(slug);
+if (!event) {
+  throw new Error(`Evento no encontrado: ${slug}`);
+}
+
+const base = import.meta.env.BASE_URL;
+const isExpired =
+  event.status === 'expired' || Date.parse(event.expiresAt) < Date.now();
+
+const robots =
+  isExpired || event.status === 'needs-review' || event.status === 'draft'
+    ? 'noindex,follow'
+    : 'index,follow';
+---
+
+<BaseLayout
+  title={event.title}
+  description={event.shortDescription}
+  canonicalPath={`/agenda/${event.slug}/`}
+  robots={robots}
+>
+  <div class="page">
+    <nav class="crumbs" aria-label="Migas">
+      <a href={base}>Mapa</a>
+      <span>/</span>
+      <a href={`${base}agenda/`}>Agenda</a>
+      <span>/</span>
+      <span aria-current="page">{event.title}</span>
+    </nav>
+
+    <header class="page-hero">
+      {
+        isExpired ? (
+          <p class="badge">Evento caducado o fuera de agenda principal</p>
+        ) : null
+      }
+      <h1>{event.title}</h1>
+      <p>{event.shortDescription}</p>
+      <p class="meta">
+        Inicio: {
+          formatMadridDateTime(event.startAt, { dateStyle: 'full', timeStyle: 'short' })
+        }
+        {
+          event.endAt
+            ? ` · Fin: ${formatMadridDateTime(event.endAt, { dateStyle: 'full', timeStyle: 'short' })}`
+            : ''
+        }
+      </p>
+      <p class="meta">Lugar: {event.venue}</p>
+      {event.priceNote ? <p class="meta">{event.priceNote}</p> : null}
+      <p class="actions">
+        {
+          event.registrationUrl ? (
+            <a class="btn" href={event.registrationUrl} rel="noopener noreferrer" target="_blank">
+              Fuente oficial
+            </a>
+          ) : null
+        }
+        {
+          event.coordinates ? (
+            <a class="btn btn--secondary" href={`${base}?evento=${event.slug}`}>
+              Ver en el mapa
+            </a>
+          ) : null
+        }
+      </p>
+    </header>
+
+    <p class="source">
+      Fuente: {event.sourceName} (nivel {event.sourceTier}). Confianza: {event.confidence}.
+      Comprobado: {event.lastCheckedAt}.
+    </p>
+
+    {
+      !isExpired && event.status === 'published' ? (
+        <script
+          is:inline
+          type="application/ld+json"
+          set:html={JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Event',
+            name: event.title,
+            description: event.shortDescription,
+            startDate: event.startAt,
+            endDate: event.endAt,
+            eventStatus: 'https://schema.org/EventScheduled',
+            eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+            location: {
+              '@type': 'Place',
+              name: event.venue,
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Madrid',
+                addressCountry: 'ES',
+              },
+            },
+            url: new URL(`${base}agenda/${event.slug}/`, Astro.site).href,
+          })}
+        />
+      ) : null
+    }
+  </div>
+</BaseLayout>
+
+<style>
+  .crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+    font-size: 0.9rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: var(--space-1) var(--space-3);
+    background: var(--color-accent-soft);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+  }
+  .meta {
+    color: var(--color-ink-muted);
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  .source {
+    margin-top: var(--space-8);
+    color: var(--color-ink-muted);
+    font-size: 0.85rem;
+  }
+</style>

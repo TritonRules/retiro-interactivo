@@ -15,8 +15,7 @@
         "slug": "estanque-grande",
         "name": "Estanque Grande del Retiro",
         "category": "iconico",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -33,8 +32,7 @@
         "slug": "monumento-alfonso-xii",
         "name": "Monumento a Alfonso XII",
         "category": "monumento",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -51,8 +49,7 @@
         "slug": "palacio-de-cristal",
         "name": "Palacio de Cristal",
         "category": "cultura",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -69,8 +66,7 @@
         "slug": "estanque-palacio-cristal",
         "name": "Estanque del Palacio de Cristal",
         "category": "naturaleza",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -87,8 +83,7 @@
         "slug": "palacio-de-velazquez",
         "name": "Palacio de Velázquez",
         "category": "cultura",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -105,8 +100,7 @@
         "slug": "fuente-angel-caido",
         "name": "Fuente del Ángel Caído",
         "category": "monumento",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -123,8 +117,7 @@
         "slug": "la-rosaleda",
         "name": "La Rosaleda",
         "category": "naturaleza",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -141,8 +134,7 @@
         "slug": "jardines-cecilio-rodriguez",
         "name": "Jardines de Cecilio Rodríguez",
         "category": "naturaleza",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -159,8 +151,7 @@
         "slug": "casita-del-pescador",
         "name": "Casita del Pescador",
         "category": "iconico",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -177,8 +168,7 @@
         "slug": "montana-artificial",
         "name": "Montaña Artificial",
         "category": "naturaleza",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -195,8 +185,7 @@
         "slug": "teatro-titeres",
         "name": "Teatro de Títeres de El Retiro",
         "category": "familias",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -213,8 +202,7 @@
         "slug": "biblioteca-eugenio-trias",
         "name": "Biblioteca Pública Municipal Eugenio Trías — Casa de Fieras",
         "category": "cultura",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -231,8 +219,7 @@
         "slug": "casa-de-vacas",
         "name": "Centro Cultural Casa de Vacas",
         "category": "cultura",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -249,8 +236,7 @@
         "slug": "parterre-frances",
         "name": "Parterre Francés",
         "category": "naturaleza",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -267,8 +253,7 @@
         "slug": "ahuehuete-del-parterre",
         "name": "Ahuehuete del Parterre",
         "category": "naturaleza",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -285,8 +270,7 @@
         "slug": "paseo-de-la-argentina",
         "name": "Paseo de la Argentina — Paseo de las Estatuas",
         "category": "paseo",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -303,8 +287,7 @@
         "slug": "bosque-del-recuerdo",
         "name": "Bosque del Recuerdo",
         "category": "naturaleza",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -321,8 +304,7 @@
         "slug": "fuente-de-la-alcachofa",
         "name": "Fuente de la Alcachofa",
         "category": "monumento",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -339,8 +321,7 @@
         "slug": "fuente-de-los-galapagos",
         "name": "Fuente de los Galápagos",
         "category": "monumento",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
       }
     },
     {
@@ -357,8 +338,279 @@
         "slug": "puerta-de-felipe-iv",
         "name": "Puerta de Felipe IV",
         "category": "acceso",
-        "status": "verified",
-        "kind": "place"
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684395,
+          40.420533
+        ]
+      },
+      "properties": {
+        "id": "fuente-de-la-salud",
+        "slug": "fuente-de-la-salud",
+        "name": "Fuente de la Salud",
+        "category": "monumento",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.678278,
+          40.414308
+        ]
+      },
+      "properties": {
+        "id": "fuente-de-las-gaviotas",
+        "slug": "fuente-de-las-gaviotas",
+        "name": "Fuente de las Gaviotas",
+        "category": "monumento",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.682078,
+          40.417156
+        ]
+      },
+      "properties": {
+        "id": "fuente-de-la-sardana",
+        "slug": "fuente-de-la-sardana",
+        "name": "Fuente de la Sardana",
+        "category": "monumento",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68582,
+          40.415911
+        ]
+      },
+      "properties": {
+        "id": "estanque-ochavado",
+        "slug": "estanque-ochavado",
+        "name": "Estanque Ochavado",
+        "category": "naturaleza",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.678996,
+          40.416424
+        ]
+      },
+      "properties": {
+        "id": "antigua-casa-de-fieras-foso",
+        "slug": "antigua-casa-de-fieras-foso",
+        "name": "Antigua Casa de Fieras (Foso)",
+        "category": "naturaleza",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.685018,
+          40.419456
+        ]
+      },
+      "properties": {
+        "id": "quiosco-de-musica",
+        "slug": "quiosco-de-musica",
+        "name": "Quiosco de Música",
+        "category": "cultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.685477,
+          40.418627
+        ]
+      },
+      "properties": {
+        "id": "plaza-de-nicaragua",
+        "slug": "plaza-de-nicaragua",
+        "name": "Plaza de Nicaragua",
+        "category": "paseo",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.681818,
+          40.417604
+        ]
+      },
+      "properties": {
+        "id": "paseo-de-chile",
+        "slug": "paseo-de-chile",
+        "name": "Paseo de Chile",
+        "category": "paseo",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684514,
+          40.418707
+        ]
+      },
+      "properties": {
+        "id": "paseo-de-colombia",
+        "slug": "paseo-de-colombia",
+        "name": "Paseo de Colombia",
+        "category": "paseo",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.687259,
+          40.414744
+        ]
+      },
+      "properties": {
+        "id": "paseo-de-paraguay",
+        "slug": "paseo-de-paraguay",
+        "name": "Paseo de Paraguay",
+        "category": "paseo",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.679542,
+          40.414052
+        ]
+      },
+      "properties": {
+        "id": "paseo-fernan-nunez",
+        "slug": "paseo-fernan-nunez",
+        "name": "Paseo de Fernán Núñez",
+        "category": "paseo",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.686218,
+          40.412203
+        ]
+      },
+      "properties": {
+        "id": "la-chopera-entorno",
+        "slug": "la-chopera",
+        "name": "La Chopera",
+        "category": "paseo",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.688628,
+          40.416676
+        ]
+      },
+      "properties": {
+        "id": "puerta-de-espana",
+        "slug": "puerta-de-espana",
+        "name": "Puerta de España",
+        "category": "acceso",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68178,
+          40.411195
+        ]
+      },
+      "properties": {
+        "id": "jardin-de-vivaces",
+        "slug": "jardin-de-vivaces",
+        "name": "Jardín de Vivaces",
+        "category": "naturaleza",
+        "status": "needs-review"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.690689,
+          40.411487
+        ]
+      },
+      "properties": {
+        "id": "real-jardin-botanico",
+        "slug": "real-jardin-botanico",
+        "name": "Real Jardín Botánico",
+        "category": "naturaleza",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.691309,
+          40.414461
+        ]
+      },
+      "properties": {
+        "id": "san-jeronimo-el-real",
+        "slug": "san-jeronimo-el-real",
+        "name": "San Jerónimo el Real",
+        "category": "monumento",
+        "status": "verified"
       }
     }
   ]

@@ -15,4 +15,14 @@ describe('smoke source pages', () => {
     expect(existsSync(join(process.cwd(), 'src/pages/acerca-de.astro'))).toBe(true);
     expect(existsSync(join(process.cwd(), 'src/pages/lugares/[slug].astro'))).toBe(true);
   });
+
+  it('incluye rutas y agenda', () => {
+    expect(existsSync(join(process.cwd(), 'src/pages/rutas/index.astro'))).toBe(true);
+    expect(existsSync(join(process.cwd(), 'src/pages/rutas/[slug].astro'))).toBe(true);
+    expect(existsSync(join(process.cwd(), 'src/pages/agenda/index.astro'))).toBe(true);
+    expect(existsSync(join(process.cwd(), 'src/pages/agenda/[slug].astro'))).toBe(true);
+    const index = readFileSync(join(process.cwd(), 'src/pages/index.astro'), 'utf8');
+    expect(index).toContain('initialRouteSlug');
+    expect(index).toContain('ruta');
+  });
 });

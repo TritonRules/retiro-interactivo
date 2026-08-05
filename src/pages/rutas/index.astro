@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { routes, formatDistance, formatDuration } from '../../utils/routes';
+import { siteConfig } from '../../config/site';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="Rutas"
+  description="Cinco rutas temáticas por el Parque del Retiro: imprescindibles, una hora, con niños, fotográfica y caminar o correr."
+  canonicalPath="/rutas/"
+>
+  <div class="page">
+    <header class="page-hero">
+      <p class="eyebrow">Recorridos orientativos</p>
+      <h1>Rutas por El Retiro</h1>
+      <p>
+        Cinco itinerarios con paradas del catálogo y trazado sobre caminos del parque.
+        Duraciones y distancias son aproximadas. Cierres, obras o condiciones pueden modificar el recorrido.
+      </p>
+    </header>
+
+    <ul class="card-list">
+      {
+        routes.map((route) => (
+          <li class="content-card">
+            <h2>
+              <a href={`${base}rutas/${route.slug}/`}>{route.name}</a>
+            </h2>
+            <p>{route.shortDescription}</p>
+            <p class="meta">
+              {formatDuration(route.estimatedDurationMinutes)} ·{' '}
+              {formatDistance(route.approximateDistanceMeters)} ·{' '}
+              {route.stopIds.length} paradas ·{' '}
+              {route.circular ? 'Circular' : 'Lineal'} ·{' '}
+              {route.difficulty === 'facil' ? 'Fácil' : 'Moderada'}
+            </p>
+            <p class="actions">
+              <a class="btn" href={`${base}rutas/${route.slug}/`}>
+                Ver ficha
+              </a>
+              <a class="btn btn--secondary" href={`${base}?ruta=${route.slug}`}>
+                Ver en el mapa
+              </a>
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="footnote">
+      {siteConfig.name} no ofrece navegación giro a giro. «Caminar o correr» es un recorrido
+      orientativo, no una instalación deportiva homologada.
+    </p>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    margin-bottom: var(--space-6);
+  }
+  .eyebrow {
+    margin: 0 0 var(--space-2);
+    color: var(--color-ink-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .card-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-4);
+  }
+  .content-card {
+    padding: var(--space-5);
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+  .content-card h2 {
+    margin: 0 0 var(--space-2);
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+  }
+  .content-card h2 a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .meta {
+    color: var(--color-ink-muted);
+    font-size: 0.92rem;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+  }
+  .footnote {
+    margin-top: var(--space-8);
+    color: var(--color-ink-muted);
+    font-size: 0.9rem;
+  }
+</style>

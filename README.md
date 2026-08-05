@@ -2,7 +2,9 @@
 
 Mapa digital **mobile first** del Parque del Retiro de Madrid. Experiencia visual de exploración (metáfora de mapa de parque temático), no una web turística convencional.
 
-**Estado:** Fase 2A — PWA, geolocalización voluntaria, servicios y endurecimiento móvil.
+**Estado:** Fase 2B — contenido ampliado, cinco rutas temáticas, agenda oficial y pipeline de eventos.
+
+**GitHub (personal):** https://github.com/TritonRules
 
 ## Stack técnico
 
@@ -13,6 +15,7 @@ Mapa digital **mobile first** del Parque del Retiro de Madrid. Experiencia visua
 - PWA: `@vite-pwa/astro` + Workbox
 - Datos en JSON / GeoJSON dentro del repositorio
 - Validación con Zod
+- Pipeline editorial de eventos (CLI local)
 - Despliegue previsto en GitHub Pages (`SITE` / `BASE`)
 
 ## Requisitos locales
@@ -22,94 +25,98 @@ Mapa digital **mobile first** del Parque del Retiro de Madrid. Experiencia visua
 
 ```bash
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
-```
-
-Si instalas dependencias y aparece conflicto de peer de Astro con `@vite-pwa/astro`:
-
-```bash
 npm install --legacy-peer-deps
 ```
 
-## Instalación y ejecución
+## Comandos principales
 
 ```bash
-npm install --legacy-peer-deps
-npm run dev
-```
-
-Base por defecto: `/retiro-interactivo/`. En raíz local:
-
-```bash
-BASE=/ SITE=http://localhost:4321 npm run dev
-```
-
-## Validación y build
-
-```bash
-npm run validate:data   # 20 lugares + ≥15 servicios
+npm run validate:data
 npm run check
 npm run lint
 npm run test
 npm run build
-npm run preview
-npm run test:e2e        # documenta procedimiento manual si no hay Playwright
+npm run routes:validate
+npm run content:report
+npm run events:collect
+npm run events:normalize
+npm run events:validate
+npm run events:build
+npm run events:report
 ```
 
-## Mi ubicación (privacidad)
-
-- El permiso **solo** se pide al pulsar el control ◎ («Mi ubicación»).
-- Se usa `navigator.geolocation.getCurrentPosition` en HTTPS/localhost.
-- La posición **no** se guarda en `localStorage`, cookies, logs ni URLs.
-- **No** se envía a servidores externos.
-- Dentro del Retiro: marcador propio, círculo de precisión y lista «Lo más cercano» (distancias aproximadas, no rutas).
-- Fuera del Retiro: mensaje claro y «Volver al parque»; sin recomendaciones falsas.
-- Puedes quitar la ubicación con el control ✕.
+Base por defecto: `/retiro-interactivo/`. Local en raíz: `BASE=/ SITE=http://localhost:4321 npm run dev`.
 
 ## Cómo añadir un lugar
 
 1. Edita `src/data/places.json` (`Place` en `src/types/place.ts`).
-2. `id`/`slug` únicos; coordenadas en el Retiro; `sourceUrl` real.
-3. Regenera `public/data/places.geojson` si aplica.
-4. `npm run validate:data && npm run build`.
+2. `id`/`slug` únicos; coordenadas en Retiro o `area: "entorno"`; fuente y `lastVerifiedAt`.
+3. No inventes horarios/precios; usa `needs-review` si hay duda.
+4. Opcional: deja candidatos en `data/candidates/` (no se publican solos).
+5. `npm run validate:data && npm run content:report && npm run build`.
 
-## Cómo añadir un servicio
+## Cómo añadir o modificar una ruta
 
-1. Edita `src/data/services.json` (`ParkService` / `ServiceType`).
-2. Distingue agua potable de fuentes ornamentales.
-3. No inventes horarios ni operatividad; usa `needs-review` si duda.
-4. Regenera `public/data/services.geojson`.
-5. `npm run validate:data`.
+1. Edita `src/data/routes.json` (`ParkRoute` en `src/types/route.ts`).
+2. `stopIds` deben existir en lugares; `geometry` LineString sobre caminos razonables.
+3. Distancia/duración aproximadas; avisar que no hay navegación giro a giro.
+4. `npm run routes:validate && npm run validate:data`.
+5. Abrir en mapa con `?ruta=<slug>`.
 
-## PWA y responsive
+## Pipeline de eventos
 
-- Guía PWA: `docs/pwa-testing.md`
-- QA responsive: `docs/qa-phase-2a.md`
-- Rendimiento mapa: `docs/performance.md`
+```bash
+npm run events:build    # collect → normalize → dedupe → validate → publish atómico → report
+npm run events:report   # resumen del último informe
+```
 
-## Variables `SITE` y `BASE`
+- Fuentes en `automation/sources/source-registry.yml`.
+- Caché cruda en `automation/cache/` (gitignored).
+- Publica `src/data/events.json` y `public/data/events.json` solo si la validación pasa.
+- Ante fallo de red o lista vacía inesperada: **se conserva la última publicación válida**.
 
-Usadas en `astro.config.mjs` y en GitHub Actions. Ejemplos:
+### Estados de evento
 
-- Pages: `SITE=https://usuario.github.io` `BASE=/retiro-interactivo`
-- Local raíz: `SITE=http://localhost:4321` `BASE=/`
+| Estado | Uso |
+| --- | --- |
+| `published` | Visible en agenda si no ha caducado |
+| `expired` | Historial / noindex; fuera de «próximos» |
+| `needs-review` / `draft` | No auto-publicar en MVP (niveles C/D) |
+| `cancelled` / `postponed` | Reservados cuando la fuente lo indique |
 
-## Limitaciones conocidas
+### Revisión diaria (Mac Mini / OpenCloud) — sin commit automático
 
-- Offline sin teselas = mapa incompleto.
-- `@vite-pwa/astro` peer oficial ≤ Astro 5 (workaround legacy-peer-deps).
-- Accesibilidad/horarios reales pendientes de verificación in situ.
-- Sin rutas, agenda ni expansión a 100 fichas (Fase 2B).
+```bash
+cd /Users/open-ia-01/Company/Repos/retiro-interactivo
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
+npm ci --legacy-peer-deps
+npm run events:build
+npm run validate:data
+npm run check
+npm run build
+# Revisar reports/event-build-report.json y diff humano antes de cualquier commit
+```
 
-## Fase 2B (pendiente)
+No instalar cron/launchd sin autorización. No hacer push automático.
 
-- 60–100 fichas, cinco rutas, esquema de eventos, agente recolector de fuentes.
+## Candidatos editoriales
+
+- Lugares: `data/candidates/places-candidates.json` + `automation/content/*`
+- Eventos: `data/candidates/events-candidates.json` tras `events:normalize`
+- Nunca mezclar candidatos con publicados sin validación editorial.
+
+## Privacidad de ubicación
+
+- Solo tras gesto ◎; sin almacenamiento ni envío; ✕ para quitar.
+- Con ruta activa: ubicación solo para proximidad, no para navegación.
 
 ## Documentación
 
-- `docs/master-product.md`
-- `docs/implementation-log.md`
+- `docs/content-model.md`
+- `docs/routes.md`
+- `docs/event-pipeline.md`
+- `docs/event-editorial-policy.md`
 - `docs/data-sources.md`
-- `docs/poi-review.md`
-- `docs/performance.md`
-- `docs/qa-phase-2a.md`
-- `docs/pwa-testing.md`
+- `docs/qa-phase-2b.md`
+- `docs/beta-readiness.md`
+- `docs/implementation-log.md`

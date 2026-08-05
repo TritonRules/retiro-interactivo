@@ -1,0 +1,322 @@
+{
+  "ranAt": "2026-08-05T20:27:55.027Z",
+  "offline": false,
+  "steps": {
+    "collect": "ok",
+    "normalize": "ok",
+    "dedupe": "ok",
+    "validate": "ok",
+    "publish": "ok"
+  },
+  "added": [],
+  "changed": [
+    "evt-50346030",
+    "evt-50104191",
+    "evt-12048589",
+    "evt-12803572",
+    "evt-12802602",
+    "evt-12404595",
+    "evt-50334552",
+    "evt-50147340",
+    "evt-50105660",
+    "evt-50362790",
+    "evt-50289667",
+    "evt-11769477",
+    "evt-11769479",
+    "evt-11769616",
+    "evt-50265824",
+    "evt-50146307",
+    "evt-12803577",
+    "evt-11769587",
+    "evt-11769591",
+    "evt-50266169",
+    "evt-12803575",
+    "evt-11769588",
+    "evt-50265354",
+    "evt-50343435",
+    "evt-50145563",
+    "evt-50221891",
+    "evt-50265531",
+    "evt-50368535",
+    "evt-50334565",
+    "evt-50361033",
+    "evt-50343443",
+    "evt-50343647",
+    "evt-50147338",
+    "evt-50174902",
+    "evt-50362839",
+    "evt-50334559",
+    "evt-50265834",
+    "evt-12048875",
+    "evt-50145704",
+    "evt-50334544",
+    "evt-50140512",
+    "evt-50235439",
+    "evt-50334571",
+    "evt-50289806",
+    "evt-50147445",
+    "evt-50286078",
+    "evt-50334541",
+    "evt-50202480",
+    "evt-50148218",
+    "evt-50286911",
+    "evt-50334562",
+    "evt-50336051",
+    "evt-50334555",
+    "evt-50147279",
+    "evt-50343651",
+    "evt-11771314",
+    "evt-11771304",
+    "evt-50346069",
+    "evt-11771324",
+    "evt-11771315",
+    "evt-50316805",
+    "evt-50103106",
+    "evt-50235019",
+    "evt-50334568",
+    "evt-50346118",
+    "evt-50346119"
+  ],
+  "removed": [],
+  "discarded": 1342,
+  "duplicates": 67,
+  "errors": [],
+  "published": true,
+  "keptPrevious": false,
+  "discardSamples": [
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50334065",
+      "title": "10 vidas"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50366129",
+      "title": "25 años del Museo de San Isidro. Los Orígenes de Madrid"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50335115",
+      "title": "27 Generation Tour"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50369523",
+      "title": "35 edición del Festival de Cine de Madrid"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50371313",
+      "title": "Actívate en el agua: nos vamos a la piscina"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito",
+        "sin-localizacion"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50324218",
+      "title": "Actividades infantiles"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50324023",
+      "title": "Actividades infantiles"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50324053",
+      "title": "Actividades infantiles"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito",
+        "sin-localizacion"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "12130154",
+      "title": "Actividades mensuales de los centros de mayores del distrito Centro"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito",
+        "sin-localizacion"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "12263426",
+      "title": "Actividades mensuales de los centros de mayores del distrito Vicálvaro"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50369692",
+      "title": "Acto conmemorativo accidente aereo de Spain Air"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50373902",
+      "title": "Agosto contigo 2026"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50361234",
+      "title": "Agosto entre líneas: escritura creativa I"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito",
+        "sin-localizacion"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50362830",
+      "title": "Al pan, pan - Centro"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito",
+        "sin-localizacion"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50362770",
+      "title": "Alejandro y María Laura - Chamartin"
+    }
+  ],
+  "duplicateSamples": [
+    {
+      "reason": "title-date-venue",
+      "keptId": "evt-50336051",
+      "droppedId": "evt-50334548",
+      "fingerprint": "somion|2026-08-29|teatro de titeres de el retiro"
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-50346030",
+      "droppedId": "evt-50346030",
+      "sourceEventId": "50346030"
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-50104191",
+      "droppedId": "evt-50104191",
+      "sourceEventId": "50104191"
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-12803572",
+      "droppedId": "evt-12803572",
+      "sourceEventId": "12803572"
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-12048589",
+      "droppedId": "evt-12048589",
+      "sourceEventId": "12048589"
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-12802602",
+      "droppedId": "evt-12802602",
+      "sourceEventId": "12802602"
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-12404595",
+      "droppedId": "evt-12404595",
+      "sourceEventId": "12404595"
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-50334552",
+      "droppedId": "evt-50334552",
+      "sourceEventId": "50334552"
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-50147340",
+      "droppedId": "evt-50147340",
+      "sourceEventId": "50147340"
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-50105660",
+      "droppedId": "evt-50105660",
+      "sourceEventId": "50105660"
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-50362790",
+      "droppedId": "evt-50362790",
+      "sourceEventId": "50362790"
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-50289667",
+      "droppedId": "evt-50289667",
+      "sourceEventId": "50289667"
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-11769477",
+      "droppedId": "evt-11769477",
+      "sourceEventId": "11769477"
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-11769479",
+      "droppedId": "evt-11769479",
+      "sourceEventId": "11769479"
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-11769616",
+      "droppedId": "evt-11769616",
+      "sourceEventId": "11769616"
+    }
+  ],
+  "publishedCount": 66,
+  "publishedUpcoming": 66
+}

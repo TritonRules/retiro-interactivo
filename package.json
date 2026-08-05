@@ -1,9 +1,9 @@
 {
   "name": "retiro-interactivo",
   "type": "module",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
-  "description": "Mapa digital mobile first del Parque del Retiro (Fase 2A)",
+  "description": "Mapa digital mobile first del Parque del Retiro (Fase 2B)",
   "engines": {
     "node": ">=22.12.0"
   },
@@ -15,9 +15,16 @@
     "check": "astro check && tsc --noEmit && vitest run",
     "validate:data": "node scripts/validate-places.mjs",
     "test": "vitest run",
-    "test:e2e": "echo \"E2E no automatizado en este entorno. Ver docs/qa-phase-2a.md\" && exit 0",
+    "test:e2e": "echo \"E2E no automatizado en este entorno. Ver docs/qa-phase-2b.md\" && exit 0",
     "lint": "eslint \"src/**/*.{ts,tsx,astro}\" --max-warnings=0",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "events:collect": "node scripts/events-collect.mjs",
+    "events:normalize": "node scripts/events-normalize.mjs",
+    "events:validate": "node scripts/events-validate.mjs",
+    "events:build": "node scripts/events-build.mjs",
+    "events:report": "node scripts/events-report.mjs",
+    "routes:validate": "node scripts/routes-validate.mjs",
+    "content:report": "node scripts/content-report.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^6.0.2",

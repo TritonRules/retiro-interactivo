@@ -1,0 +1,66 @@
+# Registro de fuentes oficiales — Retiro Interactivo Fase 2B
+# Verificar URLs antes de habilitar auto_publish. No fijar descargas rotas.
+
+- id: madrid-agenda-general
+  name: Agenda de actividades y eventos
+  publisher: Ayuntamiento de Madrid
+  tier: A
+  format: json
+  url: "https://datos.madrid.es/egob/catalogo/300107-0-agenda-actividades-eventos.json"
+  landing_page: "https://datos.madrid.es/dataset/300107-0-agenda-actividades-eventos"
+  license: "Creative Commons Attribution 4.0 (CC BY 4.0)"
+  attribution: "Datos del Ayuntamiento de Madrid — Agenda de actividades y eventos (CC BY 4.0)"
+  refresh_frequency: daily
+  geographic_scope: madrid
+  auto_publish: true
+  enabled: true
+  last_registry_verified_at: "2026-08-05"
+  notes: "La agenda no es exhaustiva; deduplicar con el dataset cultural 100 días. Distrito Retiro por sí solo no basta para publicar."
+
+- id: madrid-agenda-cultural-100
+  name: Actividades culturales y de ocio municipal en los próximos 100 días
+  publisher: Ayuntamiento de Madrid
+  tier: A
+  format: json
+  url: "https://datos.madrid.es/egob/catalogo/206974-0-agenda-eventos-culturales-100.json"
+  landing_page: "https://datos.madrid.es/dataset/actividades-culturales-y-de-ocio-municipal-en-los-proximos-100-dias"
+  license: "Creative Commons Attribution 4.0 (CC BY 4.0)"
+  attribution: "Datos del Ayuntamiento de Madrid — Actividades culturales 100 días (CC BY 4.0)"
+  refresh_frequency: daily
+  geographic_scope: madrid
+  auto_publish: true
+  enabled: true
+  last_registry_verified_at: "2026-08-05"
+  notes: "Solapa con la agenda general; aplicar deduplicación por sourceEventId y por título+fecha+lugar."
+
+- id: distrito-retiro-agenda
+  name: Agenda de actividades del Distrito Retiro
+  publisher: Ayuntamiento de Madrid — Distrito Retiro
+  tier: B
+  format: html
+  url: ""
+  landing_page: "https://www.madrid.es/"
+  license: "Por determinar en la página oficial vigente"
+  attribution: "Ayuntamiento de Madrid — Distrito Retiro"
+  refresh_frequency: weekly
+  geographic_scope: distrito-retiro
+  auto_publish: false
+  enabled: false
+  last_registry_verified_at: "2026-08-05"
+  notes: "Fuente no estructurada. Solo candidatos/draft hasta parser específico. Distrito ≠ Parque del Retiro."
+
+- id: ciea-retiro
+  name: Centro de Información y Educación Ambiental de El Retiro
+  publisher: Ayuntamiento de Madrid
+  tier: B
+  format: html
+  url: ""
+  landing_page: "https://www.madrid.es/"
+  license: "Por determinar"
+  attribution: "Ayuntamiento de Madrid — CIEA El Retiro"
+  refresh_frequency: weekly
+  geographic_scope: parque-retiro
+  auto_publish: false
+  enabled: false
+  last_registry_verified_at: "2026-08-05"
+  notes: "Priorizar eventos con sede explícita en el CIEA / Parque del Retiro cuando exista fuente estructurada."

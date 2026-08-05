@@ -4,281 +4,981 @@
     "slug": "estanque-grande",
     "name": "Estanque Grande del Retiro",
     "category": "iconico",
-    "coordinates": [-3.6839322, 40.4171511],
+    "coordinates": [
+      -3.6839322,
+      40.4171511
+    ],
     "shortDescription": "Lámina de agua central del parque, frente al monumento a Alfonso XII.",
     "description": "El Estanque Grande es el gran espejo de agua del Retiro. Desde sus orillas se contempla el monumento a Alfonso XII y se entiende la escala del parque. Es un punto de encuentro habitual para pasear, sentarse o alquilar barcas cuando el servicio está disponible.",
-    "tags": ["agua", "vistas", "paseo", "barcas"],
+    "tags": [
+      "agua",
+      "vistas",
+      "paseo",
+      "barcas"
+    ],
     "sourceName": "OpenStreetMap — El Estanque Grande (way/4088758)",
     "sourceUrl": "https://www.openstreetmap.org/way/4088758",
     "lastVerifiedAt": "2026-08-05",
     "status": "verified",
-    "accessibility": ["Entorno peatonal amplio en las orillas principales"]
+    "accessibility": [
+      "Entorno peatonal amplio en las orillas principales"
+    ],
+    "audience": [
+      "turistas",
+      "locales",
+      "familias"
+    ],
+    "recommendedDurationMinutes": 30,
+    "area": "retiro",
+    "sourceTier": "B",
+    "bestFor": [
+      "paseo",
+      "vistas"
+    ]
   },
   {
     "id": "monumento-alfonso-xii",
     "slug": "monumento-alfonso-xii",
     "name": "Monumento a Alfonso XII",
     "category": "monumento",
-    "coordinates": [-3.6830669, 40.4173142],
+    "coordinates": [
+      -3.6830669,
+      40.4173142
+    ],
     "shortDescription": "Columnata semicircular y estatua ecuestre sobre el Estanque Grande.",
     "description": "El monumento a Alfonso XII preside la orilla este del Estanque Grande. Su hemiciclo de columnas y la estatua ecuestre lo convierten en uno de los hitos visuales más reconocibles del parque. Desde la terraza superior se abren vistas amplias sobre el agua.",
-    "tags": ["estatua", "columnata", "mirador"],
+    "tags": [
+      "estatua",
+      "columnata",
+      "mirador"
+    ],
     "sourceName": "OpenStreetMap — Monumento a Alfonso XII (way/722360391)",
     "sourceUrl": "https://www.openstreetmap.org/way/722360391",
     "lastVerifiedAt": "2026-08-05",
-    "status": "verified"
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 20,
+    "area": "retiro",
+    "sourceTier": "B"
   },
   {
     "id": "palacio-de-cristal",
     "slug": "palacio-de-cristal",
     "name": "Palacio de Cristal",
     "category": "cultura",
-    "coordinates": [-3.6820649, 40.4135979],
+    "coordinates": [
+      -3.6820649,
+      40.4135979
+    ],
     "shortDescription": "Pabellón de hierro y cristal dedicado a exposiciones temporales.",
     "description": "El Palacio de Cristal es un pabellón transparente situado junto a su estanque. Hoy forma parte del circuito expositivo del Museo Reina Sofía y suele acoger instalaciones contemporáneas. Su silueta sobre el agua es uno de los símbolos culturales del Retiro.",
-    "tags": ["exposición", "arquitectura", "museo"],
+    "tags": [
+      "exposición",
+      "arquitectura",
+      "museo"
+    ],
     "sourceName": "OpenStreetMap — Palacio de Cristal (way/23596451)",
     "sourceUrl": "https://www.openstreetmap.org/way/23596451",
     "lastVerifiedAt": "2026-08-05",
     "status": "verified",
-    "accessibility": ["Consultar accesos al edificio según exposición activa"]
+    "accessibility": [
+      "Consultar accesos al edificio según exposición activa"
+    ],
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 30,
+    "area": "retiro",
+    "sourceTier": "B",
+    "bestFor": [
+      "cultura",
+      "fotografía"
+    ]
   },
   {
     "id": "estanque-palacio-cristal",
     "slug": "estanque-palacio-cristal",
     "name": "Estanque del Palacio de Cristal",
     "category": "naturaleza",
-    "coordinates": [-3.6814084, 40.4137152],
+    "coordinates": [
+      -3.6814084,
+      40.4137152
+    ],
     "shortDescription": "Estanque inmediato al Palacio de Cristal, con vegetación y reflejos.",
     "description": "Junto al Palacio de Cristal se abre un estanque más íntimo que el Estanque Grande. Es un buen lugar para observar aves acuáticas, fotografiar reflejos y descansar a la sombra de los árboles cercanos.",
-    "tags": ["agua", "aves", "fotografía"],
+    "tags": [
+      "agua",
+      "aves",
+      "fotografía"
+    ],
     "sourceName": "OpenStreetMap — Estanque del Palacio de Cristal (way/23594997)",
     "sourceUrl": "https://www.openstreetmap.org/way/23594997",
     "lastVerifiedAt": "2026-08-05",
-    "status": "verified"
+    "status": "verified",
+    "area": "retiro",
+    "sourceTier": "B"
   },
   {
     "id": "palacio-de-velazquez",
     "slug": "palacio-de-velazquez",
     "name": "Palacio de Velázquez",
     "category": "cultura",
-    "coordinates": [-3.6819843, 40.4151995],
+    "coordinates": [
+      -3.6819843,
+      40.4151995
+    ],
     "shortDescription": "Edificio expositivo de ladrillo y azulejo en el interior del parque.",
     "description": "El Palacio de Velázquez, también gestionado por el Museo Reina Sofía, aloja exposiciones temporales en un edificio de planta rectangular con cubierta acristalada. Su entorno arbolado invita a combinar visita cultural y paseo.",
-    "tags": ["exposición", "arquitectura", "museo"],
+    "tags": [
+      "exposición",
+      "arquitectura",
+      "museo"
+    ],
     "sourceName": "OpenStreetMap — Palacio de Velázquez (way/23595002)",
     "sourceUrl": "https://www.openstreetmap.org/way/23595002",
     "lastVerifiedAt": "2026-08-05",
-    "status": "verified"
+    "status": "verified",
+    "area": "retiro",
+    "sourceTier": "B"
   },
   {
     "id": "fuente-angel-caido",
     "slug": "fuente-angel-caido",
     "name": "Fuente del Ángel Caído",
     "category": "monumento",
-    "coordinates": [-3.6825391, 40.4110479],
+    "coordinates": [
+      -3.6825391,
+      40.4110479
+    ],
     "shortDescription": "Escultura y fuente en la glorieta del mismo nombre, al sur del parque.",
     "description": "La Fuente del Ángel Caído corona una glorieta del extremo sur del Retiro. La figura del ángel derribado es un punto de referencia fácil de localizar y un buen hito para orientarse al recorrer esa zona del parque.",
-    "tags": ["fuente", "escultura", "glorieta"],
+    "tags": [
+      "fuente",
+      "escultura",
+      "glorieta"
+    ],
     "sourceName": "OpenStreetMap — Fuente del Ángel Caído (way/984800677)",
     "sourceUrl": "https://www.openstreetmap.org/way/984800677",
     "lastVerifiedAt": "2026-08-05",
-    "status": "verified"
+    "status": "verified",
+    "area": "retiro",
+    "sourceTier": "B"
   },
   {
     "id": "la-rosaleda",
     "slug": "la-rosaleda",
     "name": "La Rosaleda",
     "category": "naturaleza",
-    "coordinates": [-3.6803184, 40.410788],
+    "coordinates": [
+      -3.6803184,
+      40.410788
+    ],
     "shortDescription": "Jardín de rosales con estanque central en el sector sur del Retiro.",
     "description": "La Rosaleda concentra rosales en un trazado formal con un estanque en el centro. Es especialmente atractiva en temporada de floración. El espacio invita a un paseo lento entre parterres y bancos.",
-    "tags": ["jardín", "rosas", "floración"],
+    "tags": [
+      "jardín",
+      "rosas",
+      "floración"
+    ],
     "sourceName": "OpenStreetMap — La Rosaleda (way/29471363)",
     "sourceUrl": "https://www.openstreetmap.org/way/29471363",
     "lastVerifiedAt": "2026-08-05",
-    "status": "verified"
+    "status": "verified",
+    "area": "retiro",
+    "sourceTier": "B"
   },
   {
     "id": "jardines-cecilio-rodriguez",
     "slug": "jardines-cecilio-rodriguez",
     "name": "Jardines de Cecilio Rodríguez",
     "category": "naturaleza",
-    "coordinates": [-3.6779263, 40.4134127],
+    "coordinates": [
+      -3.6779263,
+      40.4134127
+    ],
     "shortDescription": "Jardín formal con estanques, pabellones y zona de aves.",
     "description": "Los Jardines de Cecilio Rodríguez ofrecen un ambiente recogido, con paseos geométricos, vegetación cuidada y espacios de sombra. Es una buena alternativa cuando se busca un rincón más sosegado dentro del parque.",
-    "tags": ["jardín", "sombra", "estanques"],
+    "tags": [
+      "jardín",
+      "sombra",
+      "estanques"
+    ],
     "sourceName": "OpenStreetMap — Jardines de Cecilio Rodríguez (relation/10005473)",
     "sourceUrl": "https://www.openstreetmap.org/relation/10005473",
     "lastVerifiedAt": "2026-08-05",
-    "status": "verified"
+    "status": "verified",
+    "area": "retiro",
+    "sourceTier": "B"
   },
   {
     "id": "casita-del-pescador",
     "slug": "casita-del-pescador",
     "name": "Casita del Pescador",
     "category": "iconico",
-    "coordinates": [-3.6809791, 40.4205924],
+    "coordinates": [
+      -3.6809791,
+      40.4205924
+    ],
     "shortDescription": "Pabellón pintoresco junto a la zona de la Montaña Artificial.",
     "description": "La Casita del Pescador es un pequeño pabellón de estilo romántico en el sector norte del parque. Su tamaño reducido y su entorno ajardinado la convierten en un detalle arquitectónico característico del Retiro histórico.",
-    "tags": ["pabellón", "romántico", "norte"],
+    "tags": [
+      "pabellón",
+      "romántico",
+      "norte"
+    ],
     "sourceName": "OpenStreetMap — Casita del Pescador (way/1338081678)",
     "sourceUrl": "https://www.openstreetmap.org/way/1338081678",
     "lastVerifiedAt": "2026-08-05",
-    "status": "verified"
+    "status": "verified",
+    "area": "retiro",
+    "sourceTier": "B"
   },
   {
     "id": "montana-artificial",
     "slug": "montana-artificial",
     "name": "Montaña Artificial",
     "category": "naturaleza",
-    "coordinates": [-3.6805487, 40.421101],
+    "coordinates": [
+      -3.6805487,
+      40.421101
+    ],
     "shortDescription": "Elevación artificial del norte del parque, también conocida como Montaña de los Gatos.",
     "description": "La Montaña Artificial es un relieve construido en el Retiro norte. En OpenStreetMap el pico figura como «Montaña de los gatos»; junto a ella hay una sala de exposiciones. Subir aquí aporta una perspectiva distinta del parque.",
-    "tags": ["relieve", "norte", "vistas"],
+    "tags": [
+      "relieve",
+      "norte",
+      "vistas"
+    ],
     "sourceName": "OpenStreetMap — Montaña de los gatos (node/618168584)",
     "sourceUrl": "https://www.openstreetmap.org/node/618168584",
     "lastVerifiedAt": "2026-08-05",
-    "status": "verified"
+    "status": "verified",
+    "area": "retiro",
+    "sourceTier": "B"
   },
   {
     "id": "teatro-titeres",
     "slug": "teatro-titeres",
     "name": "Teatro de Títeres de El Retiro",
     "category": "familias",
-    "coordinates": [-3.6866962, 40.4187197],
+    "coordinates": [
+      -3.6866962,
+      40.4187197
+    ],
     "shortDescription": "Pequeño teatro al aire libre pensado para funciones de títeres.",
     "description": "El Teatro de Títeres es un espacio familiar en el Retiro, con gradas y escenario al aire libre. Conviene consultar la programación oficial antes de acudir, ya que las funciones dependen de calendario y temporada.",
-    "tags": ["teatro", "niños", "aire libre"],
+    "tags": [
+      "teatro",
+      "niños",
+      "aire libre"
+    ],
     "sourceName": "OpenStreetMap — Teatro de Títeres de El Retiro (way/562785827)",
     "sourceUrl": "https://www.openstreetmap.org/way/562785827",
     "lastVerifiedAt": "2026-08-05",
-    "status": "verified"
+    "status": "verified",
+    "audience": [
+      "familias"
+    ],
+    "recommendedDurationMinutes": 45,
+    "area": "retiro",
+    "sourceTier": "B"
   },
   {
     "id": "biblioteca-eugenio-trias",
     "slug": "biblioteca-eugenio-trias",
     "name": "Biblioteca Pública Municipal Eugenio Trías — Casa de Fieras",
     "category": "cultura",
-    "coordinates": [-3.6789381, 40.4167401],
+    "coordinates": [
+      -3.6789381,
+      40.4167401
+    ],
     "shortDescription": "Biblioteca municipal en el antiguo recinto de la Casa de Fieras.",
     "description": "La Biblioteca Pública Municipal Eugenio Trías ocupa parte del antiguo zoo de la Casa de Fieras. Combina lectura, estudio y memoria del parque. Es un buen recurso cultural dentro del propio Retiro.",
-    "tags": ["biblioteca", "lectura", "casa de fieras"],
+    "tags": [
+      "biblioteca",
+      "lectura",
+      "casa de fieras"
+    ],
     "sourceName": "OpenStreetMap — Biblioteca Pública Municipal Eugenio Trías (way/308900139)",
     "sourceUrl": "https://www.openstreetmap.org/way/308900139",
     "lastVerifiedAt": "2026-08-05",
     "status": "verified",
-    "accessibility": ["Edificio público; consultar accesos en la fuente municipal"]
+    "accessibility": [
+      "Edificio público; consultar accesos en la fuente municipal"
+    ],
+    "area": "retiro",
+    "sourceTier": "B"
   },
   {
     "id": "casa-de-vacas",
     "slug": "casa-de-vacas",
     "name": "Centro Cultural Casa de Vacas",
     "category": "cultura",
-    "coordinates": [-3.6840988, 40.4192106],
+    "coordinates": [
+      -3.6840988,
+      40.4192106
+    ],
     "shortDescription": "Centro cultural municipal con exposiciones y actividades.",
     "description": "La Casa de Vacas es un centro cultural del Ayuntamiento de Madrid situado en el Retiro. Suele programar exposiciones y actividades abiertas al público. Es un punto útil para completar la visita cultural del parque.",
-    "tags": ["cultura", "exposiciones", "municipal"],
+    "tags": [
+      "cultura",
+      "exposiciones",
+      "municipal"
+    ],
     "sourceName": "OpenStreetMap — Centro Cultural Casa de Vacas (way/23596468)",
     "sourceUrl": "https://www.openstreetmap.org/way/23596468",
     "lastVerifiedAt": "2026-08-05",
-    "status": "verified"
+    "status": "verified",
+    "area": "retiro",
+    "sourceTier": "B"
   },
   {
     "id": "parterre-frances",
     "slug": "parterre-frances",
     "name": "Parterre Francés",
     "category": "naturaleza",
-    "coordinates": [-3.687397, 40.4152998],
+    "coordinates": [
+      -3.687397,
+      40.4152998
+    ],
     "shortDescription": "Jardín geométrico junto a la Puerta de Felipe IV y el Ahuehuete.",
     "description": "El Parterre (en OpenStreetMap, Jardín del Parterre) es un jardín de trazado geométrico próximo a la entrada de Felipe IV. Su orden formal contrasta con las zonas más boscosas del Retiro y enmarca el Ahuehuete monumental.",
-    "tags": ["jardín", "formal", "entrada"],
+    "tags": [
+      "jardín",
+      "formal",
+      "entrada"
+    ],
     "sourceName": "OpenStreetMap — Jardín del Parterre (relation/20827650)",
     "sourceUrl": "https://www.openstreetmap.org/relation/20827650",
     "lastVerifiedAt": "2026-08-05",
-    "status": "verified"
+    "status": "verified",
+    "area": "retiro",
+    "sourceTier": "B"
   },
   {
     "id": "ahuehuete-del-parterre",
     "slug": "ahuehuete-del-parterre",
     "name": "Ahuehuete del Parterre",
     "category": "naturaleza",
-    "coordinates": [-3.6880288, 40.4156329],
+    "coordinates": [
+      -3.6880288,
+      40.4156329
+    ],
     "shortDescription": "Árbol monumental junto al Parterre, uno de los más longevos del parque.",
     "description": "El Ahuehuete del Parterre es un ciprés de los pantanos de gran porte y gran valor botánico. Es un hito natural fácil de identificar cerca de la entrada oeste del Retiro y un ejemplo de patrimonio vegetal del parque.",
-    "tags": ["árbol", "monumental", "botánica"],
+    "tags": [
+      "árbol",
+      "monumental",
+      "botánica"
+    ],
     "sourceName": "OpenStreetMap — Ahuehuete del Parterre (node/4565394685)",
     "sourceUrl": "https://www.openstreetmap.org/node/4565394685",
     "lastVerifiedAt": "2026-08-05",
-    "status": "verified"
+    "status": "verified",
+    "area": "retiro",
+    "sourceTier": "B"
   },
   {
     "id": "paseo-de-la-argentina",
     "slug": "paseo-de-la-argentina",
     "name": "Paseo de la Argentina — Paseo de las Estatuas",
     "category": "paseo",
-    "coordinates": [-3.6867373, 40.416884],
+    "coordinates": [
+      -3.6867373,
+      40.416884
+    ],
     "shortDescription": "Paseo arbolado flanqueado por estatuas de reyes, hacia el Estanque.",
     "description": "El Paseo de la Argentina, popularmente Paseo de las Estatuas, conecta la zona del Parterre con el entorno del Estanque Grande. Las esculturas de monarcas y el dosel de árboles lo convierten en un recorrido muy característico.",
-    "tags": ["paseo", "estatuas", "sombra"],
+    "tags": [
+      "paseo",
+      "estatuas",
+      "sombra"
+    ],
     "sourceName": "OpenStreetMap — Paseo de la Argentina (way/99434794)",
     "sourceUrl": "https://www.openstreetmap.org/way/99434794",
     "lastVerifiedAt": "2026-08-05",
-    "status": "verified"
+    "status": "verified",
+    "area": "retiro",
+    "sourceTier": "B"
   },
   {
     "id": "bosque-del-recuerdo",
     "slug": "bosque-del-recuerdo",
     "name": "Bosque del Recuerdo",
     "category": "naturaleza",
-    "coordinates": [-3.6871771, 40.4120915],
+    "coordinates": [
+      -3.6871771,
+      40.4120915
+    ],
     "shortDescription": "Espacio memorial arbolado en el sector suroeste del parque.",
     "description": "El Bosque del Recuerdo es un memorial ajardinado dedicado a las víctimas de los atentados del 11 de marzo de 2004. Es un lugar de recogimiento; conviene visitarlo con respeto y sin usos recreativos ruidosos.",
-    "tags": ["memorial", "árboles", "recogimiento"],
+    "tags": [
+      "memorial",
+      "árboles",
+      "recogimiento"
+    ],
     "sourceName": "OpenStreetMap — Bosque del Recuerdo (way/243095305)",
     "sourceUrl": "https://www.openstreetmap.org/way/243095305",
     "lastVerifiedAt": "2026-08-05",
-    "status": "verified"
+    "status": "verified",
+    "area": "retiro",
+    "sourceTier": "B"
   },
   {
     "id": "fuente-de-la-alcachofa",
     "slug": "fuente-de-la-alcachofa",
     "name": "Fuente de la Alcachofa",
     "category": "monumento",
-    "coordinates": [-3.6842224, 40.4154157],
+    "coordinates": [
+      -3.6842224,
+      40.4154157
+    ],
     "shortDescription": "Fuente histórica en la plaza de Honduras, cerca del Estanque.",
     "description": "La Fuente de la Alcachofa se sitúa en la plaza de Honduras, en un cruce de paseos próximo al Estanque Grande. Es un buen hito de orientación al moverse entre el centro del parque y las zonas culturales del este.",
-    "tags": ["fuente", "plaza", "orientación"],
+    "tags": [
+      "fuente",
+      "plaza",
+      "orientación"
+    ],
     "sourceName": "OpenStreetMap — Fuente de la Alcachofa (way/1221362062)",
     "sourceUrl": "https://www.openstreetmap.org/way/1221362062",
     "lastVerifiedAt": "2026-08-05",
-    "status": "verified"
+    "status": "verified",
+    "area": "retiro",
+    "sourceTier": "B"
   },
   {
     "id": "fuente-de-los-galapagos",
     "slug": "fuente-de-los-galapagos",
     "name": "Fuente de los Galápagos",
     "category": "monumento",
-    "coordinates": [-3.6854771, 40.418621],
+    "coordinates": [
+      -3.6854771,
+      40.418621
+    ],
     "shortDescription": "Fuente ornamental en la plaza de Nicaragua, al norte del Estanque.",
     "description": "La Fuente de los Galápagos adorna la plaza de Nicaragua, cerca de Casa de Vacas y del extremo norte del Estanque Grande. Sus elementos escultóricos la hacen fácilmente reconocible en el recorrido norte-sur del parque.",
-    "tags": ["fuente", "plaza", "ornamental"],
+    "tags": [
+      "fuente",
+      "plaza",
+      "ornamental"
+    ],
     "sourceName": "OpenStreetMap — Fuente de los Galápagos (way/681048520)",
     "sourceUrl": "https://www.openstreetmap.org/way/681048520",
     "lastVerifiedAt": "2026-08-05",
-    "status": "verified"
+    "status": "verified",
+    "area": "retiro",
+    "sourceTier": "B"
   },
   {
     "id": "puerta-de-felipe-iv",
     "slug": "puerta-de-felipe-iv",
     "name": "Puerta de Felipe IV",
     "category": "acceso",
-    "coordinates": [-3.6886925, 40.4152748],
+    "coordinates": [
+      -3.6886925,
+      40.4152748
+    ],
     "shortDescription": "Acceso histórico por la calle de Alfonso XII, junto al Parterre.",
     "description": "La Puerta de Felipe IV es una de las entradas históricas del Retiro desde la calle de Alfonso XII. Conecta de inmediato con el Parterre y el Ahuehuete, y resulta práctica para iniciar una visita por el flanco oeste del parque.",
-    "tags": ["entrada", "acceso", "alfonso xii"],
+    "tags": [
+      "entrada",
+      "acceso",
+      "alfonso xii"
+    ],
     "sourceName": "OpenStreetMap — Puerta de Felipe IV (node/324812377)",
     "sourceUrl": "https://www.openstreetmap.org/node/324812377",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "B"
+  },
+  {
+    "id": "fuente-de-la-salud",
+    "slug": "fuente-de-la-salud",
+    "name": "Fuente de la Salud",
+    "alternativeNames": [
+      "Fuente de O'Donnell"
+    ],
+    "category": "monumento",
+    "coordinates": [
+      -3.684395,
+      40.420533
+    ],
+    "shortDescription": "Fuente ornamental junto al flanco norte del parque, cerca de la calle de O'Donnell.",
+    "description": "La Fuente de la Salud marca uno de los tramos norte del Retiro, próximo a O'Donnell. Es un hito útil para orientarse al entrar por el norte y combinar paseo con visita a las zonas arboladas cercanas.",
+    "tags": [
+      "fuente",
+      "norte",
+      "orientación"
+    ],
+    "audience": [
+      "locales",
+      "turistas"
+    ],
+    "recommendedDurationMinutes": 10,
+    "bestFor": [
+      "paseo corto",
+      "punto de encuentro"
+    ],
+    "area": "retiro",
+    "sourceName": "OpenStreetMap — Fuente de la Salud (node/5407179495)",
+    "sourceUrl": "https://www.openstreetmap.org/node/5407179495",
+    "sourceTier": "B",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified"
+  },
+  {
+    "id": "fuente-de-las-gaviotas",
+    "slug": "fuente-de-las-gaviotas",
+    "name": "Fuente de las Gaviotas",
+    "category": "monumento",
+    "coordinates": [
+      -3.678278,
+      40.414308
+    ],
+    "shortDescription": "Fuente ornamental en el sector este del parque, cerca de Menéndez Pelayo.",
+    "description": "La Fuente de las Gaviotas se sitúa en el flanco este del Retiro. Su entorno arbolado invita a una pausa breve en recorridos que conectan la Casa de Fieras con el Paseo de Fernán Núñez.",
+    "tags": [
+      "fuente",
+      "este",
+      "paseo"
+    ],
+    "audience": [
+      "locales",
+      "turistas"
+    ],
+    "recommendedDurationMinutes": 10,
+    "area": "retiro",
+    "sourceName": "OpenStreetMap — Fuente de las Gaviotas (way/560715385)",
+    "sourceUrl": "https://www.openstreetmap.org/way/560715385",
+    "sourceTier": "B",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified"
+  },
+  {
+    "id": "fuente-de-la-sardana",
+    "slug": "fuente-de-la-sardana",
+    "name": "Fuente de la Sardana",
+    "alternativeNames": [
+      "Glorieta de la Sardana"
+    ],
+    "category": "monumento",
+    "coordinates": [
+      -3.682078,
+      40.417156
+    ],
+    "shortDescription": "Fuente en la glorieta de la Sardana, entre el Estanque Grande y el flanco este.",
+    "description": "La Fuente de la Sardana ocupa una glorieta del interior del parque. Sirve de referencia entre el Estanque Grande y los paseos hacia la antigua Casa de Fieras.",
+    "tags": [
+      "fuente",
+      "glorieta",
+      "orientación"
+    ],
+    "audience": [
+      "locales",
+      "turistas"
+    ],
+    "recommendedDurationMinutes": 10,
+    "area": "retiro",
+    "sourceName": "OpenStreetMap — Fuente de la Sardana (way/681043535)",
+    "sourceUrl": "https://www.openstreetmap.org/way/681043535",
+    "sourceTier": "B",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified"
+  },
+  {
+    "id": "estanque-ochavado",
+    "slug": "estanque-ochavado",
+    "name": "Estanque Ochavado",
+    "category": "naturaleza",
+    "coordinates": [
+      -3.68582,
+      40.415911
+    ],
+    "shortDescription": "Pequeño estanque de planta ochavada junto al Paseo de Paraguay.",
+    "description": "El Estanque Ochavado es una lámina de agua discreta en el interior del parque. Resulta útil como pausa tranquila en paseos entre el oeste del Retiro y el Estanque Grande.",
+    "tags": [
+      "agua",
+      "paseo",
+      "tranquilo"
+    ],
+    "audience": [
+      "locales",
+      "turistas"
+    ],
+    "recommendedDurationMinutes": 15,
+    "bestFor": [
+      "descanso",
+      "fotografía"
+    ],
+    "area": "retiro",
+    "sourceName": "OpenStreetMap — Estanque Ochavado (relation/16657037)",
+    "sourceUrl": "https://www.openstreetmap.org/relation/16657037",
+    "sourceTier": "B",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified"
+  },
+  {
+    "id": "antigua-casa-de-fieras-foso",
+    "slug": "antigua-casa-de-fieras-foso",
+    "name": "Antigua Casa de Fieras (Foso)",
+    "category": "naturaleza",
+    "coordinates": [
+      -3.678996,
+      40.416424
+    ],
+    "shortDescription": "Restos del foso de la antigua Casa de Fieras, junto a la biblioteca Eugenio Trías.",
+    "description": "El foso de la antigua Casa de Fieras conserva la memoria del antiguo zoo del Retiro. Hoy forma parte del entorno peatonable junto a la Biblioteca Eugenio Trías y las zonas infantiles cercanas.",
+    "tags": [
+      "patrimonio",
+      "historia",
+      "familias"
+    ],
+    "audience": [
+      "familias",
+      "locales",
+      "turistas"
+    ],
+    "recommendedDurationMinutes": 20,
+    "area": "retiro",
+    "sourceName": "OpenStreetMap — Antigua casa de Fieras (Foso) (way/1073617785)",
+    "sourceUrl": "https://www.openstreetmap.org/way/1073617785",
+    "sourceTier": "B",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified"
+  },
+  {
+    "id": "quiosco-de-musica",
+    "slug": "quiosco-de-musica",
+    "name": "Quiosco de Música",
+    "category": "cultura",
+    "coordinates": [
+      -3.685018,
+      40.419456
+    ],
+    "shortDescription": "Templete musical en la Plaza del Maestro Villa, al norte del Estanque Grande.",
+    "description": "El Quiosco de Música es un templete abierto en la Plaza del Maestro Villa. Históricamente ha acogido conciertos al aire libre; conviene comprobar la programación oficial del día.",
+    "tags": [
+      "música",
+      "plaza",
+      "cultura"
+    ],
+    "audience": [
+      "locales",
+      "turistas",
+      "familias"
+    ],
+    "recommendedDurationMinutes": 15,
+    "area": "retiro",
+    "sourceName": "OpenStreetMap — Quiosco de Música (way/85817364)",
+    "sourceUrl": "https://www.openstreetmap.org/way/85817364",
+    "sourceTier": "B",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified"
+  },
+  {
+    "id": "plaza-de-nicaragua",
+    "slug": "plaza-de-nicaragua",
+    "name": "Plaza de Nicaragua",
+    "category": "paseo",
+    "coordinates": [
+      -3.685477,
+      40.418627
+    ],
+    "shortDescription": "Plaza arbolada al norte del Estanque Grande, nudo de paseos del Retiro.",
+    "description": "La Plaza de Nicaragua organiza varios paseos del norte del parque. Es un buen punto de orientación entre el Estanque Grande, la Fuente de los Galápagos y las entradas norte.",
+    "tags": [
+      "plaza",
+      "paseo",
+      "orientación"
+    ],
+    "audience": [
+      "locales",
+      "turistas"
+    ],
+    "recommendedDurationMinutes": 10,
+    "area": "retiro",
+    "sourceName": "OpenStreetMap — Plaza de Nicaragua (way/85817312)",
+    "sourceUrl": "https://www.openstreetmap.org/way/85817312",
+    "sourceTier": "B",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified"
+  },
+  {
+    "id": "paseo-de-chile",
+    "slug": "paseo-de-chile",
+    "name": "Paseo de Chile",
+    "category": "paseo",
+    "coordinates": [
+      -3.681818,
+      40.417604
+    ],
+    "shortDescription": "Paseo interior del Retiro que conecta el sector del Estanque con el flanco este.",
+    "description": "El Paseo de Chile es un eje peatonal del interior del parque. Resulta práctico para recorridos a pie o en carrera suave entre el Estanque Grande y las zonas este.",
+    "tags": [
+      "paseo",
+      "deporte",
+      "conexión"
+    ],
+    "audience": [
+      "deportistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 20,
+    "bestFor": [
+      "caminar",
+      "correr orientativo"
+    ],
+    "area": "retiro",
+    "sourceName": "OpenStreetMap — Paseo de Chile (way/29471058)",
+    "sourceUrl": "https://www.openstreetmap.org/way/29471058",
+    "sourceTier": "B",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified"
+  },
+  {
+    "id": "paseo-de-colombia",
+    "slug": "paseo-de-colombia",
+    "name": "Paseo de Colombia",
+    "category": "paseo",
+    "coordinates": [
+      -3.684514,
+      40.418707
+    ],
+    "shortDescription": "Paseo del norte del parque, útil para unir plazas y accesos próximos a O'Donnell.",
+    "description": "El Paseo de Colombia articula el sector norte del Retiro. Encaja bien en recorridos circulares cortos y en conexiones hacia la Plaza de Nicaragua.",
+    "tags": [
+      "paseo",
+      "norte",
+      "conexión"
+    ],
+    "audience": [
+      "deportistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 15,
+    "area": "retiro",
+    "sourceName": "OpenStreetMap — Paseo de Colombia (way/4308100)",
+    "sourceUrl": "https://www.openstreetmap.org/way/4308100",
+    "sourceTier": "B",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified"
+  },
+  {
+    "id": "paseo-de-paraguay",
+    "slug": "paseo-de-paraguay",
+    "name": "Paseo de Paraguay",
+    "category": "paseo",
+    "coordinates": [
+      -3.687259,
+      40.414744
+    ],
+    "shortDescription": "Paseo del oeste del Retiro, cerca del Estanque Ochavado y Alfonso XII.",
+    "description": "El Paseo de Paraguay recorre el flanco oeste del parque. Es una vía habitual para entrar desde Alfonso XII y acercarse al Estanque Ochavado o al Estanque Grande.",
+    "tags": [
+      "paseo",
+      "oeste",
+      "acceso"
+    ],
+    "audience": [
+      "locales",
+      "deportistas",
+      "turistas"
+    ],
+    "recommendedDurationMinutes": 20,
+    "area": "retiro",
+    "sourceName": "OpenStreetMap — Paseo de Paraguay (way/1201895228)",
+    "sourceUrl": "https://www.openstreetmap.org/way/1201895228",
+    "sourceTier": "B",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified"
+  },
+  {
+    "id": "paseo-fernan-nunez",
+    "slug": "paseo-fernan-nunez",
+    "name": "Paseo de Fernán Núñez",
+    "category": "paseo",
+    "coordinates": [
+      -3.679542,
+      40.414052
+    ],
+    "shortDescription": "Paseo este del parque, entre la Casa de Fieras, La Chopera y Cecilio Rodríguez.",
+    "description": "El Paseo de Fernán Núñez es uno de los ejes este del Retiro. Conecta zonas familiares, deportivas y jardines del sur-este del parque.",
+    "tags": [
+      "paseo",
+      "este",
+      "familias"
+    ],
+    "audience": [
+      "familias",
+      "deportistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 25,
+    "area": "retiro",
+    "sourceName": "OpenStreetMap — Paseo de Fernán Núñez (way/686302063)",
+    "sourceUrl": "https://www.openstreetmap.org/way/686302063",
+    "sourceTier": "B",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified"
+  },
+  {
+    "id": "la-chopera-entorno",
+    "slug": "la-chopera",
+    "name": "La Chopera",
+    "category": "paseo",
+    "coordinates": [
+      -3.686218,
+      40.412203
+    ],
+    "shortDescription": "Ámbito sur del parque junto al centro deportivo municipal y zonas de paseo.",
+    "description": "La Chopera designa el sector sur del Retiro asociado al centro deportivo municipal y a paseos arbolados. El recorrido aquí es orientativo: no sustituye instalaciones deportivas homologadas ni horarios oficiales.",
+    "tags": [
+      "deporte",
+      "sur",
+      "paseo"
+    ],
+    "audience": [
+      "deportistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 30,
+    "bestFor": [
+      "caminar",
+      "correr orientativo"
+    ],
+    "area": "retiro",
+    "sourceName": "OpenStreetMap — Centro Deportivo Municipal La Chopera (way/28401540)",
+    "sourceUrl": "https://www.openstreetmap.org/way/28401540",
+    "sourceTier": "B",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified",
+    "openingHoursNote": "Consultar horarios y acceso del centro deportivo en fuentes municipales."
+  },
+  {
+    "id": "puerta-de-espana",
+    "slug": "puerta-de-espana",
+    "name": "Puerta de España",
+    "category": "acceso",
+    "coordinates": [
+      -3.688628,
+      40.416676
+    ],
+    "shortDescription": "Acceso oeste del Retiro desde la calle de Alfonso XII.",
+    "description": "La Puerta de España es una de las entradas oeste del parque desde Alfonso XII. Resulta práctica para iniciar paseos hacia el Paseo de Paraguay y el Estanque Grande.",
+    "tags": [
+      "entrada",
+      "oeste",
+      "Alfonso XII"
+    ],
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceName": "OpenStreetMap — Puerta de España (way/1076612640)",
+    "sourceUrl": "https://www.openstreetmap.org/way/1076612640",
+    "sourceTier": "B",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified"
+  },
+  {
+    "id": "jardin-de-vivaces",
+    "slug": "jardin-de-vivaces",
+    "name": "Jardín de Vivaces",
+    "category": "naturaleza",
+    "coordinates": [
+      -3.68178,
+      40.411195
+    ],
+    "shortDescription": "Ámbito botánico junto a La Rosaleda, en el sur del parque.",
+    "description": "El Jardín de Vivaces forma parte del conjunto botánico del sur del Retiro, próximo a La Rosaleda. Es un lugar para observar plantaciones de temporada; el estado concreto de floración varía según la época.",
+    "tags": [
+      "jardín",
+      "botánica",
+      "sur"
+    ],
+    "audience": [
+      "locales",
+      "turistas"
+    ],
+    "recommendedDurationMinutes": 20,
+    "area": "retiro",
+    "sourceName": "OpenStreetMap — S. Botánica, la Rosaleda y el Jardín de Vivaces (node/4769760033)",
+    "sourceUrl": "https://www.openstreetmap.org/node/4769760033",
+    "sourceTier": "B",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "needs-review"
+  },
+  {
+    "id": "real-jardin-botanico",
+    "slug": "real-jardin-botanico",
+    "name": "Real Jardín Botánico",
+    "category": "naturaleza",
+    "coordinates": [
+      -3.690689,
+      40.411487
+    ],
+    "shortDescription": "Jardín botánico histórico junto al Retiro (entorno inmediato, acceso propio).",
+    "description": "El Real Jardín Botánico se sitúa junto al perímetro suroeste del Retiro. No forma parte del parque municipal: tiene acceso, horarios y normas propias. Se incluye como entorno útil para visitas combinadas.",
+    "tags": [
+      "entorno",
+      "botánica",
+      "museo"
+    ],
+    "audience": [
+      "turistas",
+      "locales",
+      "familias"
+    ],
+    "recommendedDurationMinutes": 60,
+    "area": "entorno",
+    "sourceName": "OpenStreetMap — Real Jardín Botánico de Madrid (way/15244804)",
+    "sourceUrl": "https://www.openstreetmap.org/way/15244804",
+    "sourceTier": "B",
+    "lastVerifiedAt": "2026-08-05",
+    "status": "verified",
+    "openingHoursNote": "Consultar horarios y tarifas en la web oficial del RJB / CSIC."
+  },
+  {
+    "id": "san-jeronimo-el-real",
+    "slug": "san-jeronimo-el-real",
+    "name": "San Jerónimo el Real",
+    "alternativeNames": [
+      "Los Jerónimos"
+    ],
+    "category": "monumento",
+    "coordinates": [
+      -3.691309,
+      40.414461
+    ],
+    "shortDescription": "Iglesia histórica junto al Prado y al perímetro oeste del Retiro (entorno).",
+    "description": "San Jerónimo el Real se encuentra fuera del recinto del parque, en el entorno inmediato del Paseo del Prado. Se incluye como referencia patrimonial del entorno, no como punto interior del Retiro.",
+    "tags": [
+      "entorno",
+      "iglesia",
+      "patrimonio"
+    ],
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 20,
+    "area": "entorno",
+    "sourceName": "OpenStreetMap — San Jerónimo el Real (node/9873090129)",
+    "sourceUrl": "https://www.openstreetmap.org/node/9873090129",
+    "sourceTier": "B",
     "lastVerifiedAt": "2026-08-05",
     "status": "verified"
   }

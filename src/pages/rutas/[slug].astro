@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { routes, getRouteBySlug, formatDistance, formatDuration } from '../../utils/routes';
+import { places } from '../../utils/places';
+import { siteConfig } from '../../config/site';
+
+export function getStaticPaths() {
+  return routes.map((route) => ({ params: { slug: route.slug } }));
+}
+
+const { slug } = Astro.params;
+const route = getRouteBySlug(slug ?? '');
+if (!route) {
+  throw new Error(`Ruta no encontrada: ${slug}`);
+}
+
+const base = import.meta.env.BASE_URL;
+const stops = route.stopIds
+  .map((id) => places.find((p) => p.id === id))
+  .filter(Boolean);
+
+const mapHref = `${base}?ruta=${route.slug}`;
+---
+
+<BaseLayout
+  title={route.name}
+  description={route.shortDescription}
+  canonicalPath={`/rutas/${route.slug}/`}
+>
+  <div class="page">
+    <nav class="crumbs" aria-label="Migas">
+      <a href={base}>Mapa</a>
+      <span>/</span>
+      <a href={`${base}rutas/`}>Rutas</a>
+      <span>/</span>
+      <span aria-current="page">{route.name}</span>
+    </nav>
+
+    <header class="page-hero">
+      <h1>{route.name}</h1>
+      <p>{route.description}</p>
+      <p class="meta">
+        {formatDuration(route.estimatedDurationMinutes)} ·{' '}
+        {formatDistance(route.approximateDistanceMeters)} ·{' '}
+        {route.stopIds.length} paradas ·{' '}
+        {route.circular ? 'Circular' : 'Lineal'} ·{' '}
+        {route.difficulty === 'facil' ? 'Fácil' : 'Moderada'}
+      </p>
+      {
+        route.accessibilityNote ? (
+          <p class="note">{route.accessibilityNote}</p>
+        ) : null
+      }
+      <p class="note">
+        Aviso: cierres, obras y condiciones pueden modificar el recorrido. No hay navegación
+        turno a turno.
+      </p>
+      {
+        route.slug === 'caminar-o-correr' ? (
+          <p class="note">
+            Este circuito es orientativo para caminar o correr; no es una instalación deportiva
+            homologada.
+          </p>
+        ) : null
+      }
+      <p class="actions">
+        <a class="btn" href={mapHref}>Ver en el mapa</a>
+        <button class="btn btn--secondary" type="button" id="share-route">Compartir</button>
+      </p>
+    </header>
+
+    <section aria-labelledby="paradas-title">
+      <h2 id="paradas-title">Paradas</h2>
+      <ol class="stop-list">
+        {
+          stops.map((place, index) =>
+            place ? (
+              <li>
+                <span class="stop-num">{index + 1}</span>
+                <div>
+                  <a href={`${base}lugares/${place.slug}/`}>{place.name}</a>
+                  <p>{place.shortDescription}</p>
+                </div>
+              </li>
+            ) : null,
+          )
+        }
+      </ol>
+    </section>
+
+    <p class="source">
+      Fuente: {route.sourceName}. Verificado: {route.lastVerifiedAt}. {siteConfig.name}.
+    </p>
+  </div>
+
+  <script is:inline define:vars={{ mapHref, routeName: route.name }}>
+    const button = document.getElementById('share-route');
+    button?.addEventListener('click', async () => {
+      const url = new URL(mapHref, window.location.origin).href;
+      try {
+        if (navigator.share) {
+          await navigator.share({ title: routeName, url });
+          return;
+        }
+      } catch {
+        /* usuario canceló */
+      }
+      try {
+        await navigator.clipboard.writeText(url);
+        button.textContent = 'Enlace copiado';
+      } catch {
+        button.textContent = 'Copia la URL del navegador';
+      }
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+    font-size: 0.9rem;
+  }
+  .page-hero h1 {
+    font-family: var(--font-display);
+  }
+  .meta {
+    color: var(--color-ink-muted);
+  }
+  .note {
+    padding: var(--space-3);
+    background: var(--color-accent-soft);
+    border-radius: var(--radius-sm);
+    font-size: 0.92rem;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  .stop-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .stop-list li {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+  .stop-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    background: var(--color-primary);
+    color: white;
+    font-weight: 700;
+  }
+  .source {
+    margin-top: var(--space-8);
+    color: var(--color-ink-muted);
+    font-size: 0.85rem;
+  }
+</style>

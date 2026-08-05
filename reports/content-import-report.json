@@ -1,0 +1,60 @@
+{
+  "generatedAt": "2026-08-05T19:54:35.010Z",
+  "totals": {
+    "places": 36,
+    "services": 44,
+    "fichas": 80,
+    "routes": 5,
+    "needsReview": 6
+  },
+  "placesByCategory": {
+    "iconico": 2,
+    "monumento": 8,
+    "cultura": 5,
+    "naturaleza": 11,
+    "familias": 1,
+    "paseo": 7,
+    "acceso": 2
+  },
+  "servicesByType": {
+    "aseo": 8,
+    "fuente": 15,
+    "zona-infantil": 7,
+    "acceso": 7,
+    "informacion": 3,
+    "deporte": 2,
+    "restauracion": 2
+  },
+  "routes": [
+    {
+      "slug": "retiro-imprescindible",
+      "stops": 6,
+      "meters": 1590,
+      "minutes": 90
+    },
+    {
+      "slug": "retiro-en-una-hora",
+      "stops": 6,
+      "meters": 982,
+      "minutes": 60
+    },
+    {
+      "slug": "retiro-con-ninos",
+      "stops": 6,
+      "meters": 1959,
+      "minutes": 75
+    },
+    {
+      "slug": "ruta-fotografica",
+      "stops": 7,
+      "meters": 1415,
+      "minutes": 100
+    },
+    {
+      "slug": "caminar-o-correr",
+      "stops": 6,
+      "meters": 3119,
+      "minutes": 50
+    }
+  ]
+}
