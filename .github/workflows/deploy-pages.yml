@@ -2,7 +2,8 @@ name: Deploy GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - beta
   workflow_dispatch:
 
 permissions:
@@ -28,7 +29,8 @@ jobs:
           cache: npm
 
       - name: Install
-        run: npm ci
+        # @vite-pwa/astro peers Astro ≤5; project uses Astro 7 — see docs/legacy-peer-deps.md
+        run: npm ci --legacy-peer-deps
 
       - name: Validate data
         run: npm run validate:data
