@@ -8,6 +8,7 @@ import {
   OPENFREEMAP_STYLE_URL,
 } from '../../config/map';
 import type { Place } from '../../types/place';
+import { loadMaplibre } from '../../utils/maplibre';
 import { createMarkerElement } from './markerFactory';
 
 interface Props {
@@ -25,7 +26,7 @@ export default function PlaceMiniMap({ place }: Props) {
 
     async function init() {
       if (!ref.current) return;
-      const maplibre = await import('maplibre-gl');
+      const maplibre = await loadMaplibre();
       await import('maplibre-gl/dist/maplibre-gl.css');
       if (cancelled || !ref.current) return;
 

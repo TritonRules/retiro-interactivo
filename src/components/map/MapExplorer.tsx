@@ -21,6 +21,7 @@ import {
   type CategoryFilter,
 } from '../../utils/filterPlaces';
 import { getCategoryLabel } from '../../utils/categories';
+import { loadMaplibre } from '../../utils/maplibre';
 import { getServiceTypeLabel } from '../../utils/serviceTypes';
 import {
   GEO_STATUS_LABEL,
@@ -77,6 +78,14 @@ const EVENT_SOURCE = 'map-events';
 function withBase(baseUrl: string, path: string): string {
   const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
   return `${base}${path.replace(/^\//, '')}`;
+}
+
+/** `addSource` y `addLayer` lanzan si el estilo aún no terminó de cargar. */
+function whenStyleReady(map: Map): Promise<void> {
+  if (map.isStyleLoaded()) return Promise.resolve();
+  return new Promise((resolve) => {
+    map.once('load', () => resolve());
+  });
 }
 
 /** En build estático Astro no ve `?ruta=`/`?lugar=`; leer en el cliente. */
@@ -205,7 +214,7 @@ export default function MapExplorer({
     async function initMap() {
       if (!containerRef.current || mapRef.current) return;
       try {
-        const maplibre = await import('maplibre-gl');
+        const maplibre = await loadMaplibre();
         await import('maplibre-gl/dist/maplibre-gl.css');
         if (cancelled || !containerRef.current) return;
 
@@ -257,7 +266,7 @@ export default function MapExplorer({
     let cancelled = false;
 
     async function syncMarkers() {
-      const maplibre = await import('maplibre-gl');
+      const maplibre = await loadMaplibre();
       if (cancelled || !mapRef.current) return;
       const currentMap = mapRef.current;
 
@@ -322,9 +331,12 @@ export default function MapExplorer({
     let cancelled = false;
 
     async function syncRoute() {
-      const maplibre = await import('maplibre-gl');
+      const maplibre = await loadMaplibre();
       if (cancelled || !mapRef.current) return;
       const currentMap = mapRef.current;
+
+      await whenStyleReady(currentMap);
+      if (cancelled || mapRef.current !== currentMap) return;
 
       stopMarkersRef.current.forEach((marker) => marker.remove());
       stopMarkersRef.current = [];
@@ -401,39 +413,48 @@ export default function MapExplorer({
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !ready) return;
+    let cancelled = false;
 
-    if (map.getLayer(`${EVENT_SOURCE}-circle`)) map.removeLayer(`${EVENT_SOURCE}-circle`);
-    if (map.getSource(EVENT_SOURCE)) map.removeSource(EVENT_SOURCE);
+    void whenStyleReady(map).then(() => {
+      if (cancelled || mapRef.current !== map) return;
 
-    if (!showEvents || activeRoute || events.length === 0) return;
+      if (map.getLayer(`${EVENT_SOURCE}-circle`)) map.removeLayer(`${EVENT_SOURCE}-circle`);
+      if (map.getSource(EVENT_SOURCE)) map.removeSource(EVENT_SOURCE);
 
-    map.addSource(EVENT_SOURCE, {
-      type: 'geojson',
-      data: {
-        type: 'FeatureCollection',
-        features: events.map((event) => ({
-          type: 'Feature',
-          geometry: { type: 'Point', coordinates: event.coordinates },
-          properties: { id: event.id, title: event.title },
-        })),
-      },
+      if (!showEvents || activeRoute || events.length === 0) return;
+
+      map.addSource(EVENT_SOURCE, {
+        type: 'geojson',
+        data: {
+          type: 'FeatureCollection',
+          features: events.map((event) => ({
+            type: 'Feature',
+            geometry: { type: 'Point', coordinates: event.coordinates },
+            properties: { id: event.id, title: event.title },
+          })),
+        },
+      });
+      map.addLayer({
+        id: `${EVENT_SOURCE}-circle`,
+        type: 'circle',
+        source: EVENT_SOURCE,
+        paint: {
+          'circle-radius': 7,
+          'circle-color': '#2f6f8f',
+          'circle-stroke-width': 2,
+          'circle-stroke-color': '#fffdf8',
+        },
+      });
+      map.on('click', `${EVENT_SOURCE}-circle`, (e) => {
+        const id = e.features?.[0]?.properties?.id;
+        if (!id) return;
+        setSelection({ kind: 'event', id: String(id) });
+      });
     });
-    map.addLayer({
-      id: `${EVENT_SOURCE}-circle`,
-      type: 'circle',
-      source: EVENT_SOURCE,
-      paint: {
-        'circle-radius': 7,
-        'circle-color': '#2f6f8f',
-        'circle-stroke-width': 2,
-        'circle-stroke-color': '#fffdf8',
-      },
-    });
-    map.on('click', `${EVENT_SOURCE}-circle`, (e) => {
-      const id = e.features?.[0]?.properties?.id;
-      if (!id) return;
-      setSelection({ kind: 'event', id: String(id) });
-    });
+
+    return () => {
+      cancelled = true;
+    };
   }, [showEvents, events, ready, activeRoute]);
 
   useEffect(() => {
@@ -487,7 +508,8 @@ export default function MapExplorer({
   const updateUserOnMap = async (location: UserLocation, inside: boolean) => {
     const map = mapRef.current;
     if (!map) return;
-    const maplibre = await import('maplibre-gl');
+    const maplibre = await loadMaplibre();
+    await whenStyleReady(map);
 
     userMarkerRef.current?.remove();
     if (inside) {

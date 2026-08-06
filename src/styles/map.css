@@ -120,7 +120,10 @@
   min-height: 360px;
 }
 
-.mapa-canvas {
+/* `.maplibregl-map` se carga después y fija `position: relative`, con lo que el
+   contenedor pierde el dimensionado por `inset` y colapsa a altura 0. */
+.mapa-canvas,
+.mapa-canvas.maplibregl-map {
   position: absolute;
   inset: 0;
   width: 100%;

@@ -62,7 +62,10 @@ export default defineConfig({
         ],
       },
       workbox: {
-        navigateFallback: `${basePath}offline/`,
+        // Shell del mapa (index), no la página offline: las navegaciones con
+        // ?ruta= / ?lugar= / ?evento= deben hidratar MapExplorer en preview/PWA.
+        // La página /offline/ sigue precacheada y accesible directamente.
+        navigateFallback: basePath,
         navigateFallbackDenylist: [
           /^\/api/,
           /\/sw\.js$/,

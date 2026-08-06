@@ -5,7 +5,8 @@
 - Manifest: `dist/manifest.webmanifest` con `start_url` y `scope` = `BASE`.
 - Service worker: `dist/sw.js` + Workbox.
 - Precaché: shell HTML/CSS/JS/iconos y datos JSON/GeoJSON listados.
-- Offline fallback: `/offline/`.
+- Offline fallback: `/offline/`, precacheada y accesible por URL directa.
+- `navigateFallback`: la shell del mapa (`BASE`), **no** `/offline/`. Ver más abajo.
 - Teselas OpenFreeMap: **NetworkOnly** (no se cachean en masa).
 - Aviso discreto de nueva versión (`registerType: 'prompt'`).
 
@@ -31,6 +32,15 @@ BASE=/ SITE=http://localhost:4321 npm run preview
 ```
 
 Comprueba que `manifest.webmanifest` use `start_url: "/"` y `scope: "/"`.
+
+## Por qué `navigateFallback` apunta a la shell y no a `/offline/`
+
+Workbox resuelve con `navigateFallback` cualquier navegación que no esté en el precaché, y una URL con
+query (`?ruta=`, `?lugar=`, `?evento=`) no coincide con `index.html` precacheado. Con el fallback en
+`/offline/`, un deep link **estando online** y con el service worker activo devolvía la página «Sin
+conexión» en lugar del mapa; comprobado en preview el 2026-08-06. Apuntando a `BASE` se sirve la shell
+del mapa, que hidrata `MapExplorer` y aplica el parámetro. `/offline/` sigue precacheada y se muestra
+igual cuando no hay red, porque sin conexión la shell tampoco puede cargar teselas.
 
 ## Limitaciones offline
 
