@@ -63,7 +63,14 @@ export default defineConfig({
       },
       workbox: {
         navigateFallback: `${basePath}offline/`,
-        navigateFallbackDenylist: [/^\/api/],
+        navigateFallbackDenylist: [
+          /^\/api/,
+          /\/sw\.js$/,
+          /\/workbox-/,
+          /\/manifest\.webmanifest$/,
+        ],
+        // Evita que un SW antiguo sirva indefinidamente la shell de fases previas.
+        cleanupOutdatedCaches: true,
         globPatterns: ['**/*.{js,css,html,svg,png,ico,webp,woff2,json,geojson}'],
         globIgnores: ['**/agenda/*/index.html'],
         runtimeCaching: [

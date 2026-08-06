@@ -241,6 +241,22 @@
           40.4187197
         ],
         [
+          -3.6852,
+          40.4186
+        ],
+        [
+          -3.6835,
+          40.4183
+        ],
+        [
+          -3.6818,
+          40.418
+        ],
+        [
+          -3.6805,
+          40.4179
+        ],
+        [
           -3.6798,
           40.4178
         ],
@@ -301,7 +317,7 @@
     "sourceUrl": "https://www.openstreetmap.org/#map=16/40.4155/-3.6835",
     "lastVerifiedAt": "2026-08-05",
     "status": "verified",
-    "approximateDistanceMeters": 1959
+    "approximateDistanceMeters": 1961
   },
   {
     "id": "ruta-fotografica",

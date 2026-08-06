@@ -74,6 +74,20 @@ describe('event pipeline helpers', () => {
     expect(gate.accept).toBe(true);
   });
 
+  it('prioriza coordenadas curatoriales del CIEA frente a lat/lon municipales erróneas', () => {
+    const raw = {
+      title: 'Árboles de El Retiro',
+      'event-location': 'Centro de Educación Ambiental El Retiro',
+      dtstart: '2026-08-13 10:00:00.0',
+      location: { latitude: 40.409435, longitude: -3.68618 },
+    };
+    const gate = geographicGate(raw);
+    expect(gate.accept).toBe(true);
+    expect(gate.coords?.[0]).toBeCloseTo(-3.6789, 3);
+    expect(gate.coords?.[1]).toBeCloseTo(40.4165, 3);
+    expect(gate.reason).toBe('venue-curated');
+  });
+
   it('documenta la guarda de publicación vacía', () => {
     // Contrato: publishEventsAtomic([], {allowEmpty:false}) con previos no publica.
     // Cubierto en integración por events:build; aquí fijamos la expectativa.

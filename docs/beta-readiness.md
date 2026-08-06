@@ -1,24 +1,30 @@
-# Preparación beta privada
+# Preparación beta privada — actualización Fase 3
 
-Fecha: 2026-08-05. Rama: `feature/fase-2b-content-routes-events`.
+Fecha: 2026-08-06. Rama: `feature/fase-3-private-beta` (base `6fcbce2`).
 
 | Área | Estado | Evidencia | Pendiente | Bloquea beta |
 | --- | --- | --- | --- | --- |
-| Contenido | Parcial listo | 80 fichas trazables (36+44) | Revisión editorial humana de nuevas fichas y `needs-review` | No (para beta privada reducida) |
-| Rutas | Listo técnico | 5 rutas, stopIds OK, páginas + `?ruta=` | Validación física de trazados | No |
-| Agenda | Listo técnico | Pipeline A + 66 publicados filtrados | Revisión de falsos positivos / coords | No |
-| Privacidad | Listo | Geo solo por gesto, sin persistencia | — | No |
-| PWA | Listo | sw.js + manifest; agenda detalle excluida de precache masivo | Prueba install en dispositivo | No |
-| Responsive | Parcial | Nav compacta; build OK | Prueba real iPhone/Android | No |
-| Accesibilidad | Parcial | Estructura semántica, skip-link | Auditoría axe completa | No |
-| Datos | Listo | Zod + validate:data + tests pipeline | Monitoreo diario fuentes | No |
-| Rendimiento | Aceptable | MapLibre chunk separado; teselas NetworkOnly | Medir LCP móvil real | No |
+| Contenido | Listo técnico | 80 fichas; sin inflación | Revisión humana puntual `needs-review` | No |
+| Rutas | Listo técnico | 5 rutas; salto niños corregido | Validación física | No |
+| Agenda | Listo técnico | 73 eventos; coords CIEA corregidas | Confirmación CIEA/Cabaña in situ | No |
+| Privacidad | Listo | Geo solo por gesto | Prueba real permiso denegado | No |
+| PWA | Parcial | sw/manifest OK; SW viejo puede confundir | Install real + update flow | Parcial |
+| Responsive | Parcial | Chromium OK | Safari/Firefox/Android | Parcial |
+| Accesibilidad | Parcial | Nav/semántica OK | axe en dispositivo | No |
+| Datos | Listo | Zod + pipeline + tests | Monitor diario fuentes | No |
+| Rendimiento | Aceptable | MapLibre chunked; tiles NetworkOnly | LCP móvil | No |
+| Compat. deps | Documentado | `--legacy-peer-deps` por peer Astro≤5 | Upgrade `@vite-pwa/astro` | No |
 
 ## Veredicto
 
-**No declarar “beta lista” pública.** Sí es razonable una **beta privada técnica** tras revisión humana del informe de eventos y smoke en dispositivo, distinguiendo:
+**beta técnica viable**
 
-- verificado automáticamente (CI local / scripts);
-- probado en navegador (pendiente en esta pasada del agente);
-- revisado editorialmente (pendiente);
-- pendiente de validación física (rutas y servicios).
+No es «beta privada lista» hasta completar Safari/Firefox/Android, geo real e install PWA en dispositivo.  
+No está «beta bloqueada»: los defectos altos de deep-link y coords CIEA están corregidos.
+
+Niveles de evidencia:
+
+- verificado automáticamente: CLI, tests, build;
+- probado en navegador: Chromium Cursor;
+- revisado editorialmente: eventos (docs/event-editorial-review.md);
+- pendiente de validación física: rutas y geo.

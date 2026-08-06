@@ -11,5 +11,5 @@ export const siteConfig = {
   contactUrl: '' as string,
   /** Etiqueta del enlace de contacto cuando contactUrl está definido. */
   contactLabel: 'Contacto',
-  phase: 'Fase 2B — Contenido, rutas y agenda',
+  phase: 'Fase 3 — Beta privada (preparación)',
 } as const;

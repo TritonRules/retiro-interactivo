@@ -24,3 +24,14 @@
 - Nav compacta: Mapa / Rutas / Agenda / Acerca.
 - Docs 2B: content-model, routes, event-pipeline, event-editorial-policy, qa-phase-2b, beta-readiness.
 - Precache PWA: se excluyen fichas individuales `/agenda/*/`.
+
+## 2026-08-06 — Fase 3 preparación beta privada
+
+- Rama `feature/fase-3-private-beta` desde `6fcbce2`.
+- Corrección deep-link `?ruta=`/`?lugar=`/`?evento=` (lectura en cliente; Astro estático).
+- Coordenadas curatoriales de sedes (CIEA y otras) en el normalizador de eventos.
+- Ajuste geometría ruta `retiro-con-ninos` (eliminar salto ~593 m).
+- Zod 4: `z.url()` sustituye `z.string().url()` deprecado.
+- PWA: `cleanupOutdatedCaches` + denylist ampliada.
+- Docs: editorial eventos, validación rutas, QA matriz, legacy-peer-deps, checklist deploy.
+- Veredicto: **beta técnica viable** (no lista del todo sin Safari/Firefox/geo real).

@@ -79,6 +79,25 @@ function withBase(baseUrl: string, path: string): string {
   return `${base}${path.replace(/^\//, '')}`;
 }
 
+/** En build estático Astro no ve `?ruta=`/`?lugar=`; leer en el cliente. */
+function readClientMapQuery() {
+  if (typeof window === 'undefined') {
+    return {
+      category: undefined as string | undefined,
+      focusSlug: undefined as string | undefined,
+      routeSlug: undefined as string | undefined,
+      eventSlug: undefined as string | undefined,
+    };
+  }
+  const params = new URLSearchParams(window.location.search);
+  return {
+    category: params.get('categoria') ?? undefined,
+    focusSlug: params.get('lugar') ?? undefined,
+    routeSlug: params.get('ruta') ?? undefined,
+    eventSlug: params.get('evento') ?? undefined,
+  };
+}
+
 export default function MapExplorer({
   places,
   services,
@@ -99,17 +118,25 @@ export default function MapExplorer({
   const [ready, setReady] = useState(false);
   const [mapError, setMapError] = useState<string | null>(null);
   const [isDesktop, setIsDesktop] = useState(false);
-  const [category, setCategory] = useState<CategoryFilter>(() =>
-    parseCategoryParam(initialCategory),
-  );
+  const [queryReady, setQueryReady] = useState(false);
+  const [category, setCategory] = useState<CategoryFilter>('todos');
   const [showServicesInTodos, setShowServicesInTodos] = useState(false);
   const [showEvents, setShowEvents] = useState(false);
-  const [activeRouteSlug, setActiveRouteSlug] = useState<string | null>(
-    initialRouteSlug ?? null,
-  );
+  const [activeRouteSlug, setActiveRouteSlug] = useState<string | null>(null);
+  const [focusSlugState, setFocusSlugState] = useState<string | undefined>(undefined);
+  const [eventSlugState, setEventSlugState] = useState<string | undefined>(undefined);
   const [selection, setSelection] = useState<Selection>(null);
   const [geoState, setGeoState] = useState<GeoPermissionState>('idle');
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
+
+  useEffect(() => {
+    const q = readClientMapQuery();
+    setCategory(parseCategoryParam(q.category ?? initialCategory));
+    setActiveRouteSlug(q.routeSlug ?? initialRouteSlug ?? null);
+    setFocusSlugState(q.focusSlug ?? focusSlug);
+    setEventSlugState(q.eventSlug ?? initialEventSlug);
+    setQueryReady(true);
+  }, [initialCategory, initialRouteSlug, focusSlug, initialEventSlug]);
 
   const activeRoute = useMemo(
     () => routes.find((route) => route.slug === activeRouteSlug) ?? null,
@@ -161,6 +188,7 @@ export default function MapExplorer({
   }, []);
 
   useEffect(() => {
+    if (!queryReady) return;
     const params = new URLSearchParams(window.location.search);
     if (category === 'todos') params.delete('categoria');
     else params.set('categoria', category);
@@ -169,7 +197,7 @@ export default function MapExplorer({
     const query = params.toString();
     const next = `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`;
     window.history.replaceState({}, '', next);
-  }, [category, activeRouteSlug]);
+  }, [category, activeRouteSlug, queryReady]);
 
   useEffect(() => {
     let cancelled = false;
@@ -409,8 +437,8 @@ export default function MapExplorer({
   }, [showEvents, events, ready, activeRoute]);
 
   useEffect(() => {
-    if (!ready || !focusSlug) return;
-    const place = places.find((item) => item.slug === focusSlug);
+    if (!ready || !focusSlugState) return;
+    const place = places.find((item) => item.slug === focusSlugState);
     if (!place) return;
     setSelection({ kind: 'place', id: place.id });
     mapRef.current?.easeTo({
@@ -419,11 +447,11 @@ export default function MapExplorer({
       duration: 600,
       essential: true,
     });
-  }, [ready, focusSlug, places]);
+  }, [ready, focusSlugState, places]);
 
   useEffect(() => {
-    if (!ready || !initialEventSlug) return;
-    const event = events.find((item) => item.slug === initialEventSlug);
+    if (!ready || !eventSlugState) return;
+    const event = events.find((item) => item.slug === eventSlugState);
     if (!event) return;
     setShowEvents(true);
     setSelection({ kind: 'event', id: event.id });
@@ -433,7 +461,7 @@ export default function MapExplorer({
       duration: 600,
       essential: true,
     });
-  }, [ready, initialEventSlug, events]);
+  }, [ready, eventSlugState, events]);
 
   const clearUserLocation = () => {
     setUserLocation(null);

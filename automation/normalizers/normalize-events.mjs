@@ -18,6 +18,8 @@ const PARK_VENUE_PATTERNS = [
   /casa de fieras/i,
   /la rosaleda/i,
   /estanque grande/i,
+  /caba[nñ]a del retiro/i,
+  /aula ambiental/i,
 ];
 
 const RETIRO_BBOX = {
@@ -27,16 +29,26 @@ const RETIRO_BBOX = {
   maxLat: 40.427,
 };
 
+/**
+ * Coordenadas curatoriales alineadas al catálogo OSM del proyecto.
+ * Se priorizan frente a lat/lon municipales cuando el venue es conocido,
+ * porque algunos datasets asignan un punto genérico incorrecto (p. ej. CIEA).
+ */
 const VENUE_COORDS = {
-  'centro de educación ambiental el retiro': [-3.6789, 40.4165],
-  'centro cultural casa de vacas (retiro)': [-3.6828, 40.4192],
-  'casa de vacas': [-3.6828, 40.4192],
+  'centro de educacion ambiental el retiro': [-3.6789, 40.4165],
+  'centro cultural casa de vacas': [-3.6840988, 40.4192106],
+  'casa de vacas': [-3.6840988, 40.4192106],
   'palacio de cristal': [-3.68206, 40.4136],
-  'palacio de velázquez': [-3.68198, 40.4152],
-  'teatro de títeres de el retiro': [-3.6808, 40.4188],
-  'biblioteca pública municipal eugenio trías': [-3.67894, 40.41674],
+  'palacio de velazquez': [-3.68198, 40.4152],
+  'teatro de titeres de el retiro': [-3.6866962, 40.4187197],
+  'teatro de titeres': [-3.6866962, 40.4187197],
+  'biblioteca publica municipal eugenio trias': [-3.6789381, 40.4167401],
+  'casa de fieras': [-3.6789381, 40.4167401],
   'parque del retiro': [-3.6835, 40.4155],
   'jardines del buen retiro': [-3.6835, 40.4155],
+  'jardines de el buen retiro': [-3.6835, 40.4155],
+  'aula ambiental la cabana del retiro': [-3.679318, 40.409123],
+  'cabana del retiro': [-3.679318, 40.409123],
 };
 
 export function slugify(text) {
@@ -118,16 +130,31 @@ export function isDistrictRetiroOnly(raw, blob) {
   return isDistrict && !parkHit;
 }
 
-export function resolveVenueCoords(venue, coords) {
-  if (coords && inRetiroBbox(coords)) return coords;
-  const key = String(venue || '')
+function normalizeKey(text) {
+  return String(text || '')
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '');
+}
+
+/** Devuelve coords curatoriales si el venue es conocido. */
+export function curatedVenueCoords(venue) {
+  const key = normalizeKey(venue);
   for (const [name, c] of Object.entries(VENUE_COORDS)) {
-    if (key.includes(name.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))) return c;
+    if (key.includes(name)) return c;
   }
-  return coords && inRetiroBbox(coords) ? coords : undefined;
+  return undefined;
+}
+
+/**
+ * Prioriza coordenadas curatoriales de sedes conocidas.
+ * Si no hay sede conocida, usa las de la fuente solo si caen en el bbox.
+ */
+export function resolveVenueCoords(venue, coords) {
+  const curated = curatedVenueCoords(venue);
+  if (curated) return curated;
+  if (coords && inRetiroBbox(coords)) return coords;
+  return undefined;
 }
 
 export function geographicGate(raw) {
@@ -135,16 +162,13 @@ export function geographicGate(raw) {
   const blob = JSON.stringify(raw);
   const coords = extractCoords(raw);
   const reasons = [];
+  const resolved = resolveVenueCoords(venue, coords);
 
-  if (coords && inRetiroBbox(coords) && matchesParkVenue(blob)) {
-    return { accept: true, reason: 'coords+venue', coords, venue };
-  }
   if (matchesParkVenue(venue) || matchesParkVenue(blob)) {
-    const resolved = resolveVenueCoords(venue, coords);
     if (resolved || matchesParkVenue(venue)) {
       return {
         accept: true,
-        reason: 'venue-park',
+        reason: curatedVenueCoords(venue) ? 'venue-curated' : 'venue-park',
         coords: resolved,
         venue: venue || 'Parque del Retiro',
       };
@@ -153,8 +177,17 @@ export function geographicGate(raw) {
   if (isDistrictRetiroOnly(raw, blob)) {
     return { accept: false, reason: 'distrito-retiro-sin-parque', coords, venue };
   }
+  if (coords && inRetiroBbox(coords) && /retiro/i.test(blob) && matchesParkVenue(blob)) {
+    return {
+      accept: true,
+      reason: 'coords+venue',
+      coords: resolved || coords,
+      venue,
+    };
+  }
   if (coords && inRetiroBbox(coords) && /retiro/i.test(blob)) {
-    return { accept: true, reason: 'bbox-retiro-keyword', coords, venue };
+    // Keyword genérico + bbox: aceptar solo con coords; marcar razón débil.
+    return { accept: true, reason: 'bbox-retiro-keyword', coords: resolved || coords, venue };
   }
   reasons.push('fuera-ambito');
   return { accept: false, reason: reasons[0], coords, venue };
