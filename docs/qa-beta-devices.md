@@ -15,7 +15,7 @@ Beta técnica no anunciada (acceso por enlace). Repositorio público; GitHub Pag
 | fecha | dispositivo | sistema | navegador | versión | prueba | resultado | defecto | severidad | evidencia |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 2026-08-06 | CI / local Chromium (Cursor) | macOS | Chromium embebido | — | Smoke local pre-push (mapa, rutas, deep links, agenda, offline) | OK tras limpiar SW | SW antiguo puede servir `/offline/` hasta unregister | media (conocida) | Fase 3 QA local |
-| 2026-08-06 | — | — | — | — | Despliegue Actions → Pages | bloqueado | GitHub Actions + Pages en *major outage*; runs en cola sin runner (`31123372080` y anteriores cancelados). URL HTTPS sigue 404. | crítica (infra externa) | https://www.githubstatus.com · run https://github.com/TritonRules/retiro-interactivo/actions/runs/31123372080 |
+| 2026-08-06 | — | — | — | — | Despliegue Actions → Pages | bloqueado | Actions/Pages *major outage*. Build CI OK en `31124228860` (validate/check/build/artifact). Deploy cancelado esperando runner Pages. URL HTTPS 404. | crítica (infra externa) | https://www.githubstatus.com · https://github.com/TritonRules/retiro-interactivo/actions/runs/31124228860 |
 | pendiente | iPhone | iOS | Safari | — | Apertura enlace, geo concedida/denegada, Añadir a inicio, icono, mapa/rutas/agenda | pendiente | — | — | — |
 | pendiente | Android | Android | Chrome | — | Instalación PWA, geo dentro/fuera Retiro, SW update, offline shell | pendiente | — | — | — |
 | pendiente | Escritorio | — | Chrome/Chromium | — | Smoke HTTPS + SW | pendiente | — | — | — |
