@@ -3,7 +3,8 @@
 Beta técnica no anunciada (acceso por enlace). Repositorio público; GitHub Pages no aporta control de acceso.
 
 **URL:** https://tritonrules.github.io/retiro-interactivo/  
-**Candidato publicado:** `87ddb1a` · rama estable `beta` · run Actions `31158271676`
+**Candidato publicado:** `cd9984c` · rama estable `beta` · run Actions `31182210507`  
+**Publicación anterior:** `87ddb1a` · run Actions `31158271676`
 
 ## Decisión de datos pre-push
 
@@ -22,14 +23,16 @@ Beta técnica no anunciada (acceso por enlace). Repositorio público; GitHub Pag
 | 2026-08-07 | Escritorio (Cursor) | macOS 25.4 | Chromium embebido | — | Worker MapLibre 6 en producción | OK | — | — | `maplibre-gl-worker-fS9eBZUt.js` 200 (468 kB); glyphs y sprites de OpenFreeMap 200; sin `Failed to fetch dynamically imported module` |
 | 2026-08-07 | Escritorio (Cursor) | macOS 25.4 | Chromium embebido | — | Deep link directo `?ruta=ruta-fotografica` con caché limpia | OK | — | — | «7 puntos visibles · ruta activa», trazado y 7 paradas; no se sirve `/offline/` |
 | 2026-08-07 | Escritorio (Cursor) | macOS 25.4 | Chromium embebido | — | Deep link directo `?lugar=estanque-grande` con caché limpia | OK | — | — | Ficha «Estanque Grande del Retiro» abierta sobre el mapa |
-| 2026-08-07 | Escritorio (Cursor) | macOS 25.4 | Chromium embebido | — | Deep link directo `?evento=antonio-pedrero-50104191` con caché limpia | Parcial | La ficha del evento se monta (108 puntos, isla React intacta, sin `Style is not done loading`) pero no es visible: usa clases `place-sheet*` sin CSS y queda bajo el canvas | media | Preexistente desde `6fcbce2`; lugares/servicios usan las clases `ficha*`, que sí tienen estilos |
+| 2026-08-07 | Escritorio (Cursor) | macOS 25.4 | Chromium embebido | — | Deep link directo `?evento=antonio-pedrero-50104191` con caché limpia (`87ddb1a`) | Parcial | La ficha del evento se monta (108 puntos, isla React intacta, sin `Style is not done loading`) pero no es visible: usa clases `place-sheet*` sin CSS y queda bajo el canvas | media | Preexistente desde `6fcbce2`; corregido y verificado después en `cd9984c` |
 | 2026-08-07 | Escritorio (Cursor) | macOS 25.4 | Chromium embebido | — | Slug de ruta inexistente (`?ruta=el-retiro-con-ninos`) | OK | — | — | Degrada al mapa completo sin error; slugs reales: `retiro-imprescindible`, `retiro-en-una-hora`, `retiro-con-ninos`, `ruta-fotografica`, `caminar-o-correr` |
 | 2026-08-07 | Escritorio (Cursor) | macOS 25.4 | Chromium embebido | — | `/lugares/palacio-de-cristal/` con mini-mapa | OK | — | — | Canvas 413×218 con basemap y marcador |
 | 2026-08-07 | Escritorio (Cursor) | macOS 25.4 | Chromium embebido | — | Interacción: filtros de categoría, capa de eventos, capa de servicios, ficha de lugar, restablecer vista | OK | Avisos de MapLibre por iconos `gate` y `office` ausentes del sprite de OpenFreeMap | baja (cosmética, origen upstream) | 36 → 108 → 152 puntos; 0 errores de consola |
 | 2026-08-07 | Escritorio (Cursor) | macOS 25.4 | Chromium embebido | — | Segunda carga con service worker activo (portada, `?ruta=`, `?evento=`) | OK | — | — | Navegación servida desde `cache-storage`; worker MapLibre desde precaché; sin `/offline/` estando online |
 | 2026-08-07 | Escritorio (Cursor) | macOS 25.4 | Chromium embebido | — | Estado de cachés del SW | OK | — | — | Una sola caché `workbox-precache-v2-.../retiro-interactivo/` con 122 entradas; sin cachés obsoletas |
 | 2026-08-07 | Escritorio (Cursor) | macOS 25.4 | Chromium embebido | — | Shell offline (red emulada sin conexión) | OK | — | — | Portada, `/rutas/`, `/offline/` y ficha de lugar responden 200 desde precaché |
-| 2026-08-07 | Escritorio (Cursor) | macOS 25.4 | Chromium embebido | — | Actualización desde un service worker antiguo | pendiente | No reproducible: el SW previo del dominio se desregistró para el smoke limpio y un redespliegue del mismo commit no genera versión nueva | — | `registerType: 'prompt'` + `cleanupOutdatedCaches: true` verificados en `sw.js`; `registration.update()` no deja worker en `waiting` al no haber versión nueva |
+| 2026-08-07 | — | — | — | — | Despliegue Actions → Pages (`cd9984c`) | OK | — | — | run `31182210507`: build y deploy success |
+| 2026-08-07 | Escritorio (Cursor) | macOS 25.4 | Chromium embebido | — | Ficha de evento sobre el mapa en producción (`?evento=antonio-pedrero-50104191`, `cd9984c`) | OK | — | — | El deep link selecciona el evento; ficha `ficha ficha--desktop` visible sobre el lienzo (`elementFromPoint` devuelve la propia ficha) con título «Antonio Pedrero», fecha, sede y acciones «Ver ficha» / «Cerrar»; isla React montada (108 puntos); 0 errores de consola y ningún error de MapLibre |
+| 2026-08-07 | Escritorio (Cursor) | macOS 25.4 | Chromium embebido | — | Actualización desde un service worker antiguo (`87ddb1a` → `cd9984c`) | OK | — | — | La página arrancó controlada por el SW anterior sirviendo la shell antigua; el nuevo SW quedó en `waiting` y apareció el aviso «Hay una nueva versión disponible»; al pulsar «Actualizar» tomó el control y la página recargó con la shell nueva; desapareció el markup `place-sheet`, quedó una única caché de precaché, sin chunks obsoletos ni peticiones fallidas. Conforme a `registerType: 'prompt'` + `cleanupOutdatedCaches: true` |
 | pendiente | iPhone | iOS | Safari | — | Apertura enlace, geo concedida/denegada, Añadir a inicio, icono, mapa/rutas/agenda | pendiente | — | — | — |
 | pendiente | Android | Android | Chrome | — | Instalación PWA, geo dentro/fuera Retiro, SW update, offline shell | pendiente | — | — | — |
 | pendiente | Escritorio | — | Chrome (perfil real) | — | Smoke HTTPS + instalación PWA | pendiente | — | — | — |
@@ -39,14 +42,18 @@ Beta técnica no anunciada (acceso por enlace). Repositorio público; GitHub Pag
 
 ## Criterio
 
-**Clasificación actual (2026-08-07):** beta técnica publicada. Actions y Pages en verde, HTTPS 200, mapa, worker de MapLibre, rutas, eventos, deep links, manifest y service worker verificados en producción.
+**Clasificación actual (2026-08-07):** beta técnica publicada. Actions y Pages en verde, HTTPS 200, mapa, worker de MapLibre, rutas, eventos, deep links, manifest, service worker y actualización desde un service worker antiguo verificados en producción sobre `cd9984c`.
 
 La incidencia del 2026-08-06 se resolvió sin tocar el proyecto: con GitHub operativo bastó relanzar el workflow sobre `beta`.
 
 No declarar **beta de usuarios lista** hasta completar filas móviles/reales, geolocalización, instalación PWA, Firefox/Safari, validación física de rutas y canal de feedback.
 
-## Defecto corregido, pendiente de desplegar
+## Observación conocida
+
+Eventos de todo el día muestran `0:00` porque el mapa y la agenda formatean `startAt` y el dato utilizado por el mapa no expone `allDay`. Comportamiento preexistente y consistente. Pendiente de mejora.
+
+## Defecto corregido y desplegado
 
 **Ficha de evento invisible en el mapa** (severidad media, preexistente desde `6fcbce2`). El `<aside>` que mostraba el evento seleccionado en `MapExplorer` usaba las clases `place-sheet`, `place-sheet__header` y `place-sheet__close`, que no existen en ninguna hoja de estilos: el elemento se quedaba en flujo estático dentro de `.mapa-canvas-wrap` y el canvas del mapa, absoluto e `inset: 0`, lo tapaba. Lugares y servicios sí se veían porque `PlaceSheet`/`ServiceSheet` usan la familia `ficha*`, estilada con `position: absolute` y `z-index: 4`. Quedaba enmascarado mientras el contenedor del mapa colapsaba a 0 px.
 
-Corregido en `beta` con el componente `EventSheet`, que reutiliza el mismo overlay que las demás fichas. Verificado en preview local (`2026-08-07`): ficha visible en escritorio y móvil por deep link y por clic en el marcador, cierre correcto, sin regresiones en lugares, servicios ni `?ruta=`, 0 errores de consola. Pendiente de repetir el smoke en producción tras el próximo despliegue.
+Corregido en `cd9984c` con el componente `EventSheet`, que reutiliza el mismo overlay que las demás fichas. Verificado en preview local (`2026-08-07`): ficha visible en escritorio y móvil por deep link y por clic en el marcador, cierre correcto, sin regresiones en lugares, servicios ni `?ruta=`, 0 errores de consola. Verificado también en producción tras el run `31182210507`, incluida la transición desde el service worker anterior.
