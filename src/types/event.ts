@@ -8,6 +8,16 @@ export type EventStatus =
   | 'expired'
   | 'needs-review';
 
+/** Datos del evento que consume el mapa: marcador y ficha. */
+export interface MapEventPoint {
+  id: string;
+  slug: string;
+  title: string;
+  coordinates: [number, number];
+  startAt: string;
+  venue: string;
+}
+
 export interface ParkEvent {
   id: string;
   slug: string;

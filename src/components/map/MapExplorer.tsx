@@ -10,6 +10,7 @@ import {
   OPENFREEMAP_STYLE_URL,
   RETIRO_CENTER,
 } from '../../config/map';
+import type { MapEventPoint } from '../../types/event';
 import type { Place } from '../../types/place';
 import type { ParkService } from '../../types/service';
 import type { ParkRoute } from '../../types/route';
@@ -41,17 +42,9 @@ import {
   createUserMarkerElement,
 } from './serviceMarkerFactory';
 import { NearbyList } from './NearbyList';
+import { EventSheet } from '../places/EventSheet';
 import { PlaceSheet } from '../places/PlaceSheet';
 import { ServiceSheet } from '../places/ServiceSheet';
-
-interface MapEventPoint {
-  id: string;
-  slug: string;
-  title: string;
-  coordinates: [number, number];
-  startAt: string;
-  venue: string;
-}
 
 interface Props {
   places: Place[];
@@ -847,18 +840,12 @@ export default function MapExplorer({
           />
         ) : null}
         {selectedEvent ? (
-          <aside className={`place-sheet place-sheet--${isDesktop ? 'desktop' : 'mobile'}`}>
-            <div className="place-sheet__header">
-              <h2>{selectedEvent.title}</h2>
-              <button type="button" className="place-sheet__close" onClick={() => setSelection(null)}>
-                Cerrar
-              </button>
-            </div>
-            <p>{selectedEvent.venue}</p>
-            <a className="btn" href={withBase(baseUrl, `agenda/${selectedEvent.slug}/`)}>
-              Ver ficha
-            </a>
-          </aside>
+          <EventSheet
+            event={selectedEvent}
+            eventHref={withBase(baseUrl, `agenda/${selectedEvent.slug}/`)}
+            onClose={() => setSelection(null)}
+            variant={isDesktop ? 'desktop' : 'mobile'}
+          />
         ) : null}
       </div>
     </section>

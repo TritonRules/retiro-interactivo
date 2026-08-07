@@ -45,6 +45,8 @@ La incidencia del 2026-08-06 se resolvió sin tocar el proyecto: con GitHub oper
 
 No declarar **beta de usuarios lista** hasta completar filas móviles/reales, geolocalización, instalación PWA, Firefox/Safari, validación física de rutas y canal de feedback.
 
-## Defecto abierto
+## Defecto corregido, pendiente de desplegar
 
-**Ficha de evento invisible en el mapa** (severidad media, preexistente desde `6fcbce2`). El `<aside>` que muestra el evento seleccionado en `MapExplorer` usa las clases `place-sheet`, `place-sheet__header` y `place-sheet__close`, que no existen en ninguna hoja de estilos: el elemento se queda en flujo estático dentro de `.mapa-canvas-wrap` y el canvas del mapa, absoluto e `inset: 0`, lo tapa. Lugares y servicios sí se ven porque `PlaceSheet`/`ServiceSheet` usan la familia `ficha*`, que sí está estilada (`position: absolute`, `z-index: 4`). Antes quedaba enmascarado porque el contenedor del mapa colapsaba a 0 px. Corrección fuera del alcance del release; requiere decisión de diseño.
+**Ficha de evento invisible en el mapa** (severidad media, preexistente desde `6fcbce2`). El `<aside>` que mostraba el evento seleccionado en `MapExplorer` usaba las clases `place-sheet`, `place-sheet__header` y `place-sheet__close`, que no existen en ninguna hoja de estilos: el elemento se quedaba en flujo estático dentro de `.mapa-canvas-wrap` y el canvas del mapa, absoluto e `inset: 0`, lo tapaba. Lugares y servicios sí se veían porque `PlaceSheet`/`ServiceSheet` usan la familia `ficha*`, estilada con `position: absolute` y `z-index: 4`. Quedaba enmascarado mientras el contenedor del mapa colapsaba a 0 px.
+
+Corregido en `beta` con el componente `EventSheet`, que reutiliza el mismo overlay que las demás fichas. Verificado en preview local (`2026-08-07`): ficha visible en escritorio y móvil por deep link y por clic en el marcador, cierre correcto, sin regresiones en lugares, servicios ni `?ruta=`, 0 errores de consola. Pendiente de repetir el smoke en producción tras el próximo despliegue.
