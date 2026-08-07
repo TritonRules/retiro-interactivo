@@ -30,6 +30,33 @@ describe('render del mapa', () => {
     expect(read('src/styles/map.css')).toContain('.mapa-canvas.maplibregl-map');
   });
 
+  it('sube el estado de ubicación por encima de la atribución en pantallas estrechas', () => {
+    const css = read('src/styles/map.css');
+    const regla = css.match(/\.geo-status\s*\{[^}]*\}/)?.[0] ?? '';
+    expect(regla).toContain('bottom: calc(var(--space-3) + var(--geo-status-attrib-band))');
+
+    const bandas = [...css.matchAll(/@media \(max-width: (\d+)px\)\s*\{\s*\.geo-status\s*\{\s*--geo-status-attrib-band: ([\d.]+)rem;/g)].map(
+      ([, ancho, banda]) => ({ ancho: Number(ancho), banda: Number(banda) }),
+    );
+    // Una banda por cada salto de línea de la atribución: 819, 699 y 389 px.
+    expect(bandas.map((b) => b.ancho)).toEqual([819, 699, 389]);
+    // Cuanto más estrecha la pantalla, más líneas ocupa la atribución.
+    expect(bandas.map((b) => b.banda)).toEqual([...bandas.map((b) => b.banda)].sort((a, b) => a - b));
+    // Alturas medidas de la barra de atribución: 24, 44 y 64 px.
+    for (const [indice, minimo] of [24, 44, 64].entries()) {
+      expect(bandas[indice].banda * 16).toBeGreaterThanOrEqual(minimo);
+    }
+  });
+
+  it('no oculta ni encoge la atribución cartográfica', () => {
+    for (const hoja of ['src/styles/map.css', 'src/styles/global.css']) {
+      const css = read(hoja);
+      expect(css).not.toMatch(/maplibregl-ctrl-attrib[^{]*\{[^}]*display:\s*none/);
+      expect(css).not.toMatch(/maplibregl-ctrl-attrib[^{]*\{[^}]*visibility:\s*hidden/);
+      expect(css).not.toMatch(/maplibregl-ctrl-attrib[^{]*\{[^}]*font-size/);
+    }
+  });
+
   it('usa la shell del mapa como navigateFallback del service worker', () => {
     const config = read('astro.config.mjs');
     expect(config).toContain('navigateFallback: basePath');

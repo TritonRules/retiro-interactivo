@@ -6,14 +6,16 @@ export interface CategoryMeta {
   /** Forma distintiva además del color (accesibilidad). */
   shape: 'circle' | 'square' | 'diamond' | 'triangle' | 'star' | 'hexagon' | 'pin' | 'arch';
   color: string;
+  /** Variante para texto sobre fondo claro cuando `color` no alcanza 4,5:1. */
+  textColor?: string;
 }
 
 export const CATEGORY_META: Record<PlaceCategory, Omit<CategoryMeta, 'id'>> = {
   iconico: { label: 'Icónico', shape: 'star', color: '#1B5E3B' },
-  monumento: { label: 'Monumento', shape: 'triangle', color: '#C45C26' },
+  monumento: { label: 'Monumento', shape: 'triangle', color: '#C45C26', textColor: '#B45523' },
   cultura: { label: 'Cultura', shape: 'square', color: '#2F6F8F' },
   naturaleza: { label: 'Naturaleza', shape: 'circle', color: '#3D7A4A' },
-  familias: { label: 'Familias', shape: 'hexagon', color: '#B8860B' },
+  familias: { label: 'Familias', shape: 'hexagon', color: '#B8860B', textColor: '#906909' },
   paseo: { label: 'Paseo', shape: 'diamond', color: '#5C6B4A' },
   servicio: { label: 'Servicio', shape: 'pin', color: '#6B5B4F' },
   acceso: { label: 'Acceso', shape: 'arch', color: '#8B4513' },

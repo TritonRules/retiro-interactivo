@@ -225,7 +225,11 @@
 .geo-status {
   position: absolute;
   left: var(--space-3);
-  bottom: var(--space-3);
+  /* MapLibre ancla la atribución al fondo del lienzo. Cuando no cabe a la
+     derecha, su barra cruza todo el ancho y este aviso la taparía, así que se
+     sube por encima de la banda que ocupa. */
+  --geo-status-attrib-band: 0rem;
+  bottom: calc(var(--space-3) + var(--geo-status-attrib-band));
   z-index: 3;
   max-width: min(70%, 280px);
   margin: 0;
@@ -240,6 +244,27 @@
   flex-wrap: wrap;
   gap: var(--space-2);
   align-items: center;
+}
+
+/* Anchos en los que la atribución de OpenFreeMap deja de caber a la derecha:
+   una línea hasta 819 px, dos por debajo de 700 px y tres en pantallas muy
+   estrechas. */
+@media (max-width: 819px) {
+  .geo-status {
+    --geo-status-attrib-band: 1.5rem;
+  }
+}
+
+@media (max-width: 699px) {
+  .geo-status {
+    --geo-status-attrib-band: 2.75rem;
+  }
+}
+
+@media (max-width: 389px) {
+  .geo-status {
+    --geo-status-attrib-band: 4rem;
+  }
 }
 
 .nearby-panel {

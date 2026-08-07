@@ -34,7 +34,7 @@ export function CategoryFilters({ active, counts, onChange }: Props) {
                 ? undefined
                 : {
                     borderColor: option.color,
-                    color: option.color,
+                    color: option.textColor ?? option.color,
                   }
             }
           >
