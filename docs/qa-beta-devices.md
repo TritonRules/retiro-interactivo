@@ -3,8 +3,10 @@
 Beta técnica no anunciada (acceso por enlace). Repositorio público; GitHub Pages no aporta control de acceso.
 
 **URL:** https://tritonrules.github.io/retiro-interactivo/  
-**Candidato publicado:** `cd9984c` · rama estable `beta` · run Actions `31182210507`  
-**Publicación anterior:** `87ddb1a` · run Actions `31158271676`
+**Candidato publicado:** `8eafc61` · rama estable `beta` · run Actions `31187581429`  
+**Publicaciones anteriores:** `cd9984c` (run `31182210507`) · `87ddb1a` (run `31158271676`)
+
+**Utillaje de QA automatizado (temporal, fuera del repositorio):** Playwright con Chromium 151, Firefox 153 y WebKit 26.5 instalado en `/tmp/retiro-qa`, y axe-core 4.10 inyectado desde CDN. No se añadió ninguna dependencia a `package.json`.
 
 ## Decisión de datos pre-push
 
@@ -33,24 +35,73 @@ Beta técnica no anunciada (acceso por enlace). Repositorio público; GitHub Pag
 | 2026-08-07 | — | — | — | — | Despliegue Actions → Pages (`cd9984c`) | OK | — | — | run `31182210507`: build y deploy success |
 | 2026-08-07 | Escritorio (Cursor) | macOS 25.4 | Chromium embebido | — | Ficha de evento sobre el mapa en producción (`?evento=antonio-pedrero-50104191`, `cd9984c`) | OK | — | — | El deep link selecciona el evento; ficha `ficha ficha--desktop` visible sobre el lienzo (`elementFromPoint` devuelve la propia ficha) con título «Antonio Pedrero», fecha, sede y acciones «Ver ficha» / «Cerrar»; isla React montada (108 puntos); 0 errores de consola y ningún error de MapLibre |
 | 2026-08-07 | Escritorio (Cursor) | macOS 25.4 | Chromium embebido | — | Actualización desde un service worker antiguo (`87ddb1a` → `cd9984c`) | OK | — | — | La página arrancó controlada por el SW anterior sirviendo la shell antigua; el nuevo SW quedó en `waiting` y apareció el aviso «Hay una nueva versión disponible»; al pulsar «Actualizar» tomó el control y la página recargó con la shell nueva; desapareció el markup `place-sheet`, quedó una única caché de precaché, sin chunks obsoletos ni peticiones fallidas. Conforme a `registerType: 'prompt'` + `cleanupOutdatedCaches: true` |
+| 2026-08-07 | Escritorio (QA automatizado) | macOS 25.4 | Chromium 151.0.7922.34 (Playwright) | 1440×900 | Smoke completo: portada, filtros, ficha de lugar, ficha de servicio, agenda, `/rutas/`, mini-mapa, deep links `?lugar=`/`?evento=`/`?ruta=` con recarga y back/forward | OK | — | — | 21/21 comprobaciones sobre `cd9984c`; 36 → 11 (Naturaleza) → 36 → 80 (servicios) → 152 (eventos) puntos; 0 errores de consola, 0 respuestas ≥400, 0 peticiones fallidas |
+| 2026-08-07 | Escritorio (QA automatizado) | macOS 25.4 | Firefox 153.0 (Playwright) | 1440×900 | Mismo smoke + geolocalización simulada + SW/offline + PWA + responsive | OK | Recargando sin red, un `icon-192.png` interceptado por el SW deja un error de consola (QA-03) | baja (solo offline) | 21/21 comprobaciones; mapa, overlays, rutas y eventos equivalentes a Chromium |
+| 2026-08-07 | Escritorio (QA automatizado) | macOS 25.4 | WebKit 26.5 (Playwright) | 1440×900 | Mismo smoke + geolocalización simulada + PWA + responsive | OK con limitación | La emulación offline de Playwright/WebKit aborta toda petición con «WebKit encountered an internal error»; no permite validar el modo sin red | — (limitación del arnés, no del producto) | 20/21 comprobaciones; precaché verificada aparte con `caches.match()`: 122 entradas y 200 en portada, `/rutas/`, `/agenda/`, `/offline/`, ficha de lugar y `places.json`. **Aproximación al motor de Safari, no Safari real** |
+| 2026-08-07 | Móvil y tablet emulados (QA automatizado) | — | Chromium / Firefox / WebKit | 390×844, 430×932 y 820×1180 | Portada, filtros, ficha de lugar, ficha de evento, ruta activa, agenda, mini-mapa | OK | Solape del estado de ubicación con la atribución en anchos ≤767 px (QA-01) | media, ya resuelta en `8eafc61` | Sin overflow horizontal; fichas dentro del viewport; botón cerrar 44×44 px; mapa 635 px (390), 745 px (430) y 993 px (820) |
+| 2026-08-07 | Escritorio (QA automatizado) | macOS 25.4 | Chromium / Firefox / WebKit | 1440×900 | Geolocalización **simulada** (no real): dentro del Retiro (40.4155, −3.6835), fuera (Barcelona) y permiso denegado | OK | — | — | Dentro: «Ubicación dentro del Retiro», marcador de usuario y 5 puntos cercanos entre 32 m y 133 m. Fuera: «Parece que estás fuera del Retiro» + «Volver al parque», sin lista de cercanos. Denegado: «Permiso de ubicación denegado» y mapa usable. Sin errores JS; sin persistencia en localStorage, sessionStorage ni cookies |
+| 2026-08-07 | Escritorio (QA automatizado) | macOS 25.4 | Chromium 151 | 1440×900 | Deep links con el service worker ya instalado, hard reload (`Page.reload ignoreCache`) y deep link estando sin red | OK | — | — | `?lugar=`, `?evento=` y `?ruta=` servidos desde `cache-storage` con la shell del mapa, nunca `/offline/`; sin red, `?evento=` abre shell, ficha y 36 marcadores desde precaché (sin teselas) |
+| 2026-08-07 | Escritorio (QA automatizado) | macOS 25.4 | Chromium 151 / Firefox 153 | 1440×900 | Offline → online | OK | — | — | Offline: portada, `/rutas/`, `/agenda/`, `/offline/`, ficha de lugar y `places.json` responden 200 desde precaché; al restaurar la red el mapa vuelve a pedir teselas sin borrar datos |
+| 2026-08-07 | Escritorio (QA automatizado) | macOS 25.4 | Chromium / Firefox / WebKit | 1440×900 | PWA técnica | OK | Instalabilidad real no comprobable en modo automatizado | — | HTTPS, SW controlando, `name`/`short_name`, `start_url` y `scope` = `/retiro-interactivo/`, `display: standalone`, iconos 192, 512 y 512 maskable |
+| 2026-08-07 | Escritorio (QA automatizado) | macOS 25.4 | Chromium 151 + axe-core 4.10 | 1440×900 | Accesibilidad básica: axe (WCAG 2.0/2.1 A y AA) en portada, agenda, `/rutas/`, ficha de lugar, `?evento=` y `?ruta=`, más recorrido de teclado | OK con salvedad | Contraste insuficiente en los chips «Monumento» (4,28:1) y «Familias» (3,25:1) sobre blanco (QA-02) | media, ya resuelta en `8eafc61` | Única violación detectada; 15–25 reglas superadas por página. Un solo `h1`, `lang=es-ES`, skip link, región del mapa etiquetada, 2 `role=status`, controles del mapa con nombre, foco visible en los 14 primeros tabulados, ficha con `role=dialog` + `aria-labelledby` y cierre operable con teclado |
+| 2026-08-07 | Escritorio (QA automatizado) | macOS 25.4 | Chromium 151 | 1440×900 y 390×844 | Performance básica (orientativa, no contractual) | OK | — | — | TTFB 13–18 ms, DCL ~0,5 s, mapa con marcadores ~4,5 s en frío y ~0,3 s en caliente; 19 recursos y ~487 kB (MapLibre 245 kB + worker 127 kB + cliente 57 kB + MapExplorer 34 kB); teselas OpenFreeMap ≤30 ms |
+| 2026-08-07 | — | — | — | — | Despliegue Actions → Pages (`8eafc61`, hardening de QA-01 y QA-02) | OK | — | — | run `31187581429`: build 35 s y deploy 10 s, ambos success |
+| 2026-08-08 | Escritorio (QA automatizado) | macOS 25.4 | Chromium 151 | 320×844, 390×844, 430×932, 700×900, 820×1180, 1440×900 | QA-01 en producción: estado de ubicación frente a la atribución en portada, `?evento=` y `?ruta=` | OK | — | — | Sin solape en ningún ancho: a 390 px el aviso ocupa y 743–781 y la atribución arranca en y 783; a 320 px la atribución pasa a tres líneas y el aviso sube a y 723–761. Texto íntegro «OpenFreeMap © OpenMapTiles Data from OpenStreetMap \| © OpenStreetMap · MapLibre» y `elementFromPoint` devuelve siempre la atribución o sus enlaces. Sin solape con controles, ficha ni panel de ruta |
+| 2026-08-08 | Escritorio (QA automatizado) | macOS 25.4 | Chromium 151 | 390×844 y 1440×900 | QA-01 en los cuatro estados del aviso de ubicación (no activada, dentro, fuera con «Volver al parque», denegado) | OK | — | — | Incluso el estado más alto (90 px, dos líneas más botón) termina en y 781 con la atribución en 783; 5 cercanos dentro del Retiro y ninguno fuera |
+| 2026-08-08 | Escritorio (QA automatizado) | macOS 25.4 | Chromium 151 + axe-core 4.10 | 1440×900 y 390×844 | QA-02 en producción: axe en portada, `?evento=` y `?ruta=` + contraste medido en el DOM | OK | — | — | 0 violaciones (24–25 reglas superadas por página). Monumento `#B45523` 4,92:1 y Familias `#906909` 4,99:1 sobre blanco; el resto de chips entre 5,15:1 y 7,75:1. Bordes y marcadores mantienen `#C45C26` y `#B8860B` |
+| 2026-08-08 | Escritorio (QA automatizado) | macOS 25.4 | Chromium 151 | 1440×900 | Smoke de regresión completo sobre `8eafc61` en producción | OK | — | — | 21/21 comprobaciones: portada, filtros, lugar, servicio, agenda (72 próximos), `/rutas/` (5), mini-mapa, deep links con recarga y back/forward, geolocalización simulada, service worker, offline, vuelta online, PWA y accesibilidad. 0 errores de consola, 0 respuestas ≥400 |
+| 2026-08-08 | Escritorio (QA automatizado) | macOS 25.4 | Chromium 151 | 1440×900 | Service worker de la nueva versión | OK | — | — | Precaché única con 122 entradas y solo chunks nuevos (`MapExplorer.CrhQjDyJ.js`, `markerFactory.DGD_XG_p.css`); sin rastro de `xF7jfR8z` ni `BER6CIQB`; segunda carga desde `cache-storage`; `cleanupOutdatedCaches` y el mensaje `SKIP_WAITING` de `registerType: 'prompt'` presentes en `sw.js`; aviso de actualización montado y oculto por no haber versión pendiente. La transición desde un SW antiguo se validó en `87ddb1a` → `cd9984c` con la misma configuración |
 | pendiente | iPhone | iOS | Safari | — | Apertura enlace, geo concedida/denegada, Añadir a inicio, icono, mapa/rutas/agenda | pendiente | — | — | — |
 | pendiente | Android | Android | Chrome | — | Instalación PWA, geo dentro/fuera Retiro, SW update, offline shell | pendiente | — | — | — |
 | pendiente | Escritorio | — | Chrome (perfil real) | — | Smoke HTTPS + instalación PWA | pendiente | — | — | — |
-| pendiente | Escritorio | — | Firefox | — | Smoke HTTPS | pendiente | — | — | — |
-| pendiente | Escritorio | — | Safari/WebKit | — | Smoke HTTPS | pendiente | — | — | — |
+| pendiente | Escritorio | — | Firefox app instalada | — | Smoke HTTPS con perfil real | pendiente | Firefox no está instalado en este Mac; el motor queda cubierto por Firefox 153 de Playwright | — | — |
+| pendiente | Escritorio | macOS 25.4 | Safari 26.4 real | — | Smoke HTTPS en Safari de escritorio | pendiente | No automatizable: «Permitir automatización remota» está desactivado en Safari y `screencapture` carece de permiso de grabación de pantalla. WebKit de Playwright cubre el motor, no la app | — | — |
 | pendiente | Campo | — | — | — | Validación física de rutas | pendiente | — | — | — |
 
 ## Criterio
 
-**Clasificación actual (2026-08-07):** beta técnica publicada. Actions y Pages en verde, HTTPS 200, mapa, worker de MapLibre, rutas, eventos, deep links, manifest, service worker y actualización desde un service worker antiguo verificados en producción sobre `cd9984c`.
+**Clasificación actual (2026-08-08):** beta de usuarios — pendiente de QA físico.
+
+El QA automatizado está completo y en verde sobre `8eafc61` en producción: Chromium 151, Firefox 153 y WebKit 26.5 (escritorio, tablet y móvil emulados), mapa, worker de MapLibre, filtros, fichas de lugar, servicio y evento, rutas, agenda, mini-mapa, deep links con recarga y back/forward, service worker, offline y vuelta online, PWA técnica, geolocalización simulada, accesibilidad básica con axe y performance orientativa. Sin defectos CRITICAL ni HIGH abiertos.
+
+Faltan, de forma obligatoria antes de declarar **beta de usuarios lista**: iPhone real con Safari, Android real con Chrome, instalación PWA física en ambos, geolocalización con GPS real, Safari de escritorio real, validación física de las rutas dentro del Retiro y un canal de feedback.
 
 La incidencia del 2026-08-06 se resolvió sin tocar el proyecto: con GitHub operativo bastó relanzar el workflow sobre `beta`.
 
-No declarar **beta de usuarios lista** hasta completar filas móviles/reales, geolocalización, instalación PWA, Firefox/Safari, validación física de rutas y canal de feedback.
+## Observaciones conocidas
 
-## Observación conocida
+1. Los eventos de todo el día muestran `0:00` porque el mapa y la agenda formatean `startAt` y el dato que consume el mapa no expone `allDay`. Comportamiento preexistente y consistente; verificado de nuevo en producción («4 sept 2026, 0:00»). Pendiente de mejora, fuera del alcance de este hardening.
+2. La agenda muestra 72 eventos próximos aunque el JSON contenga 73: uno ya ha finalizado. Esperado por el paso del tiempo.
+3. Avisos de MapLibre por los iconos `gate` y `office`, ausentes del sprite de OpenFreeMap. Severidad baja, origen upstream, sin impacto funcional.
+4. Con una ruta activa en móvil, el panel ocupa la mitad superior y el mapa queda en unos 360 px útiles: usable y sin overflow.
+5. Marcadores contiguos pueden interceptar el clic de un vecino al zoom por defecto; se resuelve acercando el mapa.
 
-Eventos de todo el día muestran `0:00` porque el mapa y la agenda formatean `startAt` y el dato utilizado por el mapa no expone `allDay`. Comportamiento preexistente y consistente. Pendiente de mejora.
+## Defectos del QA multidispositivo
+
+### QA-01 — Solape del aviso de ubicación con la atribución · RESUELTO en `8eafc61`
+
+**Severidad:** media. **Detectado:** 2026-08-07 en el QA multidispositivo automatizado.
+
+**Causa.** `.geo-status` estaba anclado con `bottom: var(--space-3)` en la esquina inferior izquierda de `.mapa-canvas-wrap`, donde MapLibre ancla también su atribución. Mientras el texto cabe a la derecha no hay conflicto, pero al estrecharse la ventana la barra `.maplibregl-ctrl-attrib` cruza todo el ancho del lienzo y crece en líneas: 24 px de alto por debajo de 820 px, 44 px por debajo de 700 px y 64 px en pantallas muy estrechas. El aviso, de 38 px y a 12 px del fondo, caía dentro de esa banda y tapaba la mitad izquierda del texto. El solape empezaba en 767 px, no solo en los ≤430 px observados al principio.
+
+**Corrección.** El desplazamiento se calcula con `bottom: calc(var(--space-3) + var(--geo-status-attrib-band))` y la variable sube en tres tramos que corresponden a los saltos de línea reales de la atribución (1,5 rem por debajo de 820 px, 2,75 rem por debajo de 700 px y 4 rem por debajo de 390 px). En escritorio vale `0rem`, así que nada se mueve. No se tocó la atribución.
+
+**Evidencia en producción (2026-08-08).** Sin solape en 320×844, 390×844, 430×932, 700×900, 820×1180 y 1440×900, en portada, `?evento=` y `?ruta=ruta-fotografica`, y en los cuatro estados del aviso. Atribución íntegra y con sus enlaces accesibles. Cubierto por un test de regresión en `src/utils/map.render.test.ts`.
+
+### QA-02 — Contraste insuficiente en los chips de filtro · RESUELTO en `8eafc61`
+
+**Severidad:** media. **Detectado:** 2026-08-07 por axe-core sobre la portada y `?evento=`.
+
+| Chip | Antes | Después | Contraste |
+| --- | --- | --- | --- |
+| Monumento | `#C45C26` | texto `#B45523` | 4,28:1 → **4,92:1** |
+| Familias | `#B8860B` | texto `#906909` | 3,25:1 → **4,99:1** |
+
+`CATEGORY_META` conserva los colores de identidad para marcadores, bordes y formas; se añadió un `textColor` opcional que solo usa el texto del chip cuando el color base no llega a 4,5:1. Las otras siete categorías siguen con un único color porque ya cumplían (5,15:1 a 7,75:1). axe en producción: **0 violaciones** en portada 1440 y 390, `?evento=` 1440 y 390, y `?ruta=` 390. Cubierto por `src/utils/categories.contrast.test.ts`.
+
+### QA-03 — Error de consola de Firefox al recargar sin red · ABIERTO, en observación
+
+**Severidad:** baja. Al recargar la portada estando offline, Firefox 153 registra «Failed to load `icon-192.png`. A ServiceWorker intercepted the request and encountered an unexpected error». La página offline funciona igual y no se reproduce en Chromium. No se corrige en este hardening; conviene comprobar si reaparece en Android real.
 
 ## Defecto corregido y desplegado
 
