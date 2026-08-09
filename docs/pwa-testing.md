@@ -6,7 +6,8 @@
 - Service worker: `dist/sw.js` + Workbox.
 - Precaché: shell HTML/CSS/JS/iconos y datos JSON/GeoJSON listados.
 - Offline fallback: `/offline/`, precacheada y accesible por URL directa.
-- `navigateFallback`: la shell del mapa (`BASE`), **no** `/offline/`. Ver más abajo.
+- `navigateFallback`: la shell del mapa (`BASE`), **no** `/offline/`, y solo para la propia shell. Ver más abajo.
+- Fichas de evento (`<base>agenda/<slug>/`): fuera del precaché y servidas con `NetworkFirst`.
 - Teselas OpenFreeMap: **NetworkOnly** (no se cachean en masa).
 - Aviso discreto de nueva versión (`registerType: 'prompt'`).
 
@@ -41,6 +42,17 @@ query (`?ruta=`, `?lugar=`, `?evento=`) no coincide con `index.html` precacheado
 conexión» en lugar del mapa; comprobado en preview el 2026-08-06. Apuntando a `BASE` se sirve la shell
 del mapa, que hidrata `MapExplorer` y aplica el parámetro. `/offline/` sigue precacheada y se muestra
 igual cuando no hay red, porque sin conexión la shell tampoco puede cargar teselas.
+
+## Por qué el fallback está acotado con `navigateFallbackAllowlist`
+
+Ese fallback, sin acotar, suplanta a cualquier página que no esté en el precaché. Las fichas de evento
+se excluyen a propósito (`globIgnores: ['**/agenda/*/index.html']`) porque la agenda se renueva cada
+semana, así que con el service worker activo abrir una ficha cambiaba la URL y mostraba el mapa: es el
+defecto QA-PHYS-01/02 detectado en iPhone real el 2026-08-09. Desde entonces
+`navigateFallbackAllowlist` deja que solo la propia shell —con o sin query— se resuelva con la shell,
+y las fichas de evento tienen ruta propia `NetworkFirst` (caché `retiro-eventos`) con
+`precacheFallback` a `/offline/`. Los patrones viven en `src/utils/serviceWorkerRoutes.ts`, que
+`astro.config.mjs` importa y los tests comprueban.
 
 ## Limitaciones offline
 

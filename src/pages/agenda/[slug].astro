@@ -1,12 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { events, getEventBySlug } from '../../utils/events';
+import { eventsWithDetailPage, getEventBySlug } from '../../utils/events';
+import { eventDetailPath } from '../../utils/eventLinks';
 import { formatMadridDateTime } from '../../utils/datetime';
 
 export function getStaticPaths() {
-  return events
-    .filter((event) => event.status === 'published' || event.status === 'expired')
-    .map((event) => ({ params: { slug: event.slug } }));
+  return eventsWithDetailPage().map((event) => ({ params: { slug: event.slug } }));
 }
 
 const slug = Astro.params.slug ?? '';
@@ -106,7 +105,7 @@ const robots =
                 addressCountry: 'ES',
               },
             },
-            url: new URL(`${base}agenda/${event.slug}/`, Astro.site).href,
+            url: new URL(`${base}${eventDetailPath(event.slug)}`, Astro.site).href,
           })}
         />
       ) : null

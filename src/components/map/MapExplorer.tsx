@@ -22,6 +22,7 @@ import {
   type CategoryFilter,
 } from '../../utils/filterPlaces';
 import { getCategoryLabel } from '../../utils/categories';
+import { eventDetailPath } from '../../utils/eventLinks';
 import { loadMaplibre } from '../../utils/maplibre';
 import { getServiceTypeLabel } from '../../utils/serviceTypes';
 import {
@@ -842,7 +843,7 @@ export default function MapExplorer({
         {selectedEvent ? (
           <EventSheet
             event={selectedEvent}
-            eventHref={withBase(baseUrl, `agenda/${selectedEvent.slug}/`)}
+            eventHref={withBase(baseUrl, eventDetailPath(selectedEvent.slug))}
             onClose={() => setSelection(null)}
             variant={isDesktop ? 'desktop' : 'mobile'}
           />

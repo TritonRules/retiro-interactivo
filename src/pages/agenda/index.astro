@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getUpcomingEvents, eventsToday } from '../../utils/events';
+import { eventDetailPath } from '../../utils/eventLinks';
 import { formatMadridDateTime } from '../../utils/datetime';
 import { siteConfig } from '../../config/site';
 
@@ -50,7 +51,7 @@ const filtered = upcoming.filter((event) => {
             {today.map((event) => (
               <li class="content-card">
                 <h3>
-                  <a href={`${base}agenda/${event.slug}/`}>{event.title}</a>
+                  <a href={`${base}${eventDetailPath(event.slug)}`}>{event.title}</a>
                 </h3>
                 <p class="meta">
                   {formatMadridDateTime(event.startAt)} · {event.venue}
@@ -99,14 +100,14 @@ const filtered = upcoming.filter((event) => {
             {filtered.map((event) => (
               <li class="content-card">
                 <h3>
-                  <a href={`${base}agenda/${event.slug}/`}>{event.title}</a>
+                  <a href={`${base}${eventDetailPath(event.slug)}`}>{event.title}</a>
                 </h3>
                 <p>{event.shortDescription}</p>
                 <p class="meta">
                   {formatMadridDateTime(event.startAt)} · {event.venue} · {event.category}
                 </p>
                 <p class="actions">
-                  <a class="btn btn--secondary" href={`${base}agenda/${event.slug}/`}>
+                  <a class="btn btn--secondary" href={`${base}${eventDetailPath(event.slug)}`}>
                     Ver ficha
                   </a>
                   {event.coordinates ? (

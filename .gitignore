@@ -30,4 +30,5 @@ test-results/
 
 # Caché de recolectores (respuestas crudas de terceros)
 automation/cache/
+.cache/
 *.tmp

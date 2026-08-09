@@ -20,6 +20,11 @@ export function getEventBySlug(slug: string): ParkEvent | undefined {
   return events.find((event) => event.slug === slug);
 }
 
+/** Eventos con ficha propia generada por `src/pages/agenda/[slug].astro`. */
+export function eventsWithDetailPage(list: ParkEvent[] = events): ParkEvent[] {
+  return list.filter((event) => event.status === 'published' || event.status === 'expired');
+}
+
 export function eventsToday(now = new Date()): ParkEvent[] {
   const formatter = new Intl.DateTimeFormat('en-CA', {
     timeZone: 'Europe/Madrid',

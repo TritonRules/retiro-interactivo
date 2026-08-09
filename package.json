@@ -24,6 +24,7 @@
     "events:build": "node scripts/events-build.mjs",
     "events:report": "node scripts/events-report.mjs",
     "routes:validate": "node scripts/routes-validate.mjs",
+    "routes:paths": "node scripts/routes-build-paths.mjs",
     "content:report": "node scripts/content-report.mjs"
   },
   "dependencies": {
