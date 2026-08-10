@@ -3,8 +3,8 @@
 Beta técnica no anunciada (acceso por enlace). Repositorio público; GitHub Pages no aporta control de acceso.
 
 **URL:** https://tritonrules.github.io/retiro-interactivo/  
-**Candidato publicado:** `8eafc61` · rama estable `beta` · run Actions `31187581429`  
-**Publicaciones anteriores:** `cd9984c` (run `31182210507`) · `87ddb1a` (run `31158271676`)
+**Candidato publicado:** `1f5863a` · rama estable `beta` · run Actions `31369117942`  
+**Publicaciones anteriores:** `3edc72e` (run `31264600283`) · `8eafc61` (run `31187581429`) · `cd9984c` (run `31182210507`) · `87ddb1a` (run `31158271676`)
 
 **Utillaje de QA automatizado (temporal, fuera del repositorio):** Playwright con Chromium 151, Firefox 153 y WebKit 26.5 instalado en `/tmp/retiro-qa`, y axe-core 4.10 inyectado desde CDN. No se añadió ninguna dependencia a `package.json`.
 
@@ -54,7 +54,12 @@ Beta técnica no anunciada (acceso por enlace). Repositorio público; GitHub Pag
 | 2026-08-09 | iPhone 16 | iOS 26.4.2 | Safari | — | Primer QA físico: apertura por enlace, mapa, ficha de evento, agenda y rutas | Parcial | «Ver ficha» y varios eventos de la agenda devolvían al mapa (QA-PHYS-01 y QA-PHYS-02); la Ruta fotográfica no conectaba sus paradas y cortaba por zonas sin camino (QA-PHYS-03) | alta | Reportado por el equipo tras recorrer la beta en el parque |
 | 2026-08-09 | Escritorio (QA automatizado) | macOS 25.4 | Chromium 151 y WebKit 26.5 | 390×844 | Verificación de QA-PHYS-01 y 02 en el preview del build de producción, con el service worker activo | OK | La emulación offline de WebKit sigue abortando toda petición (limitación del arnés) | — | Mapa → «Ver ficha», recarga, atrás/adelante, «Ver en el mapa», **los 69 eventos de la agenda**, deep links `?evento=`/`?lugar=`/`?ruta=`, páginas precacheadas y offline en Chromium. 0 errores de consola |
 | 2026-08-09 | Escritorio (QA automatizado) | macOS 25.4 | Chromium 151 | 390×844, 430×932, 1440×900 | Smoke visual de las cinco rutas regeneradas | OK | — | — | Trazado visible y continuo, 6/6/6/7/6 paradas, canvas 360–565 px, sin overflow ni errores. La Ruta fotográfica ya recorre sus siete paradas y termina en La Rosaleda |
-| pendiente | iPhone | iOS | Safari | — | Repetición del QA físico tras el despliegue de las correcciones | pendiente | — | — | — |
+| 2026-08-10 | — | — | — | — | Despliegue Actions → Pages (`1f5863a`, correcciones QA físico) | OK | — | — | run `31369117942`: build 30 s y deploy 8 s, ambos success. Fast-forward `3edc72e..1f5863a` |
+| 2026-08-10 | Escritorio (QA automatizado) | macOS 25.4 | Chromium 151 | 390×844 | QA-PHYS-01/02 en producción con SW nuevo: mapa → evento → «Ver ficha», agenda completa, offline de fichas | OK | — | — | SW con `navigateFallbackAllowlist`, `NetworkFirst` + caché `retiro-eventos` y fallback `/offline/`. Clic en capa de eventos abre ficha; «Ver ficha» muestra la página estática. **66/66** eventos de la agenda. Offline A (visitada) desde caché; offline B (nunca visitada) → `/offline/`, nunca la shell. 0 errores, 0 ≥400 |
+| 2026-08-10 | Escritorio (QA automatizado) | macOS 25.4 | WebKit 26.5 | 390×844 | Misma verificación Safari-like de QA-PHYS-01/02 | OK | Offline no comprobable en el arnés WebKit | — | Mapa → «Ver ficha», reload/back/forward, clic en agenda y muestra amplia (15/66: primeros, intermedios y últimos). 0 errores |
+| 2026-08-10 | Escritorio (QA automatizado) | macOS 25.4 | Chromium 151 | 390×844 y 1440×900 | QA-PHYS-03 en producción: cinco rutas + geometría publicada | OK | — | — | `data/routes.json` idéntico al commit; 0 cruces del Estanque Grande; paradas en orden hacia adelante; Ruta fotográfica 7 paradas, ~2,3 km, termina en La Rosaleda. Smoke visual desktop/móvil |
+| 2026-08-10 | Escritorio (QA automatizado) | macOS 25.4 | Chromium 151 | 1440×900 | Smoke general postdeploy sobre `1f5863a` | OK | — | — | Portada, mapa, filtros, lugar, servicio, evento, Ver ficha, agenda, ruta, deep links, geo simulada, PWA, offline y vuelta online. 0 errores de consola, 0 404 de assets |
+| pendiente | iPhone | iOS | Safari | — | Revalidación física tras el despliegue de `1f5863a` | pendiente | — | — | El código está validado automáticamente en producción; falta confirmar en el mismo iPhone 16 / Safari del hallazgo original |
 | pendiente | Android | Android | Chrome | — | Instalación PWA, geo dentro/fuera Retiro, SW update, offline shell | pendiente | — | — | — |
 | pendiente | Escritorio | — | Chrome (perfil real) | — | Smoke HTTPS + instalación PWA | pendiente | — | — | — |
 | pendiente | Escritorio | — | Firefox app instalada | — | Smoke HTTPS con perfil real | pendiente | Firefox no está instalado en este Mac; el motor queda cubierto por Firefox 153 de Playwright | — | — |
@@ -63,9 +68,9 @@ Beta técnica no anunciada (acceso por enlace). Repositorio público; GitHub Pag
 
 ## Criterio
 
-**Clasificación actual (2026-08-09):** beta de usuarios — pendiente de repetir el QA físico.
+**Clasificación actual (2026-08-10):** beta de usuarios — pendiente de revalidación iPhone.
 
-El primer recorrido con iPhone real destapó tres defectos de severidad alta que el QA automatizado no había cubierto: la navegación a las fichas de evento (QA-PHYS-01 y QA-PHYS-02) y la geometría de las rutas (QA-PHYS-03). Los tres están corregidos y verificados en local; quedan pendientes de desplegar y de volver a probarse en el parque.
+El primer recorrido con iPhone real destapó tres defectos de severidad alta (QA-PHYS-01, QA-PHYS-02 y QA-PHYS-03). Están corregidos en `1f5863a`, desplegados en producción (run `31369117942`) y validados automáticamente con Chromium y WebKit. **No se declaran resueltos físicamente** hasta repetir las mismas pruebas en el iPhone 16 / Safari del hallazgo original.
 
 El QA automatizado está completo y en verde sobre `8eafc61` en producción: Chromium 151, Firefox 153 y WebKit 26.5 (escritorio, tablet y móvil emulados), mapa, worker de MapLibre, filtros, fichas de lugar, servicio y evento, rutas, agenda, mini-mapa, deep links con recarga y back/forward, service worker, offline y vuelta online, PWA técnica, geolocalización simulada, accesibilidad básica con axe y performance orientativa. Sin defectos CRITICAL ni HIGH abiertos.
 
@@ -110,23 +115,35 @@ La incidencia del 2026-08-06 se resolvió sin tocar el proyecto: con GitHub oper
 
 ## Defectos del primer QA físico (iPhone 16, iOS 26.4.2, Safari · 2026-08-09)
 
-### QA-PHYS-01 y QA-PHYS-02 — Las fichas de evento devolvían al mapa · RESUELTO en local
+### QA-PHYS-01 — «Ver ficha» desde el mapa devolvía al mapa · RESUELTO / VALIDADO AUTOMÁTICAMENTE · iPhone PENDIENTE DE REVALIDACIÓN
 
-**Severidad:** alta. Desde la ficha de un evento sobre el mapa, «Ver ficha» cambiaba la URL y volvía a mostrar el mapa; desde `/agenda/`, algunos eventos hacían lo mismo.
+**Severidad:** alta mientras el defecto estaba abierto. **Detectado:** 2026-08-09 en iPhone 16 / iOS 26.4.2 / Safari.
 
-**Causa (única para ambos).** No era ni el enlace ni la página: `<a href="/retiro-interactivo/agenda/<slug>/">` es correcto y la página estática existe (un `fetch()` a esa URL devuelve la ficha real). El problema estaba en el service worker. Las fichas de evento se excluyen del precaché a propósito (`globIgnores: ['**/agenda/*/index.html']`) porque la agenda se renueva cada semana, y `navigateFallback: basePath` no tenía lista de permitidos: la `NavigationRoute` de Workbox atrapaba **toda** navegación que no estuviera en el precaché y respondía con la shell del mapa. De ahí que la URL cambiara y el contenido no. Los eventos «que sí funcionaban» eran los abiertos antes de que el service worker tomara el control de la pestaña; una vez instalado, fallaban los 69.
+**Causa.** Service worker: `navigateFallback` sin allowlist usurpaba las fichas de evento (excluidas del precaché) y devolvía la shell del mapa. El enlace y la página estática eran correctos.
 
-**Corrección.** `navigateFallbackAllowlist` limita la shell a su propia URL (con o sin `?lugar=`, `?ruta=` o `?evento=`), de modo que ninguna otra página puede ser suplantada por el mapa. Las fichas de evento pasan a tener ruta propia `NetworkFirst` con caché `retiro-eventos` y `precacheFallback` a `/offline/`: online sirven la ficha real, sin red sirven la última visitada y, si nunca se visitó, la página offline. Mapa y agenda comparten ya una única regla de enlace (`eventDetailPath`) y la generación de fichas usa `eventsWithDetailPage()`.
+**Corrección:** `1f5863a` — `navigateFallbackAllowlist` + `NetworkFirst` para `/agenda/<slug>/` (caché `retiro-eventos`, fallback `/offline/`).
 
-**Verificación (preview local sobre el build de producción).** Chromium 151 y WebKit 26.5 a 390×844: mapa → «Ver ficha» abre la ficha, recarga, atrás y adelante se comportan bien, «Ver en el mapa» vuelve al deep link, y **los 69 eventos de la agenda abren su ficha** en ambos motores. Deep links `?evento=`, `?lugar=` y `?ruta=` siguen resolviéndose con la shell; `/rutas/`, `/agenda/`, `/lugares/…`, `/offline/` y `/acerca-de/` siguen sirviéndose del precaché; offline verificado en Chromium. Cubierto por `src/utils/events.navigation.test.ts`.
+**Postdeploy (2026-08-10, producción `1f5863a`).** Chromium y WebKit 390×844 con el SW nuevo controlando: mapa → capa de eventos → ficha → «Ver ficha» abre la página estática; reload, back y forward correctos. **QA físico iPhone: PENDIENTE DE REVALIDACIÓN.**
 
-### QA-PHYS-03 — Trazados que no seguían caminos · RESUELTO en local
+### QA-PHYS-02 — Eventos de la agenda devolvían al mapa · RESUELTO / VALIDADO AUTOMÁTICAMENTE · iPhone PENDIENTE DE REVALIDACIÓN
 
-**Severidad:** alta para beta de usuarios. La Ruta fotográfica dibujaba las 7 paradas pero la línea no las conectaba y cortaba por zonas sin sendero.
+**Severidad:** alta mientras el defecto estaba abierto. **Detectado:** mismo contexto iPhone 16 / Safari. **Causa compartida** con QA-PHYS-01.
 
-**Causa.** Las geometrías eran polilíneas dibujadas a mano, ajenas a la red de caminos. Medido sobre las láminas de agua de OSM, **las cinco rutas cruzaban el Estanque Grande**. Además la Ruta fotográfica terminaba junto al Monumento a Alfonso XII, a 593 m de La Rosaleda —su séptima parada—, y `retiro-imprescindible` arrancaba a 104 m de la Puerta de Felipe IV.
+Los eventos «que sí funcionaban» eran los abiertos antes de que el SW tomara el control; una vez instalado, fallaban todos los listados.
 
-**Corrección.** `npm run routes:paths` regenera las cinco geometrías siguiendo la red peatonal de OpenStreetMap dentro del recinto del parque y las guarda como GeoJSON estático; no se añade ninguna dependencia de routing en ejecución. Las paradas y su orden no cambian; las distancias se recalculan (ver `docs/routes-validation.md`). Cubierto por `src/utils/routes.geometry.test.ts`, que falla con las geometrías anteriores.
+**Corrección:** la misma de QA-PHYS-01 en `1f5863a`, más regla de enlace única (`eventDetailPath`).
+
+**Postdeploy (2026-08-10).** Chromium: **66/66** fichas de la agenda. WebKit: muestra de 15/66 (primeros, intermedios y últimos) + clic real. Offline: ficha visitada desde `retiro-eventos`; ficha nunca visitada → `/offline/`, nunca la shell. **QA físico iPhone: PENDIENTE DE REVALIDACIÓN.**
+
+### QA-PHYS-03 — Trazados que no seguían caminos · RESUELTO / VALIDADO AUTOMÁTICAMENTE · iPhone PENDIENTE DE REVALIDACIÓN
+
+**Severidad:** alta para beta de usuarios mientras el defecto estaba abierto. **Detectado:** 2026-08-09 en iPhone real (Ruta fotográfica).
+
+**Causa.** Geometrías manuales: las cinco rutas cruzaban el Estanque Grande; la fotográfica no llegaba a La Rosaleda (terminaba a 593 m).
+
+**Corrección:** `1f5863a` — geometrías regeneradas con `npm run routes:paths` sobre la red peatonal OSM, persistidas como GeoJSON estático (sin routing en ejecución).
+
+**Postdeploy (2026-08-10).** `data/routes.json` de producción idéntico al commit; 0 cruces de agua; paradas en orden; fotográfica 7 paradas, ~2,3 km, termina en La Rosaleda. **QA físico iPhone / campo: PENDIENTE DE REVALIDACIÓN.**
 
 ## Defecto corregido y desplegado
 
