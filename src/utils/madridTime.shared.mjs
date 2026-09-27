@@ -9,11 +9,17 @@ function pad(value) {
   return String(value).padStart(2, '0');
 }
 
+// Crear un Intl.DateTimeFormat es caro (sobre todo en Chromium): se reutilizan.
+// Con decenas de eventos recurrentes la expansión de sesiones llama a estas funciones miles de veces.
+let offsetFormatter = null;
+let wallClockFormatter = null;
+
 export function offsetMinutesAt(utcMs) {
-  const name = new Intl.DateTimeFormat('en-US', {
+  offsetFormatter ??= new Intl.DateTimeFormat('en-US', {
     timeZone: MADRID_TZ,
     timeZoneName: 'longOffset',
-  })
+  });
+  const name = offsetFormatter
     .formatToParts(new Date(utcMs))
     .find((part) => part.type === 'timeZoneName')?.value;
   const match = name?.match(/GMT([+-])(\d{1,2})(?::(\d{2}))?/i);
@@ -43,18 +49,19 @@ export function isValidCivilDate(year, month, day) {
 }
 
 function wallClockFromInstant(utcMs) {
+  wallClockFormatter ??= new Intl.DateTimeFormat('en-US', {
+    timeZone: MADRID_TZ,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hourCycle: 'h23',
+    weekday: 'short',
+  });
   const parts = Object.fromEntries(
-    new Intl.DateTimeFormat('en-US', {
-      timeZone: MADRID_TZ,
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hourCycle: 'h23',
-      weekday: 'short',
-    })
+    wallClockFormatter
       .formatToParts(new Date(utcMs))
       .filter((part) => part.type !== 'literal')
       .map((part) => [part.type, part.value]),
