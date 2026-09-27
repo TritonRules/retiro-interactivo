@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { createElement } from 'react';
 import { EventSheet } from '../components/places/EventSheet';
+import { EventGroupSheet } from '../components/places/EventGroupSheet';
 import { PlaceSheet } from '../components/places/PlaceSheet';
 import { ServiceSheet } from '../components/places/ServiceSheet';
 import type { Place } from '../types/place';
@@ -124,6 +125,24 @@ describe('fichas sobre el mapa', () => {
     expect(serviceMarkup).toContain('class="ficha ficha--mobile"');
     expect(unstyledClasses(placeMarkup)).toEqual([]);
     expect(unstyledClasses(serviceMarkup)).toEqual([]);
+  });
+
+  it('lista los eventos de una misma sede en el mismo overlay, con estilos reales', () => {
+    const markup = renderToStaticMarkup(
+      createElement(EventGroupSheet, {
+        events: [event, { ...event, id: 'evt-2', slug: 'otro', title: 'Otro concierto' }],
+        venue: event.venue,
+        onSelect: () => {},
+        onClose: () => {},
+        variant: 'mobile',
+      }),
+    );
+    expect(markup).toContain('class="ficha ficha--mobile"');
+    expect(unstyledClasses(markup)).toEqual([]);
+    expect(markup).toContain('2 eventos aquí');
+    expect(markup).toContain('Otro concierto');
+    expect(markup).toContain('Cerrar lista de eventos');
+    expect(markup.match(/class="ficha__list-item"/g)).toHaveLength(2);
   });
 
   it('sigue seleccionando el evento indicado en `?evento=`', () => {
