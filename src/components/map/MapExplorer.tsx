@@ -33,6 +33,9 @@ import {
 import { getServiceTypeLabel } from '../../utils/serviceTypes';
 import {
   applyMarkerZoom,
+  applyStopMarkerLayout,
+  eventGroupPriority,
+  groupEventsByLocation,
   placeMarkerPriority,
   SERVICE_MARKER_PRIORITY,
   type ZoomableMarker,
@@ -50,16 +53,19 @@ import { nearestItems, type NearbyItem } from '../../utils/nearby';
 import { formatDistance, formatDuration } from '../../utils/routes';
 import { CategoryFilters } from './CategoryFilters';
 import { createMarkerElement } from './markerFactory';
+import { createEventMarkerElement } from './eventMarkerFactory';
 import {
   createServiceMarkerElement,
   createUserMarkerElement,
 } from './serviceMarkerFactory';
 import { NearbyList } from './NearbyList';
 import { EventSheet } from '../places/EventSheet';
+import { EventGroupSheet } from '../places/EventGroupSheet';
 import { PlaceSheet } from '../places/PlaceSheet';
 import { VideoBlock } from '../media/VideoBlock';
 import { ServiceSheet } from '../places/ServiceSheet';
 import { isUsableAsCurrentPlan } from '../../utils/eventFreshness';
+import { compareByNextSession } from '../../utils/eventSchedule';
 import { useParkClock } from '../../utils/useParkClock';
 import { circlePolygon } from '../../utils/guidedWalk';
 import { GuidedWalkPanel } from './GuidedWalkPanel';
@@ -81,12 +87,13 @@ type Selection =
   | { kind: 'place'; id: string }
   | { kind: 'service'; id: string }
   | { kind: 'event'; id: string }
+  /** Varios eventos en la misma sede: se abre la lista para elegir uno. */
+  | { kind: 'eventGroup'; id: string }
   | null;
 
 const ROUTE_SOURCE = 'active-route';
 const ROUTE_LINE = 'active-route-line';
 const ACCURACY_SOURCE = 'user-accuracy';
-const EVENT_SOURCE = 'map-events';
 
 function applyStopMarkerState(
   el: HTMLElement,
@@ -208,6 +215,8 @@ export default function MapExplorer({
   const markersRef = useRef<Marker[]>([]);
   const zoomableMarkersRef = useRef<ZoomableMarker[]>([]);
   const stopMarkersRef = useRef<Marker[]>([]);
+  /** Pide recalcular escala, plegado y separación de marcadores en el próximo frame. */
+  const scheduleMarkerLayoutRef = useRef<() => void>(() => {});
   const userMarkerRef = useRef<Marker | null>(null);
   const [ready, setReady] = useState(false);
   const [mapError, setMapError] = useState<string | null>(null);
@@ -248,6 +257,9 @@ export default function MapExplorer({
   const walking = walk.state.phase !== 'idle';
   const walkRef = useRef(walk.state);
   walkRef.current = walk.state;
+  const selectedPlaceId = selection?.kind === 'place' ? selection.id : null;
+  const selectionRef = useRef<string | null>(null);
+  selectionRef.current = selectedPlaceId;
 
   const filteredPlaces = useMemo(
     () => filterPlacesByCategory(places, category),
@@ -259,8 +271,16 @@ export default function MapExplorer({
   );
   const now = useParkClock();
   const visibleEvents = useMemo(
-    () => events.filter((item) => isUsableAsCurrentPlan(asParkEvent(item), now)),
+    () =>
+      events
+        .filter((item) => isUsableAsCurrentPlan(asParkEvent(item), now))
+        .sort((a, b) => compareByNextSession(asParkEvent(a), asParkEvent(b), now)),
     [events, now],
+  );
+  // Eventos en la misma sede comparten marcador con insignia de número.
+  const eventGroups = useMemo(
+    () => (showEvents && !activeRoute ? groupEventsByLocation(visibleEvents) : []),
+    [showEvents, activeRoute, visibleEvents],
   );
   const counts = useMemo(() => countByCategory(places, services), [places, services]);
 
@@ -275,6 +295,10 @@ export default function MapExplorer({
   const selectedEvent =
     selection?.kind === 'event'
       ? (events.find((event) => event.id === selection.id) ?? null)
+      : null;
+  const selectedEventGroup =
+    selection?.kind === 'eventGroup'
+      ? (eventGroups.find((group) => group.id === selection.id) ?? null)
       : null;
 
   const nearby = useMemo(() => {
@@ -465,6 +489,42 @@ export default function MapExplorer({
         });
       }
 
+      for (const group of eventGroups) {
+        const single = group.events.length === 1;
+        const active =
+          (selection?.kind === 'eventGroup' && selection.id === group.id) ||
+          (selection?.kind === 'event' && group.events.some((item) => item.id === selection.id));
+        const el = createEventMarkerElement({
+          label: single ? group.events[0].title : group.events[0].venue,
+          count: group.events.length,
+          active,
+          onClick: () => {
+            setSelection(
+              single
+                ? { kind: 'event', id: group.events[0].id }
+                : { kind: 'eventGroup', id: group.id },
+            );
+            currentMap.easeTo({
+              center: group.coordinates,
+              zoom: Math.max(currentMap.getZoom(), 16),
+              duration: 450,
+              essential: true,
+            });
+          },
+        });
+        const marker = new maplibre.Marker({ element: el, anchor: 'center' })
+          .setLngLat(group.coordinates)
+          .addTo(currentMap);
+        markersRef.current.push(marker);
+        zoomableMarkersRef.current.push({
+          id: group.id,
+          element: el,
+          lngLat: group.coordinates,
+          priority: eventGroupPriority(group.events.length),
+          pinned: active,
+        });
+      }
+
       applyMarkerZoom(currentMap, zoomableMarkersRef.current);
     }
 
@@ -472,9 +532,10 @@ export default function MapExplorer({
     return () => {
       cancelled = true;
     };
-  }, [filteredPlaces, filteredServices, ready, selection, activeRoute]);
+  }, [filteredPlaces, filteredServices, eventGroups, ready, selection, activeRoute]);
 
-  // Iconos adaptados al zoom: escala y solapes se recalculan como mucho una vez por frame.
+  // Iconos, eventos y paradas adaptados al zoom: escala, plegado y separación de
+  // paradas se recalculan como mucho una vez por frame.
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !ready) return;
@@ -483,17 +544,23 @@ export default function MapExplorer({
       frame = 0;
       if (mapRef.current !== map) return;
       applyMarkerZoom(map, zoomableMarkersRef.current);
+      const user = userMarkerRef.current?.getLngLat();
+      applyStopMarkerLayout(map, stopMarkersRef.current, user ? [user.lng, user.lat] : null);
     };
     const schedule = () => {
       if (!frame) frame = window.requestAnimationFrame(update);
     };
+    scheduleMarkerLayoutRef.current = schedule;
     map.on('zoom', schedule);
     map.on('resize', schedule);
+    map.on('rotate', schedule);
     map.on('pitchend', schedule);
     schedule();
     return () => {
+      scheduleMarkerLayoutRef.current = () => {};
       map.off('zoom', schedule);
       map.off('resize', schedule);
+      map.off('rotate', schedule);
       map.off('pitchend', schedule);
       if (frame) window.cancelAnimationFrame(frame);
     };
@@ -542,14 +609,21 @@ export default function MapExplorer({
       activeRoute.stopIds.forEach((stopId, index) => {
         const place = places.find((item) => item.id === stopId);
         if (!place) return;
+        // Botón de 44 px (área táctil) con el número dentro; la insignia escala con el zoom.
         const el = document.createElement('button');
         el.type = 'button';
         el.className = 'route-stop-marker';
         el.dataset.stopIndex = String(index);
+        el.dataset.placeId = place.id;
         applyStopMarkerState(el, index, walkRef.current);
-        el.textContent = String(index + 1);
+        el.classList.toggle('is-active', selectionRef.current === place.id);
+        const badge = document.createElement('span');
+        badge.className = 'route-stop-marker__badge';
+        badge.textContent = String(index + 1);
+        el.appendChild(badge);
         el.setAttribute('aria-label', `Parada ${index + 1}: ${place.name}`);
-        el.addEventListener('click', () => {
+        el.addEventListener('click', (event) => {
+          event.stopPropagation();
           setSelection({ kind: 'place', id: place.id });
           currentMap.easeTo({
             center: place.coordinates,
@@ -563,6 +637,7 @@ export default function MapExplorer({
           .addTo(currentMap);
         stopMarkersRef.current.push(marker);
       });
+      scheduleMarkerLayoutRef.current();
 
       const bounds = activeRoute.geometry.coordinates.reduce(
         (acc, coord) => {
@@ -586,52 +661,6 @@ export default function MapExplorer({
     };
   }, [activeRoute, places, ready]);
 
-  useEffect(() => {
-    const map = mapRef.current;
-    if (!map || !ready) return;
-    let cancelled = false;
-
-    void whenStyleReady(map).then(() => {
-      if (cancelled || mapRef.current !== map) return;
-
-      if (map.getLayer(`${EVENT_SOURCE}-circle`)) map.removeLayer(`${EVENT_SOURCE}-circle`);
-      if (map.getSource(EVENT_SOURCE)) map.removeSource(EVENT_SOURCE);
-
-      if (!showEvents || activeRoute || visibleEvents.length === 0) return;
-
-      map.addSource(EVENT_SOURCE, {
-        type: 'geojson',
-        data: {
-          type: 'FeatureCollection',
-          features: visibleEvents.map((event) => ({
-            type: 'Feature',
-            geometry: { type: 'Point', coordinates: event.coordinates },
-            properties: { id: event.id, title: event.title },
-          })),
-        },
-      });
-      map.addLayer({
-        id: `${EVENT_SOURCE}-circle`,
-        type: 'circle',
-        source: EVENT_SOURCE,
-        paint: {
-          'circle-radius': ['interpolate', ['linear'], ['zoom'], 14, 5, 16, 7, 18, 9],
-          'circle-color': '#2f6f8f',
-          'circle-stroke-width': ['interpolate', ['linear'], ['zoom'], 14, 1, 16, 2],
-          'circle-stroke-color': '#fffdf8',
-        },
-      });
-      map.on('click', `${EVENT_SOURCE}-circle`, (e) => {
-        const id = e.features?.[0]?.properties?.id;
-        if (!id) return;
-        setSelection({ kind: 'event', id: String(id) });
-      });
-    });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [showEvents, visibleEvents, ready, activeRoute]);
 
   useEffect(() => {
     if ((!ready && !mapError) || !focusSlugState) return;
@@ -665,6 +694,7 @@ export default function MapExplorer({
     setGeoState('idle');
     userMarkerRef.current?.remove();
     userMarkerRef.current = null;
+    scheduleMarkerLayoutRef.current();
     const map = mapRef.current;
     removeAccuracyCircle(map);
     map?.easeTo({
@@ -691,6 +721,8 @@ export default function MapExplorer({
         .setLngLat(location.coordinates)
         .addTo(map);
     }
+    // Las paradas cercanas se apartan del punto para que no tape su número.
+    scheduleMarkerLayoutRef.current();
     // Actualizar una fuente existente no exige esperar al estilo.
     if (!map.getSource(ACCURACY_SOURCE)) await whenStyleReady(map);
     if (mapRef.current !== map || !userMarkerRef.current) return;
@@ -702,6 +734,7 @@ export default function MapExplorer({
     userMarkerRef.current?.remove();
     userMarkerRef.current = null;
     removeAccuracyCircle(mapRef.current);
+    scheduleMarkerLayoutRef.current();
   };
 
   const updateUserOnMap = async (location: UserLocation, inside: boolean) => {
@@ -758,7 +791,18 @@ export default function MapExplorer({
       const index = Number(el.dataset.stopIndex);
       if (Number.isFinite(index)) applyStopMarkerState(el, index, walk.state);
     }
+    // La siguiente parada va a tamaño completo: recolocar las vecinas.
+    scheduleMarkerLayoutRef.current();
   }, [walk.state]);
+
+  // Parada seleccionada: tamaño completo y por encima de las demás.
+  useEffect(() => {
+    for (const marker of stopMarkersRef.current) {
+      const el = marker.getElement();
+      el.classList.toggle('is-active', selectedPlaceId !== null && el.dataset.placeId === selectedPlaceId);
+    }
+    scheduleMarkerLayoutRef.current();
+  }, [selectedPlaceId]);
 
   // Posición en vivo durante el paseo: punto + precisión, y seguimiento opcional.
   const walkPosition = walk.position;
@@ -1132,6 +1176,15 @@ export default function MapExplorer({
         {selectedService ? (
           <ServiceSheet
             service={selectedService}
+            onClose={() => setSelection(null)}
+            variant={isDesktop ? 'desktop' : 'mobile'}
+          />
+        ) : null}
+        {selectedEventGroup ? (
+          <EventGroupSheet
+            events={selectedEventGroup.events}
+            venue={selectedEventGroup.events[0].venue}
+            onSelect={(id) => setSelection({ kind: 'event', id })}
             onClose={() => setSelection(null)}
             variant={isDesktop ? 'desktop' : 'mobile'}
           />

@@ -479,7 +479,8 @@
 }
 
 .place-marker--user {
-  z-index: 3;
+  /* Por encima de las paradas (también de la siguiente) durante el modo paseo. */
+  z-index: 4;
 }
 
 .place-marker--user .place-marker__shape {
@@ -536,6 +537,49 @@
 
 .place-marker--triangle.is-active .place-marker__shape {
   filter: drop-shadow(0 0 3px color-mix(in srgb, var(--color-accent) 80%, white));
+}
+
+/* Eventos de la agenda: mismo sistema que los iconos (escala, punto, 44 px). */
+.place-marker--event .place-marker__shape {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+}
+
+.place-marker__glyph--svg {
+  display: block;
+  width: 15px;
+  height: 15px;
+}
+
+/* Insignia con el número de eventos de la sede. Va fuera de la forma para que el
+   número no encoja con ella: se recoloca en su esquina según `--marker-scale`. */
+.place-marker__count {
+  position: absolute;
+  left: calc(50% + 15px * var(--marker-scale, 1) - 6px);
+  top: calc(50% - 15px * var(--marker-scale, 1) - 8px);
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  box-sizing: border-box;
+  border-radius: 999px;
+  border: 1.5px solid #fff;
+  background: #9a4318;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 14px;
+  text-align: center;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.3);
+  pointer-events: none;
+}
+
+.place-marker--event.is-active {
+  --marker-scale: 1;
+}
+
+.place-marker.is-dot .place-marker__count {
+  display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -621,6 +665,46 @@
   border-radius: var(--radius-pill);
   background: var(--color-bg);
   border: 1px solid var(--color-border);
+  color: var(--color-ink-muted);
+}
+
+/* Lista de eventos de una misma sede. */
+.ficha__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ficha__list-item {
+  width: 100%;
+  min-height: var(--touch-min);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ficha__list-item:hover {
+  border-color: var(--color-primary);
+}
+
+.ficha__list-title {
+  font-weight: 650;
+  font-size: 0.92rem;
+}
+
+.ficha__list-meta {
+  font-size: 0.8rem;
   color: var(--color-ink-muted);
 }
 
@@ -716,17 +800,68 @@
   margin: 0;
 }
 
+/*
+ * Paradas numeradas. El <button> es el área táctil (44 px); la insignia visible
+ * encoge con `--stop-scale` (28 px → 22 px, ver markerZoom.ts) sin encoger el número.
+ * Nunca se pliegan y van por encima de iconos y puntos de lugar; si dos se solapan,
+ * MapLibre las separa con `offset`.
+ */
 .route-stop-marker {
-  width: 1.7rem;
-  height: 1.7rem;
+  width: var(--touch-min, 44px);
+  height: var(--touch-min, 44px);
+  padding: 0;
+  border: none;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 2;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.route-stop-marker:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 0;
+  border-radius: 50%;
+}
+
+.route-stop-marker__badge {
+  --stop-size: calc(28px * var(--stop-scale, 1));
+  width: var(--stop-size);
+  height: var(--stop-size);
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
   border-radius: 999px;
   border: 2px solid #fffdf8;
   background: #c45c26;
   color: white;
   font-size: 0.75rem;
   font-weight: 700;
-  cursor: pointer;
+  line-height: 1;
   box-shadow: var(--shadow-sm);
+  pointer-events: none;
+  transition:
+    width 0.15s ease-out,
+    height 0.15s ease-out;
+}
+
+.route-stop-marker.is-active,
+.route-stop-marker.is-next {
+  --stop-scale: 1;
+  z-index: 3;
+}
+
+.route-stop-marker.is-active .route-stop-marker__badge {
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--color-accent) 70%, white),
+    var(--shadow-md);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-stop-marker__badge {
+    transition: none;
+  }
 }
 
 /* ---------- Modo paseo ---------- */
@@ -902,11 +1037,11 @@
   color: #fff;
 }
 
-.route-stop-marker.is-visited {
+.route-stop-marker.is-visited .route-stop-marker__badge {
   background: var(--color-primary);
 }
 
-.route-stop-marker.is-next {
+.route-stop-marker.is-next .route-stop-marker__badge {
   box-shadow:
     0 0 0 3px #fffdf8,
     0 0 0 6px var(--color-accent);

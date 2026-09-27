@@ -19,11 +19,11 @@ describe('render del mapa', () => {
     }
   });
 
-  it('espera al estilo antes de añadir capas de rutas, eventos y ubicación', () => {
+  it('espera al estilo antes de añadir capas de rutas y ubicación', () => {
     const content = read('src/components/map/MapExplorer.tsx');
     const guards = content.match(/whenStyleReady\(/g) ?? [];
-    // definición + rutas + eventos + ubicación
-    expect(guards.length).toBeGreaterThanOrEqual(4);
+    // definición + rutas + ubicación (los eventos son marcadores DOM, no una capa)
+    expect(guards.length).toBeGreaterThanOrEqual(3);
   });
 
   it('mantiene el contenedor del mapa dimensionado frente al CSS de MapLibre', () => {
