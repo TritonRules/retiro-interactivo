@@ -14,3 +14,37 @@ export function loadMaplibre(): Promise<typeof import('maplibre-gl')> {
   });
   return modulePromise;
 }
+
+/**
+ * MapLibre 6 exige WebGL2. Sin él, el constructor no lanza: emite un `error` antes de
+ * que podamos escucharlo y deja el mapa sin `painter`, que luego rompe en cada frame.
+ * Comprobarlo antes en un canvas desechable permite degradar sin errores.
+ */
+export function supportsWebGL2(): boolean {
+  if (typeof document === 'undefined') return false;
+  try {
+    const canvas = document.createElement('canvas');
+    const gl = canvas.getContext('webgl2');
+    if (!gl) return false;
+    gl.getExtension('WEBGL_lose_context')?.loseContext();
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/** Errores de MapLibre que dejan el mapa inutilizable (no teselas sueltas). */
+export function isFatalMapError(error: unknown): boolean {
+  if (!(error instanceof Error)) return false;
+  return error.name === 'GPUInitializationError' || /webgl/i.test(error.message);
+}
+
+/** `map.remove()` lanza si el mapa nunca tuvo `painter`; la limpieza no debe romper. */
+export function safeRemoveMap(map: { remove: () => void } | null | undefined): void {
+  if (!map) return;
+  try {
+    map.remove();
+  } catch {
+    /* mapa a medio inicializar */
+  }
+}

@@ -24,7 +24,12 @@ import {
 } from '../../utils/filterPlaces';
 import { getCategoryLabel } from '../../utils/categories';
 import { eventDetailPath } from '../../utils/eventLinks';
-import { loadMaplibre } from '../../utils/maplibre';
+import {
+  isFatalMapError,
+  loadMaplibre,
+  safeRemoveMap,
+  supportsWebGL2,
+} from '../../utils/maplibre';
 import { getServiceTypeLabel } from '../../utils/serviceTypes';
 import {
   GEO_STATUS_LABEL,
@@ -71,6 +76,8 @@ type Selection =
 const ROUTE_SOURCE = 'active-route';
 const ROUTE_LINE = 'active-route-line';
 const EVENT_SOURCE = 'map-events';
+const MAP_UNAVAILABLE_MESSAGE =
+  'No se puede mostrar el mapa en este navegador. Puedes seguir consultando lugares, rutas y agenda.';
 
 function withBase(baseUrl: string, path: string): string {
   const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
@@ -225,12 +232,17 @@ export default function MapExplorer({
 
     async function initMap() {
       if (!containerRef.current || mapRef.current) return;
+      if (!supportsWebGL2()) {
+        setMapError(MAP_UNAVAILABLE_MESSAGE);
+        return;
+      }
+      let map: Map | null = null;
       try {
         const maplibre = await loadMaplibre();
         await import('maplibre-gl/dist/maplibre-gl.css');
         if (cancelled || !containerRef.current) return;
 
-        const map = new maplibre.Map({
+        map = new maplibre.Map({
           container: containerRef.current,
           style: OPENFREEMAP_STYLE_URL,
           center: RETIRO_CENTER,
@@ -249,10 +261,25 @@ export default function MapExplorer({
           'bottom-right',
         );
 
+        const createdMap = map;
+        const onInitError = (event: { error?: unknown }) => {
+          if (!isFatalMapError(event.error)) return;
+          createdMap.off('error', onInitError);
+          if (mapRef.current === createdMap) mapRef.current = null;
+          safeRemoveMap(createdMap);
+          if (!cancelled) {
+            setReady(false);
+            setMapError(MAP_UNAVAILABLE_MESSAGE);
+          }
+        };
+        map.on('error', onInitError);
+        map.once('load', () => map?.off('error', onInitError));
+
         mapRef.current = map;
         if (!cancelled) setReady(true);
       } catch {
-        if (!cancelled) setMapError('No se pudo cargar el mapa. Reintenta más tarde.');
+        safeRemoveMap(map);
+        if (!cancelled) setMapError(MAP_UNAVAILABLE_MESSAGE);
       }
     }
 
@@ -266,7 +293,7 @@ export default function MapExplorer({
       stopMarkersRef.current = [];
       userMarkerRef.current?.remove();
       userMarkerRef.current = null;
-      mapRef.current?.remove();
+      safeRemoveMap(mapRef.current);
       mapRef.current = null;
     };
   }, []);
@@ -470,7 +497,7 @@ export default function MapExplorer({
   }, [showEvents, visibleEvents, ready, activeRoute]);
 
   useEffect(() => {
-    if (!ready || !focusSlugState) return;
+    if ((!ready && !mapError) || !focusSlugState) return;
     const place = places.find((item) => item.slug === focusSlugState);
     if (!place) return;
     setSelection({ kind: 'place', id: place.id });
@@ -480,10 +507,10 @@ export default function MapExplorer({
       duration: 600,
       essential: true,
     });
-  }, [ready, focusSlugState, places]);
+  }, [ready, mapError, focusSlugState, places]);
 
   useEffect(() => {
-    if (!ready || !eventSlugState) return;
+    if ((!ready && !mapError) || !eventSlugState) return;
     const event = events.find((item) => item.slug === eventSlugState);
     if (!event) return;
     setShowEvents(true);
@@ -494,7 +521,7 @@ export default function MapExplorer({
       duration: 600,
       essential: true,
     });
-  }, [ready, eventSlugState, events]);
+  }, [ready, mapError, eventSlugState, events]);
 
   const clearUserLocation = () => {
     setUserLocation(null);
@@ -767,7 +794,7 @@ export default function MapExplorer({
           </div>
         ) : null}
         {mapError ? (
-          <div className="mapa-loading" role="alert">
+          <div className="mapa-loading mapa-unavailable" role="alert">
             <span>{mapError}</span>
           </div>
         ) : null}
