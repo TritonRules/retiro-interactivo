@@ -18,15 +18,18 @@ export function createServiceMarkerElement({
   const button = document.createElement('button');
   button.type = 'button';
   button.className = `place-marker place-marker--service${active ? ' is-active' : ''}`;
-  button.style.background = meta.color;
+  button.style.setProperty('--marker-color', meta.color);
   button.setAttribute('aria-label', `Abrir ficha del servicio ${label}`);
   button.title = label;
 
+  const shape = document.createElement('span');
+  shape.className = 'place-marker__shape';
+  shape.setAttribute('aria-hidden', 'true');
   const glyph = document.createElement('span');
   glyph.className = 'place-marker__glyph';
-  glyph.setAttribute('aria-hidden', 'true');
   glyph.textContent = meta.glyph.length > 2 ? meta.glyph.slice(0, 2) : meta.glyph;
-  button.appendChild(glyph);
+  shape.appendChild(glyph);
+  button.appendChild(shape);
 
   if (onClick) {
     button.addEventListener('click', (event) => {
@@ -44,10 +47,13 @@ export function createUserMarkerElement(): HTMLButtonElement {
   button.className = 'place-marker place-marker--user';
   button.setAttribute('aria-label', 'Tu ubicación aproximada');
   button.title = 'Tu ubicación';
+  const shape = document.createElement('span');
+  shape.className = 'place-marker__shape';
+  shape.setAttribute('aria-hidden', 'true');
   const glyph = document.createElement('span');
   glyph.className = 'place-marker__glyph';
-  glyph.setAttribute('aria-hidden', 'true');
   glyph.textContent = '●';
-  button.appendChild(glyph);
+  shape.appendChild(glyph);
+  button.appendChild(shape);
   return button;
 }
