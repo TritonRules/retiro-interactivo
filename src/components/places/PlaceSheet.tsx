@@ -1,5 +1,6 @@
 import type { Place } from '../../types/place';
 import { getCategoryLabel } from '../../utils/categories';
+import { VideoBlock } from '../media/VideoBlock';
 
 interface Props {
   place: Place;
@@ -51,6 +52,7 @@ export function PlaceSheet({ place, placeHref, onClose, variant }: Props) {
           Cerrar
         </button>
       </div>
+      <VideoBlock videos={place.videos} />
     </aside>
   );
 }

@@ -1,3 +1,5 @@
+import type { ParkVideo } from './video';
+
 export type RouteDifficulty = 'facil' | 'moderada';
 export type RouteStatus = 'verified' | 'needs-review';
 
@@ -24,4 +26,6 @@ export interface ParkRoute {
   sourceUrl: string;
   lastVerifiedAt: string;
   status: RouteStatus;
+  /** Vídeos del canal del proyecto; sin vídeos no se muestra el bloque. */
+  videos?: ParkVideo[];
 }

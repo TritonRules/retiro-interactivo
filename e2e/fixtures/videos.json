@@ -1,0 +1,22 @@
+{
+  "places": {
+    "palacio-de-cristal": [
+      {
+        "youtubeId": "aqz-KE-bpKQ",
+        "title": "Vídeo de prueba del Palacio de Cristal",
+        "description": "Solo para tests e2e: no se publica.",
+        "kind": "infografia",
+        "durationSeconds": 95
+      }
+    ]
+  },
+  "routes": {
+    "retiro-imprescindible": [
+      {
+        "youtubeId": "https://youtu.be/aqz-KE-bpKQ",
+        "title": "Vídeo de prueba de la ruta imprescindible",
+        "kind": "visita"
+      }
+    ]
+  }
+}

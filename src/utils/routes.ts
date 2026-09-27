@@ -1,10 +1,21 @@
 import routesData from '../data/routes.json';
+import videoFixtures from '../../e2e/fixtures/videos.json';
 import type { ParkRoute } from '../types/route';
 import { places } from './places';
 import { validateRoutes } from './validateRoutes';
 
 const placeIds = new Set(places.map((place) => place.id));
-const result = validateRoutes(routesData, placeIds);
+/** Build e2e: añade vídeos de prueba sin tocar los datos reales. */
+function withFixtureVideos(list: unknown[]): unknown[] {
+  if (import.meta.env.PUBLIC_E2E_FIXTURE !== '1') return list;
+  const byId: Record<string, unknown[]> = videoFixtures.routes;
+  return list.map((item) => {
+    const route = item as { id: string };
+    return byId[route.id] ? { ...route, videos: byId[route.id] } : route;
+  });
+}
+
+const result = validateRoutes(withFixtureVideos(routesData), placeIds);
 
 if (!result.ok) {
   throw new Error(

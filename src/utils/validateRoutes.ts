@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { ENTORNO_PLACE_BOUNDS } from '../config/map';
 import type { ParkRoute } from '../types/route';
+import { videosSchema } from './videos.shared.mjs';
 
 const lineCoords = z
   .array(z.tuple([z.number(), z.number()]))
@@ -48,6 +49,7 @@ export const parkRouteSchema = z.object({
   sourceUrl: z.url(),
   lastVerifiedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   status: z.enum(['verified', 'needs-review']),
+  videos: videosSchema,
 });
 
 export type RouteValidationResult =

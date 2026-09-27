@@ -59,7 +59,7 @@ Beta técnica no anunciada (acceso por enlace). Repositorio público; GitHub Pag
 | 2026-08-10 | Escritorio (QA automatizado) | macOS 25.4 | WebKit 26.5 | 390×844 | Misma verificación Safari-like de QA-PHYS-01/02 | OK | Offline no comprobable en el arnés WebKit | — | Mapa → «Ver ficha», reload/back/forward, clic en agenda y muestra amplia (15/66: primeros, intermedios y últimos). 0 errores |
 | 2026-08-10 | Escritorio (QA automatizado) | macOS 25.4 | Chromium 151 | 390×844 y 1440×900 | QA-PHYS-03 en producción: cinco rutas + geometría publicada | OK | — | — | `data/routes.json` idéntico al commit; 0 cruces del Estanque Grande; paradas en orden hacia adelante; Ruta fotográfica 7 paradas, ~2,3 km, termina en La Rosaleda. Smoke visual desktop/móvil |
 | 2026-08-10 | Escritorio (QA automatizado) | macOS 25.4 | Chromium 151 | 1440×900 | Smoke general postdeploy sobre `1f5863a` | OK | — | — | Portada, mapa, filtros, lugar, servicio, evento, Ver ficha, agenda, ruta, deep links, geo simulada, PWA, offline y vuelta online. 0 errores de consola, 0 404 de assets |
-| pendiente | iPhone | iOS | Safari | — | Revalidación física tras el despliegue de `1f5863a` | pendiente | — | — | El código está validado automáticamente en producción; falta confirmar en el mismo iPhone 16 / Safari del hallazgo original |
+| 2026-09-27 | iPhone | iOS | Safari | — | Revalidación física de la versión publicada de la Iteración 1 (merge `43c12ac`, run Pages `36305621625`), que incluye las correcciones de `1f5863a` | OK | — | — | Confirmado por el propietario en un iPhone real: la versión publicada funciona correctamente. Cierra la revalidación iPhone pendiente de QA-PHYS-01/02/03 |
 | pendiente | Android | Android | Chrome | — | Instalación PWA, geo dentro/fuera Retiro, SW update, offline shell | pendiente | — | — | — |
 | pendiente | Escritorio | — | Chrome (perfil real) | — | Smoke HTTPS + instalación PWA | pendiente | — | — | — |
 | pendiente | Escritorio | — | Firefox app instalada | — | Smoke HTTPS con perfil real | pendiente | Firefox no está instalado en este Mac; el motor queda cubierto por Firefox 153 de Playwright | — | — |
@@ -69,6 +69,8 @@ Beta técnica no anunciada (acceso por enlace). Repositorio público; GitHub Pag
 ## Criterio
 
 **Clasificación actual (2026-08-10):** beta de usuarios — pendiente de revalidación iPhone.
+
+**Actualización 2026-09-27:** revalidación física en iPhone real **superada** sobre la Iteración 1 publicada (ver fila del 2026-09-27). Siguen pendientes Android, PWA física, GPS real y rutas en campo.
 
 El primer recorrido con iPhone real destapó tres defectos de severidad alta (QA-PHYS-01, QA-PHYS-02 y QA-PHYS-03). Están corregidos en `1f5863a`, desplegados en producción (run `31369117942`) y validados automáticamente con Chromium y WebKit. **No se declaran resueltos físicamente** hasta repetir las mismas pruebas en el iPhone 16 / Safari del hallazgo original.
 

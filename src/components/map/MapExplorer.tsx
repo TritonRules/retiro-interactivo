@@ -51,6 +51,7 @@ import {
 import { NearbyList } from './NearbyList';
 import { EventSheet } from '../places/EventSheet';
 import { PlaceSheet } from '../places/PlaceSheet';
+import { VideoBlock } from '../media/VideoBlock';
 import { ServiceSheet } from '../places/ServiceSheet';
 import { isUsableAsCurrentPlan } from '../../utils/eventFreshness';
 import { useParkClock } from '../../utils/useParkClock';
@@ -783,6 +784,7 @@ export default function MapExplorer({
               );
             })}
           </ol>
+          <VideoBlock videos={activeRoute.videos} />
         </div>
       ) : null}
 

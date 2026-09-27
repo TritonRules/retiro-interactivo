@@ -110,6 +110,12 @@ Candidato en `dist/` (122 páginas, `BASE=/retiro-interactivo`, `SITE=https://tr
 - Teselas OpenFreeMap: NetworkOnly; sin cartografía completa offline (intencional).
 - HTML/SEO sin JavaScript no cambia «Hoy» entre visitas al mismo despliegue.
 
+## Publicación y revalidación física (2026-09-27)
+
+- Publicada en `beta` con el PR #1 (merge `43c12ac`) tras pasar `Validate` en CI (23/23 E2E, incluido el smoke Firefox con el mapa degradado sin WebGL2). Deploy Pages run `36305621625` en verde.
+- **Revalidación física en iPhone real: pasa.** El propietario confirmó el 2026-09-27 que la Iteración 1 publicada funciona correctamente en su iPhone. Queda cerrada la revalidación iPhone pendiente (QA-PHYS-01/02/03, `docs/qa-beta-devices.md`).
+- Siguen pendientes de campo (Iteración 3): Android, PWA física, GPS real y rutas in situ.
+
 ## Límites declarados
 
 Esta etiqueta **no** significa beta lista para testers. No hay publicación remota. La Iteración 2 (experiencia de visita) no está implementada.

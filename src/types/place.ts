@@ -1,3 +1,5 @@
+import type { ParkVideo } from './video';
+
 export type PlaceCategory =
   | 'iconico'
   | 'monumento'
@@ -36,4 +38,6 @@ export interface Place {
   status: PlaceStatus;
   accessibility?: string[];
   openingHoursNote?: string;
+  /** Vídeos del canal del proyecto; sin vídeos no se muestra el bloque. */
+  videos?: ParkVideo[];
 }
