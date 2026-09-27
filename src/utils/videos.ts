@@ -1,16 +1,24 @@
-import type { ParkVideo, VideoKind } from '../types/video';
+import type { ParkVideo, VideoKind, VideoScenario } from '../types/video';
+import {
+  GENERAL_SCENARIO_LABEL,
+  VIDEO_KIND_LABELS,
+  VIDEO_SCENARIO_LABELS,
+} from './videos.shared.mjs';
 
-export { parseYoutubeId, videoSchema, videosSchema } from './videos.shared.mjs';
-
-const KIND_LABELS: Record<VideoKind, string> = {
-  infografia: 'Infografía',
-  '3d': '3D',
-  ia: 'Creado con IA',
-  visita: 'Visita',
-};
+export {
+  parseYoutubeId,
+  videoSchema,
+  videosSchema,
+  VIDEO_KINDS,
+  VIDEO_SCENARIOS,
+} from './videos.shared.mjs';
 
 export function videoKindLabel(kind: VideoKind): string {
-  return KIND_LABELS[kind];
+  return VIDEO_KIND_LABELS[kind];
+}
+
+export function videoScenarioLabel(scenario: VideoScenario | undefined): string {
+  return scenario ? VIDEO_SCENARIO_LABELS[scenario] : GENERAL_SCENARIO_LABEL;
 }
 
 /** 95 → "1:35"; 3725 → "1:02:05". */
@@ -38,4 +46,35 @@ export function youtubeWatchUrl(id: string): string {
 
 export function hasVideos(videos: ParkVideo[] | undefined): videos is ParkVideo[] {
   return Array.isArray(videos) && videos.length > 0;
+}
+
+/** El selector aparece cuando al menos dos vídeos declaran escenario. */
+export function usesScenarioSelector(videos: ParkVideo[]): boolean {
+  return videos.filter((video) => video.scenario).length >= 2;
+}
+
+/**
+ * Etiqueta de cada opción del selector: el escenario (o «General») y, si dos
+ * vídeos comparten escenario, también el tipo para distinguirlos.
+ */
+export function scenarioOptionLabels(videos: ParkVideo[]): string[] {
+  const base = videos.map((video) => videoScenarioLabel(video.scenario));
+  return videos.map((video, index) => {
+    const repeated = base.filter((label) => label === base[index]).length > 1;
+    return repeated && video.kind ? `${base[index]} · ${videoKindLabel(video.kind)}` : base[index];
+  });
+}
+
+/**
+ * Vídeo inicial: el escenario pedido (p. ej. `?escenario=lluvia`) si existe; si no,
+ * el general, luego «soleado» y por último el primero.
+ */
+export function defaultVideoIndex(videos: ParkVideo[], requested?: string | null): number {
+  const pick = (predicate: (video: ParkVideo) => boolean) => videos.findIndex(predicate);
+  const candidates = [
+    requested ? pick((video) => video.scenario === requested) : -1,
+    pick((video) => !video.scenario),
+    pick((video) => video.scenario === 'soleado'),
+  ];
+  return candidates.find((index) => index >= 0) ?? 0;
 }

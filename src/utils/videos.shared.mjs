@@ -5,7 +5,35 @@
 import { z } from 'zod';
 
 export const YOUTUBE_ID_PATTERN = /^[A-Za-z0-9_-]{11}$/;
-export const VIDEO_KINDS = ['infografia', '3d', 'ia', 'visita'];
+
+/**
+ * Vocabularios controlados: id en los datos → etiqueta en la interfaz.
+ * Para añadir un valor basta con una línea aquí (validador y UI lo leen de este objeto).
+ */
+export const VIDEO_KIND_LABELS = {
+  visita: 'Paseo',
+  infografia: 'Infografía',
+  '3d': '3D',
+  ia: 'Animación IA',
+};
+
+/** Condiciones del recorrido. Sin `scenario` el vídeo es «General». */
+export const VIDEO_SCENARIO_LABELS = {
+  soleado: 'Soleado',
+  lluvia: 'Lluvia',
+  otono: 'Otoño',
+  primavera: 'Primavera',
+  viento: 'Viento',
+  frio: 'Frío',
+  nieve: 'Nieve',
+  atardecer: 'Atardecer',
+  noche: 'Noche',
+};
+
+export const GENERAL_SCENARIO_LABEL = 'General';
+
+export const VIDEO_KINDS = Object.keys(VIDEO_KIND_LABELS);
+export const VIDEO_SCENARIOS = Object.keys(VIDEO_SCENARIO_LABELS);
 
 const YOUTUBE_HOSTS = new Set([
   'youtube.com',
@@ -59,6 +87,7 @@ export const videoSchema = z.strictObject({
   title: z.string().trim().min(3).max(120),
   description: z.string().trim().min(1).max(400).optional(),
   kind: z.enum(VIDEO_KINDS).optional(),
+  scenario: z.enum(VIDEO_SCENARIOS).optional(),
   durationSeconds: z.number().int().positive().max(4 * 60 * 60).optional(),
 });
 
@@ -66,6 +95,7 @@ export const videosSchema = z
   .array(videoSchema)
   .superRefine((videos, ctx) => {
     const seen = new Set();
+    const slots = new Set();
     videos.forEach((video, index) => {
       if (seen.has(video.youtubeId)) {
         ctx.addIssue({
@@ -75,6 +105,17 @@ export const videosSchema = z
         });
       }
       seen.add(video.youtubeId);
+
+      // Como mucho un vídeo por combinación escenario + tipo (ausente = general).
+      const slot = `${video.scenario ?? 'general'}|${video.kind ?? 'general'}`;
+      if (slots.has(slot)) {
+        ctx.addIssue({
+          code: 'custom',
+          message: `ya hay un vídeo con escenario «${video.scenario ?? 'general'}» y tipo «${video.kind ?? 'general'}»`,
+          path: [index, 'scenario'],
+        });
+      }
+      slots.add(slot);
     });
   })
   .optional();
