@@ -25,7 +25,8 @@
     "events:report": "node scripts/events-report.mjs",
     "routes:validate": "node scripts/routes-validate.mjs",
     "routes:paths": "node scripts/routes-build-paths.mjs",
-    "content:report": "node scripts/content-report.mjs"
+    "content:report": "node scripts/content-report.mjs",
+    "events:guard": "node scripts/events-refresh-guard.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^6.0.2",

@@ -77,3 +77,11 @@
 - Corrección: `whenStyleReady` podía quedarse esperando un `load` que ya no se emite cuando `isStyleLoaded()` era falso por teselas o fuentes en carga (el punto de ubicación no se movía).
 - Detalles en `docs/routes.md` (sección «Modo paseo guiado»). Pendiente: prueba física con iPhone en el Retiro (`docs/qa-beta-devices.md`).
 - Tests: 175 unitarios (18 del modo paseo, incl. simulación completa de las cinco rutas reales), E2E 36 (5 del modo paseo).
+
+## 2026-09-27 — Agenda actualizada automáticamente cada día
+
+- Rama `feat/agenda-automatica` desde `beta` (`4173b57`). Contexto: la última actualización era del 6 sep; con la ventana de 7 días la agenda en producción estaba vacía.
+- Pipeline ejecutado contra las fuentes en vivo sin cambios de código: 64 eventos publicados (59 próximos, 5 caducados), 5 sedes del Retiro, `lastCheckedAt` 2026-09-27.
+- Workflow `refresh-agenda.yml`: cron `17 4 * * *` UTC (06:17 Madrid en verano, 05:17 en invierno) + `workflow_dispatch`; guardias (`events:guard`: 0 próximos o caída > 60 %), `events:validate`, `validate:data`, `check`, `lint`, `build`; commit como `github-actions[bot]` a `beta` y `gh workflow run deploy-pages.yml` (el push con `GITHUB_TOKEN` no dispara el deploy). Permisos mínimos y `concurrency`.
+- Agenda sin datos vigentes: mensaje claro «Agenda pendiente de actualización…» con la fecha de la última consulta, en lugar de «Ningún resultado con estos filtros» sin filtros aplicados.
+- Documentación en `docs/event-pipeline.md` («Actualización automática») y README.
