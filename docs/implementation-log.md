@@ -59,3 +59,11 @@
 - Bloque «Vídeos» en ficha del mapa, página de lugar, tarjeta de ruta activa y página de ruta; no aparece si no hay vídeos.
 - Embed ligero: miniatura de `i.ytimg.com` + botón; el iframe de `youtube-nocookie.com` solo se carga tras el clic. YouTube queda fuera del caché del SW (`NetworkOnly`).
 - Sin vídeos reales todavía. Datos de prueba solo en `e2e/fixtures/videos.json` (build e2e).
+
+## 2026-09-27 — Escenarios de vídeo y vídeo plegado en rutas
+
+- Rama `feat/videos-escenarios` desde `a167fda`. Contexto: el canal publicará sobre todo paseos por las rutas, con versiones por condición (lluvia, otoño, viento, frío, nieve…).
+- Campo opcional `scenario` en cada vídeo con vocabulario controlado (`VIDEO_SCENARIO_LABELS` en `src/utils/videos.shared.mjs`, fuente única para validador y UI). Regla: como mucho un vídeo por escenario + tipo.
+- Etiquetas de tipo: `visita` → «Paseo», `ia` → «Animación IA».
+- Tarjeta de ruta en el mapa: vídeo plegado por defecto tras «Ver vídeo(s) del recorrido». Selector de escenario accesible (`radiogroup`, teclado) cuando hay 2+ vídeos con escenario, también en páginas y fichas. Deep link `?escenario=`.
+- Tests: 149 unitarios, E2E 29 (6 de vídeos). Sin vídeos reales.

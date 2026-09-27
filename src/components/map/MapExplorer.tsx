@@ -222,7 +222,10 @@ export default function MapExplorer({
     if (category === 'todos') params.delete('categoria');
     else params.set('categoria', category);
     if (activeRouteSlug) params.set('ruta', activeRouteSlug);
-    else params.delete('ruta');
+    else {
+      params.delete('ruta');
+      params.delete('escenario');
+    }
     const query = params.toString();
     const next = `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`;
     window.history.replaceState({}, '', next);
@@ -784,7 +787,12 @@ export default function MapExplorer({
               );
             })}
           </ol>
-          <VideoBlock videos={activeRoute.videos} />
+          <VideoBlock
+            key={activeRoute.id}
+            videos={activeRoute.videos}
+            collapsible
+            readScenarioFromUrl
+          />
         </div>
       ) : null}
 

@@ -6,7 +6,14 @@ import routesData from '../data/routes.json';
 import { VideoBlock } from '../components/media/VideoBlock';
 import { validatePlaces } from './validatePlaces';
 import { validateRoutes } from './validateRoutes';
+import type { ParkVideo, VideoKind, VideoScenario } from '../types/video';
 import {
+  defaultVideoIndex,
+  scenarioOptionLabels,
+  usesScenarioSelector,
+  VIDEO_KINDS,
+  VIDEO_SCENARIOS,
+  videoScenarioLabel,
   formatVideoDuration,
   parseYoutubeId,
   videosSchema,
@@ -118,7 +125,9 @@ describe('VideoBlock', () => {
   it('muestra miniatura y botón, sin iframe hasta el clic', () => {
     const markup = renderToStaticMarkup(
       createElement(VideoBlock, {
-        videos: [{ youtubeId: ID, title: 'Palacio de Cristal', kind: 'infografia', durationSeconds: 95 }],
+        videos: [
+          { youtubeId: ID, title: 'Palacio de Cristal', kind: 'infografia', durationSeconds: 95 },
+        ],
       }),
     );
     expect(markup).toContain('Vídeos');
@@ -127,11 +136,135 @@ describe('VideoBlock', () => {
     expect(markup).toContain(`https://www.youtube.com/watch?v=${ID}`);
     expect(markup).toContain('Infografía · 1:35');
     expect(markup).not.toContain('<iframe');
-    expect(youtubeEmbedUrl(ID)).toMatch(/^https:\/\/www\.youtube-nocookie\.com\/embed\/aqz-KE-bpKQ/);
+    expect(youtubeEmbedUrl(ID)).toMatch(
+      /^https:\/\/www\.youtube-nocookie\.com\/embed\/aqz-KE-bpKQ/,
+    );
   });
 
   it('formatea duraciones', () => {
     expect(formatVideoDuration(95)).toBe('1:35');
     expect(formatVideoDuration(3725)).toBe('1:02:05');
+  });
+});
+
+describe('escenarios', () => {
+  it('los vocabularios de ejecución coinciden con los tipos TS', () => {
+    const scenarios: VideoScenario[] = [
+      'soleado',
+      'lluvia',
+      'otono',
+      'primavera',
+      'viento',
+      'frio',
+      'nieve',
+      'atardecer',
+      'noche',
+    ];
+    const kinds: VideoKind[] = ['visita', 'infografia', '3d', 'ia'];
+    expect([...VIDEO_SCENARIOS].sort()).toEqual([...scenarios].sort());
+    expect([...VIDEO_KINDS].sort()).toEqual([...kinds].sort());
+  });
+
+  it('acepta escenarios conocidos y etiqueta en español', () => {
+    const parsed = videosSchema.parse([
+      { youtubeId: ID, title: 'Paseo con lluvia', kind: 'visita', scenario: 'lluvia' },
+      { youtubeId: 'eRsGyueVLvQ', title: 'Paseo en otoño', kind: 'visita', scenario: 'otono' },
+    ]);
+    expect(parsed?.map((video) => video.scenario)).toEqual(['lluvia', 'otono']);
+    expect(videoScenarioLabel('otono')).toBe('Otoño');
+    expect(videoScenarioLabel('frio')).toBe('Frío');
+    expect(videoScenarioLabel(undefined)).toBe('General');
+  });
+
+  it('rechaza un escenario desconocido', () => {
+    const result = videosSchema.safeParse([
+      { youtubeId: ID, title: 'Granizo', scenario: 'granizo' },
+    ]);
+    expect(result.success).toBe(false);
+  });
+
+  it('rechaza dos vídeos con el mismo escenario y tipo', () => {
+    const result = videosSchema.safeParse([
+      { youtubeId: ID, title: 'Lluvia 1', kind: 'visita', scenario: 'lluvia' },
+      { youtubeId: 'eRsGyueVLvQ', title: 'Lluvia 2', kind: 'visita', scenario: 'lluvia' },
+    ]);
+    expect(result.success).toBe(false);
+    if (!result.success) expect(result.error.issues[0].path).toEqual([1, 'scenario']);
+  });
+
+  it('rechaza dos vídeos generales del mismo tipo', () => {
+    const result = videosSchema.safeParse([
+      { youtubeId: ID, title: 'General 1' },
+      { youtubeId: 'eRsGyueVLvQ', title: 'General 2' },
+    ]);
+    expect(result.success).toBe(false);
+  });
+
+  it('permite el mismo escenario con tipos distintos y los distingue en el selector', () => {
+    const videos = videosSchema.parse([
+      { youtubeId: ID, title: 'Nieve paseo', kind: 'visita', scenario: 'nieve' },
+      { youtubeId: 'eRsGyueVLvQ', title: 'Nieve IA', kind: 'ia', scenario: 'nieve' },
+      { youtubeId: 'WhWc3b3KhnY', title: 'General' },
+    ]) as ParkVideo[];
+    expect(scenarioOptionLabels(videos)).toEqual([
+      'Nieve · Paseo',
+      'Nieve · Animación IA',
+      'General',
+    ]);
+  });
+
+  it('selector solo con dos o más vídeos con escenario', () => {
+    const v = (scenario?: VideoScenario): ParkVideo => ({ youtubeId: ID, title: 't', scenario });
+    expect(usesScenarioSelector([v('lluvia')])).toBe(false);
+    expect(usesScenarioSelector([v(), v()])).toBe(false);
+    expect(usesScenarioSelector([v('lluvia'), v()])).toBe(false);
+    expect(usesScenarioSelector([v('lluvia'), v('otono')])).toBe(true);
+  });
+
+  it('vídeo por defecto: pedido, general, soleado, primero', () => {
+    const v = (scenario?: VideoScenario): ParkVideo => ({ youtubeId: ID, title: 't', scenario });
+    const withGeneral = [v('lluvia'), v(), v('soleado')];
+    expect(defaultVideoIndex(withGeneral)).toBe(1);
+    expect(defaultVideoIndex(withGeneral, 'lluvia')).toBe(0);
+    expect(defaultVideoIndex(withGeneral, 'granizo')).toBe(1);
+    expect(defaultVideoIndex([v('lluvia'), v('soleado')])).toBe(1);
+    expect(defaultVideoIndex([v('lluvia'), v('otono')])).toBe(0);
+  });
+
+  it('bloque con escenarios: un solo vídeo, selector y opción por defecto marcada', () => {
+    const markup = renderToStaticMarkup(
+      createElement(VideoBlock, {
+        videos: [
+          {
+            youtubeId: 'eRsGyueVLvQ',
+            title: 'Paseo con lluvia',
+            kind: 'visita',
+            scenario: 'lluvia',
+          },
+          { youtubeId: ID, title: 'Paseo soleado', kind: 'visita', scenario: 'soleado' },
+        ],
+      }),
+    );
+    expect(markup).toContain('role="radiogroup"');
+    expect(markup).toMatch(/aria-checked="true"[^>]*>Soleado</);
+    expect(markup).toContain('Paseo soleado');
+    expect(markup).not.toContain('Paseo con lluvia');
+    expect(markup).not.toContain('<iframe');
+  });
+
+  it('bloque plegable: solo el botón hasta desplegar', () => {
+    const markup = renderToStaticMarkup(
+      createElement(VideoBlock, {
+        collapsible: true,
+        videos: [
+          { youtubeId: 'eRsGyueVLvQ', title: 'Paseo con lluvia', scenario: 'lluvia' },
+          { youtubeId: ID, title: 'Paseo soleado', scenario: 'soleado' },
+        ],
+      }),
+    );
+    expect(markup).toContain('aria-expanded="false"');
+    expect(markup).toContain('Ver vídeos del recorrido');
+    expect(markup).toContain('2 vídeos · Lluvia, Soleado');
+    expect(markup).not.toContain('i.ytimg.com');
   });
 });

@@ -73,7 +73,7 @@ const mapHref = `${base}?ruta=${route.slug}`;
     {
       route.videos?.length ? (
         <div class="route-videos">
-          <VideoBlock client:visible videos={route.videos} headingLevel={2} />
+          <VideoBlock client:visible videos={route.videos} headingLevel={2} readScenarioFromUrl />
         </div>
       ) : null
     }

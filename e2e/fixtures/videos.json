@@ -13,9 +13,23 @@
   "routes": {
     "retiro-imprescindible": [
       {
-        "youtubeId": "https://youtu.be/aqz-KE-bpKQ",
-        "title": "Vídeo de prueba de la ruta imprescindible",
-        "kind": "visita"
+        "youtubeId": "https://youtu.be/eRsGyueVLvQ",
+        "title": "Vídeo de prueba de la ruta · Lluvia",
+        "kind": "visita",
+        "scenario": "lluvia"
+      },
+      {
+        "youtubeId": "aqz-KE-bpKQ",
+        "title": "Vídeo de prueba de la ruta · Soleado",
+        "kind": "visita",
+        "scenario": "soleado",
+        "durationSeconds": 180
+      },
+      {
+        "youtubeId": "WhWc3b3KhnY",
+        "title": "Vídeo de prueba de la ruta · Otoño",
+        "kind": "visita",
+        "scenario": "otono"
       }
     ]
   }
