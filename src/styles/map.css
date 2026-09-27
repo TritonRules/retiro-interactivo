@@ -701,9 +701,19 @@
 
 .route-active-card .videos {
   margin-top: var(--space-3);
-  padding-top: var(--space-3);
-  border-top: 1px solid var(--color-border);
   max-width: 22rem;
+}
+
+/* `.route-active-card p` atenúa y separa párrafos; el título del vídeo va en tinta. */
+.route-active-card .video__title {
+  margin: var(--space-1) 0 0;
+  color: var(--color-ink);
+  font-size: 0.95rem;
+}
+
+.route-active-card .video__meta,
+.route-active-card .video__desc {
+  margin: 0;
 }
 
 .route-stop-marker {
