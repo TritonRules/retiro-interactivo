@@ -57,6 +57,29 @@
     }
   },
   {
+    "id": "evt-e2e-concierto-titeres",
+    "slug": "concierto-junto-a-titeres",
+    "title": "Concierto junto al teatro de títeres",
+    "shortDescription": "Concierto al aire libre en la misma sede que los títeres: en el mapa comparten marcador.",
+    "startAt": "2026-09-06T13:00:00+02:00",
+    "expiresAt": "2026-09-07T00:00:00+02:00",
+    "venue": "Teatro de Títeres de El Retiro",
+    "coordinates": [-3.6866962, 40.4187197],
+    "category": "Musica",
+    "audience": ["Todos los públicos"],
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "https://www.madrid.es/",
+    "sourceTier": "A",
+    "sourceEventId": "e2e-concierto-titeres",
+    "lastCheckedAt": "2026-09-06T08:00:00.000Z",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": ["13:00"]
+    }
+  },
+  {
     "id": "evt-e2e-caduca",
     "slug": "paseo-que-caduca",
     "title": "Paseo que caduca a las 12:00",

@@ -98,3 +98,124 @@ test.describe('iconos del mapa adaptados al zoom', () => {
     expect(['1', 'none']).toContain(shapeScale);
   });
 });
+
+async function stopScale(page: Page): Promise<number> {
+  return page
+    .locator('.mapa-canvas')
+    .evaluate((el) => Number(getComputedStyle(el).getPropertyValue('--stop-scale') || '1'));
+}
+
+test.describe('eventos y paradas adaptados al zoom', () => {
+  // Datos de agenda del fixture: vigentes el domingo 6 sep a las 10:00 (Madrid).
+  const FROZEN = new Date('2026-09-06T08:00:00.000Z');
+
+  test('eventos de la misma sede en un marcador con número; al alejar ganan a los lugares', async ({
+    page,
+  }) => {
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    await page.clock.setFixedTime(FROZEN);
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('', { waitUntil: 'domcontentloaded' });
+    await expect(page.locator('.maplibregl-marker.place-marker').first()).toBeVisible({
+      timeout: 30_000,
+    });
+
+    await page.getByLabel('Eventos').check();
+    const group = page.getByRole('button', {
+      name: 'Ver 2 eventos en Teatro de Títeres de El Retiro',
+    });
+    await expect(group).toBeAttached();
+    await expect(group.locator('.place-marker__count')).toHaveText('2');
+    // Un solo marcador por sede (no dos círculos apilados).
+    await expect(page.locator('.place-marker--event[data-event-count="2"]')).toHaveCount(1);
+    await expect(page.getByRole('button', { name: 'Abrir evento Exposición BIC del Retiro' })).toBeAttached();
+
+    await zoomTimes(page, 'Alejar mapa', 1);
+    await expect.poll(() => markerScale(page)).toBeLessThan(0.75);
+    // El evento queda completo; el lugar de la misma sede se pliega a punto por debajo.
+    await expect(group).toHaveAttribute('data-marker-state', 'full');
+    await expect(
+      page.getByRole('button', { name: 'Abrir ficha de Teatro de Títeres de El Retiro' }),
+    ).toHaveAttribute('data-marker-state', 'dot');
+
+    // Pulsar el grupo abre la lista; elegir uno abre su ficha.
+    await group.dispatchEvent('click');
+    const list = page.getByRole('dialog', { name: '2 eventos aquí' });
+    await expect(list).toBeVisible();
+    await list.getByRole('button', { name: /Concierto junto al teatro de títeres/ }).click();
+    await expect(page.getByRole('heading', { name: 'Concierto junto al teatro de títeres' })).toBeVisible();
+    // El grupo del evento seleccionado va a tamaño completo y marcado.
+    await expect(group).toHaveClass(/is-active/);
+
+    await zoomTimes(page, 'Acercar mapa', 3);
+    await expect.poll(() => markerScale(page)).toBe(1);
+    const box = await group.boundingBox();
+    expect(box?.width ?? 0).toBeGreaterThanOrEqual(44);
+    expect(box?.height ?? 0).toBeGreaterThanOrEqual(44);
+    expect(errors).toEqual([]);
+  });
+
+  test('las paradas encogen pero nunca se ocultan ni se tapan entre sí', async ({ page }) => {
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('?ruta=ruta-fotografica', { waitUntil: 'domcontentloaded' });
+
+    const stops = page.locator('.maplibregl-marker.route-stop-marker');
+    await expect(stops).toHaveCount(7, { timeout: 30_000 });
+    // Con ruta activa no se pintan iconos de lugar que dupliquen las paradas.
+    await expect(page.locator('.maplibregl-marker.place-marker')).toHaveCount(0);
+    await page.waitForTimeout(900);
+
+    await zoomTimes(page, 'Alejar mapa', 3);
+    await expect.poll(() => stopScale(page)).toBeLessThan(0.85);
+
+    const badges = await stops.evaluateAll((els) =>
+      els.map((el) => {
+        const r = el.querySelector('.route-stop-marker__badge')!.getBoundingClientRect();
+        const b = el.getBoundingClientRect();
+        return {
+          text: el.textContent,
+          x: r.x,
+          y: r.y,
+          w: r.width,
+          h: r.height,
+          hitW: b.width,
+          hitH: b.height,
+          display: getComputedStyle(el).display,
+        };
+      }),
+    );
+    expect(badges.map((b) => b.text)).toEqual(['1', '2', '3', '4', '5', '6', '7']);
+    for (const badge of badges) {
+      expect(badge.display).not.toBe('none');
+      expect(badge.w).toBeGreaterThanOrEqual(20);
+      expect(badge.w).toBeLessThan(28);
+      expect(badge.hitW).toBeGreaterThanOrEqual(44);
+      expect(badge.hitH).toBeGreaterThanOrEqual(44);
+    }
+    for (let i = 0; i < badges.length; i += 1) {
+      for (let j = i + 1; j < badges.length; j += 1) {
+        const a = badges[i];
+        const b = badges[j];
+        const d = Math.hypot(a.x + a.w / 2 - (b.x + b.w / 2), a.y + a.h / 2 - (b.y + b.h / 2));
+        expect(d, `paradas ${a.text} y ${b.text}`).toBeGreaterThanOrEqual((a.w + b.w) / 2 - 1);
+      }
+    }
+    await expect(page.locator('.route-stop-marker[data-stop-shifted="true"]').first()).toBeAttached();
+
+    // La parada elegida pasa a tamaño completo.
+    await stops.nth(2).dispatchEvent('click');
+    await expect(stops.nth(2)).toHaveClass(/is-active/);
+    await expect
+      .poll(() =>
+        stops
+          .nth(2)
+          .locator('.route-stop-marker__badge')
+          .evaluate((el) => el.getBoundingClientRect().width),
+      )
+      .toBeGreaterThanOrEqual(27.5);
+    expect(errors).toEqual([]);
+  });
+});

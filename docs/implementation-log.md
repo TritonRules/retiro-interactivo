@@ -77,3 +77,13 @@
 - Corrección: `whenStyleReady` podía quedarse esperando un `load` que ya no se emite cuando `isStyleLoaded()` era falso por teselas o fuentes en carga (el punto de ubicación no se movía).
 - Detalles en `docs/routes.md` (sección «Modo paseo guiado»). Pendiente: prueba física con iPhone en el Retiro (`docs/qa-beta-devices.md`).
 - Tests: 175 unitarios (18 del modo paseo, incl. simulación completa de las cinco rutas reales), E2E 36 (5 del modo paseo).
+
+## 2026-09-27 — Eventos y paradas adaptados al zoom
+
+- Rama `fix/zoom-eventos-paradas` desde `beta` (`4173b57`). Continúa el trabajo de iconos adaptados al zoom (PR #4) para eventos de la agenda y paradas de ruta.
+- Eventos: dejan de ser una capa `circle` de MapLibre (quedaba tapada por los iconos DOM) y pasan a marcadores DOM con el mismo sistema que los lugares (`markerZoom.ts`): escala 0,6×–1× entre zoom 14 y 16, plegado a punto y área táctil de 44 px. Color ciruela `#7a3e7f` e icono de calendario. Eventos a ≤ 30 m (misma sede) se agrupan en un marcador con insignia de número; al pulsarlo se abre la lista «N eventos aquí».
+- Prioridad: con «Eventos» activado, un evento gana a cualquier lugar (también icónicos); el lugar solapado pasa a punto. Lo seleccionado sigue a tamaño completo.
+- Paradas: botón de 44 px con insignia numerada que encoge de 28 a 22 px (el número conserva su tamaño). Nunca se pliegan; si dos se solapan en pantalla se separan con `Marker.setOffset` (desplazamiento máximo 28 px). Seleccionada y siguiente parada del paseo a tamaño completo; el punto del usuario queda por encima y las paradas que tapa se apartan de él (no ocultan su número).
+- Con ruta activa siguen ocultos los iconos de lugar y los eventos (no hay duplicados de las paradas).
+- Fixture e2e: evento extra en el Teatro de Títeres para probar el grupo.
+- Tests: 189 unitarios, E2E 38 (2 nuevos de eventos y paradas).
