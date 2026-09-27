@@ -728,3 +728,186 @@
   cursor: pointer;
   box-shadow: var(--shadow-sm);
 }
+
+/* ---------- Modo paseo ---------- */
+
+.walk-panel {
+  margin: 0 var(--space-4) var(--space-3);
+  padding: var(--space-2) var(--space-3) var(--space-3);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.walk-panel p {
+  margin: 0;
+}
+
+.walk-panel__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.walk-panel__eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-ink-muted);
+}
+
+.walk-panel__badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.4rem;
+  padding: 0 0.5rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-soft);
+  color: #9a4318;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.walk-panel__finish {
+  flex-shrink: 0;
+}
+
+.walk-panel__dots {
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.walk-panel__dots li {
+  flex: 1;
+  height: 5px;
+  border-radius: var(--radius-pill);
+  background: var(--color-border);
+}
+
+.walk-panel__dots li.is-visited {
+  background: var(--color-primary);
+}
+
+.walk-panel__dots li.is-next {
+  background: var(--color-accent);
+}
+
+.walk-panel__arrived {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.walk-panel__next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.walk-panel__next-info {
+  min-width: 0;
+}
+
+.walk-panel__label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-ink-muted);
+}
+
+.walk-panel__stop {
+  display: block;
+  max-width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 3px;
+}
+
+.walk-panel__meta {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-ink-muted);
+}
+
+.walk-panel__nav {
+  display: flex;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.walk-panel__nav .mapa-control-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.walk-panel__status {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-soft);
+  font-size: 0.85rem;
+  color: var(--color-ink);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.walk-panel__status-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.walk-panel__hint {
+  font-size: 0.78rem;
+  color: var(--color-ink-muted);
+}
+
+.walk-panel__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--color-primary);
+}
+
+.walk-panel--done {
+  border-left-color: var(--color-primary);
+}
+
+.mapa-control-btn--accent {
+  background: var(--color-water);
+  border-color: var(--color-water);
+  color: #fff;
+}
+
+.route-stop-marker.is-visited {
+  background: var(--color-primary);
+}
+
+.route-stop-marker.is-next {
+  box-shadow:
+    0 0 0 3px #fffdf8,
+    0 0 0 6px var(--color-accent);
+}

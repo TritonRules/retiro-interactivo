@@ -65,6 +65,7 @@ Beta técnica no anunciada (acceso por enlace). Repositorio público; GitHub Pag
 | pendiente | Escritorio | — | Firefox app instalada | — | Smoke HTTPS con perfil real | pendiente | Firefox no está instalado en este Mac; el motor queda cubierto por Firefox 153 de Playwright | — | — |
 | pendiente | Escritorio | macOS 25.4 | Safari 26.4 real | — | Smoke HTTPS en Safari de escritorio | pendiente | No automatizable: «Permitir automatización remota» está desactivado en Safari y `screencapture` carece de permiso de grabación de pantalla. WebKit de Playwright cubre el motor, no la app | — | — |
 | pendiente | Campo | — | — | — | Validación física de rutas | pendiente | — | — | — |
+| pendiente | iPhone | iOS | Safari | — | Modo paseo: probar paseando en el Retiro con iPhone (permiso de ubicación, punto en vivo y seguimiento, llegada a paradas y ficha, saltar/anterior, «Ruta completada», pantalla encendida con Wake Lock, bloqueo/segundo plano y vuelta, señal débil) | pendiente | — | — | — |
 
 ## Criterio
 
