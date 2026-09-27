@@ -7,6 +7,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { z } from 'zod';
 import { validateEventList } from '../automation/validators/validate-events.mjs';
+import { videosSchema } from '../src/utils/videos.shared.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
@@ -58,6 +59,7 @@ const placeSchema = z
     status: z.enum(['verified', 'needs-review']),
     accessibility: z.array(z.string()).optional(),
     openingHoursNote: z.string().optional(),
+    videos: videosSchema,
   })
   .superRefine((place, ctx) => {
     const [lon, lat] = place.coordinates;
@@ -120,6 +122,7 @@ const routeSchema = z.object({
   sourceUrl: z.url(),
   lastVerifiedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   status: z.enum(['verified', 'needs-review']),
+  videos: videosSchema,
 });
 
 function uniqueBy(field, items, label) {

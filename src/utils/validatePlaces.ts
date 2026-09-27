@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { RETIRO_PLACE_BOUNDS, ENTORNO_PLACE_BOUNDS } from '../config/map';
 import type { Place } from '../types/place';
+import { videosSchema } from './videos.shared.mjs';
 
 export const placeCategorySchema = z.enum([
   'iconico',
@@ -55,6 +56,7 @@ export const placeSchema = z
     status: z.enum(['verified', 'needs-review']),
     accessibility: z.array(z.string()).optional(),
     openingHoursNote: z.string().optional(),
+    videos: videosSchema,
   })
   .superRefine((place, ctx) => {
     const [lon, lat] = place.coordinates;

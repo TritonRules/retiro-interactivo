@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { routes, getRouteBySlug, formatDistance, formatDuration } from '../../utils/routes';
 import { places } from '../../utils/places';
 import { siteConfig } from '../../config/site';
+import VideoBlock from '../../components/media/VideoBlock';
 
 export function getStaticPaths() {
   return routes.map((route) => ({ params: { slug: route.slug } }));
@@ -68,6 +69,14 @@ const mapHref = `${base}?ruta=${route.slug}`;
         <button class="btn btn--secondary" type="button" id="share-route">Compartir</button>
       </p>
     </header>
+
+    {
+      route.videos?.length ? (
+        <div class="route-videos">
+          <VideoBlock client:visible videos={route.videos} headingLevel={2} />
+        </div>
+      ) : null
+    }
 
     <section aria-labelledby="paradas-title">
       <h2 id="paradas-title">Paradas</h2>
@@ -139,6 +148,10 @@ const mapHref = `${base}?ruta=${route.slug}`;
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);
+  }
+  .route-videos {
+    margin-bottom: var(--space-6);
+    max-width: 40rem;
   }
   .stop-list {
     list-style: none;

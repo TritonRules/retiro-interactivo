@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PlaceMiniMap from '../../components/map/PlaceMiniMap';
+import VideoBlock from '../../components/media/VideoBlock';
 import { places, getPlaceBySlug } from '../../utils/places';
 import { getCategoryLabel } from '../../utils/categories';
 
@@ -62,6 +63,14 @@ const mapHref = `${import.meta.env.BASE_URL}?lugar=${place.slug}`;
             <h2 id="horarios-titulo" style="margin-top:0">Horarios</h2>
             <p>{place.openingHoursNote}</p>
           </section>
+        ) : null
+      }
+
+      {
+        place.videos?.length ? (
+          <div class="place-layout__panel">
+            <VideoBlock client:visible videos={place.videos} headingLevel={2} />
+          </div>
         ) : null
       }
 

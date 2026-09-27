@@ -46,3 +46,16 @@
 - PWA: `cleanupOutdatedCaches` + denylist ampliada.
 - Docs: editorial eventos, validación rutas, QA matriz, legacy-peer-deps, checklist deploy.
 - Veredicto: **beta técnica viable** (no lista del todo sin Safari/Firefox/geo real).
+
+## 2026-09-27 — Iteración 1 publicada y revalidada en iPhone
+
+- PR #1 fusionado en `beta` (merge `43c12ac`); deploy Pages run `36305621625` OK.
+- Corrección previa al merge (`e7d768b`): el mapa degrada sin WebGL2 o si MapLibre no inicializa (aviso accesible; fichas, rutas y filtros siguen disponibles).
+- **Revalidación física en iPhone real superada** (confirmada por el propietario el 2026-09-27). Cierra la revalidación pendiente de QA-PHYS-01/02/03.
+
+## 2026-09-27 — Vídeos opcionales en lugares y rutas
+
+- Rama `feat/videos-lugares-rutas`. Campo opcional `videos` en lugares y rutas, validado con Zod compartido (`src/utils/videos.shared.mjs`) en la app y en `validate:data`.
+- Bloque «Vídeos» en ficha del mapa, página de lugar, tarjeta de ruta activa y página de ruta; no aparece si no hay vídeos.
+- Embed ligero: miniatura de `i.ytimg.com` + botón; el iframe de `youtube-nocookie.com` solo se carga tras el clic. YouTube queda fuera del caché del SW (`NetworkOnly`).
+- Sin vídeos reales todavía. Datos de prueba solo en `e2e/fixtures/videos.json` (build e2e).

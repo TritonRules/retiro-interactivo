@@ -1,8 +1,19 @@
 import placesData from '../data/places.json';
+import videoFixtures from '../../e2e/fixtures/videos.json';
 import type { Place } from '../types/place';
 import { validatePlaces } from './validatePlaces';
 
-const result = validatePlaces(placesData);
+/** Build e2e: añade vídeos de prueba sin tocar los datos reales. */
+function withFixtureVideos(list: unknown[]): unknown[] {
+  if (import.meta.env.PUBLIC_E2E_FIXTURE !== '1') return list;
+  const byId: Record<string, unknown[]> = videoFixtures.places;
+  return list.map((item) => {
+    const place = item as { id: string };
+    return byId[place.id] ? { ...place, videos: byId[place.id] } : place;
+  });
+}
+
+const result = validatePlaces(withFixtureVideos(placesData));
 
 if (!result.ok) {
   throw new Error(

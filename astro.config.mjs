@@ -114,6 +114,14 @@ export default defineConfig({
               url.hostname.includes('tiles.openfreemap.org'),
             handler: 'NetworkOnly',
           },
+          {
+            // Vídeos: miniaturas y reproductor de YouTube nunca van al caché del SW.
+            urlPattern: ({ url }) =>
+              url.hostname === 'i.ytimg.com' ||
+              url.hostname.endsWith('youtube-nocookie.com') ||
+              url.hostname.endsWith('youtube.com'),
+            handler: 'NetworkOnly',
+          },
         ],
       },
       experimental: {
