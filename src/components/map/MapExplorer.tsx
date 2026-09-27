@@ -544,7 +544,8 @@ export default function MapExplorer({
       frame = 0;
       if (mapRef.current !== map) return;
       applyMarkerZoom(map, zoomableMarkersRef.current);
-      applyStopMarkerLayout(map, stopMarkersRef.current);
+      const user = userMarkerRef.current?.getLngLat();
+      applyStopMarkerLayout(map, stopMarkersRef.current, user ? [user.lng, user.lat] : null);
     };
     const schedule = () => {
       if (!frame) frame = window.requestAnimationFrame(update);
@@ -693,6 +694,7 @@ export default function MapExplorer({
     setGeoState('idle');
     userMarkerRef.current?.remove();
     userMarkerRef.current = null;
+    scheduleMarkerLayoutRef.current();
     const map = mapRef.current;
     removeAccuracyCircle(map);
     map?.easeTo({
@@ -719,6 +721,8 @@ export default function MapExplorer({
         .setLngLat(location.coordinates)
         .addTo(map);
     }
+    // Las paradas cercanas se apartan del punto para que no tape su número.
+    scheduleMarkerLayoutRef.current();
     // Actualizar una fuente existente no exige esperar al estilo.
     if (!map.getSource(ACCURACY_SOURCE)) await whenStyleReady(map);
     if (mapRef.current !== map || !userMarkerRef.current) return;
@@ -730,6 +734,7 @@ export default function MapExplorer({
     userMarkerRef.current?.remove();
     userMarkerRef.current = null;
     removeAccuracyCircle(mapRef.current);
+    scheduleMarkerLayoutRef.current();
   };
 
   const updateUserOnMap = async (location: UserLocation, inside: boolean) => {

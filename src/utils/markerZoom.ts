@@ -194,7 +194,17 @@ export interface StopPoint {
   y: number;
   /** Seleccionada o siguiente parada del paseo: tamaño completo. */
   pinned?: boolean;
+  /**
+   * Obstáculo que no es una parada (el punto del usuario): no se mueve nunca y
+   * aparta a cualquier parada, también a la fijada, para que no tape su número.
+   */
+  obstacle?: boolean;
+  /** Diámetro en px; por defecto, el de la insignia de parada a la escala dada. */
+  size?: number;
 }
+
+/** Diámetro visual del punto del usuario (22 px + anillo), ver `.place-marker--user`. */
+export const USER_MARKER_SIZE = 26;
 
 export interface StopOffset {
   dx: number;
@@ -205,15 +215,16 @@ export interface StopOffset {
  * Separa en pantalla las paradas que se solapan para que todos los números se lean.
  * Relajación simple por pares: cada par demasiado cercano se empuja a lo largo de la
  * línea que une sus centros (o en diagonal si coinciden) hasta tocarse. La parada
- * fijada no se mueve; el desplazamiento de las demás se limita a `maxOffset` para que
- * no se alejen de su sitio. Determinista.
+ * fijada no cede ante otras paradas, pero sí ante un obstáculo (el punto del usuario);
+ * el desplazamiento se limita a `maxOffset` para que ninguna se aleje de su sitio.
+ * Devuelve un desplazamiento por punto (cero en los obstáculos). Determinista.
  */
 export function spreadOverlappingStops(
   points: StopPoint[],
   scale: number,
   { gap = STOP_MARKER_GAP, maxOffset = STOP_MARKER_BASE_SIZE, iterations = 12 } = {},
 ): StopOffset[] {
-  const size = points.map((p) => STOP_MARKER_BASE_SIZE * (p.pinned ? 1 : scale));
+  const size = points.map((p) => p.size ?? STOP_MARKER_BASE_SIZE * (p.pinned ? 1 : scale));
   const pos = points.map((p) => ({ x: p.x, y: p.y }));
   const clamp = (i: number) => {
     const dx = pos[i].x - points[i].x;
@@ -243,8 +254,12 @@ export function spreadOverlappingStops(
           dy /= distance;
         }
         const push = minDistance - Math.max(distance, 0);
-        const fixedI = Boolean(points[i].pinned);
-        const fixedJ = Boolean(points[j].pinned);
+        const obstacleI = Boolean(points[i].obstacle);
+        const obstacleJ = Boolean(points[j].obstacle);
+        if (obstacleI && obstacleJ) continue;
+        // Ante un obstáculo cede la parada, aunque esté fijada; entre paradas, la no fijada.
+        const fixedI = obstacleI || (!obstacleJ && Boolean(points[i].pinned));
+        const fixedJ = obstacleJ || (!obstacleI && Boolean(points[j].pinned));
         if (fixedI && fixedJ) continue;
         const shareI = fixedI ? 0 : fixedJ ? 1 : 0.5;
         const shareJ = 1 - shareI;
@@ -276,11 +291,16 @@ export interface StopMarkerLike {
  * `offset` de MapLibre por parada (mueve también el área táctil de 44 px).
  * Selección y siguiente parada del paseo van fijadas a tamaño completo.
  */
-export function applyStopMarkerLayout(map: MapLike, stops: StopMarkerLike[]): void {
+export function applyStopMarkerLayout(
+  map: MapLike,
+  stops: StopMarkerLike[],
+  /** Posición del punto del usuario, si está en el mapa: las paradas se apartan de él. */
+  userLngLat?: [number, number] | null,
+): void {
   const scale = stopScaleForZoom(map.getZoom());
   map.getContainer().style.setProperty('--stop-scale', String(scale));
   if (stops.length === 0) return;
-  const points = stops.map((stop) => {
+  const points: StopPoint[] = stops.map((stop) => {
     const el = stop.getElement();
     const { lng, lat } = stop.getLngLat();
     const point = map.project([lng, lat]);
@@ -290,6 +310,9 @@ export function applyStopMarkerLayout(map: MapLike, stops: StopMarkerLike[]): vo
       pinned: el.classList.contains('is-active') || el.classList.contains('is-next'),
     };
   });
+  if (userLngLat) {
+    points.push({ ...map.project(userLngLat), obstacle: true, size: USER_MARKER_SIZE });
+  }
   const offsets = spreadOverlappingStops(points, scale);
   stops.forEach((stop, index) => {
     const { dx, dy } = offsets[index];

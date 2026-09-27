@@ -24,6 +24,7 @@ import {
   stopScaleForZoom,
   type CollisionItem,
   type StopMarkerLike,
+  USER_MARKER_SIZE,
   type StopPoint,
   type ZoomableMarker,
 } from './markerZoom';
@@ -305,6 +306,25 @@ describe('paradas numeradas', () => {
     expect(overlappingPairs(points, offsets, 0.8)).toEqual([]);
   });
 
+  it('el punto del usuario aparta a las paradas, también a la siguiente del paseo', () => {
+    // Caso del paseo a poco zoom: el usuario entre la parada visitada y la siguiente.
+    const points: StopPoint[] = [
+      { x: 116, y: 100, pinned: true },
+      { x: 96, y: 101 },
+      { x: 108, y: 100, obstacle: true, size: USER_MARKER_SIZE },
+    ];
+    const offsets = spreadOverlappingStops(points, 0.8);
+    // El obstáculo no se mueve.
+    expect(offsets[2]).toEqual({ dx: 0, dy: 0 });
+    for (const i of [0, 1]) {
+      const size = points[i].pinned ? STOP_MARKER_BASE_SIZE : STOP_MARKER_BASE_SIZE * 0.8;
+      const d = Math.hypot(points[i].x + offsets[i].dx - 108, points[i].y + offsets[i].dy - 100);
+      expect(d).toBeGreaterThanOrEqual((size + USER_MARKER_SIZE) / 2 - 0.5);
+    }
+    // Entre paradas, la fijada sigue sin ceder ante la no fijada.
+    expect(overlappingPairs(points.slice(0, 2), offsets.slice(0, 2), 0.8)).toEqual([]);
+  });
+
   it('limita el desplazamiento para no alejar la parada de su sitio', () => {
     const points = Array.from({ length: 6 }, () => ({ x: 0, y: 0 }));
     const offsets = spreadOverlappingStops(points, 1, { maxOffset: 20 });
@@ -358,5 +378,28 @@ describe('paradas numeradas', () => {
     expect(offsets[1][0]).toBeGreaterThan(0);
     expect(stops[0].getElement().dataset.stopShifted).toBe('false');
     expect(stops[1].getElement().dataset.stopShifted).toBe('true');
+  });
+
+  it('applyStopMarkerLayout aparta las paradas del punto del usuario', () => {
+    const container = { style: { setProperty: () => {} } };
+    let offset: [number, number] = [0, 0];
+    const element = { dataset: {} as Record<string, string>, classList: { contains: () => false } };
+    const stop: StopMarkerLike = {
+      getElement: () => element as unknown as HTMLElement,
+      getLngLat: () => ({ lng: 0, lat: 0 }),
+      setOffset: (next: [number, number]) => {
+        offset = next;
+      },
+    };
+    const map = {
+      getZoom: () => 16,
+      getContainer: () => container as unknown as HTMLElement,
+      project: ([lng]: [number, number]) => ({ x: 100 + lng, y: 100 }),
+    };
+    applyStopMarkerLayout(map, [stop]);
+    expect(offset).toEqual([0, 0]);
+    applyStopMarkerLayout(map, [stop], [4, 0]);
+    expect(offset[0]).toBeLessThan(-20);
+    expect(element.dataset.stopShifted).toBe('true');
   });
 });
