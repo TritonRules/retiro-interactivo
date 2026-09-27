@@ -61,6 +61,9 @@ import { VideoBlock } from '../media/VideoBlock';
 import { ServiceSheet } from '../places/ServiceSheet';
 import { isUsableAsCurrentPlan } from '../../utils/eventFreshness';
 import { useParkClock } from '../../utils/useParkClock';
+import { circlePolygon } from '../../utils/guidedWalk';
+import { GuidedWalkPanel } from './GuidedWalkPanel';
+import { useGuidedWalk } from './useGuidedWalk';
 
 interface Props {
   places: Place[];
@@ -82,7 +85,19 @@ type Selection =
 
 const ROUTE_SOURCE = 'active-route';
 const ROUTE_LINE = 'active-route-line';
+const ACCURACY_SOURCE = 'user-accuracy';
 const EVENT_SOURCE = 'map-events';
+
+function applyStopMarkerState(
+  el: HTMLElement,
+  index: number,
+  state: { phase: string; index: number; visited: boolean[] },
+) {
+  const walking = state.phase !== 'idle';
+  el.classList.toggle('is-visited', walking && Boolean(state.visited[index]));
+  el.classList.toggle('is-next', state.phase === 'active' && state.index === index);
+}
+
 const MAP_UNAVAILABLE_MESSAGE =
   'No se puede mostrar el mapa en este navegador. Puedes seguir consultando lugares, rutas y agenda.';
 
@@ -91,9 +106,55 @@ function withBase(baseUrl: string, path: string): string {
   return `${base}${path.replace(/^\//, '')}`;
 }
 
-/** `addSource` y `addLayer` lanzan si el estilo aún no terminó de cargar. */
+/** Dibuja (o actualiza) el círculo de precisión de la ubicación del usuario. */
+function drawAccuracyCircle(map: Map, location: UserLocation) {
+  const radius = Math.min(Math.max(location.accuracy, 15), 120);
+  const data = {
+    type: 'Feature' as const,
+    geometry: {
+      type: 'Polygon' as const,
+      coordinates: [circlePolygon(location.coordinates, radius, 64)],
+    },
+    properties: {},
+  };
+  const source = map.getSource(ACCURACY_SOURCE) as GeoJSONSource | undefined;
+  if (source) {
+    source.setData(data);
+    return;
+  }
+  map.addSource(ACCURACY_SOURCE, { type: 'geojson', data });
+  map.addLayer({
+    id: `${ACCURACY_SOURCE}-fill`,
+    type: 'fill',
+    source: ACCURACY_SOURCE,
+    paint: { 'fill-color': '#2F6F8F', 'fill-opacity': 0.12 },
+  });
+  map.addLayer({
+    id: `${ACCURACY_SOURCE}-line`,
+    type: 'line',
+    source: ACCURACY_SOURCE,
+    paint: { 'line-color': '#2F6F8F', 'line-width': 1.5, 'line-opacity': 0.45 },
+  });
+}
+
+function removeAccuracyCircle(map: Map | null) {
+  if (!map?.getSource(ACCURACY_SOURCE)) return;
+  if (map.getLayer(`${ACCURACY_SOURCE}-fill`)) map.removeLayer(`${ACCURACY_SOURCE}-fill`);
+  if (map.getLayer(`${ACCURACY_SOURCE}-line`)) map.removeLayer(`${ACCURACY_SOURCE}-line`);
+  map.removeSource(ACCURACY_SOURCE);
+}
+
+/** Mapas cuyo estilo ya emitió `load`; no se cambia de estilo después. */
+const styleLoadedMaps = new WeakSet<Map>();
+
+/**
+ * `addSource` y `addLayer` lanzan si el estilo aún no terminó de cargar.
+ * Tras el primer `load` basta con eso: `isStyleLoaded()` vuelve a ser falso mientras cargan
+ * teselas o se actualiza una fuente GeoJSON (el círculo de precisión del modo paseo) y
+ * `load` ya no se emite de nuevo, así que esperar a él dejaría la promesa colgada.
+ */
 function whenStyleReady(map: Map): Promise<void> {
-  if (map.isStyleLoaded()) return Promise.resolve();
+  if (styleLoadedMaps.has(map) || map.isStyleLoaded()) return Promise.resolve();
   return new Promise((resolve) => {
     map.once('load', () => resolve());
   });
@@ -107,6 +168,7 @@ function readClientMapQuery() {
       focusSlug: undefined as string | undefined,
       routeSlug: undefined as string | undefined,
       eventSlug: undefined as string | undefined,
+      walk: false,
     };
   }
   const params = new URLSearchParams(window.location.search);
@@ -115,6 +177,8 @@ function readClientMapQuery() {
     focusSlug: params.get('lugar') ?? undefined,
     routeSlug: params.get('ruta') ?? undefined,
     eventSlug: params.get('evento') ?? undefined,
+    /** `?paseo=1`: viene del botón «Empezar ruta» de la ficha de la ruta. */
+    walk: params.get('paseo') === '1',
   };
 }
 
@@ -145,7 +209,6 @@ export default function MapExplorer({
   const zoomableMarkersRef = useRef<ZoomableMarker[]>([]);
   const stopMarkersRef = useRef<Marker[]>([]);
   const userMarkerRef = useRef<Marker | null>(null);
-  const accuracySourceId = 'user-accuracy';
   const [ready, setReady] = useState(false);
   const [mapError, setMapError] = useState<string | null>(null);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -159,6 +222,8 @@ export default function MapExplorer({
   const [selection, setSelection] = useState<Selection>(null);
   const [geoState, setGeoState] = useState<GeoPermissionState>('idle');
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
+  const [pendingWalk, setPendingWalk] = useState(false);
+  const [followUser, setFollowUser] = useState(true);
 
   useEffect(() => {
     const q = readClientMapQuery();
@@ -166,6 +231,7 @@ export default function MapExplorer({
     setActiveRouteSlug(q.routeSlug ?? initialRouteSlug ?? null);
     setFocusSlugState(q.focusSlug ?? focusSlug);
     setEventSlugState(q.eventSlug ?? initialEventSlug);
+    setPendingWalk(q.walk);
     setQueryReady(true);
   }, [initialCategory, initialRouteSlug, focusSlug, initialEventSlug]);
 
@@ -173,6 +239,15 @@ export default function MapExplorer({
     () => routes.find((route) => route.slug === activeRouteSlug) ?? null,
     [routes, activeRouteSlug],
   );
+
+  const walk = useGuidedWalk({
+    route: activeRoute,
+    places,
+    onArrive: (stop) => setSelection({ kind: 'place', id: stop.id }),
+  });
+  const walking = walk.state.phase !== 'idle';
+  const walkRef = useRef(walk.state);
+  walkRef.current = walk.state;
 
   const filteredPlaces = useMemo(
     () => filterPlacesByCategory(places, category),
@@ -228,6 +303,8 @@ export default function MapExplorer({
     const params = new URLSearchParams(window.location.search);
     if (category === 'todos') params.delete('categoria');
     else params.set('categoria', category);
+    // `paseo` solo arranca el modo paseo al llegar; no se conserva al compartir o recargar.
+    params.delete('paseo');
     if (activeRouteSlug) params.set('ruta', activeRouteSlug);
     else {
       params.delete('ruta');
@@ -284,7 +361,10 @@ export default function MapExplorer({
           }
         };
         map.on('error', onInitError);
-        map.once('load', () => map?.off('error', onInitError));
+        map.once('load', () => {
+          styleLoadedMaps.add(createdMap);
+          createdMap.off('error', onInitError);
+        });
 
         mapRef.current = map;
         if (!cancelled) setReady(true);
@@ -465,6 +545,8 @@ export default function MapExplorer({
         const el = document.createElement('button');
         el.type = 'button';
         el.className = 'route-stop-marker';
+        el.dataset.stopIndex = String(index);
+        applyStopMarkerState(el, index, walkRef.current);
         el.textContent = String(index + 1);
         el.setAttribute('aria-label', `Parada ${index + 1}: ${place.name}`);
         el.addEventListener('click', () => {
@@ -584,11 +666,7 @@ export default function MapExplorer({
     userMarkerRef.current?.remove();
     userMarkerRef.current = null;
     const map = mapRef.current;
-    if (map?.getSource(accuracySourceId)) {
-      if (map.getLayer(`${accuracySourceId}-fill`)) map.removeLayer(`${accuracySourceId}-fill`);
-      if (map.getLayer(`${accuracySourceId}-line`)) map.removeLayer(`${accuracySourceId}-line`);
-      map.removeSource(accuracySourceId);
-    }
+    removeAccuracyCircle(map);
     map?.easeTo({
       center: RETIRO_CENTER,
       zoom: DEFAULT_ZOOM,
@@ -599,61 +677,38 @@ export default function MapExplorer({
     });
   };
 
-  const updateUserOnMap = async (location: UserLocation, inside: boolean) => {
-    const map = mapRef.current;
-    if (!map) return;
+  /** Coloca (o mueve) el punto azul y su círculo de precisión. */
+  const latestUserLocationRef = useRef<UserLocation | null>(null);
+  const placeUserMarker = async (map: Map, location: UserLocation) => {
+    latestUserLocationRef.current = location;
     const maplibre = await loadMaplibre();
-    await whenStyleReady(map);
-
-    userMarkerRef.current?.remove();
-    if (inside) {
+    if (mapRef.current !== map || latestUserLocationRef.current !== location) return;
+    if (userMarkerRef.current) {
+      userMarkerRef.current.setLngLat(location.coordinates);
+    } else {
       const el = createUserMarkerElement();
       userMarkerRef.current = new maplibre.Marker({ element: el, anchor: 'center' })
         .setLngLat(location.coordinates)
         .addTo(map);
+    }
+    // Actualizar una fuente existente no exige esperar al estilo.
+    if (!map.getSource(ACCURACY_SOURCE)) await whenStyleReady(map);
+    if (mapRef.current !== map || !userMarkerRef.current) return;
+    drawAccuracyCircle(map, latestUserLocationRef.current ?? location);
+  };
 
-      const radius = Math.min(Math.max(location.accuracy, 15), 120);
-      const points = 64;
-      const [lon, lat] = location.coordinates;
-      const coords: [number, number][] = [];
-      for (let i = 0; i <= points; i += 1) {
-        const angle = (i / points) * Math.PI * 2;
-        const dLat = (radius * Math.cos(angle)) / 111320;
-        const dLon =
-          (radius * Math.sin(angle)) /
-          (111320 * Math.cos((lat * Math.PI) / 180));
-        coords.push([lon + dLon, lat + dLat]);
-      }
+  const removeUserMarker = () => {
+    latestUserLocationRef.current = null;
+    userMarkerRef.current?.remove();
+    userMarkerRef.current = null;
+    removeAccuracyCircle(mapRef.current);
+  };
 
-      if (map.getSource(accuracySourceId)) {
-        (map.getSource(accuracySourceId) as GeoJSONSource).setData({
-          type: 'Feature',
-          geometry: { type: 'Polygon', coordinates: [coords] },
-          properties: {},
-        });
-      } else {
-        map.addSource(accuracySourceId, {
-          type: 'geojson',
-          data: {
-            type: 'Feature',
-            geometry: { type: 'Polygon', coordinates: [coords] },
-            properties: {},
-          },
-        });
-        map.addLayer({
-          id: `${accuracySourceId}-fill`,
-          type: 'fill',
-          source: accuracySourceId,
-          paint: { 'fill-color': '#2F6F8F', 'fill-opacity': 0.12 },
-        });
-        map.addLayer({
-          id: `${accuracySourceId}-line`,
-          type: 'line',
-          source: accuracySourceId,
-          paint: { 'line-color': '#2F6F8F', 'line-width': 1.5, 'line-opacity': 0.45 },
-        });
-      }
-
+  const updateUserOnMap = async (location: UserLocation, inside: boolean) => {
+    const map = mapRef.current;
+    if (!map) return;
+    if (inside) {
+      await placeUserMarker(map, location);
       map.easeTo({
         center: location.coordinates,
         zoom: Math.min(Math.max(map.getZoom(), 15.5), 17),
@@ -661,12 +716,7 @@ export default function MapExplorer({
         essential: true,
       });
     } else {
-      userMarkerRef.current = null;
-      if (map.getSource(accuracySourceId)) {
-        if (map.getLayer(`${accuracySourceId}-fill`)) map.removeLayer(`${accuracySourceId}-fill`);
-        if (map.getLayer(`${accuracySourceId}-line`)) map.removeLayer(`${accuracySourceId}-line`);
-        map.removeSource(accuracySourceId);
-      }
+      removeUserMarker();
     }
   };
 
@@ -689,6 +739,108 @@ export default function MapExplorer({
         setGeoState('error');
       }
     }
+  };
+
+  // «Empezar ruta» desde la ficha de la ruta (`?ruta=…&paseo=1`).
+  useEffect(() => {
+    if (!pendingWalk || !queryReady) return;
+    setPendingWalk(false);
+    if (activeRoute) {
+      setFollowUser(true);
+      walk.start();
+    }
+  }, [pendingWalk, queryReady, activeRoute, walk.start]);
+
+  // Paradas visitadas / siguiente en los marcadores numerados.
+  useEffect(() => {
+    for (const marker of stopMarkersRef.current) {
+      const el = marker.getElement();
+      const index = Number(el.dataset.stopIndex);
+      if (Number.isFinite(index)) applyStopMarkerState(el, index, walk.state);
+    }
+  }, [walk.state]);
+
+  // Posición en vivo durante el paseo: punto + precisión, y seguimiento opcional.
+  const walkPosition = walk.position;
+  const walkPositionVisible =
+    walking &&
+    walkPosition !== null &&
+    (walk.source === 'demo' || isInsideRetiro(walkPosition.coordinates));
+  const followZoomedRef = useRef(false);
+  useEffect(() => {
+    if (!followUser) followZoomedRef.current = false;
+  }, [followUser]);
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready) return;
+    if (!walkPositionVisible || !walkPosition) {
+      if (!userLocation) removeUserMarker();
+      return;
+    }
+    let cancelled = false;
+    void placeUserMarker(map, walkPosition).then(() => {
+      if (cancelled || !followUser || mapRef.current !== map) return;
+      // Deja libre la parte del mapa que tapa la ficha abierta.
+      const sheet =
+        containerRef.current?.parentElement?.querySelector<HTMLElement>('.ficha--mobile');
+      const bottom = sheet
+        ? Math.min(sheet.offsetHeight, map.getContainer().clientHeight * 0.6)
+        : 0;
+      // Al empezar a seguir se acerca el mapa; después se respeta el zoom elegido.
+      // (se da por hecho cuando el zoom llega de verdad, por si una animación se interrumpe).
+      if (map.getZoom() >= 16.4) followZoomedRef.current = true;
+      const zoom = followZoomedRef.current ? map.getZoom() : Math.max(map.getZoom(), 16.5);
+      map.easeTo({
+        center: walkPosition.coordinates,
+        zoom,
+        padding: { top: 0, right: 0, left: 0, bottom },
+        duration: 600,
+        essential: true,
+      });
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [walkPosition, walkPositionVisible, followUser, ready, selection]);
+
+  // Si el usuario arrastra el mapa, se deja de seguir su posición hasta pulsar «Centrar».
+  const walkingRef = useRef(false);
+  walkingRef.current = walking;
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready) return;
+    const stopFollowing = () => {
+      if (walkingRef.current) setFollowUser(false);
+    };
+    map.on('dragstart', stopFollowing);
+    return () => {
+      map.off('dragstart', stopFollowing);
+    };
+  }, [ready]);
+
+  const startWalk = () => {
+    setFollowUser(true);
+    setSelection(null);
+    walk.start();
+  };
+
+  const finishWalk = () => {
+    walk.finish();
+    setSelection(null);
+    setFollowUser(true);
+  };
+
+  const showWalkStop = (index: number) => {
+    const stop = walk.stops[index];
+    if (!stop) return;
+    setSelection({ kind: 'place', id: stop.id });
+    setFollowUser(false);
+    mapRef.current?.easeTo({
+      center: stop.coordinates,
+      zoom: Math.max(mapRef.current.getZoom(), 16.5),
+      duration: 400,
+      essential: true,
+    });
   };
 
   const zoomBy = (delta: number) => {
@@ -754,7 +906,13 @@ export default function MapExplorer({
         <div className="mapa-toolbar__row">
           <p className="mapa-toolbar__count" aria-live="polite">
             {visibleCount} {visibleCount === 1 ? 'punto' : 'puntos'} visibles
-            {activeRoute ? ' · ruta activa' : category !== 'todos' ? ' · filtro activo' : ''}
+            {activeRoute
+              ? walking
+                ? ' · paseo activo'
+                : ' · ruta activa'
+              : category !== 'todos'
+                ? ' · filtro activo'
+                : ''}
           </p>
           {!activeRoute && category === 'todos' ? (
             <label className="mapa-toolbar__toggle">
@@ -789,14 +947,23 @@ export default function MapExplorer({
         ) : null}
       </div>
 
-      {activeRoute ? (
+      {activeRoute && walking ? (
+        <GuidedWalkPanel
+          walk={walk}
+          routeName={activeRoute.name}
+          onFinish={finishWalk}
+          onShowStop={showWalkStop}
+        />
+      ) : null}
+
+      {activeRoute && !walking ? (
         <div className="route-active-card" role="region" aria-label="Ruta activa">
           <div>
             <strong>{activeRoute.name}</strong>
             <p>
               {formatDuration(activeRoute.estimatedDurationMinutes)} ·{' '}
-              {formatDistance(activeRoute.approximateDistanceMeters)} ·{' '}
-              {activeRoute.stopIds.length} paradas
+              {formatDistance(activeRoute.approximateDistanceMeters)} · {activeRoute.stopIds.length}{' '}
+              paradas
             </p>
             <p className="route-active-card__note">
               Recorrido orientativo. Sin navegación giro a giro. Condiciones del parque pueden
@@ -804,13 +971,20 @@ export default function MapExplorer({
             </p>
           </div>
           <div className="route-active-card__actions">
+            <button type="button" className="btn btn--primary" onClick={startWalk}>
+              Empezar ruta
+            </button>
             <button type="button" className="btn btn--secondary" onClick={() => void locateMe()}>
               Usar mi ubicación
             </button>
-            <button type="button" className="btn btn--secondary" onClick={() => void shareActiveRoute()}>
+            <button
+              type="button"
+              className="btn btn--secondary"
+              onClick={() => void shareActiveRoute()}
+            >
               Compartir
             </button>
-            <button type="button" className="btn" onClick={clearRoute}>
+            <button type="button" className="btn btn--secondary" onClick={clearRoute}>
               Cerrar ruta
             </button>
           </div>
@@ -893,17 +1067,31 @@ export default function MapExplorer({
           >
             ⌂
           </button>
-          <button
-            type="button"
-            className="mapa-control-btn mapa-control-btn--wide"
-            onClick={() => void locateMe()}
-            aria-label="Mi ubicación"
-            aria-describedby="geo-status"
-            disabled={geoState === 'prompting'}
-          >
-            ◎
-          </button>
-          {userLocation ? (
+          {walking ? (
+            walkPositionVisible && !followUser ? (
+              <button
+                type="button"
+                className="mapa-control-btn mapa-control-btn--wide mapa-control-btn--accent"
+                onClick={() => setFollowUser(true)}
+                aria-label="Centrar en mi posición y seguirla"
+                title="Centrar en mi posición"
+              >
+                ⌖
+              </button>
+            ) : null
+          ) : (
+            <button
+              type="button"
+              className="mapa-control-btn mapa-control-btn--wide"
+              onClick={() => void locateMe()}
+              aria-label="Mi ubicación"
+              aria-describedby="geo-status"
+              disabled={geoState === 'prompting'}
+            >
+              ◎
+            </button>
+          )}
+          {userLocation && !walking ? (
             <button
               type="button"
               className="mapa-control-btn mapa-control-btn--wide"
@@ -915,17 +1103,19 @@ export default function MapExplorer({
           ) : null}
         </div>
 
-        <p id="geo-status" className="geo-status" role="status" aria-live="polite">
-          {GEO_STATUS_LABEL[geoState]}
-          {geoState === 'outside' ? (
-            <>
-              {' '}
-              <button type="button" className="btn btn--secondary" onClick={resetView}>
-                Volver al parque
-              </button>
-            </>
-          ) : null}
-        </p>
+        {!walking ? (
+          <p id="geo-status" className="geo-status" role="status" aria-live="polite">
+            {GEO_STATUS_LABEL[geoState]}
+            {geoState === 'outside' ? (
+              <>
+                {' '}
+                <button type="button" className="btn btn--secondary" onClick={resetView}>
+                  Volver al parque
+                </button>
+              </>
+            ) : null}
+          </p>
+        ) : null}
 
         {nearby.length > 0 && !activeRoute ? (
           <NearbyList items={nearby} onSelect={focusNearby} />

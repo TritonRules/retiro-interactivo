@@ -67,3 +67,13 @@
 - Etiquetas de tipo: `visita` → «Paseo», `ia` → «Animación IA».
 - Tarjeta de ruta en el mapa: vídeo plegado por defecto tras «Ver vídeo(s) del recorrido». Selector de escenario accesible (`radiogroup`, teclado) cuando hay 2+ vídeos con escenario, también en páginas y fichas. Deep link `?escenario=`.
 - Tests: 149 unitarios, E2E 29 (6 de vídeos). Sin vídeos reales.
+
+## 2026-09-27 — Modo paseo guiado en rutas
+
+- Rama `feat/modo-paseo` desde `beta` (`cb50e6b`). Botón «Empezar ruta» en la ficha de la ruta y en la tarjeta de ruta del mapa.
+- `watchPosition` (alta precisión) solo con el paseo activo y la página visible; punto en vivo + círculo de precisión, seguimiento que se pausa al arrastrar y botón «Centrar».
+- Panel compacto: siguiente parada, distancia, tiempo a ~4,5 km/h, «Parada N de M», anterior/saltar y «Terminar». Llegada con radio adaptado (25 m + desvío de la parada respecto al trazado + margen GPS), abre la ficha del lugar y avanza; «Ruta completada» al final.
+- Errores de ubicación con `GEO_STATUS_LABEL`; modo demostración (simulación por el trazado) fuera del Retiro, con permiso denegado o sin HTTPS. Wake Lock opcional.
+- Corrección: `whenStyleReady` podía quedarse esperando un `load` que ya no se emite cuando `isStyleLoaded()` era falso por teselas o fuentes en carga (el punto de ubicación no se movía).
+- Detalles en `docs/routes.md` (sección «Modo paseo guiado»). Pendiente: prueba física con iPhone en el Retiro (`docs/qa-beta-devices.md`).
+- Tests: 175 unitarios (18 del modo paseo, incl. simulación completa de las cinco rutas reales), E2E 36 (5 del modo paseo).
