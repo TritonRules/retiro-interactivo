@@ -60,24 +60,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.68618,
-          40.409435
-        ]
-      },
-      "properties": {
-        "id": "evt-12404595",
-        "slug": "artes-en-el-retiro-12404595",
-        "title": "Artes en el Retiro",
-        "startAt": "2026-09-26T11:00:00+02:00",
-        "status": "expired",
-        "venue": "Centro de Educación Ambiental El Retiro"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -3.6840988,
           40.4192106
         ]
@@ -330,24 +312,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.6840988,
-          40.4192106
-        ]
-      },
-      "properties": {
-        "id": "evt-50145709",
-        "slug": "jardin-muestra-de-proceso-50145709",
-        "title": "Jardín. Muestra de proceso",
-        "startAt": "2026-09-26T12:30:00+02:00",
-        "status": "expired",
-        "venue": "Centro Cultural Casa de Vacas (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -3.679318,
           40.409123
         ]
@@ -556,24 +520,6 @@
         "title": "Música Madre - Retiro",
         "startAt": "2026-10-02T19:00:00+02:00",
         "status": "published",
-        "venue": "Centro Cultural Casa de Vacas (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6840988,
-          40.4192106
-        ]
-      },
-      "properties": {
-        "id": "evt-50145704",
-        "slug": "pasion-flamenca-50145704",
-        "title": "Pasión flamenca",
-        "startAt": "2026-09-26T19:00:00+02:00",
-        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -906,24 +852,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50426536",
-        "slug": "una-decada-de-retos-y-logros-de-la-asociacion-para-mujeres-en-el-deporte",
-        "title": "Una década de retos y logros de la Asociación para Mujeres en el Deporte Profesional",
-        "startAt": "2026-09-26T10:15:00+02:00",
-        "status": "expired",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -3.6866962,
           40.4187197
         ]
@@ -1025,24 +953,6 @@
         "startAt": "2026-10-31T12:00:00+01:00",
         "status": "published",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.679318,
-          40.409123
-        ]
-      },
-      "properties": {
-        "id": "evt-50148887",
-        "slug": "yincana-descubriendo-los-frutos-del-otono-50148887",
-        "title": "Yincana 'Descubriendo los frutos del otoño'",
-        "startAt": "2026-09-26T16:30:00+02:00",
-        "status": "expired",
-        "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
     {
