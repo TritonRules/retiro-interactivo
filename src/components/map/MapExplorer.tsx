@@ -11,6 +11,7 @@ import {
   RETIRO_CENTER,
 } from '../../config/map';
 import type { MapEventPoint } from '../../types/event';
+import type { ParkEvent } from '../../types/event';
 import type { Place } from '../../types/place';
 import type { ParkService } from '../../types/service';
 import type { ParkRoute } from '../../types/route';
@@ -46,6 +47,8 @@ import { NearbyList } from './NearbyList';
 import { EventSheet } from '../places/EventSheet';
 import { PlaceSheet } from '../places/PlaceSheet';
 import { ServiceSheet } from '../places/ServiceSheet';
+import { isUsableAsCurrentPlan } from '../../utils/eventFreshness';
+import { useParkClock } from '../../utils/useParkClock';
 
 interface Props {
   places: Place[];
@@ -101,6 +104,16 @@ function readClientMapQuery() {
   };
 }
 
+function asParkEvent(event: MapEventPoint): ParkEvent {
+  return {
+    shortDescription: event.title,
+    sourceName: 'Agenda',
+    sourceTier: 'A',
+    confidence: 1,
+    ...event,
+  };
+}
+
 export default function MapExplorer({
   places,
   services,
@@ -153,6 +166,11 @@ export default function MapExplorer({
   const filteredServices = useMemo(
     () => filterServicesByCategory(services, category, showServicesInTodos),
     [services, category, showServicesInTodos],
+  );
+  const now = useParkClock();
+  const visibleEvents = useMemo(
+    () => events.filter((item) => isUsableAsCurrentPlan(asParkEvent(item), now)),
+    [events, now],
   );
   const counts = useMemo(() => countByCategory(places, services), [places, services]);
 
@@ -415,13 +433,13 @@ export default function MapExplorer({
       if (map.getLayer(`${EVENT_SOURCE}-circle`)) map.removeLayer(`${EVENT_SOURCE}-circle`);
       if (map.getSource(EVENT_SOURCE)) map.removeSource(EVENT_SOURCE);
 
-      if (!showEvents || activeRoute || events.length === 0) return;
+      if (!showEvents || activeRoute || visibleEvents.length === 0) return;
 
       map.addSource(EVENT_SOURCE, {
         type: 'geojson',
         data: {
           type: 'FeatureCollection',
-          features: events.map((event) => ({
+          features: visibleEvents.map((event) => ({
             type: 'Feature',
             geometry: { type: 'Point', coordinates: event.coordinates },
             properties: { id: event.id, title: event.title },
@@ -449,7 +467,7 @@ export default function MapExplorer({
     return () => {
       cancelled = true;
     };
-  }, [showEvents, events, ready, activeRoute]);
+  }, [showEvents, visibleEvents, ready, activeRoute]);
 
   useEffect(() => {
     if (!ready || !focusSlugState) return;
@@ -646,7 +664,7 @@ export default function MapExplorer({
 
   const visibleCount = activeRoute
     ? activeRoute.stopIds.length
-    : filteredPlaces.length + filteredServices.length + (showEvents ? events.length : 0);
+    : filteredPlaces.length + filteredServices.length + (showEvents ? visibleEvents.length : 0);
 
   return (
     <section className="mapa-explorer" aria-label="Mapa del Parque del Retiro">

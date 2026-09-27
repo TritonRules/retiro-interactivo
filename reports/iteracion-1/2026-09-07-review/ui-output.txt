@@ -1,0 +1,15 @@
+{
+  "case": "clock-boundary",
+  "openedAt": "2026-09-07T09:59:00.000Z",
+  "eventEndsAt": "2026-09-07T10:00:00.000Z",
+  "nextClockUpdateAt": "2026-09-07T10:59:00.000Z",
+  "updatesByEventEnd": 0,
+  "limitation": "Hook with mocked React effects and timers; no browser rendering claimed."
+}
+{
+  "case": "static-ssr-and-noscript",
+  "todayHeadingOutsideNoscript": true,
+  "filterSelectOutsideNoscript": true,
+  "fallbackAlsoPresent": true,
+  "limitation": "HTML inspection; source/CSS review confirms no no-script hiding rule."
+}

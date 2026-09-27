@@ -17,7 +17,8 @@ No se hacen obligatorios campos no fiables (horarios, precios, accesibilidad com
 
 ## Calidad
 
-- Objetivo 60–100 fichas totales (lugares + servicios). Fase 2B: **80** (36 + 44).
+- Objetivo 60–100 fichas totales (lugares + servicios). Iteración 1: **82** (38 lugares + 44 servicios).
 - Descripciones propias y breves; fuente + `lastVerifiedAt`.
 - Duplicados: consolidar por id/slug/proximidad/nombre (`automation/content/detect-duplicates.mjs`).
 - Candidatos en `data/candidates/` separados de publicados.
+- Agenda: filtros y «Hoy» se resuelven en cliente. El HTML estático lista fechas absolutas. Contrato: `docs/iteracion-1/contrato-temporal.md`.

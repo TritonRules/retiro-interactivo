@@ -1,0 +1,134 @@
+[
+  {
+    "id": "evt-e2e-bic",
+    "slug": "expo-retiro-bic",
+    "title": "Exposición BIC del Retiro",
+    "shortDescription": "Exposición de martes a domingo en el Centro de Educación Ambiental El Retiro.",
+    "startAt": "2026-07-01T10:00:00+02:00",
+    "endAt": "2026-09-30T23:59:00+02:00",
+    "expiresAt": "2026-10-01T00:00:00+02:00",
+    "venue": "Centro de Educación Ambiental El Retiro",
+    "coordinates": [-3.68618, 40.409435],
+    "category": "Exposiciones",
+    "audience": ["Todos los públicos"],
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "https://www.madrid.es/",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "https://www.madrid.es/",
+    "sourceTier": "A",
+    "sourceEventId": "e2e-bic",
+    "lastCheckedAt": "2026-09-06T08:00:00.000Z",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": ["10:00"],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": ["TU", "WE", "TH", "FR", "SA", "SU"],
+        "untilExclusive": "2026-10-01T00:00:00+02:00",
+        "excludedDays": ["2026-09-08"]
+      }
+    }
+  },
+  {
+    "id": "evt-e2e-titeres",
+    "slug": "titeres-dos-pases",
+    "title": "Títeres de mañana y tarde",
+    "shortDescription": "Dos pases el mismo domingo en el Teatro de Títeres de El Retiro.",
+    "startAt": "2026-09-06T11:00:00+02:00",
+    "expiresAt": "2026-09-07T00:00:00+02:00",
+    "venue": "Teatro de Títeres de El Retiro",
+    "coordinates": [-3.6866962, 40.4187197],
+    "category": "CuentacuentosTiteresMarionetas",
+    "audience": ["Familias"],
+    "registrationUrl": "https://teatrotiteresretiro.es/",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "https://teatrotiteresretiro.es/",
+    "sourceTier": "A",
+    "sourceEventId": "e2e-titeres",
+    "lastCheckedAt": "2026-09-06T08:00:00.000Z",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": ["11:00", "18:30"]
+    }
+  },
+  {
+    "id": "evt-e2e-caduca",
+    "slug": "paseo-que-caduca",
+    "title": "Paseo que caduca a las 12:00",
+    "shortDescription": "Actividad de prueba con fin exacto a mediodía para el reloj de E2E.",
+    "startAt": "2026-09-06T10:00:00+02:00",
+    "endAt": "2026-09-06T12:00:00+02:00",
+    "expiresAt": "2026-09-06T12:00:00+02:00",
+    "venue": "Estanque Grande",
+    "coordinates": [-3.6835, 40.4172],
+    "category": "ExcursionesViajesItinerarios",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "https://www.madrid.es/",
+    "sourceTier": "A",
+    "sourceEventId": "e2e-caduca",
+    "lastCheckedAt": "2026-09-06T08:00:00.000Z",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": ["10:00"]
+    }
+  },
+  {
+    "id": "evt-e2e-stale",
+    "slug": "dato-sin-actualizar",
+    "title": "Actividad con dato antiguo",
+    "shortDescription": "Registro con consulta de hace más de siete días; no debe parecer plan vigente.",
+    "startAt": "2026-09-06T16:00:00+02:00",
+    "expiresAt": "2026-09-07T00:00:00+02:00",
+    "venue": "Casa de Vacas",
+    "coordinates": [-3.6840988, 40.4192106],
+    "category": "ConferenciasColoquios",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "https://www.madrid.es/",
+    "sourceTier": "A",
+    "sourceEventId": "e2e-stale",
+    "lastCheckedAt": "2026-08-20T08:00:00.000Z",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": ["16:00"]
+    }
+  },
+  {
+    "id": "evt-e2e-libros",
+    "slug": "ruta-libros-vivos",
+    "title": "La ruta de los libros vivos",
+    "shortDescription": "Serie con hora desconocida y un día excluido; no debe mostrarse a las 00:00.",
+    "startAt": "2026-06-29T00:00:00+02:00",
+    "endAt": "2026-09-30T23:59:00+02:00",
+    "expiresAt": "2026-10-01T00:00:00+02:00",
+    "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)",
+    "coordinates": [-3.6789381, 40.4167401],
+    "category": "Exposiciones",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "https://www.madrid.es/",
+    "sourceTier": "A",
+    "sourceEventId": "e2e-libros",
+    "lastCheckedAt": "2026-09-06T08:00:00.000Z",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "unknown",
+      "sessionTimes": [],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": ["MO", "TU", "WE", "TH", "FR", "SA", "SU"],
+        "untilExclusive": "2026-10-01T00:00:00+02:00",
+        "excludedDays": ["2026-09-07"]
+      }
+    }
+  }
+]

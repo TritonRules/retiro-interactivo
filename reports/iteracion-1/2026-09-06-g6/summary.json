@@ -1,0 +1,35 @@
+{
+  "ranAt": "2026-09-06T16:50:50Z",
+  "branch": "codex/iteracion-1-agenda-fiable",
+  "baseCommit": "3d19d6a4cf6be5ff46e74cc2206ba9d6ffb31f09",
+  "node": "v22.23.2",
+  "npm": "10.9.8",
+  "classification": "Iteración 1 cerrada técnicamente",
+  "remote": "sin push; CI remoto pendiente",
+  "counts": {
+    "places": 38,
+    "services": 44,
+    "routes": 5,
+    "events": 74,
+    "upcomingByExpiresAt": 68,
+    "vitest": 103,
+    "e2e": 22,
+    "pages": 122
+  },
+  "commands": {
+    "validate:data": "OK",
+    "events:validate": "OK",
+    "routes:validate": "OK",
+    "check": "OK",
+    "lint": "OK",
+    "build": "OK 122 pages",
+    "test:e2e": "22 passed",
+    "git diff --check": "OK"
+  },
+  "candidate": "dist/",
+  "e2eFixtureBuild": "dist-e2e/",
+  "publication": {
+    "publishedAt": "2026-09-06T16:37:26.939Z",
+    "datasetHash": "c7e297995eea08b9c3be26d7f3cb5fab148850ade6e4ecd92d1f35b87c7e8d16"
+  }
+}

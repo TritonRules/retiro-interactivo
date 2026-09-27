@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { ENTORNO_PLACE_BOUNDS } from '../config/map';
 import type { ParkEvent } from '../types/event';
+import { selectCurrentPlans } from './eventFreshness';
 
 export const eventStatusSchema = z.enum([
   'draft',
@@ -34,10 +35,26 @@ export const parkEventSchema = z
     sourceTier: z.enum(['A', 'B', 'C', 'D']),
     sourceEventId: z.string().optional(),
     sourceUpdatedAt: z.string().optional(),
-    lastCheckedAt: z.string().min(10),
+    lastCheckedAt: z.string().min(10).optional(),
     expiresAt: z.string().min(10),
     confidence: z.number().min(0).max(1),
     status: eventStatusSchema,
+    schedule: z
+      .object({
+        timePrecision: z.enum(['exact', 'unknown', 'allDay']),
+        sessionTimes: z.array(z.string().regex(/^\d{2}:\d{2}$/)),
+        recurrence: z
+          .object({
+            frequency: z.enum(['WEEKLY', 'DAILY']),
+            interval: z.number().int().positive(),
+            byDay: z.array(z.enum(['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU'])),
+            untilExclusive: z.string().min(10),
+            excludedDays: z.array(z.string().regex(/^\d{4}-\d{2}-\d{2}$/)),
+          })
+          .optional(),
+        parseIssues: z.array(z.string()).optional(),
+      })
+      .optional(),
   })
   .superRefine((event, ctx) => {
     const start = Date.parse(event.startAt);
@@ -45,6 +62,16 @@ export const parkEventSchema = z
     if (Number.isNaN(start) || Number.isNaN(expires)) {
       ctx.addIssue({ code: 'custom', message: 'fechas ISO inválidas' });
       return;
+    }
+    if (event.lastCheckedAt) {
+      const checked = Date.parse(event.lastCheckedAt);
+      if (Number.isNaN(checked)) {
+        ctx.addIssue({
+          code: 'custom',
+          message: 'lastCheckedAt inválido',
+          path: ['lastCheckedAt'],
+        });
+      }
     }
     if (expires < start) {
       ctx.addIssue({
@@ -115,8 +142,5 @@ export function publishedUpcomingEvents(
   events: ParkEvent[],
   now = new Date(),
 ): ParkEvent[] {
-  return events
-    .filter((event) => event.status === 'published')
-    .filter((event) => Date.parse(event.expiresAt) >= now.getTime())
-    .sort((a, b) => Date.parse(a.startAt) - Date.parse(b.startAt));
+  return selectCurrentPlans(events, now instanceof Date ? now.getTime() : now);
 }

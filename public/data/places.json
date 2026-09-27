@@ -73,20 +73,22 @@
       -3.6820649,
       40.4135979
     ],
-    "shortDescription": "Pabellón de hierro y cristal dedicado a exposiciones temporales.",
-    "description": "El Palacio de Cristal es un pabellón transparente situado junto a su estanque. Hoy forma parte del circuito expositivo del Museo Reina Sofía y suele acoger instalaciones contemporáneas. Su silueta sobre el agua es uno de los símbolos culturales del Retiro.",
+    "shortDescription": "Pabellón de hierro y cristal. El interior está cerrado; se puede ver el envoltorio artístico desde el exterior.",
+    "description": "El Palacio de Cristal es un pabellón transparente junto a su estanque, sede expositiva del Museo Reina Sofía. El 6 de septiembre de 2026 el museo indica que permanece cerrado temporalmente por mejoras arquitectónicas y que se puede visitar la instalación artística que lo recubre. No se afirma que el interior esté abierto. El edificio sigue siendo un hito del parque; las rutas que lo incluyen se entienden como visita exterior.",
     "tags": [
       "exposición",
       "arquitectura",
-      "museo"
+      "museo",
+      "cierre temporal"
     ],
     "sourceName": "OpenStreetMap — Palacio de Cristal (way/23596451)",
     "sourceUrl": "https://www.openstreetmap.org/way/23596451",
-    "lastVerifiedAt": "2026-08-05",
+    "lastVerifiedAt": "2026-09-06",
     "status": "verified",
     "accessibility": [
-      "Consultar accesos al edificio según exposición activa"
+      "Consultar accesos al edificio y a la instalación exterior en la fuente del Reina Sofía"
     ],
+    "openingHoursNote": "Interior cerrado temporalmente por mejoras arquitectónicas (Museo Reina Sofía, consultado el 6 de septiembre de 2026). Se puede visitar la instalación que recubre el edificio. El Palacio de Cristal puede cerrar con lluvia o alerta de calor. Horario general de las sedes del Retiro del museo: abril–septiembre 10:00–21:00; octubre–marzo 10:00–18:00; cerrado 1 y 6 de enero, 1 de mayo y 25 de diciembre. Fuente: https://www.museoreinasofia.es/visita/sedes-parque-retiro/",
     "audience": [
       "turistas",
       "locales"
@@ -131,19 +133,20 @@
       -3.6819843,
       40.4151995
     ],
-    "shortDescription": "Edificio expositivo de ladrillo y azulejo en el interior del parque.",
-    "description": "El Palacio de Velázquez, también gestionado por el Museo Reina Sofía, aloja exposiciones temporales en un edificio de planta rectangular con cubierta acristalada. Su entorno arbolado invita a combinar visita cultural y paseo.",
+    "shortDescription": "Edificio expositivo del Reina Sofía en el interior del parque, de ladrillo y azulejo.",
+    "description": "El Palacio de Velázquez es una sede expositiva del Museo Reina Sofía. A diferencia del Palacio de Cristal, el 6 de septiembre de 2026 el museo no anuncia un cierre del interior: lista exposiciones en curso en las sedes del Retiro (Fernando Sánchez Castillo, «La Perla Peregrina», 24 jun 2026–8 mar 2027; Andrea Canepa, «Fardo», 13 ene 2026–1 ene 2027) sin asignar aquí cada una a un palacio concreto. La apertura de la sede no equivale a una función concreta; conviene contrastar la cartelería del museo el día de la visita.",
     "tags": [
       "exposición",
       "arquitectura",
       "museo"
     ],
-    "sourceName": "OpenStreetMap — Palacio de Velázquez (way/23595002)",
-    "sourceUrl": "https://www.openstreetmap.org/way/23595002",
-    "lastVerifiedAt": "2026-08-05",
+    "sourceName": "Museo Reina Sofía — Sedes del Parque del Retiro",
+    "sourceUrl": "https://www.museoreinasofia.es/visita/sedes-parque-retiro/",
+    "lastVerifiedAt": "2026-09-06",
     "status": "verified",
     "area": "retiro",
-    "sourceTier": "B"
+    "sourceTier": "A",
+    "openingHoursNote": "Sedes del Retiro del Reina Sofía: acceso gratuito. Abril–septiembre 10:00–21:00; octubre–marzo 10:00–18:00. Cerrado 1 y 6 de enero, 1 de mayo y 25 de diciembre, y en montajes. Las salas se desalojan 10 minutos antes del cierre. Fuente consultada el 6 de septiembre de 2026."
   },
   {
     "id": "fuente-angel-caido",
@@ -269,23 +272,24 @@
       -3.6866962,
       40.4187197
     ],
-    "shortDescription": "Pequeño teatro al aire libre pensado para funciones de títeres.",
-    "description": "El Teatro de Títeres es un espacio familiar en el Retiro, con gradas y escenario al aire libre. Conviene consultar la programación oficial antes de acudir, ya que las funciones dependen de calendario y temporada.",
+    "shortDescription": "Teatro al aire libre. Las funciones dependen de la temporada y de la meteorología.",
+    "description": "El Teatro de Títeres es un escenario al aire libre en el Retiro. La sede no tiene un horario de museo: cada función se anuncia en teatrotiteresretiro.es (entradas gratuitas con descarga previa; en septiembre de 2026, sábados y domingos). Puede suspenderse por clima. La presencia del edificio no implica función hoy.",
     "tags": [
       "teatro",
       "niños",
       "aire libre"
     ],
-    "sourceName": "OpenStreetMap — Teatro de Títeres de El Retiro (way/562785827)",
-    "sourceUrl": "https://www.openstreetmap.org/way/562785827",
-    "lastVerifiedAt": "2026-08-05",
+    "sourceName": "Teatro de Títeres de El Retiro",
+    "sourceUrl": "https://teatrotiteresretiro.es/",
+    "lastVerifiedAt": "2026-09-06",
     "status": "verified",
     "audience": [
       "familias"
     ],
     "recommendedDurationMinutes": 45,
     "area": "retiro",
-    "sourceTier": "B"
+    "sourceTier": "A",
+    "openingHoursNote": "No hay un horario de sede continuo. Consultar funciones y descargar entrada en https://teatrotiteresretiro.es/. En septiembre de 2026 las funciones anunciadas son sábados y domingos (p. ej. 18:30). Puede cancelarse por meteorología. Turismo Madrid actualizado el 3 de septiembre de 2026."
   },
   {
     "id": "biblioteca-eugenio-trias",
@@ -296,22 +300,23 @@
       -3.6789381,
       40.4167401
     ],
-    "shortDescription": "Biblioteca municipal en el antiguo recinto de la Casa de Fieras.",
-    "description": "La Biblioteca Pública Municipal Eugenio Trías ocupa parte del antiguo zoo de la Casa de Fieras. Combina lectura, estudio y memoria del parque. Es un buen recurso cultural dentro del propio Retiro.",
+    "shortDescription": "Biblioteca municipal en el antiguo recinto de la Casa de Fieras. No es el CEA El Retiro.",
+    "description": "La Biblioteca Pública Municipal Eugenio Trías ocupa pabellones de la antigua Casa de Fieras (Paseo de Fernán Núñez, 24). Es un servicio de lectura y estudio, distinto del Centro de Educación Ambiental El Retiro (Paseo de Fernán Núñez, 2) y del Aula Ambiental La Cabaña (Paseo de Fernán Núñez, 10). La apertura de la biblioteca no implica que haya una actividad cultural concreta ese día.",
     "tags": [
       "biblioteca",
       "lectura",
       "casa de fieras"
     ],
-    "sourceName": "OpenStreetMap — Biblioteca Pública Municipal Eugenio Trías (way/308900139)",
-    "sourceUrl": "https://www.openstreetmap.org/way/308900139",
-    "lastVerifiedAt": "2026-08-05",
+    "sourceName": "Ayuntamiento de Madrid — Biblioteca Pública Municipal Eugenio Trías",
+    "sourceUrl": "https://www.madrid.es/portales/munimadrid/es/Inicio/Cultura-ocio-y-deporte/Cultura-y-ocio/Direcciones-y-telefonos/Biblioteca-Publica-Municipal-Eugenio-Trias-Casa-de-Fieras-de-El-Retiro-Retiro-/?vgnextchannel=76f3efff228fe410VgnVCM2000000c205a0aRCRD&vgnextfmt=default&vgnextoid=e791bed05ceed310VgnVCM1000000b205a0aRCRD",
+    "lastVerifiedAt": "2026-09-06",
     "status": "verified",
     "accessibility": [
-      "Edificio público; consultar accesos en la fuente municipal"
+      "Edificio público; consultar accesos en la ficha municipal"
     ],
     "area": "retiro",
-    "sourceTier": "B"
+    "sourceTier": "A",
+    "openingHoursNote": "Lunes a viernes 8:30–21:00; sábados y domingos 8:30–15:00. Verano (15 jun–15 sep): lunes a viernes 8:30–20:00; fines de semana 8:30–14:00. Cerrado festivos, Semana Santa (jueves a domingo), dos últimos fines de semana de julio y fines de semana de agosto, 24 y 31 de diciembre. Fuente municipal consultada el 6 de septiembre de 2026."
   },
   {
     "id": "casa-de-vacas",
@@ -322,19 +327,20 @@
       -3.6840988,
       40.4192106
     ],
-    "shortDescription": "Centro cultural municipal con exposiciones y actividades.",
-    "description": "La Casa de Vacas es un centro cultural del Ayuntamiento de Madrid situado en el Retiro. Suele programar exposiciones y actividades abiertas al público. Es un punto útil para completar la visita cultural del parque.",
+    "shortDescription": "Centro cultural municipal en el Retiro, con exposiciones y actividades programadas.",
+    "description": "La Casa de Vacas es un centro cultural del Ayuntamiento de Madrid junto al Estanque Grande. La apertura de la sede (octubre–marzo 10:00–21:00; abril–septiembre 10:00–21:30; cerrado 25 de diciembre y 1 de enero, según madrid.es el 6 de septiembre de 2026) no sustituye la programación de cada exposición o espectáculo. Hay que consultar la agenda municipal del centro.",
     "tags": [
       "cultura",
       "exposiciones",
       "municipal"
     ],
-    "sourceName": "OpenStreetMap — Centro Cultural Casa de Vacas (way/23596468)",
-    "sourceUrl": "https://www.openstreetmap.org/way/23596468",
-    "lastVerifiedAt": "2026-08-05",
+    "sourceName": "Ayuntamiento de Madrid — Centro Cultural Casa de Vacas (Retiro)",
+    "sourceUrl": "https://www.madrid.es/portales/munimadrid/es/Inicio/Cultura-ocio-y-deporte/Cultura-y-ocio/Direcciones-y-telefonos/Centro-Cultural-Casa-de-Vacas-Retiro-/?vgnextchannel=76f3efff228fe410VgnVCM2000000c205a0aRCRD&vgnextfmt=default&vgnextoid=35e53d0b5e71c010VgnVCM1000000b205a0aRCRD",
+    "lastVerifiedAt": "2026-09-06",
     "status": "verified",
     "area": "retiro",
-    "sourceTier": "B"
+    "sourceTier": "A",
+    "openingHoursNote": "De lunes a domingo: octubre–marzo 10:00–21:00; abril–septiembre 10:00–21:30. Cerrado 25 de diciembre y 1 de enero. Secretaría: lunes a viernes 10:00–14:00. Información: 10:00–14:00 y 16:00–20:00. Fuente municipal consultada el 6 de septiembre de 2026."
   },
   {
     "id": "parterre-frances",
@@ -918,7 +924,7 @@
     "sourceName": "OpenStreetMap — S. Botánica, la Rosaleda y el Jardín de Vivaces (node/4769760033)",
     "sourceUrl": "https://www.openstreetmap.org/node/4769760033",
     "sourceTier": "B",
-    "lastVerifiedAt": "2026-08-05",
+    "lastVerifiedAt": "2026-09-06",
     "status": "needs-review"
   },
   {
@@ -979,7 +985,79 @@
     "sourceName": "OpenStreetMap — San Jerónimo el Real (node/9873090129)",
     "sourceUrl": "https://www.openstreetmap.org/node/9873090129",
     "sourceTier": "B",
-    "lastVerifiedAt": "2026-08-05",
+    "lastVerifiedAt": "2026-09-06",
     "status": "verified"
+  },
+  {
+    "id": "centro-educacion-ambiental-retiro",
+    "slug": "centro-educacion-ambiental-retiro",
+    "name": "Centro de Educación Ambiental El Retiro",
+    "alternativeNames": [
+      "CEA El Retiro",
+      "CIEA El Huerto del Retiro",
+      "Centro de Información y Educación Ambiental El Retiro"
+    ],
+    "category": "cultura",
+    "coordinates": [
+      -3.68618,
+      40.409435
+    ],
+    "shortDescription": "Centro municipal de educación ambiental en el Paseo de Fernán Núñez, 2. No es la biblioteca ni La Cabaña.",
+    "description": "El Centro de Educación Ambiental El Retiro (también citado como CEA o CIEA El Huerto del Retiro) está en el Paseo de Fernán Núñez, 2, junto al ámbito del vivero y los huertos educativos. Es distinto de la Biblioteca Eugenio Trías (Fernán Núñez, 24, Casa de Fieras) y del Aula Ambiental La Cabaña (Fernán Núñez, 10). Las actividades concretas se anuncian en la agenda municipal; el horario de sede no sustituye una reserva de taller.",
+    "tags": [
+      "educación ambiental",
+      "huerto",
+      "información"
+    ],
+    "audience": [
+      "familias",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 40,
+    "area": "retiro",
+    "sourceName": "Ayuntamiento de Madrid — Centro de Educación Ambiental El Retiro",
+    "sourceUrl": "https://www.madrid.es/portales/munimadrid/es/Inicio/Medio-ambiente/Direcciones-y-telefonos/Centro-de-Informacion-y-Educacion-Ambiental-de-El-Huerto-de-El-Retiro/?vgnextchannel=864f79ed268fe410VgnVCM1000000b205a0aRCRD&vgnextfmt=default&vgnextoid=796b8193c73c4210VgnVCM1000000b205a0aRCRD",
+    "sourceTier": "A",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified",
+    "accessibility": [
+      "La ficha municipal indica instalación accesible para personas con movilidad reducida"
+    ],
+    "openingHoursNote": "Martes a domingo y festivos; cerrado todos los lunes, 24, 25 y 31 de diciembre, 1 y 6 de enero. 1 abr–15 jun: 10:00–14:00 y 15:30–18:30. 16 jun–15 sep: 10:00–15:00. 16 sep–31 mar: martes a sábado 10:00–14:00 y 15:30–18:00; domingo y festivos 10:00–15:00. Fuente municipal consultada el 6 de septiembre de 2026. Coordenadas de esa ficha: 40.409435, -3.686180."
+  },
+  {
+    "id": "aula-ambiental-la-cabana",
+    "slug": "aula-ambiental-la-cabana",
+    "name": "Aula ambiental La Cabaña del Retiro",
+    "alternativeNames": [
+      "La Cabaña del Retiro"
+    ],
+    "category": "familias",
+    "coordinates": [
+      -3.679318,
+      40.409123
+    ],
+    "shortDescription": "Aula de naturaleza en el Paseo de Fernán Núñez, 10, cerca de Menéndez Pelayo. No es el CEA El Retiro.",
+    "description": "La Cabaña es un aula ambiental de la Junta de Distrito Retiro, con huerto y actividades de educación ambiental. La dirección municipal es Paseo de Fernán Núñez, 10 (coordenadas de la ficha: 40.409123, -3.679318). No debe confundirse con el Centro de Educación Ambiental El Retiro (Fernán Núñez, 2) ni con la biblioteca de Casa de Fieras. Las actividades suelen requerir reserva y son gratuitas según el Ayuntamiento.",
+    "tags": [
+      "educación ambiental",
+      "huerto",
+      "familias"
+    ],
+    "audience": [
+      "familias",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 90,
+    "area": "retiro",
+    "sourceName": "Ayuntamiento de Madrid — Aula ambiental La Cabaña del Retiro",
+    "sourceUrl": "https://www.madrid.es/portales/munimadrid/es/Inicio/Medio-ambiente/Educacion-Ambiental/Gestiones-y-tramites/Aula-ambiental-La-Cabana-del-Retiro/?vgnextchannel=33e379ed268fe410VgnVCM1000000b205a0aRCRD&vgnextfmt=default&vgnextoid=97521076c081c010VgnVCM1000000b205a0aRCRD",
+    "sourceTier": "A",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified",
+    "accessibility": [
+      "Accesibilidad para movilidad reducida a través de la Puerta del Niño Jesús, según la ficha municipal"
+    ],
+    "openingHoursNote": "Invierno (sep–jun): lunes a viernes 10:00–14:30 y 16:00–18:30; sábados 10:00–14:00 y 16:00–18:30; domingos y festivos 10:00–14:00. Verano (jul–ago): lunes a viernes 10:00–15:00; sábados, domingos y festivos 10:00–14:00. Cerrado 1 y 6 de enero, 1 de mayo, 24, 25 y 31 de diciembre. Fuente municipal consultada el 6 de septiembre de 2026."
   }
 ]

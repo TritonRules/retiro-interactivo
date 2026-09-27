@@ -27,7 +27,12 @@ const event = {
   title: 'Concierto de prueba',
   coordinates: [-3.6844, 40.4153] as [number, number],
   startAt: '2026-08-10T19:30:00+02:00',
+  expiresAt: '2026-08-10T21:00:00+02:00',
   venue: 'Centro Cultural Casa de Vacas (Retiro)',
+  status: 'published' as const,
+  sourceUrl: 'https://www.madrid.es/',
+  category: 'Musica',
+  lastCheckedAt: '2026-08-10T10:00:00.000Z',
 };
 
 const place = {

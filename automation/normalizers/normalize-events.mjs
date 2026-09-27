@@ -2,6 +2,7 @@
  * Normalización, filtrado geográfico y candidatos de eventos Madrid Open Data.
  */
 import { createHash } from 'node:crypto';
+import { instantFromWallClock, scheduleFromSource } from '../lib/schedule-from-source.mjs';
 
 const PARK_VENUE_PATTERNS = [
   /parque del retiro/i,
@@ -35,7 +36,7 @@ const RETIRO_BBOX = {
  * porque algunos datasets asignan un punto genérico incorrecto (p. ej. CIEA).
  */
 const VENUE_COORDS = {
-  'centro de educacion ambiental el retiro': [-3.6789, 40.4165],
+  'centro de educacion ambiental el retiro': [-3.68618, 40.409435],
   'centro cultural casa de vacas': [-3.6840988, 40.4192106],
   'casa de vacas': [-3.6840988, 40.4192106],
   'palacio de cristal': [-3.68206, 40.4136],
@@ -61,38 +62,14 @@ export function slugify(text) {
     .slice(0, 72);
 }
 
-/** Interpreta dtstart Madrid Open Data → ISO con offset Europe/Madrid aproximado. */
+/** Interpreta dtstart/dtend de Madrid Open Data → ISO Europe/Madrid. */
 export function parseMadridDateTime(raw) {
-  if (!raw || typeof raw !== 'string') return null;
-  const cleaned = raw.replace(/\.0$/, '').trim();
-  const m = cleaned.match(
-    /^(\d{4})-(\d{2})-(\d{2})(?:[ T](\d{2}):(\d{2})(?::(\d{2}))?)?$/,
-  );
-  if (!m) return null;
-  const [, y, mo, d, hh = '00', mm = '00', ss = '00'] = m;
-  // Offset fijo +02:00 en agosto; para otras fechas usamos Intl.
-  const provisional = new Date(Date.UTC(+y, +mo - 1, +d, +hh - 2, +mm, +ss));
-  const parts = Object.fromEntries(
-    new Intl.DateTimeFormat('en-GB', {
-      timeZone: 'Europe/Madrid',
-      timeZoneName: 'shortOffset',
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hourCycle: 'h23',
-    })
-      .formatToParts(new Date(`${y}-${mo}-${d}T${hh}:${mm}:${ss}`))
-      .map((p) => [p.type, p.value]),
-  );
-  // Construir con offset local real vía temporal wall-clock
-  const asLocal = new Date(`${y}-${mo}-${d}T${hh}:${mm}:${ss}`);
-  // Fallback robusto: formatear con toLocaleString no; usar offset de agosto/CET heuristic
-  const month = +mo;
-  const offset = month >= 4 && month <= 10 ? '+02:00' : '+01:00';
-  return `${y}-${mo}-${d}T${hh}:${mm}:${ss}${offset}`;
+  const parsed = instantFromWallClock(raw);
+  return parsed.ok ? parsed.iso : null;
+}
+
+export function parseMadridDateTimeDetailed(raw) {
+  return instantFromWallClock(raw);
 }
 
 export function extractCoords(raw) {
@@ -193,17 +170,28 @@ export function geographicGate(raw) {
   return { accept: false, reason: reasons[0], coords, venue };
 }
 
-export function normalizeRawEvent(raw, sourceId, sourceMeta) {
+export function normalizeRawEvent(raw, sourceId, sourceMeta, checkContext = {}) {
   const gate = geographicGate(raw);
   const title = String(raw.title || '').trim();
-  const startAt = parseMadridDateTime(raw.dtstart);
-  const endAt = parseMadridDateTime(raw.dtend) || undefined;
+  const startDetailed = instantFromWallClock(raw.dtstart);
+  const endDetailed = raw.dtend ? instantFromWallClock(raw.dtend) : { ok: false };
+  let startAt = startDetailed.ok ? startDetailed.iso : null;
+  const endAt = endDetailed.ok ? endDetailed.iso : undefined;
   const sourceEventId = String(raw.id || raw.uid || '');
   const discard = [];
+  const parseIssues = [];
 
   if (!gate.accept) discard.push(gate.reason);
   if (!title) discard.push('sin-titulo');
-  if (!startAt) discard.push('sin-fecha');
+  if (!startAt) {
+    if (startDetailed.reason === 'nonexistent' || startDetailed.reason === 'ambiguous') {
+      parseIssues.push(`dtstart-${startDetailed.reason}`);
+      const day = String(raw.dtstart || '').slice(0, 10);
+      const noon = instantFromWallClock(`${day}T12:00:00`);
+      startAt = noon.ok ? noon.iso : null;
+    }
+    if (!startAt) discard.push('sin-fecha');
+  }
   if (!gate.venue && !gate.coords) discard.push('sin-localizacion');
 
   if (discard.length) {
@@ -236,10 +224,18 @@ export function normalizeRawEvent(raw, sourceId, sourceMeta) {
       ? raw['@type'].split('/').pop() || 'actividad'
       : 'actividad';
 
-  const expiresAt = endAt || startAt.replace(/T.*/, 'T23:59:59+02:00');
-  if (!endAt && startAt) {
-    // fin de día Madrid si no hay dtend
+  const { schedule, untilExclusive, parseIssues: scheduleIssues } = scheduleFromSource(
+    raw,
+    startAt,
+    endAt,
+  );
+  parseIssues.push(...scheduleIssues);
+  if (parseIssues.length) {
+    schedule.parseIssues = [...new Set([...(schedule.parseIssues || []), ...parseIssues])];
   }
+
+  const status = parseIssues.length ? 'needs-review' : 'published';
+  const lastCheckedAt = checkContext.lastSuccessfulFetchAt || undefined;
 
   const shortDescription = String(raw.description || title)
     .replace(/\s+/g, ' ')
@@ -265,10 +261,11 @@ export function normalizeRawEvent(raw, sourceId, sourceMeta) {
       sourceUrl: link && /^https?:/i.test(link) ? link : sourceMeta.url,
       sourceTier: 'A',
       sourceEventId: sourceEventId || undefined,
-      lastCheckedAt: new Date().toISOString(),
-      expiresAt: endAt || `${startAt.slice(0, 10)}T23:59:59${startAt.slice(19)}`,
+      lastCheckedAt,
+      expiresAt: untilExclusive || endAt || startAt,
       confidence: gate.coords ? 0.9 : 0.75,
-      status: 'published',
+      status,
+      schedule,
     },
   };
 }
@@ -282,9 +279,12 @@ export function normalizeCollected(collected, registryById) {
       name: batch.sourceId,
       url: '',
     };
+    const checkContext = {
+      lastSuccessfulFetchAt: batch.fromCache ? null : batch.fetchedAt,
+    };
     const graph = batch.data?.['@graph'] || [];
     for (const raw of graph) {
-      const result = normalizeRawEvent(raw, batch.sourceId, meta);
+      const result = normalizeRawEvent(raw, batch.sourceId, meta, checkContext);
       if (result.discarded) discarded.push(result);
       else candidates.push({ ...result.event, _sourceDataset: batch.sourceId });
     }

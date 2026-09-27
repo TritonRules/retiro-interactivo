@@ -8,6 +8,30 @@ export type EventStatus =
   | 'expired'
   | 'needs-review';
 
+export type TimePrecision = 'exact' | 'unknown' | 'allDay';
+
+export type RecurrenceFrequency = 'WEEKLY' | 'DAILY';
+
+export type WeekdayCode = 'MO' | 'TU' | 'WE' | 'TH' | 'FR' | 'SA' | 'SU';
+
+export interface EventRecurrence {
+  frequency: RecurrenceFrequency;
+  interval: number;
+  byDay: WeekdayCode[];
+  /** Fin exclusivo del periodo de la serie (instante ISO). */
+  untilExclusive: string;
+  /** Días civiles Madrid YYYY-MM-DD que no se celebran. */
+  excludedDays: string[];
+}
+
+export interface EventSchedule {
+  timePrecision: TimePrecision;
+  /** Sesiones horarias HH:mm en reloj Madrid; vacío si la hora es desconocida o todo el día. */
+  sessionTimes: string[];
+  recurrence?: EventRecurrence;
+  parseIssues?: string[];
+}
+
 /** Datos del evento que consume el mapa: marcador y ficha. */
 export interface MapEventPoint {
   id: string;
@@ -15,7 +39,15 @@ export interface MapEventPoint {
   title: string;
   coordinates: [number, number];
   startAt: string;
+  endAt?: string;
+  expiresAt: string;
   venue: string;
+  status: EventStatus;
+  lastCheckedAt?: string;
+  schedule?: EventSchedule;
+  sourceUrl: string;
+  category: string;
+  allDay?: boolean;
 }
 
 export interface ParkEvent {
@@ -37,8 +69,25 @@ export interface ParkEvent {
   sourceTier: EventSourceTier;
   sourceEventId?: string;
   sourceUpdatedAt?: string;
-  lastCheckedAt: string;
+  lastCheckedAt?: string;
   expiresAt: string;
   confidence: number;
   status: EventStatus;
+  schedule?: EventSchedule;
+}
+
+export interface SourcePublicationMeta {
+  sourceId: string;
+  lastSuccessfulFetchAt: string | null;
+  lastAttemptAt: string;
+  fromCache: boolean;
+  fetchError: string | null;
+}
+
+export interface EventsPublication {
+  schemaVersion: 1;
+  publishedAt: string;
+  datasetHash: string;
+  coverageHorizonDays: number;
+  sources: SourcePublicationMeta[];
 }

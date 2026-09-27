@@ -5,7 +5,7 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { EventSheet } from '../components/places/EventSheet';
 import { eventDetailPath } from './eventLinks';
-import { events, eventsWithDetailPage, getUpcomingEvents } from './events';
+import { events, eventsWithDetailPage } from './events';
 import { eventPagePattern, shellNavigationPattern } from './serviceWorkerRoutes';
 
 const BASE = '/retiro-interactivo/';
@@ -32,14 +32,16 @@ describe('destinos de los eventos', () => {
   });
 
   it('enlaza desde la agenda solo a fichas existentes', () => {
-    for (const event of getUpcomingEvents()) {
-      expect.soft(conFicha.has(event.slug), `${event.title} sin ficha`).toBe(true);
-      expect(eventDetailPath(event.slug)).toBe(`agenda/${event.slug}/`);
+    for (const event of events) {
+      if (event.status === 'published' || event.status === 'expired') {
+        expect.soft(conFicha.has(event.slug), `${event.title} sin ficha`).toBe(true);
+        expect(eventDetailPath(event.slug)).toBe(`agenda/${event.slug}/`);
+      }
     }
   });
 
   it('enlaza desde el mapa a la misma ruta que la agenda', () => {
-    const evento = getUpcomingEvents().find((e) => e.coordinates);
+    const evento = events.find((e) => e.coordinates);
     if (!evento) throw new Error('No hay eventos con coordenadas en el dataset');
     const markup = renderToStaticMarkup(
       createElement(EventSheet, {
@@ -49,7 +51,14 @@ describe('destinos de los eventos', () => {
           title: evento.title,
           coordinates: evento.coordinates!,
           startAt: evento.startAt,
+          endAt: evento.endAt,
+          expiresAt: evento.expiresAt,
           venue: evento.venue,
+          status: evento.status,
+          lastCheckedAt: evento.lastCheckedAt,
+          schedule: evento.schedule,
+          sourceUrl: evento.sourceUrl,
+          category: evento.category,
         },
         eventHref: `${BASE}${eventDetailPath(evento.slug)}`,
         onClose: () => {},
@@ -66,10 +75,10 @@ describe('destinos de los eventos', () => {
     expect(read('src/components/map/MapExplorer.tsx')).toContain(
       'eventDetailPath(selectedEvent.slug)',
     );
-    const agenda = read('src/pages/agenda/index.astro');
-    expect(agenda).toContain('${base}${eventDetailPath(event.slug)}');
-    expect(agenda).not.toMatch(/href=\{`\$\{base\}agenda\/\$\{event\.slug\}/);
+    const agenda = read('src/components/agenda/AgendaExplorer.tsx');
+    expect(agenda).toContain('eventDetailPath(event.slug)');
     expect(agenda).not.toContain('href="#"');
+    expect(read('src/pages/agenda/index.astro')).not.toMatch(/Astro\.url\.searchParams/);
   });
 });
 

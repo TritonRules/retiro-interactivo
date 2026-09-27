@@ -612,6 +612,40 @@
         "category": "monumento",
         "status": "verified"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68618,
+          40.409435
+        ]
+      },
+      "properties": {
+        "id": "centro-educacion-ambiental-retiro",
+        "slug": "centro-educacion-ambiental-retiro",
+        "name": "Centro de Educación Ambiental El Retiro",
+        "category": "cultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.679318,
+          40.409123
+        ]
+      },
+      "properties": {
+        "id": "aula-ambiental-la-cabana",
+        "slug": "aula-ambiental-la-cabana",
+        "name": "Aula ambiental La Cabaña del Retiro",
+        "category": "familias",
+        "status": "verified"
+      }
     }
   ]
 }

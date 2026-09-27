@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-08-06T16:59:18.512Z",
+  "ranAt": "2026-09-06T16:37:26.939Z",
   "offline": false,
   "steps": {
     "collect": "ok",
@@ -8,55 +8,103 @@
     "validate": "ok",
     "publish": "ok"
   },
-  "added": [],
+  "added": [
+    "evt-50322723",
+    "evt-50399376",
+    "evt-50265465",
+    "evt-50322881",
+    "evt-50399373",
+    "evt-50148940",
+    "evt-50379664",
+    "evt-50404386",
+    "evt-50235568",
+    "evt-50379653",
+    "evt-50289767",
+    "evt-50145709",
+    "evt-50150274",
+    "evt-50147284",
+    "evt-50379644",
+    "evt-50322662",
+    "evt-50399379",
+    "evt-50322790",
+    "evt-50173945",
+    "evt-50173923",
+    "evt-50173965",
+    "evt-50150270",
+    "evt-50149650",
+    "evt-50399382",
+    "evt-50380598",
+    "evt-50146209",
+    "evt-50173921",
+    "evt-50148204",
+    "evt-50173982",
+    "evt-50148887",
+    "evt-50372929",
+    "evt-50402454",
+    "evt-50389043",
+    "evt-50396279",
+    "evt-50150285",
+    "evt-50371426",
+    "evt-50174266"
+  ],
   "changed": [
     "evt-50346030",
     "evt-50104191",
-    "evt-12048589",
-    "evt-12803572",
-    "evt-12802602",
     "evt-12404595",
-    "evt-50334552",
     "evt-50147340",
     "evt-50105660",
     "evt-50362790",
-    "evt-50289667",
     "evt-11769477",
     "evt-11769479",
     "evt-11769616",
     "evt-50265824",
     "evt-50146307",
-    "evt-12803577",
     "evt-11769587",
     "evt-11769591",
     "evt-50266169",
+    "evt-50145563",
+    "evt-50221891",
+    "evt-50265531",
+    "evt-50202486",
+    "evt-50368535",
+    "evt-50343647",
+    "evt-50174902",
+    "evt-50362839",
+    "evt-50265834",
+    "evt-12048875",
+    "evt-50145704",
+    "evt-50235439",
+    "evt-50147338",
+    "evt-50289806",
+    "evt-50147445",
+    "evt-50147279",
+    "evt-50343651",
+    "evt-11771314",
+    "evt-50173971",
+    "evt-50346069",
+    "evt-11771315",
+    "evt-50103106",
+    "evt-50235019"
+  ],
+  "removed": [
+    "evt-12048589",
+    "evt-12803572",
+    "evt-12802602",
+    "evt-50334552",
+    "evt-50289667",
+    "evt-12803577",
     "evt-12803575",
     "evt-11769588",
     "evt-50265354",
     "evt-50343435",
-    "evt-50145563",
-    "evt-50221891",
-    "evt-50265531",
     "evt-50288425",
-    "evt-50202486",
-    "evt-50368535",
     "evt-50334565",
     "evt-50361033",
     "evt-50343443",
-    "evt-50343647",
-    "evt-50147338",
-    "evt-50174902",
-    "evt-50362839",
     "evt-50334559",
-    "evt-50265834",
-    "evt-12048875",
-    "evt-50145704",
     "evt-50334544",
     "evt-50140512",
-    "evt-50235439",
     "evt-50334571",
-    "evt-50289806",
-    "evt-50147445",
     "evt-50286078",
     "evt-50334541",
     "evt-50202480",
@@ -65,31 +113,43 @@
     "evt-50334562",
     "evt-50336051",
     "evt-50334555",
-    "evt-50147279",
-    "evt-50343651",
-    "evt-11771314",
     "evt-11771304",
-    "evt-50173971",
     "evt-50174252",
-    "evt-50346069",
     "evt-11771324",
-    "evt-11771315",
     "evt-50202440",
     "evt-50316805",
-    "evt-50103106",
-    "evt-50235019",
     "evt-50174277",
     "evt-50174281",
     "evt-50334568",
     "evt-50346118",
     "evt-50346119"
   ],
-  "removed": [],
-  "discarded": 1328,
-  "duplicates": 74,
+  "discarded": 2041,
+  "duplicates": 72,
   "errors": [],
   "published": true,
   "keptPrevious": false,
+  "collectComplete": true,
+  "sources": [
+    {
+      "sourceId": "madrid-agenda-general",
+      "complete": true,
+      "fromCache": false,
+      "fetchedAt": "2026-09-06T16:37:26.939Z",
+      "lastSuccessfulFetchAt": "2026-09-06T16:37:26.939Z",
+      "fetchError": null,
+      "graphCount": 1244
+    },
+    {
+      "sourceId": "madrid-agenda-cultural-100",
+      "complete": true,
+      "fromCache": false,
+      "fetchedAt": "2026-09-06T16:37:26.939Z",
+      "lastSuccessfulFetchAt": "2026-09-06T16:37:26.939Z",
+      "fetchError": null,
+      "graphCount": 943
+    }
+  ],
   "discardSamples": [
     {
       "discarded": true,
@@ -97,8 +157,8 @@
         "fuera-ambito"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50334065",
-      "title": "10 vidas"
+      "sourceEventId": "50378118",
+      "title": "1984"
     },
     {
       "discarded": true,
@@ -124,8 +184,8 @@
         "fuera-ambito"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50369523",
-      "title": "35 edición del Festival de Cine de Madrid"
+      "sourceEventId": "50381193",
+      "title": "40 años: el Madrid de Tierno"
     },
     {
       "discarded": true,
@@ -133,8 +193,45 @@
         "fuera-ambito"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50371313",
-      "title": "Actívate en el agua: nos vamos a la piscina"
+      "sourceEventId": "50386267",
+      "title": "41ª Muestra del libro infantil y juvenil 2026"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50388166",
+      "title": "41ª Muestra del Libro Infantil y Juvenil - Biblioteca David Gistau"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "12233192",
+      "title": "A la fresca, con el ganchillo"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50377946",
+      "title": "A ti no te muerdo ni loco"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito",
+        "sin-localizacion"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50398063",
+      "title": "Actividades de las Asociaciones"
     },
     {
       "discarded": true,
@@ -144,24 +241,6 @@
       ],
       "sourceId": "madrid-agenda-general",
       "sourceEventId": "50324218",
-      "title": "Actividades infantiles"
-    },
-    {
-      "discarded": true,
-      "discardReasons": [
-        "fuera-ambito"
-      ],
-      "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50324023",
-      "title": "Actividades infantiles"
-    },
-    {
-      "discarded": true,
-      "discardReasons": [
-        "fuera-ambito"
-      ],
-      "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50324053",
       "title": "Actividades infantiles"
     },
     {
@@ -187,29 +266,12 @@
     {
       "discarded": true,
       "discardReasons": [
-        "fuera-ambito"
+        "fuera-ambito",
+        "sin-localizacion"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50369692",
-      "title": "Acto conmemorativo accidente aereo de Spain Air"
-    },
-    {
-      "discarded": true,
-      "discardReasons": [
-        "fuera-ambito"
-      ],
-      "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50373902",
-      "title": "Agosto contigo 2026"
-    },
-    {
-      "discarded": true,
-      "discardReasons": [
-        "fuera-ambito"
-      ],
-      "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50361234",
-      "title": "Agosto entre líneas: escritura creativa I"
+      "sourceEventId": "50383105",
+      "title": "Actuación de Mickey Pavón"
     },
     {
       "discarded": true,
@@ -218,112 +280,148 @@
         "sin-localizacion"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50362830",
-      "title": "Al pan, pan - Centro"
+      "sourceEventId": "50383104",
+      "title": "Actuación estelar Avenida"
     },
     {
       "discarded": true,
       "discardReasons": [
-        "fuera-ambito",
-        "sin-localizacion"
+        "fuera-ambito"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50362770",
-      "title": "Alejandro y María Laura - Chamartin"
+      "sourceEventId": "50379621",
+      "title": "Actuación musical Luna"
     }
   ],
   "duplicateSamples": [
     {
-      "reason": "title-date-venue",
-      "keptId": "evt-50336051",
-      "droppedId": "evt-50334548",
-      "fingerprint": "somion|2026-08-29|teatro de titeres de el retiro"
-    },
-    {
       "reason": "sourceEventId",
       "keptId": "evt-50346030",
       "droppedId": "evt-50346030",
-      "sourceEventId": "50346030"
+      "sourceEventId": "50346030",
+      "merged": true
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-50322723",
+      "droppedId": "evt-50322723",
+      "sourceEventId": "50322723",
+      "merged": true
     },
     {
       "reason": "sourceEventId",
       "keptId": "evt-50104191",
       "droppedId": "evt-50104191",
-      "sourceEventId": "50104191"
-    },
-    {
-      "reason": "sourceEventId",
-      "keptId": "evt-12803572",
-      "droppedId": "evt-12803572",
-      "sourceEventId": "12803572"
-    },
-    {
-      "reason": "sourceEventId",
-      "keptId": "evt-12048589",
-      "droppedId": "evt-12048589",
-      "sourceEventId": "12048589"
-    },
-    {
-      "reason": "sourceEventId",
-      "keptId": "evt-12802602",
-      "droppedId": "evt-12802602",
-      "sourceEventId": "12802602"
+      "sourceEventId": "50104191",
+      "merged": true
     },
     {
       "reason": "sourceEventId",
       "keptId": "evt-12404595",
       "droppedId": "evt-12404595",
-      "sourceEventId": "12404595"
+      "sourceEventId": "12404595",
+      "merged": true
     },
     {
       "reason": "sourceEventId",
-      "keptId": "evt-50334552",
-      "droppedId": "evt-50334552",
-      "sourceEventId": "50334552"
+      "keptId": "evt-50399376",
+      "droppedId": "evt-50399376",
+      "sourceEventId": "50399376",
+      "merged": true
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-50265465",
+      "droppedId": "evt-50265465",
+      "sourceEventId": "50265465",
+      "merged": true
     },
     {
       "reason": "sourceEventId",
       "keptId": "evt-50147340",
       "droppedId": "evt-50147340",
-      "sourceEventId": "50147340"
+      "sourceEventId": "50147340",
+      "merged": true
     },
     {
       "reason": "sourceEventId",
       "keptId": "evt-50105660",
       "droppedId": "evt-50105660",
-      "sourceEventId": "50105660"
+      "sourceEventId": "50105660",
+      "merged": true
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-50322881",
+      "droppedId": "evt-50322881",
+      "sourceEventId": "50322881",
+      "merged": true
     },
     {
       "reason": "sourceEventId",
       "keptId": "evt-50362790",
       "droppedId": "evt-50362790",
-      "sourceEventId": "50362790"
+      "sourceEventId": "50362790",
+      "merged": true
     },
     {
       "reason": "sourceEventId",
-      "keptId": "evt-50289667",
-      "droppedId": "evt-50289667",
-      "sourceEventId": "50289667"
+      "keptId": "evt-50399373",
+      "droppedId": "evt-50399373",
+      "sourceEventId": "50399373",
+      "merged": true
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-50148940",
+      "droppedId": "evt-50148940",
+      "sourceEventId": "50148940",
+      "merged": true
     },
     {
       "reason": "sourceEventId",
       "keptId": "evt-11769477",
       "droppedId": "evt-11769477",
-      "sourceEventId": "11769477"
+      "sourceEventId": "11769477",
+      "merged": true
     },
     {
       "reason": "sourceEventId",
       "keptId": "evt-11769479",
       "droppedId": "evt-11769479",
-      "sourceEventId": "11769479"
+      "sourceEventId": "11769479",
+      "merged": true
     },
     {
       "reason": "sourceEventId",
       "keptId": "evt-11769616",
       "droppedId": "evt-11769616",
-      "sourceEventId": "11769616"
+      "sourceEventId": "11769616",
+      "merged": true
     }
   ],
-  "publishedCount": 73,
-  "publishedUpcoming": 73
+  "publishedCount": 74,
+  "publication": {
+    "schemaVersion": 1,
+    "publishedAt": "2026-09-06T16:37:26.939Z",
+    "datasetHash": "c7e297995eea08b9c3be26d7f3cb5fab148850ade6e4ecd92d1f35b87c7e8d16",
+    "coverageHorizonDays": 90,
+    "sources": [
+      {
+        "sourceId": "madrid-agenda-general",
+        "lastSuccessfulFetchAt": "2026-09-06T16:37:26.939Z",
+        "lastAttemptAt": "2026-09-06T16:37:26.939Z",
+        "fromCache": false,
+        "fetchError": null
+      },
+      {
+        "sourceId": "madrid-agenda-cultural-100",
+        "lastSuccessfulFetchAt": "2026-09-06T16:37:26.939Z",
+        "lastAttemptAt": "2026-09-06T16:37:26.939Z",
+        "fromCache": false,
+        "fetchError": null
+      }
+    ]
+  },
+  "publishedUpcoming": 68
 }

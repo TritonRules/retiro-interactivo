@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "publishedAt": "2026-09-06T16:37:26.939Z",
+  "datasetHash": "c7e297995eea08b9c3be26d7f3cb5fab148850ade6e4ecd92d1f35b87c7e8d16",
+  "coverageHorizonDays": 90,
+  "sources": [
+    {
+      "sourceId": "madrid-agenda-general",
+      "lastSuccessfulFetchAt": "2026-09-06T16:37:26.939Z",
+      "lastAttemptAt": "2026-09-06T16:37:26.939Z",
+      "fromCache": false,
+      "fetchError": null
+    },
+    {
+      "sourceId": "madrid-agenda-cultural-100",
+      "lastSuccessfulFetchAt": "2026-09-06T16:37:26.939Z",
+      "lastAttemptAt": "2026-09-06T16:37:26.939Z",
+      "fromCache": false,
+      "fetchError": null
+    }
+  ]
+}

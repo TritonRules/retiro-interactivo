@@ -1,6 +1,6 @@
 /**
  * Recolector Madrid Open Data — agendas municipales (tier A).
- * Guarda JSON crudo solo en automation/cache/ (gitignored).
+ * Un fallo no se presenta como consulta reciente. La caché no acredita frescura.
  */
 import { mkdirSync, writeFileSync, readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -24,6 +24,16 @@ const SOURCES = [
   },
 ];
 
+function readCacheMeta(sourceId) {
+  const metaPath = join(cacheDir, `${sourceId}.meta.json`);
+  if (!existsSync(metaPath)) return null;
+  try {
+    return JSON.parse(readFileSync(metaPath, 'utf8'));
+  } catch {
+    return null;
+  }
+}
+
 async function fetchWithRetry(url, attempts = 3) {
   let lastError;
   for (let i = 0; i < attempts; i += 1) {
@@ -46,47 +56,87 @@ async function fetchWithRetry(url, attempts = 3) {
   throw lastError;
 }
 
-export async function collectEvents({ offline = false } = {}) {
+export async function collectEvents({ offline = false, now = new Date() } = {}) {
   mkdirSync(cacheDir, { recursive: true });
   const collected = [];
+  const attemptedAt = now.toISOString();
 
   for (const source of SOURCES) {
     const cachePath = join(cacheDir, `${source.id}.json`);
     if (offline) {
       if (!existsSync(cachePath)) {
-        throw new Error(`Modo offline sin caché: ${cachePath}`);
+        collected.push({
+          sourceId: source.id,
+          data: null,
+          fromCache: true,
+          complete: false,
+          fetchedAt: null,
+          lastSuccessfulFetchAt: readCacheMeta(source.id)?.fetchedAt ?? null,
+          lastAttemptAt: attemptedAt,
+          fetchError: 'offline-without-usable-success',
+        });
+        continue;
       }
       const data = JSON.parse(readFileSync(cachePath, 'utf8'));
-      collected.push({ sourceId: source.id, data, fromCache: true });
+      collected.push({
+        sourceId: source.id,
+        data,
+        fromCache: true,
+        complete: false,
+        fetchedAt: null,
+        lastSuccessfulFetchAt: readCacheMeta(source.id)?.fetchedAt ?? null,
+        lastAttemptAt: attemptedAt,
+        fetchError: 'offline',
+      });
       continue;
     }
     try {
       const data = await fetchWithRetry(source.url);
       writeFileSync(cachePath, JSON.stringify(data));
       const metaPath = join(cacheDir, `${source.id}.meta.json`);
-      writeFileSync(
-        metaPath,
-        JSON.stringify(
-          {
-            sourceId: source.id,
-            url: source.url,
-            fetchedAt: new Date().toISOString(),
-            bytes: Buffer.byteLength(JSON.stringify(data)),
-          },
-          null,
-          2,
-        ),
-      );
-      collected.push({ sourceId: source.id, data, fromCache: false });
+      const meta = {
+        sourceId: source.id,
+        url: source.url,
+        fetchedAt: attemptedAt,
+        bytes: Buffer.byteLength(JSON.stringify(data)),
+      };
+      writeFileSync(metaPath, JSON.stringify(meta, null, 2));
+      collected.push({
+        sourceId: source.id,
+        data,
+        fromCache: false,
+        complete: true,
+        fetchedAt: attemptedAt,
+        lastSuccessfulFetchAt: attemptedAt,
+        lastAttemptAt: attemptedAt,
+        fetchError: null,
+      });
     } catch (error) {
+      const message = String(error.message ?? error);
       if (existsSync(cachePath)) {
-        console.warn(
-          `Aviso: fallo de red en ${source.id}, usando caché local. ${error.message ?? error}`,
-        );
+        console.warn(`Aviso: fallo de red en ${source.id}. No se acredita consulta reciente.`);
         const data = JSON.parse(readFileSync(cachePath, 'utf8'));
-        collected.push({ sourceId: source.id, data, fromCache: true, fetchError: String(error) });
+        collected.push({
+          sourceId: source.id,
+          data,
+          fromCache: true,
+          complete: false,
+          fetchedAt: null,
+          lastSuccessfulFetchAt: readCacheMeta(source.id)?.fetchedAt ?? null,
+          lastAttemptAt: attemptedAt,
+          fetchError: message,
+        });
       } else {
-        throw error;
+        collected.push({
+          sourceId: source.id,
+          data: null,
+          fromCache: false,
+          complete: false,
+          fetchedAt: null,
+          lastSuccessfulFetchAt: null,
+          lastAttemptAt: attemptedAt,
+          fetchError: message,
+        });
       }
     }
   }
@@ -96,10 +146,14 @@ export async function collectEvents({ offline = false } = {}) {
     manifestPath,
     JSON.stringify(
       {
-        collectedAt: new Date().toISOString(),
+        collectedAt: attemptedAt,
+        complete: collected.every((item) => item.complete),
         sources: collected.map((c) => ({
           sourceId: c.sourceId,
           fromCache: c.fromCache,
+          complete: c.complete,
+          fetchedAt: c.fetchedAt,
+          lastSuccessfulFetchAt: c.lastSuccessfulFetchAt,
           graphCount: Array.isArray(c.data?.['@graph']) ? c.data['@graph'].length : null,
           fetchError: c.fetchError ?? null,
         })),
@@ -118,8 +172,9 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     .then((items) => {
       console.log(
         `OK collect: ${items.length} fuentes`,
-        items.map((i) => `${i.sourceId}${i.fromCache ? ' (cache)' : ''}`).join(', '),
+        items.map((i) => `${i.sourceId}${i.complete ? '' : ' (incompleta)'}`).join(', '),
       );
+      if (!items.every((i) => i.complete)) process.exitCode = 2;
     })
     .catch((error) => {
       console.error('ERROR collect:', error.message ?? error);

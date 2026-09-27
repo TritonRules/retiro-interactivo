@@ -4,7 +4,7 @@ import MapExplorer from '../components/map/MapExplorer';
 import { places } from '../utils/places';
 import { services } from '../utils/services';
 import { routes } from '../utils/routes';
-import { getUpcomingEvents } from '../utils/events';
+import { events } from '../utils/events';
 import { siteConfig } from '../config/site';
 
 const focusSlug = Astro.url.searchParams.get('lugar') ?? undefined;
@@ -13,7 +13,7 @@ const initialRoute = Astro.url.searchParams.get('ruta') ?? undefined;
 const initialEvent = Astro.url.searchParams.get('evento') ?? undefined;
 
 const mapEvents = [];
-for (const event of getUpcomingEvents()) {
+for (const event of events) {
   if (!event.coordinates) continue;
   mapEvents.push({
     id: event.id,
@@ -21,7 +21,15 @@ for (const event of getUpcomingEvents()) {
     title: event.title,
     coordinates: event.coordinates,
     startAt: event.startAt,
+    endAt: event.endAt,
+    expiresAt: event.expiresAt,
     venue: event.venue,
+    status: event.status,
+    lastCheckedAt: event.lastCheckedAt,
+    schedule: event.schedule,
+    sourceUrl: event.sourceUrl,
+    category: event.category,
+    allDay: event.allDay,
   });
 }
 ---
