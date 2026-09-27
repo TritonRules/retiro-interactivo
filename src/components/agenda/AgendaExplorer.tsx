@@ -74,6 +74,14 @@ export default function AgendaExplorer({ events, baseUrl, generatedAt }: Props) 
   );
   const filteredStale = useMemo(() => filterEventsByQuery(stale, filters), [stale, filters]);
   const band = eventFreshness(current[0] ?? events[0] ?? ({} as ParkEvent), now);
+  const hasFilters = Boolean(filters.categoria || filters.publico);
+  // Sin ningún evento vigente y sin filtros: la agenda está pendiente de actualización.
+  const pendingUpdate =
+    current.length === 0 && today.length === 0 && (band === 'stale' || band === 'unknown');
+  const lastChecked = latestCheckedLabel(events);
+  const pendingCopy = lastChecked
+    ? `Ahora mismo no hay eventos con información actualizada. La última consulta a la fuente oficial fue el ${lastChecked}; la agenda se actualiza automáticamente cada día. Mientras tanto, consulta la agenda oficial del Ayuntamiento de Madrid.`
+    : 'Ahora mismo no hay eventos con información actualizada. Consulta la agenda oficial del Ayuntamiento de Madrid.';
 
   const reset = () => setFilters({ categoria: '', publico: '' });
 
@@ -123,7 +131,9 @@ export default function AgendaExplorer({ events, baseUrl, generatedAt }: Props) 
 
       <p id={liveId} className="agenda-count" aria-live="polite">
         {filteredToday.length + filteredCurrent.length === 0
-          ? 'Ningún resultado con estos filtros.'
+          ? pendingUpdate && !hasFilters
+            ? 'Agenda pendiente de actualización: no hay eventos vigentes que mostrar.'
+            : 'Ningún resultado con estos filtros.'
           : `${filteredToday.length} hoy · ${filteredCurrent.length} en la programación vigente`}
       </p>
 
@@ -153,9 +163,12 @@ export default function AgendaExplorer({ events, baseUrl, generatedAt }: Props) 
       <section aria-labelledby="prox-title" className="block">
         <h2 id="prox-title">Próximamente</h2>
         {filteredCurrent.length === 0 ? (
-          <p className="empty">
-            No hay próximos eventos publicados con estos filtros. Prueba sin filtro o consulta la
-            fuente oficial.
+          <p className="empty" data-agenda-pending={pendingUpdate ? 'true' : undefined}>
+            {pendingUpdate
+              ? pendingCopy
+              : hasFilters
+                ? 'No hay próximos eventos publicados con estos filtros. Prueba sin filtro o consulta la fuente oficial.'
+                : 'No hay más eventos próximos publicados en el ámbito del parque. Consulta la fuente oficial.'}
           </p>
         ) : (
           <ul className="card-list">
@@ -204,6 +217,21 @@ export default function AgendaExplorer({ events, baseUrl, generatedAt }: Props) 
       </p>
     </div>
   );
+}
+
+function latestCheckedLabel(events: ParkEvent[]): string | null {
+  let latest = Number.NaN;
+  for (const event of events) {
+    const value = event.lastCheckedAt ? Date.parse(event.lastCheckedAt) : Number.NaN;
+    if (!Number.isNaN(value) && (Number.isNaN(latest) || value > latest)) latest = value;
+  }
+  if (Number.isNaN(latest)) return null;
+  return new Intl.DateTimeFormat('es-ES', {
+    timeZone: 'Europe/Madrid',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(new Date(latest));
 }
 
 function AgendaCard({

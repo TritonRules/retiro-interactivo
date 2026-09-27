@@ -84,7 +84,11 @@ La agenda en el navegador evalúa «Hoy», caducidad y antigüedad en cliente. U
 - Publica `src/data/events.json`, `public/data/events.json`, GeoJSON y `events-publication.json` juntos, o restaura el conjunto anterior.
 - Frescura: ≤48 h visible; 48 h–7 d con aviso; >7 d o fecha desconocida fuera de planes vigentes.
 
-### Actualización local (sin scheduler)
+### Actualización automática
+
+El workflow **Refresh agenda** (`.github/workflows/refresh-agenda.yml`) ejecuta el pipeline cada día a las 04:17 UTC (06:17 Madrid en verano, 05:17 en invierno), aplica guardias (fallo de recolección, 0 próximos o caída > 60 %), pasa las comprobaciones, confirma en `beta` y lanza el despliegue de Pages. Manual: Actions → Refresh agenda → Run workflow, o `gh workflow run refresh-agenda.yml --ref beta`. Detalles en `docs/event-pipeline.md`.
+
+### Actualización local
 
 ```bash
 cd /Users/open-ia-01/Company/Repos/retiro-interactivo
@@ -97,7 +101,7 @@ npm run check
 BASE=/retiro-interactivo SITE=https://tritonrules.github.io npm run build
 ```
 
-No instalar cron/launchd en esta iteración. No hacer push automático.
+La actualización programada vive en GitHub Actions; no instalar cron/launchd locales.
 
 ### Estados de evento
 
@@ -108,9 +112,9 @@ No instalar cron/launchd en esta iteración. No hacer push automático.
 | `needs-review` / `draft` | No auto-publicar en MVP (niveles C/D) |
 | `cancelled` / `postponed` | Reservados cuando la fuente lo indique |
 
-### Revisión diaria (Mac Mini / OpenCloud) — sin commit automático
+### Revisión diaria
 
-El procedimiento de actualización local está en la sección de pipeline. No instalar cron/launchd sin autorización. No hacer push automático.
+La hace el workflow **Refresh agenda** en GitHub Actions (ver arriba). Si falla, GitHub avisa por correo; el procedimiento local sirve para diagnosticar.
 
 ## Pruebas E2E
 

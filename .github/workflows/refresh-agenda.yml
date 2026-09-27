@@ -1,0 +1,126 @@
+name: Refresh agenda
+
+# Actualiza la agenda (datos abiertos del Ayuntamiento de Madrid) cada día y,
+# si pasa las guardias y las comprobaciones, la confirma en beta y lanza el despliegue.
+# Documentación: docs/event-pipeline.md («Actualización automática»).
+
+on:
+  schedule:
+    # 04:17 UTC = 06:17 en Madrid en horario de verano (CEST) y 05:17 en invierno (CET).
+    # Minuto fuera de la hora en punto para evitar los picos de cola de GitHub Actions.
+    - cron: '17 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: refresh-agenda
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.repository == 'TritonRules/retiro-interactivo'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write # commit + push de los datos a beta
+      actions: write # lanzar deploy-pages.yml por workflow_dispatch
+    env:
+      AGENDA_FILES: >-
+        src/data/events.json
+        src/data/events-publication.json
+        public/data/events.json
+        public/data/events.geojson
+        public/data/events-publication.json
+        public/data/event-build-report.json
+        reports/event-build-report.json
+    steps:
+      - name: Checkout beta
+        uses: actions/checkout@v4
+        with:
+          ref: beta
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install
+        # @vite-pwa/astro peers Astro ≤5; project uses Astro 7 — see docs/legacy-peer-deps.md
+        run: npm ci --legacy-peer-deps
+
+      - name: Guardar conjunto anterior
+        run: cp src/data/events.json "$RUNNER_TEMP/events-previous.json"
+
+      - name: Pipeline de agenda (collect → normalize → dedupe → validate → publish)
+        # Falla si la recolección es incompleta, la validación falla o el conjunto quedaría vacío.
+        run: npm run events:build
+
+      - name: Informe
+        if: always()
+        run: npm run events:report || true
+
+      - name: Guardia (cero eventos o caída > 60 % de próximos)
+        run: npm run events:guard -- --previous "$RUNNER_TEMP/events-previous.json"
+
+      - name: Validar eventos publicados
+        run: npm run events:validate
+
+      - name: Validar datos
+        run: npm run validate:data
+
+      - name: Check (astro check, tsc, tests unitarios)
+        run: npm run check
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: |
+          export SITE="${SITE_VAR:-https://${GITHUB_REPOSITORY_OWNER}.github.io}"
+          export BASE="${BASE_VAR:-/${GITHUB_REPOSITORY##*/}}"
+          npm run build
+        env:
+          SITE_VAR: ${{ vars.SITE }}
+          BASE_VAR: ${{ vars.BASE }}
+
+      - name: Commit y push a beta
+        id: push
+        run: |
+          # shellcheck disable=SC2086
+          if git diff --quiet -- $AGENDA_FILES; then
+            echo "Sin cambios en la agenda."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          upcoming=$(node -p "require('./reports/event-build-report.json').publishedUpcoming")
+          total=$(node -p "require('./reports/event-build-report.json').publishedCount")
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          # shellcheck disable=SC2086
+          git add -- $AGENDA_FILES
+          git commit -m "chore(agenda): actualización automática $(TZ=Europe/Madrid date +%F)" \
+            -m "Fuente: datos abiertos del Ayuntamiento de Madrid. ${upcoming} próximos / ${total} publicados." \
+            -m "Workflow: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          # Si beta avanzó durante la ejecución, rebasar; un conflicto hace fallar el job.
+          git pull --rebase origin beta
+          git push origin HEAD:beta
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Lanzar despliegue de GitHub Pages
+        # Un push hecho con GITHUB_TOKEN no dispara otros workflows (salvo workflow_dispatch),
+        # así que se lanza explícitamente deploy-pages.yml sobre beta.
+        if: steps.push.outputs.pushed == 'true'
+        run: gh workflow run deploy-pages.yml --ref beta
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Subir informe
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: agenda-report
+          path: reports/event-build-report.json
+          retention-days: 14

@@ -120,6 +120,19 @@ test.describe('frescura y enlaces', () => {
     expect(missing.status()).toBe(404);
   });
 
+  test('sin datos vigentes (más de 7 días) explica que la agenda está pendiente de actualizar', async ({ page }) => {
+    await openAgenda(page);
+    await page.clock.pauseAt(new Date('2026-09-20T08:00:00.000Z'));
+    await page.evaluate(() => window.dispatchEvent(new Event('focus')));
+    await expect(
+      page.getByText('Agenda pendiente de actualización: no hay eventos vigentes que mostrar.'),
+    ).toBeVisible();
+    await expect(page.getByLabel('Próximamente')).toContainText(
+      'La última consulta a la fuente oficial fue el 6 de septiembre de 2026',
+    );
+    await expect(page.getByText('Ningún resultado con estos filtros.')).toHaveCount(0);
+  });
+
   test('pasadas 48 h avisa que la agenda necesita actualizarse', async ({ page }) => {
     await openAgenda(page);
     await page.clock.pauseAt(new Date('2026-09-08T09:00:00.000Z'));

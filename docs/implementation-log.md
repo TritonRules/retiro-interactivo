@@ -87,3 +87,12 @@
 - Con ruta activa siguen ocultos los iconos de lugar y los eventos (no hay duplicados de las paradas).
 - Fixture e2e: evento extra en el Teatro de Títeres para probar el grupo.
 - Tests: 189 unitarios, E2E 38 (2 nuevos de eventos y paradas).
+
+## 2026-09-27 — Agenda actualizada automáticamente cada día
+
+- Rama `feat/agenda-automatica` desde `beta` (`4173b57`). Contexto: la última actualización era del 6 sep; con la ventana de 7 días la agenda en producción estaba vacía.
+- Pipeline ejecutado contra las fuentes en vivo sin cambios de código: 64 eventos publicados (59 próximos, 5 caducados), 5 sedes del Retiro, `lastCheckedAt` 2026-09-27.
+- Workflow `refresh-agenda.yml`: cron `17 4 * * *` UTC (06:17 Madrid en verano, 05:17 en invierno) + `workflow_dispatch`; guardias (`events:guard`: 0 próximos o caída > 60 %), `events:validate`, `validate:data`, `check`, `lint`, `build`; commit como `github-actions[bot]` a `beta` y `gh workflow run deploy-pages.yml` (el push con `GITHUB_TOKEN` no dispara el deploy). Permisos mínimos y `concurrency`.
+- Agenda sin datos vigentes: mensaje claro «Agenda pendiente de actualización…» con la fecha de la última consulta, en lugar de «Ningún resultado con estos filtros» sin filtros aplicados.
+- Rendimiento: con datos frescos (59 eventos vigentes, varios recurrentes) el mapa bloqueaba el hilo principal ~7 s al cargar (Chromium) porque `madridTime.shared.mjs` creaba un `Intl.DateTimeFormat` nuevo en cada llamada y la expansión de sesiones las hace miles de veces (el smoke E2E de Firefox superaba el límite de 60 s). Ahora los formateadores se reutilizan: ~0,5 s. Con los datos caducados del 6 sep no se notaba porque no había eventos vigentes que ordenar.
+- Documentación en `docs/event-pipeline.md` («Actualización automática») y README.
