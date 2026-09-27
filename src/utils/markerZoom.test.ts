@@ -1,17 +1,30 @@
 import { describe, expect, it } from 'vitest';
 import places from '../data/places.json';
+import routes from '../data/routes.json';
 import services from '../data/services.json';
 import type { Place } from '../types/place';
+import type { ParkRoute } from '../types/route';
 import type { ParkService } from '../types/service';
 import {
   applyMarkerZoom,
+  applyStopMarkerLayout,
+  EVENT_GROUP_RADIUS_METERS,
+  eventGroupPriority,
+  groupEventsByLocation,
   MARKER_BASE_SIZE,
   MARKER_MIN_SCALE,
   markerScaleForZoom,
   placeMarkerPriority,
   resolveMarkerCollisions,
   SERVICE_MARKER_PRIORITY,
+  spreadOverlappingStops,
+  STOP_MARKER_BASE_SIZE,
+  STOP_MARKER_GAP,
+  STOP_MARKER_MIN_SCALE,
+  stopScaleForZoom,
   type CollisionItem,
+  type StopMarkerLike,
+  type StopPoint,
   type ZoomableMarker,
 } from './markerZoom';
 
@@ -171,5 +184,179 @@ describe('applyMarkerZoom', () => {
     expect(a.dataset.markerState).toBe('full');
     expect(b.dataset.markerState).toBe('dot');
     expect(b.classList.has('is-dot')).toBe(true);
+  });
+});
+
+describe('eventos en el mapa', () => {
+  const CASA_DE_VACAS: [number, number] = [-3.6840988, 40.4192106];
+  const TITERES: [number, number] = [-3.6866962, 40.4187197];
+  const ev = (id: string, coordinates: [number, number]) => ({ id, coordinates });
+
+  it('agrupa los eventos de la misma sede conservando el orden', () => {
+    const groups = groupEventsByLocation([
+      ev('a', CASA_DE_VACAS),
+      ev('b', TITERES),
+      ev('c', CASA_DE_VACAS),
+      // ~11 m al norte de Casa de Vacas: misma sede.
+      ev('d', [CASA_DE_VACAS[0], CASA_DE_VACAS[1] + 0.0001]),
+    ]);
+    expect(groups.map((g) => g.events.map((e) => e.id))).toEqual([['a', 'c', 'd'], ['b']]);
+    expect(groups[0].id).toBe('events:a');
+    expect(groups[0].coordinates).toEqual(CASA_DE_VACAS);
+  });
+
+  it('no agrupa sedes distintas aunque estén cerca', () => {
+    // ~45 m: por encima del radio de agrupación.
+    const groups = groupEventsByLocation([
+      ev('a', CASA_DE_VACAS),
+      ev('b', [CASA_DE_VACAS[0], CASA_DE_VACAS[1] + 0.0004]),
+    ]);
+    expect(EVENT_GROUP_RADIUS_METERS).toBeLessThan(45);
+    expect(groups).toHaveLength(2);
+    expect(groupEventsByLocation([])).toEqual([]);
+  });
+
+  it('los eventos ganan a cualquier lugar; un grupo mayor gana a uno menor', () => {
+    expect(eventGroupPriority(1)).toBeGreaterThan(placeMarkerPriority('iconico'));
+    expect(eventGroupPriority(3)).toBeGreaterThan(eventGroupPriority(1));
+    expect(eventGroupPriority(40)).toBe(eventGroupPriority(9));
+    expect(eventGroupPriority(0)).toBe(eventGroupPriority(1));
+  });
+
+  it('un evento sobre un lugar lo pliega a punto; el lugar seleccionado gana', () => {
+    const at = project(CASA_DE_VACAS, 16);
+    const items: CollisionItem[] = [
+      { id: 'place:casa-de-vacas', ...at, priority: placeMarkerPriority('cultura') },
+      { id: 'events:a', ...at, priority: eventGroupPriority(9) },
+    ];
+    expect([...resolveMarkerCollisions(items, 1)]).toEqual(['place:casa-de-vacas']);
+    items[0].pinned = true;
+    expect([...resolveMarkerCollisions(items, 1)]).toEqual(['events:a']);
+  });
+});
+
+describe('paradas numeradas', () => {
+  const size = (scale: number) => STOP_MARKER_BASE_SIZE * scale;
+
+  function overlappingPairs(points: StopPoint[], offsets: { dx: number; dy: number }[], scale: number) {
+    const pairs: string[] = [];
+    for (let i = 0; i < points.length; i += 1) {
+      for (let j = i + 1; j < points.length; j += 1) {
+        const si = points[i].pinned ? STOP_MARKER_BASE_SIZE : size(scale);
+        const sj = points[j].pinned ? STOP_MARKER_BASE_SIZE : size(scale);
+        const d = Math.hypot(
+          points[i].x + offsets[i].dx - points[j].x - offsets[j].dx,
+          points[i].y + offsets[i].dy - points[j].y - offsets[j].dy,
+        );
+        if (d < (si + sj) / 2 - 0.5) pairs.push(`${i + 1}-${j + 1}`);
+      }
+    }
+    return pairs;
+  }
+
+  it('encogen menos que los iconos y nunca por debajo del mínimo', () => {
+    expect(stopScaleForZoom(13.5)).toBe(STOP_MARKER_MIN_SCALE);
+    expect(stopScaleForZoom(14)).toBe(STOP_MARKER_MIN_SCALE);
+    expect(stopScaleForZoom(15)).toBeCloseTo(0.9, 5);
+    expect(stopScaleForZoom(16)).toBe(1);
+    expect(stopScaleForZoom(18)).toBe(1);
+    expect(stopScaleForZoom(Number.NaN)).toBe(1);
+    for (let zoom = 13; zoom <= 19; zoom += 0.25) {
+      expect(stopScaleForZoom(zoom)).toBeGreaterThanOrEqual(markerScaleForZoom(zoom));
+    }
+  });
+
+  it('no mueve las paradas que no se solapan', () => {
+    const offsets = spreadOverlappingStops(
+      [
+        { x: 0, y: 0 },
+        { x: 100, y: 0 },
+      ],
+      1,
+    );
+    expect(offsets).toEqual([
+      { dx: 0, dy: 0 },
+      { dx: 0, dy: 0 },
+    ]);
+  });
+
+  it('separa dos paradas solapadas hasta que se tocan, a partes iguales', () => {
+    const points = [
+      { x: 100, y: 100 },
+      { x: 110, y: 100 },
+    ];
+    const offsets = spreadOverlappingStops(points, 0.8);
+    expect(overlappingPairs(points, offsets, 0.8)).toEqual([]);
+    expect(offsets[0].dx).toBeLessThan(0);
+    expect(offsets[1].dx).toBeGreaterThan(0);
+    expect(offsets[0].dx).toBeCloseTo(-offsets[1].dx, 1);
+    const gap = points[1].x + offsets[1].dx - (points[0].x + offsets[0].dx);
+    expect(gap).toBeCloseTo(size(0.8) + STOP_MARKER_GAP, 0);
+  });
+
+  it('separa paradas en el mismo punto y no mueve la fijada', () => {
+    const points = [
+      { x: 50, y: 50, pinned: true },
+      { x: 50, y: 50 },
+    ];
+    const offsets = spreadOverlappingStops(points, 0.8);
+    expect(offsets[0]).toEqual({ dx: 0, dy: 0 });
+    expect(Math.hypot(offsets[1].dx, offsets[1].dy)).toBeGreaterThan(20);
+    expect(overlappingPairs(points, offsets, 0.8)).toEqual([]);
+  });
+
+  it('limita el desplazamiento para no alejar la parada de su sitio', () => {
+    const points = Array.from({ length: 6 }, () => ({ x: 0, y: 0 }));
+    const offsets = spreadOverlappingStops(points, 1, { maxOffset: 20 });
+    for (const { dx, dy } of offsets) expect(Math.hypot(dx, dy)).toBeLessThanOrEqual(20.1);
+  });
+
+  it('con los datos reales: todos los números legibles a cualquier zoom', () => {
+    const byId = new Map((places as Place[]).map((place) => [place.id, place]));
+    for (const route of routes as ParkRoute[]) {
+      for (const zoom of [13.5, 14, 14.5, 15, 15.5, 16, 16.5]) {
+        const scale = stopScaleForZoom(zoom);
+        const points = route.stopIds.map((id) => project(byId.get(id)!.coordinates, zoom));
+        const offsets = spreadOverlappingStops(points, scale);
+        expect(overlappingPairs(points, offsets, scale), `${route.slug} @ ${zoom}`).toEqual([]);
+        for (const { dx, dy } of offsets) {
+          expect(Math.hypot(dx, dy)).toBeLessThanOrEqual(STOP_MARKER_BASE_SIZE + 0.1);
+        }
+      }
+    }
+  });
+
+  it('applyStopMarkerLayout fija --stop-scale y separa con offset de MapLibre', () => {
+    const props: Record<string, string> = {};
+    const container = { style: { setProperty: (k: string, v: string) => (props[k] = v) } };
+    const offsets: [number, number][] = [];
+    const stop = (index: number, classes: string[] = []): StopMarkerLike => {
+      const element = {
+        dataset: {} as Record<string, string>,
+        classList: { contains: (name: string) => classes.includes(name) },
+      };
+      return {
+        getElement: () => element as unknown as HTMLElement,
+        getLngLat: () => ({ lng: index, lat: 0 }),
+        setOffset: (offset: [number, number]) => {
+          offsets[index] = offset;
+        },
+      };
+    };
+    const stops = [stop(0, ['is-next']), stop(1)];
+    applyStopMarkerLayout(
+      {
+        getZoom: () => 14,
+        getContainer: () => container as unknown as HTMLElement,
+        project: ([lng]) => ({ x: 100 + lng * 5, y: 100 }),
+      },
+      stops,
+    );
+    expect(props['--stop-scale']).toBe(String(STOP_MARKER_MIN_SCALE));
+    // La siguiente parada del paseo no se mueve; la otra se aparta.
+    expect(offsets[0]).toEqual([0, 0]);
+    expect(offsets[1][0]).toBeGreaterThan(0);
+    expect(stops[0].getElement().dataset.stopShifted).toBe('false');
+    expect(stops[1].getElement().dataset.stopShifted).toBe('true');
   });
 });

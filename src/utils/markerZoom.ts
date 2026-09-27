@@ -1,4 +1,5 @@
 import type { PlaceCategory } from '../types/place';
+import { haversineMeters } from './geo';
 
 /**
  * Tamaño y densidad de los marcadores DOM según el zoom del mapa.
@@ -123,4 +124,176 @@ export function applyMarkerZoom(map: MapLike, markers: ZoomableMarker[]): void {
     marker.element.classList.toggle('is-dot', isDot);
     marker.element.dataset.markerState = isDot ? 'dot' : 'full';
   }
+}
+
+/* ---------- Eventos de la agenda ---------- */
+
+/**
+ * Prioridad de los eventos: solo se pintan si el usuario activa «Eventos», así que
+ * ganan a cualquier lugar (también a los icónicos). Un grupo con más actividades
+ * gana a uno con menos; el bono está acotado para no desbordar el orden.
+ */
+export const EVENT_MARKER_PRIORITY = 110;
+
+export function eventGroupPriority(count: number): number {
+  return EVENT_MARKER_PRIORITY + Math.min(Math.max(count, 1), 9);
+}
+
+/** Radio en metros dentro del cual varios eventos se agrupan en un único marcador. */
+export const EVENT_GROUP_RADIUS_METERS = 30;
+
+export interface EventGroup<T> {
+  /** Estable mientras no cambie el primer evento del grupo. */
+  id: string;
+  /** Coordenadas del primer evento (el lugar de la sede, no un centroide que caiga en medio). */
+  coordinates: [number, number];
+  events: T[];
+}
+
+/**
+ * Agrupa los eventos que comparten sede (misma coordenada o a pocos metros): en la
+ * agenda real hay sedes con nueve actividades a la vez y sus marcadores quedaban
+ * apilados en el mismo punto. Conserva el orden de entrada dentro de cada grupo (la
+ * lista llega ordenada por próxima sesión) y el orden de los grupos por su primer
+ * evento.
+ */
+export function groupEventsByLocation<T extends { id: string; coordinates: [number, number] }>(
+  events: T[],
+  radiusMeters = EVENT_GROUP_RADIUS_METERS,
+): EventGroup<T>[] {
+  const groups: EventGroup<T>[] = [];
+  for (const event of events) {
+    const group = groups.find(
+      (candidate) => haversineMeters(candidate.coordinates, event.coordinates) <= radiusMeters,
+    );
+    if (group) group.events.push(event);
+    else groups.push({ id: `events:${event.id}`, coordinates: event.coordinates, events: [event] });
+  }
+  return groups;
+}
+
+/* ---------- Paradas numeradas de la ruta activa ---------- */
+
+/**
+ * Las paradas no se pliegan nunca (el orden importa), pero encogen menos que los
+ * iconos: 28 px a zoom ≥ 16 y 22 px a zoom ≤ 14. El número mantiene su tamaño de letra.
+ */
+export const STOP_MARKER_BASE_SIZE = 28;
+export const STOP_MARKER_MIN_SCALE = 0.8;
+/** Separación mínima entre paradas en pantalla, en px. */
+export const STOP_MARKER_GAP = 2;
+
+/** Escala de las paradas, en el mismo tramo de zoom que los iconos (14 → 16). */
+export function stopScaleForZoom(zoom: number): number {
+  const t = (markerScaleForZoom(zoom) - MARKER_MIN_SCALE) / (1 - MARKER_MIN_SCALE);
+  return Math.round((STOP_MARKER_MIN_SCALE + t * (1 - STOP_MARKER_MIN_SCALE)) * 1000) / 1000;
+}
+
+export interface StopPoint {
+  x: number;
+  y: number;
+  /** Seleccionada o siguiente parada del paseo: tamaño completo. */
+  pinned?: boolean;
+}
+
+export interface StopOffset {
+  dx: number;
+  dy: number;
+}
+
+/**
+ * Separa en pantalla las paradas que se solapan para que todos los números se lean.
+ * Relajación simple por pares: cada par demasiado cercano se empuja a lo largo de la
+ * línea que une sus centros (o en diagonal si coinciden) hasta tocarse. La parada
+ * fijada no se mueve; el desplazamiento de las demás se limita a `maxOffset` para que
+ * no se alejen de su sitio. Determinista.
+ */
+export function spreadOverlappingStops(
+  points: StopPoint[],
+  scale: number,
+  { gap = STOP_MARKER_GAP, maxOffset = STOP_MARKER_BASE_SIZE, iterations = 12 } = {},
+): StopOffset[] {
+  const size = points.map((p) => STOP_MARKER_BASE_SIZE * (p.pinned ? 1 : scale));
+  const pos = points.map((p) => ({ x: p.x, y: p.y }));
+  const clamp = (i: number) => {
+    const dx = pos[i].x - points[i].x;
+    const dy = pos[i].y - points[i].y;
+    const length = Math.hypot(dx, dy);
+    if (length > maxOffset) {
+      pos[i].x = points[i].x + (dx / length) * maxOffset;
+      pos[i].y = points[i].y + (dy / length) * maxOffset;
+    }
+  };
+  for (let iter = 0; iter < iterations; iter += 1) {
+    let moved = false;
+    for (let i = 0; i < pos.length; i += 1) {
+      for (let j = i + 1; j < pos.length; j += 1) {
+        const minDistance = (size[i] + size[j]) / 2 + gap;
+        let dx = pos[j].x - pos[i].x;
+        let dy = pos[j].y - pos[i].y;
+        let distance = Math.hypot(dx, dy);
+        if (distance >= minDistance - 0.01) continue;
+        if (distance < 0.01) {
+          // Misma posición: la parada posterior se aparta en diagonal abajo-derecha.
+          dx = Math.SQRT1_2;
+          dy = Math.SQRT1_2;
+          distance = 1;
+        } else {
+          dx /= distance;
+          dy /= distance;
+        }
+        const push = minDistance - Math.max(distance, 0);
+        const fixedI = Boolean(points[i].pinned);
+        const fixedJ = Boolean(points[j].pinned);
+        if (fixedI && fixedJ) continue;
+        const shareI = fixedI ? 0 : fixedJ ? 1 : 0.5;
+        const shareJ = 1 - shareI;
+        pos[i].x -= dx * push * shareI;
+        pos[i].y -= dy * push * shareI;
+        pos[j].x += dx * push * shareJ;
+        pos[j].y += dy * push * shareJ;
+        clamp(i);
+        clamp(j);
+        moved = true;
+      }
+    }
+    if (!moved) break;
+  }
+  return pos.map((p, i) => ({
+    dx: Math.round((p.x - points[i].x) * 10) / 10,
+    dy: Math.round((p.y - points[i].y) * 10) / 10,
+  }));
+}
+
+export interface StopMarkerLike {
+  getElement(): HTMLElement;
+  getLngLat(): { lng: number; lat: number };
+  setOffset(offset: [number, number]): unknown;
+}
+
+/**
+ * Aplica escala y separación a las paradas: `--stop-scale` en el contenedor y un
+ * `offset` de MapLibre por parada (mueve también el área táctil de 44 px).
+ * Selección y siguiente parada del paseo van fijadas a tamaño completo.
+ */
+export function applyStopMarkerLayout(map: MapLike, stops: StopMarkerLike[]): void {
+  const scale = stopScaleForZoom(map.getZoom());
+  map.getContainer().style.setProperty('--stop-scale', String(scale));
+  if (stops.length === 0) return;
+  const points = stops.map((stop) => {
+    const el = stop.getElement();
+    const { lng, lat } = stop.getLngLat();
+    const point = map.project([lng, lat]);
+    return {
+      x: point.x,
+      y: point.y,
+      pinned: el.classList.contains('is-active') || el.classList.contains('is-next'),
+    };
+  });
+  const offsets = spreadOverlappingStops(points, scale);
+  stops.forEach((stop, index) => {
+    const { dx, dy } = offsets[index];
+    stop.setOffset([dx, dy]);
+    stop.getElement().dataset.stopShifted = dx !== 0 || dy !== 0 ? 'true' : 'false';
+  });
 }
