@@ -32,6 +32,12 @@ import {
 } from '../../utils/maplibre';
 import { getServiceTypeLabel } from '../../utils/serviceTypes';
 import {
+  applyMarkerZoom,
+  placeMarkerPriority,
+  SERVICE_MARKER_PRIORITY,
+  type ZoomableMarker,
+} from '../../utils/markerZoom';
+import {
   GEO_STATUS_LABEL,
   geolocationErrorToState,
   isInsideRetiro,
@@ -136,6 +142,7 @@ export default function MapExplorer({
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<Map | null>(null);
   const markersRef = useRef<Marker[]>([]);
+  const zoomableMarkersRef = useRef<ZoomableMarker[]>([]);
   const stopMarkersRef = useRef<Marker[]>([]);
   const userMarkerRef = useRef<Marker | null>(null);
   const accuracySourceId = 'user-accuracy';
@@ -315,15 +322,17 @@ export default function MapExplorer({
 
       markersRef.current.forEach((marker) => marker.remove());
       markersRef.current = [];
+      zoomableMarkersRef.current = [];
 
       // Con ruta activa, priorizamos paradas; marcadores generales se ocultan para no saturar.
       if (activeRoute) return;
 
       for (const place of filteredPlaces) {
+        const active = selection?.kind === 'place' && selection.id === place.id;
         const el = createMarkerElement({
           category: place.category,
           label: place.name,
-          active: selection?.kind === 'place' && selection.id === place.id,
+          active,
           onClick: () => {
             setSelection({ kind: 'place', id: place.id });
             currentMap.easeTo({
@@ -338,13 +347,21 @@ export default function MapExplorer({
           .setLngLat(place.coordinates)
           .addTo(currentMap);
         markersRef.current.push(marker);
+        zoomableMarkersRef.current.push({
+          id: `place:${place.id}`,
+          element: el,
+          lngLat: place.coordinates,
+          priority: placeMarkerPriority(place.category),
+          pinned: active,
+        });
       }
 
       for (const service of filteredServices) {
+        const active = selection?.kind === 'service' && selection.id === service.id;
         const el = createServiceMarkerElement({
           type: service.type,
           label: service.name,
-          active: selection?.kind === 'service' && selection.id === service.id,
+          active,
           onClick: () => {
             setSelection({ kind: 'service', id: service.id });
             currentMap.easeTo({
@@ -359,7 +376,16 @@ export default function MapExplorer({
           .setLngLat(service.coordinates)
           .addTo(currentMap);
         markersRef.current.push(marker);
+        zoomableMarkersRef.current.push({
+          id: `service:${service.id}`,
+          element: el,
+          lngLat: service.coordinates,
+          priority: SERVICE_MARKER_PRIORITY,
+          pinned: active,
+        });
       }
+
+      applyMarkerZoom(currentMap, zoomableMarkersRef.current);
     }
 
     void syncMarkers();
@@ -367,6 +393,31 @@ export default function MapExplorer({
       cancelled = true;
     };
   }, [filteredPlaces, filteredServices, ready, selection, activeRoute]);
+
+  // Iconos adaptados al zoom: escala y solapes se recalculan como mucho una vez por frame.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready) return;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      if (mapRef.current !== map) return;
+      applyMarkerZoom(map, zoomableMarkersRef.current);
+    };
+    const schedule = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    map.on('zoom', schedule);
+    map.on('resize', schedule);
+    map.on('pitchend', schedule);
+    schedule();
+    return () => {
+      map.off('zoom', schedule);
+      map.off('resize', schedule);
+      map.off('pitchend', schedule);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, [ready]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -482,9 +533,9 @@ export default function MapExplorer({
         type: 'circle',
         source: EVENT_SOURCE,
         paint: {
-          'circle-radius': 7,
+          'circle-radius': ['interpolate', ['linear'], ['zoom'], 14, 5, 16, 7, 18, 9],
           'circle-color': '#2f6f8f',
-          'circle-stroke-width': 2,
+          'circle-stroke-width': ['interpolate', ['linear'], ['zoom'], 14, 1, 16, 2],
           'circle-stroke-color': '#fffdf8',
         },
       });

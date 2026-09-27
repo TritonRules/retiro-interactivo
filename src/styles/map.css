@@ -331,22 +331,6 @@
   color: var(--color-ink-muted);
 }
 
-.place-marker--service {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  opacity: 0.95;
-}
-
-.place-marker--user {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #2f6f8f;
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 2px #2f6f8f, var(--shadow-md);
-}
-
 .pwa-update {
   position: fixed;
   left: 50%;
@@ -380,82 +364,132 @@
   cursor: pointer;
 }
 
+/*
+ * Marcadores DOM (maplibregl.Marker). El <button> es el área táctil (44 px) y recibe
+ * el `transform` de MapLibre; la forma visible es `.place-marker__shape`, que escala
+ * con `--marker-scale` (fijado por zoom en el contenedor del mapa, ver markerZoom.ts)
+ * y pasa a punto pequeño con `.is-dot` cuando se solapa con otro más prioritario.
+ */
 .place-marker {
-  width: 34px;
-  height: 34px;
-  border: 2px solid #fff;
-  box-shadow: var(--shadow-md);
+  width: var(--touch-min, 44px);
+  height: var(--touch-min, 44px);
+  padding: 0;
+  border: none;
+  background: transparent;
   display: grid;
   place-items: center;
   cursor: pointer;
   color: #fff;
-  transform: translateY(-2px);
+  z-index: 1;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .place-marker:focus-visible {
   outline: 3px solid var(--color-focus);
-  outline-offset: 2px;
-}
-
-.place-marker--circle {
+  outline-offset: 0;
   border-radius: 50%;
 }
 
-.place-marker--square {
+.place-marker__shape {
+  width: 34px;
+  height: 34px;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  background: var(--marker-color, #1b5e3b);
+  box-shadow: var(--shadow-md);
+  display: grid;
+  place-items: center;
+  scale: var(--marker-scale, 1);
+  transition:
+    scale 0.15s ease-out,
+    width 0.15s ease-out,
+    height 0.15s ease-out;
+  pointer-events: none;
+}
+
+.place-marker--circle .place-marker__shape {
+  border-radius: 50%;
+}
+
+.place-marker--square .place-marker__shape {
   border-radius: 6px;
 }
 
-.place-marker--diamond {
-  border-radius: 6px;
-  transform: translateY(-2px) rotate(45deg);
+.place-marker--diamond .place-marker__shape {
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  transform: rotate(45deg);
 }
 
 .place-marker--diamond .place-marker__glyph {
   transform: rotate(-45deg);
 }
 
-.place-marker--triangle {
+.place-marker--triangle .place-marker__shape {
   width: 0;
   height: 0;
   border: none;
-  background: transparent !important;
+  background: transparent;
   box-shadow: none;
   border-left: 17px solid transparent;
   border-right: 17px solid transparent;
   border-bottom: 30px solid var(--marker-color, #c45c26);
   position: relative;
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.35));
 }
 
 .place-marker--triangle .place-marker__glyph {
   position: absolute;
-  top: 10px;
+  top: 12px;
   left: -6px;
   width: 12px;
   text-align: center;
   font-size: 0.65rem;
 }
 
-.place-marker--star {
+.place-marker--star .place-marker__shape {
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   border: none;
 }
 
-.place-marker--hexagon {
+.place-marker--hexagon .place-marker__shape {
   clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
   border: none;
 }
 
-.place-marker--pin {
+.place-marker--pin .place-marker__shape {
   border-radius: 50% 50% 50% 0;
-  transform: translateY(-2px) rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .place-marker--pin .place-marker__glyph {
   transform: rotate(45deg);
 }
 
-.place-marker--arch {
+.place-marker--arch .place-marker__shape {
   border-radius: 14px 14px 6px 6px;
+}
+
+.place-marker--service .place-marker__shape {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  opacity: 0.95;
+}
+
+.place-marker--user {
+  z-index: 3;
+}
+
+.place-marker--user .place-marker__shape {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #2f6f8f;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px #2f6f8f, var(--shadow-md);
+  scale: 1;
 }
 
 .place-marker__glyph {
@@ -465,9 +499,49 @@
   pointer-events: none;
 }
 
+/* Solapado a poco zoom: punto pequeño del color de la categoría, aún pulsable. */
+.place-marker.is-dot {
+  width: 24px;
+  height: 24px;
+  z-index: 0;
+}
+
+.place-marker.is-dot .place-marker__shape {
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid #fff;
+  border-radius: 50%;
+  background: var(--marker-color, #1b5e3b);
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 0.25);
+  clip-path: none;
+  transform: none;
+  filter: none;
+  opacity: 0.9;
+  scale: 1;
+}
+
+.place-marker.is-dot .place-marker__glyph {
+  display: none;
+}
+
+/* Seleccionado: siempre a tamaño completo y por encima. */
 .place-marker.is-active {
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 70%, white), var(--shadow-md);
   z-index: 2;
+}
+
+.place-marker.is-active .place-marker__shape {
+  scale: 1;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 70%, white), var(--shadow-md);
+}
+
+.place-marker--triangle.is-active .place-marker__shape {
+  filter: drop-shadow(0 0 3px color-mix(in srgb, var(--color-accent) 80%, white));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .place-marker__shape {
+    transition: none;
+  }
 }
 
 .ficha {
