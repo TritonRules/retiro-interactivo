@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "dataset": "https://datos.madrid.es/egob/catalogo/300107-0-agenda-actividades-eventos.json",
+    "fetchedAt": "2026-09-06T16:37:18.887Z",
+    "note": "Registro vivo el 2026-09-06. Recurrence TU–SU; time 10:00; dtend limita la serie."
+  },
+  "record": {
+    "@id": "https://datos.madrid.es/egob/catalogo/tipo/evento/50346030-90-anos-declaracion-parque-retiro-bien-interes-cultural.json",
+    "@type": "https://datos.madrid.es/egob/kos/actividades/Exposiciones",
+    "id": "50346030",
+    "title": "90 años de la declaración del Parque del Retiro como Bien de Interés Cultural",
+    "description": "",
+    "free": 1,
+    "price": "",
+    "dtstart": "2026-07-01 10:00:00.0",
+    "dtend": "2026-09-30 23:59:00.0",
+    "time": "10:00",
+    "excluded-days": "",
+    "recurrence": {
+      "days": "TU,WE,TH,FR,SA,SU",
+      "frequency": "WEEKLY",
+      "interval": 1
+    },
+    "uid": "50346030",
+    "link": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=df7bd881d7dfe910VgnVCM200000f921e388RCRD",
+    "event-location": "Centro de Educación Ambiental El Retiro",
+    "references": {
+      "@id": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=1600137ff5dfe910VgnVCM200000f921e388RCRD"
+    },
+    "relation": {
+      "@id": "https://datos.madrid.es/egob/catalogo/tipo/entidadesyorganismos/5463464-centro-educacion-ambiental-retiro.json"
+    },
+    "address": {
+      "district": {
+        "@id": "https://datos.madrid.es/egob/kos/Provincia/Madrid/Municipio/Madrid/Distrito/Retiro"
+      },
+      "area": {
+        "@id": "https://datos.madrid.es/egob/kos/Provincia/Madrid/Municipio/Madrid/Distrito/Retiro/Barrio/LosJeronimos",
+        "locality": "MADRID",
+        "postal-code": "28009",
+        "street-address": "PASEO FERNAN NUÑEZ 2"
+      }
+    },
+    "location": {
+      "latitude": 40.40943503279114,
+      "longitude": -3.6861797800993257
+    },
+    "organization": {
+      "organization-name": "Centro de Educación Ambiental El Retiro",
+      "accesibility": "1"
+    }
+  }
+}

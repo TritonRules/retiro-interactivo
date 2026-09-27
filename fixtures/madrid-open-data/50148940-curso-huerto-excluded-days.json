@@ -1,0 +1,53 @@
+{
+  "provenance": {
+    "dataset": "https://datos.madrid.es/egob/catalogo/300107-0-agenda-actividades-eventos.json",
+    "fetchedAt": "2026-09-06T16:37:18.890Z",
+    "note": "Serie semanal en La Cabaña con excluded-days en formato d/m/yyyy;"
+  },
+  "record": {
+    "@id": "https://datos.madrid.es/egob/catalogo/tipo/evento/50148940-curso-huerto-especializado.json",
+    "@type": "https://datos.madrid.es/egob/kos/actividades/ItinerariosOtrasActividadesAmbientales",
+    "id": "50148940",
+    "title": "Curso de huerto especializado",
+    "description": "Formación dirigida a educadores y educadoras ambientales para conocer los servicios ecosistémicos del huerto y aprender a utilizarlos como recurso educativo.   Durante cinco sesiones se trabajarán los principales tipos de servicios ecosistémicos: abastecimiento, regulación y servicios culturales, relacionándolos con la biodiversidad, el suelo, la alimentación, el bienestar, la participación comunitaria y la educación ambiental.  Fechas: 16 y 30 de octubre; 13 y 27 de noviembre; y 11 de diciembre.  Horario de 16:30 a 18:00 horas. Al tratarse de una actividad continuada y con plazas limitadas, se requiere un compromiso de asistencia regular.   Punto de encuentro: Aula Ambiental La Cabaña del Retiro.   Inscripción: Se requiere reserva previa a través de   formulario  , teléfono (915133250 - 915040131) o de forma presencial. Todas las actividades son gratuitas.    *Las actividades se realizarán con un mínimo de cuatro niños/as o participantes apuntados. *Las actividades al aire libre serán canceladas en caso de Alerta Naranja y Roja.",
+    "free": 1,
+    "price": "",
+    "dtstart": "2026-10-16 16:30:00.0",
+    "dtend": "2026-12-11 23:59:00.0",
+    "time": "16:30",
+    "excluded-days": "23/10/2026;20/11/2026;4/12/2026;6/11/2026;",
+    "recurrence": {
+      "days": "FR",
+      "frequency": "WEEKLY",
+      "interval": 1
+    },
+    "uid": "50148940",
+    "link": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=683260d8a95ca910VgnVCM100000891ecb1aRCRD",
+    "event-location": "Aula ambiental La Cabaña del Retiro",
+    "references": {
+      "@id": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=2f682316c35ba910VgnVCM100000891ecb1aRCRD"
+    },
+    "relation": {
+      "@id": "https://datos.madrid.es/egob/catalogo/tipo/entidadesyorganismos/169873-aula-ambiental-cabana-retiro.json"
+    },
+    "address": {
+      "district": {
+        "@id": "https://datos.madrid.es/egob/kos/Provincia/Madrid/Municipio/Madrid/Distrito/Retiro"
+      },
+      "area": {
+        "@id": "https://datos.madrid.es/egob/kos/Provincia/Madrid/Municipio/Madrid/Distrito/Retiro/Barrio/LosJeronimos",
+        "locality": "MADRID",
+        "postal-code": "28009",
+        "street-address": "PASEO FERNAN NUÑEZ 10"
+      }
+    },
+    "location": {
+      "latitude": 40.40912277790706,
+      "longitude": -3.6793179644920584
+    },
+    "organization": {
+      "organization-name": "Aula ambiental La Cabaña del Retiro",
+      "accesibility": "1"
+    }
+  }
+}

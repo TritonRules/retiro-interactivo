@@ -1,8 +1,11 @@
 import eventsData from '../data/events.json';
+import e2eEvents from '../../e2e/fixtures/events.json';
 import type { ParkEvent } from '../types/event';
+import { selectCurrentPlans, selectTodayEvents } from './eventFreshness';
 import { publishedUpcomingEvents, validateEvents } from './validateEvents';
 
-const result = validateEvents(eventsData);
+const data = import.meta.env.PUBLIC_E2E_FIXTURE === '1' ? e2eEvents : eventsData;
+const result = validateEvents(data);
 
 if (!result.ok) {
   throw new Error(
@@ -26,15 +29,10 @@ export function eventsWithDetailPage(list: ParkEvent[] = events): ParkEvent[] {
 }
 
 export function eventsToday(now = new Date()): ParkEvent[] {
-  const formatter = new Intl.DateTimeFormat('en-CA', {
-    timeZone: 'Europe/Madrid',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-  });
-  const todayKey = formatter.format(now);
-  return getUpcomingEvents(now).filter((event) => {
-    const key = formatter.format(new Date(event.startAt));
-    return key === todayKey;
-  });
+  const nowMs = now instanceof Date ? now.getTime() : now;
+  return selectTodayEvents(events, nowMs);
+}
+
+export function currentPlansAt(nowMs: number): ParkEvent[] {
+  return selectCurrentPlans(events, nowMs);
 }

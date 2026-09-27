@@ -40,12 +40,12 @@
       -3.6822539,
       40.4135485
     ],
-    "shortDescription": "Aseo cartografiado en OSM junto al Palacio de Cristal.",
+    "shortDescription": "Aseo cartografiado en OSM junto al Palacio de Cristal. No se verifica aquí si está abierto hoy.",
     "sourceName": "OpenStreetMap — amenity=toilets (node/4610120699)",
     "sourceUrl": "https://www.openstreetmap.org/node/4610120699",
-    "lastVerifiedAt": "2026-08-05",
+    "lastVerifiedAt": "2026-09-06",
     "status": "needs-review",
-    "availabilityNote": "Accesibilidad OSM: wheelchair=no. Revisar operatividad in situ."
+    "availabilityNote": "OSM indica wheelchair=no. El interior del Palacio de Cristal está cerrado; eso no demuestra que este aseo funcione. Confirmar in situ."
   },
   {
     "id": "aseo-nordeste-estanque",
@@ -55,12 +55,12 @@
       -3.6875372,
       40.418936
     ],
-    "shortDescription": "Aseo cartografiado en OSM en el flanco norte del Estanque Grande.",
+    "shortDescription": "Aseo cartografiado en OSM en el flanco norte del Estanque Grande. Operatividad no comprobada en campo.",
     "sourceName": "OpenStreetMap — amenity=toilets (node/11172458537)",
     "sourceUrl": "https://www.openstreetmap.org/node/11172458537",
-    "lastVerifiedAt": "2026-08-05",
+    "lastVerifiedAt": "2026-09-06",
     "status": "needs-review",
-    "availabilityNote": "Confirmar si permanece abierto al público."
+    "availabilityNote": "Estar en OSM no equivale a estar abierto. Confirmar in situ; no se inventa horario."
   },
   {
     "id": "fuente-potable-estanque-este",
@@ -588,18 +588,18 @@
   },
   {
     "id": "info-centro-ambiental",
-    "name": "Centro de Información y Educación Ambiental",
+    "name": "Centro de Educación Ambiental El Retiro (información)",
     "type": "informacion",
     "coordinates": [
-      -3.6789,
-      40.4165
+      -3.68618,
+      40.409435
     ],
-    "shortDescription": "Punto de información ambiental asociado al ámbito Casa de Fieras / biblioteca.",
-    "sourceName": "Ayuntamiento de Madrid — CIEA El Retiro (referencia OSM Casa de Fieras)",
-    "sourceUrl": "https://www.openstreetmap.org/way/308900139",
-    "lastVerifiedAt": "2026-08-05",
-    "status": "needs-review",
-    "availabilityNote": "Confirmar ubicación exacta de atención al público en fuentes municipales."
+    "shortDescription": "Punto de información del CEA El Retiro (Fernán Núñez, 2). No es la biblioteca de Casa de Fieras ni La Cabaña.",
+    "sourceName": "Ayuntamiento de Madrid — Centro de Educación Ambiental El Retiro",
+    "sourceUrl": "https://www.madrid.es/portales/munimadrid/es/Inicio/Medio-ambiente/Direcciones-y-telefonos/Centro-de-Informacion-y-Educacion-Ambiental-de-El-Huerto-de-El-Retiro/?vgnextchannel=864f79ed268fe410VgnVCM1000000b205a0aRCRD&vgnextfmt=default&vgnextoid=796b8193c73c4210VgnVCM1000000b205a0aRCRD",
+    "lastVerifiedAt": "2026-09-06",
+    "status": "verified",
+    "availabilityNote": "Horario de sede según ficha municipal (cerrado los lunes). Las actividades concretas requieren consultar la agenda o reservar. Coordenadas de la ficha oficial, no de Casa de Fieras."
   },
   {
     "id": "restauracion-piloto-ii",
@@ -609,12 +609,12 @@
       -3.67728,
       40.41544
     ],
-    "shortDescription": "Establecimiento de restauración cartografiado en el entorno este del parque.",
+    "shortDescription": "Establecimiento de restauración cartografiado en OSM al este del parque. Horario no verificado.",
     "sourceName": "OpenStreetMap — Piloto II (node/1891469651)",
     "sourceUrl": "https://www.openstreetmap.org/node/1891469651",
-    "lastVerifiedAt": "2026-08-05",
+    "lastVerifiedAt": "2026-09-06",
     "status": "needs-review",
-    "availabilityNote": "Horarios y carta no verificados; consultar en el local."
+    "availabilityNote": "Estar dibujado en OSM no implica que esté abierto ahora. Horarios y carta: consultar en el local."
   },
   {
     "id": "restauracion-euronews-cafe",
@@ -624,12 +624,12 @@
       -3.67785,
       40.41627
     ],
-    "shortDescription": "Café cartografiado junto al ámbito de la antigua Casa de Fieras.",
+    "shortDescription": "Café cartografiado en OSM junto a la antigua Casa de Fieras. Horario no verificado.",
     "sourceName": "OpenStreetMap — Euronews Café (node/5118698821)",
     "sourceUrl": "https://www.openstreetmap.org/node/5118698821",
-    "lastVerifiedAt": "2026-08-05",
+    "lastVerifiedAt": "2026-09-06",
     "status": "needs-review",
-    "availabilityNote": "Horarios no verificados editorialmente."
+    "availabilityNote": "Sin horario editorial. No se afirma disponibilidad de terraza, carta ni apertura hoy."
   },
   {
     "id": "deporte-pistas-chopera-ref",

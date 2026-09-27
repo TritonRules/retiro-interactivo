@@ -25,6 +25,17 @@
 - Docs 2B: content-model, routes, event-pipeline, event-editorial-policy, qa-phase-2b, beta-readiness.
 - Precache PWA: se excluyen fichas individuales `/agenda/*/`.
 
+## 2026-09-06 — Iteración 1: agenda e información fiables
+
+- Rama `codex/iteracion-1-agenda-fiable` desde `3d19d6a`. Candidato local; sin push.
+- Contrato Madrid único (`docs/iteracion-1/contrato-temporal.md`): IANA, recurrencias, caducidad, frescura 48 h / 7 d.
+- Pipeline: `lastCheckedAt` solo de fetch real; publicación transaccional; recolección 2026-09-06 → 74 eventos.
+- Agenda en cliente: filtros, URL, Hoy/próximos/stale, reloj compartido. Mapa y ficha con las mismas reglas.
+- Editorial: Palacio de Cristal cerrado al interior; CEA y La Cabaña separados; 38 lugares.
+- E2E Playwright contra build estático (22 tests). CI de PR con `contents: read`.
+- Vitest 103. Build 122 páginas. QA: `docs/iteracion-1/qa.md`.
+- Clasificación: **Iteración 1 cerrada técnicamente**. Pendiente de campo = Iteración 3.
+
 ## 2026-08-06 — Fase 3 preparación beta privada
 
 - Rama `feature/fase-3-private-beta` desde `6fcbce2`.

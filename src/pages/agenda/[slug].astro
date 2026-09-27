@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import EventLiveStatus from '../../components/events/EventLiveStatus';
 import { eventsWithDetailPage, getEventBySlug } from '../../utils/events';
 import { eventDetailPath } from '../../utils/eventLinks';
 import { formatMadridDateTime } from '../../utils/datetime';
+import { getEventCategoryLabel } from '../../utils/categoryLabels';
 
 export function getStaticPaths() {
   return eventsWithDetailPage().map((event) => ({ params: { slug: event.slug } }));
@@ -15,6 +17,7 @@ if (!event) {
 }
 
 const base = import.meta.env.BASE_URL;
+const generatedAt = new Date().toISOString();
 const isExpired =
   event.status === 'expired' || Date.parse(event.expiresAt) < Date.now();
 
@@ -40,24 +43,27 @@ const robots =
     </nav>
 
     <header class="page-hero">
-      {
-        isExpired ? (
-          <p class="badge">Evento caducado o fuera de agenda principal</p>
-        ) : null
-      }
       <h1>{event.title}</h1>
       <p>{event.shortDescription}</p>
-      <p class="meta">
-        Inicio: {
-          formatMadridDateTime(event.startAt, { dateStyle: 'full', timeStyle: 'short' })
-        }
-        {
-          event.endAt
-            ? ` · Fin: ${formatMadridDateTime(event.endAt, { dateStyle: 'full', timeStyle: 'short' })}`
-            : ''
-        }
-      </p>
+      <EventLiveStatus client:load event={event} />
+      <noscript>
+        <p class="meta">
+          Inicio: {
+            event.startAt.includes('T00:00:00')
+              ? formatMadridDateTime(event.startAt, { dateStyle: 'full' })
+              : formatMadridDateTime(event.startAt, { dateStyle: 'full', timeStyle: 'short' })
+          }
+          {
+            event.endAt
+              ? ` · Fin: ${formatMadridDateTime(event.endAt, { dateStyle: 'full', timeStyle: 'short' })}`
+              : ''
+          }
+          {' · generado el '}
+          {formatMadridDateTime(generatedAt, { dateStyle: 'long', timeStyle: 'short' })}
+        </p>
+      </noscript>
       <p class="meta">Lugar: {event.venue}</p>
+      <p class="meta">Categoría: {getEventCategoryLabel(event.category)}</p>
       {event.priceNote ? <p class="meta">{event.priceNote}</p> : null}
       <p class="actions">
         {
@@ -78,8 +84,8 @@ const robots =
     </header>
 
     <p class="source">
-      Fuente: {event.sourceName} (nivel {event.sourceTier}). Confianza: {event.confidence}.
-      Comprobado: {event.lastCheckedAt}.
+      Fuente: {event.sourceName}. La fecha de consulta y el estado vigente se actualizan en el
+      navegador. El HTML estático no cambia entre visitas sin un nuevo despliegue.
     </p>
 
     {

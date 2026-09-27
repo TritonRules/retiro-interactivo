@@ -1,0 +1,23 @@
+{
+  "capturedAt": "2026-09-06T18:00:00Z",
+  "head": "ref: refs/heads/codex/iteracion-1-agenda-fiable",
+  "branch": "codex/iteracion-1-agenda-fiable",
+  "baseCommit": "3d19d6a4cf6be5ff46e74cc2206ba9d6ffb31f09",
+  "counts": {
+    "events": 73,
+    "published": 73,
+    "upcomingIfRebuiltOn2026-09-06T18Z": 31,
+    "places": 36,
+    "services": 44,
+    "routes": 5
+  },
+  "lastCheckedAtDates": [
+    "2026-08-06"
+  ],
+  "hashes": {
+    "src/data/events.json": "7e12ff02da603b03867657470dc47c3597c5c2d922d2ac0959daca38831a618b",
+    "public/data/events.json": "7e12ff02da603b03867657470dc47c3597c5c2d922d2ac0959daca38831a618b",
+    "reports/event-build-report.json": "f231d16056ee637baa7f2bdba94d37ca0cf3897d9d01433d270e30f306a25217"
+  },
+  "note": "Fotografía previa a regenerar pipeline. lastCheckedAt es del 6 de agosto. No se copian cachés crudas."
+}

@@ -33,7 +33,7 @@ export const eventSchema = z
     sourceTier: z.enum(['A', 'B', 'C', 'D']),
     sourceEventId: z.string().optional(),
     sourceUpdatedAt: z.string().optional(),
-    lastCheckedAt: z.string().min(10),
+    lastCheckedAt: z.string().min(10).optional(),
     expiresAt: z.string().min(10),
     confidence: z.number().min(0).max(1),
     status: z.enum([
@@ -44,6 +44,22 @@ export const eventSchema = z
       'expired',
       'needs-review',
     ]),
+    schedule: z
+      .object({
+        timePrecision: z.enum(['exact', 'unknown', 'allDay']),
+        sessionTimes: z.array(z.string()),
+        recurrence: z
+          .object({
+            frequency: z.enum(['WEEKLY', 'DAILY']),
+            interval: z.number().int().positive(),
+            byDay: z.array(z.string()),
+            untilExclusive: z.string().min(10),
+            excludedDays: z.array(z.string()),
+          })
+          .optional(),
+        parseIssues: z.array(z.string()).optional(),
+      })
+      .optional(),
   })
   .superRefine((event, ctx) => {
     const start = Date.parse(event.startAt);

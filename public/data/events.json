@@ -8,8 +8,8 @@
     "endAt": "2026-09-30T23:59:00+02:00",
     "venue": "Centro de Educación Ambiental El Retiro",
     "coordinates": [
-      -3.6789,
-      40.4165
+      -3.68618,
+      40.409435
     ],
     "category": "Exposiciones",
     "priceNote": "Gratuito según fuente municipal",
@@ -18,16 +18,66 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=df7bd881d7dfe910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50346030",
-    "lastCheckedAt": "2026-08-06T16:59:19.772Z",
-    "expiresAt": "2026-09-30T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-10-01T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "10:00"
+      ],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": [
+          "TU",
+          "WE",
+          "TH",
+          "FR",
+          "SA",
+          "SU"
+        ],
+        "untilExclusive": "2026-10-01T00:00:00+02:00",
+        "excludedDays": []
+      }
+    }
+  },
+  {
+    "id": "evt-50322723",
+    "slug": "aldonza-la-encarada-50322723",
+    "title": "Aldonza, la encarada",
+    "shortDescription": "Teatro. Compañía Scena, escuela de teatro emocional. Pasión, orgullo y libertad. Edad recomendada para público adulto. Reparto de entradas desde una hora antes en el centro cultural. Máximo dos entradas por persona hasta completar aforo.",
+    "startAt": "2026-09-06T19:30:00+02:00",
+    "endAt": "2026-09-06T23:59:00+02:00",
+    "venue": "Centro Cultural Casa de Vacas (Retiro)",
+    "coordinates": [
+      -3.6840988,
+      40.4192106
+    ],
+    "category": "TeatroPerformance",
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=98c308f16296e910VgnVCM100000891ecb1aRCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=98c308f16296e910VgnVCM100000891ecb1aRCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50322723",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-07T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:30"
+      ]
+    }
   },
   {
     "id": "evt-50104191",
     "slug": "antonio-pedrero-50104191",
     "title": "Antonio Pedrero",
-    "shortDescription": "Exposición. Antológica - 1952.2026.. Horario de lunes a domingo de 10h a 21h. Entrada libre hasta completar aforo.",
+    "shortDescription": "Exposición. Antológica - 1952.2026. Horario de lunes a domingo de 10h a 21h. Entrada libre hasta completar aforo.",
     "startAt": "2026-09-04T00:00:00+02:00",
     "endAt": "2026-09-27T23:59:00+02:00",
     "venue": "Centro Cultural Casa de Vacas (Retiro)",
@@ -42,82 +92,29 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=822beadf2652a910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50104191",
-    "lastCheckedAt": "2026-08-06T16:59:19.776Z",
-    "expiresAt": "2026-09-27T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-28T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-12048589",
-    "slug": "arboles-de-el-retiro-12048589",
-    "title": "Árboles de El Retiro",
-    "shortDescription": "En el parque de El Retiro se pueden encontrar cerca de 170 especies distintas de árboles, un verdadero tesoro de Biodiversidad en pleno centro de Madrid. Durante este itinerario, se muestran de forma sencilla las técnicas empleadas en botánica para el reconocimiento de especies. ",
-    "startAt": "2026-08-13T10:00:00+02:00",
-    "endAt": "2026-08-13T23:59:00+02:00",
-    "venue": "Centro de Educación Ambiental El Retiro",
-    "coordinates": [
-      -3.6789,
-      40.4165
-    ],
-    "category": "actividad",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=31af9ea9aeb09810VgnVCM1000001d4a900aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=31af9ea9aeb09810VgnVCM1000001d4a900aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "12048589",
-    "lastCheckedAt": "2026-08-06T16:59:19.776Z",
-    "expiresAt": "2026-08-13T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-12803572",
-    "slug": "arboles-de-el-retiro-12803572",
-    "title": "Árboles de El Retiro",
-    "shortDescription": "En el parque de El Retiro se pueden encontrar cerca de 170 especies distintas de árboles, un verdadero tesoro de Biodiversidad en pleno centro de Madrid. Durante este itinerario, se muestran de forma sencilla las técnicas empleadas en botánica para el reconocimiento de especies. ",
-    "startAt": "2026-08-27T19:00:00+02:00",
-    "endAt": "2026-08-27T23:59:00+02:00",
-    "venue": "Centro de Educación Ambiental El Retiro",
-    "coordinates": [
-      -3.6789,
-      40.4165
-    ],
-    "category": "actividad",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=63342407bb777910VgnVCM2000001f4a900aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=63342407bb777910VgnVCM2000001f4a900aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "12803572",
-    "lastCheckedAt": "2026-08-06T16:59:19.776Z",
-    "expiresAt": "2026-08-27T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-12802602",
-    "slug": "arboles-exoticos-de-el-retiro-12802602",
-    "title": "Árboles exóticos de El Retiro",
-    "shortDescription": "De las casi 170 especies botánicas presentes en el Retiro, muchas son foráneas. En este itinerario damos a conocer algunas de las especies exóticas que se cultivan en el jardín, enmarcando el itinerario en el Jardín del Romanticismo y las expediciones botánicas. Actividad dirigid",
-    "startAt": "2026-09-03T10:00:00+02:00",
-    "endAt": "2026-09-03T23:59:00+02:00",
-    "venue": "Centro de Educación Ambiental El Retiro",
-    "coordinates": [
-      -3.6789,
-      40.4165
-    ],
-    "category": "actividad",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=d33cbdc017867910VgnVCM2000001f4a900aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=d33cbdc017867910VgnVCM2000001f4a900aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "12802602",
-    "lastCheckedAt": "2026-08-06T16:59:19.776Z",
-    "expiresAt": "2026-09-03T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "unknown",
+      "sessionTimes": [],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": [
+          "MO",
+          "TU",
+          "WE",
+          "TH",
+          "FR",
+          "SA",
+          "SU"
+        ],
+        "untilExclusive": "2026-09-28T00:00:00+02:00",
+        "excludedDays": []
+      }
+    }
   },
   {
     "id": "evt-12404595",
@@ -128,8 +125,8 @@
     "endAt": "2026-09-26T23:59:00+02:00",
     "venue": "Centro de Educación Ambiental El Retiro",
     "coordinates": [
-      -3.6789,
-      40.4165
+      -3.68618,
+      40.409435
     ],
     "category": "actividad",
     "priceNote": "Gratuito según fuente municipal",
@@ -138,18 +135,24 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=51bc332b50f40910VgnVCM1000001d4a900aRCRD",
     "sourceTier": "A",
     "sourceEventId": "12404595",
-    "lastCheckedAt": "2026-08-06T16:59:19.778Z",
-    "expiresAt": "2026-09-26T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-27T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "11:00"
+      ]
+    }
   },
   {
-    "id": "evt-50334552",
-    "slug": "bambi-50334552",
-    "title": "Bambi",
-    "shortDescription": "Bambi",
-    "startAt": "2026-08-27T21:30:00+02:00",
-    "endAt": "2026-08-27T23:59:00+02:00",
+    "id": "evt-50399376",
+    "slug": "buenos-dias-mundo-50399376",
+    "title": "Buenos días, mundo",
+    "shortDescription": "Buenos días, mundo",
+    "startAt": "2026-10-10T12:30:00+02:00",
+    "endAt": "2026-10-11T23:59:00+02:00",
     "venue": "Teatro de Títeres de El Retiro",
     "coordinates": [
       -3.6866962,
@@ -159,15 +162,66 @@
     "audience": [
       "Familias"
     ],
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=cb8e172e150be910VgnVCM200000f921e388RCRD",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=17e9c3cc9e060a10VgnVCM200000f921e388RCRD",
     "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=cb8e172e150be910VgnVCM200000f921e388RCRD",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=17e9c3cc9e060a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
-    "sourceEventId": "50334552",
-    "lastCheckedAt": "2026-08-06T16:59:19.779Z",
-    "expiresAt": "2026-08-27T23:59:00+02:00",
+    "sourceEventId": "50399376",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-10-12T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "12:30"
+      ],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": [
+          "MO",
+          "TU",
+          "WE",
+          "TH",
+          "FR",
+          "SA",
+          "SU"
+        ],
+        "untilExclusive": "2026-10-12T00:00:00+02:00",
+        "excludedDays": []
+      }
+    }
+  },
+  {
+    "id": "evt-50265465",
+    "slug": "caricias-para-el-alma-50265465",
+    "title": "Caricias para el alma",
+    "shortDescription": "Romanceros de Carne y Plata.. María Alonso soprano. Luis San José rapsoda. Micro abierto de 17:30 a 19h. Recital de 19 a 20:30h. Reparto de entradas desde una hora antes en el centro cultural. Máximo dos entradas por persona hasta completar aforo.",
+    "startAt": "2026-09-11T19:00:00+02:00",
+    "endAt": "2026-09-11T23:59:00+02:00",
+    "venue": "Centro Cultural Casa de Vacas (Retiro)",
+    "coordinates": [
+      -3.6840988,
+      40.4192106
+    ],
+    "category": "RecitalesPresentacionesActosLiterarios",
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=3b446dbb5b42d910VgnVCM200000f921e388RCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=3b446dbb5b42d910VgnVCM200000f921e388RCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50265465",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-12T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:00"
+      ]
+    }
   },
   {
     "id": "evt-50147340",
@@ -188,10 +242,16 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=eda6e77de60ca910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50147340",
-    "lastCheckedAt": "2026-08-06T16:59:19.784Z",
-    "expiresAt": "2026-09-28T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-29T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "17:00"
+      ]
+    }
   },
   {
     "id": "evt-50105660",
@@ -212,10 +272,46 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=52edc2dd3ba2a910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50105660",
-    "lastCheckedAt": "2026-08-06T16:59:19.789Z",
-    "expiresAt": "2026-09-17T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-18T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "10:30"
+      ]
+    }
+  },
+  {
+    "id": "evt-50322881",
+    "slug": "coplas-del-alma-50322881",
+    "title": "Coplas del alma",
+    "shortDescription": "Miguel de Molina 'el rey de la copla'. Compañía Recrearte Teatro Social. Una idea original de Patricio González. Andrés Sánchez - guitarra. Diego Mejías - cantaor. Arancha Úrsula - bailaora. Iván Gallego - bailaor. Yonan Daniel - violonchelo. Reparto de entradas desde una hora an",
+    "startAt": "2026-09-27T18:00:00+02:00",
+    "endAt": "2026-09-27T23:59:00+02:00",
+    "venue": "Centro Cultural Casa de Vacas (Retiro)",
+    "coordinates": [
+      -3.6840988,
+      40.4192106
+    ],
+    "category": "Musica",
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=9ec51bbd9696e910VgnVCM100000891ecb1aRCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=9ec51bbd9696e910VgnVCM100000891ecb1aRCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50322881",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-28T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "18:00"
+      ]
+    }
   },
   {
     "id": "evt-50362790",
@@ -236,34 +332,107 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=250396d88b96f910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50362790",
-    "lastCheckedAt": "2026-08-06T16:59:19.789Z",
-    "expiresAt": "2026-10-24T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-10-25T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:00"
+      ]
+    }
   },
   {
-    "id": "evt-50289667",
-    "slug": "del-eden-al-tajo-50289667",
-    "title": "Del edén al tajo",
-    "shortDescription": "Teatro. Compañía: Teatro Luna Verde Sinopsis: Del jardín de Eva a la jungla del asfalto. Divertido y sorprendente viaje a través del tiempo y el espacio guiados por la ironía de los comediantes de Luna Verde. Con cuatro paradas, con cuatro destinos. Diferentes desencuentros entre",
-    "startAt": "2026-09-03T18:00:00+02:00",
-    "endAt": "2026-09-03T23:59:00+02:00",
-    "venue": "Centro Cultural Casa de Vacas (Retiro)",
+    "id": "evt-50399373",
+    "slug": "cristobal-purchinela-50399373",
+    "title": "Cristóbal Purchinela",
+    "shortDescription": "Cristóbal Purchinela",
+    "startAt": "2026-10-03T12:30:00+02:00",
+    "endAt": "2026-10-04T23:59:00+02:00",
+    "venue": "Teatro de Títeres de El Retiro",
     "coordinates": [
-      -3.6840988,
-      40.4192106
+      -3.6866962,
+      40.4187197
     ],
-    "category": "TeatroPerformance",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f52ad04694fbd910VgnVCM100000891ecb1aRCRD",
+    "category": "CuentacuentosTiteresMarionetas",
+    "audience": [
+      "Familias"
+    ],
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=b5d9c3cc9e060a10VgnVCM200000f921e388RCRD",
     "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f52ad04694fbd910VgnVCM100000891ecb1aRCRD",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=b5d9c3cc9e060a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
-    "sourceEventId": "50289667",
-    "lastCheckedAt": "2026-08-06T16:59:19.791Z",
-    "expiresAt": "2026-09-03T23:59:00+02:00",
+    "sourceEventId": "50399373",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-10-05T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "12:30"
+      ],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": [
+          "MO",
+          "TU",
+          "WE",
+          "TH",
+          "FR",
+          "SA",
+          "SU"
+        ],
+        "untilExclusive": "2026-10-05T00:00:00+02:00",
+        "excludedDays": []
+      }
+    }
+  },
+  {
+    "id": "evt-50148940",
+    "slug": "curso-de-huerto-especializado-50148940",
+    "title": "Curso de huerto especializado",
+    "shortDescription": "Formación dirigida a educadores y educadoras ambientales para conocer los servicios ecosistémicos del huerto y aprender a utilizarlos como recurso educativo. Durante cinco sesiones se trabajarán los principales tipos de servicios ecosistémicos: abastecimiento, regulación y servic",
+    "startAt": "2026-10-16T16:30:00+02:00",
+    "endAt": "2026-12-11T23:59:00+01:00",
+    "venue": "Aula ambiental La Cabaña del Retiro",
+    "coordinates": [
+      -3.679318,
+      40.409123
+    ],
+    "category": "ItinerariosOtrasActividadesAmbientales",
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=683260d8a95ca910VgnVCM100000891ecb1aRCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=683260d8a95ca910VgnVCM100000891ecb1aRCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50148940",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-12-12T00:00:00+01:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "16:30"
+      ],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": [
+          "FR"
+        ],
+        "untilExclusive": "2026-12-12T00:00:00+01:00",
+        "excludedDays": [
+          "2026-10-23",
+          "2026-11-06",
+          "2026-11-20",
+          "2026-12-04"
+        ]
+      }
+    }
   },
   {
     "id": "evt-11769477",
@@ -274,8 +443,8 @@
     "endAt": "2026-09-17T23:59:00+02:00",
     "venue": "Centro de Educación Ambiental El Retiro",
     "coordinates": [
-      -3.6789,
-      40.4165
+      -3.68618,
+      40.409435
     ],
     "category": "actividad",
     "priceNote": "Gratuito según fuente municipal",
@@ -284,10 +453,16 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f2b8af6138133810VgnVCM2000001f4a900aRCRD",
     "sourceTier": "A",
     "sourceEventId": "11769477",
-    "lastCheckedAt": "2026-08-06T16:59:19.792Z",
-    "expiresAt": "2026-09-17T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-18T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "11:00"
+      ]
+    }
   },
   {
     "id": "evt-11769479",
@@ -298,8 +473,8 @@
     "endAt": "2026-09-19T23:59:00+02:00",
     "venue": "Centro de Educación Ambiental El Retiro",
     "coordinates": [
-      -3.6789,
-      40.4165
+      -3.68618,
+      40.409435
     ],
     "category": "actividad",
     "priceNote": "Gratuito según fuente municipal",
@@ -308,10 +483,16 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f7e8af6138133810VgnVCM2000001f4a900aRCRD",
     "sourceTier": "A",
     "sourceEventId": "11769479",
-    "lastCheckedAt": "2026-08-06T16:59:19.792Z",
-    "expiresAt": "2026-09-19T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-20T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "11:00"
+      ]
+    }
   },
   {
     "id": "evt-11769616",
@@ -322,8 +503,8 @@
     "endAt": "2026-09-12T23:59:00+02:00",
     "venue": "Centro de Educación Ambiental El Retiro",
     "coordinates": [
-      -3.6789,
-      40.4165
+      -3.68618,
+      40.409435
     ],
     "category": "actividad",
     "priceNote": "Gratuito según fuente municipal",
@@ -332,10 +513,16 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f68eaf6138133810VgnVCM2000001f4a900aRCRD",
     "sourceTier": "A",
     "sourceEventId": "11769616",
-    "lastCheckedAt": "2026-08-06T16:59:19.796Z",
-    "expiresAt": "2026-09-12T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-13T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "11:00"
+      ]
+    }
   },
   {
     "id": "evt-50265824",
@@ -359,10 +546,16 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=b3dd19b58092d910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50265824",
-    "lastCheckedAt": "2026-08-06T16:59:19.796Z",
-    "expiresAt": "2026-09-05T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-06T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "expired",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "12:00"
+      ]
+    }
   },
   {
     "id": "evt-50146307",
@@ -383,34 +576,65 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=bdc35252a8fba910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50146307",
-    "lastCheckedAt": "2026-08-06T16:59:19.797Z",
-    "expiresAt": "2026-09-20T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-21T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "17:00"
+      ]
+    }
   },
   {
-    "id": "evt-12803577",
-    "slug": "el-retiro-a-traves-de-la-musica-12803577",
-    "title": "El Retiro a través de la Música",
-    "shortDescription": "El siglo XIX es un siglo definitivo en el asentamiento de nuevas fórmulas de ocio entre los madrileños. Desde su apertura al público general en 1868, los jardines del Buen Retiro han funcionado como contexto de desarrollo para nuevas formas de socializar donde la música ha jugado",
-    "startAt": "2026-08-06T20:00:00+02:00",
-    "endAt": "2026-08-06T23:59:00+02:00",
-    "venue": "Centro de Educación Ambiental El Retiro",
+    "id": "evt-50379664",
+    "slug": "el-panadero-y-el-diablo-50379664",
+    "title": "El panadero y el diablo",
+    "shortDescription": "El panadero y el diablo",
+    "startAt": "2026-09-19T18:30:00+02:00",
+    "endAt": "2026-09-20T23:59:00+02:00",
+    "venue": "Teatro de Títeres de El Retiro",
     "coordinates": [
-      -3.6789,
-      40.4165
+      -3.6866962,
+      40.4187197
     ],
-    "category": "actividad",
+    "category": "CuentacuentosTiteresMarionetas",
+    "audience": [
+      "Niños",
+      "Familias"
+    ],
     "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=e1e42407bb777910VgnVCM2000001f4a900aRCRD",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=60f3b478e95ff910VgnVCM100000891ecb1aRCRD",
     "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=e1e42407bb777910VgnVCM2000001f4a900aRCRD",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=60f3b478e95ff910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
-    "sourceEventId": "12803577",
-    "lastCheckedAt": "2026-08-06T16:59:19.797Z",
-    "expiresAt": "2026-08-06T23:59:00+02:00",
+    "sourceEventId": "50379664",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-21T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "18:30"
+      ],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": [
+          "MO",
+          "TU",
+          "WE",
+          "TH",
+          "FR",
+          "SA",
+          "SU"
+        ],
+        "untilExclusive": "2026-09-21T00:00:00+02:00",
+        "excludedDays": []
+      }
+    }
   },
   {
     "id": "evt-11769587",
@@ -421,8 +645,8 @@
     "endAt": "2026-09-24T23:59:00+02:00",
     "venue": "Centro de Educación Ambiental El Retiro",
     "coordinates": [
-      -3.6789,
-      40.4165
+      -3.68618,
+      40.409435
     ],
     "category": "actividad",
     "priceNote": "Gratuito según fuente municipal",
@@ -431,10 +655,16 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=2aebaf6138133810VgnVCM2000001f4a900aRCRD",
     "sourceTier": "A",
     "sourceEventId": "11769587",
-    "lastCheckedAt": "2026-08-06T16:59:19.797Z",
-    "expiresAt": "2026-09-24T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-25T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "11:00"
+      ]
+    }
   },
   {
     "id": "evt-11769591",
@@ -445,8 +675,8 @@
     "endAt": "2026-09-05T23:59:00+02:00",
     "venue": "Centro de Educación Ambiental El Retiro",
     "coordinates": [
-      -3.6789,
-      40.4165
+      -3.68618,
+      40.409435
     ],
     "category": "actividad",
     "priceNote": "Gratuito según fuente municipal",
@@ -455,10 +685,16 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=ecfdaf6138133810VgnVCM2000001f4a900aRCRD",
     "sourceTier": "A",
     "sourceEventId": "11769591",
-    "lastCheckedAt": "2026-08-06T16:59:19.797Z",
-    "expiresAt": "2026-09-05T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-06T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "expired",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "10:00"
+      ]
+    }
   },
   {
     "id": "evt-50266169",
@@ -479,106 +715,138 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=3814e1509792d910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50266169",
-    "lastCheckedAt": "2026-08-06T16:59:19.799Z",
-    "expiresAt": "2026-09-19T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-20T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:00"
+      ]
+    }
   },
   {
-    "id": "evt-12803575",
-    "slug": "esculturas-desconocidas-del-retiro-i-12803575",
-    "title": "Esculturas desconocidas del Retiro I",
-    "shortDescription": "Los Jardines de El Buen Retiro albergan multitud de esculturas por mucha gente desconocidas. ¿Quiénes las hicieron? ¿Quiénes las encargaron? ¿Qué conmemoran? Todas esas cuestiones se irán descubriendo durante el itinerario que se centrarán en aquellas esculturas que por su pequeñ",
-    "startAt": "2026-08-20T19:30:00+02:00",
-    "endAt": "2026-08-20T23:59:00+02:00",
-    "venue": "Centro de Educación Ambiental El Retiro",
+    "id": "evt-50404386",
+    "slug": "exposicion-iv-passarela-brasil-fashion-50404386",
+    "title": "Exposición 'IV Passarela Brasil Fashion'",
+    "shortDescription": "Exposición 'IV Passarela Brasil Fashion'",
+    "startAt": "2026-09-07T00:00:00+02:00",
+    "endAt": "2026-10-04T23:59:00+02:00",
+    "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)",
     "coordinates": [
-      -3.6789,
-      40.4165
+      -3.6789381,
+      40.4167401
     ],
-    "category": "actividad",
+    "category": "Exposiciones",
     "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=3b742407bb777910VgnVCM2000001f4a900aRCRD",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=888d56222fb60a10VgnVCM200000f921e388RCRD",
     "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=3b742407bb777910VgnVCM2000001f4a900aRCRD",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=888d56222fb60a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
-    "sourceEventId": "12803575",
-    "lastCheckedAt": "2026-08-06T16:59:19.800Z",
-    "expiresAt": "2026-08-20T23:59:00+02:00",
+    "sourceEventId": "50404386",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-10-05T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "unknown",
+      "sessionTimes": [],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": [
+          "MO",
+          "TU",
+          "WE",
+          "TH",
+          "FR",
+          "SA",
+          "SU"
+        ],
+        "untilExclusive": "2026-10-05T00:00:00+02:00",
+        "excludedDays": []
+      }
+    }
   },
   {
-    "id": "evt-11769588",
-    "slug": "esculturas-desconocidas-i-11769588",
-    "title": "Esculturas desconocidas I",
-    "shortDescription": "Los Jardines de El Buen Retiro albergan multitud de esculturas por mucha gente desconocidas. ¿Quiénes las hicieron? ¿Quiénes las encargaron? ¿Qué conmemoran? Todas esas cuestiones se irán descubriendo durante el itinerario que se centrarán en aquellas esculturas que, por su peque",
-    "startAt": "2026-08-27T10:00:00+02:00",
-    "endAt": "2026-08-27T23:59:00+02:00",
-    "venue": "Centro de Educación Ambiental El Retiro",
+    "id": "evt-50235568",
+    "slug": "festival-4-estaciones-50235568",
+    "title": "Festival 4 estaciones",
+    "shortDescription": "Edición Verano - Música. Fátima Rü y Antonia Jiménez. Una velada íntima que une la voz y la sensibilidad de Fátima Rü con la jondura flamenca de la guitarra de Antonia Jiménez. Poemas musicados por la artista, canciones populares antiguas, coplas y composiciones propias inspirada",
+    "startAt": "2026-09-10T19:00:00+02:00",
+    "endAt": "2026-09-10T23:59:00+02:00",
+    "venue": "Centro Cultural Casa de Vacas (Retiro)",
     "coordinates": [
-      -3.6789,
-      40.4165
+      -3.6840988,
+      40.4192106
     ],
-    "category": "actividad",
+    "category": "Musica",
     "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=35acaf6138133810VgnVCM2000001f4a900aRCRD",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=07cada371009c910VgnVCM100000891ecb1aRCRD",
     "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=35acaf6138133810VgnVCM2000001f4a900aRCRD",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=07cada371009c910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
-    "sourceEventId": "11769588",
-    "lastCheckedAt": "2026-08-06T16:59:19.801Z",
-    "expiresAt": "2026-08-27T23:59:00+02:00",
+    "sourceEventId": "50235568",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-11T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:00"
+      ]
+    }
   },
   {
-    "id": "evt-50265354",
-    "slug": "esculturas-desconocidas-i-50265354",
-    "title": "Esculturas desconocidas I",
-    "shortDescription": "Los Jardines de El Buen Retiro albergan multitud de esculturas por mucha gente desconocidas. ¿Quiénes las hicieron? ¿Quiénes las encargaron? ¿Qué conmemoran? Todas esas cuestiones se irán descubriendo durante el itinerario que se centrarán en aquellas esculturas que por su pequeñ",
-    "startAt": "2026-08-08T10:00:00+02:00",
-    "endAt": "2026-08-08T23:59:00+02:00",
-    "venue": "Centro de Educación Ambiental El Retiro",
+    "id": "evt-50379653",
+    "slug": "hansel-y-gretel-50379653",
+    "title": "Hansel y Gretel",
+    "shortDescription": "Hansel y Gretel",
+    "startAt": "2026-09-12T18:30:00+02:00",
+    "endAt": "2026-09-13T23:59:00+02:00",
+    "venue": "Teatro de Títeres de El Retiro",
     "coordinates": [
-      -3.6789,
-      40.4165
+      -3.6866962,
+      40.4187197
     ],
-    "category": "actividad",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=b6b8cd011842d910VgnVCM100000891ecb1aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=b6b8cd011842d910VgnVCM100000891ecb1aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50265354",
-    "lastCheckedAt": "2026-08-06T16:59:19.801Z",
-    "expiresAt": "2026-08-08T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-50343435",
-    "slug": "esculturas-desconocidas-ii-50343435",
-    "title": "Esculturas desconocidas II",
-    "shortDescription": "Si ya has hecho con nosotros el primer recorrido de Esculturas desconocidas de El Retiro, sabrás que los Jardines de El Buen Retiro albergan multitud de esculturas por mucha gente desconocidas. En esta segunda parte podrás descubrir nuevas curiosidades sobre ellas. Actividad diri",
-    "startAt": "2026-08-22T10:00:00+02:00",
-    "endAt": "2026-08-22T23:59:00+02:00",
-    "venue": "Centro de Educación Ambiental El Retiro",
-    "coordinates": [
-      -3.6789,
-      40.4165
+    "category": "CuentacuentosTiteresMarionetas",
+    "audience": [
+      "Niños",
+      "Familias"
     ],
-    "category": "actividad",
     "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=275132cf29eee910VgnVCM200000f921e388RCRD",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=cd40b478e95ff910VgnVCM100000891ecb1aRCRD",
     "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=275132cf29eee910VgnVCM200000f921e388RCRD",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=cd40b478e95ff910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
-    "sourceEventId": "50343435",
-    "lastCheckedAt": "2026-08-06T16:59:19.801Z",
-    "expiresAt": "2026-08-22T23:59:00+02:00",
+    "sourceEventId": "50379653",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-14T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "18:30"
+      ],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": [
+          "MO",
+          "TU",
+          "WE",
+          "TH",
+          "FR",
+          "SA",
+          "SU"
+        ],
+        "untilExclusive": "2026-09-14T00:00:00+02:00",
+        "excludedDays": []
+      }
+    }
   },
   {
     "id": "evt-50145563",
@@ -599,10 +867,16 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=9fa5817478bba910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50145563",
-    "lastCheckedAt": "2026-08-06T16:59:19.810Z",
-    "expiresAt": "2026-09-14T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-15T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:00"
+      ]
+    }
   },
   {
     "id": "evt-50221891",
@@ -623,10 +897,46 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=5e05cff3cf74c910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50221891",
-    "lastCheckedAt": "2026-08-06T16:59:19.811Z",
-    "expiresAt": "2026-09-06T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-07T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "12:00"
+      ]
+    }
+  },
+  {
+    "id": "evt-50289767",
+    "slug": "iii-jornadas-de-estudios-e-investigacion-en-egiptologia-50289767",
+    "title": "III Jornadas de Estudios e Investigación en Egiptología",
+    "shortDescription": "Mujeres bajo los rayos de Aton: poder femenino en Amarna por Luna Egido. Los Nehesyw: relación entre el mundo egipcio antiguo y Kush por Ángel Belmonte. Sexualidad y prostitución en el antiguo Egipto por Rocío Rivas. Materializar el rito: los talleres de embalsamiento en el antig",
+    "startAt": "2026-09-12T10:00:00+02:00",
+    "endAt": "2026-09-12T23:59:00+02:00",
+    "venue": "Centro Cultural Casa de Vacas (Retiro)",
+    "coordinates": [
+      -3.6840988,
+      40.4192106
+    ],
+    "category": "ConferenciasColoquios",
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=99c65c4116fbd910VgnVCM100000891ecb1aRCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=99c65c4116fbd910VgnVCM100000891ecb1aRCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50289767",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-13T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "10:00"
+      ]
+    }
   },
   {
     "id": "evt-50265531",
@@ -647,45 +957,54 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=a8d5e042bd42d910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50265531",
-    "lastCheckedAt": "2026-08-06T16:59:19.813Z",
-    "expiresAt": "2026-09-12T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-13T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:30"
+      ]
+    }
   },
   {
-    "id": "evt-50288425",
-    "slug": "jornada-de-huerto-50288425",
-    "title": "Jornada de Huerto",
-    "shortDescription": "Dinámicas participativas para grupos familiares, que incluyen recorridos por el Parque y talleres creativos. Dirigido a: niños y niñas de 4 a 7 años. Sábado 29 de agosto: de 10:00 a 11:30 horas. Punto de encuentro: Aula Ambiental La Cabaña del Retiro Inscripción: Se requiere rese",
-    "startAt": "2026-08-29T10:00:00+02:00",
-    "endAt": "2026-08-29T23:59:00+02:00",
-    "venue": "Aula ambiental La Cabaña del Retiro",
+    "id": "evt-50145709",
+    "slug": "jardin-muestra-de-proceso-50145709",
+    "title": "Jardín. Muestra de proceso",
+    "shortDescription": "Charles Wrapner y Maité Zamora. Reparto de entradas desde una hora antes en el centro cultural. Máximo dos entradas por persona hasta completar aforo.",
+    "startAt": "2026-09-26T12:30:00+02:00",
+    "endAt": "2026-09-26T23:59:00+02:00",
+    "venue": "Centro Cultural Casa de Vacas (Retiro)",
     "coordinates": [
-      -3.679318,
-      40.409123
+      -3.6840988,
+      40.4192106
     ],
-    "category": "ItinerariosOtrasActividadesAmbientales",
-    "audience": [
-      "Niños"
-    ],
+    "category": "Exposiciones",
     "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=e7fee4b825abd910VgnVCM200000f921e388RCRD",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=b0ee7f3291fba910VgnVCM100000891ecb1aRCRD",
     "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=e7fee4b825abd910VgnVCM200000f921e388RCRD",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=b0ee7f3291fba910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
-    "sourceEventId": "50288425",
-    "lastCheckedAt": "2026-08-06T16:59:19.814Z",
-    "expiresAt": "2026-08-29T23:59:00+02:00",
+    "sourceEventId": "50145709",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-27T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "12:30"
+      ]
+    }
   },
   {
     "id": "evt-50202486",
     "slug": "jornada-de-huerto-50202486",
     "title": "Jornada de huerto",
-    "shortDescription": "Dinámicas participativas para grupos familiares, que incluyen recorridos por el Parque y talleres creativos. Sábado 8 de agosto: de 10:00 a 11:30 horas. Dirigido a: niños y niñas a partir de 8 años. Punto de encuentro: Aula Ambiental La Cabaña del Retiro. Inscripción: Inscripción",
-    "startAt": "2026-08-08T10:00:00+02:00",
-    "endAt": "2026-08-08T23:59:00+02:00",
+    "shortDescription": "Dinámicas participativas para grupos familiares, que incluyen recorridos por el Parque y talleres creativos. Sábado 6 de septiembre: de 11:00 a 12:30 horas. Dirigido a: niños y niñas de 4 a 7 años. Punto de encuentro: Aula Ambiental La Cabaña del Retiro. Inscripción: Se requiere ",
+    "startAt": "2026-09-06T11:00:00+02:00",
+    "endAt": "2026-09-06T23:59:00+02:00",
     "venue": "Aula ambiental La Cabaña del Retiro",
     "coordinates": [
       -3.679318,
@@ -701,10 +1020,49 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=bffc774d250eb910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50202486",
-    "lastCheckedAt": "2026-08-06T16:59:19.814Z",
-    "expiresAt": "2026-08-08T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-07T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "11:00"
+      ]
+    }
+  },
+  {
+    "id": "evt-50150274",
+    "slug": "jornada-de-huerto-50150274",
+    "title": "Jornada de huerto",
+    "shortDescription": "Dinámicas participativas para grupos familiares, que incluyen recorridos por el Parque y talleres creativos. Dirigido a niños y niñas a partir de 8 años. Domingo 27 de septiembre de 11:00 a 12:30 horas. Punto de encuentro: Aula Ambiental La Cabaña del Retiro Inscripción: Se requi",
+    "startAt": "2026-09-27T11:00:00+02:00",
+    "endAt": "2026-09-27T23:59:00+02:00",
+    "venue": "Aula ambiental La Cabaña del Retiro",
+    "coordinates": [
+      -3.679318,
+      40.409123
+    ],
+    "category": "ItinerariosOtrasActividadesAmbientales",
+    "audience": [
+      "Niños"
+    ],
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=006afa263daca910VgnVCM100000891ecb1aRCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=006afa263daca910VgnVCM100000891ecb1aRCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50150274",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-28T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "11:00"
+      ]
+    }
   },
   {
     "id": "evt-50368535",
@@ -725,18 +1083,54 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=0ad305fabd29f910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50368535",
-    "lastCheckedAt": "2026-08-06T16:59:19.817Z",
-    "expiresAt": "2026-11-28T23:59:00+01:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-11-29T00:00:00+01:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:00"
+      ]
+    }
   },
   {
-    "id": "evt-50334565",
-    "slug": "la-doncella-guerrera-50334565",
-    "title": "La doncella guerrera",
-    "shortDescription": "La doncella guerrera",
-    "startAt": "2026-08-22T19:00:00+02:00",
-    "endAt": "2026-08-22T23:59:00+02:00",
+    "id": "evt-50147284",
+    "slug": "la-musica-de-las-palabras-50147284",
+    "title": "La música de las palabras",
+    "shortDescription": "Concierto Recital con poemas de Federico García Lorca. Grupo Retablo. Intéprete: Mayte Domínguez. Piano y composición: Pablo Bethencourt. Abre el acto: Manuel López Azorín, poeta y escritor. Reparto de entradas desde una hora antes en el centro cultural. Máximo dos entradas por p",
+    "startAt": "2026-09-18T19:00:00+02:00",
+    "endAt": "2026-09-18T23:59:00+02:00",
+    "venue": "Centro Cultural Casa de Vacas (Retiro)",
+    "coordinates": [
+      -3.6840988,
+      40.4192106
+    ],
+    "category": "RecitalesPresentacionesActosLiterarios",
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f520e77de60ca910VgnVCM100000891ecb1aRCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f520e77de60ca910VgnVCM100000891ecb1aRCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50147284",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-19T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:00"
+      ]
+    }
+  },
+  {
+    "id": "evt-50379644",
+    "slug": "las-aventuras-de-gasparina-50379644",
+    "title": "Las aventuras de Gasparina",
+    "shortDescription": "Las aventuras de Gasparina",
+    "startAt": "2026-09-05T18:30:00+02:00",
+    "endAt": "2026-09-06T23:59:00+02:00",
     "venue": "Teatro de Títeres de El Retiro",
     "coordinates": [
       -3.6866962,
@@ -744,65 +1138,40 @@
     ],
     "category": "CuentacuentosTiteresMarionetas",
     "audience": [
+      "Niños",
       "Familias"
     ],
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=0a0f172e150be910VgnVCM200000f921e388RCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=0a0f172e150be910VgnVCM200000f921e388RCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50334565",
-    "lastCheckedAt": "2026-08-06T16:59:19.817Z",
-    "expiresAt": "2026-08-22T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-50361033",
-    "slug": "la-ruta-de-los-libros-vivos-50361033",
-    "title": "La ruta de los libros vivos",
-    "shortDescription": "La ruta de los libros vivos",
-    "startAt": "2026-06-29T00:00:00+02:00",
-    "endAt": "2026-08-31T23:59:00+02:00",
-    "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)",
-    "coordinates": [
-      -3.6789381,
-      40.4167401
-    ],
-    "category": "Exposiciones",
     "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=e681890c83f5f910VgnVCM200000f921e388RCRD",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=ff7db478e95ff910VgnVCM100000891ecb1aRCRD",
     "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=e681890c83f5f910VgnVCM200000f921e388RCRD",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=ff7db478e95ff910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
-    "sourceEventId": "50361033",
-    "lastCheckedAt": "2026-08-06T16:59:19.818Z",
-    "expiresAt": "2026-08-31T23:59:00+02:00",
+    "sourceEventId": "50379644",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-07T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-50343443",
-    "slug": "las-aves-estivales-en-el-retiro-50343443",
-    "title": "Las aves estivales en El Retiro",
-    "shortDescription": "Nuestro madrileño Parque de El Retiro está habitado por multitud de fauna, entre la que destaca especialmente, por su facilidad para verlas y escucharlas, las aves. Descubre con nosotros la multitud y diversidad de aves que pueblan en verano El Retiro. Actividad dirigida a públic",
-    "startAt": "2026-08-14T09:30:00+02:00",
-    "endAt": "2026-08-14T23:59:00+02:00",
-    "venue": "Centro de Educación Ambiental El Retiro",
-    "coordinates": [
-      -3.6789,
-      40.4165
-    ],
-    "category": "actividad",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=9468d8ba0aeee910VgnVCM200000f921e388RCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=9468d8ba0aeee910VgnVCM200000f921e388RCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50343443",
-    "lastCheckedAt": "2026-08-06T16:59:19.819Z",
-    "expiresAt": "2026-08-14T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "18:30"
+      ],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": [
+          "MO",
+          "TU",
+          "WE",
+          "TH",
+          "FR",
+          "SA",
+          "SU"
+        ],
+        "untilExclusive": "2026-09-07T00:00:00+02:00",
+        "excludedDays": []
+      }
+    }
   },
   {
     "id": "evt-50343647",
@@ -813,8 +1182,8 @@
     "endAt": "2026-09-06T23:59:00+02:00",
     "venue": "Centro de Educación Ambiental El Retiro",
     "coordinates": [
-      -3.6789,
-      40.4165
+      -3.68618,
+      40.409435
     ],
     "category": "actividad",
     "audience": [
@@ -827,39 +1196,51 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=7a70b2de0feee910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50343647",
-    "lastCheckedAt": "2026-08-06T16:59:19.822Z",
-    "expiresAt": "2026-09-06T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-07T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "10:30"
+      ]
+    }
   },
   {
-    "id": "evt-50147338",
-    "slug": "miguel-de-molina-el-rey-de-la-copla-50147338",
-    "title": "Miguel de Molina 'el rey de la copla'",
-    "shortDescription": "Coplas del alma. Recrearte Teatro Social. Una idea original de: Patricio González. Andrés Sánchez (guitarra). Diego Mejías (bailaora). Arancha Úrsula (bailaora). Iván Gallego (bailaor). Yonan Daniel (violonchelo). Reparto de entradas desde una hora antes en el centro cultural. Má",
-    "startAt": "2026-09-27T18:00:00+02:00",
-    "endAt": "2026-09-27T23:59:00+02:00",
+    "id": "evt-50322662",
+    "slug": "los-monumentos-de-los-jardines-del-buen-retiro-hablan-50322662",
+    "title": "Los monumentos de los Jardines del Buen Retiro, 'hablan'",
+    "shortDescription": "Conferencia. Ana Belén Calvo Mateo y Rocío Egea Mota. Un recorrido por los monumentos a Jacinto Benavente, Benito Pérez Galdós, los Hnos. Álvarez Quintero, Jacinto Verdaguer, Luis de Góngora, Pío Baroja, Dante Alighieri, Inca Garcilaso de la Vega, Antonio Mingote, John Milton (El",
+    "startAt": "2026-09-29T19:00:00+02:00",
+    "endAt": "2026-09-29T23:59:00+02:00",
     "venue": "Centro Cultural Casa de Vacas (Retiro)",
     "coordinates": [
       -3.6840988,
       40.4192106
     ],
-    "category": "Musica",
+    "category": "Arte",
     "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=2026e77de60ca910VgnVCM100000891ecb1aRCRD",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=20731efd3196e910VgnVCM100000891ecb1aRCRD",
     "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=2026e77de60ca910VgnVCM100000891ecb1aRCRD",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=20731efd3196e910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
-    "sourceEventId": "50147338",
-    "lastCheckedAt": "2026-08-06T16:59:19.826Z",
-    "expiresAt": "2026-09-27T23:59:00+02:00",
+    "sourceEventId": "50322662",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-30T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:00"
+      ]
+    }
   },
   {
     "id": "evt-50174902",
-    "slug": "modelo-integrados-restaurativo-50174902",
-    "title": "Modelo integrados restaurativo",
+    "slug": "modelo-integrador-restaurativo-50174902",
+    "title": "Modelo integrador restaurativo",
     "shortDescription": "Exposición, conferencia y presentación de la obra. Centrado en trauma, maltrato y violencia sexual. Con la participación de: Estefanía Igartua Escobar, autora. José Luis Marín, autor del prólogo. Reparto de entradas desde una hora antes en el centro cultural. Máximo dos entradas ",
     "startAt": "2026-09-07T19:00:00+02:00",
     "endAt": "2026-09-07T23:59:00+02:00",
@@ -875,10 +1256,16 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=e98c36c7fea4b910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50174902",
-    "lastCheckedAt": "2026-08-06T16:59:19.827Z",
-    "expiresAt": "2026-09-07T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-08T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:00"
+      ]
+    }
   },
   {
     "id": "evt-50362839",
@@ -899,36 +1286,16 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=7ba696d88b96f910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50362839",
-    "lastCheckedAt": "2026-08-06T16:59:19.828Z",
-    "expiresAt": "2026-10-02T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-10-03T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-50334559",
-    "slug": "olvide-la-sombra-de-la-encina-50334559",
-    "title": "Olvidé la sombra de la encina",
-    "shortDescription": "Olvidé la sombra de la encina",
-    "startAt": "2026-08-24T21:30:00+02:00",
-    "endAt": "2026-08-24T23:59:00+02:00",
-    "venue": "Teatro de Títeres de El Retiro",
-    "coordinates": [
-      -3.6866962,
-      40.4187197
-    ],
-    "category": "CuentacuentosTiteresMarionetas",
-    "audience": [
-      "Familias"
-    ],
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=ddbe172e150be910VgnVCM200000f921e388RCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=ddbe172e150be910VgnVCM200000f921e388RCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50334559",
-    "lastCheckedAt": "2026-08-06T16:59:19.830Z",
-    "expiresAt": "2026-08-24T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:00"
+      ]
+    }
   },
   {
     "id": "evt-50265834",
@@ -949,10 +1316,16 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=71dd19b58092d910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50265834",
-    "lastCheckedAt": "2026-08-06T16:59:19.831Z",
-    "expiresAt": "2026-09-18T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-19T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:00"
+      ]
+    }
   },
   {
     "id": "evt-12048875",
@@ -963,8 +1336,8 @@
     "endAt": "2026-09-10T23:59:00+02:00",
     "venue": "Centro de Educación Ambiental El Retiro",
     "coordinates": [
-      -3.6789,
-      40.4165
+      -3.68618,
+      40.409435
     ],
     "category": "actividad",
     "priceNote": "Gratuito según fuente municipal",
@@ -973,10 +1346,16 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=2f9b696f90c09810VgnVCM1000001d4a900aRCRD",
     "sourceTier": "A",
     "sourceEventId": "12048875",
-    "lastCheckedAt": "2026-08-06T16:59:19.831Z",
-    "expiresAt": "2026-09-10T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-11T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "11:00"
+      ]
+    }
   },
   {
     "id": "evt-50145704",
@@ -997,60 +1376,16 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=91ee7f3291fba910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50145704",
-    "lastCheckedAt": "2026-08-06T16:59:19.831Z",
-    "expiresAt": "2026-09-26T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-27T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-50334544",
-    "slug": "pied-de-nez-50334544",
-    "title": "Pied de nez",
-    "shortDescription": "Pied de nez",
-    "startAt": "2026-08-30T19:00:00+02:00",
-    "endAt": "2026-08-30T23:59:00+02:00",
-    "venue": "Teatro de Títeres de El Retiro",
-    "coordinates": [
-      -3.6866962,
-      40.4187197
-    ],
-    "category": "CuentacuentosTiteresMarionetas",
-    "audience": [
-      "Familias"
-    ],
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=e93e172e150be910VgnVCM200000f921e388RCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=e93e172e150be910VgnVCM200000f921e388RCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50334544",
-    "lastCheckedAt": "2026-08-06T16:59:19.832Z",
-    "expiresAt": "2026-08-30T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-50140512",
-    "slug": "pinturas-desde-la-cripta-50140512",
-    "title": "Pinturas desde la cripta",
-    "shortDescription": "Exposición. Paco Coya Del 30 de julio al 30 de agosto. Horario: De lunes a domingo de 10 a 21:30 horas. Entrada libre hasta completar aforo.",
-    "startAt": "2026-07-30T00:00:00+02:00",
-    "endAt": "2026-08-30T23:59:00+02:00",
-    "venue": "Centro Cultural Casa de Vacas (Retiro)",
-    "coordinates": [
-      -3.6840988,
-      40.4192106
-    ],
-    "category": "Exposiciones",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=76d13477341aa910VgnVCM100000891ecb1aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=76d13477341aa910VgnVCM100000891ecb1aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50140512",
-    "lastCheckedAt": "2026-08-06T16:59:19.833Z",
-    "expiresAt": "2026-08-30T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:00"
+      ]
+    }
   },
   {
     "id": "evt-50235439",
@@ -1071,18 +1406,24 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=d0938dfacaf8c910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50235439",
-    "lastCheckedAt": "2026-08-06T16:59:19.833Z",
-    "expiresAt": "2026-09-08T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-09T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:00"
+      ]
+    }
   },
   {
-    "id": "evt-50334571",
-    "slug": "puppet-pro-50334571",
-    "title": "Puppet Pro",
-    "shortDescription": "Puppet Pro",
-    "startAt": "2026-08-20T21:30:00+02:00",
-    "endAt": "2026-08-20T23:59:00+02:00",
+    "id": "evt-50399379",
+    "slug": "planeta-tierra-50399379",
+    "title": "Planeta Tierra",
+    "shortDescription": "Planeta Tierra",
+    "startAt": "2026-10-17T12:30:00+02:00",
+    "endAt": "2026-10-18T23:59:00+02:00",
     "venue": "Teatro de Títeres de El Retiro",
     "coordinates": [
       -3.6866962,
@@ -1092,15 +1433,96 @@
     "audience": [
       "Familias"
     ],
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f69f172e150be910VgnVCM200000f921e388RCRD",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=6cf9c3cc9e060a10VgnVCM200000f921e388RCRD",
     "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f69f172e150be910VgnVCM200000f921e388RCRD",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=6cf9c3cc9e060a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
-    "sourceEventId": "50334571",
-    "lastCheckedAt": "2026-08-06T16:59:19.834Z",
-    "expiresAt": "2026-08-20T23:59:00+02:00",
+    "sourceEventId": "50399379",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-10-19T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "12:30"
+      ],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": [
+          "MO",
+          "TU",
+          "WE",
+          "TH",
+          "FR",
+          "SA",
+          "SU"
+        ],
+        "untilExclusive": "2026-10-19T00:00:00+02:00",
+        "excludedDays": []
+      }
+    }
+  },
+  {
+    "id": "evt-50147338",
+    "slug": "pop-50147338",
+    "title": "Pop",
+    "shortDescription": "Música. Concierto. Coro Alderaán. Reparto de entradas desde una hora antes en el centro cultural. Máximo dos entradas por persona hasta completar aforo.",
+    "startAt": "2026-09-27T12:00:00+02:00",
+    "endAt": "2026-09-27T23:59:00+02:00",
+    "venue": "Centro Cultural Casa de Vacas (Retiro)",
+    "coordinates": [
+      -3.6840988,
+      40.4192106
+    ],
+    "category": "Musica",
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=2026e77de60ca910VgnVCM100000891ecb1aRCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=2026e77de60ca910VgnVCM100000891ecb1aRCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50147338",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-28T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "12:00"
+      ]
+    }
+  },
+  {
+    "id": "evt-50322790",
+    "slug": "recital-de-piano-50322790",
+    "title": "Recital de piano",
+    "shortDescription": "Adrián Sánchez Ballesteros. Obras de: Boulanger. Rachmaninoff. Mompou. Liszt. Mussorgsky. Reparto de entradas desde una hora antes en el centro cultural. Máximo dos entradas por persona hasta completar aforo.",
+    "startAt": "2026-09-20T12:00:00+02:00",
+    "endAt": "2026-09-20T23:59:00+02:00",
+    "venue": "Centro Cultural Casa de Vacas (Retiro)",
+    "coordinates": [
+      -3.6840988,
+      40.4192106
+    ],
+    "category": "Musica",
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=030b0775d496e910VgnVCM100000891ecb1aRCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=030b0775d496e910VgnVCM100000891ecb1aRCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50322790",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-21T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "12:00"
+      ]
+    }
   },
   {
     "id": "evt-50289806",
@@ -1121,10 +1543,16 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=0575176cd6fbd910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50289806",
-    "lastCheckedAt": "2026-08-06T16:59:19.835Z",
-    "expiresAt": "2026-09-13T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-14T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:00"
+      ]
+    }
   },
   {
     "id": "evt-50147445",
@@ -1148,71 +1576,24 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=566cd441c61ca910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50147445",
-    "lastCheckedAt": "2026-08-06T16:59:19.835Z",
-    "expiresAt": "2026-09-05T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-06T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "expired",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:00"
+      ]
+    }
   },
   {
-    "id": "evt-50286078",
-    "slug": "riofaunado-50286078",
-    "title": "Riofaunado",
-    "shortDescription": "Riofaunado",
-    "startAt": "2026-08-15T20:00:00+02:00",
-    "endAt": "2026-08-16T23:59:00+02:00",
-    "venue": "Teatro de Títeres de El Retiro",
-    "coordinates": [
-      -3.6866962,
-      40.4187197
-    ],
-    "category": "CuentacuentosTiteresMarionetas",
-    "audience": [
-      "Niños",
-      "Familias"
-    ],
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f2b7c9c4eafad910VgnVCM200000f921e388RCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f2b7c9c4eafad910VgnVCM200000f921e388RCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50286078",
-    "lastCheckedAt": "2026-08-06T16:59:19.836Z",
-    "expiresAt": "2026-08-16T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-50334541",
-    "slug": "saeta-50334541",
-    "title": "Saeta",
-    "shortDescription": "Saeta",
-    "startAt": "2026-08-31T21:30:00+02:00",
-    "endAt": "2026-08-31T23:59:00+02:00",
-    "venue": "Teatro de Títeres de El Retiro",
-    "coordinates": [
-      -3.6866962,
-      40.4187197
-    ],
-    "category": "CuentacuentosTiteresMarionetas",
-    "audience": [
-      "Familias"
-    ],
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=eced172e150be910VgnVCM200000f921e388RCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=eced172e150be910VgnVCM200000f921e388RCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50334541",
-    "lastCheckedAt": "2026-08-06T16:59:19.838Z",
-    "expiresAt": "2026-08-31T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-50202480",
-    "slug": "senda-guiada-el-uso-de-las-plantas-50202480",
-    "title": "Senda guiada 'El uso de las plantas'",
-    "shortDescription": "Itinerarios guiados por los Jardines del Buen Retiro dirigidos a público adulto. Ruta botánica dirigida a conocer y aprender sobre algunas especies de plantas y sobre sus usos. Sábado 29 de agosto de 10:00 a 11:30 horas. Punto de encuentro: Aula Ambiental La Cabaña del Retiro. Se",
-    "startAt": "2026-08-29T10:00:00+02:00",
-    "endAt": "2026-08-29T23:59:00+02:00",
+    "id": "evt-50173945",
+    "slug": "senda-guiada-las-maravillas-del-retiro-50173945",
+    "title": "Senda guiada 'Las maravillas del Retiro'",
+    "shortDescription": "Itinerario guiado por los Jardines del Buen Retiro dirigidos a público adulto. Ruta botánica e histórica enfocada a conocer los ejemplares de árboles singulares del Parque del Retiro. Viernes 11 de septiembre de 16:30 a 18:00 horas. Sábado 12 de septiembre de 10:00 a 11:30 horas ",
+    "startAt": "2026-09-11T16:30:00+02:00",
+    "endAt": "2026-09-13T23:59:00+02:00",
     "venue": "Aula ambiental La Cabaña del Retiro",
     "coordinates": [
       -3.679318,
@@ -1220,47 +1601,44 @@
     ],
     "category": "ItinerariosOtrasActividadesAmbientales",
     "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=54375a8b340eb910VgnVCM100000891ecb1aRCRD",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f4ebef7e4a54b910VgnVCM200000f921e388RCRD",
     "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=54375a8b340eb910VgnVCM100000891ecb1aRCRD",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f4ebef7e4a54b910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
-    "sourceEventId": "50202480",
-    "lastCheckedAt": "2026-08-06T16:59:19.839Z",
-    "expiresAt": "2026-08-29T23:59:00+02:00",
+    "sourceEventId": "50173945",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-14T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "16:30"
+      ],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": [
+          "MO",
+          "TU",
+          "WE",
+          "TH",
+          "FR",
+          "SA",
+          "SU"
+        ],
+        "untilExclusive": "2026-09-14T00:00:00+02:00",
+        "excludedDays": []
+      }
+    }
   },
   {
-    "id": "evt-50148218",
-    "slug": "senda-guiada-iniciacion-a-la-ornitologia-50148218",
-    "title": "Senda guiada 'Iniciación a la Ornitología'",
-    "shortDescription": "Itinerario guiado por los Jardines del Buen Retiro dirigidos a público adulto. Ruta enfocada en las aves que se pueden encontrar en el Retiro. Sábado 8 de agosto: de 10:00 a 11:30 horas. Punto de encuentro: Aula Ambiental La Cabaña del Retiro. Inscripción: Se requiere reserva pre",
-    "startAt": "2026-08-08T10:00:00+02:00",
-    "endAt": "2026-08-08T23:59:00+02:00",
-    "venue": "Aula ambiental La Cabaña del Retiro",
-    "coordinates": [
-      -3.679318,
-      40.409123
-    ],
-    "category": "ExcursionesItinerariosVisitas",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=aa8d95a1d05ca910VgnVCM100000891ecb1aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=aa8d95a1d05ca910VgnVCM100000891ecb1aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50148218",
-    "lastCheckedAt": "2026-08-06T16:59:19.839Z",
-    "expiresAt": "2026-08-08T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-50286911",
-    "slug": "senda-arboles-autoctonos-50286911",
-    "title": "Senda 'Árboles Autóctonos'",
-    "shortDescription": "Itinerarios guiados por los Jardines del Buen Retiro dirigidos a público adulto. Ruta botánica enfocada en aprender y conocer algunas de las especies de árboles y plantas típicos de los bosques de La Península. Sábado 22 de agosto: de 10:00 a 11:30 horas. Punto de encuentro: La C",
-    "startAt": "2026-08-22T10:00:00+02:00",
-    "endAt": "2026-08-22T23:59:00+02:00",
+    "id": "evt-50173923",
+    "slug": "senda-guiada-los-frutos-del-otono-50173923",
+    "title": "Senda guiada 'Los frutos del otoño'",
+    "shortDescription": "Itinerarios guiados por los Jardines del Buen Retiro dirigidos a público adulto. Ruta guiada para conocer las distintas especies y sus frutos en el Parque del Retiro. Viernes 25 de septiembre de 16:30 a 18:00 horas. Sábado 26 de septiembre de 10:00 a 11:30 horas y de 12:00 a 13:3",
+    "startAt": "2026-09-25T16:30:00+02:00",
+    "endAt": "2026-09-27T23:59:00+02:00",
     "venue": "Aula ambiental La Cabaña del Retiro",
     "coordinates": [
       -3.679318,
@@ -1268,95 +1646,126 @@
     ],
     "category": "ItinerariosOtrasActividadesAmbientales",
     "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=4fa9359b464bd910VgnVCM100000891ecb1aRCRD",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=4ce5b24e5754b910VgnVCM200000f921e388RCRD",
     "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=4fa9359b464bd910VgnVCM100000891ecb1aRCRD",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=4ce5b24e5754b910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
-    "sourceEventId": "50286911",
-    "lastCheckedAt": "2026-08-06T16:59:19.839Z",
-    "expiresAt": "2026-08-22T23:59:00+02:00",
+    "sourceEventId": "50173923",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-28T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "16:30"
+      ],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": [
+          "MO",
+          "TU",
+          "WE",
+          "TH",
+          "FR",
+          "SA",
+          "SU"
+        ],
+        "untilExclusive": "2026-09-28T00:00:00+02:00",
+        "excludedDays": []
+      }
+    }
   },
   {
-    "id": "evt-50334562",
-    "slug": "si-tuviera-un-huevo-50334562",
-    "title": "Si tuviera un huevo",
-    "shortDescription": "Si tuviera un huevo",
-    "startAt": "2026-08-23T19:00:00+02:00",
-    "endAt": "2026-08-23T23:59:00+02:00",
-    "venue": "Teatro de Títeres de El Retiro",
+    "id": "evt-50173965",
+    "slug": "senda-guiada-ruta-especies-exoticas-50173965",
+    "title": "Senda guiada 'Ruta especies exóticas'",
+    "shortDescription": "Itinerario guiado por los Jardines del Buen Retiro dirigidos a público adulto. Ruta enfocada a conocer y aprender sobre las especies exóticas y especies exóticas invasoras de plantas y animales que podemos encontrar en el Parque del Retiro. Viernes 4 de septiembre de 16:30 a 18:0",
+    "startAt": "2026-09-04T16:30:00+02:00",
+    "endAt": "2026-09-06T23:59:00+02:00",
+    "venue": "Aula ambiental La Cabaña del Retiro",
     "coordinates": [
-      -3.6866962,
-      40.4187197
+      -3.679318,
+      40.409123
     ],
-    "category": "CuentacuentosTiteresMarionetas",
-    "audience": [
-      "Familias"
-    ],
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=dede172e150be910VgnVCM200000f921e388RCRD",
+    "category": "ItinerariosOtrasActividadesAmbientales",
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=e53eef7e4a54b910VgnVCM200000f921e388RCRD",
     "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=dede172e150be910VgnVCM200000f921e388RCRD",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=e53eef7e4a54b910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
-    "sourceEventId": "50334562",
-    "lastCheckedAt": "2026-08-06T16:59:19.840Z",
-    "expiresAt": "2026-08-23T23:59:00+02:00",
+    "sourceEventId": "50173965",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-07T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "16:30"
+      ],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": [
+          "MO",
+          "TU",
+          "WE",
+          "TH",
+          "FR",
+          "SA",
+          "SU"
+        ],
+        "untilExclusive": "2026-09-07T00:00:00+02:00",
+        "excludedDays": []
+      }
+    }
   },
   {
-    "id": "evt-50336051",
-    "slug": "somion-50336051",
-    "title": "Sòmion",
-    "shortDescription": "Sòmion",
-    "startAt": "2026-08-29T21:00:00+02:00",
-    "endAt": "2026-08-29T23:59:00+02:00",
-    "venue": "Teatro de Títeres de El Retiro",
+    "id": "evt-50150270",
+    "slug": "senda-guiada-ruta-los-origenes-del-retiro-50150270",
+    "title": "Senda guiada 'Ruta los orígenes del Retiro'",
+    "shortDescription": "Itinerarios guiados por los Jardines del Buen Retiro dirigidos a público adulto. Ruta botánica e histórica centrada en los orígenes del Parque del Retiro y la parte noroeste del mismo. Viernes 18 de septiembre de 16:30 a 18:00 horas. Sábado 19 de septiembre de 10:00 a 11:30 horas",
+    "startAt": "2026-09-18T16:30:00+02:00",
+    "endAt": "2026-09-20T23:59:00+02:00",
+    "venue": "Aula ambiental La Cabaña del Retiro",
     "coordinates": [
-      -3.6866962,
-      40.4187197
+      -3.679318,
+      40.409123
     ],
-    "category": "CuentacuentosTiteresMarionetas",
-    "audience": [
-      "Niños",
-      "Familias"
-    ],
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=fa1ffac48f5be910VgnVCM100000891ecb1aRCRD",
+    "category": "ItinerariosOtrasActividadesAmbientales",
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=4cd9fa263daca910VgnVCM100000891ecb1aRCRD",
     "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=fa1ffac48f5be910VgnVCM100000891ecb1aRCRD",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=4cd9fa263daca910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
-    "sourceEventId": "50336051",
-    "lastCheckedAt": "2026-08-06T16:59:19.841Z",
-    "expiresAt": "2026-08-29T23:59:00+02:00",
+    "sourceEventId": "50150270",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-21T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-50334555",
-    "slug": "somos-yo-50334555",
-    "title": "Somos Yo",
-    "shortDescription": "Somos Yo",
-    "startAt": "2026-08-25T21:30:00+02:00",
-    "endAt": "2026-08-25T23:59:00+02:00",
-    "venue": "Teatro de Títeres de El Retiro",
-    "coordinates": [
-      -3.6866962,
-      40.4187197
-    ],
-    "category": "CuentacuentosTiteresMarionetas",
-    "audience": [
-      "Niños",
-      "Familias"
-    ],
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=42ae172e150be910VgnVCM200000f921e388RCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=42ae172e150be910VgnVCM200000f921e388RCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50334555",
-    "lastCheckedAt": "2026-08-06T16:59:19.841Z",
-    "expiresAt": "2026-08-25T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "16:30"
+      ],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": [
+          "MO",
+          "TU",
+          "WE",
+          "TH",
+          "FR",
+          "SA",
+          "SU"
+        ],
+        "untilExclusive": "2026-09-21T00:00:00+02:00",
+        "excludedDays": []
+      }
+    }
   },
   {
     "id": "evt-50147279",
@@ -1377,10 +1786,16 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=1520e77de60ca910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50147279",
-    "lastCheckedAt": "2026-08-06T16:59:19.841Z",
-    "expiresAt": "2026-09-04T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-05T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "expired",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "18:00"
+      ]
+    }
   },
   {
     "id": "evt-50343651",
@@ -1391,8 +1806,8 @@
     "endAt": "2026-09-25T23:59:00+02:00",
     "venue": "Centro de Educación Ambiental El Retiro",
     "coordinates": [
-      -3.6789,
-      40.4165
+      -3.68618,
+      40.409435
     ],
     "category": "CursosTalleres",
     "priceNote": "Gratuito según fuente municipal",
@@ -1401,10 +1816,16 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=a1c5b2de0feee910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50343651",
-    "lastCheckedAt": "2026-08-06T16:59:19.842Z",
-    "expiresAt": "2026-09-25T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-26T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "16:00"
+      ]
+    }
   },
   {
     "id": "evt-11771314",
@@ -1415,8 +1836,8 @@
     "endAt": "2026-09-27T23:59:00+02:00",
     "venue": "Centro de Educación Ambiental El Retiro",
     "coordinates": [
-      -3.6789,
-      40.4165
+      -3.68618,
+      40.409435
     ],
     "category": "actividad",
     "priceNote": "Gratuito según fuente municipal",
@@ -1425,42 +1846,24 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=bc6bef951fa33810VgnVCM1000001d4a900aRCRD",
     "sourceTier": "A",
     "sourceEventId": "11771314",
-    "lastCheckedAt": "2026-08-06T16:59:19.843Z",
-    "expiresAt": "2026-09-27T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-28T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-11771304",
-    "slug": "taller-de-huerto-familiar-11771304",
-    "title": "Taller de huerto familiar",
-    "shortDescription": "El huerto es una herramienta didáctica muy atractiva para trabajar la concienciación ambiental, los hábitos saludables y las relaciones sociales. Los más pequeños disfrutan en contacto con la tierra y aprenden valores como la responsabilidad y el trabajo colaborativo. Se realizar",
-    "startAt": "2026-08-16T10:30:00+02:00",
-    "endAt": "2026-08-16T23:59:00+02:00",
-    "venue": "Centro de Educación Ambiental El Retiro",
-    "coordinates": [
-      -3.6789,
-      40.4165
-    ],
-    "category": "actividad",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=e1761f7a68a33810VgnVCM1000001d4a900aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=e1761f7a68a33810VgnVCM1000001d4a900aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "11771304",
-    "lastCheckedAt": "2026-08-06T16:59:19.843Z",
-    "expiresAt": "2026-08-16T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "10:30"
+      ]
+    }
   },
   {
     "id": "evt-50173971",
     "slug": "taller-conoce-los-insectos-y-otros-habitantes-de-la-cabana-50173971",
     "title": "Taller 'Conoce los insectos y otros habitantes de La Cabaña'",
-    "shortDescription": "Dinámicas participativas para grupos familiares que incluyen recorridos por el parque y talleres creativos. Domingo 23 de agosto: de 10:00 a 11:30 horas. Dirigido a: niños y niñas de 4 a 7 años. Punto de encuentro: Aula Ambiental La Cabaña del Retiro. Inscripción: Se requiere res",
-    "startAt": "2026-08-23T10:00:00+02:00",
-    "endAt": "2026-08-23T23:59:00+02:00",
+    "shortDescription": "Dinámicas participativas para grupos familiares que incluyen recorridos por el parque y talleres creativos. Domingo 13 de septiembre: de 11:00 a 12:30 horas. Dirigido a: niños y niñas de 4 a 7 años. Punto de encuentro: Aula Ambiental La Cabaña del Retiro. Inscripción: Se requiere",
+    "startAt": "2026-09-13T11:00:00+02:00",
+    "endAt": "2026-09-13T23:59:00+02:00",
     "venue": "Aula ambiental La Cabaña del Retiro",
     "coordinates": [
       -3.679318,
@@ -1476,117 +1879,24 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=2881ef7e4a54b910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50173971",
-    "lastCheckedAt": "2026-08-06T16:59:19.844Z",
-    "expiresAt": "2026-08-23T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-14T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "11:00"
+      ]
+    }
   },
   {
-    "id": "evt-50174252",
-    "slug": "taller-pequenas-cientificas-50174252",
-    "title": "Taller 'Pequeñas científicas'",
-    "shortDescription": "Dinámicas participativas para grupos familiares, que incluyen recorridos por el Parque y talleres creativos. Domingo 30 de agosto: de 10:00 a 11:30 horas. Dirigido a: niños y niñas a partir de 8 años. Punto de encuentro: Aula Ambiental La Cabaña del Retiro. Inscripción: Se requie",
-    "startAt": "2026-08-30T10:00:00+02:00",
-    "endAt": "2026-08-30T23:59:00+02:00",
-    "venue": "Aula ambiental La Cabaña del Retiro",
-    "coordinates": [
-      -3.679318,
-      40.409123
-    ],
-    "category": "CursosTalleres",
-    "audience": [
-      "Niños"
-    ],
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=d73164933864b910VgnVCM100000891ecb1aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=d73164933864b910VgnVCM100000891ecb1aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50174252",
-    "lastCheckedAt": "2026-08-06T16:59:19.844Z",
-    "expiresAt": "2026-08-30T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-50346069",
-    "slug": "taller-extraccion-de-semillas-50346069",
-    "title": "Taller: Extracción de semillas",
-    "shortDescription": "Taller: Extracción de semillas",
-    "startAt": "2026-09-24T11:00:00+02:00",
-    "endAt": "2026-09-24T23:59:00+02:00",
-    "venue": "Centro de Educación Ambiental El Retiro",
-    "coordinates": [
-      -3.6789,
-      40.4165
-    ],
-    "category": "CursosTalleres",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=25bd980179dfe910VgnVCM200000f921e388RCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=25bd980179dfe910VgnVCM200000f921e388RCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50346069",
-    "lastCheckedAt": "2026-08-06T16:59:19.845Z",
-    "expiresAt": "2026-09-24T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-11771324",
-    "slug": "taller-fauna-del-huerto-11771324",
-    "title": "Taller: Fauna del huerto",
-    "shortDescription": "Se trata de una actividad diseñada para familias de acercamiento a la Biodiversidad presente en los Huertos. La actividad incorpora un recorrido por las instalaciones del Huerto del Retiro observando y reflexionando sobre la variada diversidad e introduciéndonos en las distintas ",
-    "startAt": "2026-08-09T10:30:00+02:00",
-    "endAt": "2026-08-09T23:59:00+02:00",
-    "venue": "Centro de Educación Ambiental El Retiro",
-    "coordinates": [
-      -3.6789,
-      40.4165
-    ],
-    "category": "actividad",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f47def951fa33810VgnVCM1000001d4a900aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f47def951fa33810VgnVCM1000001d4a900aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "11771324",
-    "lastCheckedAt": "2026-08-06T16:59:19.845Z",
-    "expiresAt": "2026-08-09T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-11771315",
-    "slug": "taller-fauna-del-huerto-11771315",
-    "title": "Taller: Fauna del Huerto",
-    "shortDescription": "Se trata de una actividad diseñada para familias de acercamiento a la Biodiversidad presente en los Huertos. La actividad incorpora un recorrido por las instalaciones del Huerto del Retiro observando y reflexionando sobre la variada diversidad e introduciéndonos en las distintas ",
-    "startAt": "2026-09-13T10:30:00+02:00",
-    "endAt": "2026-09-13T23:59:00+02:00",
-    "venue": "Centro de Educación Ambiental El Retiro",
-    "coordinates": [
-      -3.6789,
-      40.4165
-    ],
-    "category": "actividad",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=c2fbef951fa33810VgnVCM1000001d4a900aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=c2fbef951fa33810VgnVCM1000001d4a900aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "11771315",
-    "lastCheckedAt": "2026-08-06T16:59:19.845Z",
-    "expiresAt": "2026-09-13T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-50202440",
-    "slug": "taller-aprende-a-identificar-insectos-de-la-cabana-50202440",
-    "title": "Taller: 'Aprende a identificar insectos de La Cabaña'",
-    "shortDescription": "Dinámicas participativas para grupos familiares, que incluyen recorridos por el parque y talleres creativos. Sábado 22 de agosto: de 10:00 a 11:30 horas Dirigido a: niños y niñas a partir de 8 años. Punto de encuentro: Aula Ambiental La Cabaña del Retiro. Inscripción: Se requiere",
-    "startAt": "2026-08-22T10:00:00+02:00",
-    "endAt": "2026-08-22T23:59:00+02:00",
+    "id": "evt-50149650",
+    "slug": "taller-las-huellas-del-bosque-50149650",
+    "title": "Taller 'Las huellas del bosque'",
+    "shortDescription": "Dinámicas participativas para grupos familiares, que incluyen recorridos por el Parque y talleres creativos. Domingo 20 de septiembre de 11:00 a 12:30 horas. Dirigido a: niños y niñas a partir de 8 años. Punto de encuentro: Aula Ambiental La Cabaña del Retiro. Inscripción: Se req",
+    "startAt": "2026-09-20T11:00:00+02:00",
+    "endAt": "2026-09-20T23:59:00+02:00",
     "venue": "Aula ambiental La Cabaña del Retiro",
     "coordinates": [
       -3.679318,
@@ -1597,23 +1907,89 @@
       "Niños"
     ],
     "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=66dd477d230eb910VgnVCM100000891ecb1aRCRD",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=8b7cede7c4aca910VgnVCM100000891ecb1aRCRD",
     "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=66dd477d230eb910VgnVCM100000891ecb1aRCRD",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=8b7cede7c4aca910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
-    "sourceEventId": "50202440",
-    "lastCheckedAt": "2026-08-06T16:59:19.846Z",
-    "expiresAt": "2026-08-22T23:59:00+02:00",
+    "sourceEventId": "50149650",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-21T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "11:00"
+      ]
+    }
   },
   {
-    "id": "evt-50316805",
-    "slug": "the-bell-50316805",
-    "title": "The Bell",
-    "shortDescription": "The Bell",
-    "startAt": "2026-08-08T20:00:00+02:00",
-    "endAt": "2026-08-09T23:59:00+02:00",
+    "id": "evt-50346069",
+    "slug": "taller-extraccion-de-semillas-50346069",
+    "title": "Taller: Extracción de semillas",
+    "shortDescription": "Taller: Extracción de semillas",
+    "startAt": "2026-09-24T11:00:00+02:00",
+    "endAt": "2026-09-24T23:59:00+02:00",
+    "venue": "Centro de Educación Ambiental El Retiro",
+    "coordinates": [
+      -3.68618,
+      40.409435
+    ],
+    "category": "CursosTalleres",
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=25bd980179dfe910VgnVCM200000f921e388RCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=25bd980179dfe910VgnVCM200000f921e388RCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50346069",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-25T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "11:00"
+      ]
+    }
+  },
+  {
+    "id": "evt-11771315",
+    "slug": "taller-fauna-del-huerto-11771315",
+    "title": "Taller: Fauna del Huerto",
+    "shortDescription": "Se trata de una actividad diseñada para familias de acercamiento a la Biodiversidad presente en los Huertos. La actividad incorpora un recorrido por las instalaciones del Huerto del Retiro observando y reflexionando sobre la variada diversidad e introduciéndonos en las distintas ",
+    "startAt": "2026-09-13T10:30:00+02:00",
+    "endAt": "2026-09-13T23:59:00+02:00",
+    "venue": "Centro de Educación Ambiental El Retiro",
+    "coordinates": [
+      -3.68618,
+      40.409435
+    ],
+    "category": "actividad",
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=c2fbef951fa33810VgnVCM1000001d4a900aRCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=c2fbef951fa33810VgnVCM1000001d4a900aRCRD",
+    "sourceTier": "A",
+    "sourceEventId": "11771315",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-14T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "10:30"
+      ]
+    }
+  },
+  {
+    "id": "evt-50399382",
+    "slug": "titeres-a-cielo-abierto-2026-50399382",
+    "title": "Títeres a cielo abierto 2026",
+    "shortDescription": "Títeres a cielo abierto 2026",
+    "startAt": "2026-10-24T12:30:00+02:00",
+    "endAt": "2026-10-25T23:59:00+01:00",
     "venue": "Teatro de Títeres de El Retiro",
     "coordinates": [
       -3.6866962,
@@ -1623,15 +1999,114 @@
     "audience": [
       "Familias"
     ],
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=3bcab90db7e4e910VgnVCM200000f921e388RCRD",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=131ac3cc9e060a10VgnVCM200000f921e388RCRD",
     "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=3bcab90db7e4e910VgnVCM200000f921e388RCRD",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=131ac3cc9e060a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
-    "sourceEventId": "50316805",
-    "lastCheckedAt": "2026-08-06T16:59:19.847Z",
-    "expiresAt": "2026-08-09T23:59:00+02:00",
+    "sourceEventId": "50399382",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-10-26T00:00:00+01:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "12:30"
+      ],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": [
+          "MO",
+          "TU",
+          "WE",
+          "TH",
+          "FR",
+          "SA",
+          "SU"
+        ],
+        "untilExclusive": "2026-10-26T00:00:00+01:00",
+        "excludedDays": []
+      }
+    }
+  },
+  {
+    "id": "evt-50380598",
+    "slug": "trapos-50380598",
+    "title": "Trapos",
+    "shortDescription": "Trapos",
+    "startAt": "2026-09-26T18:30:00+02:00",
+    "endAt": "2026-09-27T23:59:00+02:00",
+    "venue": "Teatro de Títeres de El Retiro",
+    "coordinates": [
+      -3.6866962,
+      40.4187197
+    ],
+    "category": "CuentacuentosTiteresMarionetas",
+    "audience": [
+      "Familias"
+    ],
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=d26a2ce6f6e00a10VgnVCM200000f921e388RCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=d26a2ce6f6e00a10VgnVCM200000f921e388RCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50380598",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-28T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "18:30"
+      ],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": [
+          "MO",
+          "TU",
+          "WE",
+          "TH",
+          "FR",
+          "SA",
+          "SU"
+        ],
+        "untilExclusive": "2026-09-28T00:00:00+02:00",
+        "excludedDays": []
+      }
+    }
+  },
+  {
+    "id": "evt-50146209",
+    "slug": "trilogia-andaluza-50146209",
+    "title": "Trilogía andaluza",
+    "shortDescription": "Concierto de música clásica española. Concierto ilustrado con fotografías, narrado y cantado. Compositor: Miguel Ángel Villalba García. Reparto de entradas desde una hora antes en el centro cultural. Máximo dos entradas por persona hasta completar aforo",
+    "startAt": "2026-09-17T19:00:00+02:00",
+    "endAt": "2026-09-17T23:59:00+02:00",
+    "venue": "Centro Cultural Casa de Vacas (Retiro)",
+    "coordinates": [
+      -3.6840988,
+      40.4192106
+    ],
+    "category": "Musica",
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=d2f4832f37fba910VgnVCM200000f921e388RCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=d2f4832f37fba910VgnVCM200000f921e388RCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50146209",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-18T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:00"
+      ]
+    }
   },
   {
     "id": "evt-50103106",
@@ -1652,10 +2127,87 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=31f970c11402a910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50103106",
-    "lastCheckedAt": "2026-08-06T16:59:19.849Z",
-    "expiresAt": "2026-09-30T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-10-01T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "19:00"
+      ]
+    }
+  },
+  {
+    "id": "evt-50173921",
+    "slug": "visita-guiada-a-la-casa-de-campo-50173921",
+    "title": "Visita guiada a la Casa de Campo",
+    "shortDescription": "Visita externa guiada para público adulto. Miércoles 23 de septiembre de 10:30 a 13:00 horas. Punto de encuentro salida Metro Casa de Campo. Inscripción: Se requiere reserva previa a través de formulario , teléfono (915133250 - 915040131) o de forma presencial. Todas las activida",
+    "startAt": "2026-09-23T10:30:00+02:00",
+    "endAt": "2026-09-23T23:59:00+02:00",
+    "venue": "Aula ambiental La Cabaña del Retiro",
+    "coordinates": [
+      -3.679318,
+      40.409123
+    ],
+    "category": "ExcursionesItinerariosVisitas",
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=3eb4b24e5754b910VgnVCM200000f921e388RCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=3eb4b24e5754b910VgnVCM200000f921e388RCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50173921",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-24T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "10:30"
+      ]
+    }
+  },
+  {
+    "id": "evt-50148204",
+    "slug": "visita-guiada-a-la-fuente-del-berro-50148204",
+    "title": "Visita guiada a la Fuente del Berro",
+    "shortDescription": "Visita externa guiada para público adulto. Miércoles 16 y 30 de septiembre de 10:30 a 13:00 horas. Punto de encuentro: Metro O´Donnell, salida Jorge Juan - Doctor Esquerdo. Inscripción: Se requiere reserva previa a través de formulario , teléfono (915133250 - 915040131) o de form",
+    "startAt": "2026-09-16T10:30:00+02:00",
+    "endAt": "2026-09-30T23:59:00+02:00",
+    "venue": "Aula ambiental La Cabaña del Retiro",
+    "coordinates": [
+      -3.679318,
+      40.409123
+    ],
+    "category": "ItinerariosOtrasActividadesAmbientales",
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=adf895a1d05ca910VgnVCM100000891ecb1aRCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=adf895a1d05ca910VgnVCM100000891ecb1aRCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50148204",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-10-01T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "10:30"
+      ],
+      "recurrence": {
+        "frequency": "WEEKLY",
+        "interval": 1,
+        "byDay": [
+          "WE"
+        ],
+        "untilExclusive": "2026-10-01T00:00:00+02:00",
+        "excludedDays": [
+          "2026-09-23"
+        ]
+      }
+    }
   },
   {
     "id": "evt-50235019",
@@ -1676,18 +2228,24 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=5dcdabb225f8c910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50235019",
-    "lastCheckedAt": "2026-08-06T16:59:19.852Z",
-    "expiresAt": "2026-09-13T23:59:00+02:00",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-14T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "12:00"
+      ]
+    }
   },
   {
-    "id": "evt-50174277",
-    "slug": "yincana-de-viverismo-50174277",
-    "title": "Yincana de viverismo",
-    "shortDescription": "Dinámicas participativas para grupos familiares, que incluyen recorridos por el parque y talleres creativos. Domingo 9 de agosto: de 10:00 a 11:30 horas. Dirigido a: niños y niñas de 4 a 7 años. Punto de encuentro: Aula Ambiental La Cabaña del Retiro. Inscripción: Se requiere res",
-    "startAt": "2026-08-09T10:00:00+02:00",
-    "endAt": "2026-08-09T23:59:00+02:00",
+    "id": "evt-50173982",
+    "slug": "yincana-ornitologica-50173982",
+    "title": "Yincana ornitológica",
+    "shortDescription": "Dinámicas participativas para grupos familiares, que incluyen recorridos por el parque y talleres creativos. Dirigido a: niños y niñas de 4 a 7 años. Sábado 19 de septiembre: de 16:30 a 18:00 horas. Punto de encuentro: Aula Ambiental La Cabaña del Retiro. Inscripción: Se requiere",
+    "startAt": "2026-09-19T16:30:00+02:00",
+    "endAt": "2026-09-19T23:59:00+02:00",
     "venue": "Aula ambiental La Cabaña del Retiro",
     "coordinates": [
       -3.679318,
@@ -1698,23 +2256,251 @@
       "Niños"
     ],
     "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=46eb4c9c7a64b910VgnVCM100000891ecb1aRCRD",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=a681ef7e4a54b910VgnVCM200000f921e388RCRD",
     "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=46eb4c9c7a64b910VgnVCM100000891ecb1aRCRD",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=a681ef7e4a54b910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
-    "sourceEventId": "50174277",
-    "lastCheckedAt": "2026-08-06T16:59:19.853Z",
-    "expiresAt": "2026-08-09T23:59:00+02:00",
+    "sourceEventId": "50173982",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-20T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "16:30"
+      ]
+    }
   },
   {
-    "id": "evt-50174281",
-    "slug": "yincana-explorando-con-brujula-50174281",
-    "title": "Yincana 'Explorando con brújula'",
-    "shortDescription": "Actividades dirigidas a grupos familiares. Dinámicas participativas para grupos familiares, que incluyen recorridos por el Parque y talleres creativos. Domingo 16 de agosto: de 10:00 a 11:30 horas. Dirigido a: niños y niñas a partir de 8 años. Punto de encuentro: Aula Ambiental L",
-    "startAt": "2026-08-16T10:00:00+02:00",
-    "endAt": "2026-08-16T23:59:00+02:00",
+    "id": "evt-50148887",
+    "slug": "yincana-descubriendo-los-frutos-del-otono-50148887",
+    "title": "Yincana 'Descubriendo los frutos del otoño'",
+    "shortDescription": "Dinámicas participativas para grupos familiares, que incluyen recorridos por el Parque y talleres creativos. Sábado 26 de septiembre de 16:30 a 18:00 horas. Dirigido a niños y niñas entre 4 y 7 años. Punto de encuentro: Aula Ambiental La Cabaña del Retiro. Inscripción: Se requier",
+    "startAt": "2026-09-26T16:30:00+02:00",
+    "endAt": "2026-09-26T23:59:00+02:00",
+    "venue": "Aula ambiental La Cabaña del Retiro",
+    "coordinates": [
+      -3.679318,
+      40.409123
+    ],
+    "category": "ItinerariosOtrasActividadesAmbientales",
+    "audience": [
+      "Niños"
+    ],
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f0549985385ca910VgnVCM100000891ecb1aRCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f0549985385ca910VgnVCM100000891ecb1aRCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50148887",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-27T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "16:30"
+      ]
+    }
+  },
+  {
+    "id": "evt-50372929",
+    "slug": "a-taste-of-the-moon-con-mamen-storyteller-50372929",
+    "title": "'A taste of the moon' con Mamen Storyteller",
+    "shortDescription": "Con estos cuentos viajaremos a mundos mágicos, conoceremos personajes divertidos y viviremos emocionantes aventuras… ¡todo en inglés! Ven a disfrutar de una sesión especial de cuentacuentos, donde los más pequeños descubrirán el placer de las historias mientras se familiarizan co",
+    "startAt": "2026-09-30T18:00:00+02:00",
+    "endAt": "2026-09-30T23:59:00+02:00",
+    "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)",
+    "coordinates": [
+      -3.6789381,
+      40.4167401
+    ],
+    "category": "CuentacuentosTiteresMarionetas",
+    "audience": [
+      "Niños"
+    ],
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=d42f72e1112bf910VgnVCM100000891ecb1aRCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=d42f72e1112bf910VgnVCM100000891ecb1aRCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50372929",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-10-01T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "18:00"
+      ]
+    }
+  },
+  {
+    "id": "evt-50402454",
+    "slug": "brizna-de-silencio-de-sonia-bautista-50402454",
+    "title": "'Brizna de silencio' de Sonia Bautista",
+    "shortDescription": "'Brizna de silencio' de Sonia Bautista",
+    "startAt": "2026-09-11T18:15:00+02:00",
+    "endAt": "2026-09-11T23:59:00+02:00",
+    "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)",
+    "coordinates": [
+      -3.6789381,
+      40.4167401
+    ],
+    "category": "RecitalesPresentacionesActosLiterarios",
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=4fcfb270a1660a10VgnVCM200000f921e388RCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=4fcfb270a1660a10VgnVCM200000f921e388RCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50402454",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-12T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "18:15"
+      ]
+    }
+  },
+  {
+    "id": "evt-50389043",
+    "slug": "el-viaje-de-la-maternidad-de-raquel-huescar-parraga-50389043",
+    "title": "'El viaje de la maternidad' de Raquel Huéscar Párraga",
+    "shortDescription": "'El viaje de la maternidad' de Raquel Huéscar Párraga",
+    "startAt": "2026-09-04T18:00:00+02:00",
+    "endAt": "2026-09-04T23:59:00+02:00",
+    "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)",
+    "coordinates": [
+      -3.6789381,
+      40.4167401
+    ],
+    "category": "RecitalesPresentacionesActosLiterarios",
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=6ffc507221240a10VgnVCM100000891ecb1aRCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=6ffc507221240a10VgnVCM100000891ecb1aRCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50389043",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-05T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "expired",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "18:00"
+      ]
+    }
+  },
+  {
+    "id": "evt-50396279",
+    "slug": "lo-que-no-se-ve-en-la-radio-de-javier-garcia-romero-50396279",
+    "title": "'Lo que no se ve en la radio' de Javier García Romero",
+    "shortDescription": "'Lo que no se ve en la radio' de Javier García Romero",
+    "startAt": "2026-09-10T18:00:00+02:00",
+    "endAt": "2026-09-10T23:59:00+02:00",
+    "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)",
+    "coordinates": [
+      -3.6789381,
+      40.4167401
+    ],
+    "category": "RecitalesPresentacionesActosLiterarios",
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=5053d12b33c50a10VgnVCM200000f921e388RCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=5053d12b33c50a10VgnVCM200000f921e388RCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50396279",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-11T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "18:00"
+      ]
+    }
+  },
+  {
+    "id": "evt-50150285",
+    "slug": "nuestros-companeros-mas-fieles-convivir-respetar-y-proteger-a-los-animal",
+    "title": "'Nuestros compañeros más fieles: convivir, respetar y proteger a los animales'",
+    "shortDescription": "Charla educativa y actividad participativa donde, acompañados por uno de nuestros perros, descubriremos qué significa realmente compartir la vida con un animal. Hablaremos sobre la importancia de la adopción responsable, la realidad del abandono en España y cómo cada persona pued",
+    "startAt": "2026-09-12T16:30:00+02:00",
+    "endAt": "2026-09-12T23:59:00+02:00",
+    "venue": "Aula ambiental La Cabaña del Retiro",
+    "coordinates": [
+      -3.679318,
+      40.409123
+    ],
+    "category": "ItinerariosOtrasActividadesAmbientales",
+    "audience": [
+      "Niños"
+    ],
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=7b0cfa263daca910VgnVCM100000891ecb1aRCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=7b0cfa263daca910VgnVCM100000891ecb1aRCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50150285",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-13T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "16:30"
+      ]
+    }
+  },
+  {
+    "id": "evt-50371426",
+    "slug": "perrito-se-va-de-paseo-con-nelson-calderon-50371426",
+    "title": "'Perrito se va de paseo' con Nelson Calderón",
+    "shortDescription": "Te invitamos a disfrutar de una sesión de bebecuentos para estimular los sentidos y fortalecer elvínculo afectivo con tu bebé iniciándole en el maravilloso mundo del libro y de la lectura. Las historias están adaptadas para bebés de 0 a 24 meses. Dos sesiones consecutivas (18 y 1",
+    "startAt": "2026-09-09T18:00:00+02:00",
+    "endAt": "2026-09-09T23:59:00+02:00",
+    "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)",
+    "coordinates": [
+      -3.6789381,
+      40.4167401
+    ],
+    "category": "CuentacuentosTiteresMarionetas",
+    "audience": [
+      "Niños"
+    ],
+    "priceNote": "Gratuito según fuente municipal",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=985230a5208af910VgnVCM200000f921e388RCRD",
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=985230a5208af910VgnVCM200000f921e388RCRD",
+    "sourceTier": "A",
+    "sourceEventId": "50371426",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-10T00:00:00+02:00",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "18:00"
+      ]
+    }
+  },
+  {
+    "id": "evt-50174266",
+    "slug": "que-son-los-ecosistemas-50174266",
+    "title": "¿Qué son los ecosistemas?",
+    "shortDescription": "Dinámicas participativas para grupos familiares, que incluyen recorridos por el Parque y talleres creativos. Yincana. Sábado 5 de septiembre de 16:30 a 18:00 horas. Dirigido a: niños y niñas a partir de 8 años. Punto de encuentro: Aula Ambiental La Cabaña del Retiro. Inscripción:",
+    "startAt": "2026-09-05T16:30:00+02:00",
+    "endAt": "2026-09-05T23:59:00+02:00",
     "venue": "Aula ambiental La Cabaña del Retiro",
     "coordinates": [
       -3.679318,
@@ -1725,88 +2511,20 @@
       "Niños"
     ],
     "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=21004c9c7a64b910VgnVCM100000891ecb1aRCRD",
+    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=c28764933864b910VgnVCM100000891ecb1aRCRD",
     "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=21004c9c7a64b910VgnVCM100000891ecb1aRCRD",
+    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=c28764933864b910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
-    "sourceEventId": "50174281",
-    "lastCheckedAt": "2026-08-06T16:59:19.853Z",
-    "expiresAt": "2026-08-16T23:59:00+02:00",
+    "sourceEventId": "50174266",
+    "lastCheckedAt": "2026-09-06T16:37:26.939Z",
+    "expiresAt": "2026-09-06T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-50334568",
-    "slug": "ay-que-lio-50334568",
-    "title": "¡Ay qué lío!",
-    "shortDescription": "¡Ay qué lío!",
-    "startAt": "2026-08-21T21:30:00+02:00",
-    "endAt": "2026-08-21T23:59:00+02:00",
-    "venue": "Teatro de Títeres de El Retiro",
-    "coordinates": [
-      -3.6866962,
-      40.4187197
-    ],
-    "category": "CuentacuentosTiteresMarionetas",
-    "audience": [
-      "Familias"
-    ],
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f53f172e150be910VgnVCM200000f921e388RCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f53f172e150be910VgnVCM200000f921e388RCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50334568",
-    "lastCheckedAt": "2026-08-06T16:59:19.859Z",
-    "expiresAt": "2026-08-21T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-50346118",
-    "slug": "una-manana-en-el-huerto-50346118",
-    "title": "¡Una mañana en el huerto!",
-    "shortDescription": "¡Una mañana en el huerto!",
-    "startAt": "2026-08-23T10:00:00+02:00",
-    "endAt": "2026-08-23T23:59:00+02:00",
-    "venue": "Centro de Educación Ambiental El Retiro",
-    "coordinates": [
-      -3.6789,
-      40.4165
-    ],
-    "category": "CursosTalleres",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=97027e415adfe910VgnVCM200000f921e388RCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=97027e415adfe910VgnVCM200000f921e388RCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50346118",
-    "lastCheckedAt": "2026-08-06T16:59:19.859Z",
-    "expiresAt": "2026-08-23T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
-  },
-  {
-    "id": "evt-50346119",
-    "slug": "una-manana-en-el-huerto-50346119",
-    "title": "¡Una mañana en el huerto!",
-    "shortDescription": "¡Una mañana en el huerto!",
-    "startAt": "2026-08-30T10:00:00+02:00",
-    "endAt": "2026-08-30T23:59:00+02:00",
-    "venue": "Centro de Educación Ambiental El Retiro",
-    "coordinates": [
-      -3.6789,
-      40.4165
-    ],
-    "category": "CursosTalleres",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=3a027e415adfe910VgnVCM200000f921e388RCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=3a027e415adfe910VgnVCM200000f921e388RCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50346119",
-    "lastCheckedAt": "2026-08-06T16:59:19.859Z",
-    "expiresAt": "2026-08-30T23:59:00+02:00",
-    "confidence": 0.9,
-    "status": "published"
+    "status": "expired",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": [
+        "16:30"
+      ]
+    }
   }
 ]

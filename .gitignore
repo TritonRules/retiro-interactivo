@@ -27,6 +27,8 @@ pnpm-debug.log*
 docs/qa/screenshots/
 playwright-report/
 test-results/
+dist-e2e/
+blob-report/
 
 # Caché de recolectores (respuestas crudas de terceros)
 automation/cache/

@@ -1,0 +1,135 @@
+{
+  "reviewDate": "2026-09-07",
+  "meaning": "Cinco defectos reproducidos. Las aserciones verifican los defectos observados; no son tests de aceptación.",
+  "productWrites": false,
+  "realDatasetCases": [
+    "T1"
+  ],
+  "syntheticCases": [
+    "T2",
+    "T3",
+    "T4",
+    "T5"
+  ],
+  "findings": [
+    {
+      "id": "T1",
+      "provenance": "REAL: src/data/events.json",
+      "eventId": "evt-50346030",
+      "title": "90 años de la declaración del Parque del Retiro como Bien de Interés Cultural",
+      "now": "2026-09-06T23:30:00+02:00",
+      "observed": {
+        "endKnown": false,
+        "state": "in-progress",
+        "badge": "En curso"
+      },
+      "expected": "No afirmar En curso cuando el fin solo es una ventana de visibilidad.",
+      "locations": [
+        "src/utils/eventPresentation.ts:33",
+        "src/utils/eventSchedule.ts:245"
+      ]
+    },
+    {
+      "id": "T2",
+      "provenance": "SYNTHETIC",
+      "observed": {
+        "startAt": "2026-09-07T10:00:00+02:00",
+        "expiresAt": "2026-09-07T10:00:00+02:00",
+        "currentAt1100": 0,
+        "dateOnlySessions": 0,
+        "autumnExpiresAt": "2026-10-25T00:30:00+02:00"
+      },
+      "expected": "Sin dtend, expiresAt debe ser la siguiente medianoche Madrid; en el caso de otoño, 2026-10-26T00:00:00+01:00.",
+      "locations": [
+        "automation/normalizers/normalize-events.mjs:265"
+      ]
+    },
+    {
+      "id": "T3",
+      "provenance": "SYNTHETIC",
+      "observed": {
+        "offsetSeriesStart": "2026-09-06T08:00:00+00:00",
+        "offsetSeriesMadridHour": "08:00",
+        "datePlusTimeSchedule": [
+          "18:00"
+        ],
+        "datePlusTimeMadridHour": "00:00"
+      },
+      "expected": "El pase de serie debe ser a las 10:00 Madrid; la fecha con time=18:00 debe generar el pase a las 18:00.",
+      "locations": [
+        "src/utils/eventSchedule.ts:93",
+        "src/utils/eventSchedule.ts:228"
+      ]
+    },
+    {
+      "id": "T4",
+      "provenance": "SYNTHETIC",
+      "observed": {
+        "validationCases": [
+          {
+            "mutation": {
+              "endAt": "this is invalid"
+            },
+            "tsAccepted": true,
+            "cliAccepted": true
+          },
+          {
+            "mutation": {
+              "startAt": "2026-02-30T10:00:00+01:00"
+            },
+            "tsAccepted": true,
+            "cliAccepted": true
+          },
+          {
+            "mutation": {
+              "endAt": "2026-09-01T11:00:00+02:00"
+            },
+            "tsAccepted": false,
+            "cliAccepted": true
+          },
+          {
+            "mutation": {
+              "lastCheckedAt": "this is invalid"
+            },
+            "tsAccepted": false,
+            "cliAccepted": true
+          }
+        ],
+        "invalidCivilNormalized": "2026-03-02T09:00:00+00:00",
+        "ambiguousEnd": {
+          "status": "published",
+          "endAt": null,
+          "parseIssues": null
+        }
+      },
+      "expected": "Rechazar fechas imposibles/invalidas y fin anterior al inicio; dtend ambigua debe generar revisión explícita.",
+      "locations": [
+        "src/utils/validateEvents.ts:85",
+        "automation/validators/validate-events.mjs:65",
+        "src/utils/madridTime.shared.mjs:103",
+        "automation/normalizers/normalize-events.mjs:177"
+      ]
+    },
+    {
+      "id": "T5",
+      "provenance": "SYNTHETIC",
+      "observed": {
+        "sessionsOnSeptember7": 0,
+        "nextSession": {
+          "eventId": "audit-synthetic",
+          "dayKey": "2026-09-06",
+          "startMs": 1788681600000,
+          "endMs": 1788944400000,
+          "endKnown": true,
+          "cancelled": false
+        },
+        "currentPlans": 1
+      },
+      "expected": "No ofrecer una sesión continua del 6 al 9 sin una apertura o sesión que la documente.",
+      "locations": [
+        "src/utils/eventSchedule.ts:267"
+      ]
+    }
+  ],
+  "result": "5/5 reproducciones confirmadas"
+}

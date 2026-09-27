@@ -12,11 +12,13 @@ import { eventPagePattern, shellNavigationPattern } from './src/utils/serviceWor
 const site = process.env.SITE ?? 'https://example.github.io';
 const base = process.env.BASE ?? '/retiro-interactivo';
 const basePath = base.endsWith('/') ? base : `${base}/`;
+const outDir = process.env.ASTRO_OUT_DIR ?? 'dist';
 
 // https://astro.build/config
 export default defineConfig({
   site,
   base,
+  outDir,
   output: 'static',
   integrations: [
     react(),
@@ -123,4 +125,9 @@ export default defineConfig({
     }),
   ],
   trailingSlash: 'always',
+  vite: {
+    define: {
+      'import.meta.env.PUBLIC_E2E_FIXTURE': JSON.stringify(process.env.E2E_FIXTURE ?? ''),
+    },
+  },
 });

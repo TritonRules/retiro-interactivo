@@ -1,0 +1,23 @@
+{
+  "provenance": {
+    "dataset": "https://datos.madrid.es/egob/catalogo/300107-0-agenda-actividades-eventos.json",
+    "note": "El 2026-09-06 ya no está en el grafo vivo (dtend 2026-08-31). Reconstruido a partir del events.json publicado el 2026-08-06 y del esquema municipal (time vacío + medianoche + excluded-days). No es una descarga de ese día.",
+    "publishedSnapshot": "src/data/events.json evt-50361033"
+  },
+  "record": {
+    "id": "50361033",
+    "title": "La ruta de los libros vivos",
+    "dtstart": "2026-06-29 00:00:00.0",
+    "dtend": "2026-08-31 23:59:00.0",
+    "time": "",
+    "recurrence": {
+      "days": "MO,TU,WE,TH,FR,SA,SU",
+      "frequency": "WEEKLY",
+      "interval": 1
+    },
+    "excluded-days": "",
+    "event-location": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)",
+    "@type": "https://datos.madrid.es/egob/kos/actividades/Exposiciones",
+    "free": 1
+  }
+}

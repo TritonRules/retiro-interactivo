@@ -8,7 +8,7 @@ import {
   OPENFREEMAP_STYLE_URL,
 } from '../../config/map';
 import type { Place } from '../../types/place';
-import { loadMaplibre } from '../../utils/maplibre';
+import { loadMaplibre, safeRemoveMap, supportsWebGL2 } from '../../utils/maplibre';
 import { createMarkerElement } from './markerFactory';
 
 interface Props {
@@ -18,6 +18,7 @@ interface Props {
 export default function PlaceMiniMap({ place }: Props) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [ready, setReady] = useState(false);
+  const [unavailable, setUnavailable] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -26,6 +27,10 @@ export default function PlaceMiniMap({ place }: Props) {
 
     async function init() {
       if (!ref.current) return;
+      if (!supportsWebGL2()) {
+        setUnavailable(true);
+        return;
+      }
       const maplibre = await loadMaplibre();
       await import('maplibre-gl/dist/maplibre-gl.css');
       if (cancelled || !ref.current) return;
@@ -70,18 +75,24 @@ export default function PlaceMiniMap({ place }: Props) {
       if (map.loaded() && !cancelled) setReady(true);
     }
 
-    void init();
+    init().catch(() => {
+      if (!cancelled) setUnavailable(true);
+    });
 
     return () => {
       cancelled = true;
       marker?.remove();
-      map?.remove();
+      safeRemoveMap(map);
     };
   }, [place]);
 
   return (
     <div className="place-mini-map" aria-label={`Mapa de ${place.name}`}>
-      {!ready ? (
+      {unavailable ? (
+        <div className="mapa-loading mapa-unavailable" role="note">
+          <span>No se puede mostrar el mapa en este navegador.</span>
+        </div>
+      ) : !ready ? (
         <div className="mapa-loading" role="status">
           <div className="mapa-loading__pulse" aria-hidden="true" />
           <span>Cargando mapa…</span>

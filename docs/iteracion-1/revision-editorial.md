@@ -1,0 +1,30 @@
+# Revisión editorial — Iteración 1
+
+Consulta realizada el **6 de septiembre de 2026**. Las afirmaciones operativas se limitan a lo que las fuentes oficiales mostraban ese día. No se recorrió el parque.
+
+## Sedes prioritarias
+
+| Id | Afirmación | Fuente | Fecha | Evidencia | Decisión | Cambio | Pendiente de campo |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `palacio-de-cristal` | Interior cerrado por mejoras; se puede ver la instalación que recubre el edificio; posible cierre por lluvia o calor | [Sedes del Parque del Retiro — Museo Reina Sofía](https://www.museoreinasofia.es/visita/sedes-parque-retiro/) | 2026-09-06 | Texto de portada de sedes: «El Palacio de Cristal permanece cerrado temporalmente por mejoras arquitectónicas. Puedes visitar la instalación artística que lo recubre.» | Verificado el cierre/interior y la visita exterior. No se asigna qué obra concreta cubre el edificio. Las rutas que lo incluyen se entienden como visita exterior; no se regeneran geometrías. | Descripción, `openingHoursNote`, `lastVerifiedAt` | Confirmar in situ el estado del envoltorio y accesos |
+| `palacio-de-velazquez` | Sede abierta según la misma página; horario general de sedes del Retiro; exposiciones listadas sin asignar palacio | Misma URL del Reina Sofía | 2026-09-06 | La página no anuncia cierre de Velázquez. Lista «La Perla Peregrina» y «Fardo». Horario abr–sep 10:00–21:00; oct–mar 10:00–18:00; acceso gratuito | Verificado horario de sede. No se inventa qué exposición está dentro | `openingHoursNote`, fuente A, `lastVerifiedAt` | Comprobar cartel en puerta |
+| `casa-de-vacas` | Horario de centro municipal; la apertura de sede ≠ programación | [Ficha municipal Casa de Vacas](https://www.madrid.es/portales/munimadrid/es/Inicio/Cultura-ocio-y-deporte/Cultura-y-ocio/Direcciones-y-telefonos/Centro-Cultural-Casa-de-Vacas-Retiro-/?vgnextchannel=76f3efff228fe410VgnVCM2000000c205a0aRCRD&vgnextfmt=default&vgnextoid=35e53d0b5e71c010VgnVCM1000000b205a0aRCRD) | 2026-09-06 | Oct–mar 10–21; abr–sep 10–21:30; cerrado 25 dic y 1 ene | Verificado horario de sede | `openingHoursNote`, fuente A | Contraste de exposiciones del día |
+| `biblioteca-eugenio-trias` | Horario de biblioteca; identidad distinta del CEA | [Ficha municipal Eugenio Trías](https://www.madrid.es/portales/munimadrid/es/Inicio/Cultura-ocio-y-deporte/Cultura-y-ocio/Direcciones-y-telefonos/Biblioteca-Publica-Municipal-Eugenio-Trias-Casa-de-Fieras-de-El-Retiro-Retiro-/?vgnextchannel=76f3efff228fe410VgnVCM2000000c205a0aRCRD&vgnextfmt=default&vgnextoid=e791bed05ceed310VgnVCM1000000b205a0aRCRD) | 2026-09-06 | Paseo Fernán Núñez 24. Horario laboral/fin de semana y excepciones de verano/agosto | Verificado. Separado del CEA | Horario y texto de identidad | — |
+| `teatro-titeres` | No hay horario de museo; funciones por temporada; posible suspensión por clima | [teatrotiteresretiro.es](https://teatrotiteresretiro.es/) y [Turismo Madrid](https://www.esmadrid.com/agenda/teatro-de-titeres-de-el-retiro) (act. 2026-09-03) | 2026-09-06 | Entrada gratuita con descarga previa; septiembre 2026 sábados y domingos | Verificado el modelo de programación, no una función concreta como «hoy» | `openingHoursNote` | Cola, aforo y clima el día de la visita |
+| `centro-educacion-ambiental-retiro` | CEA en Fernán Núñez 2; coords 40.409435, −3.686180 | [Ficha municipal CEA El Retiro](https://www.madrid.es/portales/munimadrid/es/Inicio/Medio-ambiente/Direcciones-y-telefonos/Centro-de-Informacion-y-Educacion-Ambiental-de-El-Huerto-de-El-Retiro/?vgnextchannel=864f79ed268fe410VgnVCM1000000b205a0aRCRD&vgnextfmt=default&vgnextoid=796b8193c73c4210VgnVCM1000000b205a0aRCRD) | 2026-09-06 | Dirección, horario por temporadas, cerrado lunes. Las coords municipales coinciden con el vivero/huerto, no con Casa de Fieras | **Corrección:** se deja de apuntar el CEA a Casa de Fieras. Nueva ficha de lugar | Lugar nuevo + coords del recolector | Confirmar el acceso peatonal exacto |
+| `aula-ambiental-la-cabana` | La Cabaña en Fernán Núñez 10; coords 40.409123, −3.679318 | [Ficha municipal La Cabaña](https://www.madrid.es/portales/munimadrid/es/Inicio/Medio-ambiente/Educacion-Ambiental/Gestiones-y-tramites/Aula-ambiental-La-Cabana-del-Retiro/?vgnextchannel=33e379ed268fe410VgnVCM1000000b205a0aRCRD&vgnextfmt=default&vgnextoid=97521076c081c010VgnVCM1000000b205a0aRCRD) | 2026-09-06 | Dirección y horario distintos del CEA | Identidad separada; ficha nueva | Lugar nuevo | — |
+
+## Fichas `needs-review`
+
+| Id | Afirmación | Fuente | Fecha | Decisión |
+| --- | --- | --- | --- | --- |
+| `jardin-de-vivaces` | Existe un ámbito botánico junto a La Rosaleda en OSM | [OSM node/4769760033](https://www.openstreetmap.org/node/4769760033) | 2026-09-06 | Se mantiene `needs-review`: OSM no demuestra floración ni un recinto visitable hoy. Sin horario inventado |
+| `aseo-palacio-cristal` | Hay un nodo de aseo en OSM | [OSM node/4610120699](https://www.openstreetmap.org/node/4610120699) | 2026-09-06 | `needs-review`. El cierre del palacio no implica nada sobre el aseo. `wheelchair=no` en OSM no se traduce a una afirmación de accesibilidad operativa |
+| `aseo-nordeste-estanque` | Nodo OSM al norte del estanque | [OSM node/11172458537](https://www.openstreetmap.org/node/11172458537) | 2026-09-06 | `needs-review`. Sin evidencia de apertura |
+| `info-centro-ambiental` | Punto de información = CEA El Retiro | Ficha municipal CEA (arriba) | 2026-09-06 | **Ubicación corregida** a las coords oficiales. Pasa a `verified` para identidad/horario de sede. Las actividades siguen dependiendo de la agenda |
+| `restauracion-piloto-ii` | Local cartografiado en OSM | [OSM node/1891469651](https://www.openstreetmap.org/node/1891469651) | 2026-09-06 | `needs-review`. Sin horario ni carta |
+| `restauracion-euronews-cafe` | Café cartografiado en OSM | [OSM node/5118698821](https://www.openstreetmap.org/node/5118698821) | 2026-09-06 | `needs-review`. Sin horario |
+
+## Rutas
+
+Ninguna geometría se ha regenerado. Las rutas que pasan por el Palacio de Cristal conservan el hito; la ficha avisa de visita exterior.

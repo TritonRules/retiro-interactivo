@@ -1,0 +1,45 @@
+{
+  "review": "2026-09-07",
+  "mode": "simulated-fetch-temporary-files",
+  "defects": [
+    {
+      "id": "http-200-invalid-source-publishes-partial-dataset",
+      "confirmed": true,
+      "collected": [
+        {
+          "sourceId": "madrid-agenda-general",
+          "complete": true,
+          "fetchedAt": "2026-09-06T16:37:26.939Z",
+          "graphCount": 1
+        },
+        {
+          "sourceId": "madrid-agenda-cultural-100",
+          "complete": true,
+          "fetchedAt": "2026-09-06T16:37:26.939Z",
+          "graphCount": null
+        }
+      ],
+      "validationOk": true,
+      "published": true,
+      "previousCount": 2,
+      "countAfter": 1,
+      "idsAfter": [
+        "evt-valid"
+      ]
+    },
+    {
+      "id": "rollback-retains-metadata-for-rejected-generation",
+      "confirmed": true,
+      "published": false,
+      "keptPrevious": true,
+      "reason": "write-failed:injected-failure",
+      "restoredEventIds": [
+        "evt-valid"
+      ],
+      "actualDatasetHash": "459da5dc212c92a32482601dbbf38757c5f3f75fc5fa0f78d4b7d4aa6d72148a",
+      "retainedMetadataHash": "adcb7874bfcf902d79c11a439ad9cc0f2a9f30ab6e6d6c2259215dbe0cb321fc",
+      "publicMetadataExists": false
+    }
+  ],
+  "temporaryFilesRemoved": true
+}

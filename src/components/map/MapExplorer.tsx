@@ -11,6 +11,7 @@ import {
   RETIRO_CENTER,
 } from '../../config/map';
 import type { MapEventPoint } from '../../types/event';
+import type { ParkEvent } from '../../types/event';
 import type { Place } from '../../types/place';
 import type { ParkService } from '../../types/service';
 import type { ParkRoute } from '../../types/route';
@@ -23,7 +24,12 @@ import {
 } from '../../utils/filterPlaces';
 import { getCategoryLabel } from '../../utils/categories';
 import { eventDetailPath } from '../../utils/eventLinks';
-import { loadMaplibre } from '../../utils/maplibre';
+import {
+  isFatalMapError,
+  loadMaplibre,
+  safeRemoveMap,
+  supportsWebGL2,
+} from '../../utils/maplibre';
 import { getServiceTypeLabel } from '../../utils/serviceTypes';
 import {
   GEO_STATUS_LABEL,
@@ -46,6 +52,8 @@ import { NearbyList } from './NearbyList';
 import { EventSheet } from '../places/EventSheet';
 import { PlaceSheet } from '../places/PlaceSheet';
 import { ServiceSheet } from '../places/ServiceSheet';
+import { isUsableAsCurrentPlan } from '../../utils/eventFreshness';
+import { useParkClock } from '../../utils/useParkClock';
 
 interface Props {
   places: Place[];
@@ -68,6 +76,8 @@ type Selection =
 const ROUTE_SOURCE = 'active-route';
 const ROUTE_LINE = 'active-route-line';
 const EVENT_SOURCE = 'map-events';
+const MAP_UNAVAILABLE_MESSAGE =
+  'No se puede mostrar el mapa en este navegador. Puedes seguir consultando lugares, rutas y agenda.';
 
 function withBase(baseUrl: string, path: string): string {
   const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
@@ -98,6 +108,16 @@ function readClientMapQuery() {
     focusSlug: params.get('lugar') ?? undefined,
     routeSlug: params.get('ruta') ?? undefined,
     eventSlug: params.get('evento') ?? undefined,
+  };
+}
+
+function asParkEvent(event: MapEventPoint): ParkEvent {
+  return {
+    shortDescription: event.title,
+    sourceName: 'Agenda',
+    sourceTier: 'A',
+    confidence: 1,
+    ...event,
   };
 }
 
@@ -154,6 +174,11 @@ export default function MapExplorer({
     () => filterServicesByCategory(services, category, showServicesInTodos),
     [services, category, showServicesInTodos],
   );
+  const now = useParkClock();
+  const visibleEvents = useMemo(
+    () => events.filter((item) => isUsableAsCurrentPlan(asParkEvent(item), now)),
+    [events, now],
+  );
   const counts = useMemo(() => countByCategory(places, services), [places, services]);
 
   const selectedPlace =
@@ -207,12 +232,17 @@ export default function MapExplorer({
 
     async function initMap() {
       if (!containerRef.current || mapRef.current) return;
+      if (!supportsWebGL2()) {
+        setMapError(MAP_UNAVAILABLE_MESSAGE);
+        return;
+      }
+      let map: Map | null = null;
       try {
         const maplibre = await loadMaplibre();
         await import('maplibre-gl/dist/maplibre-gl.css');
         if (cancelled || !containerRef.current) return;
 
-        const map = new maplibre.Map({
+        map = new maplibre.Map({
           container: containerRef.current,
           style: OPENFREEMAP_STYLE_URL,
           center: RETIRO_CENTER,
@@ -231,10 +261,25 @@ export default function MapExplorer({
           'bottom-right',
         );
 
+        const createdMap = map;
+        const onInitError = (event: { error?: unknown }) => {
+          if (!isFatalMapError(event.error)) return;
+          createdMap.off('error', onInitError);
+          if (mapRef.current === createdMap) mapRef.current = null;
+          safeRemoveMap(createdMap);
+          if (!cancelled) {
+            setReady(false);
+            setMapError(MAP_UNAVAILABLE_MESSAGE);
+          }
+        };
+        map.on('error', onInitError);
+        map.once('load', () => map?.off('error', onInitError));
+
         mapRef.current = map;
         if (!cancelled) setReady(true);
       } catch {
-        if (!cancelled) setMapError('No se pudo cargar el mapa. Reintenta más tarde.');
+        safeRemoveMap(map);
+        if (!cancelled) setMapError(MAP_UNAVAILABLE_MESSAGE);
       }
     }
 
@@ -248,7 +293,7 @@ export default function MapExplorer({
       stopMarkersRef.current = [];
       userMarkerRef.current?.remove();
       userMarkerRef.current = null;
-      mapRef.current?.remove();
+      safeRemoveMap(mapRef.current);
       mapRef.current = null;
     };
   }, []);
@@ -415,13 +460,13 @@ export default function MapExplorer({
       if (map.getLayer(`${EVENT_SOURCE}-circle`)) map.removeLayer(`${EVENT_SOURCE}-circle`);
       if (map.getSource(EVENT_SOURCE)) map.removeSource(EVENT_SOURCE);
 
-      if (!showEvents || activeRoute || events.length === 0) return;
+      if (!showEvents || activeRoute || visibleEvents.length === 0) return;
 
       map.addSource(EVENT_SOURCE, {
         type: 'geojson',
         data: {
           type: 'FeatureCollection',
-          features: events.map((event) => ({
+          features: visibleEvents.map((event) => ({
             type: 'Feature',
             geometry: { type: 'Point', coordinates: event.coordinates },
             properties: { id: event.id, title: event.title },
@@ -449,10 +494,10 @@ export default function MapExplorer({
     return () => {
       cancelled = true;
     };
-  }, [showEvents, events, ready, activeRoute]);
+  }, [showEvents, visibleEvents, ready, activeRoute]);
 
   useEffect(() => {
-    if (!ready || !focusSlugState) return;
+    if ((!ready && !mapError) || !focusSlugState) return;
     const place = places.find((item) => item.slug === focusSlugState);
     if (!place) return;
     setSelection({ kind: 'place', id: place.id });
@@ -462,10 +507,10 @@ export default function MapExplorer({
       duration: 600,
       essential: true,
     });
-  }, [ready, focusSlugState, places]);
+  }, [ready, mapError, focusSlugState, places]);
 
   useEffect(() => {
-    if (!ready || !eventSlugState) return;
+    if ((!ready && !mapError) || !eventSlugState) return;
     const event = events.find((item) => item.slug === eventSlugState);
     if (!event) return;
     setShowEvents(true);
@@ -476,7 +521,7 @@ export default function MapExplorer({
       duration: 600,
       essential: true,
     });
-  }, [ready, eventSlugState, events]);
+  }, [ready, mapError, eventSlugState, events]);
 
   const clearUserLocation = () => {
     setUserLocation(null);
@@ -646,7 +691,7 @@ export default function MapExplorer({
 
   const visibleCount = activeRoute
     ? activeRoute.stopIds.length
-    : filteredPlaces.length + filteredServices.length + (showEvents ? events.length : 0);
+    : filteredPlaces.length + filteredServices.length + (showEvents ? visibleEvents.length : 0);
 
   return (
     <section className="mapa-explorer" aria-label="Mapa del Parque del Retiro">
@@ -749,7 +794,7 @@ export default function MapExplorer({
           </div>
         ) : null}
         {mapError ? (
-          <div className="mapa-loading" role="alert">
+          <div className="mapa-loading mapa-unavailable" role="alert">
             <span>{mapError}</span>
           </div>
         ) : null}

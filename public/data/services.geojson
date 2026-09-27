@@ -686,15 +686,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.6789,
-          40.4165
+          -3.68618,
+          40.409435
         ]
       },
       "properties": {
         "id": "info-centro-ambiental",
-        "name": "Centro de Información y Educación Ambiental",
+        "name": "Centro de Educación Ambiental El Retiro (información)",
         "type": "informacion",
-        "status": "needs-review",
+        "status": "verified",
         "kind": "service"
       }
     },
