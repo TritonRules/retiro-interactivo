@@ -27,7 +27,7 @@ Investigación, fuentes y exclusiones: `docs/estatuas-research.md`.
 
 ## Calidad
 
-- Objetivo 60–160 fichas totales (lugares + servicios). Iteración 1: **82** (38 lugares + 44 servicios). Con las estatuas (sept. 2026): **127** (83 lugares + 44 servicios).
+- Objetivo 60–160 fichas totales (lugares + servicios). Iteración 1: **82** (38 lugares + 44 servicios). Con las estatuas (sept. 2026): **127** (83 lugares + 44 servicios). Tras retirar dos locales de fuera del parque (servicios OSM, sept. 2026): **125** (83 lugares + 42 servicios); los servicios de OpenStreetMap van aparte y no cuentan.
 - Descripciones propias y breves; fuente + `lastVerifiedAt`.
 - Duplicados: consolidar por id/slug/proximidad/nombre (`automation/content/detect-duplicates.mjs`).
 - Candidatos en `data/candidates/` separados de publicados.

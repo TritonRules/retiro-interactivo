@@ -8,6 +8,12 @@ import { fileURLToPath } from 'node:url';
 import { z } from 'zod';
 import { validateEventList } from '../automation/validators/validate-events.mjs';
 import { videosSchema } from '../src/utils/videos.shared.mjs';
+import {
+  featuredPriceSchema,
+  osmServicesDatasetSchema,
+  pointInRings,
+  SERVICE_SUBTYPES,
+} from '../src/utils/osmServices.shared.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
@@ -108,6 +114,13 @@ const serviceSchema = z.object({
   sourceUrl: z.url(),
   lastVerifiedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   status: z.enum(['verified', 'needs-review']),
+  subtype: z.enum(Object.keys(SERVICE_SUBTYPES)).optional(),
+  openingHours: z.string().optional(),
+  wheelchair: z.enum(['yes', 'limited', 'no']).optional(),
+  fee: z.boolean().optional(),
+  website: z.url().optional(),
+  menuUrl: z.url().optional(),
+  featuredPrices: z.array(featuredPriceSchema).optional(),
   accessibility: z.array(z.string()).optional(),
   availabilityNote: z.string().optional(),
 });
@@ -165,6 +178,22 @@ const routes = routeSchema.array().parse(load(join(root, 'src/data/routes.json')
 
 if (!uniqueBy('id', places, 'lugares') || !uniqueBy('slug', places, 'lugares')) process.exit(1);
 if (!uniqueBy('id', services, 'servicios')) process.exit(1);
+
+// Servicios extraídos de OpenStreetMap (scripts/services-osm.mjs): no cuentan como fichas.
+const osmDataset = osmServicesDatasetSchema.parse(load(join(root, 'src/data/services-osm.json')));
+if (!uniqueBy('id', osmDataset.services, 'servicios OSM')) process.exit(1);
+const curatedServiceIds = new Set(services.map((s) => s.id));
+for (const service of osmDataset.services) {
+  if (curatedServiceIds.has(service.id)) fail(`Servicio OSM con id de servicio curado: ${service.id}`);
+  if (!pointInRings(service.coordinates, osmDataset.boundary)) {
+    fail(`Servicio OSM fuera del contorno del parque: ${service.id} (${service.osmId})`);
+  }
+}
+for (const match of osmDataset.matches) {
+  if (match.matchedKind === 'service' && !curatedServiceIds.has(match.matchedId)) {
+    fail(`Duplicado OSM apunta a un servicio inexistente: ${match.matchedId}`);
+  }
+}
 if (!uniqueBy('id', routes, 'rutas') || !uniqueBy('slug', routes, 'rutas')) process.exit(1);
 
 if (places.length < 60 - services.length) {
@@ -230,7 +259,7 @@ if (existsSync(eventsPath)) {
   const upcoming = events.filter(
     (e) => e.status === 'published' && Date.parse(e.expiresAt) >= now,
   );
-  console.log(`OK: ${places.length} lugares + ${services.length} servicios + ${routes.length} rutas + ${events.length} eventos (${upcoming.length} próximos)`);
+  console.log(`OK: ${places.length} lugares + ${services.length} servicios (+${osmDataset.services.length} OSM) + ${routes.length} rutas + ${events.length} eventos (${upcoming.length} próximos)`);
 } else {
-  console.log(`OK: ${places.length} lugares + ${services.length} servicios + ${routes.length} rutas (sin events.json)`);
+  console.log(`OK: ${places.length} lugares + ${services.length} servicios (+${osmDataset.services.length} OSM) + ${routes.length} rutas (sin events.json)`);
 }

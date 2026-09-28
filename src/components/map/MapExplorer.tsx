@@ -18,27 +18,33 @@ import type { ParkRoute } from '../../types/route';
 import {
   countByCategory,
   filterPlacesByCategory,
+  countServicesByGroup,
   filterServicesByCategory,
+  filterServicesByGroup,
   parseCategoryParam,
+  parseServiceGroupParam,
+  servicesVisibleAtZoom,
   type CategoryFilter,
+  type ServiceGroupFilter,
 } from '../../utils/filterPlaces';
+import { setBasemapServicePoisHidden } from '../../utils/basemapPois';
 import { getCategoryLabel } from '../../utils/categories';
 import { eventDetailPath } from '../../utils/eventLinks';
+import { isFatalMapError, loadMaplibre, safeRemoveMap, supportsWebGL2 } from '../../utils/maplibre';
 import {
-  isFatalMapError,
-  loadMaplibre,
-  safeRemoveMap,
-  supportsWebGL2,
-} from '../../utils/maplibre';
-import { getServiceTypeLabel } from '../../utils/serviceTypes';
+  getServiceLabel,
+  SERVICE_ZOOM_TIER_A,
+  serviceMarkerPriority,
+  serviceMinZoom,
+} from '../../utils/serviceTypes';
 import {
   applyMarkerZoom,
   applyStopMarkerLayout,
   eventGroupPriority,
   groupEventsByLocation,
   placeMarkerPriority,
-  SERVICE_MARKER_PRIORITY,
   type ZoomableMarker,
+  isHiddenAtZoom,
 } from '../../utils/markerZoom';
 import {
   GEO_STATUS_LABEL,
@@ -52,12 +58,10 @@ import {
 import { nearestItems, type NearbyItem } from '../../utils/nearby';
 import { formatDistance, formatDuration } from '../../utils/routes';
 import { CategoryFilters } from './CategoryFilters';
+import { ServiceGroupFilters } from './ServiceGroupFilters';
 import { createMarkerElement } from './markerFactory';
 import { createEventMarkerElement } from './eventMarkerFactory';
-import {
-  createServiceMarkerElement,
-  createUserMarkerElement,
-} from './serviceMarkerFactory';
+import { createServiceMarkerElement, createUserMarkerElement } from './serviceMarkerFactory';
 import { NearbyList } from './NearbyList';
 import { EventSheet } from '../places/EventSheet';
 import { EventGroupSheet } from '../places/EventGroupSheet';
@@ -74,6 +78,8 @@ import { useGuidedWalk } from './useGuidedWalk';
 interface Props {
   places: Place[];
   services: ParkService[];
+  /** Contorno del parque (OSM): oculta dentro los POI de servicio del mapa base. */
+  parkBoundary?: [number, number][][];
   routes: ParkRoute[];
   events?: MapEventPoint[];
   baseUrl: string;
@@ -175,6 +181,7 @@ function readClientMapQuery() {
       focusSlug: undefined as string | undefined,
       routeSlug: undefined as string | undefined,
       eventSlug: undefined as string | undefined,
+      serviceGroup: undefined as string | undefined,
       walk: false,
     };
   }
@@ -184,6 +191,8 @@ function readClientMapQuery() {
     focusSlug: params.get('lugar') ?? undefined,
     routeSlug: params.get('ruta') ?? undefined,
     eventSlug: params.get('evento') ?? undefined,
+    /** `?servicios=aseos`: chip de servicios (solo con `categoria=servicio`). */
+    serviceGroup: params.get('servicios') ?? undefined,
     /** `?paseo=1`: viene del botón «Empezar ruta» de la ficha de la ruta. */
     walk: params.get('paseo') === '1',
   };
@@ -202,6 +211,7 @@ function asParkEvent(event: MapEventPoint): ParkEvent {
 export default function MapExplorer({
   places,
   services,
+  parkBoundary,
   routes,
   events = [],
   baseUrl,
@@ -223,7 +233,11 @@ export default function MapExplorer({
   const [isDesktop, setIsDesktop] = useState(false);
   const [queryReady, setQueryReady] = useState(false);
   const [category, setCategory] = useState<CategoryFilter>('todos');
-  const [showServicesInTodos, setShowServicesInTodos] = useState(false);
+  // Servicios visibles por defecto en «Todos»: aparecen al acercar (ver serviceMinZoom).
+  const [showServicesInTodos, setShowServicesInTodos] = useState(true);
+  const [serviceGroup, setServiceGroup] = useState<ServiceGroupFilter>('todos');
+  /** Zoom al terminar cada movimiento: recuento de puntos visibles y aviso «al acercar». */
+  const [mapZoom, setMapZoom] = useState(DEFAULT_ZOOM);
   const [showEvents, setShowEvents] = useState(false);
   const [activeRouteSlug, setActiveRouteSlug] = useState<string | null>(null);
   const [focusSlugState, setFocusSlugState] = useState<string | undefined>(undefined);
@@ -237,6 +251,7 @@ export default function MapExplorer({
   useEffect(() => {
     const q = readClientMapQuery();
     setCategory(parseCategoryParam(q.category ?? initialCategory));
+    setServiceGroup(parseServiceGroupParam(q.serviceGroup));
     setActiveRouteSlug(q.routeSlug ?? initialRouteSlug ?? null);
     setFocusSlugState(q.focusSlug ?? focusSlug);
     setEventSlugState(q.eventSlug ?? initialEventSlug);
@@ -266,9 +281,16 @@ export default function MapExplorer({
     [places, category],
   );
   const filteredServices = useMemo(
-    () => filterServicesByCategory(services, category, showServicesInTodos),
-    [services, category, showServicesInTodos],
+    () =>
+      filterServicesByGroup(
+        filterServicesByCategory(services, category, showServicesInTodos),
+        category === 'servicio' ? serviceGroup : 'todos',
+      ),
+    [services, category, showServicesInTodos, serviceGroup],
   );
+  // En «Todos» los servicios aparecen progresivamente al acercar; con «Servicio», siempre.
+  const servicesZoomGated = category === 'todos';
+  const serviceGroupCounts = useMemo(() => countServicesByGroup(services), [services]);
   const now = useParkClock();
   const visibleEvents = useMemo(
     () =>
@@ -309,7 +331,7 @@ export default function MapExplorer({
       services,
       5,
       (place) => getCategoryLabel(place.category),
-      (service) => getServiceTypeLabel(service.type),
+      (service) => getServiceLabel(service),
       (place) => withBase(baseUrl, `lugares/${place.slug}/`),
     );
   }, [userLocation, places, services, baseUrl]);
@@ -327,6 +349,8 @@ export default function MapExplorer({
     const params = new URLSearchParams(window.location.search);
     if (category === 'todos') params.delete('categoria');
     else params.set('categoria', category);
+    if (category === 'servicio' && serviceGroup !== 'todos') params.set('servicios', serviceGroup);
+    else params.delete('servicios');
     // `paseo` solo arranca el modo paseo al llegar; no se conserva al compartir o recargar.
     params.delete('paseo');
     if (activeRouteSlug) params.set('ruta', activeRouteSlug);
@@ -337,7 +361,7 @@ export default function MapExplorer({
     const query = params.toString();
     const next = `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`;
     window.history.replaceState({}, '', next);
-  }, [category, activeRouteSlug, queryReady]);
+  }, [category, serviceGroup, activeRouteSlug, queryReady]);
 
   useEffect(() => {
     let cancelled = false;
@@ -466,7 +490,7 @@ export default function MapExplorer({
       for (const service of filteredServices) {
         const active = selection?.kind === 'service' && selection.id === service.id;
         const el = createServiceMarkerElement({
-          type: service.type,
+          service,
           label: service.name,
           active,
           onClick: () => {
@@ -487,8 +511,9 @@ export default function MapExplorer({
           id: `service:${service.id}`,
           element: el,
           lngLat: service.coordinates,
-          priority: SERVICE_MARKER_PRIORITY,
+          priority: serviceMarkerPriority(service),
           pinned: active,
+          minZoom: servicesZoomGated ? serviceMinZoom(service) : undefined,
         });
       }
 
@@ -535,7 +560,45 @@ export default function MapExplorer({
     return () => {
       cancelled = true;
     };
-  }, [filteredPlaces, filteredServices, eventGroups, ready, selection, activeRoute, category]);
+  }, [
+    filteredPlaces,
+    filteredServices,
+    servicesZoomGated,
+    eventGroups,
+    ready,
+    selection,
+    activeRoute,
+    category,
+  ]);
+
+  // Zoom tras cada movimiento (no en cada frame): recuento visible y aviso de servicios.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready) return;
+    const update = () => setMapZoom(Math.round(map.getZoom() * 100) / 100);
+    update();
+    map.on('zoomend', update);
+    return () => {
+      map.off('zoomend', update);
+    };
+  }, [ready]);
+
+  // Dentro del parque, los iconos grises del mapa base (cafés, aseos, fuentes…) ceden el
+  // sitio a los servicios de la app; si el usuario oculta los servicios, vuelven.
+  const servicesShown =
+    !activeRoute && (category === 'servicio' || (category === 'todos' && showServicesInTodos));
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready || !parkBoundary?.length) return;
+    let cancelled = false;
+    void whenStyleReady(map).then(() => {
+      if (cancelled || mapRef.current !== map) return;
+      setBasemapServicePoisHidden(map, parkBoundary, servicesShown);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [ready, parkBoundary, servicesShown]);
 
   // Iconos, eventos y paradas adaptados al zoom: escala, plegado y separación de
   // paradas se recalculan como mucho una vez por frame.
@@ -663,7 +726,6 @@ export default function MapExplorer({
       cancelled = true;
     };
   }, [activeRoute, places, ready]);
-
 
   useEffect(() => {
     if ((!ready && !mapError) || !focusSlugState) return;
@@ -802,7 +864,10 @@ export default function MapExplorer({
   useEffect(() => {
     for (const marker of stopMarkersRef.current) {
       const el = marker.getElement();
-      el.classList.toggle('is-active', selectedPlaceId !== null && el.dataset.placeId === selectedPlaceId);
+      el.classList.toggle(
+        'is-active',
+        selectedPlaceId !== null && el.dataset.placeId === selectedPlaceId,
+      );
     }
     scheduleMarkerLayoutRef.current();
   }, [selectedPlaceId]);
@@ -943,9 +1008,21 @@ export default function MapExplorer({
     }
   };
 
+  const visibleServices = servicesVisibleAtZoom(filteredServices, mapZoom, servicesZoomGated);
+  // En «Todos», las estatuas con `mapMinZoom` tampoco cuentan hasta que aparecen.
+  const visiblePlaceCount =
+    category === 'todos'
+      ? filteredPlaces.filter((place) => !isHiddenAtZoom(mapZoom, place.mapMinZoom)).length
+      : filteredPlaces.length;
   const visibleCount = activeRoute
     ? activeRoute.stopIds.length
-    : filteredPlaces.length + filteredServices.length + (showEvents ? visibleEvents.length : 0);
+    : visiblePlaceCount + visibleServices.length + (showEvents ? visibleEvents.length : 0);
+  const servicesAppearOnZoom =
+    !activeRoute &&
+    servicesZoomGated &&
+    showServicesInTodos &&
+    !mapError &&
+    mapZoom < SERVICE_ZOOM_TIER_A;
 
   return (
     <section className="mapa-explorer" aria-label="Mapa del Parque del Retiro">
@@ -959,7 +1036,9 @@ export default function MapExplorer({
                 : ' · ruta activa'
               : category !== 'todos'
                 ? ' · filtro activo'
-                : ''}
+                : servicesAppearOnZoom
+                  ? ' · acerca para ver servicios'
+                  : ''}
           </p>
           {!activeRoute && category === 'todos' ? (
             <label className="mapa-toolbar__toggle">
@@ -988,6 +1067,16 @@ export default function MapExplorer({
             counts={counts}
             onChange={(next) => {
               setCategory(next);
+              setSelection(null);
+            }}
+          />
+        ) : null}
+        {!activeRoute && category === 'servicio' ? (
+          <ServiceGroupFilters
+            active={serviceGroup}
+            counts={serviceGroupCounts}
+            onChange={(next) => {
+              setServiceGroup(next);
               setSelection(null);
             }}
           />

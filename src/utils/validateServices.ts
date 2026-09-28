@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { RETIRO_PLACE_BOUNDS } from '../config/map';
 import type { ParkService } from '../types/service';
+import { featuredPriceSchema, SERVICE_SUBTYPES } from './osmServices.shared.mjs';
 
 export const serviceTypeSchema = z.enum([
   'aseo',
@@ -34,6 +35,13 @@ export const parkServiceSchema = z.object({
   status: z.enum(['verified', 'needs-review']),
   accessibility: z.array(z.string()).optional(),
   availabilityNote: z.string().optional(),
+  subtype: z.enum(Object.keys(SERVICE_SUBTYPES) as [string, ...string[]]).optional(),
+  openingHours: z.string().optional(),
+  wheelchair: z.enum(['yes', 'limited', 'no']).optional(),
+  fee: z.boolean().optional(),
+  website: z.url().optional(),
+  menuUrl: z.url().optional(),
+  featuredPrices: z.array(featuredPriceSchema).optional(),
 });
 
 export const servicesArraySchema = z.array(parkServiceSchema).superRefine((services, ctx) => {

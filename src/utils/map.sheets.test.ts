@@ -127,6 +127,38 @@ describe('fichas sobre el mapa', () => {
     expect(unstyledClasses(serviceMarkup)).toEqual([]);
   });
 
+  it('ficha compacta de servicio OSM: horario, accesibilidad, «Cómo llegar» y atribución', () => {
+    const osmService = {
+      id: 'osm-way-243351606',
+      name: 'Nacional Retiro',
+      type: 'restauracion',
+      subtype: 'cafe',
+      origin: 'osm',
+      coordinates: [-3.680698, 40.416346],
+      shortDescription: 'Cafetería según OpenStreetMap.',
+      sourceName: 'OpenStreetMap (way/243351606)',
+      sourceUrl: 'https://www.openstreetmap.org/way/243351606',
+      lastVerifiedAt: '2026-09-28',
+      status: 'verified',
+      openingHours: 'Mo-Su 10:00-22:00',
+      wheelchair: 'yes',
+    } as ParkService;
+    const markup = renderToStaticMarkup(
+      createElement(ServiceSheet, { service: osmService, onClose: () => {}, variant: 'mobile' }),
+    );
+    expect(markup).toContain('class="ficha ficha--mobile"');
+    expect(unstyledClasses(markup)).toEqual([]);
+    expect(markup).toContain('Cafetería');
+    expect(markup).toContain('lun–dom 10:00–22:00');
+    expect(markup).toContain('Accesible en silla de ruedas');
+    expect(markup).toContain('Cómo llegar');
+    expect(markup).toContain('destination=40.416346,-3.680698');
+    expect(markup).toContain('© colaboradores de OpenStreetMap');
+    expect(markup).toContain('datos a 2026-09-28');
+    // Sin precios en la interfaz.
+    expect(markup).not.toMatch(/€|precio/i);
+  });
+
   it('lista los eventos de una misma sede en el mismo overlay, con estilos reales', () => {
     const markup = renderToStaticMarkup(
       createElement(EventGroupSheet, {

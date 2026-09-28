@@ -602,36 +602,6 @@
     "availabilityNote": "Horario de sede según ficha municipal (cerrado los lunes). Las actividades concretas requieren consultar la agenda o reservar. Coordenadas de la ficha oficial, no de Casa de Fieras."
   },
   {
-    "id": "restauracion-piloto-ii",
-    "name": "Piloto II (restauración)",
-    "type": "restauracion",
-    "coordinates": [
-      -3.67728,
-      40.41544
-    ],
-    "shortDescription": "Establecimiento de restauración cartografiado en OSM al este del parque. Horario no verificado.",
-    "sourceName": "OpenStreetMap — Piloto II (node/1891469651)",
-    "sourceUrl": "https://www.openstreetmap.org/node/1891469651",
-    "lastVerifiedAt": "2026-09-06",
-    "status": "needs-review",
-    "availabilityNote": "Estar dibujado en OSM no implica que esté abierto ahora. Horarios y carta: consultar en el local."
-  },
-  {
-    "id": "restauracion-euronews-cafe",
-    "name": "Euronews Café",
-    "type": "restauracion",
-    "coordinates": [
-      -3.67785,
-      40.41627
-    ],
-    "shortDescription": "Café cartografiado en OSM junto a la antigua Casa de Fieras. Horario no verificado.",
-    "sourceName": "OpenStreetMap — Euronews Café (node/5118698821)",
-    "sourceUrl": "https://www.openstreetmap.org/node/5118698821",
-    "lastVerifiedAt": "2026-09-06",
-    "status": "needs-review",
-    "availabilityNote": "Sin horario editorial. No se afirma disponibilidad de terraza, carta ni apertura hoy."
-  },
-  {
     "id": "deporte-pistas-chopera-ref",
     "name": "Entorno deportivo La Chopera",
     "type": "deporte",

@@ -18,6 +18,8 @@ export const MARKER_MIN_SIZE_ZOOM = 14;
 export const MARKER_MIN_SCALE = 0.6;
 /** Lado visual del icono a tamaño completo, en px (ver `.place-marker__shape`). */
 export const MARKER_BASE_SIZE = 34;
+/** Zoom desde el que se rotulan los nombres propios de los servicios. */
+export const MARKER_LABEL_ZOOM = 17;
 /** Separación mínima entre iconos visibles, en px. */
 export const MARKER_COLLISION_GAP = 4;
 
@@ -122,7 +124,9 @@ interface MapLike {
 export function applyMarkerZoom(map: MapLike, markers: ZoomableMarker[]): void {
   const zoom = map.getZoom();
   const scale = markerScaleForZoom(zoom);
-  map.getContainer().style.setProperty('--marker-scale', String(scale));
+  const container = map.getContainer();
+  container.style.setProperty('--marker-scale', String(scale));
+  if (container.dataset) container.dataset.markerLabels = String(zoom >= MARKER_LABEL_ZOOM);
   const hidden = new Set(
     markers
       .filter((marker) => isHiddenAtZoom(zoom, marker.minZoom, marker.pinned))
@@ -144,10 +148,19 @@ export function applyMarkerZoom(map: MapLike, markers: ZoomableMarker[]): void {
   );
   for (const marker of markers) {
     const isHidden = hidden.has(marker.id);
+    const wasHidden = marker.element.dataset.markerState === 'hidden';
     const isDot = !isHidden && collapsed.has(marker.id);
     marker.element.classList.toggle('is-hidden', isHidden);
     marker.element.classList.toggle('is-dot', isDot);
     marker.element.dataset.markerState = isHidden ? 'hidden' : isDot ? 'dot' : 'full';
+    // Oculto por zoom: fuera del árbol de accesibilidad y del orden de tabulación.
+    if (isHidden && !wasHidden) {
+      marker.element.setAttribute('aria-hidden', 'true');
+      marker.element.setAttribute('tabindex', '-1');
+    } else if (!isHidden && wasHidden) {
+      marker.element.removeAttribute('aria-hidden');
+      marker.element.removeAttribute('tabindex');
+    }
   }
 }
 

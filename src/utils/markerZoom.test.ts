@@ -42,9 +42,7 @@ function project([lon, lat]: [number, number], zoom: number) {
 function itemsAt(zoom: number, withServices: boolean, pinnedId?: string): CollisionItem[] {
   // Como el mapa en «Todos»: las estatuas por debajo de su zoom mínimo no se pintan.
   const placeItems = (places as Place[])
-    .filter(
-      (place) => !isHiddenAtZoom(zoom, place.mapMinZoom, `place:${place.id}` === pinnedId),
-    )
+    .filter((place) => !isHiddenAtZoom(zoom, place.mapMinZoom, `place:${place.id}` === pinnedId))
     .map((place) => ({
       id: `place:${place.id}`,
       ...project(place.coordinates, zoom),
@@ -188,7 +186,9 @@ describe('estatuas por tramos de zoom', () => {
     expect(visibles(16.5)).toBeLessThan(visibles(17.5));
     expect(visibles(17.5)).toBe(esculturas.length);
     // Los reyes del Paseo de las Estatuas, muy juntos, solo de cerca.
-    for (const place of esculturas.filter((p) => p.tags.includes('reyes') && p.id !== 'estatua-juana-i')) {
+    for (const place of esculturas.filter(
+      (p) => p.tags.includes('reyes') && p.id !== 'estatua-juana-i',
+    )) {
       expect(place.mapMinZoom, place.id).toBeGreaterThanOrEqual(17);
     }
   });
@@ -208,7 +208,9 @@ describe('estatuas por tramos de zoom', () => {
         if (collapsed.has(`place:${place.id}`)) {
           const withoutStatues = items.filter((item) => !rivals.includes(item));
           expect(
-            resolveMarkerCollisions(withoutStatues, markerScaleForZoom(15.2)).has(`place:${place.id}`),
+            resolveMarkerCollisions(withoutStatues, markerScaleForZoom(15.2)).has(
+              `place:${place.id}`,
+            ),
             place.id,
           ).toBe(true);
         }
@@ -220,12 +222,17 @@ describe('estatuas por tramos de zoom', () => {
 describe('applyMarkerZoom', () => {
   function fakeElement() {
     const classes = new Set<string>();
+    const attrs: Record<string, string> = {};
     return {
+      attrs,
       dataset: {} as Record<string, string>,
       classList: {
-        toggle: (name: string, force: boolean) => (force ? classes.add(name) : classes.delete(name)),
+        toggle: (name: string, force: boolean) =>
+          force ? classes.add(name) : classes.delete(name),
         has: (name: string) => classes.has(name),
       },
+      setAttribute: (k: string, v: string) => (attrs[k] = v),
+      removeAttribute: (k: string) => delete attrs[k],
     };
   }
 
@@ -281,6 +288,56 @@ describe('applyMarkerZoom', () => {
   });
 });
 
+describe('servicios ocultos por zoom', () => {
+  function fakeElement() {
+    const classes = new Set<string>();
+    const attrs: Record<string, string> = {};
+    return {
+      attrs,
+      dataset: {} as Record<string, string>,
+      classList: {
+        toggle: (name: string, force: boolean) =>
+          force ? classes.add(name) : classes.delete(name),
+        has: (name: string) => classes.has(name),
+      },
+      setAttribute: (k: string, v: string) => (attrs[k] = v),
+      removeAttribute: (k: string) => delete attrs[k],
+    };
+  }
+
+  it('un servicio oculto no ocupa sitio ni pliega a otro; al acercar vuelve', () => {
+    const container = {
+      style: { setProperty: () => undefined },
+      dataset: {} as Record<string, string>,
+    };
+    const place = fakeElement();
+    const service = fakeElement();
+    const markers = [
+      { id: 'service', element: service, lngLat: [0, 0], priority: 200, minZoom: 15.5 },
+      { id: 'place', element: place, lngLat: [0, 0], priority: 10 },
+    ] as unknown as ZoomableMarker[];
+    let zoom = 15;
+    const map = {
+      getZoom: () => zoom,
+      getContainer: () => container as unknown as HTMLElement,
+      project: () => ({ x: 50, y: 50 }),
+    };
+    applyMarkerZoom(map, markers);
+    expect(service.dataset.markerState).toBe('hidden');
+    expect(service.classList.has('is-hidden')).toBe(true);
+    expect(service.attrs['aria-hidden']).toBe('true');
+    expect(place.dataset.markerState).toBe('full');
+
+    expect(container.dataset.markerLabels).toBe('false');
+    zoom = 17;
+    applyMarkerZoom(map, markers);
+    expect(container.dataset.markerLabels).toBe('true');
+    expect(service.dataset.markerState).toBe('full');
+    expect(service.attrs['aria-hidden']).toBeUndefined();
+    expect(service.classList.has('is-hidden')).toBe(false);
+  });
+});
+
 describe('eventos en el mapa', () => {
   const CASA_DE_VACAS: [number, number] = [-3.6840988, 40.4192106];
   const TITERES: [number, number] = [-3.6866962, 40.4187197];
@@ -332,7 +389,11 @@ describe('eventos en el mapa', () => {
 describe('paradas numeradas', () => {
   const size = (scale: number) => STOP_MARKER_BASE_SIZE * scale;
 
-  function overlappingPairs(points: StopPoint[], offsets: { dx: number; dy: number }[], scale: number) {
+  function overlappingPairs(
+    points: StopPoint[],
+    offsets: { dx: number; dy: number }[],
+    scale: number,
+  ) {
     const pairs: string[] = [];
     for (let i = 0; i < points.length; i += 1) {
       for (let j = i + 1; j < points.length; j += 1) {

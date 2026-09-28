@@ -1,5 +1,6 @@
 import type { Place, PlaceCategory } from '../types/place';
-import type { ParkService } from '../types/service';
+import type { ParkService, ServiceGroup } from '../types/service';
+import { SERVICE_GROUPS, serviceGroup, serviceMinZoom } from './serviceTypes';
 
 export type CategoryFilter = PlaceCategory | 'todos';
 
@@ -65,4 +66,44 @@ export function parseCategoryParam(value: string | null | undefined): CategoryFi
     'acceso',
   ];
   return allowed.includes(value as CategoryFilter) ? (value as CategoryFilter) : 'todos';
+}
+
+/* ---------- Chips de servicios ---------- */
+
+export type ServiceGroupFilter = ServiceGroup | 'todos';
+
+export function filterServicesByGroup(
+  services: ParkService[],
+  group: ServiceGroupFilter,
+): ParkService[] {
+  if (group === 'todos') return services;
+  return services.filter((service) => serviceGroup(service) === group);
+}
+
+export function countServicesByGroup(services: ParkService[]): Record<ServiceGroupFilter, number> {
+  const counts = Object.fromEntries([['todos', services.length], ...SERVICE_GROUPS.map((g) => [g, 0])]) as Record<
+    ServiceGroupFilter,
+    number
+  >;
+  for (const service of services) counts[serviceGroup(service)] += 1;
+  return counts;
+}
+
+export function parseServiceGroupParam(value: string | null | undefined): ServiceGroupFilter {
+  return value && (SERVICE_GROUPS as readonly string[]).includes(value)
+    ? (value as ServiceGroup)
+    : 'todos';
+}
+
+/**
+ * Servicios que se ven a un zoom dado. En «Todos» aparecen progresivamente
+ * (ver `serviceMinZoom`); con el filtro «Servicio», siempre.
+ */
+export function servicesVisibleAtZoom(
+  services: ParkService[],
+  zoom: number,
+  zoomGated: boolean,
+): ParkService[] {
+  if (!zoomGated) return services;
+  return services.filter((service) => zoom >= serviceMinZoom(service));
 }

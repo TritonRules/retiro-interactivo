@@ -6,9 +6,16 @@
 | --- | --- | --- |
 | OpenStreetMap | Nombres y coordenadas | https://www.openstreetmap.org/ |
 | Nominatim | Búsqueda de candidatos | https://nominatim.openstreetmap.org/ |
-| Overpass API | Confirmación en bbox del Retiro | https://overpass-api.de/ |
+| Overpass API | Confirmación en bbox del Retiro; extracción de servicios (`npm run services:osm`) | https://overpass-api.de/ |
 | OpenFreeMap | Estilo Liberty / teselas | https://tiles.openfreemap.org/styles/liberty |
 | MapLibre GL JS | Renderizado del mapa | https://maplibre.org/ |
+
+## Servicios OSM (extracción automática)
+
+Archivo generado: `src/data/services-osm.json` (`npm run services:osm`), 65 servicios nuevos
+a 2026-09-28 (cafés, bares, heladerías, quioscos, aseos, agua potable, parques infantiles,
+gimnasios al aire libre…). © colaboradores de OpenStreetMap, **ODbL 1.0**. Detalle, reglas
+de deduplicación y estudio de precios: `docs/servicios-osm.md`.
 
 ## Lugares (20)
 
