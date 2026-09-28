@@ -31,6 +31,7 @@ export function countByCategory(
     todos: places.length + services.length,
     iconico: 0,
     monumento: 0,
+    escultura: 0,
     cultura: 0,
     naturaleza: 0,
     familias: 0,
@@ -55,6 +56,7 @@ export function parseCategoryParam(value: string | null | undefined): CategoryFi
   const allowed: CategoryFilter[] = [
     'iconico',
     'monumento',
+    'escultura',
     'cultura',
     'naturaleza',
     'familias',

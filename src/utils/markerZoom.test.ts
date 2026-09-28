@@ -11,6 +11,7 @@ import {
   EVENT_GROUP_RADIUS_METERS,
   eventGroupPriority,
   groupEventsByLocation,
+  isHiddenAtZoom,
   MARKER_BASE_SIZE,
   MARKER_MIN_SCALE,
   markerScaleForZoom,
@@ -39,12 +40,17 @@ function project([lon, lat]: [number, number], zoom: number) {
 }
 
 function itemsAt(zoom: number, withServices: boolean, pinnedId?: string): CollisionItem[] {
-  const placeItems = (places as Place[]).map((place) => ({
-    id: `place:${place.id}`,
-    ...project(place.coordinates, zoom),
-    priority: placeMarkerPriority(place.category),
-    pinned: `place:${place.id}` === pinnedId,
-  }));
+  // Como el mapa en «Todos»: las estatuas por debajo de su zoom mínimo no se pintan.
+  const placeItems = (places as Place[])
+    .filter(
+      (place) => !isHiddenAtZoom(zoom, place.mapMinZoom, `place:${place.id}` === pinnedId),
+    )
+    .map((place) => ({
+      id: `place:${place.id}`,
+      ...project(place.coordinates, zoom),
+      priority: placeMarkerPriority(place.category),
+      pinned: `place:${place.id}` === pinnedId,
+    }));
   const serviceItems = withServices
     ? (services as ParkService[]).map((service) => ({
         id: `service:${service.id}`,
@@ -152,6 +158,65 @@ describe('resolveMarkerCollisions', () => {
   });
 });
 
+describe('estatuas por tramos de zoom', () => {
+  const esculturas = (places as Place[]).filter((place) => place.category === 'escultura');
+
+  it('ceden ante monumentos y paseos, pero no ante servicios', () => {
+    expect(placeMarkerPriority('escultura')).toBeLessThan(placeMarkerPriority('monumento'));
+    expect(placeMarkerPriority('escultura')).toBeLessThan(placeMarkerPriority('paseo'));
+    expect(placeMarkerPriority('escultura')).toBeGreaterThan(SERVICE_MARKER_PRIORITY);
+  });
+
+  it('isHiddenAtZoom respeta el zoom mínimo salvo en el seleccionado', () => {
+    expect(isHiddenAtZoom(15.2, 16)).toBe(true);
+    expect(isHiddenAtZoom(16, 16)).toBe(false);
+    expect(isHiddenAtZoom(15.2, 16, true)).toBe(false);
+    expect(isHiddenAtZoom(13.5, undefined)).toBe(false);
+    expect(isHiddenAtZoom(Number.NaN, 16)).toBe(false);
+  });
+
+  it('todas las estatuas tienen zoom mínimo y aparecen de forma progresiva', () => {
+    expect(esculturas.length).toBeGreaterThanOrEqual(30);
+    for (const place of esculturas) {
+      expect(place.mapMinZoom, place.id).toBeGreaterThanOrEqual(15);
+    }
+    const visibles = (zoom: number) =>
+      esculturas.filter((place) => !isHiddenAtZoom(zoom, place.mapMinZoom)).length;
+    expect(visibles(14.2)).toBe(0);
+    expect(visibles(15.2)).toBeGreaterThan(0);
+    expect(visibles(15.2)).toBeLessThan(visibles(16.5));
+    expect(visibles(16.5)).toBeLessThan(visibles(17.5));
+    expect(visibles(17.5)).toBe(esculturas.length);
+    // Los reyes del Paseo de las Estatuas, muy juntos, solo de cerca.
+    for (const place of esculturas.filter((p) => p.tags.includes('reyes') && p.id !== 'estatua-juana-i')) {
+      expect(place.mapMinZoom, place.id).toBeGreaterThanOrEqual(17);
+    }
+  });
+
+  it('a vista de parque (15,2) las estatuas no pliegan a ningún lugar mayor', () => {
+    const items = itemsAt(15.2, false);
+    const collapsed = resolveMarkerCollisions(items, markerScaleForZoom(15.2));
+    for (const place of places as Place[]) {
+      if (place.category === 'iconico' || place.category === 'monumento') {
+        const rivals = items.filter(
+          (item) =>
+            item.id !== `place:${place.id}` &&
+            item.id.startsWith('place:') &&
+            (places as Place[]).find((p) => `place:${p.id}` === item.id)?.category === 'escultura',
+        );
+        // Si un monumento se pliega, no es por culpa de una estatua (tienen menos prioridad).
+        if (collapsed.has(`place:${place.id}`)) {
+          const withoutStatues = items.filter((item) => !rivals.includes(item));
+          expect(
+            resolveMarkerCollisions(withoutStatues, markerScaleForZoom(15.2)).has(`place:${place.id}`),
+            place.id,
+          ).toBe(true);
+        }
+      }
+    }
+  });
+});
+
 describe('applyMarkerZoom', () => {
   function fakeElement() {
     const classes = new Set<string>();
@@ -185,6 +250,34 @@ describe('applyMarkerZoom', () => {
     expect(a.dataset.markerState).toBe('full');
     expect(b.dataset.markerState).toBe('dot');
     expect(b.classList.has('is-dot')).toBe(true);
+  });
+
+  it('oculta los iconos por debajo de su zoom mínimo y no los cuenta en las colisiones', () => {
+    const container = { style: { setProperty: () => {} } };
+    const statue = fakeElement();
+    const other = fakeElement();
+    const pinned = fakeElement();
+    const markers = [
+      { id: 'estatua', element: statue, lngLat: [0, 0], priority: 100, minZoom: 16 },
+      { id: 'lugar', element: other, lngLat: [0, 0], priority: 10 },
+      { id: 'fijada', element: pinned, lngLat: [5, 5], priority: 1, minZoom: 17, pinned: true },
+    ] as unknown as ZoomableMarker[];
+    const map = (zoom: number) => ({
+      getZoom: () => zoom,
+      getContainer: () => container as unknown as HTMLElement,
+      project: ([x]: [number, number]) => ({ x: x * 100, y: x * 100 }),
+    });
+    applyMarkerZoom(map(15), markers);
+    expect(statue.dataset.markerState).toBe('hidden');
+    expect(statue.classList.has('is-hidden')).toBe(true);
+    // Sin la estatua (oculta) el otro icono no se pliega.
+    expect(other.dataset.markerState).toBe('full');
+    expect(pinned.dataset.markerState).toBe('full');
+
+    applyMarkerZoom(map(16.5), markers);
+    expect(statue.dataset.markerState).toBe('full');
+    expect(statue.classList.has('is-hidden')).toBe(false);
+    expect(other.dataset.markerState).toBe('dot');
   });
 });
 

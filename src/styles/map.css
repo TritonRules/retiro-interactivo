@@ -114,6 +114,12 @@
   border-radius: 0.5rem 0.5rem 0.15rem 0.15rem;
 }
 
+/* Estatuas: busto redondeado sobre pedestal ancho. */
+.filtro-chip__shape--pedestal {
+  clip-path: polygon(30% 0%, 70% 0%, 70% 62%, 100% 62%, 100% 100%, 0% 100%, 0% 62%, 30% 62%);
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+
 .mapa-canvas-wrap {
   position: relative;
   flex: 1;
@@ -471,6 +477,13 @@
   border-radius: 14px 14px 6px 6px;
 }
 
+/* Estatuas: algo más pequeñas que los lugares y con esquinas de pedestal. */
+.place-marker--pedestal .place-marker__shape {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 4px 4px;
+}
+
 .place-marker--service .place-marker__shape {
   width: 28px;
   height: 28px;
@@ -522,6 +535,11 @@
 }
 
 .place-marker.is-dot .place-marker__glyph {
+  display: none;
+}
+
+/* Por debajo de su zoom mínimo (`mapMinZoom`): fuera del mapa y del orden de foco. */
+.place-marker.is-hidden {
   display: none;
 }
 
@@ -648,6 +666,13 @@
   margin: 0;
   color: var(--color-ink-muted);
   font-size: 0.95rem;
+}
+
+.ficha__credit {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-ink);
 }
 
 .ficha__tags {

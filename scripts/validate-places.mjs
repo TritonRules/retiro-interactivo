@@ -37,6 +37,7 @@ const placeSchema = z
     category: z.enum([
       'iconico',
       'monumento',
+      'escultura',
       'cultura',
       'naturaleza',
       'familias',
@@ -60,6 +61,18 @@ const placeSchema = z
     accessibility: z.array(z.string()).optional(),
     openingHoursNote: z.string().optional(),
     videos: videosSchema,
+    artwork: z
+      .object({
+        authors: z.array(z.string().min(1)).optional(),
+        date: z.string().min(1).max(60).optional(),
+      })
+      .strict()
+      .optional(),
+    additionalSources: z
+      .array(z.object({ name: z.string().min(1), url: z.url() }).strict())
+      .max(6)
+      .optional(),
+    mapMinZoom: z.number().min(13.5).max(19).optional(),
   })
   .superRefine((place, ctx) => {
     const [lon, lat] = place.coordinates;
@@ -158,10 +171,11 @@ if (places.length < 60 - services.length) {
   // total fichas target checked below
 }
 const totalFichas = places.length + services.length;
-if (totalFichas < 60 || totalFichas > 100) {
-  fail(`Se esperaban 60–100 fichas totales, hay ${totalFichas} (${places.length} lugares + ${services.length} servicios).`);
+// Iteración estatuas: 38 lugares + 45 estatuas y esculturas + servicios.
+if (totalFichas < 60 || totalFichas > 160) {
+  fail(`Se esperaban 60–160 fichas totales, hay ${totalFichas} (${places.length} lugares + ${services.length} servicios).`);
 }
-if (routes.length !== 5) fail(`Se esperaban 5 rutas, hay ${routes.length}.`);
+if (routes.length !== 6) fail(`Se esperaban 6 rutas, hay ${routes.length}.`);
 
 const placeIds = new Set(places.map((p) => p.id));
 const placeSlugs = new Set(places.map((p) => p.slug));

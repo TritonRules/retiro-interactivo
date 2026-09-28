@@ -8,8 +8,8 @@ const places = JSON.parse(readFileSync(join(root, 'src/data/places.json'), 'utf8
 const routes = JSON.parse(readFileSync(join(root, 'src/data/routes.json'), 'utf8'));
 const placeIds = new Set(places.map((p) => p.id));
 let ok = true;
-if (routes.length !== 5) {
-  console.error(`Se esperaban 5 rutas, hay ${routes.length}`);
+if (routes.length !== 6) {
+  console.error(`Se esperaban 6 rutas, hay ${routes.length}`);
   ok = false;
 }
 for (const route of routes) {

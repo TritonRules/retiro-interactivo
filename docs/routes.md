@@ -1,6 +1,6 @@
 # Rutas temáticas
 
-Exactamente **cinco** rutas iniciales en `src/data/routes.json`:
+Exactamente **seis** rutas en `src/data/routes.json`:
 
 | Slug | Nombre | Duración aprox. | Distancia aprox. | Paradas |
 | --- | --- | --- | --- | --- |
@@ -9,8 +9,11 @@ Exactamente **cinco** rutas iniciales en `src/data/routes.json`:
 | `retiro-con-ninos` | El Retiro con niños | ~75 min | ~2,6 km | 6 |
 | `ruta-fotografica` | Ruta fotográfica | ~100 min | ~2,3 km | 7 |
 | `caminar-o-correr` | Caminar o correr por El Retiro | ~50 min | ~4,2 km | 6 |
+| `ruta-estatuas` | Ruta de las estatuas | ~100 min | ~3,1 km | 13 |
 
 Las distancias son las del recorrido real por los paseos, no la línea recta entre paradas.
+
+La ruta de las estatuas (sept. 2026) recorre el Paseo de las Estatuas, el Estanque, los monumentos de Martínez Campos, Ramón y Cajal, Campoamor y Galdós y termina en el Ángel Caído. La investigación de cada pieza está en `docs/estatuas-research.md`.
 
 ## Reglas
 

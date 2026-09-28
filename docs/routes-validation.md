@@ -18,9 +18,19 @@ la aplicación no consulta ningún servicio de routing en ejecución.
 | `retiro-con-ninos` | ~1961 m | ~2570 m | 18 → 57 | 6 | Sobre caminos reales |
 | `ruta-fotografica` | ~1415 m | ~2330 m | 18 → 58 | 7 | Sobre caminos reales |
 | `caminar-o-correr` | ~3119 m | ~4170 m | 24 → 74 | 6 | Circular, sobre caminos reales |
+| `ruta-estatuas` (2026-09-28) | — | ~3080 m | 70 | 13 | Nueva, sobre caminos reales |
 
 Las duraciones estimadas no cambian: seguían siendo razonables para la distancia
 real de cada recorrido (la más ajustada, `caminar-o-correr`, son 4,2 km en ~50 min).
+
+### Ruta de las estatuas (2026-09-28)
+
+`ruta-estatuas` se generó sin tocar las otras cinco:
+`node scripts/routes-build-paths.mjs --only=ruta-estatuas`. La opción `--only=<slug>`
+solo reescribe esa ruta. Tras simplificar, el script densifica los tramos rectos
+largos (máx. 300 m entre vértices), porque la prueba de geometría no admite saltos de
+más de 450 m. Paradas enganchadas a 5–26 m del camino. 3080 m en ~100 min (~1,8 km/h,
+con tiempo para mirar cada estatua).
 
 ## Defectos corregidos (QA físico en iPhone, 2026-08-09)
 
@@ -35,7 +45,7 @@ real de cada recorrido (la más ajustada, `caminar-o-correr`, son 4,2 km en ~50 
 
 ## Validación automática
 
-`src/utils/routes.geometry.test.ts` comprueba, para las cinco rutas:
+`src/utils/routes.geometry.test.ts` comprueba, para todas las rutas:
 
 - `LineString` con al menos dos coordenadas, todas dentro del parque;
 - sin vértices repetidos y sin saltos mayores de 450 m;
@@ -48,7 +58,7 @@ real de cada recorrido (la más ajustada, `caminar-o-correr`, son 4,2 km en ~50 
 
 ## Pendiente de validación física
 
-- Caminar las cinco rutas in situ.
+- Caminar las seis rutas in situ (la de las estatuas aún no se ha recorrido).
 - Verificar cierres temporales / obras.
 - Confirmar que «caminar o correr» no invade zonas restringidas.
 

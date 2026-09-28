@@ -34,7 +34,7 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      testMatch: /agenda\.spec\.ts|sw\.spec\.ts|map-fallback\.spec\.ts|map-markers\.spec\.ts|videos\.spec\.ts|paseo(-mapa)?\.spec\.ts/,
+      testMatch: /agenda\.spec\.ts|sw\.spec\.ts|map-fallback\.spec\.ts|map-markers\.spec\.ts|estatuas\.spec\.ts|videos\.spec\.ts|paseo(-mapa)?\.spec\.ts/,
       use: { ...devices['Desktop Chrome'], baseURL: fixtureBase, serviceWorkers: 'allow' },
     },
     {

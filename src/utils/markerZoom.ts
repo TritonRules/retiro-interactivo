@@ -29,13 +29,18 @@ export function markerScaleForZoom(zoom: number): number {
   return Math.round((MARKER_MIN_SCALE + t * (1 - MARKER_MIN_SCALE)) * 1000) / 1000;
 }
 
-/** Prioridad de categoría: los lugares icónicos ganan; los servicios ceden primero. */
+/**
+ * Prioridad de categoría: los lugares icónicos ganan; los servicios ceden primero.
+ * Las estatuas quedan por debajo de monumentos y paseos: son muchas y pequeñas, y
+ * además aparecen por tramos de zoom (`mapMinZoom`, ver `isHiddenAtZoom`).
+ */
 const CATEGORY_PRIORITY: Record<PlaceCategory, number> = {
   iconico: 100,
   monumento: 80,
   cultura: 70,
   familias: 60,
   paseo: 50,
+  escultura: 45,
   naturaleza: 40,
   acceso: 30,
   servicio: 20,
@@ -44,6 +49,15 @@ export const SERVICE_MARKER_PRIORITY = 10;
 
 export function placeMarkerPriority(category: PlaceCategory): number {
   return CATEGORY_PRIORITY[category] ?? 0;
+}
+
+/**
+ * Oculto por zoom: el marcador tiene un zoom mínimo y el mapa está por debajo.
+ * Un marcador fijado (seleccionado) no se oculta nunca.
+ */
+export function isHiddenAtZoom(zoom: number, minZoom?: number, pinned?: boolean): boolean {
+  if (pinned || minZoom === undefined || !Number.isFinite(zoom)) return false;
+  return zoom < minZoom;
 }
 
 export interface CollisionItem {
@@ -94,6 +108,8 @@ export interface ZoomableMarker {
   lngLat: [number, number];
   priority: number;
   pinned?: boolean;
+  /** Zoom mínimo al que se muestra; por debajo se oculta (salvo fijado). */
+  minZoom?: number;
 }
 
 interface MapLike {
@@ -104,10 +120,17 @@ interface MapLike {
 
 /** Aplica escala y colisiones a los marcadores DOM del mapa. */
 export function applyMarkerZoom(map: MapLike, markers: ZoomableMarker[]): void {
-  const scale = markerScaleForZoom(map.getZoom());
+  const zoom = map.getZoom();
+  const scale = markerScaleForZoom(zoom);
   map.getContainer().style.setProperty('--marker-scale', String(scale));
+  const hidden = new Set(
+    markers
+      .filter((marker) => isHiddenAtZoom(zoom, marker.minZoom, marker.pinned))
+      .map((marker) => marker.id),
+  );
+  const visible = markers.filter((marker) => !hidden.has(marker.id));
   const collapsed = resolveMarkerCollisions(
-    markers.map((marker) => {
+    visible.map((marker) => {
       const point = map.project(marker.lngLat);
       return {
         id: marker.id,
@@ -120,9 +143,11 @@ export function applyMarkerZoom(map: MapLike, markers: ZoomableMarker[]): void {
     scale,
   );
   for (const marker of markers) {
-    const isDot = collapsed.has(marker.id);
+    const isHidden = hidden.has(marker.id);
+    const isDot = !isHidden && collapsed.has(marker.id);
+    marker.element.classList.toggle('is-hidden', isHidden);
     marker.element.classList.toggle('is-dot', isDot);
-    marker.element.dataset.markerState = isDot ? 'dot' : 'full';
+    marker.element.dataset.markerState = isHidden ? 'hidden' : isDot ? 'dot' : 'full';
   }
 }
 

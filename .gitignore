@@ -34,3 +34,6 @@ blob-report/
 automation/cache/
 .cache/
 *.tmp
+
+# caché de Overpass de scripts/routes-build-paths.mjs
+.cache/

@@ -11,6 +11,8 @@ interface Props {
 const GLYPH: Record<PlaceCategory, string> = {
   iconico: '★',
   monumento: '▲',
+  // Peón de ajedrez en variante de texto: silueta de busto sobre pedestal.
+  escultura: '\u265F\uFE0E',
   cultura: '■',
   naturaleza: '●',
   familias: '⬡',

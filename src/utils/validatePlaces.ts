@@ -6,6 +6,7 @@ import { videosSchema } from './videos.shared.mjs';
 export const placeCategorySchema = z.enum([
   'iconico',
   'monumento',
+  'escultura',
   'cultura',
   'naturaleza',
   'familias',
@@ -57,6 +58,18 @@ export const placeSchema = z
     accessibility: z.array(z.string()).optional(),
     openingHoursNote: z.string().optional(),
     videos: videosSchema,
+    artwork: z
+      .object({
+        authors: z.array(z.string().min(1)).optional(),
+        date: z.string().min(1).max(60).optional(),
+      })
+      .strict()
+      .optional(),
+    additionalSources: z
+      .array(z.object({ name: z.string().min(1), url: z.url() }).strict())
+      .max(6)
+      .optional(),
+    mapMinZoom: z.number().min(13.5).max(19).optional(),
   })
   .superRefine((place, ctx) => {
     const [lon, lat] = place.coordinates;

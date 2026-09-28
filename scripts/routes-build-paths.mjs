@@ -8,6 +8,8 @@
  *
  *   node scripts/routes-build-paths.mjs            # regenera y escribe
  *   node scripts/routes-build-paths.mjs --dry-run  # solo informa
+ *   node scripts/routes-build-paths.mjs --only=ruta-estatuas  # solo esa ruta; las demás
+ *                                                    # conservan su trazado publicado
  *
  * Las respuestas de Overpass se cachean en `.cache/` para poder repetir la
  * ejecución sin volver a consultar el servicio.
@@ -19,6 +21,8 @@ import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const cacheDir = join(root, '.cache');
 const dryRun = process.argv.includes('--dry-run');
+const onlyArg = process.argv.find((arg) => arg.startsWith('--only='));
+const only = onlyArg ? new Set(onlyArg.slice('--only='.length).split(',').filter(Boolean)) : null;
 
 const BBOX = '40.4070,-3.6920,40.4260,-3.6720';
 const OVERPASS = 'https://overpass-api.de/api/interpreter';
@@ -258,6 +262,25 @@ function simplify(points, tolerance) {
   ];
 }
 
+/**
+ * Los paseos rectos largos (p. ej. el de Coches) quedan tras simplificar como un
+ * único tramo; se parten en trozos iguales para que ningún tramo supere el tope
+ * que usa la validación para detectar líneas rectas inventadas (450 m).
+ */
+const MAX_SEGMENT_METERS = 300;
+function densify(points, maxMeters) {
+  const out = [points[0]];
+  for (let i = 1; i < points.length; i += 1) {
+    const [a, b] = [points[i - 1], points[i]];
+    const pieces = Math.ceil(haversine(a, b) / maxMeters);
+    for (let k = 1; k < pieces; k += 1) {
+      out.push([a[0] + ((b[0] - a[0]) * k) / pieces, a[1] + ((b[1] - a[1]) * k) / pieces]);
+    }
+    out.push(b);
+  }
+  return out;
+}
+
 const osm = await overpass(
   `[out:json][timeout:120];
    (way["highway"~"^(footway|path|pedestrian|steps|living_street|track|service)$"](${BBOX}););
@@ -285,7 +308,13 @@ const places = JSON.parse(readFileSync(join(root, 'src/data/places.json'), 'utf8
 const placeById = new Map(places.map((place) => [place.id, place]));
 
 let failures = 0;
+if (only) {
+  const unknown = [...only].filter((slug) => !routes.some((route) => route.slug === slug));
+  if (unknown.length > 0) throw new Error(`--only: rutas inexistentes ${unknown.join(', ')}`);
+}
+
 for (const route of routes) {
+  if (only && !only.has(route.slug)) continue;
   const stops = route.stopIds.map((id) => {
     const place = placeById.get(id);
     if (!place) throw new Error(`Ruta ${route.slug}: parada inexistente ${id}`);
@@ -310,7 +339,7 @@ for (const route of routes) {
     points.push(...(points.length === 0 ? coordinates : coordinates.slice(1)));
   }
 
-  const geometry = simplify(points, 3).map(([lon, lat]) => [
+  const geometry = densify(simplify(points, 3), MAX_SEGMENT_METERS).map(([lon, lat]) => [
     Number(lon.toFixed(6)),
     Number(lat.toFixed(6)),
   ]);

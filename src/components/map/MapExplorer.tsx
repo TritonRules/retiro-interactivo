@@ -457,6 +457,9 @@ export default function MapExplorer({
           lngLat: place.coordinates,
           priority: placeMarkerPriority(place.category),
           pinned: active,
+          // Con un filtro de categoría activo se ve todo lo filtrado; en «Todos», las
+          // piezas menores (estatuas) aparecen por tramos de zoom.
+          minZoom: category === 'todos' ? place.mapMinZoom : undefined,
         });
       }
 
@@ -532,7 +535,7 @@ export default function MapExplorer({
     return () => {
       cancelled = true;
     };
-  }, [filteredPlaces, filteredServices, eventGroups, ready, selection, activeRoute]);
+  }, [filteredPlaces, filteredServices, eventGroups, ready, selection, activeRoute, category]);
 
   // Iconos, eventos y paradas adaptados al zoom: escala, plegado y separación de
   // paradas se recalculan como mucho una vez por frame.
