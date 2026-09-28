@@ -12,7 +12,7 @@ describe('places.json', () => {
     expect(result.ok).toBe(true);
     if (result.ok) {
       expect(result.places.length).toBeGreaterThanOrEqual(30);
-      expect(result.places.length).toBeLessThanOrEqual(80);
+      expect(result.places.length).toBeLessThanOrEqual(130);
       const ids = new Set(result.places.map((p) => p.id));
       const slugs = new Set(result.places.map((p) => p.slug));
       expect(ids.size).toBe(result.places.length);

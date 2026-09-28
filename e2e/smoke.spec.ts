@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 test.describe('smoke del candidato real', () => {
-  test('agenda, fichas críticas y cinco rutas cargan', async ({ page }) => {
+  test('agenda, fichas críticas y seis rutas cargan', async ({ page }) => {
     await page.goto('', { waitUntil: 'networkidle' });
     await expect(page.locator('.mapa-explorer')).toBeVisible({ timeout: 30_000 });
 
@@ -24,7 +24,7 @@ test.describe('smoke del candidato real', () => {
     await page.goto('rutas/', { waitUntil: 'networkidle' });
     await expect(page.getByRole('heading', { name: /Rutas/i })).toBeVisible();
     const routeLinks = page.locator('a[href*="/rutas/"]');
-    expect(await routeLinks.count()).toBeGreaterThanOrEqual(5);
+    expect(await routeLinks.count()).toBeGreaterThanOrEqual(6);
 
     await page.goto('?lugar=palacio-de-cristal', { waitUntil: 'domcontentloaded' });
     await expect(page.locator('.mapa-explorer')).toBeVisible({ timeout: 30_000 });

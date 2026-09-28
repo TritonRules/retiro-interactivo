@@ -646,6 +646,771 @@
         "category": "familias",
         "status": "verified"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.688216,
+          40.416776
+        ]
+      },
+      "properties": {
+        "id": "estatua-fernando-iv",
+        "slug": "estatua-fernando-iv",
+        "name": "Estatua de Fernando IV",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.687813,
+          40.416791
+        ]
+      },
+      "properties": {
+        "id": "estatua-sancho-iv-norte",
+        "slug": "estatua-sancho-iv-norte",
+        "name": "Estatua de Sancho IV (lado norte)",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.687364,
+          40.416843
+        ]
+      },
+      "properties": {
+        "id": "estatua-enrique-ii",
+        "slug": "estatua-enrique-ii",
+        "name": "Estatua de Enrique II",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.686866,
+          40.41687
+        ]
+      },
+      "properties": {
+        "id": "estatua-garcia-i",
+        "slug": "estatua-garcia-i",
+        "name": "Estatua de García I",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68641,
+          40.416904
+        ]
+      },
+      "properties": {
+        "id": "estatua-urraca-i",
+        "slug": "estatua-urraca-i",
+        "name": "Estatua de Urraca I",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.685941,
+          40.41694
+        ]
+      },
+      "properties": {
+        "id": "estatua-berenguela",
+        "slug": "estatua-berenguela",
+        "name": "Estatua de Berenguela",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.688234,
+          40.416622
+        ]
+      },
+      "properties": {
+        "id": "estatua-gundemaro",
+        "slug": "estatua-gundemaro",
+        "name": "Estatua de Gundemaro",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.687797,
+          40.416648
+        ]
+      },
+      "properties": {
+        "id": "estatua-carlos-i",
+        "slug": "estatua-carlos-i",
+        "name": "Estatua de Carlos I",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.687336,
+          40.416682
+        ]
+      },
+      "properties": {
+        "id": "estatua-carlos-ii",
+        "slug": "estatua-carlos-ii",
+        "name": "Estatua de Carlos II",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.686851,
+          40.416708
+        ]
+      },
+      "properties": {
+        "id": "estatua-ramon-berenguer-iv",
+        "slug": "estatua-ramon-berenguer-iv",
+        "name": "Estatua de Ramón Berenguer IV",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.686371,
+          40.416753
+        ]
+      },
+      "properties": {
+        "id": "estatua-chintila",
+        "slug": "estatua-chintila",
+        "name": "Estatua de Chintila",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.685907,
+          40.41679
+        ]
+      },
+      "properties": {
+        "id": "estatua-alfonso-i-batallador",
+        "slug": "estatua-alfonso-i-batallador",
+        "name": "Estatua de Alfonso I el Batallador",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.685499,
+          40.416814
+        ]
+      },
+      "properties": {
+        "id": "estatua-sancho-iv-sur",
+        "slug": "estatua-sancho-iv-sur",
+        "name": "Estatua de Sancho IV (lado sur)",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.685504,
+          40.416978
+        ]
+      },
+      "properties": {
+        "id": "estatua-juana-i",
+        "slug": "estatua-juana-i",
+        "name": "Estatua de Juana I de Castilla",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.680953,
+          40.417801
+        ]
+      },
+      "properties": {
+        "id": "monumento-martinez-campos",
+        "slug": "monumento-martinez-campos",
+        "name": "Monumento al General Martínez Campos",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.681289,
+          40.416481
+        ]
+      },
+      "properties": {
+        "id": "monumento-ramon-y-cajal",
+        "slug": "monumento-ramon-y-cajal",
+        "name": "Monumento a Santiago Ramón y Cajal",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.680168,
+          40.412071
+        ]
+      },
+      "properties": {
+        "id": "monumento-galdos",
+        "slug": "monumento-galdos",
+        "name": "Monumento a Benito Pérez Galdós",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.686903,
+          40.415306
+        ]
+      },
+      "properties": {
+        "id": "monumento-jacinto-benavente",
+        "slug": "monumento-jacinto-benavente",
+        "name": "Monumento a Jacinto Benavente",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.679649,
+          40.412938
+        ]
+      },
+      "properties": {
+        "id": "monumento-campoamor",
+        "slug": "monumento-campoamor",
+        "name": "Monumento a Campoamor",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.682096,
+          40.419618
+        ]
+      },
+      "properties": {
+        "id": "monumento-alvarez-quintero",
+        "slug": "monumento-alvarez-quintero",
+        "name": "Monumento a los Hermanos Álvarez Quintero",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.681546,
+          40.419343
+        ]
+      },
+      "properties": {
+        "id": "monumento-a-cuba",
+        "slug": "monumento-a-cuba",
+        "name": "Monumento a Cuba",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.681489,
+          40.419904
+        ]
+      },
+      "properties": {
+        "id": "monumento-ruperto-chapi",
+        "slug": "monumento-ruperto-chapi",
+        "name": "Monumento a Ruperto Chapí",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.679388,
+          40.411186
+        ]
+      },
+      "properties": {
+        "id": "monumento-miguel-moya",
+        "slug": "monumento-miguel-moya",
+        "name": "Monumento a Miguel Moya",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.680102,
+          40.413948
+        ]
+      },
+      "properties": {
+        "id": "monumento-doctor-cortezo",
+        "slug": "monumento-doctor-cortezo",
+        "name": "Monumento al Doctor Cortezo",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.681099,
+          40.410605
+        ]
+      },
+      "properties": {
+        "id": "monumento-tolosa-latour",
+        "slug": "monumento-tolosa-latour",
+        "name": "Monumento al Doctor Tolosa Latour",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68114,
+          40.410964
+        ]
+      },
+      "properties": {
+        "id": "busto-federico-chueca",
+        "slug": "busto-federico-chueca",
+        "name": "Busto de Federico Chueca",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6808,
+          40.412712
+        ]
+      },
+      "properties": {
+        "id": "busto-ricardo-codorniu",
+        "slug": "busto-ricardo-codorniu",
+        "name": "Busto de Ricardo Codorníu",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.681872,
+          40.420179
+        ]
+      },
+      "properties": {
+        "id": "monumento-ponce-de-leon",
+        "slug": "monumento-ponce-de-leon",
+        "name": "Monumento a Fray Pedro Ponce de León",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.681528,
+          40.417072
+        ]
+      },
+      "properties": {
+        "id": "busto-jacinto-verdaguer",
+        "slug": "busto-jacinto-verdaguer",
+        "name": "Busto de Jacinto Verdaguer",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.682768,
+          40.415634
+        ]
+      },
+      "properties": {
+        "id": "busto-andres-eloy-blanco",
+        "slug": "busto-andres-eloy-blanco",
+        "name": "Busto de Andrés Eloy Blanco",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.683409,
+          40.4189
+        ]
+      },
+      "properties": {
+        "id": "busto-juan-van-halen",
+        "slug": "busto-juan-van-halen",
+        "name": "Busto de Juan Van Halen",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.680045,
+          40.417984
+        ]
+      },
+      "properties": {
+        "id": "busto-pedro-vargas",
+        "slug": "busto-pedro-vargas",
+        "name": "Busto de Pedro Vargas",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.680355,
+          40.419461
+        ]
+      },
+      "properties": {
+        "id": "busto-francisco-de-paula-marti",
+        "slug": "busto-francisco-de-paula-marti",
+        "name": "Busto de Francisco de Paula Martí",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.685266,
+          40.41553
+        ]
+      },
+      "properties": {
+        "id": "monumento-solano-lopez",
+        "slug": "monumento-solano-lopez",
+        "name": "Monumento al Mariscal Francisco Solano López",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.684215,
+          40.415173
+        ]
+      },
+      "properties": {
+        "id": "monumento-francisco-morazan",
+        "slug": "monumento-francisco-morazan",
+        "name": "Monumento al General Francisco Morazán",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.680162,
+          40.416939
+        ]
+      },
+      "properties": {
+        "id": "hercules-leon-de-nemea",
+        "slug": "hercules-leon-de-nemea",
+        "name": "Hércules y el León de Nemea",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.682663,
+          40.418842
+        ]
+      },
+      "properties": {
+        "id": "estatua-de-diana",
+        "slug": "estatua-de-diana",
+        "name": "Estatua de Diana",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.679857,
+          40.416558
+        ]
+      },
+      "properties": {
+        "id": "estatua-diosa-hera",
+        "slug": "estatua-diosa-hera",
+        "name": "Estatua de la diosa Hera",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.687376,
+          40.416295
+        ]
+      },
+      "properties": {
+        "id": "mujer-sedente",
+        "slug": "mujer-sedente",
+        "name": "Mujer sedente",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.677992,
+          40.414501
+        ]
+      },
+      "properties": {
+        "id": "estatua-thalia",
+        "slug": "estatua-thalia",
+        "name": "Estatua de Thalía",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.685119,
+          40.419993
+        ]
+      },
+      "properties": {
+        "id": "monumento-mingote",
+        "slug": "monumento-mingote",
+        "name": "Monumento a Antonio Mingote",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.676747,
+          40.41112
+        ]
+      },
+      "properties": {
+        "id": "busto-ana-maria-vidal-abarca",
+        "slug": "busto-ana-maria-vidal-abarca",
+        "name": "Busto de Ana María Vidal-Abarca",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.680932,
+          40.414093
+        ]
+      },
+      "properties": {
+        "id": "cubos-de-ibarrola",
+        "slug": "cubos-de-ibarrola",
+        "name": "Dados de hormigón de Ibarrola",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.679914,
+          40.416905
+        ]
+      },
+      "properties": {
+        "id": "monumento-tierno-galvan",
+        "slug": "monumento-tierno-galvan",
+        "name": "Monumento a Enrique Tierno Galván",
+        "category": "escultura",
+        "status": "verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.686783,
+          40.420062
+        ]
+      },
+      "properties": {
+        "id": "monolito-gongora",
+        "slug": "monolito-gongora",
+        "name": "Monolito a Luis de Góngora",
+        "category": "escultura",
+        "status": "verified"
+      }
     }
   ]
 }

@@ -1059,5 +1059,1942 @@
       "Accesibilidad para movilidad reducida a través de la Puerta del Niño Jesús, según la ficha municipal"
     ],
     "openingHoursNote": "Invierno (sep–jun): lunes a viernes 10:00–14:30 y 16:00–18:30; sábados 10:00–14:00 y 16:00–18:30; domingos y festivos 10:00–14:00. Verano (jul–ago): lunes a viernes 10:00–15:00; sábados, domingos y festivos 10:00–14:00. Cerrado 1 y 6 de enero, 1 de mayo, 24, 25 y 31 de diciembre. Fuente municipal consultada el 6 de septiembre de 2026."
+  },
+  {
+    "id": "estatua-fernando-iv",
+    "slug": "estatua-fernando-iv",
+    "name": "Estatua de Fernando IV",
+    "category": "escultura",
+    "coordinates": [
+      -3.688216,
+      40.416776
+    ],
+    "shortDescription": "Estatua del Paseo de las Estatuas: Fernando IV de Castilla y León, «el Emplazado».",
+    "description": "Hijo de Sancho IV, heredó la corona siendo niño en 1295 y reinó bajo la regencia de su madre, María de Molina, hasta su muerte en 1312. Es la primera figura del lado norte al entrar por la Puerta de España. Forma parte de la serie de reyes tallada entre 1743 y 1748 para la cornisa del Palacio Real, bajo la dirección de Juan Domingo Olivieri y Felipe de Castro, y está en el Retiro desde 1847.",
+    "tags": [
+      "estatua",
+      "paseo de las estatuas",
+      "reyes"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Fernando IV",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=c908091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Serie del Palacio Real, dir. Juan Domingo Olivieri y Felipe de Castro"
+      ],
+      "date": "1743–1748"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Estatua de Fernando IV",
+        "url": "https://www.openstreetmap.org/node/4621788745"
+      },
+      {
+        "name": "Diario de Madrid — Las 14 estatuas del paseo de Argentina",
+        "url": "https://diario.madrid.es/blog/2023/04/18/las-siete-curiosidades-de-las-14-estatuas-del-paseo-de-argentina-de-el-retiro/"
+      }
+    ],
+    "mapMinZoom": 17
+  },
+  {
+    "id": "estatua-sancho-iv-norte",
+    "slug": "estatua-sancho-iv-norte",
+    "name": "Estatua de Sancho IV (lado norte)",
+    "category": "escultura",
+    "coordinates": [
+      -3.687813,
+      40.416791
+    ],
+    "shortDescription": "Estatua del Paseo de las Estatuas: Sancho IV de Castilla y León, «el Bravo».",
+    "description": "Hijo de Alfonso X el Sabio, reinó de 1284 a 1295. En el paseo hay dos estatuas con su nombre y el propio catálogo municipal admite que una puede estar mal atribuida. Forma parte de la serie de reyes tallada entre 1743 y 1748 para la cornisa del Palacio Real, bajo la dirección de Juan Domingo Olivieri y Felipe de Castro, y está en el Retiro desde 1847.",
+    "tags": [
+      "estatua",
+      "paseo de las estatuas",
+      "reyes"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Sancho IV",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=0b08091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Serie del Palacio Real, dir. Juan Domingo Olivieri y Felipe de Castro"
+      ],
+      "date": "1743–1748"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Estatua de Sancho IV (lado norte)",
+        "url": "https://www.openstreetmap.org/node/4621796129"
+      },
+      {
+        "name": "Diario de Madrid — Las 14 estatuas del paseo de Argentina",
+        "url": "https://diario.madrid.es/blog/2023/04/18/las-siete-curiosidades-de-las-14-estatuas-del-paseo-de-argentina-de-el-retiro/"
+      }
+    ],
+    "mapMinZoom": 17
+  },
+  {
+    "id": "estatua-enrique-ii",
+    "slug": "estatua-enrique-ii",
+    "name": "Estatua de Enrique II",
+    "category": "escultura",
+    "coordinates": [
+      -3.687364,
+      40.416843
+    ],
+    "shortDescription": "Estatua del Paseo de las Estatuas: Enrique II de Castilla, primer rey de la casa de Trastámara.",
+    "description": "Llegó al trono en 1369 y murió en 1379. Su estatua estuvo en el Parterre hasta que en 1989 se trasladó a este paseo. Forma parte de la serie de reyes tallada entre 1743 y 1748 para la cornisa del Palacio Real, bajo la dirección de Juan Domingo Olivieri y Felipe de Castro, y está en el Retiro desde 1847.",
+    "tags": [
+      "estatua",
+      "paseo de las estatuas",
+      "reyes"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Enrique II",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=a908091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Serie del Palacio Real, dir. Juan Domingo Olivieri y Felipe de Castro"
+      ],
+      "date": "1743–1748"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Estatua de Enrique II",
+        "url": "https://www.openstreetmap.org/node/4621795351"
+      },
+      {
+        "name": "Diario de Madrid — Las 14 estatuas del paseo de Argentina",
+        "url": "https://diario.madrid.es/blog/2023/04/18/las-siete-curiosidades-de-las-14-estatuas-del-paseo-de-argentina-de-el-retiro/"
+      }
+    ],
+    "mapMinZoom": 17
+  },
+  {
+    "id": "estatua-garcia-i",
+    "slug": "estatua-garcia-i",
+    "name": "Estatua de García I",
+    "category": "escultura",
+    "coordinates": [
+      -3.686866,
+      40.41687
+    ],
+    "shortDescription": "Estatua del Paseo de las Estatuas: García I de León, primogénito de Alfonso III.",
+    "description": "Reinó entre 910 y 914 y se ocupó de repoblar las tierras del Duero. Forma parte de la serie de reyes tallada entre 1743 y 1748 para la cornisa del Palacio Real, bajo la dirección de Juan Domingo Olivieri y Felipe de Castro, y está en el Retiro desde 1847.",
+    "tags": [
+      "estatua",
+      "paseo de las estatuas",
+      "reyes"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: García I Rey de León",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=0908091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Serie del Palacio Real, dir. Juan Domingo Olivieri y Felipe de Castro"
+      ],
+      "date": "1743–1748"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Estatua de García I",
+        "url": "https://www.openstreetmap.org/node/4621798316"
+      },
+      {
+        "name": "Diario de Madrid — Las 14 estatuas del paseo de Argentina",
+        "url": "https://diario.madrid.es/blog/2023/04/18/las-siete-curiosidades-de-las-14-estatuas-del-paseo-de-argentina-de-el-retiro/"
+      }
+    ],
+    "mapMinZoom": 17
+  },
+  {
+    "id": "estatua-urraca-i",
+    "slug": "estatua-urraca-i",
+    "name": "Estatua de Urraca I",
+    "category": "escultura",
+    "coordinates": [
+      -3.68641,
+      40.416904
+    ],
+    "shortDescription": "Estatua del Paseo de las Estatuas: la reina Urraca I de León y Castilla.",
+    "description": "Hija de Alfonso VI, casó con Raimundo de Borgoña, con quien tuvo al futuro Alfonso VII, y después con Alfonso I de Aragón. Su reinado estuvo marcado por las guerras internas. Forma parte de la serie de reyes tallada entre 1743 y 1748 para la cornisa del Palacio Real, bajo la dirección de Juan Domingo Olivieri y Felipe de Castro, y está en el Retiro desde 1847.",
+    "tags": [
+      "estatua",
+      "paseo de las estatuas",
+      "reyes"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Urraca",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=6b08091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Serie del Palacio Real, dir. Juan Domingo Olivieri y Felipe de Castro"
+      ],
+      "date": "1743–1748"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Estatua de Urraca I",
+        "url": "https://www.openstreetmap.org/node/4621799685"
+      },
+      {
+        "name": "Diario de Madrid — Las 14 estatuas del paseo de Argentina",
+        "url": "https://diario.madrid.es/blog/2023/04/18/las-siete-curiosidades-de-las-14-estatuas-del-paseo-de-argentina-de-el-retiro/"
+      }
+    ],
+    "mapMinZoom": 17
+  },
+  {
+    "id": "estatua-berenguela",
+    "slug": "estatua-berenguela",
+    "name": "Estatua de Berenguela",
+    "category": "escultura",
+    "coordinates": [
+      -3.685941,
+      40.41694
+    ],
+    "shortDescription": "Estatua del Paseo de las Estatuas: la reina Berenguela de Castilla.",
+    "description": "Madre de Fernando III el Santo, le cedió el reino de Castilla en 1217 y facilitó la unión definitiva de Castilla y León. Forma parte de la serie de reyes tallada entre 1743 y 1748 para la cornisa del Palacio Real, bajo la dirección de Juan Domingo Olivieri y Felipe de Castro, y está en el Retiro desde 1847.",
+    "tags": [
+      "estatua",
+      "paseo de las estatuas",
+      "reyes"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Berenguela",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=6808091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Serie del Palacio Real, dir. Juan Domingo Olivieri y Felipe de Castro"
+      ],
+      "date": "1743–1748"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Estatua de Berenguela",
+        "url": "https://www.openstreetmap.org/node/4621801073"
+      },
+      {
+        "name": "Diario de Madrid — Las 14 estatuas del paseo de Argentina",
+        "url": "https://diario.madrid.es/blog/2023/04/18/las-siete-curiosidades-de-las-14-estatuas-del-paseo-de-argentina-de-el-retiro/"
+      }
+    ],
+    "mapMinZoom": 17
+  },
+  {
+    "id": "estatua-gundemaro",
+    "slug": "estatua-gundemaro",
+    "name": "Estatua de Gundemaro",
+    "category": "escultura",
+    "coordinates": [
+      -3.688234,
+      40.416622
+    ],
+    "shortDescription": "Estatua del Paseo de las Estatuas: el rey visigodo Gundemaro.",
+    "description": "Reinó solo dos años, de 610 a 612, y es el monarca más antiguo del paseo. Forma parte de la serie de reyes tallada entre 1743 y 1748 para la cornisa del Palacio Real, bajo la dirección de Juan Domingo Olivieri y Felipe de Castro, y está en el Retiro desde 1847.",
+    "tags": [
+      "estatua",
+      "paseo de las estatuas",
+      "reyes"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Gundemaro",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=0a08091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Serie del Palacio Real, dir. Juan Domingo Olivieri y Felipe de Castro"
+      ],
+      "date": "1743–1748"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Estatua de Gundemaro",
+        "url": "https://www.openstreetmap.org/node/4621815222"
+      },
+      {
+        "name": "Diario de Madrid — Las 14 estatuas del paseo de Argentina",
+        "url": "https://diario.madrid.es/blog/2023/04/18/las-siete-curiosidades-de-las-14-estatuas-del-paseo-de-argentina-de-el-retiro/"
+      }
+    ],
+    "mapMinZoom": 17
+  },
+  {
+    "id": "estatua-carlos-i",
+    "slug": "estatua-carlos-i",
+    "name": "Estatua de Carlos I",
+    "category": "escultura",
+    "coordinates": [
+      -3.687797,
+      40.416648
+    ],
+    "shortDescription": "Estatua del Paseo de las Estatuas: Carlos I de España y V de Alemania.",
+    "description": "Nacido en Gante en 1500, reunió las coronas de Castilla y Aragón y fue emperador Forma parte de la serie de reyes tallada entre 1743 y 1748 para la cornisa del Palacio Real, bajo la dirección de Juan Domingo Olivieri y Felipe de Castro, y está en el Retiro desde 1847.",
+    "tags": [
+      "estatua",
+      "paseo de las estatuas",
+      "reyes"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Carlos I de España y V de Alemania",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=a808091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Serie del Palacio Real, dir. Juan Domingo Olivieri y Felipe de Castro"
+      ],
+      "date": "1743–1748"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Estatua de Carlos I",
+        "url": "https://www.openstreetmap.org/node/4621814071"
+      },
+      {
+        "name": "Diario de Madrid — Las 14 estatuas del paseo de Argentina",
+        "url": "https://diario.madrid.es/blog/2023/04/18/las-siete-curiosidades-de-las-14-estatuas-del-paseo-de-argentina-de-el-retiro/"
+      }
+    ],
+    "mapMinZoom": 17
+  },
+  {
+    "id": "estatua-carlos-ii",
+    "slug": "estatua-carlos-ii",
+    "name": "Estatua de Carlos II",
+    "category": "escultura",
+    "coordinates": [
+      -3.687336,
+      40.416682
+    ],
+    "shortDescription": "Estatua del Paseo de las Estatuas: Carlos II, «el Hechizado».",
+    "description": "Último rey de la casa de Austria en España: su muerte sin descendencia en 1700 abrió la Guerra de Sucesión. Forma parte de la serie de reyes tallada entre 1743 y 1748 para la cornisa del Palacio Real, bajo la dirección de Juan Domingo Olivieri y Felipe de Castro, y está en el Retiro desde 1847.",
+    "tags": [
+      "estatua",
+      "paseo de las estatuas",
+      "reyes"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Carlos II",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=c808091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Serie del Palacio Real, dir. Juan Domingo Olivieri y Felipe de Castro"
+      ],
+      "date": "1743–1748"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Estatua de Carlos II",
+        "url": "https://www.openstreetmap.org/node/4621809435"
+      },
+      {
+        "name": "Diario de Madrid — Las 14 estatuas del paseo de Argentina",
+        "url": "https://diario.madrid.es/blog/2023/04/18/las-siete-curiosidades-de-las-14-estatuas-del-paseo-de-argentina-de-el-retiro/"
+      }
+    ],
+    "mapMinZoom": 17
+  },
+  {
+    "id": "estatua-ramon-berenguer-iv",
+    "slug": "estatua-ramon-berenguer-iv",
+    "name": "Estatua de Ramón Berenguer IV",
+    "category": "escultura",
+    "coordinates": [
+      -3.686851,
+      40.416708
+    ],
+    "shortDescription": "Estatua del Paseo de las Estatuas: Ramón Berenguer IV, conde de Barcelona.",
+    "description": "Su matrimonio con Petronila, heredera de Aragón, dio origen en 1137 a la Corona de Aragón. Forma parte de la serie de reyes tallada entre 1743 y 1748 para la cornisa del Palacio Real, bajo la dirección de Juan Domingo Olivieri y Felipe de Castro, y está en el Retiro desde 1847.",
+    "tags": [
+      "estatua",
+      "paseo de las estatuas",
+      "reyes"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Ramón Berenguer IV",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=4808091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Serie del Palacio Real, dir. Juan Domingo Olivieri y Felipe de Castro"
+      ],
+      "date": "1743–1748"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Estatua de Ramón Berenguer IV",
+        "url": "https://www.openstreetmap.org/node/4621807626"
+      },
+      {
+        "name": "Diario de Madrid — Las 14 estatuas del paseo de Argentina",
+        "url": "https://diario.madrid.es/blog/2023/04/18/las-siete-curiosidades-de-las-14-estatuas-del-paseo-de-argentina-de-el-retiro/"
+      }
+    ],
+    "mapMinZoom": 17
+  },
+  {
+    "id": "estatua-chintila",
+    "slug": "estatua-chintila",
+    "name": "Estatua de Chintila",
+    "category": "escultura",
+    "coordinates": [
+      -3.686371,
+      40.416753
+    ],
+    "shortDescription": "Estatua del Paseo de las Estatuas: el rey visigodo Chintila.",
+    "description": "Reinó de 636 a 639 y buscó el apoyo de la Iglesia para asegurar el trono. Forma parte de la serie de reyes tallada entre 1743 y 1748 para la cornisa del Palacio Real, bajo la dirección de Juan Domingo Olivieri y Felipe de Castro, y está en el Retiro desde 1847.",
+    "tags": [
+      "estatua",
+      "paseo de las estatuas",
+      "reyes"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Chintila",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=4908091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Serie del Palacio Real, dir. Juan Domingo Olivieri y Felipe de Castro"
+      ],
+      "date": "1743–1748"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Estatua de Chintila",
+        "url": "https://www.openstreetmap.org/node/4621803552"
+      },
+      {
+        "name": "Diario de Madrid — Las 14 estatuas del paseo de Argentina",
+        "url": "https://diario.madrid.es/blog/2023/04/18/las-siete-curiosidades-de-las-14-estatuas-del-paseo-de-argentina-de-el-retiro/"
+      }
+    ],
+    "mapMinZoom": 17
+  },
+  {
+    "id": "estatua-alfonso-i-batallador",
+    "slug": "estatua-alfonso-i-batallador",
+    "name": "Estatua de Alfonso I el Batallador",
+    "category": "escultura",
+    "coordinates": [
+      -3.685907,
+      40.41679
+    ],
+    "shortDescription": "Estatua del Paseo de las Estatuas: Alfonso I el Batallador, rey de Aragón y Pamplona.",
+    "description": "Incorporó a los reinos cristianos buena parte del valle del Ebro, con Zaragoza en 1118. Forma parte de la serie de reyes tallada entre 1743 y 1748 para la cornisa del Palacio Real, bajo la dirección de Juan Domingo Olivieri y Felipe de Castro, y está en el Retiro desde 1847.",
+    "tags": [
+      "estatua",
+      "paseo de las estatuas",
+      "reyes"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Alonso I El Batallador",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=a708091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Serie del Palacio Real, dir. Juan Domingo Olivieri y Felipe de Castro"
+      ],
+      "date": "1743–1748"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Estatua de Alfonso I el Batallador",
+        "url": "https://www.openstreetmap.org/node/4675280667"
+      },
+      {
+        "name": "Diario de Madrid — Las 14 estatuas del paseo de Argentina",
+        "url": "https://diario.madrid.es/blog/2023/04/18/las-siete-curiosidades-de-las-14-estatuas-del-paseo-de-argentina-de-el-retiro/"
+      }
+    ],
+    "mapMinZoom": 17
+  },
+  {
+    "id": "estatua-sancho-iv-sur",
+    "slug": "estatua-sancho-iv-sur",
+    "name": "Estatua de Sancho IV (lado sur)",
+    "category": "escultura",
+    "coordinates": [
+      -3.685499,
+      40.416814
+    ],
+    "shortDescription": "Estatua del Paseo de las Estatuas: la segunda figura de Sancho IV, «el Bravo».",
+    "description": "Cierra el lado sur del paseo, junto al Estanque Grande. Es la otra estatua dedicada al mismo rey Forma parte de la serie de reyes tallada entre 1743 y 1748 para la cornisa del Palacio Real, bajo la dirección de Juan Domingo Olivieri y Felipe de Castro, y está en el Retiro desde 1847.",
+    "tags": [
+      "estatua",
+      "paseo de las estatuas",
+      "reyes"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Sancho IV. El Bravo",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=2b08091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Serie del Palacio Real, dir. Juan Domingo Olivieri y Felipe de Castro"
+      ],
+      "date": "1743–1748"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Estatua de Sancho IV (lado sur)",
+        "url": "https://www.openstreetmap.org/node/4621804545"
+      },
+      {
+        "name": "Diario de Madrid — Las 14 estatuas del paseo de Argentina",
+        "url": "https://diario.madrid.es/blog/2023/04/18/las-siete-curiosidades-de-las-14-estatuas-del-paseo-de-argentina-de-el-retiro/"
+      }
+    ],
+    "mapMinZoom": 17
+  },
+  {
+    "id": "estatua-juana-i",
+    "slug": "estatua-juana-i",
+    "name": "Estatua de Juana I de Castilla",
+    "category": "escultura",
+    "coordinates": [
+      -3.685504,
+      40.416978
+    ],
+    "shortDescription": "La única estatua moderna del Paseo de las Estatuas: Juana I de Castilla, en piedra caliza.",
+    "description": "Ocupa el pedestal que llevaba décadas vacío en el extremo del paseo junto al Estanque Grande. La talló en piedra caliza la escultora Iria Groba Martín (2,75 m) y se instaló en 2022, con el V centenario de la guerra de las Comunidades, para reivindicar a la reina frente al apodo de «la Loca».",
+    "tags": [
+      "estatua",
+      "paseo de las estatuas",
+      "reyes",
+      "siglo XXI"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumento a Juana I de Castilla",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/portales/monumenta/es/Nuevos-monumentos-y-esculturas/Actuaciones-con-final-en-2022/Monumento-a-Juana-I-de-Castilla/?vgnextchannel=a2ffc0fe1eaf7810VgnVCM1000001d4a900aRCRD&vgnextfmt=default&vgnextoid=21325568a1bf7810VgnVCM2000001f4a900aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Iria Groba Martín"
+      ],
+      "date": "2022"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Juana I",
+        "url": "https://www.openstreetmap.org/node/12803756889"
+      },
+      {
+        "name": "El Mundo — Juana I de Castilla «reina» ya en el Retiro",
+        "url": "https://www.elmundo.es/madrid/2022/04/03/6246ee42fdddffe1958b45a5.html"
+      },
+      {
+        "name": "Diario de Madrid — Las 14 estatuas del paseo de Argentina",
+        "url": "https://diario.madrid.es/blog/2023/04/18/las-siete-curiosidades-de-las-14-estatuas-del-paseo-de-argentina-de-el-retiro/"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "monumento-martinez-campos",
+    "slug": "monumento-martinez-campos",
+    "name": "Monumento al General Martínez Campos",
+    "category": "escultura",
+    "coordinates": [
+      -3.680953,
+      40.417801
+    ],
+    "shortDescription": "Estatua ecuestre en bronce del general Arsenio Martínez Campos, obra de Mariano Benlliure.",
+    "description": "Inaugurado en 1907 a espaldas del Monumento a Alfonso XII, con el que comparte eje. El general aparece a caballo, en actitud de observar, sobre un pedestal labrado como una roca natural. Se pagó por suscripción popular y el Ejército aportó el bronce.",
+    "tags": [
+      "estatua",
+      "ecuestre",
+      "bronce",
+      "Benlliure"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: General Martínez Campos",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=eb08091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 10,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Mariano Benlliure"
+      ],
+      "date": "1907"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — General Martínez Campos",
+        "url": "https://www.openstreetmap.org/way/577857243"
+      },
+      {
+        "name": "Wikipedia — Parque del Retiro de Madrid (Escultura)",
+        "url": "https://es.wikipedia.org/wiki/Parque_del_Retiro_de_Madrid"
+      }
+    ],
+    "mapMinZoom": 15
+  },
+  {
+    "id": "monumento-ramon-y-cajal",
+    "slug": "monumento-ramon-y-cajal",
+    "name": "Monumento a Santiago Ramón y Cajal",
+    "category": "escultura",
+    "coordinates": [
+      -3.681289,
+      40.416481
+    ],
+    "shortDescription": "El Nobel aparece reclinado como un héroe clásico en este conjunto de granito y bronce de Victorio Macho.",
+    "description": "Victorio Macho ganó el concurso en 1922 y el monumento se inauguró en 1926. Cajal, con manto y torso desnudo, reposa en el centro de un estanque; al fondo, una figura femenina de bronce alude a la ciencia médica entre dos fuentes con relieves de la vida y la muerte.",
+    "tags": [
+      "estatua",
+      "granito",
+      "bronce",
+      "Victorio Macho",
+      "ciencia"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Santiago Ramón y Cajal",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=0728091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 10,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Victorio Macho"
+      ],
+      "date": "1926"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Monumento a Santiago Ramón y Cajal",
+        "url": "https://www.openstreetmap.org/way/578219912"
+      },
+      {
+        "name": "Wikipedia — Parque del Retiro de Madrid (Escultura)",
+        "url": "https://es.wikipedia.org/wiki/Parque_del_Retiro_de_Madrid"
+      },
+      {
+        "name": "esMADRID — Un bosque de esculturas",
+        "url": "https://www.esmadrid.com/estatuas-parque-del-retiro"
+      }
+    ],
+    "mapMinZoom": 15
+  },
+  {
+    "id": "monumento-galdos",
+    "slug": "monumento-galdos",
+    "name": "Monumento a Benito Pérez Galdós",
+    "category": "escultura",
+    "coordinates": [
+      -3.680168,
+      40.412071
+    ],
+    "shortDescription": "Galdós sentado, con una manta sobre las piernas, tallado en piedra por un joven Victorio Macho.",
+    "description": "Se inauguró el 20 de enero de 1919, en vida del escritor, que acudió ya ciego. Está en piedra blanca de Lérida y se costeó por suscripción pública; ocupa una pequeña glorieta junto al paseo de Coches, cerca de La Rosaleda.",
+    "tags": [
+      "estatua",
+      "piedra",
+      "Victorio Macho",
+      "literatura"
+    ],
+    "sourceName": "Wikipedia — Monumento a Galdós en el Retiro",
+    "sourceUrl": "https://es.wikipedia.org/wiki/Monumento_a_Gald%C3%B3s_en_el_Retiro",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 10,
+    "area": "retiro",
+    "sourceTier": "B",
+    "artwork": {
+      "authors": [
+        "Victorio Macho"
+      ],
+      "date": "1919"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Benito Pérez Galdós",
+        "url": "https://www.openstreetmap.org/way/1341621436"
+      },
+      {
+        "name": "Wikipedia — Parque del Retiro de Madrid (Escultura)",
+        "url": "https://es.wikipedia.org/wiki/Parque_del_Retiro_de_Madrid"
+      }
+    ],
+    "mapMinZoom": 15
+  },
+  {
+    "id": "monumento-jacinto-benavente",
+    "slug": "monumento-jacinto-benavente",
+    "name": "Monumento a Jacinto Benavente",
+    "category": "escultura",
+    "coordinates": [
+      -3.686903,
+      40.415306
+    ],
+    "shortDescription": "Una figura femenina de aire griego alza la máscara del teatro en honor del Nobel Jacinto Benavente.",
+    "description": "Victorio Macho prefirió representar el teatro antes que el cuerpo del dramaturgo: su perfil aparece en el pedestal. Se inauguró en 1962 en el eje del Parterre, frente a la Puerta de Felipe IV, y se pagó por suscripción popular.",
+    "tags": [
+      "estatua",
+      "Victorio Macho",
+      "teatro",
+      "Parterre"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Jacinto Benavente",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=2008b09812dc4510b09812dc45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 10,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Victorio Macho"
+      ],
+      "date": "1962"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Monumento a Jacinto Benavente",
+        "url": "https://www.openstreetmap.org/node/4728973348"
+      },
+      {
+        "name": "Wikipedia — Monumento a Jacinto Benavente",
+        "url": "https://es.wikipedia.org/wiki/Monumento_a_Jacinto_Benavente"
+      }
+    ],
+    "mapMinZoom": 15
+  },
+  {
+    "id": "monumento-campoamor",
+    "slug": "monumento-campoamor",
+    "name": "Monumento a Campoamor",
+    "category": "escultura",
+    "coordinates": [
+      -3.679649,
+      40.412938
+    ],
+    "shortDescription": "El poeta Ramón de Campoamor, rodeado de escenas de bronce con personajes de sus poemas.",
+    "description": "Se inauguró en 1914 en el parque donde el poeta solía pasear. Las dos escenas de bronce se añadieron después; una de ellas, «¡Quién supiera escribir!», fue robada y se repuso con una copia en 1995.",
+    "tags": [
+      "estatua",
+      "Coullaut Valera",
+      "literatura"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Campoamor",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=2628091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 10,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Lorenzo Coullaut Valera"
+      ],
+      "date": "1914"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Ramón de Campoamor",
+        "url": "https://www.openstreetmap.org/node/4760037952"
+      },
+      {
+        "name": "esMADRID — Un bosque de esculturas",
+        "url": "https://www.esmadrid.com/estatuas-parque-del-retiro"
+      }
+    ],
+    "mapMinZoom": 15
+  },
+  {
+    "id": "monumento-alvarez-quintero",
+    "slug": "monumento-alvarez-quintero",
+    "name": "Monumento a los Hermanos Álvarez Quintero",
+    "category": "escultura",
+    "coordinates": [
+      -3.682096,
+      40.419618
+    ],
+    "shortDescription": "Conjunto de aire andaluz dedicado a los comediógrafos Serafín y Joaquín Álvarez Quintero.",
+    "description": "Lo empezó Lorenzo Coullaut Valera y, tras su muerte en 1932, lo terminó su hijo Federico, autor del jinete de bronce. Se inauguró en 1934 con los dos hermanos aún vivos.",
+    "tags": [
+      "estatua",
+      "grupo escultórico",
+      "Coullaut Valera",
+      "teatro"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Serafín y Joaquín Álvarez Quintero",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=0628091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 10,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Lorenzo Coullaut Valera",
+        "Federico Coullaut-Valera"
+      ],
+      "date": "1934"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Monumento a los Hermanos Álvarez Quintero",
+        "url": "https://www.openstreetmap.org/way/578219909"
+      },
+      {
+        "name": "esMADRID — Un bosque de esculturas",
+        "url": "https://www.esmadrid.com/estatuas-parque-del-retiro"
+      }
+    ],
+    "mapMinZoom": 15
+  },
+  {
+    "id": "monumento-a-cuba",
+    "slug": "monumento-a-cuba",
+    "name": "Monumento a Cuba",
+    "category": "escultura",
+    "coordinates": [
+      -3.681546,
+      40.419343
+    ],
+    "shortDescription": "Fuente monumental con la alegoría de Cuba, Isabel la Católica y Cristóbal Colón.",
+    "description": "Cuba aparece como una mujer con gorro frigio (Miguel Blay), acompañada de Isabel la Católica (Juan Cristóbal) y Colón (Francisco Asorey); los bronces son de Benlliure. Proyectado en 1929, no se inauguró hasta 1952.",
+    "tags": [
+      "estatua",
+      "fuente",
+      "grupo escultórico",
+      "Benlliure"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Cuba",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=6628091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 10,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Miguel Blay",
+        "Juan Cristóbal",
+        "Francisco Asorey",
+        "Mariano Benlliure"
+      ],
+      "date": "1952"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Monumento a Cuba",
+        "url": "https://www.openstreetmap.org/way/626041830"
+      }
+    ],
+    "mapMinZoom": 15
+  },
+  {
+    "id": "monumento-ruperto-chapi",
+    "slug": "monumento-ruperto-chapi",
+    "name": "Monumento a Ruperto Chapí",
+    "category": "escultura",
+    "coordinates": [
+      -3.681489,
+      40.419904
+    ],
+    "shortDescription": "El compositor de «La Revoltosa», sentado como un dios clásico y presentado por la Música con mantilla.",
+    "description": "Monumento proyectado por Julio Antonio e inaugurado en 1921. La figura de Chapí, de arenisca, se deterioró y se sustituyó por una copia en bronce de Eduardo Capa; detrás, la Música sostiene una Victoria de Samotracia.",
+    "tags": [
+      "estatua",
+      "música",
+      "zarzuela"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Ruperto Chapí",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=4628091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 10,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Julio Antonio",
+        "Eduardo Capa (figura de bronce)"
+      ],
+      "date": "1921"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Ruperto Chapí",
+        "url": "https://www.openstreetmap.org/node/3497590682"
+      }
+    ],
+    "mapMinZoom": 15
+  },
+  {
+    "id": "monumento-miguel-moya",
+    "slug": "monumento-miguel-moya",
+    "name": "Monumento a Miguel Moya",
+    "category": "escultura",
+    "coordinates": [
+      -3.679388,
+      40.411186
+    ],
+    "shortDescription": "Homenaje de los periodistas a Miguel Moya, primer presidente de la Asociación de la Prensa.",
+    "description": "Obra de Mariano Benlliure inaugurada en 1928, costeada sobre todo por Torcuato Luca de Tena y por suscripción. Recuerda al fundador de la Asociación de la Prensa de Madrid, que la presidió de 1895 a 1920.",
+    "tags": [
+      "busto",
+      "Benlliure",
+      "periodismo",
+      "Rosaleda"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Miguel Moya",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=4a08091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Mariano Benlliure"
+      ],
+      "date": "1928"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Miguel Moya",
+        "url": "https://www.openstreetmap.org/node/4758257145"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "monumento-doctor-cortezo",
+    "slug": "monumento-doctor-cortezo",
+    "name": "Monumento al Doctor Cortezo",
+    "category": "escultura",
+    "coordinates": [
+      -3.680102,
+      40.413948
+    ],
+    "shortDescription": "Monolito con el perfil del médico Carlos María Cortezo y un niño que da de comer a unos gorriones.",
+    "description": "Recuerda a Carlos María Cortezo, pionero de la bacteriología y director general de Sanidad. Lo promovió el Colegio de Huérfanos de Médicos y se inauguró en abril de 1921, con el propio doctor presente.",
+    "tags": [
+      "monolito",
+      "medicina"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Doctor Cortezo",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=2908091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "date": "1921"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Doctor Cortezo",
+        "url": "https://www.openstreetmap.org/node/4760032808"
+      },
+      {
+        "name": "Ayuntamiento de Madrid — Restauración del Monumento al Doctor Cortezo",
+        "url": "https://patrimonioypaisaje.madrid.es/portales/monumenta/es/Actuaciones-de-Conservacion-y-Mejora-del-Patrimonio-Cultural/Restauracion-del-Monumento-al-Doctor-Cortezo/?vgnextchannel=2716c6926f152610VgnVCM1000001d4a900aRCRD&vgnextfmt=default&vgnextoid=26cc55c3d5768810VgnVCM1000001d4a900aRCRD"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "monumento-tolosa-latour",
+    "slug": "monumento-tolosa-latour",
+    "name": "Monumento al Doctor Tolosa Latour",
+    "category": "escultura",
+    "coordinates": [
+      -3.681099,
+      40.410605
+    ],
+    "shortDescription": "Una madre de bronce acerca a su hijo al busto del pediatra Manuel Tolosa Latour en señal de gratitud.",
+    "description": "Homenaje al médico que dedicó su vida a la protección de la infancia. Obra de José Ortells, en piedra y bronce, se inauguró junto a La Rosaleda el 12 de noviembre de 1925.",
+    "tags": [
+      "busto",
+      "grupo escultórico",
+      "medicina",
+      "Rosaleda"
+    ],
+    "sourceName": "Escultura pública — El apóstol del niño",
+    "sourceUrl": "https://www.esculturapublica.es/2016/12/el-apostol-del-nino.html",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "B",
+    "artwork": {
+      "authors": [
+        "José Ortells"
+      ],
+      "date": "1925"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Manuel de Tolosa Latour",
+        "url": "https://www.openstreetmap.org/node/3497669670"
+      },
+      {
+        "name": "Revista del Casino de Madrid — Tolosa Latour",
+        "url": "http://www.casinodemadrid.es/sp/revista/Revista46/PDF/056-057%20Tolosa%20Latour.pdf"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "busto-federico-chueca",
+    "slug": "busto-federico-chueca",
+    "name": "Busto de Federico Chueca",
+    "category": "escultura",
+    "coordinates": [
+      -3.68114,
+      40.410964
+    ],
+    "shortDescription": "Busto del compositor madrileño Federico Chueca, autor de la zarzuela «La Gran Vía».",
+    "description": "Lo compró el jardinero mayor Cecilio Rodríguez para adornar La Rosaleda. Se atribuye al taller de Pedro Estany, autor de un busto muy parecido en la tumba del músico.",
+    "tags": [
+      "busto",
+      "música",
+      "zarzuela",
+      "Rosaleda"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Chueca",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=6908091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Pedro Estany (taller)"
+      ]
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Busto de Federico Chueca",
+        "url": "https://www.openstreetmap.org/node/3497669669"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "busto-ricardo-codorniu",
+    "slug": "busto-ricardo-codorniu",
+    "name": "Busto de Ricardo Codorníu",
+    "category": "escultura",
+    "coordinates": [
+      -3.6808,
+      40.412712
+    ],
+    "shortDescription": "Homenaje al ingeniero de montes Ricardo Codorníu, «el apóstol del árbol».",
+    "description": "Se lo dedicaron sus compañeros del Cuerpo de Ingenieros de Montes en 1926; es obra de Ignacio Pinazo. Codorníu dirigió la repoblación de Sierra Espuña y la fijación de las dunas de Guardamar.",
+    "tags": [
+      "busto",
+      "naturaleza"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Ricardo Codorníu",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=e808091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Ignacio Pinazo Martínez"
+      ],
+      "date": "1926"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Busto a Ricardo Codorníu",
+        "url": "https://www.openstreetmap.org/node/2527419982"
+      },
+      {
+        "name": "Wikipedia — Ricardo Codorníu y Stárico",
+        "url": "https://es.wikipedia.org/wiki/Ricardo_Codorn%C3%ADu_y_St%C3%A1rico"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "monumento-ponce-de-leon",
+    "slug": "monumento-ponce-de-leon",
+    "name": "Monumento a Fray Pedro Ponce de León",
+    "category": "escultura",
+    "coordinates": [
+      -3.681872,
+      40.420179
+    ],
+    "shortDescription": "Homenaje al monje que en el siglo XVI enseñó a hablar y a leer a niños sordos.",
+    "description": "Promovido por la Asociación de Sordomudos de Madrid, recuerda también al pedagogo Juan de Pablo Bonet. Se inauguró en 1920 con sus lápidas y la escultura se añadió en 1925.",
+    "tags": [
+      "estatua",
+      "educación"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Fray Pedro Ponce de León",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=ca08091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "J. Samper (escultura)",
+        "Yglesias Recio (diseño)"
+      ],
+      "date": "1920"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Monumento a Fray Ponce de León",
+        "url": "https://www.openstreetmap.org/node/2351203475"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "busto-jacinto-verdaguer",
+    "slug": "busto-jacinto-verdaguer",
+    "name": "Busto de Jacinto Verdaguer",
+    "category": "escultura",
+    "coordinates": [
+      -3.681528,
+      40.417072
+    ],
+    "shortDescription": "Busto del poeta catalán mosén Jacint Verdaguer en la glorieta de la Sardana.",
+    "description": "Obra de Miguel Oslé, se inauguró en 1961 en el paseo de Nicaragua y en 1972 se trasladó a la glorieta dedicada a Cataluña. Verdaguer es una de las grandes figuras de la Renaixença.",
+    "tags": [
+      "busto",
+      "literatura",
+      "Cataluña"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Jacinto Verdaguer",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=cb08091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Miguel Oslé"
+      ],
+      "date": "1961"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Jacinto Verdaguer",
+        "url": "https://www.openstreetmap.org/way/578219911"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "busto-andres-eloy-blanco",
+    "slug": "busto-andres-eloy-blanco",
+    "name": "Busto de Andrés Eloy Blanco",
+    "category": "escultura",
+    "coordinates": [
+      -3.682768,
+      40.415634
+    ],
+    "shortDescription": "Busto del poeta y político venezolano Andrés Eloy Blanco, regalo de Caracas a Madrid.",
+    "description": "Lo esculpió el venezolano Martín Leonardo Funes y se inauguró en 1975, en el vigésimo aniversario de la muerte del poeta, junto al paseo de Venezuela.",
+    "tags": [
+      "busto",
+      "literatura",
+      "Iberoamérica"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Andrés Eloy Blanco",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=8808091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Martín Leonardo Funes"
+      ],
+      "date": "1975"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Andrés Eloy Blanco",
+        "url": "https://www.openstreetmap.org/node/4769711721"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "busto-juan-van-halen",
+    "slug": "busto-juan-van-halen",
+    "name": "Busto de Juan Van Halen",
+    "category": "escultura",
+    "coordinates": [
+      -3.683409,
+      40.4189
+    ],
+    "shortDescription": "Réplica del busto del militar gaditano Juan Van Halen esculpido por Guillaume Geefs en 1846.",
+    "description": "Van Halen luchó en Trafalgar, sirvió en Rusia y en Bélgica y regresó a España tras la muerte de Fernando VII. La réplica la donó un descendiente y se inauguró en 1992.",
+    "tags": [
+      "busto",
+      "historia"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Juan Van-Halen y Sarti",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=4218091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Guillaume Geefs (réplica)"
+      ],
+      "date": "1992"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Juan Van Halen y Sarti",
+        "url": "https://www.openstreetmap.org/node/4729073527"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "busto-pedro-vargas",
+    "slug": "busto-pedro-vargas",
+    "name": "Busto de Pedro Vargas",
+    "category": "escultura",
+    "coordinates": [
+      -3.680045,
+      40.417984
+    ],
+    "shortDescription": "Busto del cantante mexicano Pedro Vargas, gran voz del bolero.",
+    "description": "Se inauguró en 1991, dos años después de la muerte del cantante, a petición de su hijo. Pedro Vargas actuó en Madrid en numerosas ocasiones.",
+    "tags": [
+      "busto",
+      "música",
+      "Iberoamérica"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Pedro Vargas",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=2218091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "date": "1991"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Pedro Vargas",
+        "url": "https://www.openstreetmap.org/node/4605454364"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "busto-francisco-de-paula-marti",
+    "slug": "busto-francisco-de-paula-marti",
+    "name": "Busto de Francisco de Paula Martí",
+    "category": "escultura",
+    "coordinates": [
+      -3.680355,
+      40.419461
+    ],
+    "shortDescription": "Busto del valenciano Francisco de Paula Martí, creador de la taquigrafía española.",
+    "description": "Lo costearon taquígrafos de España e Hispanoamérica. Se descubrió en 1961 frente a la Puerta de la América Española y unos años después se trasladó a su lugar actual.",
+    "tags": [
+      "busto",
+      "ciencia"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Francisco de Paula Martí Mora",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=c528091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "date": "1961"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Francisco de Paula Martí Mora",
+        "url": "https://www.openstreetmap.org/way/1349934498"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "monumento-solano-lopez",
+    "slug": "monumento-solano-lopez",
+    "name": "Monumento al Mariscal Francisco Solano López",
+    "category": "escultura",
+    "coordinates": [
+      -3.685266,
+      40.41553
+    ],
+    "shortDescription": "Monolito paraguayo que evoca los últimos momentos del mariscal Francisco Solano López.",
+    "description": "Regalo de la Embajada de Paraguay, lo talló Francisco Javier Báez sobre un boceto del arquitecto Rodríguez Alcalá. Se inauguró en 1976 junto al paseo de Paraguay.",
+    "tags": [
+      "monolito",
+      "Iberoamérica"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Mariscal Francisco Solano López",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=200847d50bdc451047d50bdc45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Francisco Javier Báez",
+        "Rodríguez Alcalá (boceto)"
+      ],
+      "date": "1976"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Monumento al Mariscal Francisco Solano López",
+        "url": "https://www.openstreetmap.org/node/9066413375"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "monumento-francisco-morazan",
+    "slug": "monumento-francisco-morazan",
+    "name": "Monumento al General Francisco Morazán",
+    "category": "escultura",
+    "coordinates": [
+      -3.684215,
+      40.415173
+    ],
+    "shortDescription": "Homenaje al general hondureño Francisco Morazán, impulsor de la Federación Centroamericana.",
+    "description": "Regalo de la Embajada de Honduras; el Ayuntamiento puso el pedestal. Se inauguró en 1973 en la plaza de Honduras, junto a la Fuente de la Alcachofa.",
+    "tags": [
+      "monumento",
+      "Iberoamérica"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: General Francisco Morazán",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=e2b8091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "date": "1973"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — General Francisco Morazán",
+        "url": "https://www.openstreetmap.org/node/9066413383"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "hercules-leon-de-nemea",
+    "slug": "hercules-leon-de-nemea",
+    "name": "Hércules y el León de Nemea",
+    "category": "escultura",
+    "coordinates": [
+      -3.680162,
+      40.416939
+    ],
+    "shortDescription": "Grupo mitológico de Hércules venciendo al león de Nemea, una de las esculturas más antiguas del parque.",
+    "description": "Representa el primero de los doce trabajos de Hércules. De autor desconocido, podría proceder del Palacio Real y haber llegado al Retiro en tiempos de Carlos III. Su pareja, Hércules y la Hidra, se retiró tras la borrasca Filomena.",
+    "tags": [
+      "estatua",
+      "mitología"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Hércules y el León de Nemea",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=a628091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Anónimo"
+      ],
+      "date": "Siglo XVII o principios del XVIII"
+    },
+    "additionalSources": [
+      {
+        "name": "Wikipedia — Parque del Retiro de Madrid (Escultura)",
+        "url": "https://es.wikipedia.org/wiki/Parque_del_Retiro_de_Madrid"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "estatua-de-diana",
+    "slug": "estatua-de-diana",
+    "name": "Estatua de Diana",
+    "category": "escultura",
+    "coordinates": [
+      -3.682663,
+      40.418842
+    ],
+    "shortDescription": "La diosa cazadora, llamada popularmente «La Pastora», sobre un islote rodeado de agua.",
+    "description": "Se desconoce su origen: podría ser de la época del Retiro como sitio real. Apareció oculta entre la maleza en 1969 y entonces se colocó en el centro de una pequeña isla.",
+    "tags": [
+      "estatua",
+      "mitología"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Diana",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=8908091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Anónimo"
+      ],
+      "date": "Posiblemente siglo XVIII"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Estatua de Diana",
+        "url": "https://www.openstreetmap.org/node/9230670357"
+      },
+      {
+        "name": "Wikipedia — Parque del Retiro de Madrid (Escultura)",
+        "url": "https://es.wikipedia.org/wiki/Parque_del_Retiro_de_Madrid"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "estatua-diosa-hera",
+    "slug": "estatua-diosa-hera",
+    "name": "Estatua de la diosa Hera",
+    "category": "escultura",
+    "coordinates": [
+      -3.679857,
+      40.416558
+    ],
+    "shortDescription": "Figura femenina de la diosa Hera frente a los Jardines del Arquitecto Herrero Palacios.",
+    "description": "Se colocó aquí en 2006, traída de los vecinos Jardines de Cecilio Rodríguez. Procede de la serie mitológica que el jardinero Cecilio Rodríguez dispuso en 1941 en la plaza del Mármol.",
+    "tags": [
+      "estatua",
+      "mitología"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Diosa Hera",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=2a18091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Anónimo"
+      ]
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Diosa Hera",
+        "url": "https://www.openstreetmap.org/way/1341580052"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "mujer-sedente",
+    "slug": "mujer-sedente",
+    "name": "Mujer sedente",
+    "category": "escultura",
+    "coordinates": [
+      -3.687376,
+      40.416295
+    ],
+    "shortDescription": "Figura femenina sentada de Santiago Costa, llegada de una fuente de la glorieta de San Vicente.",
+    "description": "Formaba parte del grupo de la Fuente de Juan de Villanueva, fruto de un concurso de 1943. Tras pasar por los almacenes municipales se instaló en el Retiro, cerca del Parterre.",
+    "tags": [
+      "estatua",
+      "siglo XX"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Mujer sedente",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=0a18091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Santiago Costa"
+      ],
+      "date": "1943"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — escultura",
+        "url": "https://www.openstreetmap.org/node/9129007796"
+      },
+      {
+        "name": "Wikipedia — Parque del Retiro de Madrid (Escultura)",
+        "url": "https://es.wikipedia.org/wiki/Parque_del_Retiro_de_Madrid"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "estatua-thalia",
+    "slug": "estatua-thalia",
+    "name": "Estatua de Thalía",
+    "category": "escultura",
+    "coordinates": [
+      -3.677992,
+      40.414501
+    ],
+    "shortDescription": "La musa de la comedia, que presidió la plaza de Isabel II frente al Teatro Real antes de llegar al Retiro.",
+    "description": "Francisco Elías Vallejo la esculpió para el Teatro Real y en 1862 se colocó frente a él. Hacia 1929 se trasladó a los jardines que hoy llevan el nombre de Cecilio Rodríguez.",
+    "tags": [
+      "estatua",
+      "mitología",
+      "Cecilio Rodríguez"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Thalía",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=ab08091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Francisco Elías Vallejo"
+      ],
+      "date": "Siglo XIX"
+    },
+    "mapMinZoom": 16,
+    "openingHoursNote": "Dentro de los Jardines de Cecilio Rodríguez, que tienen horario propio."
+  },
+  {
+    "id": "monumento-mingote",
+    "slug": "monumento-mingote",
+    "name": "Monumento a Antonio Mingote",
+    "category": "escultura",
+    "coordinates": [
+      -3.685119,
+      40.419993
+    ],
+    "shortDescription": "Mingote, lápiz en mano, junto a la Puerta de Hernani: bronce de Alicia Huertas.",
+    "description": "Se inauguró en octubre de 2014 cerca del banco donde el dibujante solía sentarse. El pedestal muestra en relieve escenas y personajes de sus viñetas; la obra se pagó con fondos privados tras un concurso municipal.",
+    "tags": [
+      "busto",
+      "bronce",
+      "humor gráfico",
+      "siglo XXI"
+    ],
+    "sourceName": "ABC — Antonio Mingote pasea para siempre en El Retiro",
+    "sourceUrl": "https://www.abc.es/madrid/20141009/abci-mingote-pasea-retiro-201410091215.html",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "B",
+    "artwork": {
+      "authors": [
+        "Alicia Huertas"
+      ],
+      "date": "2014"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Homenaje a Antonio Mingote",
+        "url": "https://www.openstreetmap.org/node/4319630815"
+      },
+      {
+        "name": "Telemadrid — Mingote ya tiene su estatua en El Retiro",
+        "url": "https://www.telemadrid.es/noticias/madrid/Mingote-estatua-Retiro-0-1618338186--20141009020808.html"
+      },
+      {
+        "name": "esMADRID — Un bosque de esculturas",
+        "url": "https://www.esmadrid.com/estatuas-parque-del-retiro"
+      }
+    ],
+    "mapMinZoom": 15
+  },
+  {
+    "id": "busto-ana-maria-vidal-abarca",
+    "slug": "busto-ana-maria-vidal-abarca",
+    "name": "Busto de Ana María Vidal-Abarca",
+    "category": "escultura",
+    "coordinates": [
+      -3.676747,
+      40.41112
+    ],
+    "shortDescription": "Bronce en memoria de Ana María Vidal-Abarca, cofundadora de la Asociación Víctimas del Terrorismo.",
+    "description": "Obra de Víctor Ochoa, se inauguró en marzo de 2025 junto a la Puerta del Niño Jesús, cerca de donde vivió. Vidal-Abarca presidió la asociación entre 1989 y 1999.",
+    "tags": [
+      "busto",
+      "bronce",
+      "memoria",
+      "siglo XXI"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Homenaje a Ana María Vidal-Abarca",
+    "sourceUrl": "https://www.madrid.es/portales/munimadrid/es/Madrid-homenajea-el-testimonio-incansable-de-coraje-de-Ana-Maria-Vidal-Abarca-una-de-las-fundadoras-de-la-AVT/?vgnextchannel=a12149fa40ec9410VgnVCM100000171f5a0aRCRD&vgnextfmt=default&vgnextoid=9c4c7c7e518c5910VgnVCM1000001d4a900aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Víctor Ochoa"
+      ],
+      "date": "2025"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Ana María Vidal-Abarca",
+        "url": "https://www.openstreetmap.org/node/12793383536"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "cubos-de-ibarrola",
+    "slug": "cubos-de-ibarrola",
+    "name": "Dados de hormigón de Ibarrola",
+    "category": "escultura",
+    "coordinates": [
+      -3.680932,
+      40.414093
+    ],
+    "shortDescription": "Bloques de hormigón junto al estanque del Palacio de Cristal: escultura contemporánea de Agustín Ibarrola.",
+    "description": "Los cubos evocan un malecón hecho con bloques de hormigón, como los de los puertos. Se inauguraron en 1982 y son una de las pocas obras contemporáneas del parque.",
+    "tags": [
+      "escultura",
+      "arte contemporáneo"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Dados de hormigón",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=6f38091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Agustín Ibarrola"
+      ],
+      "date": "1982"
+    },
+    "additionalSources": [
+      {
+        "name": "OpenStreetMap — Dados de Hormigón",
+        "url": "https://www.openstreetmap.org/node/3274328460"
+      },
+      {
+        "name": "Wikipedia — Parque del Retiro de Madrid (Escultura)",
+        "url": "https://es.wikipedia.org/wiki/Parque_del_Retiro_de_Madrid"
+      }
+    ],
+    "mapMinZoom": 16
+  },
+  {
+    "id": "monumento-tierno-galvan",
+    "slug": "monumento-tierno-galvan",
+    "name": "Monumento a Enrique Tierno Galván",
+    "category": "escultura",
+    "coordinates": [
+      -3.679914,
+      40.416905
+    ],
+    "shortDescription": "Homenaje de los libreros al alcalde Enrique Tierno Galván junto al paseo de la Feria del Libro.",
+    "description": "Tierno Galván dio su nombre actual a la Feria del Libro de Madrid. A su muerte, en 1986, los libreros le dedicaron este monumento junto al paseo donde se celebra la feria.",
+    "tags": [
+      "monumento",
+      "libros"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Enrique Tierno Galván",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=6738091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "date": "1986"
+    },
+    "mapMinZoom": 16
+  },
+  {
+    "id": "monolito-gongora",
+    "slug": "monolito-gongora",
+    "name": "Monolito a Luis de Góngora",
+    "category": "escultura",
+    "coordinates": [
+      -3.686783,
+      40.420062
+    ],
+    "shortDescription": "Piedra labrada con versos de la «Fábula de Polifemo y Galatea», de Luis de Góngora.",
+    "description": "El escultor Vicente Beltrán la presentó al Concurso Nacional de Escultura de 1927 y obtuvo el Premio Góngora.",
+    "tags": [
+      "monolito",
+      "literatura"
+    ],
+    "sourceName": "Ayuntamiento de Madrid — Monumentos: Luis de Góngora",
+    "sourceUrl": "https://patrimonioypaisaje.madrid.es/sites/v/index.jsp?vgnextchannel=8fac3cb702aa4510VgnVCM1000008a4a900aRCRD&vgnextoid=03b8091d1b9c4510091d1b9c45102e085a0aRCRD",
+    "lastVerifiedAt": "2026-09-28",
+    "status": "verified",
+    "audience": [
+      "turistas",
+      "locales"
+    ],
+    "recommendedDurationMinutes": 5,
+    "area": "retiro",
+    "sourceTier": "A",
+    "artwork": {
+      "authors": [
+        "Vicente Beltrán"
+      ],
+      "date": "1927"
+    },
+    "mapMinZoom": 16
   }
 ]

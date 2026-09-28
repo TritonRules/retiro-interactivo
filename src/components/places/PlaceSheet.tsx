@@ -1,4 +1,5 @@
 import type { Place } from '../../types/place';
+import { formatArtworkCredit } from '../../utils/artwork';
 import { getCategoryLabel } from '../../utils/categories';
 import { VideoBlock } from '../media/VideoBlock';
 
@@ -10,6 +11,7 @@ interface Props {
 }
 
 export function PlaceSheet({ place, placeHref, onClose, variant }: Props) {
+  const credit = formatArtworkCredit(place);
   return (
     <aside
       className={`ficha ficha--${variant}`}
@@ -39,6 +41,12 @@ export function PlaceSheet({ place, placeHref, onClose, variant }: Props) {
         </button>
       </div>
       <p className="ficha__desc">{place.shortDescription}</p>
+      {credit ? (
+        <p className="ficha__credit">
+          <span className="sr-only">Autoría y fecha: </span>
+          {credit}
+        </p>
+      ) : null}
       <ul className="ficha__tags" aria-label="Etiquetas">
         {place.tags.map((tag) => (
           <li key={tag}>{tag}</li>

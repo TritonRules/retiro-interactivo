@@ -15,9 +15,19 @@ Opcionales: `alternativeNames`, `audience`, `recommendedDurationMinutes`, `bestF
 
 No se hacen obligatorios campos no fiables (horarios, precios, accesibilidad completa).
 
+### Estatuas y esculturas (`category: "escultura"`)
+
+Categoría propia con chip «Estatuas» en el filtro (marcador de pedestal morado). Campos opcionales, válidos en cualquier lugar:
+
+- `artwork`: `{ "authors"?: string[], "date"?: string }`. Autoría y fecha de la obra. La ficha del mapa muestra «Autor · fecha» y la página del lugar tiene el panel «La obra». Si falta un dato se muestra «Sin verificar»; nunca se rellena con suposiciones.
+- `additionalSources`: `[{ "name", "url" }]`. Fuentes que se consultaron además de `source`. Se listan en la página del lugar.
+- `mapMinZoom`: zoom a partir del cual aparece el marcador en la vista «Todos». 15: grandes monumentos, 16: bustos y estatuas menores, 17: los reyes del Paseo de las Estatuas. Con el chip «Estatuas» activo, o si el lugar está seleccionado o es parada de la ruta activa, se muestra siempre. La prioridad de colisión de `escultura` (45) está por debajo de icónicos, monumentos y paseos.
+
+Investigación, fuentes y exclusiones: `docs/estatuas-research.md`.
+
 ## Calidad
 
-- Objetivo 60–100 fichas totales (lugares + servicios). Iteración 1: **82** (38 lugares + 44 servicios).
+- Objetivo 60–160 fichas totales (lugares + servicios). Iteración 1: **82** (38 lugares + 44 servicios). Con las estatuas (sept. 2026): **127** (83 lugares + 44 servicios).
 - Descripciones propias y breves; fuente + `lastVerifiedAt`.
 - Duplicados: consolidar por id/slug/proximidad/nombre (`automation/content/detect-duplicates.mjs`).
 - Candidatos en `data/candidates/` separados de publicados.

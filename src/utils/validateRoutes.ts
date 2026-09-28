@@ -52,6 +52,9 @@ export const parkRouteSchema = z.object({
   videos: videosSchema,
 });
 
+/** Cinco rutas iniciales + «Ruta de las estatuas». */
+export const EXPECTED_ROUTE_COUNT = 6;
+
 export type RouteValidationResult =
   | { ok: true; routes: ParkRoute[] }
   | { ok: false; errors: string[] };
@@ -94,8 +97,10 @@ export function validateRoutes(
     }
   });
 
-  if (parsed.data.length !== 5) {
-    errors.push(`Se esperaban exactamente 5 rutas, hay ${parsed.data.length}`);
+  if (parsed.data.length !== EXPECTED_ROUTE_COUNT) {
+    errors.push(
+      `Se esperaban exactamente ${EXPECTED_ROUTE_COUNT} rutas, hay ${parsed.data.length}`,
+    );
   }
 
   if (errors.length) return { ok: false, errors };
