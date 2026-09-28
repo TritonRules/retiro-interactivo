@@ -98,7 +98,18 @@
 }
 
 .filtro-chip__shape--star {
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
 }
 
 .filtro-chip__shape--hexagon {
@@ -118,6 +129,26 @@
 .filtro-chip__shape--pedestal {
   clip-path: polygon(30% 0%, 70% 0%, 70% 62%, 100% 62%, 100% 100%, 0% 100%, 0% 62%, 30% 62%);
   border-radius: 0.3rem 0.3rem 0 0;
+}
+
+/* Segunda fila (solo con el filtro «Servicio»): chips algo más bajos. */
+.mapa-filters--servicios {
+  padding-bottom: var(--space-1);
+}
+
+.filtro-chip--servicio {
+  font-size: 0.85rem;
+  padding-left: var(--space-2);
+}
+
+.filtro-chip__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 6px;
+  color: #fff;
+  flex-shrink: 0;
 }
 
 .mapa-canvas-wrap {
@@ -455,7 +486,18 @@
 }
 
 .place-marker--star .place-marker__shape {
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
   border: none;
 }
 
@@ -488,7 +530,40 @@
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  opacity: 0.95;
+}
+
+.place-marker__glyph--service {
+  width: 17px;
+  height: 17px;
+}
+
+/* Nombre propio del servicio bajo el icono, solo a zoom ≥ 17 y si el icono no está plegado. */
+.place-marker__label {
+  display: none;
+  position: absolute;
+  top: calc(50% + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 7.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: color-mix(in srgb, var(--marker-color, #1b5e3b) 80%, black);
+  text-shadow:
+    0 0 2px #fff,
+    0 0 2px #fff,
+    0 0 3px #fff,
+    0 0 4px #fff;
+  pointer-events: none;
+}
+
+.mapa-canvas[data-marker-labels='true']
+  .place-marker:not(.is-dot, .is-hidden)
+  .place-marker__label {
+  display: block;
 }
 
 .place-marker--user {
@@ -502,7 +577,9 @@
   border-radius: 50%;
   background: #2f6f8f;
   border: 3px solid #fff;
-  box-shadow: 0 0 0 2px #2f6f8f, var(--shadow-md);
+  box-shadow:
+    0 0 0 2px #2f6f8f,
+    var(--shadow-md);
   scale: 1;
 }
 
@@ -550,7 +627,9 @@
 
 .place-marker.is-active .place-marker__shape {
   scale: 1;
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 70%, white), var(--shadow-md);
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--color-accent) 70%, white),
+    var(--shadow-md);
 }
 
 .place-marker--triangle.is-active .place-marker__shape {
@@ -735,8 +814,45 @@
 
 .ficha__actions {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-2);
   margin-top: var(--space-1);
+}
+
+/* Ficha de servicio: compacta (horario, accesibilidad, fuente). */
+.badge--servicio {
+  color: #fff;
+}
+
+.ficha__facts {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.ficha__facts div {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.ficha__facts dt {
+  font-weight: 650;
+  color: var(--color-ink);
+}
+
+.ficha__facts dd {
+  margin: 0;
+  color: var(--color-ink-muted);
+}
+
+.ficha__muted {
+  font-size: 0.8rem;
+  color: var(--color-ink-muted);
+}
+
+.ficha__source {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--color-ink-muted);
 }
 
 .status-pill {

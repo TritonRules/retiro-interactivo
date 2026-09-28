@@ -43,6 +43,7 @@ npm run test:e2e
 npm run build
 npm run routes:validate
 npm run content:report
+npm run services:osm      # servicios del parque desde OpenStreetMap (docs/servicios-osm.md)
 npm run events:collect
 npm run events:normalize
 npm run events:validate

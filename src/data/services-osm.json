@@ -1,0 +1,1457 @@
+{
+  "source": "OpenStreetMap (Overpass API)",
+  "license": "ODbL-1.0",
+  "attribution": "© colaboradores de OpenStreetMap",
+  "attributionUrl": "https://www.openstreetmap.org/copyright",
+  "area": "relation/13616929",
+  "extractedAt": "2026-09-28",
+  "osmBaseTimestamp": "2026-09-28T06:28:51Z",
+  "counts": {
+    "found": {
+      "gimnasio": 6,
+      "parque-infantil": 21,
+      "agua": 34,
+      "aseo": 8,
+      "helados": 3,
+      "barcas": 2,
+      "bicis": 1,
+      "informacion": 3,
+      "desfibrilador": 1,
+      "quiosco": 3,
+      "deporte": 1,
+      "cafe": 4,
+      "bar": 4,
+      "restaurante": 1,
+      "zona-canina": 1
+    },
+    "added": {
+      "cafe": 4,
+      "bar": 4,
+      "restaurante": 1,
+      "helados": 3,
+      "quiosco": 3,
+      "aseo": 2,
+      "agua": 21,
+      "parque-infantil": 14,
+      "gimnasio": 6,
+      "informacion": 2,
+      "barcas": 2,
+      "desfibrilador": 1,
+      "bicis": 1,
+      "zona-canina": 1
+    },
+    "total": 93,
+    "added_total": 65
+  },
+  "boundary": [
+    [
+      [
+        -3.6820227,
+        40.4088413
+      ],
+      [
+        -3.6858982,
+        40.4087709
+      ],
+      [
+        -3.6859506,
+        40.4091012
+      ],
+      [
+        -3.6859061,
+        40.4092736
+      ],
+      [
+        -3.6859512,
+        40.4094735
+      ],
+      [
+        -3.6868644,
+        40.4094831
+      ],
+      [
+        -3.6868342,
+        40.4099323
+      ],
+      [
+        -3.6883649,
+        40.4095833
+      ],
+      [
+        -3.6884482,
+        40.4098493
+      ],
+      [
+        -3.688563,
+        40.40991
+      ],
+      [
+        -3.6887708,
+        40.415082
+      ],
+      [
+        -3.6886865,
+        40.4151603
+      ],
+      [
+        -3.6886986,
+        40.4153816
+      ],
+      [
+        -3.688784,
+        40.4154485
+      ],
+      [
+        -3.6888201,
+        40.4164128
+      ],
+      [
+        -3.688752,
+        40.4165041
+      ],
+      [
+        -3.6886273,
+        40.41656
+      ],
+      [
+        -3.688658,
+        40.4168017
+      ],
+      [
+        -3.6887714,
+        40.4168291
+      ],
+      [
+        -3.6888108,
+        40.4168967
+      ],
+      [
+        -3.6885717,
+        40.419309
+      ],
+      [
+        -3.6883729,
+        40.4193492
+      ],
+      [
+        -3.688076,
+        40.4194999
+      ],
+      [
+        -3.6878757,
+        40.4197518
+      ],
+      [
+        -3.6878256,
+        40.4199954
+      ],
+      [
+        -3.6862626,
+        40.420332
+      ],
+      [
+        -3.6862336,
+        40.4203131
+      ],
+      [
+        -3.6860317,
+        40.4203575
+      ],
+      [
+        -3.6860197,
+        40.4203866
+      ],
+      [
+        -3.6843272,
+        40.4207419
+      ],
+      [
+        -3.6821881,
+        40.421112
+      ],
+      [
+        -3.6821148,
+        40.4210599
+      ],
+      [
+        -3.6815832,
+        40.4211479
+      ],
+      [
+        -3.6815221,
+        40.4212268
+      ],
+      [
+        -3.6802203,
+        40.4214566
+      ],
+      [
+        -3.6800601,
+        40.4213796
+      ],
+      [
+        -3.6789964,
+        40.4184257
+      ],
+      [
+        -3.6789976,
+        40.4183858
+      ],
+      [
+        -3.6790579,
+        40.4183508
+      ],
+      [
+        -3.6790074,
+        40.418176
+      ],
+      [
+        -3.6788992,
+        40.4181578
+      ],
+      [
+        -3.6786107,
+        40.4173217
+      ],
+      [
+        -3.6786568,
+        40.4172529
+      ],
+      [
+        -3.6777566,
+        40.4148099
+      ],
+      [
+        -3.6766522,
+        40.4115898
+      ],
+      [
+        -3.6767248,
+        40.411466
+      ],
+      [
+        -3.676751,
+        40.4113196
+      ],
+      [
+        -3.6766999,
+        40.4110896
+      ],
+      [
+        -3.6766055,
+        40.4110193
+      ],
+      [
+        -3.6776473,
+        40.4095318
+      ],
+      [
+        -3.6777458,
+        40.4095826
+      ],
+      [
+        -3.6778289,
+        40.4094633
+      ],
+      [
+        -3.6777411,
+        40.4093952
+      ],
+      [
+        -3.6785137,
+        40.4082805
+      ],
+      [
+        -3.6820227,
+        40.4088413
+      ]
+    ]
+  ],
+  "services": [
+    {
+      "id": "osm-way-194853751",
+      "osmId": "way/194853751",
+      "name": "Vivaz Retiro",
+      "named": true,
+      "type": "restauracion",
+      "subtype": "cafe",
+      "coordinates": [
+        -3.6785986,
+        40.4091725
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "openingHours": "Mo-Su 13:00-22:00",
+      "website": "https://linktr.ee/VivazRetiro",
+      "osmCheckDate": "2026-04-10"
+    },
+    {
+      "id": "osm-way-243351606",
+      "osmId": "way/243351606",
+      "name": "Nacional Retiro",
+      "named": true,
+      "type": "restauracion",
+      "subtype": "cafe",
+      "coordinates": [
+        -3.6806984,
+        40.4163461
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "openingHours": "Mo-Su 10:00-22:00",
+      "wheelchair": "yes",
+      "osmCheckDate": "2025-10-03"
+    },
+    {
+      "id": "osm-way-319899607",
+      "osmId": "way/319899607",
+      "name": "Kiosko Las Estatuas",
+      "named": true,
+      "type": "restauracion",
+      "subtype": "cafe",
+      "coordinates": [
+        -3.6849446,
+        40.4167283
+      ],
+      "lastCheckedAt": "2026-09-28"
+    },
+    {
+      "id": "osm-way-320788328",
+      "osmId": "way/320788328",
+      "name": "Mirador",
+      "named": true,
+      "type": "restauracion",
+      "subtype": "cafe",
+      "coordinates": [
+        -3.6826353,
+        40.41484
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes"
+    },
+    {
+      "id": "osm-way-243351604",
+      "osmId": "way/243351604",
+      "name": "Casa Remigio",
+      "named": true,
+      "type": "restauracion",
+      "subtype": "bar",
+      "coordinates": [
+        -3.6831768,
+        40.4157873
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes"
+    },
+    {
+      "id": "osm-way-243351605",
+      "osmId": "way/243351605",
+      "name": "Bar Mirador El Estanque",
+      "named": true,
+      "type": "restauracion",
+      "subtype": "bar",
+      "coordinates": [
+        -3.6838015,
+        40.4156474
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes"
+    },
+    {
+      "id": "osm-way-319899609",
+      "osmId": "way/319899609",
+      "name": "Galápagos",
+      "named": true,
+      "type": "restauracion",
+      "subtype": "bar",
+      "coordinates": [
+        -3.6855471,
+        40.418117
+      ],
+      "lastCheckedAt": "2026-09-28"
+    },
+    {
+      "id": "osm-way-467641934",
+      "osmId": "way/467641934",
+      "name": "Bar Mirador La Rosaleda",
+      "named": true,
+      "type": "restauracion",
+      "subtype": "bar",
+      "coordinates": [
+        -3.6799243,
+        40.4117502
+      ],
+      "lastCheckedAt": "2026-09-28"
+    },
+    {
+      "id": "osm-way-722360392",
+      "osmId": "way/722360392",
+      "name": "Florida Retiro",
+      "named": true,
+      "type": "restauracion",
+      "subtype": "restaurante",
+      "coordinates": [
+        -3.6801294,
+        40.418319
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "limited",
+      "website": "https://floridapark.es",
+      "osmCheckDate": "2024-05-17"
+    },
+    {
+      "id": "osm-node-3135948608",
+      "osmId": "node/3135948608",
+      "name": "Heladería",
+      "named": false,
+      "type": "restauracion",
+      "subtype": "helados",
+      "coordinates": [
+        -3.6874756,
+        40.418918
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes",
+      "near": "Teatro de Títeres de El Retiro"
+    },
+    {
+      "id": "osm-way-562746418",
+      "osmId": "way/562746418",
+      "name": "La Gruta",
+      "named": true,
+      "type": "restauracion",
+      "subtype": "helados",
+      "coordinates": [
+        -3.6828953,
+        40.418281
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "limited"
+    },
+    {
+      "id": "osm-way-578219913",
+      "osmId": "way/578219913",
+      "name": "Ángel Caído Heladería",
+      "named": true,
+      "type": "restauracion",
+      "subtype": "helados",
+      "coordinates": [
+        -3.6821658,
+        40.4112916
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "openingHours": "Tu-Fr 00:00-02:00,08:00-24:00; Sa-Mo 00:00-02:30,08:00-24:00; PH -1 08:00-24:00; PH 00:00-02:30,08:00-24:00; PH +1 00:00-02:30"
+    },
+    {
+      "id": "osm-node-12945133350",
+      "osmId": "node/12945133350",
+      "name": "Quiosco",
+      "named": false,
+      "type": "restauracion",
+      "subtype": "quiosco",
+      "coordinates": [
+        -3.6799886,
+        40.416201
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Antigua Casa de Fieras (Foso)"
+    },
+    {
+      "id": "osm-node-12945150141",
+      "osmId": "node/12945150141",
+      "name": "Quiosco",
+      "named": false,
+      "type": "restauracion",
+      "subtype": "quiosco",
+      "coordinates": [
+        -3.6800655,
+        40.4212433
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Montaña Artificial"
+    },
+    {
+      "id": "osm-node-12945159540",
+      "osmId": "node/12945159540",
+      "name": "Quiosco",
+      "named": false,
+      "type": "restauracion",
+      "subtype": "quiosco",
+      "coordinates": [
+        -3.6803995,
+        40.4167576
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Biblioteca Pública Municipal Eugenio Trías"
+    },
+    {
+      "id": "osm-way-162497672",
+      "osmId": "way/162497672",
+      "name": "Aseos públicos",
+      "named": false,
+      "type": "aseo",
+      "subtype": "aseo",
+      "coordinates": [
+        -3.6807139,
+        40.4159697
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "limited",
+      "fee": false,
+      "osmCheckDate": "2025-10-03",
+      "near": "Palacio de Velázquez"
+    },
+    {
+      "id": "osm-way-360120752",
+      "osmId": "way/360120752",
+      "name": "Aseos públicos",
+      "named": false,
+      "type": "aseo",
+      "subtype": "aseo",
+      "coordinates": [
+        -3.6881491,
+        40.4164087
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "no",
+      "fee": false,
+      "near": "Puerta de España"
+    },
+    {
+      "id": "osm-node-11225322937",
+      "osmId": "node/11225322937",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6795233,
+        40.417949
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Biblioteca Pública Municipal Eugenio Trías"
+    },
+    {
+      "id": "osm-node-13729643301",
+      "osmId": "node/13729643301",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6790201,
+        40.4167397
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "fee": false,
+      "osmCheckDate": "2026-04-13",
+      "near": "Biblioteca Pública Municipal Eugenio Trías"
+    },
+    {
+      "id": "osm-node-4227924890",
+      "osmId": "node/4227924890",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6790489,
+        40.4144412
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Paseo de Fernán Núñez"
+    },
+    {
+      "id": "osm-node-5407179434",
+      "osmId": "node/5407179434",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6790793,
+        40.4151191
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes",
+      "near": "Fuente de las Gaviotas"
+    },
+    {
+      "id": "osm-node-5407179435",
+      "osmId": "node/5407179435",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6785096,
+        40.416734
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Biblioteca Pública Municipal Eugenio Trías"
+    },
+    {
+      "id": "osm-node-5407179436",
+      "osmId": "node/5407179436",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6792251,
+        40.4171448
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes",
+      "near": "Biblioteca Pública Municipal Eugenio Trías"
+    },
+    {
+      "id": "osm-node-5407179457",
+      "osmId": "node/5407179457",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6799125,
+        40.418682
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes"
+    },
+    {
+      "id": "osm-node-5407179473",
+      "osmId": "node/5407179473",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6802547,
+        40.4198651
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes",
+      "fee": false,
+      "osmCheckDate": "2026-09-02",
+      "near": "Casita del Pescador"
+    },
+    {
+      "id": "osm-node-5407179493",
+      "osmId": "node/5407179493",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6824338,
+        40.4206758
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "fee": false,
+      "near": "Casita del Pescador"
+    },
+    {
+      "id": "osm-node-5407179497",
+      "osmId": "node/5407179497",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6865706,
+        40.4197034
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes",
+      "near": "Teatro de Títeres de El Retiro"
+    },
+    {
+      "id": "osm-node-5407179498",
+      "osmId": "node/5407179498",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6880326,
+        40.4186278
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes",
+      "near": "Teatro de Títeres de El Retiro"
+    },
+    {
+      "id": "osm-node-5407188002",
+      "osmId": "node/5407188002",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6883757,
+        40.4139692
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes",
+      "near": "Paseo de Paraguay"
+    },
+    {
+      "id": "osm-node-5407206291",
+      "osmId": "node/5407206291",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6861303,
+        40.4098423
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Centro de Educación Ambiental El Retiro"
+    },
+    {
+      "id": "osm-node-5407222306",
+      "osmId": "node/5407222306",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6804945,
+        40.4093711
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Aula ambiental La Cabaña del Retiro"
+    },
+    {
+      "id": "osm-node-5407222307",
+      "osmId": "node/5407222307",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6786313,
+        40.408492
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Aula ambiental La Cabaña del Retiro"
+    },
+    {
+      "id": "osm-node-5407222308",
+      "osmId": "node/5407222308",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.680999,
+        40.4111617
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Jardín de Vivaces"
+    },
+    {
+      "id": "osm-node-5407222310",
+      "osmId": "node/5407222310",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6800558,
+        40.4113795
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "La Rosaleda"
+    },
+    {
+      "id": "osm-node-5422559201",
+      "osmId": "node/5422559201",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6840684,
+        40.4155487
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes",
+      "fee": false,
+      "near": "Fuente de la Alcachofa"
+    },
+    {
+      "id": "osm-node-5422559210",
+      "osmId": "node/5422559210",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6814203,
+        40.4163956
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Fuente de la Sardana"
+    },
+    {
+      "id": "osm-node-5422559211",
+      "osmId": "node/5422559211",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6800527,
+        40.4166761
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes",
+      "near": "Antigua Casa de Fieras (Foso)"
+    },
+    {
+      "id": "osm-node-5424962110",
+      "osmId": "node/5424962110",
+      "name": "Fuente de agua potable",
+      "named": false,
+      "type": "fuente",
+      "subtype": "agua",
+      "coordinates": [
+        -3.6865275,
+        40.4187685
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes",
+      "near": "Teatro de Títeres de El Retiro"
+    },
+    {
+      "id": "osm-node-4605463039",
+      "osmId": "node/4605463039",
+      "name": "Parque infantil",
+      "named": false,
+      "type": "zona-infantil",
+      "subtype": "parque-infantil",
+      "coordinates": [
+        -3.678913,
+        40.4157691
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes",
+      "near": "Antigua Casa de Fieras (Foso)"
+    },
+    {
+      "id": "osm-node-4621856078",
+      "osmId": "node/4621856078",
+      "name": "Parque infantil",
+      "named": false,
+      "type": "zona-infantil",
+      "subtype": "parque-infantil",
+      "coordinates": [
+        -3.6788048,
+        40.4090122
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Aula ambiental La Cabaña del Retiro"
+    },
+    {
+      "id": "osm-way-1087467352",
+      "osmId": "way/1087467352",
+      "name": "Parque infantil",
+      "named": false,
+      "type": "zona-infantil",
+      "subtype": "parque-infantil",
+      "coordinates": [
+        -3.6798218,
+        40.4186032
+      ],
+      "lastCheckedAt": "2026-09-28"
+    },
+    {
+      "id": "osm-way-1087467353",
+      "osmId": "way/1087467353",
+      "name": "Parque infantil",
+      "named": false,
+      "type": "zona-infantil",
+      "subtype": "parque-infantil",
+      "coordinates": [
+        -3.6794544,
+        40.4191079
+      ],
+      "lastCheckedAt": "2026-09-28"
+    },
+    {
+      "id": "osm-way-1087467354",
+      "osmId": "way/1087467354",
+      "name": "Parque infantil",
+      "named": false,
+      "type": "zona-infantil",
+      "subtype": "parque-infantil",
+      "coordinates": [
+        -3.6801066,
+        40.419848
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Casita del Pescador"
+    },
+    {
+      "id": "osm-way-1087467355",
+      "osmId": "way/1087467355",
+      "name": "Parque infantil",
+      "named": false,
+      "type": "zona-infantil",
+      "subtype": "parque-infantil",
+      "coordinates": [
+        -3.6804555,
+        40.4197688
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes",
+      "near": "Casita del Pescador"
+    },
+    {
+      "id": "osm-way-1238944955",
+      "osmId": "way/1238944955",
+      "name": "Parque infantil",
+      "named": false,
+      "type": "zona-infantil",
+      "subtype": "parque-infantil",
+      "coordinates": [
+        -3.6879533,
+        40.41875
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Teatro de Títeres de El Retiro"
+    },
+    {
+      "id": "osm-way-1340813993",
+      "osmId": "way/1340813993",
+      "name": "Parque infantil",
+      "named": false,
+      "type": "zona-infantil",
+      "subtype": "parque-infantil",
+      "coordinates": [
+        -3.678954,
+        40.4150091
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes",
+      "near": "Fuente de las Gaviotas"
+    },
+    {
+      "id": "osm-way-1341553318",
+      "osmId": "way/1341553318",
+      "name": "Parque infantil",
+      "named": false,
+      "type": "zona-infantil",
+      "subtype": "parque-infantil",
+      "coordinates": [
+        -3.6783946,
+        40.4153161
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes",
+      "near": "Fuente de las Gaviotas"
+    },
+    {
+      "id": "osm-way-162497671",
+      "osmId": "way/162497671",
+      "name": "Parque infantil",
+      "named": false,
+      "type": "zona-infantil",
+      "subtype": "parque-infantil",
+      "coordinates": [
+        -3.6809859,
+        40.4155669
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Palacio de Velázquez"
+    },
+    {
+      "id": "osm-way-162497674",
+      "osmId": "way/162497674",
+      "name": "Parque infantil",
+      "named": false,
+      "type": "zona-infantil",
+      "subtype": "parque-infantil",
+      "coordinates": [
+        -3.6864124,
+        40.4195054
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "limited",
+      "near": "Teatro de Títeres de El Retiro"
+    },
+    {
+      "id": "osm-way-29470649",
+      "osmId": "way/29470649",
+      "name": "Parque infantil",
+      "named": false,
+      "type": "zona-infantil",
+      "subtype": "parque-infantil",
+      "coordinates": [
+        -3.6791354,
+        40.417206
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "wheelchair": "yes",
+      "near": "Biblioteca Pública Municipal Eugenio Trías"
+    },
+    {
+      "id": "osm-way-607781573",
+      "osmId": "way/607781573",
+      "name": "Parque infantil",
+      "named": false,
+      "type": "zona-infantil",
+      "subtype": "parque-infantil",
+      "coordinates": [
+        -3.6825299,
+        40.4205748
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Casita del Pescador"
+    },
+    {
+      "id": "osm-way-626041829",
+      "osmId": "way/626041829",
+      "name": "Parque infantil",
+      "named": false,
+      "type": "zona-infantil",
+      "subtype": "parque-infantil",
+      "coordinates": [
+        -3.6824974,
+        40.4204279
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Casita del Pescador"
+    },
+    {
+      "id": "osm-node-10253369126",
+      "osmId": "node/10253369126",
+      "name": "Gimnasio al aire libre",
+      "named": false,
+      "type": "deporte",
+      "subtype": "gimnasio",
+      "coordinates": [
+        -3.6798612,
+        40.4100074
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "La Rosaleda"
+    },
+    {
+      "id": "osm-node-10601290852",
+      "osmId": "node/10601290852",
+      "name": "Gimnasio al aire libre",
+      "named": false,
+      "type": "deporte",
+      "subtype": "gimnasio",
+      "coordinates": [
+        -3.6771461,
+        40.4104554
+      ],
+      "lastCheckedAt": "2026-09-28"
+    },
+    {
+      "id": "osm-node-315279151",
+      "osmId": "node/315279151",
+      "name": "Gimnasio al aire libre",
+      "named": false,
+      "type": "deporte",
+      "subtype": "gimnasio",
+      "coordinates": [
+        -3.6828819,
+        40.4107331
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Fuente del Ángel Caído"
+    },
+    {
+      "id": "osm-node-5732500521",
+      "osmId": "node/5732500521",
+      "name": "Parque para mayores",
+      "named": true,
+      "type": "deporte",
+      "subtype": "gimnasio",
+      "coordinates": [
+        -3.6811622,
+        40.4189837
+      ],
+      "lastCheckedAt": "2026-09-28"
+    },
+    {
+      "id": "osm-node-9417473309",
+      "osmId": "node/9417473309",
+      "name": "Zona de calistenia",
+      "named": true,
+      "type": "deporte",
+      "subtype": "gimnasio",
+      "coordinates": [
+        -3.6828415,
+        40.4103891
+      ],
+      "lastCheckedAt": "2026-09-28"
+    },
+    {
+      "id": "osm-node-9874718117",
+      "osmId": "node/9874718117",
+      "name": "Gimnasio al aire libre",
+      "named": false,
+      "type": "deporte",
+      "subtype": "gimnasio",
+      "coordinates": [
+        -3.6861359,
+        40.4099227
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Centro de Educación Ambiental El Retiro"
+    },
+    {
+      "id": "osm-way-243207328",
+      "osmId": "way/243207328",
+      "name": "Punto de información",
+      "named": false,
+      "type": "informacion",
+      "subtype": "informacion",
+      "coordinates": [
+        -3.6787116,
+        40.4107903
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "La Rosaleda"
+    },
+    {
+      "id": "osm-way-360120751",
+      "osmId": "way/360120751",
+      "name": "Oficina Información Bosque del Recuerdo",
+      "named": true,
+      "type": "informacion",
+      "subtype": "informacion",
+      "coordinates": [
+        -3.6872243,
+        40.4135339
+      ],
+      "lastCheckedAt": "2026-09-28"
+    },
+    {
+      "id": "osm-node-3274328970",
+      "osmId": "node/3274328970",
+      "name": "Barcas de remos, entrada",
+      "named": true,
+      "type": "otros",
+      "subtype": "barcas",
+      "coordinates": [
+        -3.6842812,
+        40.418556
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "openingHours": "PH,Mo-Su 10:00-14:00,15:15-20:30"
+    },
+    {
+      "id": "osm-node-9872610414",
+      "osmId": "node/9872610414",
+      "name": "Barco Solar el Retiro",
+      "named": true,
+      "type": "otros",
+      "subtype": "barcas",
+      "coordinates": [
+        -3.6841412,
+        40.4185383
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "fee": true
+    },
+    {
+      "id": "osm-node-9532049017",
+      "osmId": "node/9532049017",
+      "name": "Desfibrilador (DEA)",
+      "named": false,
+      "type": "otros",
+      "subtype": "desfibrilador",
+      "coordinates": [
+        -3.6840447,
+        40.419077
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Centro Cultural Casa de Vacas"
+    },
+    {
+      "id": "osm-node-4111542463",
+      "osmId": "node/4111542463",
+      "name": "Aparcabicis",
+      "named": false,
+      "type": "otros",
+      "subtype": "bicis",
+      "coordinates": [
+        -3.6862457,
+        40.4131355
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "La Chopera"
+    },
+    {
+      "id": "osm-way-818605681",
+      "osmId": "way/818605681",
+      "name": "Zona canina",
+      "named": false,
+      "type": "otros",
+      "subtype": "zona-canina",
+      "coordinates": [
+        -3.6802745,
+        40.4090166
+      ],
+      "lastCheckedAt": "2026-09-28",
+      "near": "Aula ambiental La Cabaña del Retiro"
+    }
+  ],
+  "matches": [
+    {
+      "osmId": "node/321735787",
+      "subtype": "parque-infantil",
+      "matchedId": "zona-infantil-casa-fieras",
+      "matchedKind": "service",
+      "reason": "osm-id",
+      "enrich": {
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "osmId": "node/321736054",
+      "subtype": "parque-infantil",
+      "matchedId": "zona-infantil-norte-fieras",
+      "matchedKind": "service",
+      "reason": "osm-id",
+      "enrich": {
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "osmId": "node/1464142403",
+      "subtype": "agua",
+      "matchedId": "fuente-potable-casita-pescador",
+      "matchedKind": "service",
+      "reason": "osm-id"
+    },
+    {
+      "osmId": "node/1534545335",
+      "subtype": "aseo",
+      "matchedId": "aseo-rosaleda",
+      "matchedKind": "service",
+      "reason": "osm-id",
+      "enrich": {
+        "wheelchair": "limited",
+        "fee": false
+      }
+    },
+    {
+      "osmId": "node/1743699808",
+      "subtype": "agua",
+      "matchedId": "fuente-potable-centro",
+      "matchedKind": "service",
+      "reason": "osm-id"
+    },
+    {
+      "osmId": "node/2383074910",
+      "subtype": "parque-infantil",
+      "matchedId": "zona-infantil-chopera",
+      "matchedKind": "service",
+      "reason": "osm-id"
+    },
+    {
+      "osmId": "node/2496787804",
+      "subtype": "agua",
+      "matchedId": "fuente-potable-galapagos",
+      "matchedKind": "service",
+      "reason": "osm-id",
+      "enrich": {
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "osmId": "node/2527420077",
+      "subtype": "agua",
+      "matchedId": "fuente-potable-palacio-cristal",
+      "matchedKind": "service",
+      "reason": "osm-id"
+    },
+    {
+      "osmId": "node/3497610236",
+      "subtype": "agua",
+      "matchedId": "fuente-potable-estanque-este",
+      "matchedKind": "service",
+      "reason": "osm-id",
+      "enrich": {
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "osmId": "node/3497610361",
+      "subtype": "agua",
+      "matchedId": "fuente-potable-velazquez",
+      "matchedKind": "service",
+      "reason": "osm-id"
+    },
+    {
+      "osmId": "node/4227924889",
+      "subtype": "parque-infantil",
+      "matchedId": "zona-infantil-cecilio",
+      "matchedKind": "service",
+      "reason": "osm-id"
+    },
+    {
+      "osmId": "node/4330672707",
+      "subtype": "agua",
+      "matchedId": "fuente-potable-puerta-espana",
+      "matchedKind": "service",
+      "reason": "osm-id"
+    },
+    {
+      "osmId": "node/4330672708",
+      "subtype": "agua",
+      "matchedId": "fuente-potable-sardana",
+      "matchedKind": "service",
+      "reason": "osm-id",
+      "enrich": {
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "osmId": "node/4605463011",
+      "subtype": "parque-infantil",
+      "matchedId": "zona-infantil-este-fieras",
+      "matchedKind": "service",
+      "reason": "osm-id",
+      "enrich": {
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "osmId": "node/4605474271",
+      "subtype": "parque-infantil",
+      "matchedId": "zona-infantil-sur-fieras",
+      "matchedKind": "service",
+      "reason": "osm-id",
+      "enrich": {
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "osmId": "node/4610120699",
+      "subtype": "aseo",
+      "matchedId": "aseo-palacio-cristal",
+      "matchedKind": "service",
+      "reason": "osm-id",
+      "enrich": {
+        "wheelchair": "no",
+        "fee": false
+      }
+    },
+    {
+      "osmId": "node/5327806272",
+      "subtype": "parque-infantil",
+      "matchedId": "zona-infantil-puerta-espana",
+      "matchedKind": "service",
+      "reason": "osm-id"
+    },
+    {
+      "osmId": "node/5407179494",
+      "subtype": "agua",
+      "matchedId": "fuente-potable-norte-odonnell",
+      "matchedKind": "service",
+      "reason": "osm-id",
+      "enrich": {
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "osmId": "node/5407188003",
+      "subtype": "agua",
+      "matchedId": "fuente-potable-chopera-sur",
+      "matchedKind": "service",
+      "reason": "osm-id",
+      "enrich": {
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "osmId": "node/5407192747",
+      "subtype": "agua",
+      "matchedId": "fuente-potable-bosque-recuerdo",
+      "matchedKind": "service",
+      "reason": "osm-id"
+    },
+    {
+      "osmId": "node/5407222305",
+      "subtype": "agua",
+      "matchedId": "fuente-potable-angel-caido",
+      "matchedKind": "service",
+      "reason": "osm-id"
+    },
+    {
+      "osmId": "node/5422559205",
+      "subtype": "agua",
+      "matchedId": "fuente-potable-esfinges",
+      "matchedKind": "service",
+      "reason": "osm-id",
+      "enrich": {
+        "wheelchair": "yes",
+        "fee": false
+      }
+    },
+    {
+      "osmId": "node/6504526829",
+      "subtype": "aseo",
+      "matchedId": "aseo-estanque",
+      "matchedKind": "service",
+      "reason": "osm-id",
+      "enrich": {
+        "openingHours": "Mo-Su 10:00-20:00",
+        "wheelchair": "no",
+        "fee": false
+      }
+    },
+    {
+      "osmId": "node/9379611673",
+      "subtype": "informacion",
+      "matchedId": "info-centro-ambiental",
+      "matchedKind": "service",
+      "reason": "manual"
+    },
+    {
+      "osmId": "node/11172458537",
+      "subtype": "aseo",
+      "matchedId": "aseo-nordeste-estanque",
+      "matchedKind": "service",
+      "reason": "osm-id",
+      "enrich": {
+        "openingHours": "Mo-Su 10:00-22:00",
+        "wheelchair": "no",
+        "fee": false
+      }
+    },
+    {
+      "osmId": "node/12227847902",
+      "subtype": "aseo",
+      "matchedId": "aseo-paseo-central",
+      "matchedKind": "service",
+      "reason": "osm-id"
+    },
+    {
+      "osmId": "node/12227847903",
+      "subtype": "aseo",
+      "matchedId": "aseo-plaza-nicaragua",
+      "matchedKind": "service",
+      "reason": "osm-id"
+    },
+    {
+      "osmId": "way/28401540",
+      "subtype": "deporte",
+      "matchedId": "deporte-pistas-chopera-ref",
+      "matchedKind": "service",
+      "reason": "osm-id",
+      "enrich": {
+        "openingHours": "Mo-Su 08:30-22:00",
+        "wheelchair": "limited"
+      }
+    }
+  ]
+}
