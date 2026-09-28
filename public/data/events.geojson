@@ -51,7 +51,7 @@
         "slug": "antonio-pedrero-50104191",
         "title": "Antonio Pedrero",
         "startAt": "2026-09-04T00:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -159,7 +159,7 @@
         "slug": "coplas-del-alma-50322881",
         "title": "Coplas del alma",
         "startAt": "2026-09-27T18:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -321,7 +321,7 @@
         "slug": "jornada-de-huerto-50150274",
         "title": "Jornada de huerto",
         "startAt": "2026-09-27T11:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
@@ -555,7 +555,7 @@
         "slug": "pop-50147338",
         "title": "Pop",
         "startAt": "2026-09-27T12:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -591,7 +591,7 @@
         "slug": "senda-guiada-los-frutos-del-otono-50173923",
         "title": "Senda guiada 'Los frutos del otoño'",
         "startAt": "2026-09-25T16:30:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
@@ -699,7 +699,7 @@
         "slug": "taller-de-huerto-familiar-11771314",
         "title": "Taller de huerto familiar",
         "startAt": "2026-09-27T10:30:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro de Educación Ambiental El Retiro"
       }
     },
@@ -825,7 +825,7 @@
         "slug": "trapos-50380598",
         "title": "Trapos",
         "startAt": "2026-09-26T18:30:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Teatro de Títeres de El Retiro"
       }
     },
@@ -987,7 +987,7 @@
         "slug": "adictos-de-paula-gonzalo-50427759",
         "title": "'Adictos', de Paula Gonzalo",
         "startAt": "2026-09-27T12:30:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },

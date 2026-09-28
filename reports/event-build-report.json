@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-09-27T19:22:08.155Z",
+  "ranAt": "2026-09-28T10:57:32.692Z",
   "offline": false,
   "steps": {
     "collect": "ok",
@@ -70,13 +70,7 @@
     "evt-50430642",
     "evt-50430468"
   ],
-  "removed": [
-    "evt-12404595",
-    "evt-50145709",
-    "evt-50145704",
-    "evt-50426536",
-    "evt-50148887"
-  ],
+  "removed": [],
   "discarded": 2135,
   "duplicates": 59,
   "errors": [],
@@ -88,8 +82,8 @@
       "sourceId": "madrid-agenda-general",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-09-27T19:22:08.155Z",
-      "lastSuccessfulFetchAt": "2026-09-27T19:22:08.155Z",
+      "fetchedAt": "2026-09-28T10:57:32.692Z",
+      "lastSuccessfulFetchAt": "2026-09-28T10:57:32.692Z",
       "fetchError": null,
       "graphCount": 1249
     },
@@ -97,8 +91,8 @@
       "sourceId": "madrid-agenda-cultural-100",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-09-27T19:22:08.155Z",
-      "lastSuccessfulFetchAt": "2026-09-27T19:22:08.155Z",
+      "fetchedAt": "2026-09-28T10:57:32.692Z",
+      "lastSuccessfulFetchAt": "2026-09-28T10:57:32.692Z",
       "fetchError": null,
       "graphCount": 1004
     }
@@ -352,25 +346,25 @@
   "publishedCount": 59,
   "publication": {
     "schemaVersion": 1,
-    "publishedAt": "2026-09-27T19:22:08.155Z",
-    "datasetHash": "fee31bc52d367aef5530b3113fa6ac18f1badccb1d7418270dbbb472e3d23781",
+    "publishedAt": "2026-09-28T10:57:32.692Z",
+    "datasetHash": "a71963fb7c9f1db9c651bcca4f72ba59f7768cb8c16aa3c1e62bbfe52fc32374",
     "coverageHorizonDays": 90,
     "sources": [
       {
         "sourceId": "madrid-agenda-general",
-        "lastSuccessfulFetchAt": "2026-09-27T19:22:08.155Z",
-        "lastAttemptAt": "2026-09-27T19:22:08.155Z",
+        "lastSuccessfulFetchAt": "2026-09-28T10:57:32.692Z",
+        "lastAttemptAt": "2026-09-28T10:57:32.692Z",
         "fromCache": false,
         "fetchError": null
       },
       {
         "sourceId": "madrid-agenda-cultural-100",
-        "lastSuccessfulFetchAt": "2026-09-27T19:22:08.155Z",
-        "lastAttemptAt": "2026-09-27T19:22:08.155Z",
+        "lastSuccessfulFetchAt": "2026-09-28T10:57:32.692Z",
+        "lastAttemptAt": "2026-09-28T10:57:32.692Z",
         "fromCache": false,
         "fetchError": null
       }
     ]
   },
-  "publishedUpcoming": 59
+  "publishedUpcoming": 51
 }
