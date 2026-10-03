@@ -6,6 +6,7 @@ import {
 import {
   geographicGate,
   parseMadridDateTime,
+  slugify,
 } from '../../automation/normalizers/normalize-events.mjs';
 
 describe('event pipeline helpers', () => {
@@ -107,5 +108,13 @@ describe('event pipeline helpers', () => {
     );
     expect(result.discarded).toBe(false);
     expect(result.event.lastCheckedAt).toBeUndefined();
+  });
+
+  it('slugify no deja guion final al truncar a 72 caracteres', () => {
+    const title =
+      "Desfile de clausura de la 'IV edición de Passarela Brasil Fashion Madrid'-50433809";
+    const slug = slugify(title);
+    expect(slug.length).toBeLessThanOrEqual(72);
+    expect(slug).toMatch(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
   });
 });

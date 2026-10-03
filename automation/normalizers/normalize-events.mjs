@@ -58,8 +58,10 @@ export function slugify(text) {
     .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 72);
+    .slice(0, 72)
+    // Recortar guiones después de truncar: un corte justo en un separador
+    // dejaba un guion final y el slug no pasaba la validación.
+    .replace(/^-+|-+$/g, '');
 }
 
 /** Interpreta dtstart/dtend de Madrid Open Data → ISO Europe/Madrid. */
