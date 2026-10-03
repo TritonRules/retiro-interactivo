@@ -145,4 +145,50 @@ test.describe('servicios del Retiro en el mapa', () => {
       expect(['cafe', 'bar', 'restaurante', 'helados', 'quiosco']).toContain(subtype);
     expect(errors).toEqual([]);
   });
+
+  test('las fichas con información verificada muestran precios con fuente, horario y teléfono', async ({
+    page,
+  }) => {
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    // Fecha fija: la caducidad de los precios depende del día.
+    await page.clock.setFixedTime(new Date('2026-10-03T10:00:00+02:00'));
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('', { waitUntil: 'domcontentloaded' });
+    await expect(page.locator('.maplibregl-marker.place-marker').first()).toBeVisible({
+      timeout: 30_000,
+    });
+    await zoomTimes(page, 'Acercar mapa', 2);
+
+    const barcas = page.getByRole('button', {
+      name: 'Abrir ficha del servicio Barcas del Estanque',
+    });
+    await barcas.dispatchEvent('click');
+    let sheet = page.getByRole('dialog', { name: 'Barcas del Estanque' });
+    await expect(sheet).toBeVisible();
+    await expect(sheet).toContainText('Precio público 2026 · Ayuntamiento');
+    await expect(sheet).not.toContainText('orientativo');
+    await expect(sheet).toContainText('1,80 €');
+    await expect(sheet).toContainText('según el Ayuntamiento, 28/09/2026');
+    await expect(sheet.getByRole('link', { name: 'Llamar al 915 744 024' })).toHaveAttribute(
+      'href',
+      'tel:+34915744024',
+    );
+    await sheet.getByRole('button', { name: 'Cerrar', exact: true }).click();
+
+    await page
+      .getByRole('button', { name: 'Abrir ficha del servicio Vivaz Retiro' })
+      .dispatchEvent('click');
+    sheet = page.getByRole('dialog', { name: 'Vivaz Retiro' });
+    await expect(sheet).toBeVisible();
+    await expect(sheet).toContainText(
+      'Precio orientativo · carta del local · consultado el 28/09/2026',
+    );
+    await expect(sheet).toContainText('puede variar');
+    await expect(sheet.getByRole('link', { name: 'Carta', exact: true })).toHaveAttribute(
+      'href',
+      /smartmenu\.agorapos\.com/,
+    );
+    expect(errors).toEqual([]);
+  });
 });

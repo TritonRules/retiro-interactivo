@@ -855,6 +855,94 @@
   color: var(--color-ink-muted);
 }
 
+/* Información verificada del local: teléfono, precios con fecha y estado. */
+.ficha--mobile.ficha--servicio-info {
+  max-height: min(58vh, 480px);
+}
+
+.ficha__block {
+  display: block;
+}
+
+.ficha__facts a,
+.ficha__prices a {
+  color: inherit;
+}
+
+.ficha__facts dd a[href^='tel:'] {
+  color: var(--color-primary);
+  font-weight: 650;
+}
+
+.ficha__alert {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background: #fdf0e6;
+  border: 1px solid #e8b48f;
+  color: #7a3410;
+  font-size: 0.85rem;
+}
+
+.ficha__prices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  font-size: 0.88rem;
+}
+
+.ficha__prices--aging {
+  background: #fff7e0;
+  border-color: #e3b341;
+}
+
+.ficha__price-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.ficha__price-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+  color: var(--color-ink);
+}
+
+.ficha__price {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.ficha__price-label {
+  margin: 0.15rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: var(--color-primary);
+}
+
+.ficha__price-warning {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: #8a5a00;
+}
+
+.ficha__price-meta {
+  margin: 0;
+  font-size: 0.76rem;
+  color: var(--color-ink-muted);
+}
+
 .status-pill {
   display: inline-flex;
   align-items: center;

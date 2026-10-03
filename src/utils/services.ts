@@ -1,5 +1,6 @@
 import servicesData from '../data/services.json';
 import osmData from '../data/services-osm.json';
+import infoData from '../data/services-info.json';
 import type { OsmService, ParkService } from '../types/service';
 import {
   osmServicesDatasetSchema,
@@ -9,6 +10,7 @@ import {
   type ServiceMatch,
 } from './osmServices.shared.mjs';
 import { validateServices } from './validateServices';
+import { serviceInfoDatasetSchema, type ServiceInfo } from './serviceInfo.shared.mjs';
 
 const result = validateServices(servicesData);
 
@@ -80,11 +82,43 @@ export function mergeServices(
   return merged;
 }
 
+const infoParsed = serviceInfoDatasetSchema.safeParse(infoData);
+if (!infoParsed.success) {
+  throw new Error(
+    `services-info.json inválido:\n${infoParsed.error.issues
+      .map((issue) => `- ${issue.path.join('.')}: ${issue.message}`)
+      .join('\n')}`,
+  );
+}
+
+/** Información verificada de los locales (teléfono, horario, precios, estado). */
+export const serviceInfoList: ServiceInfo[] = infoParsed.data.services;
+
+/**
+ * Añade a cada servicio su información verificada. El nombre comercial y la web/carta
+ * verificados sustituyen a los de OSM; el horario se muestra desde `info.hours`.
+ */
+export function applyServiceInfo(list: ParkService[], infoList: ServiceInfo[]): ParkService[] {
+  const byId = new Map(infoList.map((info) => [info.id, info]));
+  return list.map((service) => {
+    const info = byId.get(service.id);
+    if (!info) return service;
+    const name = info.name ?? service.name;
+    return {
+      ...service,
+      name,
+      ...(service.mapLabel ? { mapLabel: name } : {}),
+      ...(info.website ? { website: info.website } : {}),
+      ...(info.menuUrl ? { menuUrl: info.menuUrl } : {}),
+      info,
+    };
+  });
+}
+
 /** Servicios curados (services.json) + servicios OSM nuevos (services-osm.json). */
-export const services: ParkService[] = mergeServices(
-  result.services,
-  osmServicesDataset.services,
-  osmServicesDataset.matches,
+export const services: ParkService[] = applyServiceInfo(
+  mergeServices(result.services, osmServicesDataset.services, osmServicesDataset.matches),
+  serviceInfoList,
 );
 
 export function servicesToGeoJSON(list: ParkService[] = services) {

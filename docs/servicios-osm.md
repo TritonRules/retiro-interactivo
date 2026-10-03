@@ -117,50 +117,62 @@ avenida de Menéndez Pelayo, y no son servicios del Retiro; se quitan también d
   fuera del parque el mapa base no cambia. Si se ocultan los servicios, vuelven.
 - **Ficha compacta**: tipo, nombre, «Cerca de…», horario (traducido de `opening_hours`,
   «según OpenStreetMap»), accesibilidad y gratuidad, **Cómo llegar** (Google Maps a pie),
-  Carta/Web si están etiquetadas, y fuente con fecha.
+  Carta/Web si están etiquetadas, y fuente con fecha. Si el servicio tiene información
+  verificada (ver abajo), la ficha añade teléfono, horario con su fuente, precios con fecha
+  y estado.
 - Con ruta activa o modo paseo no se pintan servicios (igual que los demás iconos).
 
-## Precios (investigación, sin uso en la interfaz)
+## Información verificada de los locales (`src/data/services-info.json`)
 
-No se muestran precios. Solo se aceptarían de una fuente primaria (carta publicada por el
-propio local o foto fechada in situ); Google, TheFork, Tripadvisor y agregadores de cartas
-no son fiables para precios exactos. Ningún servicio OSM tiene etiqueta `menu`/`website:menu`.
+Completa las fichas de algunos servicios con datos comprobados a mano: nombre comercial,
+teléfono, web, carta, horario con su fuente, precios con fecha y estado («cerrado
+temporalmente»). El esquema está en `src/utils/serviceInfo.shared.mjs`; lo validan la app y
+`npm run validate:data` (ids existentes, fuentes admitidas, fechas coherentes).
 
-Comprobado el **2026-09-28**:
+### Reglas
 
-| Local (OSM) | ¿Carta con precios pública? | Fuente | Notas |
-| --- | --- | --- | --- |
-| Florida Retiro (restaurante) | **Sí** | PDF oficiales en <https://www.floridapark.es/> (El Pabellón, La Galería, Los Kioskos) | Nombre de los PDF fechado 2025-12-06. El dominio `floridaretiro.com` carga scripts ajenos: no usarlo. |
-| La Gruta (heladería/terraza) | **Sí**, sin fecha | <https://www.barmiradorterrazalagruta.com/> | Carta con precios (cerveza 1/3 l 4,50 €, copas de helado 6,50–8 €…). Servidor intermitente (error 500 al consultarlo). |
-| Nacional Retiro (cafetería) | Parcial | <https://nacionalretiro.com/> | Solo un «plato estrella» con precio (arroz negro 24,50 €); sin carta completa. |
-| Vivaz Retiro (cafetería) | Carta enlazada, precios sin verificar | <https://linktr.ee/VivazRetiro> → vivazretiro.com | La carta se carga dinámicamente; no se pudo comprobar si lleva precios. |
-| Bar Mirador La Rosaleda | Carta enlazada, precios sin verificar | <https://linktr.ee/VivazRetiro> («Vivaz La Rosaleda») | Parece gestionado ahora por Vivaz. |
-| Casa Remigio (bar) | No | grupocasaremigio.com (sin carta del quiosco del Retiro) | El grupo publica cartas de otros locales. |
-| Bar Mirador El Estanque | No | — | Solo agregadores no oficiales. |
-| Galápagos (bar) | No | — | Portal no oficial kioscosdelparquedelretiro.com sin precios. |
-| Kiosko Las Estatuas (cafetería) | No | — | Solo directorios. |
-| Mirador (cafetería, Palacio de Cristal) | No | — | Sin web localizada. |
-| Ángel Caído Heladería | No | — | Solo redes sociales y portal no oficial. |
-| Heladería junto al Teatro de Títeres, 3 quioscos sin nombre | No | — | Sin nombre en OSM: no identificables. |
+- **Fuentes de precios**: solo el Ayuntamiento (`official`) o la carta publicada por el
+  propio local (`venue`), siempre con la fecha del documento (`sourceDate`) y el día de la
+  consulta (`checkedAt`). **Nunca** agregadores ni webs de reseñas (carta.menu, sluurpy,
+  gastroranking, Restaurant Guru, Tripadvisor, TheFork, Google Maps, copias de Wayback…): el
+  esquema los rechaza.
+- **Precios del local**: se muestran como «Precio orientativo · carta del local ·
+  consultado el DD/MM/AAAA», con enlace a la fuente y, si es distinta, la fecha de la carta.
+- **Caducidad** (según la fecha de la carta, calculada en el navegador el día de la visita):
+  desde **9 meses** el bloque se marca en ámbar («los precios pueden haber cambiado»); desde
+  **12 meses** deja de mostrarse solo. `validate:data` avisa, sin fallar, de los precios
+  marcados o caducados para que se actualicen.
+- **Precios públicos** (barcas): «Precio público AAAA · Ayuntamiento», sin «orientativo»;
+  valen durante su año (`validYear`) y se ocultan al empezar el siguiente.
+- **Horarios**: «(según la web del local / el Ayuntamiento / Google, DD/MM/AAAA)», con
+  enlace a la fuente si la hay. Si las fuentes no coinciden se da prioridad a la del propio
+  local y se añade «puede variar». Sustituyen al horario de OSM en la ficha.
+- **Teléfono**: enlace `tel:`; si sale de Google se indica «(según Google)».
+- **Estado** «Cerrado temporalmente (según Google, DD/MM/AAAA)»: se deja de mostrar a los
+  12 meses de la comprobación.
 
-**Conclusión**: solo Florida Retiro (y con reservas La Gruta) publican precios propios; no
-compensa mostrar precios en esta fase.
+### Contenido (comprobado el 28/09/2026; horario de Florida Park, el 03/10/2026)
 
-### Campo opcional `featuredPrices` (diseño, sin uso)
+| Servicio (id) | Datos | Fuente |
+| --- | --- | --- |
+| Barcas del Estanque (`osm-node-3274328970`) | Precios públicos 2026: 6 € L–V laborables, 8 € sáb., dom. y festivos, 1,80 € mayores de 65 (L–V laborables); 45 min, máx. 4 personas; horario 10:00–14:00 y 15:15–puesta de sol; tel. 915 744 024 | madrid.es (CDM Estanque del Retiro y cartel «Precios públicos 2026») |
+| Vivaz Retiro (`osm-way-194853751`) | 6 precios de la carta, horario, teléfono, carta digital, café de comercio justo | Carta digital del local (SmartMenu) y PDF de 16/02/2026 |
+| Vivaz La Rosaleda (`osm-way-467641934`, en OSM «Bar Mirador La Rosaleda») | 6 precios, carta en PDF; teléfono y horario (solo el lunes) de Google | PDF «Carta Vivaz La Rosaleda» de 16/02/2026 (enlazado desde linktr.ee/VivazRetiro) |
+| Florida Park (`osm-way-722360392`) | 5 precios de Los Kioskos, La Galería y El Pabellón; horario general y teléfono de reservas | PDF de 06/12/2025 y floridapark.es/es/contacto |
+| Nacional Retiro (`osm-way-243351606`) | Horario, web y teléfono (Google); sin precios: la web solo publica un plato | nacionalretiro.com |
+| Heladería de la avenida de Méjico (`osm-node-3135948608`) | «Cerrado temporalmente»; en Google, «Casa Remigio» (Av. de Méjico 2, a < 2 m del nodo) | Google Maps |
 
-Admitido por el esquema de `services.json` y `services-osm.json`, no se pinta en la ficha:
+**No se incluyen**: La Gruta (su carta solo se conserva en una copia de agosto de 2025 y la
+web está caída), el Barco Solar (la «motora» a 2 € del cartel municipal no consta que sea
+ese servicio) ni los bares-mirador sin web propia (Estanque, Estatuas, Galápagos, Ángel
+Caído…), de los que solo hay agregadores o el horario de un día en Google.
 
-```json
-"featuredPrices": [
-  {
-    "item": "Café con leche",
-    "price": 2.5,
-    "currency": "EUR",
-    "checkedAt": "2026-09-28",
-    "source": "https://www.floridapark.es/…/carta.pdf"
-  }
-]
-```
+Los precios de los quioscos del Retiro no están regulados por el Ayuntamiento: son
+concesiones demaniales del Distrito de Retiro y cada concesionario fija los suyos.
 
-Reglas si algún día se usa: solo fuentes primarias, `checkedAt` obligatorio, ocultar
-precios con más de 90 días y mostrarlos siempre como «orientativo (fecha)».
+### Campo antiguo `featuredPrices` (sin uso)
+
+`services.json` y `services-osm.json` siguen admitiendo `featuredPrices` (diseño previo), pero
+la interfaz no lo pinta: los precios se mantienen solo en `services-info.json`, con las reglas
+de arriba (antes se proponía ocultarlos a los 90 días; la regla vigente es 9 meses en ámbar y
+12 meses ocultos).

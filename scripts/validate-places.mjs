@@ -14,6 +14,11 @@ import {
   pointInRings,
   SERVICE_SUBTYPES,
 } from '../src/utils/osmServices.shared.mjs';
+import {
+  priceFreshness,
+  serviceInfoDatasetSchema,
+  todayIso,
+} from '../src/utils/serviceInfo.shared.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
@@ -195,6 +200,30 @@ for (const match of osmDataset.matches) {
   }
 }
 if (!uniqueBy('id', routes, 'rutas') || !uniqueBy('slug', routes, 'rutas')) process.exit(1);
+
+// Información verificada de los locales (src/data/services-info.json).
+const infoResult = serviceInfoDatasetSchema.safeParse(load(join(root, 'src/data/services-info.json')));
+if (!infoResult.success) {
+  fail(
+    `services-info.json inválido:\n${infoResult.error.issues
+      .map((issue) => `- ${issue.path.join('.')}: ${issue.message}`)
+      .join('\n')}`,
+  );
+}
+const knownServiceIds = new Set([...curatedServiceIds, ...osmDataset.services.map((s) => s.id)]);
+const today = todayIso();
+for (const info of infoResult.data.services) {
+  if (!knownServiceIds.has(info.id)) fail(`services-info.json: servicio inexistente ${info.id}`);
+  // Caducar no rompe la validación: la app oculta sola los precios de más de 12 meses.
+  if (info.prices) {
+    const freshness = priceFreshness(info.prices, today);
+    if (freshness !== 'fresh') {
+      console.warn(
+        `Aviso: precios de ${info.id} ${freshness === 'expired' ? 'caducados (ocultos)' : 'con más de 9 meses'} (carta del ${info.prices.sourceDate}).`,
+      );
+    }
+  }
+}
 
 if (places.length < 60 - services.length) {
   // total fichas target checked below
