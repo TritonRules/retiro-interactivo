@@ -1,3 +1,5 @@
+import type { ServiceInfo } from '../utils/serviceInfo.shared.mjs';
+
 export type ServiceType =
   | 'aseo'
   | 'fuente'
@@ -36,8 +38,8 @@ export type PlaceStatus = 'verified' | 'needs-review';
 export type Wheelchair = 'yes' | 'limited' | 'no';
 
 /**
- * Precio destacado verificado. Diseño documentado (docs/servicios-osm.md) pero sin
- * uso en la interfaz: solo con fuente primaria (carta del local) y fecha de comprobación.
+ * Precio destacado (diseño antiguo, sin uso). Los precios que se muestran viven en
+ * `src/data/services-info.json` (ver `ServiceInfo` y docs/servicios-osm.md).
  */
 export interface FeaturedPrice {
   item: string;
@@ -75,6 +77,8 @@ export interface ParkService {
   /** Nombre propio que se rotula bajo el icono a zoom alto (cafés, bares…). */
   mapLabel?: string;
   featuredPrices?: FeaturedPrice[];
+  /** Información verificada (teléfono, horario con fuente, precios con fecha, estado). */
+  info?: ServiceInfo;
 }
 
 /** Elemento de `src/data/services-osm.json` (generado por scripts/services-osm.mjs). */

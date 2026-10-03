@@ -17,6 +17,10 @@ a 2026-09-28 (cafés, bares, heladerías, quioscos, aseos, agua potable, parques
 gimnasios al aire libre…). © colaboradores de OpenStreetMap, **ODbL 1.0**. Detalle, reglas
 de deduplicación y estudio de precios: `docs/servicios-osm.md`.
 
+Información verificada de algunos locales (teléfono, horario con fuente, precios con fecha,
+estado): `src/data/services-info.json`. Solo fuentes oficiales o del propio local; los precios
+se marcan a los 9 meses y se ocultan a los 12 (reglas en `docs/servicios-osm.md`).
+
 ## Lugares (20)
 
 Archivo: `src/data/places.json`. Fecha de contraste: **2026-08-05**.  

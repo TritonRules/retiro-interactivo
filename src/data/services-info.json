@@ -1,0 +1,232 @@
+{
+  "description": "Información verificada de servicios del Retiro (teléfono, web, carta, horario, precios y estado), con fuente y fecha. Solo fuentes oficiales o del propio local; nunca agregadores. Reglas: docs/servicios-osm.md.",
+  "updatedAt": "2026-10-03",
+  "services": [
+    {
+      "id": "osm-node-3274328970",
+      "name": "Barcas del Estanque",
+      "phone": {
+        "display": "915 744 024",
+        "tel": "+34915744024",
+        "sourceType": "official"
+      },
+      "website": "https://www.madrid.es/portales/munimadrid/es/Inicio/Cultura-ocio-y-deporte/Deporte/Direcciones-y-telefonos/Centro-Deportivo-Municipal-Estanque-del-Retiro/?vgnextchannel=9b08151c238fe410VgnVCM2000000c205a0aRCRD&vgnextfmt=default&vgnextoid=6487b0c40971c010VgnVCM1000000b205a0aRCRD",
+      "hours": {
+        "text": "Todos los días 10:00–14:00 y 15:15–puesta de sol",
+        "sourceType": "official",
+        "sourceUrl": "https://www.madrid.es/portales/munimadrid/es/Inicio/Cultura-ocio-y-deporte/Deporte/Direcciones-y-telefonos/Centro-Deportivo-Municipal-Estanque-del-Retiro/?vgnextchannel=9b08151c238fe410VgnVCM2000000c205a0aRCRD&vgnextfmt=default&vgnextoid=6487b0c40971c010VgnVCM1000000b205a0aRCRD",
+        "checkedAt": "2026-09-28",
+        "mayVary": true,
+        "note": "Cerrado 24, 25 y 31 de diciembre y 1 de enero."
+      },
+      "prices": {
+        "sourceType": "official",
+        "validYear": 2026,
+        "sourceDate": "2026-03-16",
+        "checkedAt": "2026-09-28",
+        "sourceLabel": "Precios públicos 2026 (madrid.es)",
+        "sourceUrl": "https://www.madrid.es/portales/munimadrid/es/Inicio/Cultura-ocio-y-deporte/Deporte/Direcciones-y-telefonos/Centro-Deportivo-Municipal-Estanque-del-Retiro/?vgnextchannel=9b08151c238fe410VgnVCM2000000c205a0aRCRD&vgnextfmt=default&vgnextoid=6487b0c40971c010VgnVCM1000000b205a0aRCRD",
+        "currency": "EUR",
+        "items": [
+          {
+            "item": "Barca, lunes a viernes laborables",
+            "price": 6
+          },
+          {
+            "item": "Barca, sábados, domingos y festivos",
+            "price": 8
+          },
+          {
+            "item": "Mayores de 65, lunes a viernes laborables",
+            "price": 1.8
+          }
+        ],
+        "details": "Precio por barca · 45 min · máx. 4 personas"
+      },
+      "notes": "Cartel «Precios públicos 2026» del Ayuntamiento (Acuerdo plenario de 22/12/2010, última modificación dic. 2025; PDF de 16/03/2026). La «motora» a 2 € del mismo cartel no se asocia al Barco Solar porque no está confirmado que sea ese servicio."
+    },
+    {
+      "id": "osm-way-194853751",
+      "phone": {
+        "display": "644 00 56 69",
+        "tel": "+34644005669",
+        "sourceType": "venue"
+      },
+      "website": "https://linktr.ee/VivazRetiro",
+      "menuUrl": "https://smartmenu.agorapos.com/?id=bx36fwgn",
+      "hours": {
+        "openingHours": "Mo-Fr 13:00-21:30; Sa,Su 11:00-21:30",
+        "sourceType": "venue",
+        "sourceUrl": "https://smartmenu.agorapos.com/?id=bx36fwgn",
+        "checkedAt": "2026-09-28",
+        "mayVary": true
+      },
+      "prices": {
+        "sourceType": "venue",
+        "sourceDate": "2026-09-28",
+        "checkedAt": "2026-09-28",
+        "sourceLabel": "carta digital de Vivaz Retiro",
+        "sourceUrl": "https://smartmenu.agorapos.com/?id=bx36fwgn",
+        "currency": "EUR",
+        "items": [
+          {
+            "item": "Café solo o americano",
+            "price": 2.3
+          },
+          {
+            "item": "Café con leche",
+            "price": 2.8
+          },
+          {
+            "item": "Caña (Doble Mahou)",
+            "price": 3.7
+          },
+          {
+            "item": "Agua 33 cl",
+            "price": 2.5
+          },
+          {
+            "item": "Tarrina de helado, 1 sabor",
+            "price": 3.8
+          },
+          {
+            "item": "Patatas bravas",
+            "price": 9.9
+          }
+        ]
+      },
+      "highlights": ["Café de comercio justo"],
+      "notes": "Horario de la carta digital del local; Google indicaba otro (lunes 13:00–23:45). Precios coinciden con el PDF «Carta Vivaz Retiro» de 16/02/2026."
+    },
+    {
+      "id": "osm-way-467641934",
+      "name": "Vivaz La Rosaleda",
+      "phone": {
+        "display": "694 28 98 71",
+        "tel": "+34694289871",
+        "sourceType": "google"
+      },
+      "website": "https://linktr.ee/VivazRetiro",
+      "menuUrl": "https://drive.google.com/file/d/1YIejvoCmQvX3ej-SSnNwm8UJ6LM6Pqyd/view",
+      "hours": {
+        "text": "Lunes 10:00–23:00 (solo consta el lunes)",
+        "sourceType": "google",
+        "checkedAt": "2026-09-28",
+        "mayVary": true
+      },
+      "prices": {
+        "sourceType": "venue",
+        "sourceDate": "2026-02-16",
+        "checkedAt": "2026-09-28",
+        "sourceLabel": "carta «Vivaz La Rosaleda» (PDF del local)",
+        "sourceUrl": "https://drive.google.com/file/d/1YIejvoCmQvX3ej-SSnNwm8UJ6LM6Pqyd/view",
+        "currency": "EUR",
+        "items": [
+          {
+            "item": "Café solo o americano",
+            "price": 2.3
+          },
+          {
+            "item": "Café con leche",
+            "price": 2.8
+          },
+          {
+            "item": "Caña (Doble Mahou)",
+            "price": 3.7
+          },
+          {
+            "item": "Agua 33 cl",
+            "price": 2.5
+          },
+          {
+            "item": "Tarrina de helado, 1 sabor",
+            "price": 3.8
+          },
+          {
+            "item": "Patatas bravas",
+            "price": 9.9
+          }
+        ]
+      },
+      "highlights": ["Café de comercio justo"],
+      "notes": "OSM lo llama «Bar Mirador La Rosaleda»; el local se presenta como Vivaz La Rosaleda (Linktree propio y Google). Carta enlazada desde linktr.ee/VivazRetiro. Teléfono y horario de Google (vista limitada: solo el día consultado)."
+    },
+    {
+      "id": "osm-way-722360392",
+      "name": "Florida Park",
+      "phone": {
+        "display": "918 27 52 75",
+        "tel": "+34918275275",
+        "sourceType": "venue"
+      },
+      "website": "https://www.floridapark.es/",
+      "hours": {
+        "openingHours": "Mo 12:00-01:30; Tu,We 12:00-02:00; Th 12:00-03:00; Fr,Sa 12:00-06:00; Su 12:00-02:00",
+        "sourceType": "venue",
+        "sourceUrl": "https://www.floridapark.es/es/contacto",
+        "checkedAt": "2026-10-03",
+        "mayVary": true,
+        "note": "Cada espacio tiene su horario (El Pabellón cierra el domingo a las 18:00)."
+      },
+      "prices": {
+        "sourceType": "venue",
+        "sourceDate": "2025-12-06",
+        "checkedAt": "2026-09-28",
+        "sourceLabel": "cartas de Los Kioskos, La Galería y El Pabellón (floridapark.es)",
+        "sourceUrl": "https://www.floridapark.es/",
+        "currency": "EUR",
+        "items": [
+          {
+            "item": "Pincho de tortilla (Los Kioskos)",
+            "price": 5
+          },
+          {
+            "item": "Patatas bravas (Los Kioskos)",
+            "price": 9.5
+          },
+          {
+            "item": "Helado, 2 sabores (La Galería)",
+            "price": 6.5
+          },
+          {
+            "item": "Servicio de mesa, por persona (La Galería)",
+            "price": 2
+          },
+          {
+            "item": "Servicio de mesa, por persona (El Pabellón)",
+            "price": 2.5,
+            "note": "terraza 3,50 €"
+          }
+        ]
+      },
+      "notes": "PDF oficiales fechados 2025-12-06 en floridapark.es. Teléfono de reservas y horario general de floridapark.es/es/contacto. No usar floridaretiro.com."
+    },
+    {
+      "id": "osm-way-243351606",
+      "phone": {
+        "display": "663 94 33 93",
+        "tel": "+34663943393",
+        "sourceType": "google"
+      },
+      "website": "https://nacionalretiro.com/",
+      "hours": {
+        "openingHours": "Mo-Su 11:00-21:00",
+        "sourceType": "venue",
+        "sourceUrl": "https://nacionalretiro.com/",
+        "checkedAt": "2026-09-28",
+        "mayVary": true
+      },
+      "notes": "OSM indica 10:00–22:00; se da prioridad a la web del local. Sin carta completa con precios (solo un plato estrella), así que no se muestran precios."
+    },
+    {
+      "id": "osm-node-3135948608",
+      "status": {
+        "value": "temporarily-closed",
+        "sourceType": "google",
+        "checkedAt": "2026-09-28",
+        "note": "En Google figura como «Casa Remigio» (avenida de Méjico, 2)."
+      },
+      "notes": "La ficha de Google «Casa Remigio» (Avenida Méjico 2) está a menos de 2 m del nodo OSM (40.41893, -3.68749)."
+    }
+  ]
+}
