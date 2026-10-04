@@ -177,7 +177,7 @@
         "slug": "chup-chup-50289724",
         "title": "Chup-chup",
         "startAt": "2026-10-03T19:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -195,6 +195,24 @@
         "slug": "ciclo-comprender-el-antiguo-egipto-que-sabemos-50291004",
         "title": "Ciclo 'Comprender el Antiguo Egipto': ¿Qué sabemos?",
         "startAt": "2026-10-06T18:30:00+02:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50166747",
+        "slug": "ciclo-grabacion-radio-teatro-volpini-esto-no-es-un-moscardon-50166747",
+        "title": "Ciclo 'Grabación Radio teatro Volpini': 'Esto no es un moscardón'",
+        "startAt": "2026-10-15T19:00:00+02:00",
         "status": "published",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
@@ -232,24 +250,6 @@
         "title": "Collage: Legado y trascendencia",
         "startAt": "2026-10-08T11:00:00+02:00",
         "status": "published",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50433553",
-        "slug": "concierto-el-heroe-iluminado-50433553",
-        "title": "Concierto 'El héroe iluminado'",
-        "startAt": "2026-10-02T19:00:00+02:00",
-        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -384,6 +384,24 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -3.6840988,
+          40.4192106
+        ]
+      },
+      "properties": {
+        "id": "evt-50322750",
+        "slug": "eco-reciclarte-50322750",
+        "title": "Eco-reciclarte",
+        "startAt": "2026-10-17T12:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -3.6866962,
           40.4187197
         ]
@@ -431,24 +449,6 @@
         "startAt": "2026-10-13T19:00:00+02:00",
         "status": "published",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6840988,
-          40.4192106
-        ]
-      },
-      "properties": {
-        "id": "evt-50322750",
-        "slug": "el-sueno-de-una-noche-de-verano-50322750",
-        "title": "El sueño de una noche de verano",
-        "startAt": "2026-10-01T18:00:00+02:00",
-        "status": "expired",
-        "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
     {
@@ -555,24 +555,6 @@
         "slug": "forro-en-la-biblio-50242272",
         "title": "Forró en la Biblio",
         "startAt": "2026-10-03T11:00:00+02:00",
-        "status": "published",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50430515",
-        "slug": "juana-reina-de-castilla-50430515",
-        "title": "Juana, Reina de Castilla",
-        "startAt": "2026-10-02T19:00:00+02:00",
         "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
@@ -834,24 +816,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.6840988,
-          40.4192106
-        ]
-      },
-      "properties": {
-        "id": "evt-50362839",
-        "slug": "musica-madre-retiro-50362839",
-        "title": "Música Madre - Retiro",
-        "startAt": "2026-10-02T19:00:00+02:00",
-        "status": "expired",
-        "venue": "Centro Cultural Casa de Vacas (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -3.6866962,
           40.4187197
         ]
@@ -1041,7 +1005,7 @@
         "slug": "senda-conoce-las-aves-del-retiro-50173980",
         "title": "Senda 'Conoce las aves del Retiro'",
         "startAt": "2026-10-03T16:30:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
@@ -1059,6 +1023,24 @@
         "slug": "senda-descubriendo-los-frutos-del-otono-50148887",
         "title": "Senda 'Descubriendo los frutos del otoño'",
         "startAt": "2026-10-31T16:30:00+01:00",
+        "status": "published",
+        "venue": "Aula ambiental La Cabaña del Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.679318,
+          40.409123
+        ]
+      },
+      "properties": {
+        "id": "evt-50150274",
+        "slug": "sesiones-tematicas-de-huerto-50150274",
+        "title": "Sesiones temáticas de huerto",
+        "startAt": "2026-10-29T16:30:00+01:00",
         "status": "published",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
@@ -1239,6 +1221,24 @@
         "slug": "taller-para-dejar-de-fumar-50408098",
         "title": "Taller para dejar de fumar",
         "startAt": "2026-10-14T12:00:00+02:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50217974",
+        "slug": "tertulia-literaria-hispanoamericana-rafael-montesinos-con-pablo-jimenez",
+        "title": "Tertulia Literaria Hispanoamericana 'Rafael Montesinos' con Pablo Jiménez y Javier Magano",
+        "startAt": "2026-10-13T19:00:00+02:00",
         "status": "published",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
@@ -1473,7 +1473,7 @@
         "slug": "xxviii-festival-internacional-coma-26-50235439",
         "title": "XXVIII Festival Internacional COMA'26",
         "startAt": "2026-10-03T12:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -1577,11 +1577,29 @@
         ]
       },
       "properties": {
-        "id": "evt-50431189",
-        "slug": "como-nace-la-sed-de-oscar-martin-ramirez-50431189",
-        "title": "'Cómo nace la sed' de Oscar Martín Ramírez",
-        "startAt": "2026-10-01T19:00:00+02:00",
-        "status": "expired",
+        "id": "evt-50440113",
+        "slug": "agua-sin-voz-de-ana-meucci-50440113",
+        "title": "'Agua sin voz' de Ana Meucci",
+        "startAt": "2026-10-05T18:30:00+02:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50440208",
+        "slug": "aquel-pensar-un-sentir-de-maria-de-los-angeles-pascual-majan-50440208",
+        "title": "'Aquel pensar un sentir' de María de los Ángeles Pascual Majan",
+        "startAt": "2026-10-14T19:00:00+02:00",
+        "status": "published",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -1617,114 +1635,6 @@
         "slug": "la-tribu-de-los-ninos-valientes-con-andrea-novillo-50430642",
         "title": "'La tribu de los niños valientes' con Andrea Novillo",
         "startAt": "2026-10-07T18:00:00+02:00",
-        "status": "published",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50430468",
-        "slug": "que-ciencia-vemos-en-internet-visibilidad-popularidad-y-calidad-en-la-e",
-        "title": "¿Qué ciencia vemos en Internet? Visibilidad, popularidad y calidad en la era de Google y la inteligencia artificial",
-        "startAt": "2026-10-01T19:00:00+02:00",
-        "status": "expired",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50166747",
-        "slug": "ciclo-grabacion-radio-teatro-volpini-esto-no-es-un-moscardon-50166747",
-        "title": "Ciclo 'Grabación Radio teatro Volpini': 'Esto no es un moscardón'",
-        "startAt": "2026-10-15T19:00:00+02:00",
-        "status": "published",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.679318,
-          40.409123
-        ]
-      },
-      "properties": {
-        "id": "evt-50150274",
-        "slug": "sesiones-tematicas-de-huerto-50150274",
-        "title": "Sesiones temáticas de huerto",
-        "startAt": "2026-10-29T16:30:00+01:00",
-        "status": "published",
-        "venue": "Aula ambiental La Cabaña del Retiro"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50217974",
-        "slug": "tertulia-literaria-hispanoamericana-rafael-montesinos-con-pablo-jimenez",
-        "title": "Tertulia Literaria Hispanoamericana 'Rafael Montesinos' con Pablo Jiménez y Javier Magano",
-        "startAt": "2026-10-13T19:00:00+02:00",
-        "status": "published",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50440113",
-        "slug": "agua-sin-voz-de-ana-meucci-50440113",
-        "title": "'Agua sin voz' de Ana Meucci",
-        "startAt": "2026-10-05T18:30:00+02:00",
-        "status": "published",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50440208",
-        "slug": "aquel-pensar-un-sentir-de-maria-de-los-angeles-pascual-majan-50440208",
-        "title": "'Aquel pensar un sentir' de María de los Ángeles Pascual Majan",
-        "startAt": "2026-10-14T19:00:00+02:00",
         "status": "published",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }

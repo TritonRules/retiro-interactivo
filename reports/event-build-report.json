@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-10-03T09:54:03.200Z",
+  "ranAt": "2026-10-04T10:36:29.975Z",
   "offline": false,
   "steps": {
     "collect": "ok",
@@ -21,9 +21,9 @@
     "evt-50437142",
     "evt-50289724",
     "evt-50291004",
+    "evt-50166747",
     "evt-50415948",
     "evt-50438031",
-    "evt-50433553",
     "evt-50405990",
     "evt-50362790",
     "evt-50399373",
@@ -31,17 +31,16 @@
     "evt-50433809",
     "evt-50221891",
     "evt-50145704",
+    "evt-50322750",
     "evt-50430430",
     "evt-50146307",
     "evt-50434289",
-    "evt-50322750",
     "evt-50430426",
     "evt-50147445",
     "evt-50322723",
     "evt-50265824",
     "evt-50235568",
     "evt-50242272",
-    "evt-50430515",
     "evt-50425896",
     "evt-50368535",
     "evt-50434613",
@@ -56,7 +55,6 @@
     "evt-50436425",
     "evt-50431891",
     "evt-50080228",
-    "evt-50362839",
     "evt-50399379",
     "evt-50174902",
     "evt-50322562",
@@ -69,6 +67,7 @@
     "evt-50286911",
     "evt-50173980",
     "evt-50148887",
+    "evt-50150274",
     "evt-50266151",
     "evt-50289667",
     "evt-11771354",
@@ -79,6 +78,7 @@
     "evt-11771304",
     "evt-11771303",
     "evt-50408098",
+    "evt-50217974",
     "evt-50399382",
     "evt-50140512",
     "evt-50425893",
@@ -97,19 +97,20 @@
     "evt-50149656",
     "evt-50434551",
     "evt-50202486",
-    "evt-50431189",
-    "evt-50404386",
-    "evt-50430642",
-    "evt-50430468",
-    "evt-50166747",
-    "evt-50150274",
-    "evt-50217974",
     "evt-50440113",
-    "evt-50440208"
+    "evt-50440208",
+    "evt-50404386",
+    "evt-50430642"
   ],
-  "removed": [],
-  "discarded": 2974,
-  "duplicates": 89,
+  "removed": [
+    "evt-50433553",
+    "evt-50430515",
+    "evt-50362839",
+    "evt-50431189",
+    "evt-50430468"
+  ],
+  "discarded": 3054,
+  "duplicates": 91,
   "errors": [],
   "published": true,
   "keptPrevious": false,
@@ -119,19 +120,19 @@
       "sourceId": "madrid-agenda-general",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-10-03T09:54:03.200Z",
-      "lastSuccessfulFetchAt": "2026-10-03T09:54:03.200Z",
+      "fetchedAt": "2026-10-04T10:36:29.975Z",
+      "lastSuccessfulFetchAt": "2026-10-04T10:36:29.975Z",
       "fetchError": null,
-      "graphCount": 1648
+      "graphCount": 1766
     },
     {
       "sourceId": "madrid-agenda-cultural-100",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-10-03T09:54:03.200Z",
-      "lastSuccessfulFetchAt": "2026-10-03T09:54:03.200Z",
+      "fetchedAt": "2026-10-04T10:36:29.975Z",
+      "lastSuccessfulFetchAt": "2026-10-04T10:36:29.975Z",
       "fetchError": null,
-      "graphCount": 1511
+      "graphCount": 1470
     }
   ],
   "discardSamples": [
@@ -249,6 +250,15 @@
         "fuera-ambito"
       ],
       "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50440336",
+      "title": "Acampada: Acampada en el museo"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
       "sourceEventId": "50410916",
       "title": "Actividades Cuerpo y Mente - Deporte en la Calle - Distrito de Villaverde"
     },
@@ -259,15 +269,6 @@
       ],
       "sourceId": "madrid-agenda-general",
       "sourceEventId": "50411175",
-      "title": "Actividades Cuerpo y Mente - Deporte en la Calle - Distrito de Villaverde"
-    },
-    {
-      "discarded": true,
-      "discardReasons": [
-        "fuera-ambito"
-      ],
-      "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50411433",
       "title": "Actividades Cuerpo y Mente - Deporte en la Calle - Distrito de Villaverde"
     }
   ],
@@ -351,6 +352,13 @@
     },
     {
       "reason": "sourceEventId",
+      "keptId": "evt-50166747",
+      "droppedId": "evt-50166747",
+      "sourceEventId": "50166747",
+      "merged": true
+    },
+    {
+      "reason": "sourceEventId",
       "keptId": "evt-50415948",
       "droppedId": "evt-50415948",
       "sourceEventId": "50415948",
@@ -365,41 +373,34 @@
     },
     {
       "reason": "sourceEventId",
-      "keptId": "evt-50433553",
-      "droppedId": "evt-50433553",
-      "sourceEventId": "50433553",
-      "merged": true
-    },
-    {
-      "reason": "sourceEventId",
       "keptId": "evt-50405990",
       "droppedId": "evt-50405990",
       "sourceEventId": "50405990",
       "merged": true
     }
   ],
-  "publishedCount": 96,
+  "publishedCount": 91,
   "publication": {
     "schemaVersion": 1,
-    "publishedAt": "2026-10-03T09:54:03.200Z",
-    "datasetHash": "e7a32301447e73d640e028d3c7b2f8888ebf6c448d57ad72a934b83f8d235919",
+    "publishedAt": "2026-10-04T10:36:29.975Z",
+    "datasetHash": "6daaf85a1483272a5bb609c236bfb17ce2f7742c473ce3ffeaa6b4a177d56042",
     "coverageHorizonDays": 90,
     "sources": [
       {
         "sourceId": "madrid-agenda-general",
-        "lastSuccessfulFetchAt": "2026-10-03T09:54:03.200Z",
-        "lastAttemptAt": "2026-10-03T09:54:03.200Z",
+        "lastSuccessfulFetchAt": "2026-10-04T10:36:29.975Z",
+        "lastAttemptAt": "2026-10-04T10:36:29.975Z",
         "fromCache": false,
         "fetchError": null
       },
       {
         "sourceId": "madrid-agenda-cultural-100",
-        "lastSuccessfulFetchAt": "2026-10-03T09:54:03.200Z",
-        "lastAttemptAt": "2026-10-03T09:54:03.200Z",
+        "lastSuccessfulFetchAt": "2026-10-04T10:36:29.975Z",
+        "lastAttemptAt": "2026-10-04T10:36:29.975Z",
         "fromCache": false,
         "fetchError": null
       }
     ]
   },
-  "publishedUpcoming": 90
+  "publishedUpcoming": 87
 }
