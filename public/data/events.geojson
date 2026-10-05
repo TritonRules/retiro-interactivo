@@ -303,7 +303,7 @@
         "slug": "cristobal-purchinela-50399373",
         "title": "Cristóbal Purchinela",
         "startAt": "2026-10-03T12:30:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Teatro de Títeres de El Retiro"
       }
     },
@@ -339,7 +339,7 @@
         "slug": "desfile-de-clausura-de-la-iv-edicion-de-passarela-brasil-fashion-madrid",
         "title": "Desfile de clausura de la 'IV edición de Passarela Brasil Fashion Madrid'",
         "startAt": "2026-10-04T12:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -735,7 +735,7 @@
         "slug": "madrid-a-tempo-50146160",
         "title": "Madrid a Tempo",
         "startAt": "2026-10-04T12:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -897,7 +897,7 @@
         "slug": "senda-guiada-las-aves-del-retiro-iniciacion-a-la-ornitologia-50148218",
         "title": "Senda guiada 'Las aves del Retiro: iniciación a la Ornitología'",
         "startAt": "2026-10-03T00:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
@@ -1059,7 +1059,7 @@
         "slug": "siglos-de-musica-una-vida-de-recuerdos-50266151",
         "title": "Siglos de música, una vida de recuerdos",
         "startAt": "2026-10-04T18:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -1383,7 +1383,7 @@
         "slug": "visita-familiar-al-vivero-de-estufas-y-nendo-dango-12120026",
         "title": "Visita familiar al Vivero de Estufas y Nendo Dango",
         "startAt": "2026-10-04T11:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro de Educación Ambiental El Retiro"
       }
     },
@@ -1509,7 +1509,7 @@
         "slug": "yincana-hoja-a-hoja-50288425",
         "title": "Yincana ' hoja a hoja'",
         "startAt": "2026-10-04T11:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
@@ -1617,7 +1617,7 @@
         "slug": "iv-passarela-brasil-fashion-50404386",
         "title": "'IV Passarela Brasil Fashion'",
         "startAt": "2026-09-07T00:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
