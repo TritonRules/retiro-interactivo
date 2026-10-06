@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-10-05T11:32:24.869Z",
+  "ranAt": "2026-10-06T11:18:34.485Z",
   "offline": false,
   "steps": {
     "collect": "ok",
@@ -8,7 +8,11 @@
     "validate": "ok",
     "publish": "ok"
   },
-  "added": [],
+  "added": [
+    "evt-50443014",
+    "evt-50442688",
+    "evt-50442719"
+  ],
   "changed": [
     "evt-50434084",
     "evt-50346030",
@@ -18,17 +22,13 @@
     "evt-50147279",
     "evt-50399376",
     "evt-50147340",
-    "evt-50437142",
-    "evt-50289724",
     "evt-50291004",
     "evt-50166747",
     "evt-50415948",
     "evt-50438031",
     "evt-50405990",
     "evt-50362790",
-    "evt-50399373",
     "evt-50148940",
-    "evt-50433809",
     "evt-50221891",
     "evt-50145704",
     "evt-50322750",
@@ -40,7 +40,6 @@
     "evt-50322723",
     "evt-50265824",
     "evt-50235568",
-    "evt-50242272",
     "evt-50425896",
     "evt-50368535",
     "evt-50434613",
@@ -50,7 +49,6 @@
     "evt-50431987",
     "evt-50343647",
     "evt-50431986",
-    "evt-50146160",
     "evt-50343645",
     "evt-50436425",
     "evt-50431891",
@@ -59,16 +57,13 @@
     "evt-50174902",
     "evt-50322562",
     "evt-50173923",
-    "evt-50148218",
     "evt-50173945",
     "evt-50174274",
     "evt-50202480",
     "evt-50148916",
     "evt-50286911",
-    "evt-50173980",
     "evt-50148887",
     "evt-50150274",
-    "evt-50266151",
     "evt-50289667",
     "evt-11771354",
     "evt-11771349",
@@ -86,25 +81,35 @@
     "evt-50148900",
     "evt-50202982",
     "evt-12316290",
-    "evt-12120026",
     "evt-50173921",
     "evt-50289806",
     "evt-50145563",
     "evt-50146209",
-    "evt-50235439",
     "evt-50202443",
-    "evt-50288425",
     "evt-50149656",
     "evt-50434551",
     "evt-50202486",
     "evt-50440113",
     "evt-50440208",
-    "evt-50404386",
     "evt-50430642"
   ],
-  "removed": [],
-  "discarded": 2991,
-  "duplicates": 87,
+  "removed": [
+    "evt-50437142",
+    "evt-50289724",
+    "evt-50399373",
+    "evt-50433809",
+    "evt-50242272",
+    "evt-50146160",
+    "evt-50148218",
+    "evt-50173980",
+    "evt-50266151",
+    "evt-12120026",
+    "evt-50235439",
+    "evt-50288425",
+    "evt-50404386"
+  ],
+  "discarded": 2979,
+  "duplicates": 81,
   "errors": [],
   "published": true,
   "keptPrevious": false,
@@ -114,19 +119,19 @@
       "sourceId": "madrid-agenda-general",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-10-05T11:32:24.869Z",
-      "lastSuccessfulFetchAt": "2026-10-05T11:32:24.869Z",
+      "fetchedAt": "2026-10-06T11:18:34.485Z",
+      "lastSuccessfulFetchAt": "2026-10-06T11:18:34.485Z",
       "fetchError": null,
-      "graphCount": 1766
+      "graphCount": 1724
     },
     {
       "sourceId": "madrid-agenda-cultural-100",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-10-05T11:32:24.869Z",
-      "lastSuccessfulFetchAt": "2026-10-05T11:32:24.869Z",
+      "fetchedAt": "2026-10-06T11:18:34.485Z",
+      "lastSuccessfulFetchAt": "2026-10-06T11:18:34.485Z",
       "fetchError": null,
-      "graphCount": 1403
+      "graphCount": 1417
     }
   ],
   "discardSamples": [
@@ -325,9 +330,9 @@
     },
     {
       "reason": "sourceEventId",
-      "keptId": "evt-50437142",
-      "droppedId": "evt-50437142",
-      "sourceEventId": "50437142",
+      "keptId": "evt-50443014",
+      "droppedId": "evt-50443014",
+      "sourceEventId": "50443014",
       "merged": true
     },
     {
@@ -373,28 +378,28 @@
       "merged": true
     }
   ],
-  "publishedCount": 91,
+  "publishedCount": 81,
   "publication": {
     "schemaVersion": 1,
-    "publishedAt": "2026-10-05T11:32:24.869Z",
-    "datasetHash": "05236c9f6a33ebed5cfee57d53dd714193647ad75f09094ade88a053e9227ee2",
+    "publishedAt": "2026-10-06T11:18:34.485Z",
+    "datasetHash": "0c303efd3f30af9dd03bb477ea787681a9642db91d0f7ef325c73c498b85585e",
     "coverageHorizonDays": 90,
     "sources": [
       {
         "sourceId": "madrid-agenda-general",
-        "lastSuccessfulFetchAt": "2026-10-05T11:32:24.869Z",
-        "lastAttemptAt": "2026-10-05T11:32:24.869Z",
+        "lastSuccessfulFetchAt": "2026-10-06T11:18:34.485Z",
+        "lastAttemptAt": "2026-10-06T11:18:34.485Z",
         "fromCache": false,
         "fetchError": null
       },
       {
         "sourceId": "madrid-agenda-cultural-100",
-        "lastSuccessfulFetchAt": "2026-10-05T11:32:24.869Z",
-        "lastAttemptAt": "2026-10-05T11:32:24.869Z",
+        "lastSuccessfulFetchAt": "2026-10-06T11:18:34.485Z",
+        "lastAttemptAt": "2026-10-06T11:18:34.485Z",
         "fromCache": false,
         "fetchError": null
       }
     ]
   },
-  "publishedUpcoming": 79
+  "publishedUpcoming": 80
 }
