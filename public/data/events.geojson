@@ -15,7 +15,7 @@
         "slug": "250-motivos-y-muchos-mas-de-la-influencia-de-espana-en-estados-unidos-50",
         "title": "250 motivos y muchos más de la influencia de España en Estados Unidos",
         "startAt": "2026-10-06T19:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -159,24 +159,6 @@
         "slug": "centenario-del-buque-escuela-juan-sebastian-de-elcano-biblioteca-eugenio",
         "title": "Centenario del Buque Escuela 'Juan Sebastián de Elcano' - Biblioteca Eugenio Trías",
         "startAt": "2026-10-09T18:30:00+02:00",
-        "status": "published",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50291004",
-        "slug": "ciclo-comprender-el-antiguo-egipto-que-sabemos-50291004",
-        "title": "Ciclo 'Comprender el Antiguo Egipto': ¿Qué sabemos?",
-        "startAt": "2026-10-06T18:30:00+02:00",
         "status": "published",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
@@ -1367,24 +1349,6 @@
         "startAt": "2026-10-10T16:30:00+02:00",
         "status": "published",
         "venue": "Aula ambiental La Cabaña del Retiro"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50440113",
-        "slug": "agua-sin-voz-de-ana-meucci-50440113",
-        "title": "'Agua sin voz' de Ana Meucci",
-        "startAt": "2026-10-05T18:30:00+02:00",
-        "status": "expired",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
     {

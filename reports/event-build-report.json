@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-10-06T11:18:34.485Z",
+  "ranAt": "2026-10-07T11:06:34.301Z",
   "offline": false,
   "steps": {
     "collect": "ok",
@@ -8,11 +8,7 @@
     "validate": "ok",
     "publish": "ok"
   },
-  "added": [
-    "evt-50443014",
-    "evt-50442688",
-    "evt-50442719"
-  ],
+  "added": [],
   "changed": [
     "evt-50434084",
     "evt-50346030",
@@ -22,7 +18,7 @@
     "evt-50147279",
     "evt-50399376",
     "evt-50147340",
-    "evt-50291004",
+    "evt-50443014",
     "evt-50166747",
     "evt-50415948",
     "evt-50438031",
@@ -89,27 +85,17 @@
     "evt-50149656",
     "evt-50434551",
     "evt-50202486",
-    "evt-50440113",
     "evt-50440208",
-    "evt-50430642"
+    "evt-50442688",
+    "evt-50430642",
+    "evt-50442719"
   ],
   "removed": [
-    "evt-50437142",
-    "evt-50289724",
-    "evt-50399373",
-    "evt-50433809",
-    "evt-50242272",
-    "evt-50146160",
-    "evt-50148218",
-    "evt-50173980",
-    "evt-50266151",
-    "evt-12120026",
-    "evt-50235439",
-    "evt-50288425",
-    "evt-50404386"
+    "evt-50291004",
+    "evt-50440113"
   ],
-  "discarded": 2979,
-  "duplicates": 81,
+  "discarded": 3060,
+  "duplicates": 79,
   "errors": [],
   "published": true,
   "keptPrevious": false,
@@ -119,19 +105,19 @@
       "sourceId": "madrid-agenda-general",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-10-06T11:18:34.485Z",
-      "lastSuccessfulFetchAt": "2026-10-06T11:18:34.485Z",
+      "fetchedAt": "2026-10-07T11:06:34.301Z",
+      "lastSuccessfulFetchAt": "2026-10-07T11:06:34.301Z",
       "fetchError": null,
-      "graphCount": 1724
+      "graphCount": 1771
     },
     {
       "sourceId": "madrid-agenda-cultural-100",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-10-06T11:18:34.485Z",
-      "lastSuccessfulFetchAt": "2026-10-06T11:18:34.485Z",
+      "fetchedAt": "2026-10-07T11:06:34.301Z",
+      "lastSuccessfulFetchAt": "2026-10-07T11:06:34.301Z",
       "fetchError": null,
-      "graphCount": 1417
+      "graphCount": 1447
     }
   ],
   "discardSamples": [
@@ -231,15 +217,6 @@
         "fuera-ambito"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50438467",
-      "title": "Abiertamente: lokas, histéricas y otras etiquetas"
-    },
-    {
-      "discarded": true,
-      "discardReasons": [
-        "fuera-ambito"
-      ],
-      "sourceId": "madrid-agenda-general",
       "sourceEventId": "50409133",
       "title": "Abraham Boba. 163 centímetros"
     },
@@ -268,6 +245,15 @@
       ],
       "sourceId": "madrid-agenda-general",
       "sourceEventId": "50411175",
+      "title": "Actividades Cuerpo y Mente - Deporte en la Calle - Distrito de Villaverde"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50411433",
       "title": "Actividades Cuerpo y Mente - Deporte en la Calle - Distrito de Villaverde"
     }
   ],
@@ -337,13 +323,6 @@
     },
     {
       "reason": "sourceEventId",
-      "keptId": "evt-50291004",
-      "droppedId": "evt-50291004",
-      "sourceEventId": "50291004",
-      "merged": true
-    },
-    {
-      "reason": "sourceEventId",
       "keptId": "evt-50166747",
       "droppedId": "evt-50166747",
       "sourceEventId": "50166747",
@@ -376,30 +355,37 @@
       "droppedId": "evt-50362790",
       "sourceEventId": "50362790",
       "merged": true
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-50148940",
+      "droppedId": "evt-50148940",
+      "sourceEventId": "50148940",
+      "merged": true
     }
   ],
-  "publishedCount": 81,
+  "publishedCount": 79,
   "publication": {
     "schemaVersion": 1,
-    "publishedAt": "2026-10-06T11:18:34.485Z",
-    "datasetHash": "0c303efd3f30af9dd03bb477ea787681a9642db91d0f7ef325c73c498b85585e",
+    "publishedAt": "2026-10-07T11:06:34.301Z",
+    "datasetHash": "c22937a64b162c333927a75f2dd132a9b1ca6049581f86d8f947400e31153afb",
     "coverageHorizonDays": 90,
     "sources": [
       {
         "sourceId": "madrid-agenda-general",
-        "lastSuccessfulFetchAt": "2026-10-06T11:18:34.485Z",
-        "lastAttemptAt": "2026-10-06T11:18:34.485Z",
+        "lastSuccessfulFetchAt": "2026-10-07T11:06:34.301Z",
+        "lastAttemptAt": "2026-10-07T11:06:34.301Z",
         "fromCache": false,
         "fetchError": null
       },
       {
         "sourceId": "madrid-agenda-cultural-100",
-        "lastSuccessfulFetchAt": "2026-10-06T11:18:34.485Z",
-        "lastAttemptAt": "2026-10-06T11:18:34.485Z",
+        "lastSuccessfulFetchAt": "2026-10-07T11:06:34.301Z",
+        "lastAttemptAt": "2026-10-07T11:06:34.301Z",
         "fromCache": false,
         "fetchError": null
       }
     ]
   },
-  "publishedUpcoming": 80
+  "publishedUpcoming": 78
 }
