@@ -663,7 +663,7 @@
         "slug": "moldavia-una-frontera-entre-europa-y-rusia-50436425",
         "title": "Moldavia, una frontera entre Europa y Rusia",
         "startAt": "2026-10-07T18:30:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -753,7 +753,7 @@
         "slug": "profundo-50322562",
         "title": "Profundo",
         "startAt": "2026-10-07T18:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -1167,7 +1167,7 @@
         "slug": "visita-a-la-casa-de-campo-zona-lago-50148900",
         "title": "Visita a la Casa de Campo. Zona lago.",
         "startAt": "2026-10-07T10:30:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
@@ -1401,7 +1401,7 @@
         "slug": "la-tribu-de-los-ninos-valientes-con-andrea-novillo-50430642",
         "title": "'La tribu de los niños valientes' con Andrea Novillo",
         "startAt": "2026-10-07T18:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -1421,6 +1421,42 @@
         "startAt": "2026-10-16T18:30:00+02:00",
         "status": "published",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6835,
+          40.4155
+        ]
+      },
+      "properties": {
+        "id": "evt-50444475",
+        "slug": "conoce-una-estacion-de-vigilancia-de-la-calidad-del-aire-cabana-de-la-ro",
+        "title": "Conoce una Estación de Vigilancia de la Calidad del Aire (Cabaña de la Rosaleda. Parque de El Retiro)",
+        "startAt": "2026-11-11T10:30:00+01:00",
+        "status": "published",
+        "venue": "Jardines de El Buen Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6835,
+          40.4155
+        ]
+      },
+      "properties": {
+        "id": "evt-50105660",
+        "slug": "conoce-una-estacion-de-vigilancia-de-la-calidad-del-aire-cabana-de-la-ro-2",
+        "title": "Conoce una Estación de Vigilancia de la Calidad del Aire (Cabaña de la Rosaleda. Parque de El Retiro)",
+        "startAt": "2026-10-30T10:30:00+01:00",
+        "status": "published",
+        "venue": "Jardines de El Buen Retiro"
       }
     }
   ]
