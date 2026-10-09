@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-10-08T11:23:53.221Z",
+  "ranAt": "2026-10-09T11:21:15.897Z",
   "offline": false,
   "steps": {
     "collect": "ok",
@@ -9,11 +9,12 @@
     "publish": "ok"
   },
   "added": [
-    "evt-50444475",
-    "evt-50105660"
+    "evt-50445680",
+    "evt-50445650",
+    "evt-50445850",
+    "evt-50445751"
   ],
   "changed": [
-    "evt-50434084",
     "evt-50346030",
     "evt-50425902",
     "evt-50322881",
@@ -26,6 +27,8 @@
     "evt-50415948",
     "evt-50438031",
     "evt-50405990",
+    "evt-50444475",
+    "evt-50105660",
     "evt-50362790",
     "evt-50148940",
     "evt-50221891",
@@ -49,12 +52,10 @@
     "evt-50343647",
     "evt-50431986",
     "evt-50343645",
-    "evt-50436425",
     "evt-50431891",
     "evt-50080228",
     "evt-50399379",
     "evt-50174902",
-    "evt-50322562",
     "evt-50173923",
     "evt-50173945",
     "evt-50174274",
@@ -64,9 +65,9 @@
     "evt-50148887",
     "evt-50150274",
     "evt-50289667",
+    "evt-11771345",
     "evt-11771354",
     "evt-11771349",
-    "evt-11771345",
     "evt-11970930",
     "evt-11970931",
     "evt-11771304",
@@ -77,7 +78,6 @@
     "evt-50140512",
     "evt-50425893",
     "evt-50430423",
-    "evt-50148900",
     "evt-50202982",
     "evt-12316290",
     "evt-50173921",
@@ -90,12 +90,17 @@
     "evt-50202486",
     "evt-50440208",
     "evt-50442688",
-    "evt-50430642",
     "evt-50442719"
   ],
-  "removed": [],
-  "discarded": 3087,
-  "duplicates": 78,
+  "removed": [
+    "evt-50434084",
+    "evt-50436425",
+    "evt-50322562",
+    "evt-50148900",
+    "evt-50430642"
+  ],
+  "discarded": 3133,
+  "duplicates": 80,
   "errors": [],
   "published": true,
   "keptPrevious": false,
@@ -105,19 +110,19 @@
       "sourceId": "madrid-agenda-general",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-10-08T11:23:53.221Z",
-      "lastSuccessfulFetchAt": "2026-10-08T11:23:53.221Z",
+      "fetchedAt": "2026-10-09T11:21:15.897Z",
+      "lastSuccessfulFetchAt": "2026-10-09T11:21:15.897Z",
       "fetchError": null,
-      "graphCount": 1771
+      "graphCount": 1821
     },
     {
       "sourceId": "madrid-agenda-cultural-100",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-10-08T11:23:53.221Z",
-      "lastSuccessfulFetchAt": "2026-10-08T11:23:53.221Z",
+      "fetchedAt": "2026-10-09T11:21:15.897Z",
+      "lastSuccessfulFetchAt": "2026-10-09T11:21:15.897Z",
       "fetchError": null,
-      "graphCount": 1475
+      "graphCount": 1472
     }
   ],
   "discardSamples": [
@@ -187,74 +192,82 @@
     {
       "discarded": true,
       "discardReasons": [
-        "fuera-ambito"
+        "fuera-ambito",
+        "sin-localizacion"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50421045",
-      "title": "A Life Illuminated"
+      "sourceEventId": "50443245",
+      "title": "75 Aniversario de la Anexión de Fuencarral a Madrid"
     },
     {
       "discarded": true,
       "discardReasons": [
-        "fuera-ambito"
+        "fuera-ambito",
+        "sin-localizacion"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50428927",
-      "title": "A ti no te muerdo ni loco por Toño Balach"
+      "sourceEventId": "50443262",
+      "title": "75 Aniversario de la Anexión de Fuencarral a Madrid"
     },
     {
       "discarded": true,
       "discardReasons": [
-        "fuera-ambito"
+        "fuera-ambito",
+        "sin-localizacion"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50430847",
-      "title": "A viva voz"
+      "sourceEventId": "50443250",
+      "title": "75 Aniversario de la Anexión de Fuencarral a Madrid"
     },
     {
       "discarded": true,
       "discardReasons": [
-        "fuera-ambito"
+        "fuera-ambito",
+        "sin-localizacion"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50409133",
-      "title": "Abraham Boba. 163 centímetros"
+      "sourceEventId": "50443243",
+      "title": "75 Aniversario de la Anexión de Fuencarral a Madrid"
     },
     {
       "discarded": true,
       "discardReasons": [
-        "fuera-ambito"
+        "fuera-ambito",
+        "sin-localizacion"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50440336",
-      "title": "Acampada: Acampada en el museo"
+      "sourceEventId": "50443253",
+      "title": "75 Aniversario de la Anexión de Fuencarral a Madrid"
     },
     {
       "discarded": true,
       "discardReasons": [
-        "fuera-ambito"
+        "fuera-ambito",
+        "sin-localizacion"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50410916",
-      "title": "Actividades Cuerpo y Mente - Deporte en la Calle - Distrito de Villaverde"
+      "sourceEventId": "50443233",
+      "title": "75 Aniversario de la Anexión de Fuencarral a Madrid"
     },
     {
       "discarded": true,
       "discardReasons": [
-        "fuera-ambito"
+        "fuera-ambito",
+        "sin-localizacion"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50411175",
-      "title": "Actividades Cuerpo y Mente - Deporte en la Calle - Distrito de Villaverde"
+      "sourceEventId": "50443254",
+      "title": "75 Aniversario de la Anexión de Fuencarral a Madrid"
     },
     {
       "discarded": true,
       "discardReasons": [
-        "fuera-ambito"
+        "fuera-ambito",
+        "sin-localizacion"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50411433",
-      "title": "Actividades Cuerpo y Mente - Deporte en la Calle - Distrito de Villaverde"
+      "sourceEventId": "50443240",
+      "title": "75 Aniversario de la Anexión de Fuencarral a Madrid"
     }
   ],
   "duplicateSamples": [
@@ -344,48 +357,48 @@
     },
     {
       "reason": "sourceEventId",
+      "keptId": "evt-50444475",
+      "droppedId": "evt-50444475",
+      "sourceEventId": "50444475",
+      "merged": true
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-50105660",
+      "droppedId": "evt-50105660",
+      "sourceEventId": "50105660",
+      "merged": true
+    },
+    {
+      "reason": "sourceEventId",
       "keptId": "evt-50362790",
       "droppedId": "evt-50362790",
       "sourceEventId": "50362790",
       "merged": true
-    },
-    {
-      "reason": "sourceEventId",
-      "keptId": "evt-50148940",
-      "droppedId": "evt-50148940",
-      "sourceEventId": "50148940",
-      "merged": true
-    },
-    {
-      "reason": "sourceEventId",
-      "keptId": "evt-50221891",
-      "droppedId": "evt-50221891",
-      "sourceEventId": "50221891",
-      "merged": true
     }
   ],
-  "publishedCount": 81,
+  "publishedCount": 80,
   "publication": {
     "schemaVersion": 1,
-    "publishedAt": "2026-10-08T11:23:53.221Z",
-    "datasetHash": "1e02b8e96ea5bc6f7f56f8053f3df3556efc02afea4fe66eb1c908cfb5fa27f2",
+    "publishedAt": "2026-10-09T11:21:15.897Z",
+    "datasetHash": "90391077e12cef0f9f66ff6e7a8e7c4333ada4169100701b7e8e998a2c3f7b6e",
     "coverageHorizonDays": 90,
     "sources": [
       {
         "sourceId": "madrid-agenda-general",
-        "lastSuccessfulFetchAt": "2026-10-08T11:23:53.221Z",
-        "lastAttemptAt": "2026-10-08T11:23:53.221Z",
+        "lastSuccessfulFetchAt": "2026-10-09T11:21:15.897Z",
+        "lastAttemptAt": "2026-10-09T11:21:15.897Z",
         "fromCache": false,
         "fetchError": null
       },
       {
         "sourceId": "madrid-agenda-cultural-100",
-        "lastSuccessfulFetchAt": "2026-10-08T11:23:53.221Z",
-        "lastAttemptAt": "2026-10-08T11:23:53.221Z",
+        "lastSuccessfulFetchAt": "2026-10-09T11:21:15.897Z",
+        "lastAttemptAt": "2026-10-09T11:21:15.897Z",
         "fromCache": false,
         "fetchError": null
       }
     ]
   },
-  "publishedUpcoming": 76
+  "publishedUpcoming": 77
 }
