@@ -141,7 +141,7 @@
         "slug": "centenario-del-buque-escuela-juan-sebastian-de-elcano-biblioteca-eugenio",
         "title": "Centenario del Buque Escuela 'Juan Sebastián de Elcano' - Biblioteca Eugenio Trías",
         "startAt": "2026-10-09T18:30:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -178,42 +178,6 @@
         "title": "Club de lectura 'LasdelMal'",
         "startAt": "2026-09-23T19:00:00+02:00",
         "status": "published",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50438031",
-        "slug": "collage-legado-y-trascendencia-50438031",
-        "title": "Collage: Legado y trascendencia",
-        "startAt": "2026-10-08T11:00:00+02:00",
-        "status": "expired",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50405990",
-        "slug": "conferencia-gabinete-de-curiosidades-objetos-malditos-y-fantasmas-en-los",
-        "title": "Conferencia 'Gabinete de curiosidades, objetos malditos y fantasmas en los museos de Madrid'",
-        "startAt": "2026-10-08T19:00:00+02:00",
-        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -287,24 +251,6 @@
         "startAt": "2026-10-16T16:30:00+02:00",
         "status": "published",
         "venue": "Aula ambiental La Cabaña del Retiro"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6840988,
-          40.4192106
-        ]
-      },
-      "properties": {
-        "id": "evt-50221891",
-        "slug": "dialogos-en-el-aire-50221891",
-        "title": "Diálogos en el aire",
-        "startAt": "2026-10-08T19:00:00+02:00",
-        "status": "expired",
-        "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
     {
@@ -564,6 +510,24 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50446867",
+        "slug": "la-importancia-de-la-tribu-iv-edicion-ciclo-reflexapiens-50446867",
+        "title": "La importancia de la tribu. IV edición Ciclo Reflexapiens",
+        "startAt": "2026-10-16T18:30:00+02:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -3.6840988,
           40.4192106
         ]
@@ -789,7 +753,7 @@
         "slug": "senda-guiada-conoce-los-pavos-reales-del-parque-del-retiro-50173923",
         "title": "Senda guiada 'Conoce los pavos reales del Parque del Retiro'",
         "startAt": "2026-10-09T16:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
@@ -933,26 +897,8 @@
         "slug": "sonora-sewers-inc-50289667",
         "title": "Sonora Sewers Inc.",
         "startAt": "2026-10-09T18:30:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.68618,
-          40.409435
-        ]
-      },
-      "properties": {
-        "id": "evt-11771345",
-        "slug": "taller-de-comederos-para-aves-11771345",
-        "title": "Taller de comederos para aves",
-        "startAt": "2026-11-15T11:00:00+01:00",
-        "status": "published",
-        "venue": "Centro de Educación Ambiental El Retiro"
       }
     },
     {
@@ -987,6 +933,24 @@
         "slug": "taller-de-comederos-para-aves-11771349",
         "title": "Taller de comederos para aves",
         "startAt": "2026-12-27T11:00:00+01:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68618,
+          40.409435
+        ]
+      },
+      "properties": {
+        "id": "evt-11771345",
+        "slug": "taller-de-comederos-para-aves-11771345",
+        "title": "Taller de comederos para aves",
+        "startAt": "2026-11-15T11:00:00+01:00",
         "status": "published",
         "venue": "Centro de Educación Ambiental El Retiro"
       }
@@ -1077,6 +1041,24 @@
         "slug": "taller-para-dejar-de-fumar-50408098",
         "title": "Taller para dejar de fumar",
         "startAt": "2026-10-14T12:00:00+02:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50328610",
+        "slug": "taller-sobre-la-escritura-del-yo-50328610",
+        "title": "Taller sobre 'La Escritura del Yo'",
+        "startAt": "2026-10-20T18:00:00+02:00",
         "status": "published",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
@@ -1401,6 +1383,24 @@
         "slug": "informe-para-derrocar-al-principe-azul-de-pilar-abuja-50445850",
         "title": "'Informe para derrocar al príncipe azul' de Pilar Abuja",
         "startAt": "2026-10-16T18:30:00+02:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50409622",
+        "slug": "la-escritura-del-yo-con-kike-turrion-y-kike-barbas-50409622",
+        "title": "'La escritura del Yo' con Kike Turrión y Kike Barbas",
+        "startAt": "2026-10-19T19:00:00+02:00",
         "status": "published",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
