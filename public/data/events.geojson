@@ -69,7 +69,7 @@
         "slug": "a-amp-j-classical-50265465",
         "title": "A&amp;J classical",
         "startAt": "2026-10-11T19:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -105,7 +105,7 @@
         "slug": "buenos-dias-mundo-50399376",
         "title": "Buenos días, mundo",
         "startAt": "2026-10-10T12:30:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Teatro de Títeres de El Retiro"
       }
     },
@@ -125,24 +125,6 @@
         "startAt": "2026-10-15T18:00:00+02:00",
         "status": "published",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50443014",
-        "slug": "centenario-del-buque-escuela-juan-sebastian-de-elcano-biblioteca-eugenio",
-        "title": "Centenario del Buque Escuela 'Juan Sebastián de Elcano' - Biblioteca Eugenio Trías",
-        "startAt": "2026-10-09T18:30:00+02:00",
-        "status": "expired",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
     {
@@ -555,7 +537,7 @@
         "slug": "los-arboles-de-la-cabana-y-taller-herbario-50202477",
         "title": "Los árboles de La Cabaña y taller herbario",
         "startAt": "2026-10-11T11:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
@@ -735,26 +717,8 @@
         "slug": "poemas-para-un-otono-50174902",
         "title": "Poemas para un otoño",
         "startAt": "2026-10-11T12:00:00+02:00",
-        "status": "published",
-        "venue": "Centro Cultural Casa de Vacas (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.679318,
-          40.409123
-        ]
-      },
-      "properties": {
-        "id": "evt-50173923",
-        "slug": "senda-guiada-conoce-los-pavos-reales-del-parque-del-retiro-50173923",
-        "title": "Senda guiada 'Conoce los pavos reales del Parque del Retiro'",
-        "startAt": "2026-10-09T16:00:00+02:00",
         "status": "expired",
-        "venue": "Aula ambiental La Cabaña del Retiro"
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
     {
@@ -789,7 +753,7 @@
         "slug": "senda-guiada-ruta-de-los-caprichos-romanticos-de-fernando-vii-50174274",
         "title": "Senda guiada 'Ruta de Los caprichos románticos de Fernando VII'",
         "startAt": "2026-10-10T00:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
@@ -881,24 +845,6 @@
         "startAt": "2026-10-29T16:30:00+01:00",
         "status": "published",
         "venue": "Aula ambiental La Cabaña del Retiro"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6840988,
-          40.4192106
-        ]
-      },
-      "properties": {
-        "id": "evt-50289667",
-        "slug": "sonora-sewers-inc-50289667",
-        "title": "Sonora Sewers Inc.",
-        "startAt": "2026-10-09T18:30:00+02:00",
-        "status": "expired",
-        "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
     {
@@ -1005,7 +951,7 @@
         "slug": "taller-de-huerto-familiar-11771304",
         "title": "Taller de huerto familiar",
         "startAt": "2026-10-11T11:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro de Educación Ambiental El Retiro"
       }
     },
@@ -1312,24 +1258,6 @@
         "title": "Yincana 'Reciclaje'",
         "startAt": "2026-10-25T11:00:00+01:00",
         "status": "published",
-        "venue": "Aula ambiental La Cabaña del Retiro"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.679318,
-          40.409123
-        ]
-      },
-      "properties": {
-        "id": "evt-50202486",
-        "slug": "pequenos-hortelanos-50202486",
-        "title": "'Pequeños Hortelanos'",
-        "startAt": "2026-10-10T16:30:00+02:00",
-        "status": "expired",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
