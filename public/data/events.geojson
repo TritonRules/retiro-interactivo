@@ -65,48 +65,12 @@
         ]
       },
       "properties": {
-        "id": "evt-50265465",
-        "slug": "a-amp-j-classical-50265465",
-        "title": "A&amp;J classical",
-        "startAt": "2026-10-11T19:00:00+02:00",
-        "status": "expired",
-        "venue": "Centro Cultural Casa de Vacas (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6840988,
-          40.4192106
-        ]
-      },
-      "properties": {
         "id": "evt-50147279",
         "slug": "buenos-aires-en-madrid-50147279",
         "title": "Buenos Aires en Madrid",
         "startAt": "2026-10-24T12:30:00+02:00",
         "status": "published",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6866962,
-          40.4187197
-        ]
-      },
-      "properties": {
-        "id": "evt-50399376",
-        "slug": "buenos-dias-mundo-50399376",
-        "title": "Buenos días, mundo",
-        "startAt": "2026-10-10T12:30:00+02:00",
-        "status": "expired",
-        "venue": "Teatro de Títeres de El Retiro"
       }
     },
     {
@@ -375,7 +339,7 @@
         "slug": "entre-cuerdas-y-raices-50322723",
         "title": "Entre cuerdas y raíces",
         "startAt": "2026-10-12T17:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -393,7 +357,7 @@
         "slug": "espana-la-primera-globalizacion-50265824",
         "title": "España, la primera globalización",
         "startAt": "2026-10-12T19:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -521,24 +485,6 @@
         "startAt": "2026-10-23T19:00:00+02:00",
         "status": "published",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.679318,
-          40.409123
-        ]
-      },
-      "properties": {
-        "id": "evt-50202477",
-        "slug": "los-arboles-de-la-cabana-y-taller-herbario-50202477",
-        "title": "Los árboles de La Cabaña y taller herbario",
-        "startAt": "2026-10-11T11:00:00+02:00",
-        "status": "expired",
-        "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
     {
@@ -708,24 +654,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.6840988,
-          40.4192106
-        ]
-      },
-      "properties": {
-        "id": "evt-50174902",
-        "slug": "poemas-para-un-otono-50174902",
-        "title": "Poemas para un otoño",
-        "startAt": "2026-10-11T12:00:00+02:00",
-        "status": "expired",
-        "venue": "Centro Cultural Casa de Vacas (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -3.679318,
           40.409123
         ]
@@ -736,24 +664,6 @@
         "title": "Senda guiada 'Los frutos del otoño'",
         "startAt": "2026-10-30T00:00:00+01:00",
         "status": "published",
-        "venue": "Aula ambiental La Cabaña del Retiro"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.679318,
-          40.409123
-        ]
-      },
-      "properties": {
-        "id": "evt-50174274",
-        "slug": "senda-guiada-ruta-de-los-caprichos-romanticos-de-fernando-vii-50174274",
-        "title": "Senda guiada 'Ruta de Los caprichos románticos de Fernando VII'",
-        "startAt": "2026-10-10T00:00:00+02:00",
-        "status": "expired",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
@@ -857,6 +767,24 @@
         ]
       },
       "properties": {
+        "id": "evt-11771345",
+        "slug": "taller-de-comederos-para-aves-11771345",
+        "title": "Taller de comederos para aves",
+        "startAt": "2026-11-15T11:00:00+01:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68618,
+          40.409435
+        ]
+      },
+      "properties": {
         "id": "evt-11771354",
         "slug": "taller-de-comederos-para-aves-11771354",
         "title": "Taller de comederos para aves",
@@ -879,24 +807,6 @@
         "slug": "taller-de-comederos-para-aves-11771349",
         "title": "Taller de comederos para aves",
         "startAt": "2026-12-27T11:00:00+01:00",
-        "status": "published",
-        "venue": "Centro de Educación Ambiental El Retiro"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.68618,
-          40.409435
-        ]
-      },
-      "properties": {
-        "id": "evt-11771345",
-        "slug": "taller-de-comederos-para-aves-11771345",
-        "title": "Taller de comederos para aves",
-        "startAt": "2026-11-15T11:00:00+01:00",
         "status": "published",
         "venue": "Centro de Educación Ambiental El Retiro"
       }
@@ -934,24 +844,6 @@
         "title": "Taller de huerto familiar",
         "startAt": "2026-12-06T11:00:00+01:00",
         "status": "published",
-        "venue": "Centro de Educación Ambiental El Retiro"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.68618,
-          40.409435
-        ]
-      },
-      "properties": {
-        "id": "evt-11771304",
-        "slug": "taller-de-huerto-familiar-11771304",
-        "title": "Taller de huerto familiar",
-        "startAt": "2026-10-11T11:00:00+02:00",
-        "status": "expired",
         "venue": "Centro de Educación Ambiental El Retiro"
       }
     },
