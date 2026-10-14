@@ -11,12 +11,16 @@ import {
   type ServiceHours,
   type ServicePrices,
 } from '../../utils/serviceInfo.shared.mjs';
+import { FavoriteButton } from '../visit/FavoriteButton';
 import { getServiceLabel, serviceColor } from '../../utils/serviceTypes';
 
 interface Props {
   service: ParkService;
   onClose: () => void;
   variant: 'mobile' | 'desktop';
+  /** «Mi visita»: si está guardado y cómo alternarlo (sin ellos no se muestra el botón). */
+  saved?: boolean;
+  onToggleSave?: () => void;
   /** Fecha de referencia AAAA-MM-DD para la caducidad de precios (por defecto, hoy). */
   today?: string;
 }
@@ -112,7 +116,14 @@ const WHEELCHAIR_LABEL: Record<Wheelchair, string> = {
   no: 'No accesible en silla de ruedas',
 };
 
-export function ServiceSheet({ service, onClose, variant, today = todayIso() }: Props) {
+export function ServiceSheet({
+  service,
+  onClose,
+  variant,
+  today = todayIso(),
+  saved = false,
+  onToggleSave,
+}: Props) {
   const fromOsm = service.origin === 'osm';
   const info = service.info;
   const hours = formatOpeningHours(service.openingHours);
@@ -155,6 +166,9 @@ export function ServiceSheet({ service, onClose, variant, today = todayIso() }: 
           ×
         </button>
       </div>
+      {onToggleSave ? (
+        <FavoriteButton saved={saved} onToggle={onToggleSave} name={service.name} />
+      ) : null}
       {status ? (
         <p className="ficha__alert" role="status">
           <strong>Cerrado temporalmente</strong> ({STATUS_SOURCE[status.sourceType]},{' '}
