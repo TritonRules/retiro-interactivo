@@ -1,5 +1,6 @@
 import type { Place } from '../../types/place';
 import { formatArtworkCredit } from '../../utils/artwork';
+import { FavoriteButton } from '../visit/FavoriteButton';
 import { getCategoryLabel } from '../../utils/categories';
 import { VideoBlock } from '../media/VideoBlock';
 
@@ -8,9 +9,19 @@ interface Props {
   placeHref: string;
   onClose: () => void;
   variant: 'mobile' | 'desktop';
+  /** «Mi visita»: si está guardado y cómo alternarlo (sin ellos no se muestra el botón). */
+  saved?: boolean;
+  onToggleSave?: () => void;
 }
 
-export function PlaceSheet({ place, placeHref, onClose, variant }: Props) {
+export function PlaceSheet({
+  place,
+  placeHref,
+  onClose,
+  variant,
+  saved = false,
+  onToggleSave,
+}: Props) {
   const credit = formatArtworkCredit(place);
   return (
     <aside
@@ -40,6 +51,9 @@ export function PlaceSheet({ place, placeHref, onClose, variant }: Props) {
           ×
         </button>
       </div>
+      {onToggleSave ? (
+        <FavoriteButton saved={saved} onToggle={onToggleSave} name={place.name} />
+      ) : null}
       <p className="ficha__desc">{place.shortDescription}</p>
       {credit ? (
         <p className="ficha__credit">

@@ -74,6 +74,22 @@ import { useParkClock } from '../../utils/useParkClock';
 import { circlePolygon } from '../../utils/guidedWalk';
 import { GuidedWalkPanel } from './GuidedWalkPanel';
 import { useGuidedWalk } from './useGuidedWalk';
+import { useFavorites } from '../../utils/useFavorites';
+import {
+  CUSTOM_ROUTE_SLUG,
+  buildCustomRoute,
+  decodeVisitParam,
+  findEntrance,
+} from '../../utils/customRoute';
+
+/** Parada resoluble: id simple (rutas del parque) o clave `place:`/`service:` (Mi visita). */
+interface StopRef {
+  key: string;
+  kind: 'place' | 'service';
+  id: string;
+  name: string;
+  coordinates: [number, number];
+}
 
 interface Props {
   places: Place[];
@@ -182,6 +198,9 @@ function readClientMapQuery() {
       routeSlug: undefined as string | undefined,
       eventSlug: undefined as string | undefined,
       serviceGroup: undefined as string | undefined,
+      serviceId: undefined as string | undefined,
+      visit: [] as string[],
+      from: undefined as string | undefined,
       walk: false,
     };
   }
@@ -195,6 +214,12 @@ function readClientMapQuery() {
     serviceGroup: params.get('servicios') ?? undefined,
     /** `?paseo=1`: viene del botón «Empezar ruta» de la ficha de la ruta. */
     walk: params.get('paseo') === '1',
+    /** `?servicio=id`: abre la ficha de un servicio (desde «Mi visita»). */
+    serviceId: params.get('servicio') ?? undefined,
+    /** `?visita=place:a,service:b`: ruta propia de «Mi visita», en ese orden. */
+    visit: decodeVisitParam(params.get('visita')),
+    /** `?desde=puerta-…`: puerta de salida elegida en «Mi visita». */
+    from: params.get('desde') ?? undefined,
   };
 }
 
@@ -247,27 +272,75 @@ export default function MapExplorer({
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
   const [pendingWalk, setPendingWalk] = useState(false);
   const [followUser, setFollowUser] = useState(true);
+  const [visitKeys, setVisitKeys] = useState<string[]>([]);
+  const [visitFrom, setVisitFrom] = useState<string | undefined>(undefined);
+  const [serviceFocusId, setServiceFocusId] = useState<string | undefined>(undefined);
+  const [highlightFavorites, setHighlightFavorites] = useState(false);
+  const favorites = useFavorites();
 
   useEffect(() => {
     const q = readClientMapQuery();
     setCategory(parseCategoryParam(q.category ?? initialCategory));
     setServiceGroup(parseServiceGroupParam(q.serviceGroup));
-    setActiveRouteSlug(q.routeSlug ?? initialRouteSlug ?? null);
+    setVisitKeys(q.visit);
+    setVisitFrom(q.from);
+    setServiceFocusId(q.serviceId);
+    setActiveRouteSlug(
+      q.visit.length >= 2 ? CUSTOM_ROUTE_SLUG : (q.routeSlug ?? initialRouteSlug ?? null),
+    );
     setFocusSlugState(q.focusSlug ?? focusSlug);
     setEventSlugState(q.eventSlug ?? initialEventSlug);
     setPendingWalk(q.walk);
     setQueryReady(true);
   }, [initialCategory, initialRouteSlug, focusSlug, initialEventSlug]);
 
+  const resolveStop = useMemo(() => {
+    const placeById = new globalThis.Map(places.map((p) => [p.id, p]));
+    const serviceById = new globalThis.Map(services.map((s) => [s.id, s]));
+    return (key: string): StopRef | null => {
+      const [prefix, ...rest] = key.split(':');
+      const id = rest.join(':');
+      if (prefix === 'service' && id) {
+        const s = serviceById.get(id);
+        return s ? { key, kind: 'service', id, name: s.name, coordinates: s.coordinates } : null;
+      }
+      const p = placeById.get(prefix === 'place' && id ? id : key);
+      return p ? { key, kind: 'place', id: p.id, name: p.name, coordinates: p.coordinates } : null;
+    };
+  }, [places, services]);
+
+  const customRoute = useMemo(() => {
+    const stops = visitKeys.map((key) => resolveStop(key)).filter((s): s is StopRef => Boolean(s));
+    if (stops.length < 2) return null;
+    return buildCustomRoute(stops, findEntrance(visitFrom)?.coordinates ?? null);
+  }, [visitKeys, visitFrom, resolveStop]);
+
   const activeRoute = useMemo(
-    () => routes.find((route) => route.slug === activeRouteSlug) ?? null,
-    [routes, activeRouteSlug],
+    () =>
+      activeRouteSlug === CUSTOM_ROUTE_SLUG
+        ? customRoute
+        : (routes.find((route) => route.slug === activeRouteSlug) ?? null),
+    [routes, activeRouteSlug, customRoute],
   );
+
+  // El modo paseo solo usa id, nombre y coordenadas de cada parada.
+  const walkPlaces = useMemo(() => {
+    if (!activeRoute) return places;
+    return activeRoute.stopIds
+      .map((key) => resolveStop(key))
+      .filter((s): s is StopRef => Boolean(s))
+      .map((s) => ({ id: s.key, name: s.name, coordinates: s.coordinates }) as Place);
+  }, [activeRoute, places, resolveStop]);
+
+  const selectStop = (key: string) => {
+    const stop = resolveStop(key);
+    if (stop) setSelection({ kind: stop.kind, id: stop.id });
+  };
 
   const walk = useGuidedWalk({
     route: activeRoute,
-    places,
-    onArrive: (stop) => setSelection({ kind: 'place', id: stop.id }),
+    places: walkPlaces,
+    onArrive: (stop) => selectStop(stop.id),
   });
   const walking = walk.state.phase !== 'idle';
   const walkRef = useRef(walk.state);
@@ -353,15 +426,24 @@ export default function MapExplorer({
     else params.delete('servicios');
     // `paseo` solo arranca el modo paseo al llegar; no se conserva al compartir o recargar.
     params.delete('paseo');
-    if (activeRouteSlug) params.set('ruta', activeRouteSlug);
-    else {
+    if (activeRouteSlug === CUSTOM_ROUTE_SLUG) {
+      params.delete('ruta');
+      params.set('visita', visitKeys.join(','));
+      if (visitFrom) params.set('desde', visitFrom);
+    } else if (activeRouteSlug) {
+      params.set('ruta', activeRouteSlug);
+      params.delete('visita');
+      params.delete('desde');
+    } else {
+      params.delete('visita');
+      params.delete('desde');
       params.delete('ruta');
       params.delete('escenario');
     }
     const query = params.toString();
     const next = `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`;
     window.history.replaceState({}, '', next);
-  }, [category, serviceGroup, activeRouteSlug, queryReady]);
+  }, [category, serviceGroup, activeRouteSlug, queryReady, visitKeys, visitFrom]);
 
   useEffect(() => {
     let cancelled = false;
@@ -447,6 +529,11 @@ export default function MapExplorer({
       const maplibre = await loadMaplibre();
       if (cancelled || !mapRef.current) return;
       const currentMap = mapRef.current;
+      const markFavorite = (el: HTMLElement, fav: boolean) => {
+        el.classList.toggle('is-favorite', fav);
+        el.classList.toggle('is-dimmed', highlightFavorites && !fav);
+        if (fav) el.dataset.favorite = 'true';
+      };
 
       markersRef.current.forEach((marker) => marker.remove());
       markersRef.current = [];
@@ -485,6 +572,7 @@ export default function MapExplorer({
           // piezas menores (estatuas) aparecen por tramos de zoom.
           minZoom: category === 'todos' ? place.mapMinZoom : undefined,
         });
+        markFavorite(el, favorites.isFavorite('place', place.id));
       }
 
       for (const service of filteredServices) {
@@ -515,6 +603,7 @@ export default function MapExplorer({
           pinned: active,
           minZoom: servicesZoomGated ? serviceMinZoom(service) : undefined,
         });
+        markFavorite(el, favorites.isFavorite('service', service.id));
       }
 
       for (const group of eventGroups) {
@@ -569,6 +658,8 @@ export default function MapExplorer({
     selection,
     activeRoute,
     category,
+    favorites.isFavorite,
+    highlightFavorites,
   ]);
 
   // Zoom tras cada movimiento (no en cada frame): recuento visible y aviso de servicios.
@@ -673,7 +764,7 @@ export default function MapExplorer({
       });
 
       activeRoute.stopIds.forEach((stopId, index) => {
-        const place = places.find((item) => item.id === stopId);
+        const place = resolveStop(stopId);
         if (!place) return;
         // Botón de 44 px (área táctil) con el número dentro; la insignia escala con el zoom.
         const el = document.createElement('button');
@@ -690,7 +781,7 @@ export default function MapExplorer({
         el.setAttribute('aria-label', `Parada ${index + 1}: ${place.name}`);
         el.addEventListener('click', (event) => {
           event.stopPropagation();
-          setSelection({ kind: 'place', id: place.id });
+          setSelection({ kind: place.kind, id: place.id });
           currentMap.easeTo({
             center: place.coordinates,
             zoom: Math.max(currentMap.getZoom(), 16),
@@ -725,7 +816,7 @@ export default function MapExplorer({
     return () => {
       cancelled = true;
     };
-  }, [activeRoute, places, ready]);
+  }, [activeRoute, resolveStop, ready]);
 
   useEffect(() => {
     if ((!ready && !mapError) || !focusSlugState) return;
@@ -739,6 +830,19 @@ export default function MapExplorer({
       essential: true,
     });
   }, [ready, mapError, focusSlugState, places]);
+
+  useEffect(() => {
+    if ((!ready && !mapError) || !serviceFocusId) return;
+    const service = services.find((item) => item.id === serviceFocusId);
+    if (!service) return;
+    setSelection({ kind: 'service', id: service.id });
+    mapRef.current?.easeTo({
+      center: service.coordinates,
+      zoom: 17,
+      duration: 600,
+      essential: true,
+    });
+  }, [ready, mapError, serviceFocusId, services]);
 
   useEffect(() => {
     if ((!ready && !mapError) || !eventSlugState) return;
@@ -945,7 +1049,7 @@ export default function MapExplorer({
   const showWalkStop = (index: number) => {
     const stop = walk.stops[index];
     if (!stop) return;
-    setSelection({ kind: 'place', id: stop.id });
+    selectStop(stop.id);
     setFollowUser(false);
     mapRef.current?.easeTo({
       center: stop.coordinates,
@@ -974,6 +1078,8 @@ export default function MapExplorer({
 
   const clearRoute = () => {
     setActiveRouteSlug(null);
+    setVisitKeys([]);
+    setVisitFrom(undefined);
     setSelection(null);
     resetView();
   };
@@ -992,7 +1098,7 @@ export default function MapExplorer({
   const shareActiveRoute = async () => {
     if (!activeRoute) return;
     const url = new URL(window.location.href);
-    url.searchParams.set('ruta', activeRoute.slug);
+    if (activeRoute.slug !== CUSTOM_ROUTE_SLUG) url.searchParams.set('ruta', activeRoute.slug);
     try {
       if (navigator.share) {
         await navigator.share({ title: activeRoute.name, url: url.toString() });
@@ -1060,6 +1166,16 @@ export default function MapExplorer({
               Eventos
             </label>
           ) : null}
+          {!activeRoute && favorites.items.length > 0 ? (
+            <button
+              type="button"
+              className={`mapa-fav-chip${highlightFavorites ? ' is-on' : ''}`}
+              aria-pressed={highlightFavorites}
+              onClick={() => setHighlightFavorites((v) => !v)}
+            >
+              <span aria-hidden="true">♥</span> Favoritos ({favorites.items.length})
+            </button>
+          ) : null}
         </div>
         {!activeRoute ? (
           <CategoryFilters
@@ -1101,6 +1217,12 @@ export default function MapExplorer({
               {formatDistance(activeRoute.approximateDistanceMeters)} · {activeRoute.stopIds.length}{' '}
               paradas
             </p>
+            {activeRoute.slug === CUSTOM_ROUTE_SLUG ? (
+              <p className="route-active-card__note">
+                Ruta propia de «Mi visita»: tramos en línea recta entre paradas; sigue los caminos
+                del parque. <a href={withBase(baseUrl, 'mi-visita/')}>Editar en Mi visita</a>
+              </p>
+            ) : null}
             <p className="route-active-card__note">
               Recorrido orientativo. Sin navegación giro a giro. Condiciones del parque pueden
               variar.
@@ -1126,14 +1248,14 @@ export default function MapExplorer({
           </div>
           <ol className="route-active-card__stops">
             {activeRoute.stopIds.map((stopId, index) => {
-              const place = places.find((item) => item.id === stopId);
+              const place = resolveStop(stopId);
               if (!place) return null;
               return (
                 <li key={`${stopId}-${index}`}>
                   <button
                     type="button"
                     onClick={() => {
-                      setSelection({ kind: 'place', id: place.id });
+                      setSelection({ kind: place.kind, id: place.id });
                       mapRef.current?.easeTo({
                         center: place.coordinates,
                         zoom: 16.5,
@@ -1261,6 +1383,8 @@ export default function MapExplorer({
           <PlaceSheet
             place={selectedPlace}
             placeHref={withBase(baseUrl, `lugares/${selectedPlace.slug}/`)}
+            saved={favorites.isFavorite('place', selectedPlace.id)}
+            onToggleSave={() => favorites.toggle('place', selectedPlace.id)}
             onClose={() => setSelection(null)}
             variant={isDesktop ? 'desktop' : 'mobile'}
           />
@@ -1268,6 +1392,8 @@ export default function MapExplorer({
         {selectedService ? (
           <ServiceSheet
             service={selectedService}
+            saved={favorites.isFavorite('service', selectedService.id)}
+            onToggleSave={() => favorites.toggle('service', selectedService.id)}
             onClose={() => setSelection(null)}
             variant={isDesktop ? 'desktop' : 'mobile'}
           />

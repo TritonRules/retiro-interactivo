@@ -686,3 +686,129 @@ a:hover {
   color: #fff;
   font-weight: 700;
 }
+
+/* ---------- Mi visita ---------- */
+.fav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: var(--touch-min);
+  margin: 0 0 0.5rem;
+  padding: 0 0.9rem;
+  border: 1px solid #c2414b;
+  border-radius: 999px;
+  background: #fff;
+  color: #a3303a;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.fav-btn.is-saved {
+  background: #c2414b;
+  color: #fff;
+}
+.fav-btn__icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+.mapa-fav-chip {
+  min-height: 2.25rem;
+  padding: 0 0.75rem;
+  border: 1px solid #c2414b;
+  border-radius: 999px;
+  background: #fff;
+  color: #a3303a;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.mapa-fav-chip.is-on {
+  background: #c2414b;
+  color: #fff;
+}
+.is-favorite {
+  outline: 3px solid #c2414b;
+  outline-offset: 1px;
+  border-radius: 999px;
+}
+.is-dimmed {
+  opacity: 0.3;
+}
+.mi-visita section {
+  margin-block: 1.25rem;
+}
+.mi-visita h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+.mi-visita__count {
+  color: var(--color-ink-muted);
+  font-weight: 400;
+}
+.mi-visita__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+.mi-visita__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+.mi-visita__name {
+  display: block;
+  margin-top: 0.2rem;
+}
+.mi-visita__item-actions,
+.mi-visita__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.mi-visita__route {
+  padding: 0.85rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-soft);
+}
+.mi-visita__summary {
+  font-size: 1.05rem;
+}
+.mi-visita__note {
+  color: var(--color-ink-muted);
+  font-size: 0.88rem;
+}
+.mi-visita__stops {
+  padding-left: 1.4rem;
+  margin: 0.5rem 0 0.85rem;
+}
+.mi-visita__presets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.mi-visita__preset {
+  display: grid;
+  gap: 0.2rem;
+  text-align: left;
+  padding: 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font: inherit;
+  cursor: pointer;
+}
+.mi-visita__preset span {
+  font-size: 0.82rem;
+  color: var(--color-ink-muted);
+}
