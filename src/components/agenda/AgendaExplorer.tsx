@@ -18,6 +18,7 @@ import {
 import { eventTimePrecision, nextValidSession, todaysSessions } from '../../utils/eventSchedule';
 import { eventWhenLabel, sessionBadge } from '../../utils/eventPresentation';
 import { useParkClock } from '../../utils/useParkClock';
+import HoyTimeline from './HoyTimeline';
 import './agenda.css';
 
 interface Props {
@@ -65,6 +66,7 @@ export default function AgendaExplorer({ events, baseUrl, generatedAt }: Props) 
   const current = useMemo(() => selectCurrentPlans(events, now), [events, now]);
   const today = useMemo(() => selectTodayEvents(events, now), [events, now]);
   const stale = useMemo(() => selectStaleButDated(events, now), [events, now]);
+  const filteredAll = useMemo(() => filterEventsByQuery(events, filters), [events, filters]);
   const categories = useMemo(() => uniqueCategories(events), [events]);
   const filteredToday = useMemo(() => filterEventsByQuery(today, filters), [today, filters]);
   const todayIds = useMemo(() => new Set(filteredToday.map((event) => event.id)), [filteredToday]);
@@ -90,6 +92,8 @@ export default function AgendaExplorer({ events, baseUrl, generatedAt }: Props) 
       <p className="agenda-freshness" data-freshness={band}>
         {freshnessCopy(band, current[0]?.lastCheckedAt ?? events[0]?.lastCheckedAt)}
       </p>
+
+      <HoyTimeline events={filteredAll} baseUrl={baseUrl} now={now} />
 
       <form
         className="filters"
