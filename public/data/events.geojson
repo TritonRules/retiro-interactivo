@@ -65,6 +65,24 @@
         ]
       },
       "properties": {
+        "id": "evt-50147338",
+        "slug": "beethoven-200-universal-50147338",
+        "title": "Beethoven 200 Universal",
+        "startAt": "2026-10-18T12:00:00+02:00",
+        "status": "published",
+        "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6840988,
+          40.4192106
+        ]
+      },
+      "properties": {
         "id": "evt-50147279",
         "slug": "buenos-aires-en-madrid-50147279",
         "title": "Buenos Aires en Madrid",
@@ -294,24 +312,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50434289",
-        "slug": "el-peso-hispano-real-de-a-ocho-primer-dolar-de-los-estados-unidos-de-ame",
-        "title": "El Peso Hispano - Real de a ocho - Primer dólar de los Estados Unidos de América y moneda del mundo",
-        "startAt": "2026-10-13T19:00:00+02:00",
-        "status": "expired",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -3.6866962,
           40.4187197
         ]
@@ -323,24 +323,6 @@
         "startAt": "2026-12-19T12:30:00+01:00",
         "status": "published",
         "venue": "Teatro de Títeres de El Retiro"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6840988,
-          40.4192106
-        ]
-      },
-      "properties": {
-        "id": "evt-50147445",
-        "slug": "en-busca-de-la-ciudad-de-los-cesares-50147445",
-        "title": "En busca de la Ciudad de los Césares",
-        "startAt": "2026-10-13T19:00:00+02:00",
-        "status": "expired",
-        "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
     {
@@ -528,24 +510,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.6840988,
-          40.4192106
-        ]
-      },
-      "properties": {
-        "id": "evt-50265834",
-        "slug": "los-jovenes-juristas-en-la-era-digital-50265834",
-        "title": "Los jóvenes juristas en la era digital",
-        "startAt": "2026-10-20T19:00:00+02:00",
-        "status": "published",
-        "venue": "Centro Cultural Casa de Vacas (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -3.68618,
           40.409435
         ]
@@ -627,7 +591,7 @@
         "slug": "mom-visita-guiada-a-la-antigua-casa-de-fieras-50431891",
         "title": "MOM. Visita guiada a la antigua Casa de Fieras",
         "startAt": "2026-10-14T17:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -663,7 +627,7 @@
         "slug": "musica-barroca-en-el-otono-del-buen-retiro-por-camerata-tremolo-50445650",
         "title": "Música barroca en el otoño del Buen Retiro por Camerata Trémolo",
         "startAt": "2026-10-14T19:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -978,24 +942,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50217974",
-        "slug": "tertulia-literaria-hispanoamericana-rafael-montesinos-con-pablo-jimenez",
-        "title": "Tertulia Literaria Hispanoamericana 'Rafael Montesinos' con Pablo Jiménez y Javier Magano",
-        "startAt": "2026-10-13T19:00:00+02:00",
-        "status": "expired",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -3.6866962,
           40.4187197
         ]
@@ -1257,7 +1203,7 @@
         "slug": "aquel-pensar-un-sentir-de-maria-de-los-angeles-pascual-majan-50440208",
         "title": "'Aquel pensar un sentir' de María de los Ángeles Pascual Majan",
         "startAt": "2026-10-14T19:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -1311,6 +1257,24 @@
         "slug": "cuentos-de-empezar-y-no-terminar-con-pingui-50446338",
         "title": "'Cuentos de empezar y no terminar' con Pingüi",
         "startAt": "2026-10-28T18:00:00+01:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50449861",
+        "slug": "del-arte-de-escribir-al-goce-de-leer-de-carmen-s-caraballo-50449861",
+        "title": "'Del arte de escribir al goce de leer' de Carmen S. Caraballo",
+        "startAt": "2026-10-29T19:00:00+01:00",
         "status": "published",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
