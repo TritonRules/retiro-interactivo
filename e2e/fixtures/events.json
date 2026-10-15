@@ -153,5 +153,52 @@
         "excludedDays": ["2026-09-07"]
       }
     }
+  },
+  {
+    "id": "evt-e2e-taller",
+    "slug": "taller-botanica-tarde",
+    "title": "Taller de botánica en el Estanque",
+    "shortDescription": "Taller con hora de fin publicada para el programa del día.",
+    "startAt": "2026-09-06T16:30:00+02:00",
+    "expiresAt": "2026-09-07T00:00:00+02:00",
+    "venue": "Estanque Grande",
+    "coordinates": [-3.6835, 40.4172],
+    "category": "Talleres",
+    "audience": ["Todos los públicos"],
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "https://www.madrid.es/",
+    "sourceTier": "A",
+    "sourceEventId": "evt-e2e-taller",
+    "lastCheckedAt": "2026-09-06T08:00:00.000Z",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": ["16:30"]
+    },
+    "endAt": "2026-09-06T18:00:00+02:00"
+  },
+  {
+    "id": "evt-e2e-manana",
+    "slug": "banda-municipal-manana",
+    "title": "Banda municipal junto al Estanque",
+    "shortDescription": "Concierto del día siguiente para probar «Mañana».",
+    "startAt": "2026-09-07T12:00:00+02:00",
+    "expiresAt": "2026-09-08T00:00:00+02:00",
+    "venue": "Estanque Grande",
+    "coordinates": [-3.6835, 40.4172],
+    "category": "Musica",
+    "audience": ["Todos los públicos"],
+    "sourceName": "Agenda de actividades y eventos",
+    "sourceUrl": "https://www.madrid.es/",
+    "sourceTier": "A",
+    "sourceEventId": "evt-e2e-manana",
+    "lastCheckedAt": "2026-09-06T08:00:00.000Z",
+    "confidence": 0.9,
+    "status": "published",
+    "schedule": {
+      "timePrecision": "exact",
+      "sessionTimes": ["12:00"]
+    }
   }
 ]

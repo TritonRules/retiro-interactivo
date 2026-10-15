@@ -57,7 +57,7 @@ test.describe('tiempo sin rebuild', () => {
   test('Hoy se recalcula al cruzar medianoche Madrid', async ({ page }) => {
     await openAgenda(page);
     await expect(page.locator('#hoy-title')).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'Hoy' }).locator('xpath=..').getByRole('link', { name: 'Exposición BIC del Retiro' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Hoy', exact: true }).locator('xpath=..').getByRole('link', { name: 'Exposición BIC del Retiro' })).toBeVisible();
 
     await page.clock.pauseAt(new Date('2026-09-06T22:05:00.000Z')); // 00:05 del lunes 7
     await page.evaluate(() => {
@@ -65,7 +65,7 @@ test.describe('tiempo sin rebuild', () => {
       document.dispatchEvent(new Event('visibilitychange'));
       window.dispatchEvent(new Event('focus'));
     });
-    await expect(page.getByRole('heading', { name: 'Hoy' }).locator('xpath=..')).not.toContainText(
+    await expect(page.getByRole('heading', { name: 'Hoy', exact: true }).locator('xpath=..')).not.toContainText(
       'Exposición BIC del Retiro',
     );
   });
