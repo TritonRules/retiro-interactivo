@@ -105,7 +105,7 @@
         "slug": "casa-club-venezuela-50147340",
         "title": "Casa Club Venezuela",
         "startAt": "2026-10-15T18:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -123,7 +123,7 @@
         "slug": "ciclo-grabacion-radio-teatro-volpini-esto-no-es-un-moscardon-50166747",
         "title": "Ciclo 'Grabación Radio teatro Volpini': 'Esto no es un moscardón'",
         "startAt": "2026-10-15T19:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -375,7 +375,7 @@
         "slug": "estrias-cineforum-nomadland-50445680",
         "title": "Estrías Cineforum: Nomadland",
         "startAt": "2026-10-15T18:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -1293,7 +1293,7 @@
         "slug": "dos-voces-amigas-del-dr-hernan-silvan-50442688",
         "title": "'Dos voces amigas' del Dr. Hernán Silvan",
         "startAt": "2026-10-15T19:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -1401,6 +1401,24 @@
         "slug": "vivir-es-lo-urgente-de-cesar-fernandez-rollan-50442719",
         "title": "'Vivir es lo urgente' de César Fernández Rollán",
         "startAt": "2026-10-16T18:30:00+02:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50451020",
+        "slug": "un-rumor-en-la-nieve-de-miguel-castro-pereiro-50451020",
+        "title": "'Un rumor en la nieve' de Miguel Castro Pereiro",
+        "startAt": "2026-10-26T19:00:00+01:00",
         "status": "published",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }

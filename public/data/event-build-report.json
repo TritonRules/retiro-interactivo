@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-10-15T09:10:59.000Z",
+  "ranAt": "2026-10-16T09:03:11.285Z",
   "offline": false,
   "steps": {
     "collect": "ok",
@@ -9,13 +9,13 @@
     "publish": "ok"
   },
   "added": [
-    "evt-50147338",
-    "evt-50449861"
+    "evt-50451020"
   ],
   "changed": [
     "evt-50346030",
     "evt-50425902",
     "evt-50322881",
+    "evt-50147338",
     "evt-50147279",
     "evt-50147340",
     "evt-50166747",
@@ -82,6 +82,7 @@
     "evt-50449051",
     "evt-50448606",
     "evt-50446338",
+    "evt-50449861",
     "evt-50442688",
     "evt-50446521",
     "evt-50445850",
@@ -90,14 +91,9 @@
     "evt-50448536",
     "evt-50442719"
   ],
-  "removed": [
-    "evt-50434289",
-    "evt-50147445",
-    "evt-50265834",
-    "evt-50217974"
-  ],
-  "discarded": 2914,
-  "duplicates": 78,
+  "removed": [],
+  "discarded": 2921,
+  "duplicates": 74,
   "errors": [],
   "published": true,
   "keptPrevious": false,
@@ -107,8 +103,8 @@
       "sourceId": "madrid-agenda-general",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-10-15T09:10:59.000Z",
-      "lastSuccessfulFetchAt": "2026-10-15T09:10:59.000Z",
+      "fetchedAt": "2026-10-16T09:03:11.285Z",
+      "lastSuccessfulFetchAt": "2026-10-16T09:03:11.285Z",
       "fetchError": null,
       "graphCount": 1719
     },
@@ -116,10 +112,10 @@
       "sourceId": "madrid-agenda-cultural-100",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-10-15T09:10:59.000Z",
-      "lastSuccessfulFetchAt": "2026-10-15T09:10:59.000Z",
+      "fetchedAt": "2026-10-16T09:03:11.285Z",
+      "lastSuccessfulFetchAt": "2026-10-16T09:03:11.285Z",
       "fetchError": null,
-      "graphCount": 1351
+      "graphCount": 1355
     }
   ],
   "discardSamples": [
@@ -368,34 +364,34 @@
     },
     {
       "reason": "sourceEventId",
-      "keptId": "evt-50322750",
-      "droppedId": "evt-50322750",
-      "sourceEventId": "50322750",
+      "keptId": "evt-50430430",
+      "droppedId": "evt-50430430",
+      "sourceEventId": "50430430",
       "merged": true
     }
   ],
-  "publishedCount": 78,
+  "publishedCount": 79,
   "publication": {
     "schemaVersion": 1,
-    "publishedAt": "2026-10-15T09:10:59.000Z",
-    "datasetHash": "b4a652cd3ff99fc36881c5cf03064871f291aa0e75ff95b9deed031a4f6fde28",
+    "publishedAt": "2026-10-16T09:03:11.285Z",
+    "datasetHash": "f8a560f4a3df29432b891e90b6e0d9db9af6daec48df09d7d829a9a6e5fa44fd",
     "coverageHorizonDays": 90,
     "sources": [
       {
         "sourceId": "madrid-agenda-general",
-        "lastSuccessfulFetchAt": "2026-10-15T09:10:59.000Z",
-        "lastAttemptAt": "2026-10-15T09:10:59.000Z",
+        "lastSuccessfulFetchAt": "2026-10-16T09:03:11.285Z",
+        "lastAttemptAt": "2026-10-16T09:03:11.285Z",
         "fromCache": false,
         "fetchError": null
       },
       {
         "sourceId": "madrid-agenda-cultural-100",
-        "lastSuccessfulFetchAt": "2026-10-15T09:10:59.000Z",
-        "lastAttemptAt": "2026-10-15T09:10:59.000Z",
+        "lastSuccessfulFetchAt": "2026-10-16T09:03:11.285Z",
+        "lastAttemptAt": "2026-10-16T09:03:11.285Z",
         "fromCache": false,
         "fetchError": null
       }
     ]
   },
-  "publishedUpcoming": 75
+  "publishedUpcoming": 72
 }

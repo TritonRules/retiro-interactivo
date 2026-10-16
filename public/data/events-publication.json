@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-15T09:10:59.000Z",
-  "datasetHash": "b4a652cd3ff99fc36881c5cf03064871f291aa0e75ff95b9deed031a4f6fde28",
+  "publishedAt": "2026-10-16T09:03:11.285Z",
+  "datasetHash": "f8a560f4a3df29432b891e90b6e0d9db9af6daec48df09d7d829a9a6e5fa44fd",
   "coverageHorizonDays": 90,
   "sources": [
     {
       "sourceId": "madrid-agenda-general",
-      "lastSuccessfulFetchAt": "2026-10-15T09:10:59.000Z",
-      "lastAttemptAt": "2026-10-15T09:10:59.000Z",
+      "lastSuccessfulFetchAt": "2026-10-16T09:03:11.285Z",
+      "lastAttemptAt": "2026-10-16T09:03:11.285Z",
       "fromCache": false,
       "fetchError": null
     },
     {
       "sourceId": "madrid-agenda-cultural-100",
-      "lastSuccessfulFetchAt": "2026-10-15T09:10:59.000Z",
-      "lastAttemptAt": "2026-10-15T09:10:59.000Z",
+      "lastSuccessfulFetchAt": "2026-10-16T09:03:11.285Z",
+      "lastAttemptAt": "2026-10-16T09:03:11.285Z",
       "fromCache": false,
       "fetchError": null
     }
