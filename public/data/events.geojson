@@ -69,7 +69,7 @@
         "slug": "beethoven-200-universal-50147338",
         "title": "Beethoven 200 Universal",
         "startAt": "2026-10-18T12:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -537,7 +537,7 @@
         "slug": "planeta-tierra-50399379",
         "title": "Planeta Tierra",
         "startAt": "2026-10-17T12:30:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Teatro de Títeres de El Retiro"
       }
     },
@@ -627,7 +627,7 @@
         "slug": "senda-arboles-autoctonos-50286911",
         "title": "Senda 'Árboles Autóctonos'",
         "startAt": "2026-10-17T00:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
@@ -969,7 +969,7 @@
         "slug": "wanderlust-50289806",
         "title": "Wanderlust",
         "startAt": "2026-10-18T19:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -1023,7 +1023,7 @@
         "slug": "yincana-familiar-conociendo-el-retiro-50202443",
         "title": "Yincana familiar 'Conociendo el Retiro'",
         "startAt": "2026-10-17T11:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
@@ -1221,7 +1221,7 @@
         "slug": "ranuja-la-no-bruja-50448536",
         "title": "'Ranuja la No bruja'",
         "startAt": "2026-10-18T12:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
