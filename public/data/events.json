@@ -18,7 +18,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=df7bd881d7dfe910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50346030",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-11-01T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -64,7 +64,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=e125fa46443b0a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50425902",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-11-23T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -109,7 +109,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=9ec51bbd9696e910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50322881",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-26T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -117,36 +117,6 @@
       "timePrecision": "exact",
       "sessionTimes": [
         "17:00"
-      ]
-    }
-  },
-  {
-    "id": "evt-50147338",
-    "slug": "beethoven-200-universal-50147338",
-    "title": "Beethoven 200 Universal",
-    "shortDescription": "Entrevista y música en directo. Beethoven Universal. Ramón Torrelledó. Noelia Navas. Diego Navas. Invitados: Pablo Sánchez y Rita Raposo. Reparto de entradas desde una hora antes en el centro cultural. Máximo dos entradas por persona hasta completar aforo.",
-    "startAt": "2026-10-18T12:00:00+02:00",
-    "endAt": "2026-10-18T23:59:00+02:00",
-    "venue": "Centro Cultural Casa de Vacas (Retiro)",
-    "coordinates": [
-      -3.6840988,
-      40.4192106
-    ],
-    "category": "Musica",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=2026e77de60ca910VgnVCM100000891ecb1aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=2026e77de60ca910VgnVCM100000891ecb1aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50147338",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
-    "expiresAt": "2026-10-19T00:00:00+02:00",
-    "confidence": 0.9,
-    "status": "expired",
-    "schedule": {
-      "timePrecision": "exact",
-      "sessionTimes": [
-        "12:00"
       ]
     }
   },
@@ -169,7 +139,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=1520e77de60ca910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50147279",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-25T00:00:00+02:00",
     "confidence": 0.9,
     "status": "published",
@@ -177,36 +147,6 @@
       "timePrecision": "exact",
       "sessionTimes": [
         "12:30"
-      ]
-    }
-  },
-  {
-    "id": "evt-50266169",
-    "slug": "cfest-x-edicion-2026-50266169",
-    "title": "Cfest X Edición 2026",
-    "shortDescription": "Danza Lost Solo-trío Compagnia Atacama Reparto de entradas desde una hora antes en el centro cultural. Máximo dos entradas por persona hasta completar aforo.",
-    "startAt": "2026-10-17T19:00:00+02:00",
-    "endAt": "2026-10-17T23:59:00+02:00",
-    "venue": "Centro Cultural Casa de Vacas (Retiro)",
-    "coordinates": [
-      -3.6840988,
-      40.4192106
-    ],
-    "category": "DanzaBaile",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=3814e1509792d910VgnVCM100000891ecb1aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=3814e1509792d910VgnVCM100000891ecb1aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50266169",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
-    "expiresAt": "2026-10-18T00:00:00+02:00",
-    "confidence": 0.9,
-    "status": "expired",
-    "schedule": {
-      "timePrecision": "exact",
-      "sessionTimes": [
-        "19:00"
       ]
     }
   },
@@ -229,7 +169,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=279fb54babf90a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50415948",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2027-06-24T00:00:00+02:00",
     "confidence": 0.9,
     "status": "published",
@@ -247,36 +187,6 @@
         "untilExclusive": "2027-06-24T00:00:00+02:00",
         "excludedDays": []
       }
-    }
-  },
-  {
-    "id": "evt-12561116",
-    "slug": "concurso-de-calabazas-12561116",
-    "title": "Concurso de Calabazas",
-    "shortDescription": "Doble concurso en el que se premiará la Calabaza más grande y la Calabaza más rara: Calabaza más grande de un Huerto Urbano. La calabaza debe proceder de un Huerto Urbano de Madrid, tanto Huerto Comunitario como Huerto Escolar. Se pesan las calabazas por el equipo educativo del C",
-    "startAt": "2026-10-17T13:30:00+02:00",
-    "endAt": "2026-10-17T23:59:00+02:00",
-    "venue": "Centro de Información y Educación Ambiental El Retiro",
-    "coordinates": [
-      -3.6861797800993257,
-      40.40943503279114
-    ],
-    "category": "actividad",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=3a198b0ee9e92910VgnVCM1000001d4a900aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=3a198b0ee9e92910VgnVCM1000001d4a900aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "12561116",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
-    "expiresAt": "2026-10-18T00:00:00+02:00",
-    "confidence": 0.9,
-    "status": "expired",
-    "schedule": {
-      "timePrecision": "exact",
-      "sessionTimes": [
-        "13:30"
-      ]
     }
   },
   {
@@ -298,7 +208,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=e0b86192e8511a10VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50444475",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-11-12T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -328,7 +238,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=52edc2dd3ba2a910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50105660",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-31T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -358,7 +268,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=250396d88b96f910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50362790",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-25T00:00:00+02:00",
     "confidence": 0.9,
     "status": "published",
@@ -388,7 +298,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=683260d8a95ca910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50148940",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-12-12T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -432,7 +342,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=91ee7f3291fba910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50145704",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-22T00:00:00+02:00",
     "confidence": 0.9,
     "status": "published",
@@ -464,7 +374,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=46ddc7fc21dc0a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50430430",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-12-14T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -491,39 +401,6 @@
     }
   },
   {
-    "id": "evt-50146307",
-    "slug": "el-cuento-mezclado-50146307",
-    "title": "El cuento mezclado",
-    "shortDescription": "Teatro infantil. Compañía: La Higuera Producciones. Sinopsis: Los personajes de cuentos no saben adónde tienen que ir, ni qué es lo que tienen que hacer. ¡Vaya lío que tenemos! Solo los niños junto a Dorita y Titina podrán resolver este jaleo. Edad recomendada: menores a partir d",
-    "startAt": "2026-10-17T12:00:00+02:00",
-    "endAt": "2026-10-17T23:59:00+02:00",
-    "venue": "Centro Cultural Casa de Vacas (Retiro)",
-    "coordinates": [
-      -3.6840988,
-      40.4192106
-    ],
-    "category": "TeatroPerformance",
-    "audience": [
-      "Niños"
-    ],
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=bdc35252a8fba910VgnVCM200000f921e388RCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=bdc35252a8fba910VgnVCM200000f921e388RCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50146307",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
-    "expiresAt": "2026-10-18T00:00:00+02:00",
-    "confidence": 0.9,
-    "status": "expired",
-    "schedule": {
-      "timePrecision": "exact",
-      "sessionTimes": [
-        "12:00"
-      ]
-    }
-  },
-  {
     "id": "evt-50430426",
     "slug": "el-traje-nuevo-del-emperador-50430426",
     "title": "El traje nuevo del emperador",
@@ -544,7 +421,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=b12dc7fc21dc0a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50430426",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-12-21T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -589,44 +466,14 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=af8f10647df11a10VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50447007",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-20T00:00:00+02:00",
-    "confidence": 0.9,
-    "status": "published",
-    "schedule": {
-      "timePrecision": "exact",
-      "sessionTimes": [
-        "19:00"
-      ]
-    }
-  },
-  {
-    "id": "evt-12124577",
-    "slug": "entrega-de-plantas-12124577",
-    "title": "Entrega de plantas",
-    "shortDescription": "El Vivero Municipal de Estufas del Retiro obsequia a cada asistente, hasta agotar existencias, una planta de interior o exterior de temporada. Un equipo de Voluntarios por Madrid las distribuirá y facilitará consejos sobre cómo cuidar las plantas elegidas. Además este será la últ",
-    "startAt": "2026-10-17T10:00:00+02:00",
-    "endAt": "2026-10-17T23:59:00+02:00",
-    "venue": "Centro de Información y Educación Ambiental El Retiro",
-    "coordinates": [
-      -3.6861797800993257,
-      40.40943503279114
-    ],
-    "category": "actividad",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=fc78d61683ffa810VgnVCM2000001f4a900aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=fc78d61683ffa810VgnVCM2000001f4a900aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "12124577",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
-    "expiresAt": "2026-10-18T00:00:00+02:00",
     "confidence": 0.9,
     "status": "expired",
     "schedule": {
       "timePrecision": "exact",
       "sessionTimes": [
-        "10:00"
+        "19:00"
       ]
     }
   },
@@ -652,7 +499,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=2ea4fa46443b0a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50425896",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-11-09T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -697,7 +544,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=0ad305fabd29f910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50368535",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-11-29T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -727,7 +574,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=2fb544ae9dbe0a10VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50434613",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-21T00:00:00+02:00",
     "confidence": 0.9,
     "status": "published",
@@ -757,7 +604,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f520e77de60ca910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50147284",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-24T00:00:00+02:00",
     "confidence": 0.9,
     "status": "published",
@@ -787,7 +634,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=c7903146ba24c910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50220891",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-23T00:00:00+02:00",
     "confidence": 0.9,
     "status": "published",
@@ -821,7 +668,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=a373caddd43d0a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50431987",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-12-15T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -855,7 +702,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=7a70b2de0feee910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50343647",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-11-02T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -889,7 +736,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=6673caddd43d0a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50431986",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-11-24T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -923,7 +770,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=53cdb2de0feee910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50343645",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-11-16T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -953,7 +800,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=5b5c2c4d6a9a9910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50080228",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-12-31T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1000,7 +847,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=030b0775d496e910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50322790",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-26T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1009,53 +856,6 @@
       "sessionTimes": [
         "12:00"
       ]
-    }
-  },
-  {
-    "id": "evt-50399379",
-    "slug": "planeta-tierra-50399379",
-    "title": "Planeta Tierra",
-    "shortDescription": "Planeta Tierra",
-    "startAt": "2026-10-17T12:30:00+02:00",
-    "endAt": "2026-10-18T23:59:00+02:00",
-    "venue": "Teatro de Títeres de El Retiro",
-    "coordinates": [
-      -3.6866962,
-      40.4187197
-    ],
-    "category": "CuentacuentosTiteresMarionetas",
-    "audience": [
-      "Familias"
-    ],
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=6cf9c3cc9e060a10VgnVCM200000f921e388RCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=6cf9c3cc9e060a10VgnVCM200000f921e388RCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50399379",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
-    "expiresAt": "2026-10-19T00:00:00+02:00",
-    "confidence": 0.9,
-    "status": "expired",
-    "schedule": {
-      "timePrecision": "exact",
-      "sessionTimes": [
-        "12:30"
-      ],
-      "recurrence": {
-        "frequency": "WEEKLY",
-        "interval": 1,
-        "byDay": [
-          "MO",
-          "TU",
-          "WE",
-          "TH",
-          "FR",
-          "SA",
-          "SU"
-        ],
-        "untilExclusive": "2026-10-19T00:00:00+02:00",
-        "excludedDays": []
-      }
     }
   },
   {
@@ -1077,7 +877,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=7457a5bb09441a10VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50451751",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-30T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1107,7 +907,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=673dda32c9531a10VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50449032",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-25T00:00:00+02:00",
     "confidence": 0.9,
     "status": "published",
@@ -1137,7 +937,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f4ebef7e4a54b910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50173945",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-11-01T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1180,7 +980,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=b88d60d8a95ca910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50148916",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-26T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1210,44 +1010,6 @@
     }
   },
   {
-    "id": "evt-50286911",
-    "slug": "senda-arboles-autoctonos-50286911",
-    "title": "Senda 'Árboles Autóctonos'",
-    "shortDescription": "Itinerarios guiados por los Jardines del Buen Retiro dirigidos a público adulto. Ruta botánica enfocada en aprender y conocer algunas de las especies de árboles y plantas típicos de los bosques de La Península. Sábado 17 de octubre: 10:00 a 11:30 horas y de 12:00 a 13:30 horas. D",
-    "startAt": "2026-10-17T00:00:00+02:00",
-    "endAt": "2026-10-18T23:59:00+02:00",
-    "venue": "Aula ambiental La Cabaña del Retiro",
-    "coordinates": [
-      -3.679318,
-      40.409123
-    ],
-    "category": "ItinerariosOtrasActividadesAmbientales",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=4fa9359b464bd910VgnVCM100000891ecb1aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=4fa9359b464bd910VgnVCM100000891ecb1aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50286911",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
-    "expiresAt": "2026-10-19T00:00:00+02:00",
-    "confidence": 0.9,
-    "status": "expired",
-    "schedule": {
-      "timePrecision": "unknown",
-      "sessionTimes": [],
-      "recurrence": {
-        "frequency": "WEEKLY",
-        "interval": 1,
-        "byDay": [
-          "SA",
-          "SU"
-        ],
-        "untilExclusive": "2026-10-19T00:00:00+02:00",
-        "excludedDays": []
-      }
-    }
-  },
-  {
     "id": "evt-50148887",
     "slug": "senda-descubriendo-los-frutos-del-otono-50148887",
     "title": "Senda 'Descubriendo los frutos del otoño'",
@@ -1269,7 +1031,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f0549985385ca910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50148887",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-11-01T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1299,7 +1061,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=006afa263daca910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50150274",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-30T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1307,36 +1069,6 @@
       "timePrecision": "exact",
       "sessionTimes": [
         "16:30"
-      ]
-    }
-  },
-  {
-    "id": "evt-50095029",
-    "slug": "swing-en-la-biblioteca-50095029",
-    "title": "Swing en la biblioteca",
-    "shortDescription": "Swing en la biblioteca",
-    "startAt": "2026-10-17T12:00:00+02:00",
-    "endAt": "2026-10-17T23:59:00+02:00",
-    "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)",
-    "coordinates": [
-      -3.6789381,
-      40.4167401
-    ],
-    "category": "DanzaBaile",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=47b3e54d368e9910VgnVCM100000891ecb1aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=47b3e54d368e9910VgnVCM100000891ecb1aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50095029",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
-    "expiresAt": "2026-10-18T00:00:00+02:00",
-    "confidence": 0.9,
-    "status": "expired",
-    "schedule": {
-      "timePrecision": "exact",
-      "sessionTimes": [
-        "12:00"
       ]
     }
   },
@@ -1359,7 +1091,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=ba51ef951fa33810VgnVCM1000001d4a900aRCRD",
     "sourceTier": "A",
     "sourceEventId": "11771354",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-12-14T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1389,7 +1121,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=68d0ef951fa33810VgnVCM1000001d4a900aRCRD",
     "sourceTier": "A",
     "sourceEventId": "11771349",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-12-28T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1419,7 +1151,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=7430ef951fa33810VgnVCM1000001d4a900aRCRD",
     "sourceTier": "A",
     "sourceEventId": "11771345",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-11-16T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1449,7 +1181,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=4888815c82327810VgnVCM1000001d4a900aRCRD",
     "sourceTier": "A",
     "sourceEventId": "11970930",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-11-09T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1479,7 +1211,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=02d8815c82327810VgnVCM1000001d4a900aRCRD",
     "sourceTier": "A",
     "sourceEventId": "11970931",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-12-07T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1509,7 +1241,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=80461f7a68a33810VgnVCM1000001d4a900aRCRD",
     "sourceTier": "A",
     "sourceEventId": "11771303",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-12-21T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1539,7 +1271,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=6a8395081c580a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50408098",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-12-17T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1584,7 +1316,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=0b85001da9c8e910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50328610",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-21T00:00:00+02:00",
     "confidence": 0.9,
     "status": "published",
@@ -1616,7 +1348,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=131ac3cc9e060a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50399382",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-26T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1661,7 +1393,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=76d13477341aa910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50140512",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-26T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1706,7 +1438,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=e394fa46443b0a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50425893",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-11-02T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1753,7 +1485,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=aa7cc7fc21dc0a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50430423",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-12-07T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1798,7 +1530,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=238b3d77d90eb910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50202982",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-22T00:00:00+02:00",
     "confidence": 0.9,
     "status": "published",
@@ -1828,7 +1560,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=259200d72623e810VgnVCM2000001f4a900aRCRD",
     "sourceTier": "A",
     "sourceEventId": "12316290",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-11-30T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1858,7 +1590,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=3eb4b24e5754b910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50173921",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-29T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1866,36 +1598,6 @@
       "timePrecision": "exact",
       "sessionTimes": [
         "10:30"
-      ]
-    }
-  },
-  {
-    "id": "evt-50289806",
-    "slug": "wanderlust-50289806",
-    "title": "Wanderlust",
-    "shortDescription": "Música. Artista: Gabriela Franco. Wanderlust nace como un viaje musical por el mundo, recorriendo ciudades a través de sus sonidos y de las canciones que las representan. Un espectáculo que conecta ciudades, generaciones y culturas a través de canciones que todos reconocemos, per",
-    "startAt": "2026-10-18T19:00:00+02:00",
-    "endAt": "2026-10-18T23:59:00+02:00",
-    "venue": "Centro Cultural Casa de Vacas (Retiro)",
-    "coordinates": [
-      -3.6840988,
-      40.4192106
-    ],
-    "category": "Musica",
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=0575176cd6fbd910VgnVCM100000891ecb1aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=0575176cd6fbd910VgnVCM100000891ecb1aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50289806",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
-    "expiresAt": "2026-10-19T00:00:00+02:00",
-    "confidence": 0.9,
-    "status": "expired",
-    "schedule": {
-      "timePrecision": "exact",
-      "sessionTimes": [
-        "19:00"
       ]
     }
   },
@@ -1918,7 +1620,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=9fa5817478bba910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50145563",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-11-04T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1964,7 +1666,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=d2f4832f37fba910VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50146209",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-11-01T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -1973,54 +1675,6 @@
       "sessionTimes": [
         "12:00"
       ]
-    }
-  },
-  {
-    "id": "evt-50202443",
-    "slug": "yincana-familiar-conociendo-el-retiro-50202443",
-    "title": "Yincana familiar 'Conociendo el Retiro'",
-    "shortDescription": "Dinámicas participativas para grupos familiares, que incluyen recorridos por el Parque y talleres creativos. Actividad incluida en el programa MOM. Yincana cooperativa cuyo objetivo es conocer la historia y lugares de interés de El Retiro por medio de una ficha con preguntas abie",
-    "startAt": "2026-10-17T11:00:00+02:00",
-    "endAt": "2026-10-18T23:59:00+02:00",
-    "venue": "Aula ambiental La Cabaña del Retiro",
-    "coordinates": [
-      -3.679318,
-      40.409123
-    ],
-    "category": "ItinerariosOtrasActividadesAmbientales",
-    "audience": [
-      "Niños"
-    ],
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=ea2f477d230eb910VgnVCM100000891ecb1aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=ea2f477d230eb910VgnVCM100000891ecb1aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50202443",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
-    "expiresAt": "2026-10-19T00:00:00+02:00",
-    "confidence": 0.9,
-    "status": "expired",
-    "schedule": {
-      "timePrecision": "exact",
-      "sessionTimes": [
-        "11:00"
-      ],
-      "recurrence": {
-        "frequency": "WEEKLY",
-        "interval": 1,
-        "byDay": [
-          "MO",
-          "TU",
-          "WE",
-          "TH",
-          "FR",
-          "SA",
-          "SU"
-        ],
-        "untilExclusive": "2026-10-19T00:00:00+02:00",
-        "excludedDays": []
-      }
     }
   },
   {
@@ -2045,7 +1699,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=f87cede7c4aca910VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50149656",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-25T00:00:00+02:00",
     "confidence": 0.9,
     "status": "published",
@@ -2078,7 +1732,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=1e0f79535c8e0a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50434551",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-26T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -2108,7 +1762,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=d5525db33f431a10VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50448850",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-24T00:00:00+02:00",
     "confidence": 0.9,
     "status": "published",
@@ -2138,7 +1792,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=257c0431ba531a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50449051",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-26T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -2168,7 +1822,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=e3c598fb0d431a10VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50448606",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-22T00:00:00+02:00",
     "confidence": 0.9,
     "status": "published",
@@ -2201,7 +1855,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=b90557aa75b11a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50446338",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-29T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -2231,7 +1885,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=c79a466bcf931a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50449861",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-30T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -2264,7 +1918,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=1e3027b6bbb11a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50446521",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-31T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
@@ -2294,10 +1948,10 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=6630a0a46ff80a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50409622",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-20T00:00:00+02:00",
     "confidence": 0.9,
-    "status": "published",
+    "status": "expired",
     "schedule": {
       "timePrecision": "exact",
       "sessionTimes": [
@@ -2324,7 +1978,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=d001305a89a11a10VgnVCM200000f921e388RCRD",
     "sourceTier": "A",
     "sourceEventId": "50445751",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-24T00:00:00+02:00",
     "confidence": 0.9,
     "status": "published",
@@ -2332,39 +1986,6 @@
       "timePrecision": "exact",
       "sessionTimes": [
         "18:00"
-      ]
-    }
-  },
-  {
-    "id": "evt-50448536",
-    "slug": "ranuja-la-no-bruja-50448536",
-    "title": "'Ranuja la No bruja'",
-    "shortDescription": "¿Se pueden encontrar brujos en el Retiro? ¡Sí! Y lo podréis comprobar en la divertida presentación de 'Ranuja, la No bruja', una novela infantil ambientada en Madrid, llena de humor y fantasía. Tendremos una mañana de juegos, refranes, fantasía, un taller de ilustración y mucha d",
-    "startAt": "2026-10-18T12:00:00+02:00",
-    "endAt": "2026-10-18T23:59:00+02:00",
-    "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)",
-    "coordinates": [
-      -3.6789381,
-      40.4167401
-    ],
-    "category": "CuentacuentosTiteresMarionetas",
-    "audience": [
-      "Niños"
-    ],
-    "priceNote": "Gratuito según fuente municipal",
-    "registrationUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=06e5c19f9b431a10VgnVCM100000891ecb1aRCRD",
-    "sourceName": "Agenda de actividades y eventos",
-    "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=06e5c19f9b431a10VgnVCM100000891ecb1aRCRD",
-    "sourceTier": "A",
-    "sourceEventId": "50448536",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
-    "expiresAt": "2026-10-19T00:00:00+02:00",
-    "confidence": 0.9,
-    "status": "expired",
-    "schedule": {
-      "timePrecision": "exact",
-      "sessionTimes": [
-        "12:00"
       ]
     }
   },
@@ -2387,7 +2008,7 @@
     "sourceUrl": "http://www.madrid.es/sites/v/index.jsp?vgnextchannel=ca9671ee4a9eb410VgnVCM100000171f5a0aRCRD&vgnextoid=cbc0074437f31a10VgnVCM100000891ecb1aRCRD",
     "sourceTier": "A",
     "sourceEventId": "50451020",
-    "lastCheckedAt": "2026-10-19T09:56:59.553Z",
+    "lastCheckedAt": "2026-10-20T09:27:35.979Z",
     "expiresAt": "2026-10-27T00:00:00+01:00",
     "confidence": 0.9,
     "status": "published",
