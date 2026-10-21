@@ -6,6 +6,24 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50454112",
+        "slug": "4-encuentro-ser-etica-tres-cosas-hay-en-la-vida-salud-dinero-y-amor-5045",
+        "title": "4º Encuentro SER Ética. Tres cosas hay en la vida: salud, dinero y amor",
+        "startAt": "2026-11-12T10:00:00+01:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -3.68618,
           40.409435
         ]
@@ -168,24 +186,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.6840988,
-          40.4192106
-        ]
-      },
-      "properties": {
-        "id": "evt-50145704",
-        "slug": "dussehra-50145704",
-        "title": "Dussehra",
-        "startAt": "2026-10-21T18:30:00+02:00",
-        "status": "published",
-        "venue": "Centro Cultural Casa de Vacas (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -3.6866962,
           40.4187197
         ]
@@ -204,6 +204,24 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50454169",
+        "slug": "el-joven-fionn-el-troll-de-las-estrellas-de-ezao-50454169",
+        "title": "El joven Fionn. El troll de las estrellas de Ezao",
+        "startAt": "2026-11-13T18:00:00+01:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -3.6866962,
           40.4187197
         ]
@@ -215,24 +233,6 @@
         "startAt": "2026-12-19T12:30:00+01:00",
         "status": "published",
         "venue": "Teatro de Títeres de El Retiro"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50447007",
-        "slug": "encuentro-noir-con-la-literatura-china-50447007",
-        "title": "Encuentro noir con la literatura china",
-        "startAt": "2026-10-19T19:00:00+02:00",
-        "status": "expired",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
     {
@@ -285,7 +285,7 @@
         "slug": "la-hispanidad-en-estados-unidos-50434613",
         "title": "La Hispanidad en Estados Unidos",
         "startAt": "2026-10-20T19:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -681,7 +681,7 @@
         "slug": "taller-sobre-la-escritura-del-yo-50328610",
         "title": "Taller sobre 'La Escritura del Yo'",
         "startAt": "2026-10-20T18:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -911,6 +911,24 @@
         ]
       },
       "properties": {
+        "id": "evt-50454185",
+        "slug": "caminar-sobre-la-huellas-de-los-sabios-de-maria-angeles-diaz-sanchez-50",
+        "title": "'Caminar sobre la huellas de los sabios', de María Ángeles Díaz Sánchez",
+        "startAt": "2026-11-15T12:00:00+01:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
         "id": "evt-50449051",
         "slug": "correspondencias-de-leticia-ruifernandez-50449051",
         "title": "'Correspondencias' de Leticia Ruifernández",
@@ -988,24 +1006,6 @@
         "title": "'El troll de las estrellas', de Ezao",
         "startAt": "2026-10-30T18:00:00+01:00",
         "status": "published",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50409622",
-        "slug": "la-escritura-del-yo-con-kike-turrion-y-kike-barbas-50409622",
-        "title": "'La escritura del Yo' con Kike Turrión y Kike Barbas",
-        "startAt": "2026-10-19T19:00:00+02:00",
-        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
