@@ -771,7 +771,7 @@
         "slug": "visita-a-la-casa-de-campo-zona-suroeste-50202982",
         "title": "Visita a la Casa de Campo. Zona suroeste",
         "startAt": "2026-10-21T10:30:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
@@ -951,7 +951,7 @@
         "slug": "cosas-que-pasan-de-carmen-baranda-de-la-oliva-50448606",
         "title": "'Cosas que pasan' de Carmen Baranda de la Oliva",
         "startAt": "2026-10-21T18:30:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -1041,6 +1041,78 @@
         "slug": "un-rumor-en-la-nieve-de-miguel-castro-pereiro-50451020",
         "title": "'Un rumor en la nieve' de Miguel Castro Pereiro",
         "startAt": "2026-10-26T19:00:00+01:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50454392",
+        "slug": "club-de-lectura-de-el-pais-con-jacobo-garcia-y-su-libro-anos-luz-5045439",
+        "title": "Club de lectura de El País con Jacobo García y su libro ‘Años luz’",
+        "startAt": "2026-11-17T19:00:00+01:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50455493",
+        "slug": "creando-una-nueva-vida-creatividad-y-recuperacion-50455493",
+        "title": "Creando una nueva vida: creatividad y recuperación",
+        "startAt": "2026-10-24T10:00:00+02:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50455499",
+        "slug": "la-misteriosa-historia-de-bhar-de-ignacio-ochoa-50455499",
+        "title": "'La misteriosa historia de Bhar', de Ignacio Ochoa",
+        "startAt": "2026-10-27T18:30:00+01:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50455446",
+        "slug": "quevedo-senor-de-letras-y-sombras-50455446",
+        "title": "'Quevedo. Señor de letras y sombras'",
+        "startAt": "2026-10-29T19:00:00+01:00",
         "status": "published",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
