@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-10-22T09:26:25.436Z",
+  "ranAt": "2026-10-23T09:22:41.761Z",
   "offline": false,
   "steps": {
     "collect": "ok",
@@ -9,10 +9,7 @@
     "publish": "ok"
   },
   "added": [
-    "evt-50454392",
-    "evt-50455493",
-    "evt-50455499",
-    "evt-50455446"
+    "evt-50456158"
   ],
   "changed": [
     "evt-50454112",
@@ -20,17 +17,18 @@
     "evt-50425902",
     "evt-50322881",
     "evt-50147279",
+    "evt-50454392",
     "evt-50415948",
     "evt-50444475",
     "evt-50105660",
     "evt-50362790",
+    "evt-50455493",
     "evt-50148940",
     "evt-50430430",
     "evt-50454169",
     "evt-50430426",
     "evt-50425896",
     "evt-50368535",
-    "evt-50434613",
     "evt-50147284",
     "evt-50220891",
     "evt-50431987",
@@ -45,19 +43,17 @@
     "evt-50148916",
     "evt-50148887",
     "evt-50150274",
+    "evt-11771345",
     "evt-11771354",
     "evt-11771349",
-    "evt-11771345",
     "evt-11970930",
     "evt-11970931",
     "evt-11771303",
     "evt-50408098",
-    "evt-50328610",
     "evt-50399382",
     "evt-50140512",
     "evt-50425893",
     "evt-50430423",
-    "evt-50202982",
     "evt-12316290",
     "evt-50173921",
     "evt-50145563",
@@ -67,16 +63,22 @@
     "evt-50448850",
     "evt-50454185",
     "evt-50449051",
-    "evt-50448606",
     "evt-50446338",
     "evt-50449861",
     "evt-50446521",
+    "evt-50455499",
     "evt-50445751",
+    "evt-50455446",
     "evt-50451020"
   ],
-  "removed": [],
-  "discarded": 2437,
-  "duplicates": 56,
+  "removed": [
+    "evt-50434613",
+    "evt-50328610",
+    "evt-50202982",
+    "evt-50448606"
+  ],
+  "discarded": 2504,
+  "duplicates": 59,
   "errors": [],
   "published": true,
   "keptPrevious": false,
@@ -86,19 +88,19 @@
       "sourceId": "madrid-agenda-general",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-10-22T09:26:25.436Z",
-      "lastSuccessfulFetchAt": "2026-10-22T09:26:25.436Z",
+      "fetchedAt": "2026-10-23T09:22:41.761Z",
+      "lastSuccessfulFetchAt": "2026-10-23T09:22:41.761Z",
       "fetchError": null,
-      "graphCount": 1443
+      "graphCount": 1478
     },
     {
       "sourceId": "madrid-agenda-cultural-100",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-10-22T09:26:25.436Z",
-      "lastSuccessfulFetchAt": "2026-10-22T09:26:25.436Z",
+      "fetchedAt": "2026-10-23T09:22:41.761Z",
+      "lastSuccessfulFetchAt": "2026-10-23T09:22:41.761Z",
       "fetchError": null,
-      "graphCount": 1112
+      "graphCount": 1144
     }
   ],
   "discardSamples": [
@@ -153,8 +155,8 @@
         "fuera-ambito"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50438403",
-      "title": "50 Aniversario de la Asociación Vecinal Solidaridad Cuatro Caminos-Tetuán"
+      "sourceEventId": "50456288",
+      "title": "31 QUEERCINEMAD"
     },
     {
       "discarded": true,
@@ -168,12 +170,11 @@
     {
       "discarded": true,
       "discardReasons": [
-        "fuera-ambito",
-        "sin-localizacion"
+        "fuera-ambito"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50443245",
-      "title": "75 Aniversario de la Anexión de Fuencarral a Madrid"
+      "sourceEventId": "50438403",
+      "title": "50 Aniversario de la Asociación Vecinal Solidaridad Cuatro Caminos-Tetuán"
     },
     {
       "discarded": true,
@@ -193,16 +194,6 @@
       ],
       "sourceId": "madrid-agenda-general",
       "sourceEventId": "50443250",
-      "title": "75 Aniversario de la Anexión de Fuencarral a Madrid"
-    },
-    {
-      "discarded": true,
-      "discardReasons": [
-        "fuera-ambito",
-        "sin-localizacion"
-      ],
-      "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50443243",
       "title": "75 Aniversario de la Anexión de Fuencarral a Madrid"
     },
     {
@@ -244,6 +235,15 @@
       "sourceId": "madrid-agenda-general",
       "sourceEventId": "50443426",
       "title": "75 Aniversario de la Anexión de Fuencarral a Madrid. Visitas guiadas"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50455287",
+      "title": "75 Años en Madrid, siempre Vicálvaro"
     }
   ],
   "duplicateSamples": [
@@ -284,6 +284,13 @@
     },
     {
       "reason": "sourceEventId",
+      "keptId": "evt-50454392",
+      "droppedId": "evt-50454392",
+      "sourceEventId": "50454392",
+      "merged": true
+    },
+    {
+      "reason": "sourceEventId",
       "keptId": "evt-50415948",
       "droppedId": "evt-50415948",
       "sourceEventId": "50415948",
@@ -308,6 +315,13 @@
       "keptId": "evt-50362790",
       "droppedId": "evt-50362790",
       "sourceEventId": "50362790",
+      "merged": true
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-50455493",
+      "droppedId": "evt-50455493",
+      "sourceEventId": "50455493",
       "merged": true
     },
     {
@@ -337,40 +351,26 @@
       "droppedId": "evt-50430426",
       "sourceEventId": "50430426",
       "merged": true
-    },
-    {
-      "reason": "sourceEventId",
-      "keptId": "evt-50425896",
-      "droppedId": "evt-50425896",
-      "sourceEventId": "50425896",
-      "merged": true
-    },
-    {
-      "reason": "sourceEventId",
-      "keptId": "evt-50368535",
-      "droppedId": "evt-50368535",
-      "sourceEventId": "50368535",
-      "merged": true
     }
   ],
-  "publishedCount": 62,
+  "publishedCount": 59,
   "publication": {
     "schemaVersion": 1,
-    "publishedAt": "2026-10-22T09:26:25.436Z",
-    "datasetHash": "cc7e15c8db149d21b5d08fc8d310ffeaac9772d42c7b71a65b9cfc0df8dd5bdf",
+    "publishedAt": "2026-10-23T09:22:41.761Z",
+    "datasetHash": "7b8fdc6eccaabc88dcd2525a5d5ee27fc18d85865f18827df556f4a43dc1f5bf",
     "coverageHorizonDays": 90,
     "sources": [
       {
         "sourceId": "madrid-agenda-general",
-        "lastSuccessfulFetchAt": "2026-10-22T09:26:25.436Z",
-        "lastAttemptAt": "2026-10-22T09:26:25.436Z",
+        "lastSuccessfulFetchAt": "2026-10-23T09:22:41.761Z",
+        "lastAttemptAt": "2026-10-23T09:22:41.761Z",
         "fromCache": false,
         "fetchError": null
       },
       {
         "sourceId": "madrid-agenda-cultural-100",
-        "lastSuccessfulFetchAt": "2026-10-22T09:26:25.436Z",
-        "lastAttemptAt": "2026-10-22T09:26:25.436Z",
+        "lastSuccessfulFetchAt": "2026-10-23T09:22:41.761Z",
+        "lastAttemptAt": "2026-10-23T09:22:41.761Z",
         "fromCache": false,
         "fetchError": null
       }

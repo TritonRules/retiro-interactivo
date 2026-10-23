@@ -101,6 +101,24 @@
         ]
       },
       "properties": {
+        "id": "evt-50454392",
+        "slug": "club-de-lectura-de-el-pais-con-jacobo-garcia-y-su-libro-anos-luz-5045439",
+        "title": "Club de lectura de El País con Jacobo García y su libro ‘Años luz’",
+        "startAt": "2026-11-17T19:00:00+01:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
         "id": "evt-50415948",
         "slug": "club-de-lectura-lasdelmal-50415948",
         "title": "Club de lectura 'LasdelMal'",
@@ -161,6 +179,24 @@
         "startAt": "2026-10-24T19:00:00+02:00",
         "status": "published",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50455493",
+        "slug": "creando-una-nueva-vida-creatividad-y-recuperacion-50455493",
+        "title": "Creando una nueva vida: creatividad y recuperación",
+        "startAt": "2026-10-24T10:00:00+02:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
     {
@@ -276,24 +312,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50434613",
-        "slug": "la-hispanidad-en-estados-unidos-50434613",
-        "title": "La Hispanidad en Estados Unidos",
-        "startAt": "2026-10-20T19:00:00+02:00",
-        "status": "expired",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -3.6840988,
           40.4192106
         ]
@@ -321,7 +339,7 @@
         "slug": "lectura-dramatizada-de-de-pelicula-de-carmen-resino-50220891",
         "title": "Lectura dramatizada de 'De película', de Carmen Resino",
         "startAt": "2026-10-22T18:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -551,6 +569,24 @@
         ]
       },
       "properties": {
+        "id": "evt-11771345",
+        "slug": "taller-de-comederos-para-aves-11771345",
+        "title": "Taller de comederos para aves",
+        "startAt": "2026-11-15T11:00:00+01:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68618,
+          40.409435
+        ]
+      },
+      "properties": {
         "id": "evt-11771354",
         "slug": "taller-de-comederos-para-aves-11771354",
         "title": "Taller de comederos para aves",
@@ -573,24 +609,6 @@
         "slug": "taller-de-comederos-para-aves-11771349",
         "title": "Taller de comederos para aves",
         "startAt": "2026-12-27T11:00:00+01:00",
-        "status": "published",
-        "venue": "Centro de Educación Ambiental El Retiro"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.68618,
-          40.409435
-        ]
-      },
-      "properties": {
-        "id": "evt-11771345",
-        "slug": "taller-de-comederos-para-aves-11771345",
-        "title": "Taller de comederos para aves",
-        "startAt": "2026-11-15T11:00:00+01:00",
         "status": "published",
         "venue": "Centro de Educación Ambiental El Retiro"
       }
@@ -672,24 +690,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50328610",
-        "slug": "taller-sobre-la-escritura-del-yo-50328610",
-        "title": "Taller sobre 'La Escritura del Yo'",
-        "startAt": "2026-10-20T18:00:00+02:00",
-        "status": "expired",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -3.6866962,
           40.4187197
         ]
@@ -755,24 +755,6 @@
         "startAt": "2026-12-05T12:30:00+01:00",
         "status": "published",
         "venue": "Teatro de Títeres de El Retiro"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.679318,
-          40.409123
-        ]
-      },
-      "properties": {
-        "id": "evt-50202982",
-        "slug": "visita-a-la-casa-de-campo-zona-suroeste-50202982",
-        "title": "Visita a la Casa de Campo. Zona suroeste",
-        "startAt": "2026-10-21T10:30:00+02:00",
-        "status": "expired",
-        "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
     {
@@ -947,24 +929,6 @@
         ]
       },
       "properties": {
-        "id": "evt-50448606",
-        "slug": "cosas-que-pasan-de-carmen-baranda-de-la-oliva-50448606",
-        "title": "'Cosas que pasan' de Carmen Baranda de la Oliva",
-        "startAt": "2026-10-21T18:30:00+02:00",
-        "status": "expired",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
         "id": "evt-50446338",
         "slug": "cuentos-de-empezar-y-no-terminar-con-pingui-50446338",
         "title": "'Cuentos de empezar y no terminar' con Pingüi",
@@ -1019,64 +983,10 @@
         ]
       },
       "properties": {
-        "id": "evt-50445751",
-        "slug": "operacion-shelley-de-rocio-molina-50445751",
-        "title": "'Operación Shelley' de Rocío Molina",
-        "startAt": "2026-10-23T18:00:00+02:00",
-        "status": "published",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50451020",
-        "slug": "un-rumor-en-la-nieve-de-miguel-castro-pereiro-50451020",
-        "title": "'Un rumor en la nieve' de Miguel Castro Pereiro",
-        "startAt": "2026-10-26T19:00:00+01:00",
-        "status": "published",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50454392",
-        "slug": "club-de-lectura-de-el-pais-con-jacobo-garcia-y-su-libro-anos-luz-5045439",
-        "title": "Club de lectura de El País con Jacobo García y su libro ‘Años luz’",
-        "startAt": "2026-11-17T19:00:00+01:00",
-        "status": "published",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50455493",
-        "slug": "creando-una-nueva-vida-creatividad-y-recuperacion-50455493",
-        "title": "Creando una nueva vida: creatividad y recuperación",
-        "startAt": "2026-10-24T10:00:00+02:00",
+        "id": "evt-50456158",
+        "slug": "kumo-no-nagare-el-fluir-de-las-nubes-50456158",
+        "title": "'Kumo no nagare: El fluir de las nubes'",
+        "startAt": "2026-10-30T18:30:00+01:00",
         "status": "published",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
@@ -1109,10 +1019,46 @@
         ]
       },
       "properties": {
+        "id": "evt-50445751",
+        "slug": "operacion-shelley-de-rocio-molina-50445751",
+        "title": "'Operación Shelley' de Rocío Molina",
+        "startAt": "2026-10-23T18:00:00+02:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
         "id": "evt-50455446",
         "slug": "quevedo-senor-de-letras-y-sombras-50455446",
         "title": "'Quevedo. Señor de letras y sombras'",
         "startAt": "2026-10-29T19:00:00+01:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50451020",
+        "slug": "un-rumor-en-la-nieve-de-miguel-castro-pereiro-50451020",
+        "title": "'Un rumor en la nieve' de Miguel Castro Pereiro",
+        "startAt": "2026-10-26T19:00:00+01:00",
         "status": "published",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
