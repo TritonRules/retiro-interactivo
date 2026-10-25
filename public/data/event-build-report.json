@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-10-24T08:54:08.487Z",
+  "ranAt": "2026-10-25T09:10:55.573Z",
   "offline": false,
   "steps": {
     "collect": "ok",
@@ -8,14 +8,7 @@
     "validate": "ok",
     "publish": "ok"
   },
-  "added": [
-    "evt-50457809",
-    "evt-50462340",
-    "evt-50462331",
-    "evt-50457908",
-    "evt-50457870",
-    "evt-50462336"
-  ],
+  "added": [],
   "changed": [
     "evt-50454112",
     "evt-50346030",
@@ -34,8 +27,6 @@
     "evt-50430426",
     "evt-50425896",
     "evt-50368535",
-    "evt-50147284",
-    "evt-50220891",
     "evt-50431987",
     "evt-50343647",
     "evt-50431986",
@@ -43,6 +34,7 @@
     "evt-50080228",
     "evt-50322790",
     "evt-50451751",
+    "evt-50457809",
     "evt-50449032",
     "evt-50173945",
     "evt-50148916",
@@ -65,21 +57,29 @@
     "evt-50146209",
     "evt-50149656",
     "evt-50434551",
-    "evt-50448850",
+    "evt-50462340",
     "evt-50454185",
+    "evt-50462331",
     "evt-50449051",
     "evt-50446338",
     "evt-50449861",
+    "evt-50457908",
     "evt-50446521",
     "evt-50456158",
     "evt-50455499",
-    "evt-50445751",
     "evt-50455446",
-    "evt-50451020"
+    "evt-50457870",
+    "evt-50451020",
+    "evt-50462336"
   ],
-  "removed": [],
-  "discarded": 2564,
-  "duplicates": 58,
+  "removed": [
+    "evt-50147284",
+    "evt-50220891",
+    "evt-50448850",
+    "evt-50445751"
+  ],
+  "discarded": 2488,
+  "duplicates": 61,
   "errors": [],
   "published": true,
   "keptPrevious": false,
@@ -89,19 +89,19 @@
       "sourceId": "madrid-agenda-general",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-10-24T08:54:08.487Z",
-      "lastSuccessfulFetchAt": "2026-10-24T08:54:08.487Z",
+      "fetchedAt": "2026-10-25T09:10:55.573Z",
+      "lastSuccessfulFetchAt": "2026-10-25T09:10:55.573Z",
       "fetchError": null,
-      "graphCount": 1478
+      "graphCount": 1460
     },
     {
       "sourceId": "madrid-agenda-cultural-100",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-10-24T08:54:08.487Z",
-      "lastSuccessfulFetchAt": "2026-10-24T08:54:08.487Z",
+      "fetchedAt": "2026-10-25T09:10:55.573Z",
+      "lastSuccessfulFetchAt": "2026-10-25T09:10:55.573Z",
       "fetchError": null,
-      "graphCount": 1209
+      "graphCount": 1150
     }
   ],
   "discardSamples": [
@@ -194,26 +194,6 @@
         "sin-localizacion"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50443250",
-      "title": "75 Aniversario de la Anexión de Fuencarral a Madrid"
-    },
-    {
-      "discarded": true,
-      "discardReasons": [
-        "fuera-ambito",
-        "sin-localizacion"
-      ],
-      "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50443253",
-      "title": "75 Aniversario de la Anexión de Fuencarral a Madrid"
-    },
-    {
-      "discarded": true,
-      "discardReasons": [
-        "fuera-ambito",
-        "sin-localizacion"
-      ],
-      "sourceId": "madrid-agenda-general",
       "sourceEventId": "50443254",
       "title": "75 Aniversario de la Anexión de Fuencarral a Madrid"
     },
@@ -245,6 +225,24 @@
       "sourceId": "madrid-agenda-general",
       "sourceEventId": "50455287",
       "title": "75 Años en Madrid, siempre Vicálvaro"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50444973",
+      "title": "A fishy tale"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50421045",
+      "title": "A Life Illuminated"
     }
   ],
   "duplicateSamples": [
@@ -354,28 +352,28 @@
       "merged": true
     }
   ],
-  "publishedCount": 65,
+  "publishedCount": 61,
   "publication": {
     "schemaVersion": 1,
-    "publishedAt": "2026-10-24T08:54:08.487Z",
-    "datasetHash": "db2084a8052d94235c6c3a269ac248e52f759ed34f89a0b737bad8824ffc4c57",
+    "publishedAt": "2026-10-25T09:10:55.573Z",
+    "datasetHash": "e4fe2b8f2d18529c9173b323da1642dd9e95516017929256996122f8129d04cb",
     "coverageHorizonDays": 90,
     "sources": [
       {
         "sourceId": "madrid-agenda-general",
-        "lastSuccessfulFetchAt": "2026-10-24T08:54:08.487Z",
-        "lastAttemptAt": "2026-10-24T08:54:08.487Z",
+        "lastSuccessfulFetchAt": "2026-10-25T09:10:55.573Z",
+        "lastAttemptAt": "2026-10-25T09:10:55.573Z",
         "fromCache": false,
         "fetchError": null
       },
       {
         "sourceId": "madrid-agenda-cultural-100",
-        "lastSuccessfulFetchAt": "2026-10-24T08:54:08.487Z",
-        "lastAttemptAt": "2026-10-24T08:54:08.487Z",
+        "lastSuccessfulFetchAt": "2026-10-25T09:10:55.573Z",
+        "lastAttemptAt": "2026-10-25T09:10:55.573Z",
         "fromCache": false,
         "fetchError": null
       }
     ]
   },
-  "publishedUpcoming": 61
+  "publishedUpcoming": 56
 }

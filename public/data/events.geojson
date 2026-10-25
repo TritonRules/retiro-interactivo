@@ -87,7 +87,7 @@
         "slug": "buenos-aires-en-madrid-50147279",
         "title": "Buenos Aires en Madrid",
         "startAt": "2026-10-24T12:30:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -177,7 +177,7 @@
         "slug": "corazon-de-agua-retiro-50362790",
         "title": "Corazón de Agua - Retiro",
         "startAt": "2026-10-24T19:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -195,7 +195,7 @@
         "slug": "creando-una-nueva-vida-creatividad-y-recuperacion-50455493",
         "title": "Creando una nueva vida: creatividad y recuperación",
         "startAt": "2026-10-24T10:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -305,42 +305,6 @@
         "startAt": "2026-11-28T19:00:00+01:00",
         "status": "published",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6840988,
-          40.4192106
-        ]
-      },
-      "properties": {
-        "id": "evt-50147284",
-        "slug": "la-musica-de-las-palabras-50147284",
-        "title": "La música de las palabras",
-        "startAt": "2026-10-23T19:00:00+02:00",
-        "status": "expired",
-        "venue": "Centro Cultural Casa de Vacas (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50220891",
-        "slug": "lectura-dramatizada-de-de-pelicula-de-carmen-resino-50220891",
-        "title": "Lectura dramatizada de 'De película', de Carmen Resino",
-        "startAt": "2026-10-22T18:00:00+02:00",
-        "status": "expired",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
     {
@@ -479,11 +443,29 @@
         ]
       },
       "properties": {
+        "id": "evt-50457809",
+        "slug": "presentacion-de-las-nuevas-obras-de-jose-zuleta-y-alberto-manrique-50457",
+        "title": "Presentación de las nuevas obras de José Zuleta y Alberto Manrique",
+        "startAt": "2026-10-27T19:00:00+01:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
         "id": "evt-50449032",
         "slug": "samu-del-rio-en-concierto-50449032",
         "title": "Samu del Río en concierto",
         "startAt": "2026-10-24T12:30:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -843,7 +825,7 @@
         "slug": "yincana-clic-clac-a-reciclar-y-taller-de-reciclaje-50149656",
         "title": "Yincana 'Clic, clac ¡a reciclar!' y taller de reciclaje",
         "startAt": "2026-10-24T16:30:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
@@ -875,11 +857,11 @@
         ]
       },
       "properties": {
-        "id": "evt-50448850",
-        "slug": "a-muerte-por-tus-suenos-de-fatima-melgar-perez-50448850",
-        "title": "'A muerte por tus sueños' de Fátima Melgar Pérez,",
-        "startAt": "2026-10-23T18:30:00+02:00",
-        "status": "expired",
+        "id": "evt-50462340",
+        "slug": "azul-amarillo-danubio-un-viaje-en-vespa-hacia-el-corazon-de-europa-de-j",
+        "title": "'Azul, Amarillo, Danubio. Un viaje en Vespa hacia el corazón de Europa', de José Suárez",
+        "startAt": "2026-11-12T19:00:00+01:00",
+        "status": "published",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -897,6 +879,24 @@
         "slug": "caminar-sobre-la-huellas-de-los-sabios-de-maria-angeles-diaz-sanchez-50",
         "title": "'Caminar sobre la huellas de los sabios', de María Ángeles Díaz Sánchez",
         "startAt": "2026-11-15T12:00:00+01:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50462331",
+        "slug": "como-piensan-la-ia-y-el-cerebro-por-jose-corrales-50462331",
+        "title": "'Cómo piensan la IA y el cerebro', por José Corrales",
+        "startAt": "2026-11-05T18:30:00+01:00",
         "status": "published",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
@@ -965,6 +965,24 @@
         ]
       },
       "properties": {
+        "id": "evt-50457908",
+        "slug": "detras-de-una-estrella-de-fernando-trias-de-bes-50457908",
+        "title": "'Detrás de una estrella' de Fernando Trías de Bes",
+        "startAt": "2026-11-04T19:00:00+01:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
         "id": "evt-50446521",
         "slug": "el-troll-de-las-estrellas-de-ezao-50446521",
         "title": "'El troll de las estrellas', de Ezao",
@@ -1019,24 +1037,6 @@
         ]
       },
       "properties": {
-        "id": "evt-50445751",
-        "slug": "operacion-shelley-de-rocio-molina-50445751",
-        "title": "'Operación Shelley' de Rocío Molina",
-        "startAt": "2026-10-23T18:00:00+02:00",
-        "status": "expired",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
         "id": "evt-50455446",
         "slug": "quevedo-senor-de-letras-y-sombras-50455446",
         "title": "'Quevedo. Señor de letras y sombras'",
@@ -1055,100 +1055,28 @@
         ]
       },
       "properties": {
-        "id": "evt-50451020",
-        "slug": "un-rumor-en-la-nieve-de-miguel-castro-pereiro-50451020",
-        "title": "'Un rumor en la nieve' de Miguel Castro Pereiro",
-        "startAt": "2026-10-26T19:00:00+01:00",
-        "status": "published",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50457809",
-        "slug": "presentacion-de-las-nuevas-obras-de-jose-zuleta-y-alberto-manrique-50457",
-        "title": "Presentación de las nuevas obras de José Zuleta y Alberto Manrique",
-        "startAt": "2026-10-27T19:00:00+01:00",
-        "status": "published",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50462340",
-        "slug": "azul-amarillo-danubio-un-viaje-en-vespa-hacia-el-corazon-de-europa-de-j",
-        "title": "'Azul, Amarillo, Danubio. Un viaje en Vespa hacia el corazón de Europa', de José Suárez",
-        "startAt": "2026-11-12T19:00:00+01:00",
-        "status": "published",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50462331",
-        "slug": "como-piensan-la-ia-y-el-cerebro-por-jose-corrales-50462331",
-        "title": "'Cómo piensan la IA y el cerebro', por José Corrales",
-        "startAt": "2026-11-05T18:30:00+01:00",
-        "status": "published",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50457908",
-        "slug": "detras-de-una-estrella-de-fernando-trias-de-bes-50457908",
-        "title": "'Detrás de una estrella' de Fernando Trías de Bes",
-        "startAt": "2026-11-04T19:00:00+01:00",
-        "status": "published",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
         "id": "evt-50457870",
         "slug": "tejiendo-unidos-sumando-vida-50457870",
         "title": "'Tejiendo unidos sumando vida'",
         "startAt": "2026-10-31T10:30:00+01:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50451020",
+        "slug": "un-rumor-en-la-nieve-de-miguel-castro-pereiro-50451020",
+        "title": "'Un rumor en la nieve' de Miguel Castro Pereiro",
+        "startAt": "2026-10-26T19:00:00+01:00",
         "status": "published",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
