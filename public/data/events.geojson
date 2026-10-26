@@ -69,24 +69,6 @@
         "slug": "asesinas-del-vodevil-50322881",
         "title": "Asesinas del Vodevil",
         "startAt": "2026-10-25T17:00:00+01:00",
-        "status": "published",
-        "venue": "Centro Cultural Casa de Vacas (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6840988,
-          40.4192106
-        ]
-      },
-      "properties": {
-        "id": "evt-50147279",
-        "slug": "buenos-aires-en-madrid-50147279",
-        "title": "Buenos Aires en Madrid",
-        "startAt": "2026-10-24T12:30:00+02:00",
         "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
@@ -161,42 +143,6 @@
         "startAt": "2026-10-30T10:30:00+01:00",
         "status": "published",
         "venue": "Jardines de El Buen Retiro"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6840988,
-          40.4192106
-        ]
-      },
-      "properties": {
-        "id": "evt-50362790",
-        "slug": "corazon-de-agua-retiro-50362790",
-        "title": "Corazón de Agua - Retiro",
-        "startAt": "2026-10-24T19:00:00+02:00",
-        "status": "expired",
-        "venue": "Centro Cultural Casa de Vacas (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50455493",
-        "slug": "creando-una-nueva-vida-creatividad-y-recuperacion-50455493",
-        "title": "Creando una nueva vida: creatividad y recuperación",
-        "startAt": "2026-10-24T10:00:00+02:00",
-        "status": "expired",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
     {
@@ -411,7 +357,7 @@
         "slug": "musica-vocal-de-tradicion-clasica-50322790",
         "title": "Música vocal de tradición clásica",
         "startAt": "2026-10-25T12:00:00+01:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -456,24 +402,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50449032",
-        "slug": "samu-del-rio-en-concierto-50449032",
-        "title": "Samu del Río en concierto",
-        "startAt": "2026-10-24T12:30:00+02:00",
-        "status": "expired",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -3.679318,
           40.409123
         ]
@@ -501,7 +429,7 @@
         "slug": "senda-guiada-usos-de-las-plantas-del-retiro-50148916",
         "title": "Senda guiada 'Usos de las plantas del Retiro'",
         "startAt": "2026-10-02T00:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
@@ -551,24 +479,6 @@
         ]
       },
       "properties": {
-        "id": "evt-11771345",
-        "slug": "taller-de-comederos-para-aves-11771345",
-        "title": "Taller de comederos para aves",
-        "startAt": "2026-11-15T11:00:00+01:00",
-        "status": "published",
-        "venue": "Centro de Educación Ambiental El Retiro"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.68618,
-          40.409435
-        ]
-      },
-      "properties": {
         "id": "evt-11771354",
         "slug": "taller-de-comederos-para-aves-11771354",
         "title": "Taller de comederos para aves",
@@ -591,6 +501,24 @@
         "slug": "taller-de-comederos-para-aves-11771349",
         "title": "Taller de comederos para aves",
         "startAt": "2026-12-27T11:00:00+01:00",
+        "status": "published",
+        "venue": "Centro de Educación Ambiental El Retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68618,
+          40.409435
+        ]
+      },
+      "properties": {
+        "id": "evt-11771345",
+        "slug": "taller-de-comederos-para-aves-11771345",
+        "title": "Taller de comederos para aves",
+        "startAt": "2026-11-15T11:00:00+01:00",
         "status": "published",
         "venue": "Centro de Educación Ambiental El Retiro"
       }
@@ -681,7 +609,7 @@
         "slug": "titeres-a-cielo-abierto-2026-50399382",
         "title": "Títeres a cielo abierto 2026",
         "startAt": "2026-10-24T12:30:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Teatro de Títeres de El Retiro"
       }
     },
@@ -699,7 +627,7 @@
         "slug": "umbrales-50140512",
         "title": "Umbrales",
         "startAt": "2026-10-02T00:00:00+02:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Centro Cultural Casa de Vacas (Retiro)"
       }
     },
@@ -821,29 +749,11 @@
         ]
       },
       "properties": {
-        "id": "evt-50149656",
-        "slug": "yincana-clic-clac-a-reciclar-y-taller-de-reciclaje-50149656",
-        "title": "Yincana 'Clic, clac ¡a reciclar!' y taller de reciclaje",
-        "startAt": "2026-10-24T16:30:00+02:00",
-        "status": "expired",
-        "venue": "Aula ambiental La Cabaña del Retiro"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.679318,
-          40.409123
-        ]
-      },
-      "properties": {
         "id": "evt-50434551",
         "slug": "yincana-reciclaje-50434551",
         "title": "Yincana 'Reciclaje'",
         "startAt": "2026-10-25T11:00:00+01:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
@@ -915,7 +825,7 @@
         "slug": "correspondencias-de-leticia-ruifernandez-50449051",
         "title": "'Correspondencias' de Leticia Ruifernández",
         "startAt": "2026-10-25T12:00:00+01:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
