@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-10-26T10:10:46.290Z",
+  "ranAt": "2026-10-27T09:50:38.774Z",
   "offline": false,
   "steps": {
     "collect": "ok",
@@ -8,7 +8,42 @@
     "validate": "ok",
     "publish": "ok"
   },
-  "added": [],
+  "added": [
+    "evt-50104191",
+    "evt-50322562",
+    "evt-50145704",
+    "evt-50322662",
+    "evt-50462356",
+    "evt-50147279",
+    "evt-50221891",
+    "evt-50265531",
+    "evt-50289767",
+    "evt-50289806",
+    "evt-50147284",
+    "evt-50146160",
+    "evt-50289667",
+    "evt-50174266",
+    "evt-50147340",
+    "evt-50289724",
+    "evt-50147445",
+    "evt-50173923",
+    "evt-50173965",
+    "evt-50148218",
+    "evt-50174274",
+    "evt-50287004",
+    "evt-50148970",
+    "evt-50174252",
+    "evt-50266169",
+    "evt-50146307",
+    "evt-50322723",
+    "evt-50173958",
+    "evt-50148204",
+    "evt-50235439",
+    "evt-50265465",
+    "evt-50174281",
+    "evt-50149656",
+    "evt-50288425"
+  ],
   "changed": [
     "evt-50454112",
     "evt-50346030",
@@ -67,15 +102,9 @@
     "evt-50451020",
     "evt-50462336"
   ],
-  "removed": [
-    "evt-50147279",
-    "evt-50362790",
-    "evt-50455493",
-    "evt-50449032",
-    "evt-50149656"
-  ],
-  "discarded": 2272,
-  "duplicates": 56,
+  "removed": [],
+  "discarded": 2323,
+  "duplicates": 51,
   "errors": [],
   "published": true,
   "keptPrevious": false,
@@ -85,8 +114,8 @@
       "sourceId": "madrid-agenda-general",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-10-26T10:10:46.290Z",
-      "lastSuccessfulFetchAt": "2026-10-26T10:10:46.290Z",
+      "fetchedAt": "2026-10-27T09:50:38.774Z",
+      "lastSuccessfulFetchAt": "2026-10-27T09:50:38.774Z",
       "fetchError": null,
       "graphCount": 1344
     },
@@ -94,10 +123,10 @@
       "sourceId": "madrid-agenda-cultural-100",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-10-26T10:10:46.290Z",
-      "lastSuccessfulFetchAt": "2026-10-26T10:10:46.290Z",
+      "fetchedAt": "2026-10-27T09:50:38.774Z",
+      "lastSuccessfulFetchAt": "2026-10-27T09:50:38.774Z",
       "fetchError": null,
-      "graphCount": 1040
+      "graphCount": 1120
     }
   ],
   "discardSamples": [
@@ -263,16 +292,9 @@
     },
     {
       "reason": "sourceEventId",
-      "keptId": "evt-50322881",
-      "droppedId": "evt-50322881",
-      "sourceEventId": "50322881",
-      "merged": true
-    },
-    {
-      "reason": "sourceEventId",
-      "keptId": "evt-50454392",
-      "droppedId": "evt-50454392",
-      "sourceEventId": "50454392",
+      "keptId": "evt-50146209",
+      "droppedId": "evt-50146209",
+      "sourceEventId": "50146209",
       "merged": true
     },
     {
@@ -280,6 +302,13 @@
       "keptId": "evt-50415948",
       "droppedId": "evt-50415948",
       "sourceEventId": "50415948",
+      "merged": true
+    },
+    {
+      "reason": "sourceEventId",
+      "keptId": "evt-50322790",
+      "droppedId": "evt-50322790",
+      "sourceEventId": "50322790",
       "merged": true
     },
     {
@@ -346,28 +375,28 @@
       "merged": true
     }
   ],
-  "publishedCount": 56,
+  "publishedCount": 90,
   "publication": {
     "schemaVersion": 1,
-    "publishedAt": "2026-10-26T10:10:46.290Z",
-    "datasetHash": "0b698914e85a8494c8cad19e54e9c8efcfe33e3fadc7ce511b9005f3f621b1ef",
+    "publishedAt": "2026-10-27T09:50:38.774Z",
+    "datasetHash": "c14782f932d57c0267ddbfa7122b609f336ad3cd95576bd057205d484a4dc3bf",
     "coverageHorizonDays": 90,
     "sources": [
       {
         "sourceId": "madrid-agenda-general",
-        "lastSuccessfulFetchAt": "2026-10-26T10:10:46.290Z",
-        "lastAttemptAt": "2026-10-26T10:10:46.290Z",
+        "lastSuccessfulFetchAt": "2026-10-27T09:50:38.774Z",
+        "lastAttemptAt": "2026-10-27T09:50:38.774Z",
         "fromCache": false,
         "fetchError": null
       },
       {
         "sourceId": "madrid-agenda-cultural-100",
-        "lastSuccessfulFetchAt": "2026-10-26T10:10:46.290Z",
-        "lastAttemptAt": "2026-10-26T10:10:46.290Z",
+        "lastSuccessfulFetchAt": "2026-10-27T09:50:38.774Z",
+        "lastAttemptAt": "2026-10-27T09:50:38.774Z",
         "fromCache": false,
         "fetchError": null
       }
     ]
   },
-  "publishedUpcoming": 49
+  "publishedUpcoming": 82
 }
