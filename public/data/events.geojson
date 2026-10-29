@@ -672,24 +672,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
-        "id": "evt-50457809",
-        "slug": "presentacion-de-las-nuevas-obras-de-jose-zuleta-y-alberto-manrique-50457",
-        "title": "Presentación de las nuevas obras de José Zuleta y Alberto Manrique",
-        "startAt": "2026-10-27T19:00:00+01:00",
-        "status": "expired",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -3.6840988,
           40.4192106
         ]
@@ -1167,7 +1149,7 @@
         "slug": "visita-guiada-a-la-casa-de-campo-zona-lago-50173921",
         "title": "Visita guiada a la Casa de Campo. Zona Lago",
         "startAt": "2026-10-28T10:30:00+01:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Aula ambiental La Cabaña del Retiro"
       }
     },
@@ -1415,6 +1397,24 @@
         ]
       },
       "properties": {
+        "id": "evt-50403469",
+        "slug": "cuentos-de-empezar-y-no-terminar-con-pingui-50403469",
+        "title": "'Cuentos de empezar y no terminar' con Pingüi",
+        "startAt": "2026-10-28T18:00:00+01:00",
+        "status": "expired",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
         "id": "evt-50449861",
         "slug": "del-arte-de-escribir-al-goce-de-leer-de-carmen-s-caraballo-50449861",
         "title": "'Del arte de escribir al goce de leer' de Carmen S. Caraballo",
@@ -1469,24 +1469,6 @@
         ]
       },
       "properties": {
-        "id": "evt-50455499",
-        "slug": "la-misteriosa-historia-de-bhar-de-ignacio-ochoa-50455499",
-        "title": "'La misteriosa historia de Bhar', de Ignacio Ochoa",
-        "startAt": "2026-10-27T18:30:00+01:00",
-        "status": "expired",
-        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.6789381,
-          40.4167401
-        ]
-      },
-      "properties": {
         "id": "evt-50455446",
         "slug": "quevedo-senor-de-letras-y-sombras-50455446",
         "title": "'Quevedo. Señor de letras y sombras'",
@@ -1509,7 +1491,7 @@
         "slug": "repercusion-y-actualidad-de-la-crisis-de-ormuz-y-las-elecciones-en-eeuu",
         "title": "'Repercusión y actualidad de la crisis de Ormuz y las elecciones en EEUU e Israel'",
         "startAt": "2026-10-28T18:30:00+01:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },

@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-10-28T10:36:56.079Z",
+  "ranAt": "2026-10-29T10:55:10.095Z",
   "offline": false,
   "steps": {
     "collect": "ok",
@@ -9,10 +9,7 @@
     "publish": "ok"
   },
   "added": [
-    "evt-50147338",
-    "evt-50467376",
-    "evt-50467412",
-    "evt-50466650"
+    "evt-50403469"
   ],
   "changed": [
     "evt-50454112",
@@ -34,6 +31,8 @@
     "evt-50147279",
     "evt-50430426",
     "evt-50221891",
+    "evt-50147338",
+    "evt-50467376",
     "evt-50265531",
     "evt-50425896",
     "evt-50368535",
@@ -50,7 +49,6 @@
     "evt-50080228",
     "evt-50174266",
     "evt-50451751",
-    "evt-50457809",
     "evt-50147340",
     "evt-50289724",
     "evt-50147445",
@@ -88,28 +86,23 @@
     "evt-50434551",
     "evt-50288425",
     "evt-50462340",
+    "evt-50467412",
     "evt-50454185",
     "evt-50462331",
     "evt-50449861",
     "evt-50457908",
     "evt-50456158",
-    "evt-50455499",
     "evt-50455446",
+    "evt-50466650",
     "evt-50457870",
     "evt-50462336"
   ],
   "removed": [
-    "evt-50454392",
-    "evt-50148916",
-    "evt-50399382",
-    "evt-50140512",
-    "evt-50449051",
-    "evt-50446338",
-    "evt-50446521",
-    "evt-50451020"
+    "evt-50457809",
+    "evt-50455499"
   ],
-  "discarded": 2590,
-  "duplicates": 86,
+  "discarded": 2786,
+  "duplicates": 85,
   "errors": [],
   "published": true,
   "keptPrevious": false,
@@ -119,19 +112,19 @@
       "sourceId": "madrid-agenda-general",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-10-28T10:36:56.079Z",
-      "lastSuccessfulFetchAt": "2026-10-28T10:36:56.079Z",
+      "fetchedAt": "2026-10-29T10:55:10.095Z",
+      "lastSuccessfulFetchAt": "2026-10-29T10:55:10.095Z",
       "fetchError": null,
-      "graphCount": 1525
+      "graphCount": 1624
     },
     {
       "sourceId": "madrid-agenda-cultural-100",
       "complete": true,
       "fromCache": false,
-      "fetchedAt": "2026-10-28T10:36:56.079Z",
-      "lastSuccessfulFetchAt": "2026-10-28T10:36:56.079Z",
+      "fetchedAt": "2026-10-29T10:55:10.095Z",
+      "lastSuccessfulFetchAt": "2026-10-29T10:55:10.095Z",
       "fetchError": null,
-      "graphCount": 1237
+      "graphCount": 1332
     }
   ],
   "discardSamples": [
@@ -214,16 +207,6 @@
         "sin-localizacion"
       ],
       "sourceId": "madrid-agenda-general",
-      "sourceEventId": "50443262",
-      "title": "75 Aniversario de la Anexión de Fuencarral a Madrid"
-    },
-    {
-      "discarded": true,
-      "discardReasons": [
-        "fuera-ambito",
-        "sin-localizacion"
-      ],
-      "sourceId": "madrid-agenda-general",
       "sourceEventId": "50443280",
       "title": "75 Aniversario de la Anexión de Fuencarral a Madrid. Exposiciones"
     },
@@ -270,6 +253,15 @@
       ],
       "sourceId": "madrid-agenda-general",
       "sourceEventId": "50461156",
+      "title": "Academia de héroes y heroínas"
+    },
+    {
+      "discarded": true,
+      "discardReasons": [
+        "fuera-ambito"
+      ],
+      "sourceId": "madrid-agenda-general",
+      "sourceEventId": "50460693",
       "title": "Academia de héroes y heroínas"
     }
   ],
@@ -380,28 +372,28 @@
       "merged": true
     }
   ],
-  "publishedCount": 86,
+  "publishedCount": 85,
   "publication": {
     "schemaVersion": 1,
-    "publishedAt": "2026-10-28T10:36:56.079Z",
-    "datasetHash": "ae8988e395609b24b682361f9a15477a8b31e0af402278db03695025f98ff36e",
+    "publishedAt": "2026-10-29T10:55:10.095Z",
+    "datasetHash": "a320acd9a34a0414442911f67124a16df28fa559a124e28045dc5e2f5c5275d0",
     "coverageHorizonDays": 90,
     "sources": [
       {
         "sourceId": "madrid-agenda-general",
-        "lastSuccessfulFetchAt": "2026-10-28T10:36:56.079Z",
-        "lastAttemptAt": "2026-10-28T10:36:56.079Z",
+        "lastSuccessfulFetchAt": "2026-10-29T10:55:10.095Z",
+        "lastAttemptAt": "2026-10-29T10:55:10.095Z",
         "fromCache": false,
         "fetchError": null
       },
       {
         "sourceId": "madrid-agenda-cultural-100",
-        "lastSuccessfulFetchAt": "2026-10-28T10:36:56.079Z",
-        "lastAttemptAt": "2026-10-28T10:36:56.079Z",
+        "lastSuccessfulFetchAt": "2026-10-29T10:55:10.095Z",
+        "lastAttemptAt": "2026-10-29T10:55:10.095Z",
         "fromCache": false,
         "fetchError": null
       }
     ]
   },
-  "publishedUpcoming": 84
+  "publishedUpcoming": 82
 }
