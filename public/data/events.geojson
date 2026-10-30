@@ -375,7 +375,7 @@
         "slug": "historia-de-halloween-50467376",
         "title": "Historia de Halloween",
         "startAt": "2026-10-29T11:00:00+01:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -663,7 +663,7 @@
         "slug": "presentacion-de-la-coleccion-talento-y-exilio-la-diaspora-del-conocimien",
         "title": "Presentación de la colección 'Talento y exilio: la diáspora del conocimiento'",
         "startAt": "2026-10-29T19:00:00+01:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -1419,7 +1419,7 @@
         "slug": "del-arte-de-escribir-al-goce-de-leer-de-carmen-s-caraballo-50449861",
         "title": "'Del arte de escribir al goce de leer' de Carmen S. Caraballo",
         "startAt": "2026-10-29T19:00:00+01:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -1473,7 +1473,7 @@
         "slug": "quevedo-senor-de-letras-y-sombras-50455446",
         "title": "'Quevedo. Señor de letras y sombras'",
         "startAt": "2026-10-29T19:00:00+01:00",
-        "status": "published",
+        "status": "expired",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
     },
@@ -1527,6 +1527,24 @@
         "slug": "cuando-dejo-la-vivienda-de-ser-un-hogar-la-crisis-de-la-vivienda-vista",
         "title": "'¿Cuándo dejó la vivienda de ser un hogar? La crisis de la vivienda vista desde las ciencias sociales', con Javier Gil",
         "startAt": "2026-11-05T19:00:00+01:00",
+        "status": "published",
+        "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6789381,
+          40.4167401
+        ]
+      },
+      "properties": {
+        "id": "evt-50291004",
+        "slug": "ciclo-comprender-el-antiguo-egipto-que-sabemos-50291004",
+        "title": "Ciclo 'Comprender el Antiguo Egipto': ¿Qué sabemos?",
+        "startAt": "2026-11-03T18:30:00+01:00",
         "status": "published",
         "venue": "Biblioteca Pública Municipal Eugenio Trías. Casa de Fieras de El Retiro (Retiro)"
       }
